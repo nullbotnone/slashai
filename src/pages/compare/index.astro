@@ -9,34 +9,34 @@ const toolsJson = JSON.stringify(tools);
   <section class="hero">
     <div class="container">
       <h1>Compare <span class="gradient-text">AI Tools</span></h1>
-      <p>Select up to 4 tools to compare side-by-side.</p>
+      <p>Pick up to 3 tools to compare side-by-side.</p>
     </div>
   </section>
 
   <section class="section-glow">
     <div class="container">
-      <!-- Step 1: Pick tools from full list -->
-      <div id="picker-section">
-        <h2 style="font-size: 1.2rem; margin-bottom: 0.25rem;">Pick tools to compare</h2>
-        <p style="color: var(--color-text-secondary); font-size: 0.85rem; margin-bottom: 1rem;" id="pick-hint">Click to select. Choose 2–4 tools.</p>
-        <input type="text" id="filter-input" placeholder="🔍 Filter tools..." class="blog-search" style="margin-bottom: 1rem;" />
-        <div class="tool-list" id="tool-list"></div>
+      <!-- Picker -->
+      <div id="picker">
+        <div class="picker-header">
+          <h2>Select tools to compare</h2>
+          <span class="pick-count" id="pick-count">0 / 3 selected</span>
+        </div>
+        <input type="text" id="filter" placeholder="🔍 Filter by name, category, or tag..." class="blog-search" />
+        <div class="pick-list" id="pick-list"></div>
+        <div class="picker-footer hidden" id="picker-footer">
+          <button class="compare-btn" id="compare-btn">Compare selected →</button>
+        </div>
       </div>
 
-      <!-- Step 2: Comparison (cards + table) -->
-      <div class="compare-section hidden" id="compare-section">
-        <div class="compare-bar">
-          <h2 style="font-size: 1.2rem;">Comparing <span id="compare-count">0</span> tools</h2>
-          <button class="edit-btn" id="edit-btn">← Change selection</button>
+      <!-- Results -->
+      <div class="results hidden" id="results">
+        <div class="results-bar">
+          <button class="back-btn" id="back-btn">← Change selection</button>
         </div>
-
-        <!-- Cards -->
-        <div class="card-grid" id="compare-cards"></div>
-
-        <!-- Table -->
-        <h3 style="font-size: 1.1rem; margin: 2rem 0 1rem;">Side-by-side details</h3>
+        <div class="card-grid" id="result-cards"></div>
+        <h3 style="font-size: 1.1rem; margin: 2rem 0 0.75rem;">Side-by-side details</h3>
         <div class="table-scroll">
-          <table class="compare-table" id="compare-table"></table>
+          <table class="detail-table" id="detail-table"></table>
         </div>
       </div>
     </div>
@@ -44,99 +44,154 @@ const toolsJson = JSON.stringify(tools);
 </BaseLayout>
 
 <style>
-  /* Tool list (picker) */
-  .tool-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 0.5rem;
+  .picker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.75rem;
   }
 
-  .pick-card {
+  .picker-header h2 { font-size: 1.2rem; }
+
+  .pick-count {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+    background: var(--color-bg-secondary);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+  }
+
+  /* Scrollable tool list */
+  .pick-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    max-height: 600px;
+    overflow-y: auto;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+    background: var(--color-bg-card);
+  }
+
+  .pick-list::-webkit-scrollbar { width: 6px; }
+  .pick-list::-webkit-scrollbar-track { background: transparent; }
+  .pick-list::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
+  .pick-list::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+
+  .pick-row {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    padding: 0.85rem 1rem;
-    background: var(--color-bg-card);
-    border: 2px solid var(--color-border);
-    border-radius: var(--radius);
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
+    border: 1px solid transparent;
+    user-select: none;
   }
 
-  .pick-card:hover {
-    border-color: var(--color-accent);
-    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.1);
+  .pick-row:hover {
+    background: var(--color-bg-secondary);
+    border-color: var(--color-border);
+    transform: translateX(4px);
   }
 
-  .pick-card.selected {
-    border-color: var(--color-accent);
+  .pick-row.selected {
     background: var(--color-accent-light);
-    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.15);
+    border-color: var(--color-accent);
   }
 
-  .pick-card.hidden { display: none; }
+  .pick-row.disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+  }
 
-  .pick-check {
-    width: 22px;
-    height: 22px;
+  .pick-row.disabled:hover {
+    transform: none;
+    background: transparent;
+    border-color: transparent;
+  }
+
+  .pick-tick {
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     border: 2px solid var(--color-border);
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    transition: all 0.2s;
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     color: transparent;
+    transition: all 0.2s;
   }
 
-  .pick-card.selected .pick-check {
+  .pick-row.selected .pick-tick {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: white;
   }
 
-  .pick-info {
-    flex: 1;
-    min-width: 0;
-  }
-
   .pick-name {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 0.9rem;
+    flex: 1;
   }
 
-  .pick-meta {
+  .pick-cat {
     font-size: 0.75rem;
     color: var(--color-text-secondary);
-  }
-
-  .pick-price {
-    font-size: 0.7rem;
-    font-weight: 700;
-    padding: 0.15rem 0.5rem;
-    border-radius: 20px;
-    white-space: nowrap;
     flex-shrink: 0;
   }
 
-  .pick-price.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-  .pick-price.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-  .pick-price.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-  .pick-price.pay-per-use { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
-
-  /* Compare section */
-  .compare-section.hidden { display: none; }
-  #picker-section.hidden { display: none; }
-
-  .compare-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.5rem;
+  .pick-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.15rem 0.45rem;
+    border-radius: 20px;
+    flex-shrink: 0;
   }
 
-  .edit-btn {
+  .pick-badge.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+  .pick-badge.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  .pick-badge.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .pick-badge.pay-per-use { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+
+  /* Footer */
+  .picker-footer { text-align: center; margin-top: 1.25rem; }
+  .picker-footer.hidden { display: none; }
+
+  .compare-btn {
+    background: linear-gradient(135deg, var(--color-accent), #ec4899);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.75rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    font-family: var(--font-sans);
+  }
+
+  .compare-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+  }
+
+  /* Results */
+  .results.hidden { display: none; }
+
+  .results-bar {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  .back-btn {
     background: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -149,9 +204,9 @@ const toolsJson = JSON.stringify(tools);
     transition: all 0.2s;
   }
 
-  .edit-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .back-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
-  /* Table */
+  /* Detail table */
   .table-scroll {
     overflow-x: auto;
     border: 1px solid var(--color-border);
@@ -159,23 +214,31 @@ const toolsJson = JSON.stringify(tools);
     background: var(--color-bg-card);
   }
 
-  .compare-table {
+  .detail-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;
   }
 
-  .compare-table th,
-  .compare-table td {
+  .detail-table th,
+  .detail-table td {
     padding: 0.75rem 1rem;
     text-align: left;
-    border-bottom: 1px solid var(--color-border);
     vertical-align: top;
   }
 
-  .compare-table thead th {
-    background: var(--color-bg-secondary);
+  /* Row separators — thick horizontal lines between each property */
+  .detail-table tbody tr {
     border-bottom: 2px solid var(--color-border);
+  }
+
+  .detail-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .detail-table thead th {
+    background: var(--color-bg-secondary);
+    border-bottom: 3px solid var(--color-border);
     font-weight: 700;
     font-size: 1rem;
     position: sticky;
@@ -183,36 +246,34 @@ const toolsJson = JSON.stringify(tools);
     z-index: 2;
   }
 
-  .compare-table thead th:first-child {
+  .detail-table thead th:first-child {
     position: sticky;
     left: 0;
     z-index: 3;
   }
 
-  .compare-table tbody th {
-    font-weight: 600;
+  .detail-table tbody th {
+    font-weight: 700;
     font-size: 0.78rem;
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    color: var(--color-text-secondary);
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
     background: var(--color-bg);
     width: 100px;
     white-space: nowrap;
     position: sticky;
     left: 0;
     z-index: 1;
+    border-right: 2px solid var(--color-border);
   }
 
-  .compare-table tbody tr:last-child th,
-  .compare-table tbody tr:last-child td { border-bottom: none; }
-
-  .compare-table td ul {
+  .detail-table td ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .compare-table td li { padding: 0.15rem 0; line-height: 1.4; }
+  .detail-table td li { padding: 0.15rem 0; line-height: 1.4; }
   .pro::before { content: '✓ '; color: #22c55e; font-weight: 700; }
   .con::before { content: '✗ '; color: #ef4444; font-weight: 700; }
   .best-for { font-weight: 600; color: var(--color-accent); }
@@ -227,7 +288,7 @@ const toolsJson = JSON.stringify(tools);
     margin: 0.1rem;
   }
 
-  .visit-btn {
+  .link-btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--color-accent), #ec4899);
     color: white !important;
@@ -240,7 +301,7 @@ const toolsJson = JSON.stringify(tools);
     box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
   }
 
-  .visit-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4); }
+  .link-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4); }
 
   .review-link {
     display: block;
@@ -253,53 +314,53 @@ const toolsJson = JSON.stringify(tools);
   .review-link:hover { color: var(--color-accent); }
 
   @media (max-width: 768px) {
-    .tool-list { grid-template-columns: 1fr; }
-    .compare-table tbody th { font-size: 0.7rem; width: 80px; }
-    .compare-table th, .compare-table td { padding: 0.5rem 0.6rem; font-size: 0.8rem; }
-    .compare-bar { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .pick-list { max-height: 400px; }
+    .detail-table tbody th { font-size: 0.7rem; width: 80px; }
+    .detail-table th, .detail-table td { padding: 0.5rem 0.6rem; font-size: 0.8rem; }
   }
 </style>
 
 <script define:vars={{ toolsJson }}>
-  var allTools = JSON.parse(toolsJson);
+  var allTools = JSON.parse(toolsJson).sort(function(a, b) { return a.name.localeCompare(b.name); });
   var picked = [];
-  var MAX = 4;
+  var MAX = 3;
 
-  var filterEl = document.getElementById('filter-input');
-  var listEl = document.getElementById('tool-list');
-  var pickHint = document.getElementById('pick-hint');
-  var pickerSection = document.getElementById('picker-section');
-  var compareSection = document.getElementById('compare-section');
-  var cardsEl = document.getElementById('compare-cards');
-  var tableEl = document.getElementById('compare-table');
-  var countEl = document.getElementById('compare-count');
-  var editBtn = document.getElementById('edit-btn');
+  var filterEl = document.getElementById('filter');
+  var listEl = document.getElementById('pick-list');
+  var countEl = document.getElementById('pick-count');
+  var footerEl = document.getElementById('picker-footer');
+  var compareBtn = document.getElementById('compare-btn');
+  var pickerEl = document.getElementById('picker');
+  var resultsEl = document.getElementById('results');
+  var backBtn = document.getElementById('back-btn');
+  var cardsEl = document.getElementById('result-cards');
+  var tableEl = document.getElementById('detail-table');
 
-  // Render full tool list
   function renderList() {
-    var query = (filterEl.value || '').toLowerCase();
-    listEl.innerHTML = allTools
-      .filter(function(t) {
-        if (!query) return true;
-        return t.name.toLowerCase().indexOf(query) > -1 ||
-               t.category.toLowerCase().indexOf(query) > -1 ||
-               (t.tags || []).some(function(tag) { return tag.toLowerCase().indexOf(query) > -1; });
-      })
-      .map(function(t) {
-        var isPicked = picked.indexOf(t.slug) > -1;
-        var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
-        return '<div class="pick-card' + (isPicked ? ' selected' : '') + '" data-slug="' + t.slug + '">' +
-          '<div class="pick-check">' + (isPicked ? '✓' : '') + '</div>' +
-          '<div class="pick-info">' +
-            '<div class="pick-name">' + t.name + '</div>' +
-            '<div class="pick-meta">' + t.category + '</div>' +
-          '</div>' +
-          '<span class="pick-price ' + cls + '">' + t.pricing + '</span>' +
-        '</div>';
-      }).join('');
+    var q = (filterEl.value || '').toLowerCase();
+    var filtered = allTools.filter(function(t) {
+      if (!q) return true;
+      return t.name.toLowerCase().indexOf(q) > -1 ||
+             t.category.toLowerCase().indexOf(q) > -1 ||
+             (t.tags || []).some(function(tag) { return tag.toLowerCase().indexOf(q) > -1; });
+    });
 
-    // Click handlers
-    listEl.querySelectorAll('.pick-card').forEach(function(el) {
+    listEl.innerHTML = filtered.map(function(t) {
+      var isPicked = picked.indexOf(t.slug) > -1;
+      var isFull = picked.length >= MAX && !isPicked;
+      var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
+      return '<div class="pick-row' + (isPicked ? ' selected' : '') + (isFull ? ' disabled' : '') + '" data-slug="' + t.slug + '">' +
+        '<div class="pick-tick">' + (isPicked ? '✓' : '') + '</div>' +
+        '<span class="pick-name">' + t.name + '</span>' +
+        '<span class="pick-cat">' + t.category + '</span>' +
+        '<span class="pick-badge ' + cls + '">' + t.pricing + '</span>' +
+      '</div>';
+    }).join('');
+
+    countEl.textContent = picked.length + ' / ' + MAX + ' selected';
+    footerEl.classList.toggle('hidden', picked.length < 2);
+
+    listEl.querySelectorAll('.pick-row').forEach(function(el) {
       el.addEventListener('click', function() {
         var slug = el.dataset.slug;
         var idx = picked.indexOf(slug);
@@ -309,48 +370,29 @@ const toolsJson = JSON.stringify(tools);
           picked.push(slug);
         }
         renderList();
-        updateHint();
       });
     });
   }
 
-  function updateHint() {
-    if (picked.length === 0) {
-      pickHint.textContent = 'Click to select. Choose 2–4 tools.';
-    } else if (picked.length < 2) {
-      pickHint.textContent = picked.length + ' selected — pick ' + (2 - picked.length) + ' more, then scroll down or click a selected tool to compare.';
-    } else {
-      pickHint.textContent = picked.length + ' selected — scroll down to see comparison, or keep selecting up to ' + MAX + '.';
-    }
-  }
-
   filterEl.addEventListener('input', renderList);
 
-  // Auto-switch to comparison when 2+ picked
-  listEl.addEventListener('click', function() {
-    if (picked.length >= 2) {
-      showCompare();
-    }
+  compareBtn.addEventListener('click', function() {
+    if (picked.length < 2) return;
+    pickerEl.classList.add('hidden');
+    resultsEl.classList.remove('hidden');
+    buildCards();
+    buildTable();
+    resultsEl.scrollIntoView({ behavior: 'smooth' });
   });
 
-  editBtn.addEventListener('click', function() {
-    compareSection.classList.add('hidden');
-    pickerSection.classList.remove('hidden');
+  backBtn.addEventListener('click', function() {
+    resultsEl.classList.add('hidden');
+    pickerEl.classList.remove('hidden');
     renderList();
   });
 
-  function showCompare() {
-    pickerSection.classList.add('hidden');
-    compareSection.classList.remove('hidden');
-    countEl.textContent = picked.length;
-    buildCards();
-    buildTable();
-    compareSection.scrollIntoView({ behavior: 'smooth' });
-  }
-
   function buildCards() {
     var tools = picked.map(function(s) { return allTools.find(function(t) { return t.slug === s; }); });
-
     cardsEl.innerHTML = tools.map(function(t, i) {
       return '<a href="/tools/' + t.slug + '/" class="card" style="text-decoration: none; color: inherit; animation: cardFadeIn 0.45s ease ' + (i * 0.06) + 's forwards;">' +
         '<h3>' + t.name + '</h3>' +
@@ -370,7 +412,7 @@ const toolsJson = JSON.stringify(tools);
     tools.forEach(function(t) {
       var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
       h += '<th><a href="/tools/' + t.slug + '/" style="color: var(--color-text); text-decoration: none; font-weight: 700;">' + t.name + '</a>' +
-        '<div style="margin-top: 0.2rem;"><span class="pick-price ' + cls + '">' + t.pricing + '</span></div></th>';
+        '<div style="margin-top: 0.2rem;"><span class="pick-badge ' + cls + '">' + t.pricing + '</span></div></th>';
     });
     h += '</tr></thead><tbody>';
 
@@ -388,8 +430,8 @@ const toolsJson = JSON.stringify(tools);
       { label: 'Tags', fn: function(t) {
         return (t.tags || []).map(function(tag) { return '<span class="tag-pill">' + tag + '</span>'; }).join('');
       }, raw: true },
-      { label: 'Links', fn: function(t) {
-        return '<a class="visit-btn" href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener">Visit ↗</a>' +
+      { label: 'Visit', fn: function(t) {
+        return '<a class="link-btn" href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener">Visit ↗</a>' +
           '<a class="review-link" href="/tools/' + t.slug + '/">Read review →</a>';
       }, raw: true },
     ];
@@ -404,6 +446,5 @@ const toolsJson = JSON.stringify(tools);
     tableEl.innerHTML = h;
   }
 
-  // Init
   renderList();
 </script>
