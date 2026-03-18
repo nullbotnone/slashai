@@ -11,7 +11,7 @@ const { title, description = 'AI tools that actually work for one-person busines
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,6 +39,16 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="SlashAI RSS" href="/rss.xml">
+
+  <!-- Theme initialization (prevent flash) -->
+  <script is:inline>
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script>
 </head>
 <body>
   <header class="site-header">
@@ -51,6 +61,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
           <li><a href="/comparisons/">Comparisons</a></li>
           <li><a href="/guides/">Guides</a></li>
           <li><a href="/about/">About</a></li>
+          <li>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle light/dark mode">
+              <span id="theme-icon">☀️</span>
+            </button>
+          </li>
         </ul>
       </nav>
     </div>
@@ -71,5 +86,40 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
       <p>© {new Date().getFullYear()} SlashAI. Built for solopreneurs, by solopreneurs.</p>
     </div>
   </footer>
+
+  <script is:inline>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateIcon(next);
+    }
+
+    function updateIcon(theme) {
+      const icon = document.getElementById('theme-icon');
+      if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    // Set initial icon
+    document.addEventListener('DOMContentLoaded', () => {
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      updateIcon(theme);
+    });
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
+  </script>
 </body>
 </html>

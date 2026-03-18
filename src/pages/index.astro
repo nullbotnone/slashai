@@ -14,7 +14,7 @@ const recentPosts = [...allReviews, ...allRoundups, ...allComparisons]
 <BaseLayout title="AI Tools for Solopreneurs & Freelancers">
   <section class="hero">
     <div class="container">
-      <h1>AI tools that actually work<br>for one-person businesses</h1>
+      <h1>AI tools that <span class="gradient-text">actually work</span><br>for one-person businesses</h1>
       <p>Honest reviews, practical guides, and real workflows. We test every tool so you don't have to waste time on ones that don't deliver.</p>
     </div>
   </section>
@@ -61,4 +61,19 @@ const recentPosts = [...allReviews, ...allRoundups, ...allComparisons]
       </a>
     </div>
   </section>
+
+  <section class="container fade-in" style="margin-top: 4rem; text-align: center; padding: 3rem 0;">
+    <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">The Slash<span style="background: linear-gradient(135deg, var(--color-accent), #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AI</span> Stack</h2>
+    <p style="color: var(--color-text-secondary); max-width: 500px; margin: 0 auto 1.5rem;">Start free. Upgrade when revenue justifies it. Every tool we recommend is tested on real freelance work.</p>
+    <a href="/roundups/best-ai-tools-freelancers/" style="display: inline-block; background: linear-gradient(135deg, var(--color-accent), #ec4899); color: white; padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);">
+      See the Stack →
+    </a>
+  </section>
 </BaseLayout>
+
+<style>
+  a[href*="best-ai-tools-freelancers"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4) !important;
+  }
+</style>
