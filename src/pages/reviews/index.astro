@@ -14,16 +14,18 @@ const reviews = (await getCollection('reviews'))
     </div>
   </section>
   
-  <section class="container">
-    <div class="card-grid">
-      {reviews.map((post) => (
-        <a href={`/reviews/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
-          <h3>{post.data.title}</h3>
-          <p>{post.data.description}</p>
-          <span class="tag">Rating: {post.data.rating}/10</span>
-          <span class="tag">{post.data.price}</span>
-        </a>
-      ))}
+  <section class="section-glow">
+    <div class="container">
+      <div class="card-grid">
+        {reviews.map((post) => (
+          <a href={`/reviews/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="tag">Rating: {post.data.rating}/10</span>
+            <span class="tag">{post.data.price}</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

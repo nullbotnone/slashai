@@ -14,31 +14,33 @@ const tutorials = (await getCollection('tutorials'))
     </div>
   </section>
   
-  <section class="container">
-    <input 
-      type="text" 
-      id="tutorial-search" 
-      placeholder="🔍 Search tutorials..." 
-      class="blog-search"
-    />
+  <section class="section-glow">
+    <div class="container">
+      <input 
+        type="text" 
+        id="tutorial-search" 
+        placeholder="🔍 Search tutorials..." 
+        class="blog-search"
+      />
 
-    <div class="card-grid" id="tutorial-grid">
-      {tutorials.map((post) => (
-        <a href={`/tutorials/${post.id.replace(/\.md$/, '')}/`} class="card tutorial-card" data-title={post.data.title.toLowerCase()} data-desc={post.data.description.toLowerCase()} data-tool={post.data.toolName.toLowerCase()} style="text-decoration: none; color: inherit;">
-          <h3>{post.data.title}</h3>
-          <p>{post.data.description}</p>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
-            <span class="tag">{post.data.toolName}</span>
-            <span class="tag">{post.data.difficulty}</span>
-            {post.data.timeToComplete && <span class="tag">⏱️ {post.data.timeToComplete}</span>}
-          </div>
-        </a>
-      ))}
+      <div class="card-grid" id="tutorial-grid">
+        {tutorials.map((post) => (
+          <a href={`/tutorials/${post.id.replace(/\.md$/, '')}/`} class="card tutorial-card" data-title={post.data.title.toLowerCase()} data-desc={post.data.description.toLowerCase()} data-tool={post.data.toolName.toLowerCase()} style="text-decoration: none; color: inherit;">
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+              <span class="tag">{post.data.toolName}</span>
+              <span class="tag">{post.data.difficulty}</span>
+              {post.data.timeToComplete && <span class="tag">⏱️ {post.data.timeToComplete}</span>}
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <p class="no-results" id="no-results" style="display: none; text-align: center; color: var(--color-text-secondary); padding: 3rem 0;">
+        No tutorials found matching your search.
+      </p>
     </div>
-
-    <p class="no-results" id="no-results" style="display: none; text-align: center; color: var(--color-text-secondary); padding: 3rem 0;">
-      No tutorials found matching your search.
-    </p>
   </section>
 </BaseLayout>
 

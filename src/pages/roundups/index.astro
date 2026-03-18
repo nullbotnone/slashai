@@ -14,15 +14,17 @@ const roundups = (await getCollection('roundups'))
     </div>
   </section>
   
-  <section class="container">
-    <div class="card-grid">
-      {roundups.map((post) => (
-        <a href={`/roundups/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
-          <h3>{post.data.title}</h3>
-          <p>{post.data.description}</p>
-          <span class="tag">{post.data.itemCount} tools</span>
-        </a>
-      ))}
+  <section class="section-glow">
+    <div class="container">
+      <div class="card-grid">
+        {roundups.map((post) => (
+          <a href={`/roundups/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="tag">{post.data.itemCount} tools</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

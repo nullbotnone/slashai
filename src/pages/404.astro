@@ -11,28 +11,30 @@ import NewsletterCTA from '../components/NewsletterCTA.astro';
     </div>
   </section>
 
-  <div class="article-content" style="text-align: center;">
-    <p>Here are some places that <em>do</em> exist:</p>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
-      <a href="/" class="card" style="text-decoration: none; color: inherit; display: inline-block; padding: 1rem 1.5rem;">
-        <h3>🏠 Home</h3>
-      </a>
-      <a href="/ai-tools/" class="card" style="text-decoration: none; color: inherit; display: inline-block; padding: 1rem 1.5rem;">
-        <h3>🛠️ AI Tools</h3>
-      </a>
-      <a href="/blog/" class="card" style="text-decoration: none; color: inherit; display: inline-block; padding: 1rem 1.5rem;">
-        <h3>📝 Blog</h3>
-      </a>
-      <a href="/roundups/best-ai-tools-freelancers/" class="card" style="text-decoration: none; color: inherit; display: inline-block; padding: 1rem 1.5rem;">
-        <h3>📊 Best AI Tools</h3>
-      </a>
-    </div>
+  <section class="section-glow">
+    <div class="article-content" style="text-align: center;">
+      <p>Here are some places that <em>do</em> exist:</p>
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
+        <a href="/" class="card" style="text-decoration: none; color: inherit; display: inline-block; padding: 1rem 1.5rem;">
+          <h3>🏠 Home</h3>
+        </a>
+        <a href="/ai-tools/" class="card" style="text-decoration: none; color: inherit; display: inline-block; padding: 1rem 1.5rem;">
+          <h3>🛠️ AI Tools</h3>
+        </a>
+        <a href="/blog/" class="card" style="text-decoration: none; color: inherit; display: inline-block; padding: 1rem 1.5rem;">
+          <h3>📝 Blog</h3>
+        </a>
+        <a href="/roundups/best-ai-tools-freelancers/" class="card" style="text-decoration: none; color: inherit; display: inline-block; padding: 1rem 1.5rem;">
+          <h3>📊 Best AI Tools</h3>
+        </a>
+      </div>
 
-    <NewsletterCTA 
-      title="While you're here..."
-      description="Get weekly AI tool picks and workflow tips for solopreneurs."
-    />
-  </div>
+      <NewsletterCTA 
+        title="While you're here..."
+        description="Get weekly AI tool picks and workflow tips for solopreneurs."
+      />
+    </div>
+  </section>
 </BaseLayout>
 
 <style>

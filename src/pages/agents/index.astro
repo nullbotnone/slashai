@@ -14,15 +14,17 @@ const agents = (await getCollection('agents'))
     </div>
   </section>
   
-  <section class="container">
-    <div class="card-grid">
-      {agents.map((post) => (
-        <a href={`/agents/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
-          <h3>{post.data.title}</h3>
-          <p>{post.data.description}</p>
-          <span class="tag">AI Agents</span>
-        </a>
-      ))}
+  <section class="section-glow">
+    <div class="container">
+      <div class="card-grid">
+        {agents.map((post) => (
+          <a href={`/agents/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="tag">AI Agents</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 </BaseLayout>

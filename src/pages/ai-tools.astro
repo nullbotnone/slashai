@@ -19,8 +19,9 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     </div>
   </section>
 
-  <section class="container">
-    <!-- Filters -->
+  <section class="section-glow">
+    <div class="container">
+      <!-- Filters -->
     <div class="directory-filters">
       <input 
         type="text" 
@@ -120,6 +121,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     <p class="tool-count" id="tool-count" style="text-align: center; color: var(--color-text-secondary); margin-top: 1rem;">
       Page <span id="current-page">1</span> of <span id="total-pages">{totalPages}</span> · {tools.length} tools
     </p>
+    </div>
   </section>
 </BaseLayout>
 
