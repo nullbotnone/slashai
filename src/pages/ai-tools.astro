@@ -179,18 +179,18 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: 1.25rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: border-color 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     opacity: 0;
-    transform: translateY(25px);
+    transform: translateY(30px) scale(0.97);
     position: relative;
     overflow: hidden;
   }
 
   .tool-card.animate-in {
-    animation: toolCardIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    animation: toolCardIn 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
   }
 
   .tool-card::after {
@@ -219,7 +219,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   }
 
   @keyframes toolCardIn {
-    to { opacity: 1; transform: translateY(0); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
   @keyframes gradientSlide {
@@ -524,19 +524,19 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   // Initial render
   renderPage();
 
-  // Scroll animation observer
+  // Scroll animation observer — cards animate in gradually as you scroll
+  let cardIndex = 0;
   const scrollObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const card = entry.target;
-        const siblings = Array.from(card.parentElement.children).filter(c => !c.classList.contains('hidden'));
-        const idx = siblings.indexOf(card);
-        card.style.animationDelay = `${(idx % 12) * 60}ms`;
-        card.classList.add('animate-in');
-        scrollObserver.unobserve(card);
-      }
+    const visible = entries.filter(e => e.isIntersecting).sort((a, b) => {
+      return a.boundingClientRect.top - b.boundingClientRect.top;
     });
-  }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+    visible.forEach((entry, i) => {
+      const card = entry.target;
+      card.style.animationDelay = `${i * 100}ms`;
+      card.classList.add('animate-in');
+      scrollObserver.unobserve(card);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
   function observeCards() {
     document.querySelectorAll('.tool-card:not(.animate-in)').forEach(card => {
