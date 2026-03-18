@@ -5,11 +5,11 @@ import tools from '../../data/tools.json';
 const toolsJson = JSON.stringify(tools);
 ---
 
-<BaseLayout title="Compare AI Tools" description="Select AI tools to compare side-by-side. Pricing, features, pros, cons — all in one view.">
+<BaseLayout title="Compare AI Tools" description="Pick two AI tools and see how they stack up.">
   <section class="hero">
     <div class="container">
       <h1>Compare <span class="gradient-text">AI Tools</span></h1>
-      <p>Pick up to 3 tools to compare side-by-side.</p>
+      <p>Pick two tools. See everything side by side.</p>
     </div>
   </section>
 
@@ -17,25 +17,26 @@ const toolsJson = JSON.stringify(tools);
     <div class="container">
       <!-- Picker -->
       <div id="picker">
-        <div class="picker-header">
-          <h2>Select tools to compare</h2>
-          <span class="pick-count" id="pick-count">0 / 3 selected</span>
+        <input type="text" id="filter" placeholder="Search tools..." class="search-bar" autocomplete="off" />
+        <div class="tool-scroll" id="tool-scroll">
+          <div class="tool-list" id="tool-list"></div>
         </div>
-        <input type="text" id="filter" placeholder="🔍 Filter by name, category, or tag..." class="blog-search" />
-        <div class="pick-list" id="pick-list"></div>
-        <div class="picker-footer hidden" id="picker-footer">
-          <button class="compare-btn" id="compare-btn">Compare selected →</button>
+        <div class="picker-action hidden" id="picker-action">
+          <button class="go-btn" id="go-btn">Compare →</button>
         </div>
       </div>
 
       <!-- Results -->
       <div class="results hidden" id="results">
-        <div class="results-bar">
-          <button class="back-btn" id="back-btn">← Change selection</button>
+        <div class="results-top">
+          <button class="back-btn" id="back-btn">← Pick different tools</button>
         </div>
+
+        <!-- Cards -->
         <div class="card-grid" id="result-cards"></div>
-        <h3 style="font-size: 1.1rem; margin: 2rem 0 0.75rem;">Side-by-side details</h3>
-        <div class="table-scroll">
+
+        <!-- Detail table -->
+        <div class="detail-wrap">
           <table class="detail-table" id="detail-table"></table>
         </div>
       </div>
@@ -44,301 +45,318 @@ const toolsJson = JSON.stringify(tools);
 </BaseLayout>
 
 <style>
-  .picker-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.75rem;
+  .search-bar {
+    width: 100%;
+    padding: 0.9rem 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-bg-card);
+    color: var(--color-text);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    transition: border-color 0.2s, box-shadow 0.2s;
+    margin-bottom: 1rem;
   }
 
-  .picker-header h2 { font-size: 1.2rem; }
-
-  .pick-count {
-    font-size: 0.8rem;
-    color: var(--color-text-secondary);
-    font-weight: 600;
-    background: var(--color-bg-secondary);
-    padding: 0.3rem 0.75rem;
-    border-radius: 20px;
+  .search-bar:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.08);
   }
 
-  /* Scrollable tool list */
-  .pick-list {
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    max-height: 600px;
+  /* Scrollable list */
+  .tool-scroll {
+    max-height: 560px;
     overflow-y: auto;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 0.5rem;
+    border-radius: 12px;
     background: var(--color-bg-card);
   }
 
-  .pick-list::-webkit-scrollbar { width: 6px; }
-  .pick-list::-webkit-scrollbar-track { background: transparent; }
-  .pick-list::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
-  .pick-list::-webkit-scrollbar-thumb:hover { background: var(--color-accent); }
+  .tool-scroll::-webkit-scrollbar { width: 5px; }
+  .tool-scroll::-webkit-scrollbar-track { background: transparent; }
+  .tool-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
 
-  .pick-row {
+  .tool-list {
+    padding: 0.25rem;
+  }
+
+  /* Each row */
+  .tool-row {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.7rem 1rem;
-    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border: 1px solid transparent;
+    transition: background 0.2s, transform 0.15s;
     user-select: none;
+    gap: 0.75rem;
   }
 
-  .pick-row:hover {
+  .tool-row:hover {
     background: var(--color-bg-secondary);
-    border-color: var(--color-border);
-    transform: translateX(4px);
+    transform: translateX(3px);
   }
 
-  .pick-row.selected {
+  .tool-row.selected {
     background: var(--color-accent-light);
-    border-color: var(--color-accent);
   }
 
-  .pick-row.disabled {
-    opacity: 0.35;
-    cursor: not-allowed;
+  .tool-row.disabled {
+    opacity: 0.3;
+    pointer-events: none;
   }
 
-  .pick-row.disabled:hover {
-    transform: none;
-    background: transparent;
-    border-color: transparent;
-  }
-
-  .pick-tick {
+  /* Checkbox circle */
+  .tool-check {
     width: 20px;
     height: 20px;
     border-radius: 50%;
     border: 2px solid var(--color-border);
+    flex-shrink: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    font-size: 0.7rem;
+    font-size: 0.65rem;
     color: transparent;
     transition: all 0.2s;
   }
 
-  .pick-row.selected .pick-tick {
+  .tool-row.selected .tool-check {
     background: var(--color-accent);
     border-color: var(--color-accent);
     color: white;
   }
 
-  .pick-name {
+  /* Name — single line, never wraps */
+  .tool-name {
     font-weight: 600;
     font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     flex: 1;
+    min-width: 0;
   }
 
-  .pick-cat {
+  .tool-meta {
     font-size: 0.75rem;
     color: var(--color-text-secondary);
+    white-space: nowrap;
     flex-shrink: 0;
   }
 
-  .pick-badge {
+  .tool-badge {
     font-size: 0.65rem;
     font-weight: 700;
-    padding: 0.15rem 0.45rem;
+    padding: 0.15rem 0.5rem;
     border-radius: 20px;
+    white-space: nowrap;
     flex-shrink: 0;
   }
 
-  .pick-badge.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-  .pick-badge.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-  .pick-badge.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-  .pick-badge.pay-per-use { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+  .tool-badge.free { background: rgba(34, 197, 94, 0.12); color: #22c55e; }
+  .tool-badge.freemium { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
+  .tool-badge.paid { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+  .tool-badge.pay-per-use { background: rgba(168, 85, 247, 0.12); color: #a855f7; }
 
-  /* Footer */
-  .picker-footer { text-align: center; margin-top: 1.25rem; }
-  .picker-footer.hidden { display: none; }
+  /* Action */
+  .picker-action { text-align: center; margin-top: 1.5rem; }
+  .picker-action.hidden { display: none; }
 
-  .compare-btn {
+  .go-btn {
     background: linear-gradient(135deg, var(--color-accent), #ec4899);
     color: white;
     border: none;
     border-radius: 50px;
-    padding: 0.75rem 2rem;
-    font-size: 0.95rem;
+    padding: 0.8rem 2.5rem;
+    font-size: 1rem;
     font-weight: 700;
     cursor: pointer;
     transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
     font-family: var(--font-sans);
   }
 
-  .compare-btn:hover {
+  .go-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
   }
 
   /* Results */
   .results.hidden { display: none; }
 
-  .results-bar {
+  .results-top {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 1rem;
   }
 
   .back-btn {
-    background: var(--color-bg-secondary);
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 0.5rem 1rem;
+    background: none;
+    border: none;
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-text-secondary);
+    color: var(--color-accent);
     font-family: var(--font-sans);
-    transition: all 0.2s;
+    transition: opacity 0.2s;
+    padding: 0;
   }
 
-  .back-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .back-btn:hover { opacity: 0.7; }
 
-  /* Detail table */
-  .table-scroll {
-    overflow-x: auto;
+  /* Detail table — Apple-inspired clean layout */
+  .detail-wrap {
+    margin-top: 2rem;
     border: 1px solid var(--color-border);
-    border-radius: var(--radius);
+    border-radius: 12px;
+    overflow: hidden;
     background: var(--color-bg-card);
   }
 
   .detail-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.9rem;
   }
 
   .detail-table th,
   .detail-table td {
-    padding: 0.75rem 1rem;
+    padding: 1rem 1.5rem;
     text-align: left;
     vertical-align: top;
+    font-size: 0.9rem;
+    line-height: 1.5;
   }
 
-  /* Row separators — thick horizontal lines between each property */
+  /* Every row separated by a thin line */
   .detail-table tbody tr {
-    border-bottom: 2px solid var(--color-border);
+    border-top: 1px solid var(--color-border);
   }
 
-  .detail-table tbody tr:last-child {
-    border-bottom: none;
-  }
-
-  .detail-table thead th {
-    background: var(--color-bg-secondary);
-    border-bottom: 3px solid var(--color-border);
-    font-weight: 700;
-    font-size: 1rem;
-    position: sticky;
-    top: 0;
-    z-index: 2;
-  }
-
-  .detail-table thead th:first-child {
-    position: sticky;
-    left: 0;
-    z-index: 3;
-  }
-
+  /* Label column */
   .detail-table tbody th {
-    font-weight: 700;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: var(--color-accent);
-    background: var(--color-bg);
-    width: 100px;
+    font-weight: 600;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    width: 120px;
     white-space: nowrap;
-    position: sticky;
-    left: 0;
-    z-index: 1;
-    border-right: 2px solid var(--color-border);
+    background: var(--color-bg);
+    padding-left: 1.5rem;
   }
 
+  /* Header */
+  .detail-table thead th {
+    background: var(--color-bg);
+    font-weight: 700;
+    font-size: 1.05rem;
+    padding: 1.25rem 1.5rem;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .detail-table thead a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .detail-table thead a:hover { color: var(--color-accent); }
+
+  .header-sub {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-top: 0.25rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    width: fit-content;
+  }
+
+  .header-sub.free { background: rgba(34, 197, 94, 0.12); color: #22c55e; }
+  .header-sub.freemium { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
+  .header-sub.paid { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
+  .header-sub.pay-per-use { background: rgba(168, 85, 247, 0.12); color: #a855f7; }
+
+  /* Cell content */
   .detail-table td ul {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 
-  .detail-table td li { padding: 0.15rem 0; line-height: 1.4; }
+  .detail-table td li {
+    padding: 0.2rem 0;
+    line-height: 1.5;
+  }
+
   .pro::before { content: '✓ '; color: #22c55e; font-weight: 700; }
   .con::before { content: '✗ '; color: #ef4444; font-weight: 700; }
-  .best-for { font-weight: 600; color: var(--color-accent); }
+  .val-accent { color: var(--color-accent); font-weight: 600; }
 
-  .tag-pill {
+  .cell-tags span {
     display: inline-block;
     background: var(--color-bg-secondary);
     color: var(--color-text-secondary);
-    padding: 0.15rem 0.4rem;
+    padding: 0.15rem 0.45rem;
     border-radius: 4px;
     font-size: 0.72rem;
     margin: 0.1rem;
   }
 
-  .link-btn {
+  .visit-link {
     display: inline-block;
     background: linear-gradient(135deg, var(--color-accent), #ec4899);
     color: white !important;
-    padding: 0.45rem 1rem;
+    padding: 0.5rem 1.2rem;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     text-decoration: none;
     transition: all 0.3s;
-    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
   }
 
-  .link-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(124, 58, 237, 0.4); }
+  .visit-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
+  }
 
-  .review-link {
+  .rev-link {
     display: block;
-    font-size: 0.76rem;
+    font-size: 0.78rem;
     color: var(--color-text-secondary);
     text-decoration: none;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
   }
 
-  .review-link:hover { color: var(--color-accent); }
+  .rev-link:hover { color: var(--color-accent); }
 
   @media (max-width: 768px) {
-    .pick-list { max-height: 400px; }
-    .detail-table tbody th { font-size: 0.7rem; width: 80px; }
-    .detail-table th, .detail-table td { padding: 0.5rem 0.6rem; font-size: 0.8rem; }
+    .tool-scroll { max-height: 400px; }
+    .tool-meta { display: none; }
+    .detail-table th, .detail-table td { padding: 0.7rem 1rem; font-size: 0.82rem; }
+    .detail-table tbody th { width: 90px; font-size: 0.72rem; padding-left: 1rem; }
   }
 </style>
 
 <script define:vars={{ toolsJson }}>
-  var allTools = JSON.parse(toolsJson).sort(function(a, b) { return a.name.localeCompare(b.name); });
+  var tools = JSON.parse(toolsJson).sort(function(a, b) { return a.name.localeCompare(b.name); });
   var picked = [];
-  var MAX = 3;
+  var MAX = 2;
 
   var filterEl = document.getElementById('filter');
-  var listEl = document.getElementById('pick-list');
-  var countEl = document.getElementById('pick-count');
-  var footerEl = document.getElementById('picker-footer');
-  var compareBtn = document.getElementById('compare-btn');
+  var listEl = document.getElementById('tool-list');
+  var actionEl = document.getElementById('picker-action');
+  var goBtn = document.getElementById('go-btn');
   var pickerEl = document.getElementById('picker');
   var resultsEl = document.getElementById('results');
   var backBtn = document.getElementById('back-btn');
   var cardsEl = document.getElementById('result-cards');
   var tableEl = document.getElementById('detail-table');
 
-  function renderList() {
+  function render() {
     var q = (filterEl.value || '').toLowerCase();
-    var filtered = allTools.filter(function(t) {
+    var filtered = tools.filter(function(t) {
       if (!q) return true;
       return t.name.toLowerCase().indexOf(q) > -1 ||
              t.category.toLowerCase().indexOf(q) > -1 ||
@@ -346,21 +364,20 @@ const toolsJson = JSON.stringify(tools);
     });
 
     listEl.innerHTML = filtered.map(function(t) {
-      var isPicked = picked.indexOf(t.slug) > -1;
-      var isFull = picked.length >= MAX && !isPicked;
+      var on = picked.indexOf(t.slug) > -1;
+      var full = picked.length >= MAX && !on;
       var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
-      return '<div class="pick-row' + (isPicked ? ' selected' : '') + (isFull ? ' disabled' : '') + '" data-slug="' + t.slug + '">' +
-        '<div class="pick-tick">' + (isPicked ? '✓' : '') + '</div>' +
-        '<span class="pick-name">' + t.name + '</span>' +
-        '<span class="pick-cat">' + t.category + '</span>' +
-        '<span class="pick-badge ' + cls + '">' + t.pricing + '</span>' +
+      return '<div class="tool-row' + (on ? ' selected' : '') + (full ? ' disabled' : '') + '" data-slug="' + t.slug + '">' +
+        '<div class="tool-check">' + (on ? '✓' : '') + '</div>' +
+        '<span class="tool-name">' + t.name + '</span>' +
+        '<span class="tool-meta">' + t.category + '</span>' +
+        '<span class="tool-badge ' + cls + '">' + t.pricing + '</span>' +
       '</div>';
     }).join('');
 
-    countEl.textContent = picked.length + ' / ' + MAX + ' selected';
-    footerEl.classList.toggle('hidden', picked.length < 2);
+    actionEl.classList.toggle('hidden', picked.length < 2);
 
-    listEl.querySelectorAll('.pick-row').forEach(function(el) {
+    listEl.querySelectorAll('.tool-row').forEach(function(el) {
       el.addEventListener('click', function() {
         var slug = el.dataset.slug;
         var idx = picked.indexOf(slug);
@@ -369,14 +386,14 @@ const toolsJson = JSON.stringify(tools);
         } else if (picked.length < MAX) {
           picked.push(slug);
         }
-        renderList();
+        render();
       });
     });
   }
 
-  filterEl.addEventListener('input', renderList);
+  filterEl.addEventListener('input', render);
 
-  compareBtn.addEventListener('click', function() {
+  goBtn.addEventListener('click', function() {
     if (picked.length < 2) return;
     pickerEl.classList.add('hidden');
     resultsEl.classList.remove('hidden');
@@ -388,13 +405,13 @@ const toolsJson = JSON.stringify(tools);
   backBtn.addEventListener('click', function() {
     resultsEl.classList.add('hidden');
     pickerEl.classList.remove('hidden');
-    renderList();
+    render();
   });
 
   function buildCards() {
-    var tools = picked.map(function(s) { return allTools.find(function(t) { return t.slug === s; }); });
-    cardsEl.innerHTML = tools.map(function(t, i) {
-      return '<a href="/tools/' + t.slug + '/" class="card" style="text-decoration: none; color: inherit; animation: cardFadeIn 0.45s ease ' + (i * 0.06) + 's forwards;">' +
+    var ts = picked.map(function(s) { return tools.find(function(t) { return t.slug === s; }); });
+    cardsEl.innerHTML = ts.map(function(t, i) {
+      return '<a href="/tools/' + t.slug + '/" class="card" style="text-decoration: none; color: inherit; animation: cardFadeIn 0.45s ease ' + (i * 0.08) + 's forwards;">' +
         '<h3>' + t.name + '</h3>' +
         '<p>' + t.description + '</p>' +
         '<span class="tag">' + t.category + '</span>' +
@@ -405,14 +422,14 @@ const toolsJson = JSON.stringify(tools);
   }
 
   function buildTable() {
-    var tools = picked.map(function(s) { return allTools.find(function(t) { return t.slug === s; }); });
+    var ts = picked.map(function(s) { return tools.find(function(t) { return t.slug === s; }); });
 
     // Header
     var h = '<thead><tr><th></th>';
-    tools.forEach(function(t) {
+    ts.forEach(function(t) {
       var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
-      h += '<th><a href="/tools/' + t.slug + '/" style="color: var(--color-text); text-decoration: none; font-weight: 700;">' + t.name + '</a>' +
-        '<div style="margin-top: 0.2rem;"><span class="pick-badge ' + cls + '">' + t.pricing + '</span></div></th>';
+      h += '<th><a href="/tools/' + t.slug + '/">' + t.name + '</a>' +
+        '<span class="header-sub ' + cls + '">' + t.pricing + '</span></th>';
     });
     h += '</tr></thead><tbody>';
 
@@ -420,7 +437,7 @@ const toolsJson = JSON.stringify(tools);
       { label: 'Price', fn: function(t) { return t.price || t.pricing; } },
       { label: 'Category', fn: function(t) { return t.category; } },
       { label: 'Released', fn: function(t) { return t.released || '—'; } },
-      { label: 'Best For', fn: function(t) { return '<span class="best-for">' + (t.bestFor || '—') + '</span>'; }, raw: true },
+      { label: 'Best For', fn: function(t) { return '<span class="val-accent">' + (t.bestFor || '—') + '</span>'; }, raw: true },
       { label: 'Pros', fn: function(t) {
         return '<ul>' + (t.pros || []).map(function(p) { return '<li class="pro">' + p + '</li>'; }).join('') + '</ul>';
       }, raw: true },
@@ -428,17 +445,17 @@ const toolsJson = JSON.stringify(tools);
         return '<ul>' + (t.cons || []).map(function(c) { return '<li class="con">' + c + '</li>'; }).join('') + '</ul>';
       }, raw: true },
       { label: 'Tags', fn: function(t) {
-        return (t.tags || []).map(function(tag) { return '<span class="tag-pill">' + tag + '</span>'; }).join('');
+        return '<span class="cell-tags">' + (t.tags || []).map(function(tag) { return '<span>' + tag + '</span>'; }).join('') + '</span>';
       }, raw: true },
-      { label: 'Visit', fn: function(t) {
-        return '<a class="link-btn" href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener">Visit ↗</a>' +
-          '<a class="review-link" href="/tools/' + t.slug + '/">Read review →</a>';
+      { label: '', fn: function(t) {
+        return '<a class="visit-link" href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener">Visit ' + t.name + ' ↗</a>' +
+          '<a class="rev-link" href="/tools/' + t.slug + '/">Read full review →</a>';
       }, raw: true },
     ];
 
     rows.forEach(function(row) {
       h += '<tr><th>' + row.label + '</th>';
-      tools.forEach(function(t) { h += '<td>' + row.fn(t) + '</td>'; });
+      ts.forEach(function(t) { h += '<td>' + row.fn(t) + '</td>'; });
       h += '</tr>';
     });
 
@@ -446,5 +463,35 @@ const toolsJson = JSON.stringify(tools);
     tableEl.innerHTML = h;
   }
 
-  renderList();
+  filterEl.addEventListener('input', render);
+
+  listEl.addEventListener('click', function(e) {
+    var row = e.target.closest('.tool-row');
+    if (!row) return;
+    var slug = row.dataset.slug;
+    var idx = picked.indexOf(slug);
+    if (idx > -1) {
+      picked.splice(idx, 1);
+    } else if (picked.length < MAX) {
+      picked.push(slug);
+    }
+    render();
+  });
+
+  goBtn.addEventListener('click', function() {
+    if (picked.length < 2) return;
+    pickerEl.classList.add('hidden');
+    resultsEl.classList.remove('hidden');
+    buildCards();
+    buildTable();
+    resultsEl.scrollIntoView({ behavior: 'smooth' });
+  });
+
+  backBtn.addEventListener('click', function() {
+    resultsEl.classList.add('hidden');
+    pickerEl.classList.remove('hidden');
+    render();
+  });
+
+  render();
 </script>
