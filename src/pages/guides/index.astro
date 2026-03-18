@@ -17,7 +17,7 @@ const guides = (await getCollection('guides'))
   <section class="container">
     <div class="card-grid">
       {guides.map((post) => (
-        <a href={`/guides/${post.slug}/`} class="card" style="text-decoration: none; color: inherit;">
+        <a href={`/guides/${post.id.replace(/\.md$/, "")}/`} class="card" style="text-decoration: none; color: inherit;">
           <h3>{post.data.title}</h3>
           <p>{post.data.description}</p>
         </a>

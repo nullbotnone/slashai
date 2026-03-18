@@ -17,7 +17,7 @@ const comparisons = (await getCollection('comparisons'))
   <section class="container">
     <div class="card-grid">
       {comparisons.map((post) => (
-        <a href={`/comparisons/${post.slug}/`} class="card" style="text-decoration: none; color: inherit;">
+        <a href={`/comparisons/${post.id.replace(/\.md$/, "")}/`} class="card" style="text-decoration: none; color: inherit;">
           <h3>{post.data.title}</h3>
           <p>{post.data.description}</p>
           <span class="tag">{post.data.productA}</span>

@@ -17,7 +17,7 @@ const roundups = (await getCollection('roundups'))
   <section class="container">
     <div class="card-grid">
       {roundups.map((post) => (
-        <a href={`/roundups/${post.slug}/`} class="card" style="text-decoration: none; color: inherit;">
+        <a href={`/roundups/${post.id.replace(/\.md$/, "")}/`} class="card" style="text-decoration: none; color: inherit;">
           <h3>{post.data.title}</h3>
           <p>{post.data.description}</p>
           <span class="tag">{post.data.itemCount} tools</span>

@@ -5,7 +5,7 @@ import ArticleLayout from '../../layouts/ArticleLayout.astro';
 export async function getStaticPaths() {
   const reviews = await getCollection('reviews');
   return reviews.map((post) => ({
-    params: { slug: post.slug },
+    params: { slug: post.id.replace(/\.md$/, '') },
     props: { post },
   }));
 }

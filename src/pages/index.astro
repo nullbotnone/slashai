@@ -23,9 +23,10 @@ const recentPosts = [...allReviews, ...allRoundups, ...allComparisons]
     <h2 style="margin-bottom: 1rem; font-size: 1.3rem;">Latest Articles</h2>
     <div class="card-grid">
       {recentPosts.map((post) => {
-        const path = post.collection === 'reviews' ? `/reviews/${post.slug}/` :
-                     post.collection === 'roundups' ? `/roundups/${post.slug}/` :
-                     `/comparisons/${post.slug}/`;
+        const slug = post.id.replace(/\.md$/, '');
+        const path = post.collection === 'reviews' ? `/reviews/${slug}/` :
+                     post.collection === 'roundups' ? `/roundups/${slug}/` :
+                     `/comparisons/${slug}/`;
         const tag = post.collection === 'reviews' ? 'Review' :
                     post.collection === 'roundups' ? 'Roundup' : 'Comparison';
         return (
