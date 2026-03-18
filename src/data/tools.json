@@ -1389,7 +1389,7 @@
     "slug": "openclaw",
     "description": "Free open-source AI agent platform with 100+ built-in skills. Connect AI to your apps, browser, and system tools.",
     "longDescription": "OpenClaw is the open-source AI agent platform that went viral in early 2026. It connects AI models to your applications, browser, and system tools — letting you automate workflows, manage files, send emails, and control APIs with simple chat commands. Over 100,000 GitHub stars. Free and open-source with a massive community of skill contributors.",
-    "url": "https://github.com/openclaw/openclaw",
+    "url": "https://openclaw.ai",
     "affiliateUrl": null,
     "category": "AI Agents",
     "pricing": "Free",

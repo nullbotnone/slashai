@@ -48,7 +48,14 @@ const tool = tools.find(t => t.name.toLowerCase() === post.data.toolName.toLower
       <a href={tool.affiliateUrl || tool.url} target="_blank" rel="noopener">Website</a>
       <span class="link-sep">·</span>
       <a href={`/tools/${tool.slug}/`}>Our Review</a>
-      {tool.url && <><span class="link-sep">·</span><a href={tool.slug === 'n8n' ? 'https://docs.n8n.io/' : `${tool.url}/docs`} target="_blank" rel="noopener">Docs</a></>}
+      {(() => {
+        const docsUrls = {
+          'n8n': 'https://docs.n8n.io/',
+          'openclaw': 'https://docs.openclaw.ai/',
+        };
+        const docsUrl = docsUrls[tool.slug] || `${tool.url}/docs`;
+        return <><span class="link-sep">·</span><a href={docsUrl} target="_blank" rel="noopener">Docs</a></>;
+      })()}
     </div>
   )}
   
