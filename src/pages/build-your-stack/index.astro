@@ -215,6 +215,19 @@ const budgetsJson = JSON.stringify(budgets);
     border-left: 3px solid var(--color-accent);
   }
 
+  /* Override global card animation — fade in via JS instead */
+  #stack-grid .card {
+    animation: none;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  #stack-grid .card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
   .stack-total {
     margin-top: 1.5rem;
     padding: 1.25rem 1.5rem;
@@ -348,10 +361,9 @@ const budgetsJson = JSON.stringify(budgets);
 
     emptyEl.classList.add('hidden');
 
-    // Use exact same markup as site-wide cards
+    // Render cards using exact site-wide markup
     gridEl.innerHTML = stack.map(function(tool, i) {
-      var delay = (i * 0.03).toFixed(2);
-      return '<a href="/tools/' + tool.slug + '/" class="card" style="text-decoration: none; color: inherit; animation-delay: ' + delay + 's;">' +
+      return '<a href="/tools/' + tool.slug + '/" class="card" style="text-decoration: none; color: inherit;">' +
         '<h3>' + tool.name + '</h3>' +
         '<p>' + tool.description + '</p>' +
         '<span class="tag">' + tool.category + '</span>' +
@@ -359,6 +371,14 @@ const budgetsJson = JSON.stringify(budgets);
         '<span class="tag">' + tool.why + '</span>' +
       '</a>';
     }).join('');
+
+    // Fade in cards one by one
+    var cards = gridEl.querySelectorAll('.card');
+    cards.forEach(function(card, i) {
+      setTimeout(function() {
+        card.classList.add('fade-in');
+      }, i * 60);
+    });
 
     totalEl.innerHTML = '<strong>' + (totalCost === 0 ? 'Free' : '$' + totalCost + '/mo') + '</strong>' +
       '<p>Total estimated monthly cost for your ' + roleData.label.toLowerCase() + ' AI stack</p>';

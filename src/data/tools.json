@@ -1831,5 +1831,110 @@
       "freelancer"
     ],
     "featured": false
+  },
+  {
+    "name": "Google Workspace Studio",
+    "slug": "google-workspace-studio",
+    "description": "Free visual automation builder for Gmail, Sheets, Forms, and Drive — create AI-powered workflows without code.",
+    "longDescription": "Google Workspace Studio is a free automation platform that lets you build AI-powered workflows inside Gmail, Google Sheets, Forms, Docs, and Drive. Create flows that triage emails, summarize form submissions, extract data, and trigger actions — all using a visual drag-and-drop builder. Uses Google's own AI models for processing, so no third-party API keys needed. Still in early access but already powerful enough to replace basic Zapier workflows for Google-centric businesses.",
+    "url": "https://studio.workspace.google.com",
+    "affiliateUrl": null,
+    "category": "Automation",
+    "pricing": "Free",
+    "price": "Free (Google Workspace required)",
+    "released": "March 2026",
+    "added": "2026-03-18",
+    "pros": [
+      "Completely free with Google Workspace",
+      "Native integration with Gmail, Sheets, Drive",
+      "No third-party accounts needed",
+      "Visual builder is intuitive"
+    ],
+    "cons": [
+      "Early access — features still rough",
+      "Limited to Google ecosystem only",
+      "Flows can fail silently",
+      "Sparse documentation"
+    ],
+    "bestFor": "Solopreneurs on Google Workspace who want free email and form automation.",
+    "affiliateCommission": null,
+    "tags": [
+      "automation",
+      "google",
+      "email",
+      "no-code",
+      "productivity"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Manus",
+    "slug": "manus",
+    "description": "AI agent platform with desktop app for local file management, terminal commands, and autonomous task execution.",
+    "longDescription": "Manus is a versatile AI agent platform that handles complex, multi-step tasks autonomously. The My Computer desktop app gives the agent direct access to your local machine — read, sort, and edit files, run terminal commands, build apps, and manage documents. Can tap into your hardware during idle time to run background jobs. Meta acquired Manus in December 2025 for $2B, bringing significant resources for development. The cloud-based version works through your browser; the desktop app adds local machine access.",
+    "url": "https://manus.im",
+    "affiliateUrl": null,
+    "category": "AI Agents",
+    "pricing": "Freemium",
+    "price": "Free tier / Paid plans for heavy usage",
+    "released": "2024",
+    "added": "2026-03-18",
+    "pros": [
+      "Powerful multi-step task execution",
+      "Desktop app for local file management",
+      "Uses idle hardware for background jobs",
+      "Backed by Meta's resources"
+    ],
+    "cons": [
+      "Meta ownership raises privacy questions",
+      "Cloud tier has usage limits",
+      "Learning curve for complex workflows",
+      "Desktop app still maturing"
+    ],
+    "bestFor": "Solopreneurs who need an AI agent for file management, data organization, and multi-step digital tasks.",
+    "affiliateCommission": null,
+    "tags": [
+      "ai agents",
+      "automation",
+      "desktop",
+      "productivity",
+      "file management"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Mistral Small 4",
+    "slug": "mistral-small-4",
+    "description": "Open-source AI model combining reasoning, coding, and vision — free to run locally or via affordable API providers.",
+    "longDescription": "Mistral Small 4 is an open-source model from French AI lab Mistral that merges reasoning, coding, and vision capabilities into a single system. Free to download and run locally, or accessible through cheap API providers. A practical alternative to OpenAI and Anthropic for cost-conscious freelancers who want AI capabilities without subscription lock-in. Part of Mistral's broader push that includes Forge (enterprise model training) and Leanstral (efficient model variant).",
+    "url": "https://mistral.ai/news/mistral-small-4",
+    "affiliateUrl": null,
+    "category": "AI Models",
+    "pricing": "Free",
+    "price": "Free (open-source)",
+    "released": "March 2026",
+    "added": "2026-03-18",
+    "pros": [
+      "Free and open-source",
+      "Combines reasoning, coding, and vision",
+      "No subscription lock-in",
+      "Run locally for full privacy"
+    ],
+    "cons": [
+      "Requires technical setup to run locally",
+      "API providers vary in quality",
+      "Not as capable as top frontier models",
+      "Smaller community than OpenAI/Anthropic"
+    ],
+    "bestFor": "Cost-conscious solopreneurs who want AI capabilities without monthly subscriptions.",
+    "affiliateCommission": null,
+    "tags": [
+      "ai models",
+      "open source",
+      "coding",
+      "cost-effective",
+      "privacy"
+    ],
+    "featured": false
   }
 ]
