@@ -9,7 +9,7 @@
 :root {
   --color-bg: #fafafa;
   --color-bg-secondary: #f0f0f0;
-  --color-bg-card: #fafafa;
+  --color-bg-card: #ffffff;
   --color-text: #1a1a1a;
   --color-text-secondary: #666666;
   --color-accent: #7c3aed;
@@ -199,6 +199,31 @@ img {
 @keyframes heroGlow {
   0% { transform: translate(0, 0) rotate(0deg); }
   100% { transform: translate(-5%, 5%) rotate(3deg); }
+}
+
+/* Section glow — same gradient style as hero */
+.section-glow {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-glow::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 30% 50%, var(--color-accent-light) 0%, transparent 50%),
+              radial-gradient(circle at 70% 50%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  animation: heroGlow 8s ease-in-out infinite alternate;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.section-glow > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
