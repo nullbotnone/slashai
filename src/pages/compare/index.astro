@@ -200,6 +200,8 @@ const toolsJson = JSON.stringify(tools);
 
   .tool-row:not(.selected):not(.disabled):hover {
     background: var(--color-bg-secondary);
+    border-left: 3px solid var(--color-accent);
+    padding-left: calc(1rem - 3px);
   }
 
   .tool-row.selected {
