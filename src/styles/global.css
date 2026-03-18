@@ -92,7 +92,6 @@ img {
   top: 0;
   background: var(--color-bg);
   z-index: 100;
-  backdrop-filter: blur(10px);
   transition: background 0.3s ease;
 }
 
@@ -579,8 +578,18 @@ img {
     right: 0;
     bottom: 0;
     background: var(--color-bg);
+    backdrop-filter: none;
     z-index: 100;
     padding: 5rem 2rem 2rem;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #main-nav.open {
+    display: flex;
+  }
+
+  #main-nav .nav-links {
+    width: 100%;
   }
   
   #main-nav.open {
