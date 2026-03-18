@@ -184,19 +184,14 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     flex-direction: column;
     gap: 0.75rem;
     opacity: 0;
-    transform: translateY(15px);
-    animation: toolCardIn 0.4s ease forwards;
+    transform: translateY(25px);
     position: relative;
     overflow: hidden;
   }
 
-  .tool-card:nth-child(1) { animation-delay: 0.03s; }
-  .tool-card:nth-child(2) { animation-delay: 0.06s; }
-  .tool-card:nth-child(3) { animation-delay: 0.09s; }
-  .tool-card:nth-child(4) { animation-delay: 0.12s; }
-  .tool-card:nth-child(5) { animation-delay: 0.15s; }
-  .tool-card:nth-child(6) { animation-delay: 0.18s; }
-  .tool-card:nth-child(n+7) { animation-delay: 0.2s; }
+  .tool-card.animate-in {
+    animation: toolCardIn 0.5s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  }
 
   .tool-card::after {
     content: '';
@@ -516,11 +511,52 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   prevBtn.onclick = () => goToPage(currentPage - 1);
   nextBtn.onclick = () => goToPage(currentPage + 1);
 
-  searchInput.addEventListener('input', () => { currentPage = 1; renderPage(); });
-  categoryFilter.addEventListener('change', () => { currentPage = 1; renderPage(); });
-  pricingFilter.addEventListener('change', () => { currentPage = 1; renderPage(); });
-  sortSelect.addEventListener('change', () => renderPage());
+  function renderAndObserve() {
+    renderPage();
+    setTimeout(observeCards, 50);
+  }
+
+  searchInput.addEventListener('input', () => { currentPage = 1; renderAndObserve(); });
+  categoryFilter.addEventListener('change', () => { currentPage = 1; renderAndObserve(); });
+  pricingFilter.addEventListener('change', () => { currentPage = 1; renderAndObserve(); });
+  sortSelect.addEventListener('change', () => renderAndObserve());
 
   // Initial render
   renderPage();
+
+  // Scroll animation observer
+  const scrollObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const siblings = Array.from(card.parentElement.children).filter(c => !c.classList.contains('hidden'));
+        const idx = siblings.indexOf(card);
+        card.style.animationDelay = `${(idx % 12) * 60}ms`;
+        card.classList.add('animate-in');
+        scrollObserver.unobserve(card);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+
+  function observeCards() {
+    document.querySelectorAll('.tool-card:not(.animate-in)').forEach(card => {
+      scrollObserver.observe(card);
+    });
+  }
+
+  // Re-observe on any filter/pagination change
+  const origGoToPage = goToPage;
+  goToPage = function(p) {
+    origGoToPage(p);
+    setTimeout(observeCards, 50);
+  };
+
+  // Also observe after initial filter changes
+  const origSearch = searchInput.oninput;
+  const origCategory = categoryFilter.onchange;
+  const origPricing = pricingFilter.onchange;
+  const origSort = sortSelect.onchange;
+
+  // Initial observe
+  setTimeout(observeCards, 100);
 </script>
