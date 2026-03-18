@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const agents = (await getCollection('agents'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="AI Agents" description="AI agents that work autonomously for solopreneurs and freelancers.">
+  <section class="hero">
+    <div class="container">
+      <h1>AI <span class="gradient-text">Agents</span></h1>
+      <p>AI agents that plan, decide, and execute tasks autonomously — your virtual team that works 24/7.</p>
+    </div>
+  </section>
+  
+  <section class="container">
+    <div class="card-grid">
+      {agents.map((post) => (
+        <a href={`/agents/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
+          <h3>{post.data.title}</h3>
+          <p>{post.data.description}</p>
+          <span class="tag">AI Agents</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

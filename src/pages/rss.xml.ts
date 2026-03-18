@@ -6,9 +6,10 @@ export async function GET(context: APIContext) {
   const reviews = await getCollection('reviews');
   const roundups = await getCollection('roundups');
   const comparisons = await getCollection('comparisons');
+  const agents = await getCollection('agents');
   const guides = await getCollection('guides');
 
-  const allPosts = [...reviews, ...roundups, ...comparisons, ...guides]
+  const allPosts = [...reviews, ...roundups, ...comparisons, ...agents, ...guides]
     .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
   return rss({

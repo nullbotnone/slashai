@@ -5,8 +5,9 @@ import { getCollection } from 'astro:content';
 const allReviews = await getCollection('reviews');
 const allRoundups = await getCollection('roundups');
 const allComparisons = await getCollection('comparisons');
+const allAgents = await getCollection('agents');
 
-const recentPosts = [...allReviews, ...allRoundups, ...allComparisons]
+const recentPosts = [...allReviews, ...allRoundups, ...allComparisons, ...allAgents]
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 6);
 ---
@@ -24,11 +25,12 @@ const recentPosts = [...allReviews, ...allRoundups, ...allComparisons]
     <div class="card-grid">
       {recentPosts.map((post) => {
         const slug = post.id.replace(/\.md$/, '');
-        const path = post.collection === 'reviews' ? `/reviews/${slug}/` :
-                     post.collection === 'roundups' ? `/roundups/${slug}/` :
-                     `/comparisons/${slug}/`;
-        const tag = post.collection === 'reviews' ? 'Review' :
-                    post.collection === 'roundups' ? 'Roundup' : 'Comparison';
+        const collection = post.collection;
+        const path = `/${collection}/${slug}/`;
+        const tag = collection === 'reviews' ? 'Review' :
+                    collection === 'roundups' ? 'Roundup' :
+                    collection === 'comparisons' ? 'Comparison' :
+                    collection === 'agents' ? 'AI Agents' : 'Guide';
         return (
           <a href={path} class="card" style="text-decoration: none; color: inherit;">
             <h3>{post.data.title}</h3>
@@ -43,6 +45,10 @@ const recentPosts = [...allReviews, ...allRoundups, ...allComparisons]
   <section class="container" style="margin-top: 3rem;">
     <h2 style="margin-bottom: 1rem; font-size: 1.3rem;">Browse by Category</h2>
     <div class="card-grid">
+      <a href="/agents/" class="card" style="text-decoration: none; color: inherit;">
+        <h3>🤖 AI Agents</h3>
+        <p>Autonomous AI agents that handle email, research, customer support, and workflows while you sleep.</p>
+      </a>
       <a href="/roundups/" class="card" style="text-decoration: none; color: inherit;">
         <h3>📊 Best-Of Roundups</h3>
         <p>Curated lists of the best AI tools for every freelancer need — writing, design, productivity, and more.</p>
@@ -54,10 +60,6 @@ const recentPosts = [...allReviews, ...allRoundups, ...allComparisons]
       <a href="/comparisons/" class="card" style="text-decoration: none; color: inherit;">
         <h3>⚖️ Head-to-Head Comparisons</h3>
         <p>Can't decide between two tools? Our comparison articles break down exactly which one fits your needs.</p>
-      </a>
-      <a href="/guides/" class="card" style="text-decoration: none; color: inherit;">
-        <h3>🛠️ Workflow Guides</h3>
-        <p>Step-by-step tutorials on setting up AI-powered workflows that save hours every week.</p>
       </a>
     </div>
   </section>

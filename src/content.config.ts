@@ -48,6 +48,20 @@ const comparisons = defineCollection({
   }),
 });
 
+const agents = defineCollection({
+  loader: glob({ pattern: '*.md', base: './src/content/agents' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    pubDate: z.coerce.date(),
+    updatedDate: z.coerce.date().optional(),
+    author: z.string().default('SlashAI'),
+    tags: z.array(z.string()).default([]),
+    affiliate: z.boolean().default(true),
+    itemCount: z.number().optional(),
+  }),
+});
+
 const guides = defineCollection({
   loader: glob({ pattern: '*.md', base: './src/content/guides' }),
   schema: z.object({
@@ -65,5 +79,6 @@ export const collections = {
   reviews,
   roundups,
   comparisons,
+  agents,
   guides,
 };
