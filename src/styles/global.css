@@ -51,7 +51,7 @@
 }
 
 [data-theme="dark"] #main-nav .nav-links li a {
-  background: rgba(30, 30, 30, 0.75);
+  background: rgba(30, 30, 30, 0.95);
 }
 
 
@@ -655,7 +655,7 @@ img {
     display: block;
     padding: 1rem 1.25rem;
     font-size: 1.1rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 8px;
