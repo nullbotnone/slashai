@@ -36,30 +36,37 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
             <option value={price}>{price}</option>
           ))}
         </select>
+        <select id="sort" class="filter-select">
+          <option value="name">Sort: A-Z</option>
+          <option value="name-desc">Sort: Z-A</option>
+          <option value="newest">Sort: Newest</option>
+          <option value="oldest">Sort: Oldest</option>
+        </select>
       </div>
     </div>
 
     <!-- Tools Grid -->
     <div class="tools-grid" id="tools-grid">
       {tools.map((tool) => (
-        <div class="tool-card" data-category={tool.category} data-pricing={tool.pricing} data-name={tool.name.toLowerCase()} data-tags={tool.tags.join(',')}>
+        <div class="tool-card" data-category={tool.category} data-pricing={tool.pricing} data-name={tool.name.toLowerCase()} data-tags={tool.tags.join(',')} data-added={tool.added}>
           <div class="tool-card-header">
-            <h3>{tool.name}</h3>
+            <h3><a href={`/tools/${tool.slug}/`}>{tool.name}</a></h3>
             <span class={`pricing-badge ${tool.pricing.toLowerCase()}`}>{tool.pricing}</span>
           </div>
           <p class="tool-description">{tool.description}</p>
           <div class="tool-meta">
             <span class="tool-category">{tool.category}</span>
-            <span class="tool-released">Released {tool.released}</span>
+            <span class="tool-released">{tool.released}</span>
           </div>
           <div class="tool-tags">
             {tool.tags.slice(0, 3).map(tag => (
               <span class="tool-tag">{tag}</span>
             ))}
           </div>
-          <a href={tool.url} target="_blank" rel="noopener" class="tool-link">
-            Visit {tool.name} →
-          </a>
+          <div class="tool-card-actions">
+            <a href={`/tools/${tool.slug}/`} class="tool-link-details">Details →</a>
+            <a href={tool.affiliateUrl || tool.url} target="_blank" rel="noopener" class="tool-link-visit">Visit Site ↗</a>
+          </div>
         </div>
       ))}
     </div>
@@ -159,6 +166,15 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     font-weight: 700;
   }
 
+  .tool-card-header a {
+    color: var(--color-text);
+    transition: color 0.2s;
+  }
+
+  .tool-card-header a:hover {
+    color: var(--color-accent);
+  }
+
   .pricing-badge {
     font-size: 0.7rem;
     font-weight: 600;
@@ -167,20 +183,9 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     white-space: nowrap;
   }
 
-  .pricing-badge.free {
-    background: rgba(34, 197, 94, 0.15);
-    color: #22c55e;
-  }
-
-  .pricing-badge.freemium {
-    background: rgba(59, 130, 246, 0.15);
-    color: #3b82f6;
-  }
-
-  .pricing-badge.paid {
-    background: rgba(245, 158, 11, 0.15);
-    color: #f59e0b;
-  }
+  .pricing-badge.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+  .pricing-badge.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  .pricing-badge.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
 
   .tool-description {
     color: var(--color-text-secondary);
@@ -214,29 +219,45 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     font-size: 0.7rem;
   }
 
-  .tool-link {
-    display: inline-block;
+  .tool-card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-top: auto;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .tool-link-details {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-accent);
     transition: all 0.2s;
   }
 
-  .tool-link:hover {
+  .tool-link-details:hover {
     transform: translateX(4px);
   }
 
+  .tool-link-visit {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    background: var(--color-bg-secondary);
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .tool-link-visit:hover {
+    background: var(--color-accent);
+    color: white;
+  }
+
   @media (max-width: 768px) {
-    .directory-filters {
-      flex-direction: column;
-    }
-    .filter-group {
-      flex-direction: column;
-    }
-    .tools-grid {
-      grid-template-columns: 1fr;
-    }
+    .directory-filters { flex-direction: column; }
+    .filter-group { flex-direction: column; }
+    .tools-grid { grid-template-columns: 1fr; }
   }
 </style>
 
@@ -244,17 +265,20 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   const searchInput = document.getElementById('search');
   const categoryFilter = document.getElementById('category-filter');
   const pricingFilter = document.getElementById('pricing-filter');
+  const sortSelect = document.getElementById('sort');
   const toolsGrid = document.getElementById('tools-grid');
   const noResults = document.getElementById('no-results');
   const toolCount = document.getElementById('tool-count');
 
-  function filterTools() {
+  function filterAndSort() {
     const search = searchInput.value.toLowerCase();
     const category = categoryFilter.value;
     const pricing = pricingFilter.value;
-    const cards = toolsGrid.querySelectorAll('.tool-card');
+    const sort = sortSelect.value;
+    const cards = Array.from(toolsGrid.querySelectorAll('.tool-card'));
     let visible = 0;
 
+    // Filter
     cards.forEach(card => {
       const name = card.dataset.name;
       const tags = card.dataset.tags;
@@ -273,11 +297,25 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
       }
     });
 
+    // Sort
+    const visibleCards = cards.filter(c => !c.classList.contains('hidden'));
+    visibleCards.sort((a, b) => {
+      switch(sort) {
+        case 'name': return a.dataset.name.localeCompare(b.dataset.name);
+        case 'name-desc': return b.dataset.name.localeCompare(a.dataset.name);
+        case 'newest': return (b.dataset.added || '').localeCompare(a.dataset.added || '');
+        case 'oldest': return (a.dataset.added || '').localeCompare(b.dataset.added || '');
+        default: return 0;
+      }
+    });
+    visibleCards.forEach(card => toolsGrid.appendChild(card));
+
     noResults.style.display = visible === 0 ? 'block' : 'none';
     toolCount.textContent = `Showing ${visible} tool${visible !== 1 ? 's' : ''}`;
   }
 
-  searchInput.addEventListener('input', filterTools);
-  categoryFilter.addEventListener('change', filterTools);
-  pricingFilter.addEventListener('change', filterTools);
+  searchInput.addEventListener('input', filterAndSort);
+  categoryFilter.addEventListener('change', filterAndSort);
+  pricingFilter.addEventListener('change', filterAndSort);
+  sortSelect.addEventListener('change', filterAndSort);
 </script>

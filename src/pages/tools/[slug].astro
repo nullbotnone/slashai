@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import tools from '../../data/tools.json';
+
+export function getStaticPaths() {
+  return tools.map((tool) => ({
+    params: { slug: tool.slug },
+    props: { tool },
+  }));
+}
+
+const { tool } = Astro.props;
+const relatedTools = tools
+  .filter(t => t.category === tool.category && t.slug !== tool.slug)
+  .slice(0, 3);
+---
+
+<BaseLayout title={`${tool.name} Review`} description={tool.description}>
+  <section class="hero">
+    <div class="container">
+      <h1>{tool.name}</h1>
+      <p>{tool.description}</p>
+    </div>
+  </section>
+
+  <div class="article-content">
+    <!-- Quick Info -->
+    <div class="tool-info-grid">
+      <div class="tool-info-card">
+        <span class="info-label">Category</span>
+        <span class="info-value">{tool.category}</span>
+      </div>
+      <div class="tool-info-card">
+        <span class="info-label">Pricing</span>
+        <span class="info-value">{tool.price}</span>
+      </div>
+      <div class="tool-info-card">
+        <span class="info-label">Released</span>
+        <span class="info-value">{tool.released}</span>
+      </div>
+      {tool.affiliateCommission && (
+        <div class="tool-info-card">
+          <span class="info-label">Affiliate</span>
+          <span class="info-value">{tool.affiliateCommission}</span>
+        </div>
+      )}
+    </div>
+
+    <!-- Visit Button -->
+    <div style="text-align: center; margin: 2rem 0;">
+      <a 
+        href={tool.affiliateUrl || tool.url} 
+        target="_blank" 
+        rel="noopener"
+        class="tool-cta"
+      >
+        Visit {tool.name} →
+      </a>
+    </div>
+
+    <!-- About -->
+    <h2>About {tool.name}</h2>
+    <p>{tool.longDescription}</p>
+
+    <h2>Pros & Cons</h2>
+    <div class="pros-cons">
+      <div class="pros">
+        <h3>✅ Pros</h3>
+        <ul>
+          {tool.pros.map(pro => <li>{pro}</li>)}
+        </ul>
+      </div>
+      <div class="cons">
+        <h3>❌ Cons</h3>
+        <ul>
+          {tool.cons.map(con => <li>{con}</li>)}
+        </ul>
+      </div>
+    </div>
+
+    <h2>Best For</h2>
+    <blockquote>{tool.bestFor}</blockquote>
+
+    <h2>Tags</h2>
+    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 2rem;">
+      {tool.tags.map(tag => (
+        <span class="tool-tag">{tag}</span>
+      ))}
+    </div>
+
+    <!-- Related Tools -->
+    {relatedTools.length > 0 && (
+      <>
+        <h2>More in {tool.category}</h2>
+        <div class="card-grid">
+          {relatedTools.map(rt => (
+            <a href={`/tools/${rt.slug}/`} class="card" style="text-decoration: none; color: inherit;">
+              <h3>{rt.name}</h3>
+              <p>{rt.description}</p>
+              <span class="tag">{rt.price}</span>
+            </a>
+          ))}
+        </div>
+      </>
+    )}
+
+    <div class="disclosure">
+      <strong>Affiliate Disclosure:</strong> Some links may be affiliate links. We earn a commission at no extra cost to you if you sign up. See our <a href="/affiliate-disclosure/">Affiliate Disclosure</a>.
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .tool-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .tool-info-card {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .info-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+    margin-bottom: 0.25rem;
+  }
+
+  .info-value {
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .tool-cta {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-accent), #ec4899);
+    color: white;
+    padding: 0.85rem 2.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+  }
+
+  .tool-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    color: white;
+  }
+
+  .pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+  }
+
+  @media (max-width: 768px) {
+    .pros-cons {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .pros, .cons {
+    background: var(--color-bg-secondary);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+  }
+
+  .pros h3, .cons h3 {
+    margin-bottom: 0.75rem;
+  }
+
+  .tool-tag {
+    background: var(--color-bg-secondary);
+    color: var(--color-accent);
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+</style>
