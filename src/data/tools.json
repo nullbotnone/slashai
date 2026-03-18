@@ -1418,5 +1418,180 @@
       "workflow",
       "self-hosted"
     ]
+  },
+  {
+    "name": "Cursor",
+    "slug": "cursor",
+    "description": "AI-first code editor that writes, edits, and debugs code with full codebase awareness.",
+    "longDescription": "Cursor is a VS Code fork built from the ground up for AI-assisted coding. Unlike GitHub Copilot (which just suggests lines), Cursor understands your entire codebase and can make multi-file edits, explain complex functions, and refactor with natural language commands. The Agent mode can autonomously fix bugs, implement features, and run tests. Tab completions are blazing fast, and the Pro plan gives you access to Claude, GPT-4, and Gemini models. If you write code for a living, Cursor is the single highest-ROI AI tool you can buy.",
+    "url": "https://cursor.com",
+    "affiliateUrl": null,
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "$20/mo Pro",
+    "released": "2023",
+    "added": "2026-03-18",
+    "pros": [
+      "Full codebase awareness across files",
+      "Agent mode for autonomous coding",
+      "Access to Claude, GPT-4, and Gemini",
+      "Fast Tab completions that learn your style",
+      "Free tier for evaluation"
+    ],
+    "cons": [
+      "Credit-based pricing can get expensive for power users",
+      "Built on VS Code \u2014 if you prefer JetBrains, you're out of luck",
+      "Learning curve for Agent mode"
+    ],
+    "bestFor": "Developers who want AI that understands their whole project, not just the current file.",
+    "affiliateCommission": null,
+    "tags": [
+      "coding",
+      "development",
+      "ide",
+      "ai assistant",
+      "code review"
+    ],
+    "featured": true
+  },
+  {
+    "name": "HeyGen",
+    "slug": "heygen",
+    "description": "AI video generation with photorealistic avatars, voice cloning, and 175+ language translation.",
+    "longDescription": "HeyGen lets you create professional talking-head videos from a text script \u2014 no camera, no studio, no editing skills. Their Avatar IV model produces photorealistic lip-sync with natural micro-expressions. The killer feature is video translation: upload a video of yourself speaking English, and HeyGen recreates it in 175+ languages with your voice cloned and lips synced. Solopreneurs use it for course content, social media, product demos, and localized marketing. The Creator plan at $29/mo is enough for most solo operators.",
+    "url": "https://heygen.com",
+    "affiliateUrl": null,
+    "category": "Video",
+    "pricing": "Freemium",
+    "price": "$29/mo Creator",
+    "released": "2022",
+    "added": "2026-03-18",
+    "pros": [
+      "Photorealistic AI avatars with natural lip-sync",
+      "Video translation in 175+ languages",
+      "Custom avatar from your own footage",
+      "No video editing skills needed",
+      "Free plan available for testing"
+    ],
+    "cons": [
+      "Pro plan ($99/mo) needed for 4K quality",
+      "Avatar quality varies by angle and lighting",
+      "Video rendering can take time during peak hours"
+    ],
+    "bestFor": "Solopreneurs creating course content, product demos, or multilingual marketing videos.",
+    "affiliateCommission": null,
+    "tags": [
+      "video",
+      "avatars",
+      "translation",
+      "multilingual",
+      "content creation"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Lovable",
+    "slug": "lovable",
+    "description": "AI app builder that turns natural language descriptions into full-stack web applications.",
+    "longDescription": "Lovable is one of the most impressive AI app builders of 2026. Describe what you want in plain English \u2014 'a task management app with user auth and a Kanban board' \u2014 and Lovable generates a full-stack React app with database, authentication, and deployment. It uses Claude and GPT-4 under the hood, understands UI/UX patterns, and produces clean, production-ready code. The Pro plan ($25/mo) includes private projects, custom domains, and GitHub integration. It's not just for prototyping \u2014 people are shipping real products built with Lovable.",
+    "url": "https://lovable.dev",
+    "affiliateUrl": null,
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "$25/mo Pro",
+    "released": "2024",
+    "added": "2026-03-18",
+    "pros": [
+      "Generates full-stack apps from text descriptions",
+      "Clean, production-ready code output",
+      "GitHub integration for version control",
+      "Custom domain support on paid plans",
+      "50% discount for students and educators"
+    ],
+    "cons": [
+      "Credit-based system \u2014 complex apps use credits fast",
+      "Limited to web apps (no native mobile)",
+      "Still requires developer knowledge for complex customization"
+    ],
+    "bestFor": "Solopreneurs who want to build and ship web apps without hiring a developer.",
+    "affiliateCommission": null,
+    "tags": [
+      "coding",
+      "app builder",
+      "no-code",
+      "full-stack",
+      "prototyping"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Replit",
+    "slug": "replit",
+    "description": "AI-powered cloud IDE where you build, deploy, and host apps with an autonomous AI agent.",
+    "longDescription": "Replit combines a cloud IDE with an AI agent (Replit Agent) that can build entire apps from natural language prompts. Unlike pure code assistants, Replit handles the full lifecycle: writing code, installing dependencies, setting up databases, and deploying to the cloud \u2014 all in one place. The AI Agent plans your project, creates multiple files, and iterates on errors autonomously. Ghostwriter provides real-time code completion. The Core plan ($25/mo) gives you full agent access, live deployment, and custom domains. It's ideal for solopreneurs who want to prototype and ship without managing infrastructure.",
+    "url": "https://replit.com",
+    "affiliateUrl": null,
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "$25/mo Core",
+    "released": "2016",
+    "added": "2026-03-18",
+    "pros": [
+      "Full-stack AI agent builds complete apps",
+      "Integrated cloud deployment and hosting",
+      "No local setup needed \u2014 runs in browser",
+      "Mobile app with voice-to-code",
+      "Collaboration features for teams"
+    ],
+    "cons": [
+      "Agent costs can exceed base subscription for heavy use",
+      "Credits don't roll over on Core plan",
+      "Deployment costs are separate from subscription"
+    ],
+    "bestFor": "Solopreneurs who want to build, deploy, and host apps without touching infrastructure.",
+    "affiliateCommission": null,
+    "tags": [
+      "coding",
+      "deployment",
+      "cloud ide",
+      "no-code",
+      "hosting"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Intercom Fin",
+    "slug": "intercom-fin",
+    "description": "AI customer support agent that resolves tickets autonomously using your help center.",
+    "longDescription": "Intercom Fin is the leading AI customer support agent for small businesses. You connect your help center or knowledge base, and Fin uses it to answer customer questions automatically \u2014 resolving tickets without human intervention. It understands context, handles multi-turn conversations, and escalates to a human only when needed. At $0.99 per resolution, it's dramatically cheaper than hiring support staff. For solopreneurs drowning in support emails, Fin can cut ticket volume by 50-70%. It integrates with Intercom's full help desk, or works standalone with your existing support tools.",
+    "url": "https://intercom.com/fin",
+    "affiliateUrl": null,
+    "category": "AI Agents",
+    "pricing": "Paid",
+    "price": "$0.99/resolution",
+    "released": "2023",
+    "added": "2026-03-18",
+    "pros": [
+      "Autonomously resolves customer tickets",
+      "Per-resolution pricing \u2014 pay only for results",
+      "Learns from your help center and knowledge base",
+      "Multi-turn conversation support",
+      "Dramatically cheaper than human support"
+    ],
+    "cons": [
+      "Requires Intercom subscription ($39+/mo) on top",
+      "Costs add up with high ticket volume",
+      "Complex or emotional issues still need human agents"
+    ],
+    "bestFor": "Solopreneurs getting overwhelmed by customer support tickets.",
+    "affiliateCommission": null,
+    "tags": [
+      "customer support",
+      "ai agents",
+      "automation",
+      "help desk",
+      "tickets"
+    ],
+    "featured": false
   }
 ]
