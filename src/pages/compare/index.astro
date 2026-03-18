@@ -9,244 +9,245 @@ const toolsJson = JSON.stringify(tools);
   <section class="hero">
     <div class="container">
       <h1>Compare <span class="gradient-text">AI Tools</span></h1>
-      <p>Select up to 4 tools to compare side-by-side. Pricing, features, pros, cons — all in one view.</p>
+      <p>Select up to 4 tools to compare side-by-side.</p>
     </div>
   </section>
 
   <section class="section-glow">
     <div class="container">
-      <!-- Tool Selector -->
-      <div class="compare-selector">
-        <input type="text" id="tool-search" placeholder="🔍 Search and add tools to compare..." class="tool-search" autocomplete="off" />
-        <div class="dropdown hidden" id="dropdown"></div>
-        <div class="selected-tools" id="selected-tools"></div>
-        <p class="selector-hint" id="selector-hint">Select 2-4 tools to compare</p>
+      <!-- Selector -->
+      <div class="selector-bar">
+        <div class="search-wrap">
+          <input type="text" id="tool-search" placeholder="🔍 Search tools..." class="search-input" autocomplete="off" />
+          <div class="suggestions" id="suggestions"></div>
+        </div>
+        <div class="chips" id="chips"></div>
       </div>
 
-      <!-- Comparison Table -->
-      <div class="compare-wrapper hidden" id="compare-wrapper">
-        <div class="compare-actions">
-          <button class="compare-clear" id="clear-btn">✕ Clear all</button>
+      <!-- Comparison -->
+      <div class="compare-area hidden" id="compare-area">
+        <div class="compare-controls">
+          <span class="compare-count" id="compare-count"></span>
+          <button class="clear-btn" id="clear-btn">Clear all</button>
         </div>
-        <div class="compare-table-wrap">
+        <div class="table-scroll">
           <table class="compare-table" id="compare-table"></table>
         </div>
+      </div>
+
+      <div class="empty-state" id="empty-state">
+        <p>Search and select 2 or more tools above to start comparing.</p>
       </div>
     </div>
   </section>
 </BaseLayout>
 
 <style>
-  .compare-selector {
-    position: relative;
+  .selector-bar {
     margin-bottom: 2rem;
   }
 
-  .tool-search {
+  .search-wrap {
+    position: relative;
+    margin-bottom: 0.75rem;
+  }
+
+  .search-input {
     width: 100%;
-    padding: 1rem 1.25rem;
-    border: 2px solid var(--color-border);
+    padding: 0.85rem 1.25rem;
+    border: 1px solid var(--color-border);
     border-radius: var(--radius);
     background: var(--color-bg-card);
     color: var(--color-text);
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-family: var(--font-sans);
-    transition: border-color 0.2s;
+    transition: border-color 0.2s, box-shadow 0.2s;
   }
 
-  .tool-search:focus {
+  .search-input:focus {
     outline: none;
     border-color: var(--color-accent);
     box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
   }
 
-  .dropdown {
+  .suggestions {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
+    border-top: none;
     border-radius: 0 0 var(--radius) var(--radius);
-    max-height: 300px;
+    max-height: 280px;
     overflow-y: auto;
     z-index: 50;
-    box-shadow: var(--shadow-lg);
+    display: none;
   }
 
-  .dropdown.hidden { display: none; }
+  .suggestions.open { display: block; }
 
-  .dropdown-item {
+  .sug-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.75rem 1.25rem;
+    padding: 0.7rem 1.25rem;
     cursor: pointer;
     transition: background 0.15s;
-    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9rem;
   }
 
-  .dropdown-item:last-child { border-bottom: none; }
-  .dropdown-item:hover { background: var(--color-accent-light); }
+  .sug-item + .sug-item { border-top: 1px solid var(--color-border); }
+  .sug-item:hover { background: var(--color-accent-light); }
 
-  .dropdown-item-name {
-    font-weight: 600;
-    font-size: 0.95rem;
-  }
+  .sug-name { font-weight: 600; }
+  .sug-meta { color: var(--color-text-secondary); font-size: 0.8rem; }
 
-  .dropdown-item-cat {
-    font-size: 0.8rem;
-    color: var(--color-text-secondary);
-  }
-
-  .dropdown-item.selected {
-    opacity: 0.4;
-    pointer-events: none;
-  }
-
-  /* Selected chips */
-  .selected-tools {
+  /* Chips */
+  .chips {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-top: 0.75rem;
   }
 
-  .selected-chip {
+  .chip {
     display: inline-flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.4rem 0.75rem;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
     background: var(--color-accent-light);
     color: var(--color-accent);
     border-radius: 50px;
     font-size: 0.85rem;
     font-weight: 600;
-    animation: chipIn 0.2s ease;
   }
 
-  @keyframes chipIn {
-    from { opacity: 0; transform: scale(0.9); }
-    to { opacity: 1; transform: scale(1); }
-  }
-
-  .chip-remove {
+  .chip-x {
     cursor: pointer;
     font-size: 1rem;
     line-height: 1;
-    opacity: 0.7;
-    transition: opacity 0.2s;
+    opacity: 0.6;
     background: none;
     border: none;
     color: var(--color-accent);
     padding: 0;
+    transition: opacity 0.15s;
   }
 
-  .chip-remove:hover { opacity: 1; }
+  .chip-x:hover { opacity: 1; }
 
-  .selector-hint {
-    margin-top: 0.5rem;
-    font-size: 0.8rem;
-    color: var(--color-text-secondary);
-  }
+  /* Compare area */
+  .compare-area.hidden { display: none; }
+  .empty-state { text-align: center; color: var(--color-text-secondary); padding: 2rem 0; }
+  .empty-state.hidden { display: none; }
 
-  /* Comparison Table */
-  .compare-wrapper.hidden { display: none; }
-
-  .compare-actions {
+  .compare-controls {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1rem;
   }
 
-  .compare-clear {
-    background: none;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: 0.4rem 1rem;
-    cursor: pointer;
+  .compare-count {
     font-size: 0.85rem;
     color: var(--color-text-secondary);
-    font-family: var(--font-sans);
+    font-weight: 500;
+  }
+
+  .clear-btn {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.4rem 0.9rem;
+    cursor: pointer;
+    font-size: 0.8rem;
     font-weight: 600;
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
     transition: all 0.2s;
   }
 
-  .compare-clear:hover { border-color: #ef4444; color: #ef4444; }
+  .clear-btn:hover { border-color: #ef4444; color: #ef4444; }
 
-  .compare-table-wrap {
+  .table-scroll {
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg-card);
   }
 
+  /* Table */
   .compare-table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.9rem;
-    min-width: 500px;
   }
 
   .compare-table th,
   .compare-table td {
-    padding: 0.85rem 1rem;
+    padding: 0.8rem 1.25rem;
     text-align: left;
     border-bottom: 1px solid var(--color-border);
     vertical-align: top;
   }
 
-  .compare-table th {
+  .compare-table thead th {
+    background: var(--color-bg-secondary);
+    border-bottom: 2px solid var(--color-border);
+    font-weight: 700;
+    font-size: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+
+  .compare-table thead th:first-child {
+    position: sticky;
+    left: 0;
+    z-index: 3;
+  }
+
+  .compare-table tbody th {
     font-weight: 600;
-    color: var(--color-text-secondary);
     font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    width: 130px;
+    color: var(--color-text-secondary);
+    background: var(--color-bg);
+    width: 110px;
     white-space: nowrap;
-    background: var(--color-bg-secondary);
     position: sticky;
     left: 0;
     z-index: 1;
   }
 
-  .compare-table thead th {
-    font-size: 1rem;
-    text-transform: none;
-    letter-spacing: normal;
-    color: var(--color-text);
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    background: var(--color-bg-secondary);
-    border-bottom: 2px solid var(--color-border);
+  .compare-table tbody tr:last-child th,
+  .compare-table tbody tr:last-child td {
+    border-bottom: none;
   }
 
-  .compare-table thead th a {
+  .tool-link {
     color: var(--color-text);
     text-decoration: none;
     font-weight: 700;
-    font-size: 1.05rem;
+    transition: color 0.2s;
   }
 
-  .compare-table thead th a:hover { color: var(--color-accent); }
+  .tool-link:hover { color: var(--color-accent); }
 
-  .compare-table .tool-header {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-  }
-
-  .compare-table .tool-header .price-badge {
-    font-size: 0.7rem;
-    font-weight: 600;
+  .badge {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 700;
     padding: 0.15rem 0.5rem;
     border-radius: 20px;
-    display: inline-block;
-    width: fit-content;
+    margin-top: 0.25rem;
   }
 
-  .compare-table .price-badge.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-  .compare-table .price-badge.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-  .compare-table .price-badge.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-  .compare-table .price-badge.pay-per-use { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+  .badge.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+  .badge.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  .badge.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .badge.pay-per-use { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
 
   .compare-table td ul {
     list-style: none;
@@ -255,207 +256,200 @@ const toolsJson = JSON.stringify(tools);
   }
 
   .compare-table td li {
-    padding: 0.2rem 0;
+    padding: 0.15rem 0;
     line-height: 1.4;
   }
 
-  .compare-table td li::before {
-    content: '✓ ';
-    color: #22c55e;
-    font-weight: 700;
-  }
+  .pro::before { content: '✓ '; color: #22c55e; font-weight: 700; }
+  .con::before { content: '✗ '; color: #ef4444; font-weight: 700; }
 
-  .compare-table td .con-item::before {
-    content: '✗ ';
-    color: #ef4444;
-  }
-
-  .compare-table td.best-cell {
+  .best-for {
     font-weight: 600;
     color: var(--color-accent);
-    font-style: italic;
   }
 
-  .compare-table td a.visit-link {
+  .tag-pill {
+    display: inline-block;
+    background: var(--color-bg-secondary);
+    color: var(--color-text-secondary);
+    padding: 0.15rem 0.45rem;
+    border-radius: 4px;
+    font-size: 0.72rem;
+    margin: 0.1rem 0.15rem 0.1rem 0;
+  }
+
+  .visit-btn {
     display: inline-block;
     background: linear-gradient(135deg, var(--color-accent), #ec4899);
-    color: white;
-    padding: 0.5rem 1.25rem;
+    color: white !important;
+    padding: 0.5rem 1.2rem;
     border-radius: 50px;
     font-weight: 700;
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     text-decoration: none;
     transition: all 0.3s;
     box-shadow: 0 2px 10px rgba(124, 58, 237, 0.3);
-    margin-top: 0.25rem;
   }
 
-  .compare-table td a.visit-link:hover {
+  .visit-btn:hover {
     transform: translateY(-1px);
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
   }
 
-  .compare-table td a.detail-link {
+  .review-link {
     display: block;
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     color: var(--color-text-secondary);
     text-decoration: none;
-    margin-top: 0.5rem;
+    margin-top: 0.4rem;
   }
 
-  .compare-table td a.detail-link:hover { color: var(--color-accent); }
+  .review-link:hover { color: var(--color-accent); }
 
   @media (max-width: 768px) {
-    .compare-table th { width: 100px; font-size: 0.7rem; }
-    .compare-table th, .compare-table td { padding: 0.6rem 0.75rem; font-size: 0.8rem; }
+    .compare-table tbody th { font-size: 0.7rem; width: 80px; }
+    .compare-table th, .compare-table td { padding: 0.5rem 0.75rem; font-size: 0.8rem; }
   }
 </style>
 
 <script define:vars={{ toolsJson }}>
   var allTools = JSON.parse(toolsJson);
-  var selected = [];
+  var picked = [];
   var MAX = 4;
 
-  var searchInput = document.getElementById('tool-search');
-  var dropdown = document.getElementById('dropdown');
-  var selectedEl = document.getElementById('selected-tools');
-  var wrapper = document.getElementById('compare-wrapper');
+  var searchEl = document.getElementById('tool-search');
+  var sugEl = document.getElementById('suggestions');
+  var chipsEl = document.getElementById('chips');
+  var areaEl = document.getElementById('compare-area');
   var tableEl = document.getElementById('compare-table');
-  var hint = document.getElementById('selector-hint');
-  var clearBtn = document.getElementById('clear-btn');
+  var countEl = document.getElementById('compare-count');
+  var emptyEl = document.getElementById('empty-state');
+  var clearEl = document.getElementById('clear-btn');
 
-  // Search / dropdown
-  searchInput.addEventListener('focus', function() { showDropdown(searchInput.value); });
-  searchInput.addEventListener('input', function() { showDropdown(this.value); });
+  // Show all tools on focus, filter on type
+  searchEl.addEventListener('focus', function() { renderSugs(searchEl.value); });
+  searchEl.addEventListener('input', function() { renderSugs(this.value); });
 
   document.addEventListener('click', function(e) {
-    if (!e.target.closest('.compare-selector')) dropdown.classList.add('hidden');
+    if (!e.target.closest('.search-wrap')) sugEl.classList.remove('open');
   });
 
-  function showDropdown(query) {
-    var q = (query || '').toLowerCase();
-    var filtered = allTools.filter(function(t) {
-      return selected.indexOf(t.slug) === -1 &&
-        (!q || t.name.toLowerCase().indexOf(q) !== -1 || t.category.toLowerCase().indexOf(q) !== -1 || (t.tags || []).join(' ').indexOf(q) !== -1);
-    }).slice(0, 12);
+  function renderSugs(q) {
+    var query = (q || '').toLowerCase();
+    var items = allTools
+      .filter(function(t) { return picked.indexOf(t.slug) === -1; })
+      .filter(function(t) {
+        if (!query) return true;
+        return t.name.toLowerCase().indexOf(query) > -1 ||
+               t.category.toLowerCase().indexOf(query) > -1 ||
+               (t.tags || []).some(function(tag) { return tag.toLowerCase().indexOf(query) > -1; });
+      })
+      .slice(0, 15);
 
-    if (filtered.length === 0) {
-      dropdown.classList.add('hidden');
-      return;
-    }
+    if (items.length === 0) { sugEl.classList.remove('open'); return; }
 
-    dropdown.innerHTML = filtered.map(function(t) {
-      return '<div class="dropdown-item" data-slug="' + t.slug + '">' +
-        '<span class="dropdown-item-name">' + t.name + '</span>' +
-        '<span class="dropdown-item-cat">' + t.category + ' · ' + t.pricing + '</span>' +
+    sugEl.innerHTML = items.map(function(t) {
+      return '<div class="sug-item" data-slug="' + t.slug + '">' +
+        '<span class="sug-name">' + t.name + '</span>' +
+        '<span class="sug-meta">' + t.category + ' · ' + t.pricing + ' · ' + t.price + '</span>' +
       '</div>';
     }).join('');
-    dropdown.classList.remove('hidden');
+    sugEl.classList.add('open');
 
-    dropdown.querySelectorAll('.dropdown-item').forEach(function(item) {
-      item.addEventListener('click', function() {
-        addTool(item.dataset.slug);
+    sugEl.querySelectorAll('.sug-item').forEach(function(el) {
+      el.addEventListener('click', function() {
+        if (picked.length < MAX) {
+          picked.push(el.dataset.slug);
+          searchEl.value = '';
+          sugEl.classList.remove('open');
+          render();
+        }
       });
     });
   }
 
-  function addTool(slug) {
-    if (selected.length >= MAX || selected.indexOf(slug) !== -1) return;
-    selected.push(slug);
-    searchInput.value = '';
-    dropdown.classList.add('hidden');
-    renderChips();
-    renderTable();
+  function remove(slug) {
+    picked = picked.filter(function(s) { return s !== slug; });
+    render();
   }
 
-  function removeTool(slug) {
-    selected = selected.filter(function(s) { return s !== slug; });
-    renderChips();
-    renderTable();
-  }
-
-  function renderChips() {
-    selectedEl.innerHTML = selected.map(function(slug) {
-      var tool = allTools.find(function(t) { return t.slug === slug; });
-      return '<span class="selected-chip">' +
-        tool.name +
-        '<button class="chip-remove" data-slug="' + slug + '">×</button>' +
-      '</span>';
-    }).join('');
-
-    selectedEl.querySelectorAll('.chip-remove').forEach(function(btn) {
-      btn.addEventListener('click', function() { removeTool(btn.dataset.slug); });
-    });
-
-    hint.textContent = selected.length < 2
-      ? 'Select ' + (2 - selected.length) + ' more tool' + (selected.length === 0 ? 's' : '') + ' to compare'
-      : selected.length + ' tools selected';
-  }
-
-  clearBtn.addEventListener('click', function() {
-    selected = [];
-    renderChips();
-    renderTable();
+  clearEl.addEventListener('click', function() {
+    picked = [];
+    render();
   });
 
-  function renderTable() {
-    if (selected.length < 2) {
-      wrapper.classList.add('hidden');
+  function render() {
+    // Chips
+    chipsEl.innerHTML = picked.map(function(slug) {
+      var t = allTools.find(function(x) { return x.slug === slug; });
+      return '<span class="chip">' + t.name +
+        '<button class="chip-x" data-s="' + slug + '">×</button></span>';
+    }).join('');
+    chipsEl.querySelectorAll('.chip-x').forEach(function(btn) {
+      btn.addEventListener('click', function() { remove(btn.dataset.s); });
+    });
+
+    // Toggle views
+    if (picked.length < 2) {
+      areaEl.classList.add('hidden');
+      emptyEl.classList.remove('hidden');
       return;
     }
-    wrapper.classList.remove('hidden');
 
-    var tools = selected.map(function(slug) {
-      return allTools.find(function(t) { return t.slug === slug; });
+    emptyEl.classList.add('hidden');
+    areaEl.classList.remove('hidden');
+    countEl.textContent = picked.length + ' tools compared';
+
+    buildTable();
+  }
+
+  function buildTable() {
+    var tools = picked.map(function(s) { return allTools.find(function(t) { return t.slug === s; }); });
+
+    // Header
+    var h = '<thead><tr><th></th>';
+    tools.forEach(function(t) {
+      var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
+      h += '<th>' +
+        '<a class="tool-link" href="/tools/' + t.slug + '/">' + t.name + '</a>' +
+        '<div class="badge ' + cls + '">' + t.pricing + '</div>' +
+      '</th>';
     });
+    h += '</tr></thead><tbody>';
 
-    var rows = [
-      { label: 'Price', render: function(t) { return t.price || t.pricing; } },
-      { label: 'Category', render: function(t) { return t.category; } },
-      { label: 'Released', render: function(t) { return t.released; } },
-      { label: 'Best For', render: function(t) { return '<span class="best-cell">' + (t.bestFor || '—') + '</span>'; }, raw: true },
-      { label: 'Pros', render: function(t) {
-        return '<ul>' + (t.pros || []).map(function(p) { return '<li>' + p + '</li>'; }).join('') + '</ul>';
-      }, raw: true },
-      { label: 'Cons', render: function(t) {
-        return '<ul>' + (t.cons || []).map(function(c) { return '<li class="con-item">' + c + '</li>'; }).join('') + '</ul>';
-      }, raw: true },
-      { label: 'Tags', render: function(t) {
-        return (t.tags || []).map(function(tag) { return '<span class="tag">' + tag + '</span> '; }).join('');
-      }, raw: true },
+    // Rows
+    var defs = [
+      { label: 'Price', fn: function(t) { return t.price || t.pricing; } },
+      { label: 'Category', fn: function(t) { return t.category; } },
+      { label: 'Released', fn: function(t) { return t.released || '—'; } },
+      { label: 'Best For', fn: function(t) { return '<span class="best-for">' + (t.bestFor || '—') + '</span>'; }, html: true },
+      { label: 'Pros', fn: function(t) {
+        return '<ul>' + (t.pros || []).map(function(p) { return '<li class="pro">' + p + '</li>'; }).join('') + '</ul>';
+      }, html: true },
+      { label: 'Cons', fn: function(t) {
+        return '<ul>' + (t.cons || []).map(function(c) { return '<li class="con">' + c + '</li>'; }).join('') + '</ul>';
+      }, html: true },
+      { label: 'Tags', fn: function(t) {
+        return (t.tags || []).map(function(tag) { return '<span class="tag-pill">' + tag + '</span>'; }).join('');
+      }, html: true },
+      { label: 'Links', fn: function(t) {
+        return '<a class="visit-btn" href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener">Visit ↗</a>' +
+          '<a class="review-link" href="/tools/' + t.slug + '/">Read review →</a>';
+      }, html: true },
     ];
 
-    // Header row
-    var html = '<thead><tr><th></th>';
-    tools.forEach(function(t) {
-      var cls = (t.pricing || '').toLowerCase().replace(/[- ]/g, '');
-      html += '<th><div class="tool-header">' +
-        '<a href="/tools/' + t.slug + '/">' + t.name + '</a>' +
-        '<span class="price-badge ' + cls + '">' + t.pricing + '</span>' +
-      '</div></th>';
-    });
-    html += '</tr></thead><tbody>';
-
-    // Data rows
-    rows.forEach(function(row) {
-      html += '<tr><th>' + row.label + '</th>';
+    defs.forEach(function(row) {
+      h += '<tr><th>' + row.label + '</th>';
       tools.forEach(function(t) {
-        var val = row.render(t);
-        html += row.raw ? '<td>' + val + '</td>' : '<td>' + val + '</td>';
+        h += '<td>' + row.fn(t) + '</td>';
       });
-      html += '</tr>';
+      h += '</tr>';
     });
 
-    // Visit links row
-    html += '<tr><th>Links</th>';
-    tools.forEach(function(t) {
-      html += '<td>' +
-        '<a href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener" class="visit-link">Visit ' + t.name + ' ↗</a>' +
-        '<a href="/tools/' + t.slug + '/" class="detail-link">Read full review →</a>' +
-      '</td>';
-    });
-    html += '</tr></tbody>';
-
-    tableEl.innerHTML = html;
+    h += '</tbody>';
+    tableEl.innerHTML = h;
   }
+
+  // Initial state
+  render();
 </script>
