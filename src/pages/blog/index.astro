@@ -1,0 +1,204 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const reviews = await getCollection('reviews');
+const roundups = await getCollection('roundups');
+const comparisons = await getCollection('comparisons');
+const agents = await getCollection('agents');
+const guides = await getCollection('guides');
+
+const allPosts = [
+  ...reviews.map(p => ({ ...p, type: 'Review', typeClass: 'review' })),
+  ...roundups.map(p => ({ ...p, type: 'Roundup', typeClass: 'roundup' })),
+  ...comparisons.map(p => ({ ...p, type: 'Comparison', typeClass: 'comparison' })),
+  ...agents.map(p => ({ ...p, type: 'AI Agents', typeClass: 'agents' })),
+  ...guides.map(p => ({ ...p, type: 'Guide', typeClass: 'guide' })),
+].sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const categories = [
+  { name: 'All', value: '' },
+  { name: 'Reviews', value: 'reviews' },
+  { name: 'Roundups', value: 'roundups' },
+  { name: 'Comparisons', value: 'comparisons' },
+  { name: 'AI Agents', value: 'agents' },
+  { name: 'Guides', value: 'guides' },
+];
+---
+
+<BaseLayout title="Blog" description="AI tool reviews, comparisons, roundups, and workflow guides for solopreneurs and freelancers.">
+  <section class="hero">
+    <div class="container">
+      <h1>The <span class="gradient-text">Blog</span></h1>
+      <p>Reviews, comparisons, roundups, and guides. {allPosts.length} articles and growing.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <!-- Category Filter -->
+    <div class="blog-filters">
+      {categories.map(cat => (
+        <button 
+          class={`filter-btn ${cat.value === '' ? 'active' : ''}`} 
+          data-filter={cat.value}
+        >
+          {cat.name}
+        </button>
+      ))}
+    </div>
+
+    <!-- Articles Grid -->
+    <div class="blog-grid" id="blog-grid">
+      {allPosts.map((post) => {
+        const slug = post.id.replace(/\.md$/, '');
+        const path = `/${post.collection}/${slug}/`;
+        return (
+          <a href={path} class="blog-card" data-collection={post.collection}>
+            <div class="blog-card-meta">
+              <span class={`type-badge ${post.typeClass}`}>{post.type}</span>
+              <time datetime={post.data.pubDate.toISOString()}>
+                {post.data.pubDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+              </time>
+            </div>
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+          </a>
+        );
+      })}
+    </div>
+
+    <p class="no-results" id="no-results" style="display: none; text-align: center; color: var(--color-text-secondary); padding: 3rem 0;">
+      No articles in this category yet.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .blog-filters {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 50px;
+    background: var(--color-bg-card);
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .filter-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .filter-btn.active {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .blog-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .blog-card:hover {
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .blog-card.hidden {
+    display: none;
+  }
+
+  .blog-card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+
+  .type-badge {
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+  }
+
+  .type-badge.review { background: rgba(124, 58, 237, 0.15); color: #7c3aed; }
+  .type-badge.roundup { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  .type-badge.comparison { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .type-badge.agents { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+  .type-badge.guide { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
+
+  .blog-card h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .blog-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  @media (max-width: 768px) {
+    .blog-grid { grid-template-columns: 1fr; }
+    .blog-filters { gap: 0.4rem; }
+    .filter-btn { padding: 0.4rem 0.8rem; font-size: 0.8rem; }
+  }
+</style>
+
+<script is:inline>
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const blogGrid = document.getElementById('blog-grid');
+  const noResults = document.getElementById('no-results');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const filter = btn.dataset.filter;
+      const cards = blogGrid.querySelectorAll('.blog-card');
+      let visible = 0;
+
+      cards.forEach(card => {
+        if (!filter || card.dataset.collection === filter) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      noResults.style.display = visible === 0 ? 'block' : 'none';
+    });
+  });
+</script>

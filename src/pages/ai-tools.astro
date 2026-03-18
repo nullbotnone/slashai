@@ -11,11 +11,11 @@ const categories = [...new Set(tools.map(t => t.category))].sort();
 const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
 ---
 
-<BaseLayout title="AI Tools Directory" description={`Browse ${tools.length}+ curated AI tools for solopreneurs and freelancers. Filter by category, pricing, and find the perfect tool.`}>
+<BaseLayout title="AI Tools Database" description={`Browse ${tools.length}+ curated AI tools for solopreneurs and freelancers. Filter by category, pricing, and find the perfect tool.`}>
   <section class="hero">
     <div class="container">
-      <h1>AI Tools <span class="gradient-text">Directory</span></h1>
-      <p>{tools.length} curated AI tools and agents for solopreneurs. {totalPages} pages.</p>
+      <h1>AI <span class="gradient-text">Tools</span></h1>
+      <p>{tools.length} curated tools & agents for solopreneurs. Filter, search, and find your perfect stack.</p>
     </div>
   </section>
 

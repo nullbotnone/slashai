@@ -28,7 +28,7 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
   <section class="container">
     <div class="section-header">
       <h2>Trending <span class="gradient-text">AI Tools</span></h2>
-      <a href="/directory/" class="see-all">See all {toolsData.length} tools →</a>
+      <a href="/ai-tools/" class="see-all">See all {toolsData.length} tools →</a>
     </div>
     <div class="trending-grid">
       {trendingTools.map((tool) => (
@@ -69,21 +69,21 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
   <section class="container" style="margin-top: 3rem;">
     <h2 style="margin-bottom: 1rem; font-size: 1.3rem;">Browse by Category</h2>
     <div class="card-grid">
+      <a href="/ai-tools/" class="card" style="text-decoration: none; color: inherit;">
+        <h3>🛠️ AI Tools Database</h3>
+        <p>45+ curated tools & agents with pricing, features, and direct links. Filter by category and find your perfect stack.</p>
+      </a>
+      <a href="/blog/" class="card" style="text-decoration: none; color: inherit;">
+        <h3>📝 Blog</h3>
+        <p>Reviews, comparisons, roundups, and workflow guides. Honest takes tested on real freelance work.</p>
+      </a>
       <a href="/agents/" class="card" style="text-decoration: none; color: inherit;">
         <h3>🤖 AI Agents</h3>
-        <p>Autonomous AI agents that handle email, research, customer support, and workflows while you sleep.</p>
+        <p>Autonomous agents that handle email, research, customer support, and workflows while you sleep.</p>
       </a>
       <a href="/roundups/" class="card" style="text-decoration: none; color: inherit;">
         <h3>📊 Best-Of Roundups</h3>
         <p>Curated lists of the best AI tools for every freelancer need — writing, design, productivity, and more.</p>
-      </a>
-      <a href="/reviews/" class="card" style="text-decoration: none; color: inherit;">
-        <h3>🔍 In-Depth Reviews</h3>
-        <p>Honest, hands-on reviews of AI tools tested on real freelance work. No sponsored placements.</p>
-      </a>
-      <a href="/comparisons/" class="card" style="text-decoration: none; color: inherit;">
-        <h3>⚖️ Head-to-Head Comparisons</h3>
-        <p>Can't decide between two tools? Our comparison articles break down exactly which one fits your needs.</p>
       </a>
     </div>
   </section>
