@@ -88,28 +88,14 @@ const toolsJson = JSON.stringify(tools);
     transform: translateX(3px);
   }
 
-  .tool-row.selected { background: var(--color-accent-light); }
-  .tool-row.disabled { opacity: 0.3; pointer-events: none; }
-
-  .tool-check {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 2px solid var(--color-border);
-    flex-shrink: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.65rem;
-    color: transparent;
-    transition: all 0.2s;
-  }
-
-  .tool-row.selected .tool-check {
+  .tool-row.selected {
     background: var(--color-accent);
-    border-color: var(--color-accent);
     color: white;
   }
+
+  .tool-row.selected .tool-name { color: white; }
+
+  .tool-row.disabled { opacity: 0.3; pointer-events: none; }
 
   .tool-name {
     font-weight: 600;
@@ -120,27 +106,6 @@ const toolsJson = JSON.stringify(tools);
     flex: 1;
     min-width: 0;
   }
-
-  .tool-meta {
-    font-size: 0.75rem;
-    color: var(--color-text-secondary);
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .tool-badge {
-    font-size: 0.65rem;
-    font-weight: 700;
-    padding: 0.15rem 0.5rem;
-    border-radius: 20px;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
-  .tool-badge.free { background: rgba(34, 197, 94, 0.12); color: #22c55e; }
-  .tool-badge.freemium { background: rgba(59, 130, 246, 0.12); color: #3b82f6; }
-  .tool-badge.paid { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
-  .tool-badge.pay-per-use { background: rgba(168, 85, 247, 0.12); color: #a855f7; }
 
   .picker-action { text-align: center; margin-top: 1.5rem; }
   .picker-action.hidden { display: none; }
@@ -312,12 +277,8 @@ const toolsJson = JSON.stringify(tools);
     listEl.innerHTML = filtered.map(function(t) {
       var on = picked.indexOf(t.slug) > -1;
       var full = picked.length >= MAX && !on;
-      var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
       return '<div class="tool-row' + (on ? ' selected' : '') + (full ? ' disabled' : '') + '" data-slug="' + t.slug + '">' +
-        '<div class="tool-check">' + (on ? '✓' : '') + '</div>' +
         '<span class="tool-name">' + t.name + '</span>' +
-        '<span class="tool-meta">' + t.category + '</span>' +
-        '<span class="tool-badge ' + cls + '">' + t.pricing + '</span>' +
       '</div>';
     }).join('');
 
