@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const guides = (await getCollection('guides'))
@@ -9,7 +9,7 @@ const guides = (await getCollection('guides'))
 <BaseLayout title="Workflow Guides" description="Step-by-step tutorials on AI-powered workflows for freelancers.">
   <section class="hero">
     <div class="container">
-      <h1>Workflow Guides</h1>
+      <h1>Workflow <span class="gradient-text">Guides</span></h1>
       <p>Step-by-step tutorials on setting up AI-powered workflows that save hours every week.</p>
     </div>
   </section>
@@ -17,7 +17,7 @@ const guides = (await getCollection('guides'))
   <section class="container">
     <div class="card-grid">
       {guides.map((post) => (
-        <a href={`/guides/${post.id.replace(/\.md$/, "")}/`} class="card" style="text-decoration: none; color: inherit;">
+        <a href={`/guides/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
           <h3>{post.data.title}</h3>
           <p>{post.data.description}</p>
         </a>

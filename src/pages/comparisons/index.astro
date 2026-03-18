@@ -1,5 +1,5 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
 const comparisons = (await getCollection('comparisons'))
@@ -9,7 +9,7 @@ const comparisons = (await getCollection('comparisons'))
 <BaseLayout title="Tool Comparisons" description="Head-to-head comparisons of AI tools for freelancers.">
   <section class="hero">
     <div class="container">
-      <h1>Head-to-Head Comparisons</h1>
+      <h1>Head-to-Head <span class="gradient-text">Comparisons</span></h1>
       <p>Can't decide between two tools? We break down exactly which one fits your needs.</p>
     </div>
   </section>
@@ -17,7 +17,7 @@ const comparisons = (await getCollection('comparisons'))
   <section class="container">
     <div class="card-grid">
       {comparisons.map((post) => (
-        <a href={`/comparisons/${post.id.replace(/\.md$/, "")}/`} class="card" style="text-decoration: none; color: inherit;">
+        <a href={`/comparisons/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
           <h3>{post.data.title}</h3>
           <p>{post.data.description}</p>
           <span class="tag">{post.data.productA}</span>

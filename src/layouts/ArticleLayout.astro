@@ -28,7 +28,7 @@ const formattedUpdated = updatedDate?.toLocaleDateString('en-US', {
   <article>
     <header class="article-header">
       <div class="container">
-        <h1>{title}</h1>
+        <h1 class="article-title">{title}</h1>
         <div class="article-meta">
           <time datetime={pubDate.toISOString()}>{formattedDate}</time>
           {updatedDate && <span>· Updated {formattedUpdated}</span>}
