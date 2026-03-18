@@ -493,6 +493,25 @@ img {
   color: var(--color-accent);
 }
 
+/* Blog/Tutorial Search */
+.blog-search {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  background: var(--color-bg-card);
+  color: var(--color-text);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+  transition: border-color 0.2s;
+}
+
+.blog-search:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+}
+
 /* Scroll animations */
 .fade-in {
   opacity: 0;

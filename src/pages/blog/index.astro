@@ -38,6 +38,14 @@ const categories = [
   </section>
 
   <section class="container">
+    <!-- Search -->
+    <input 
+      type="text" 
+      id="blog-search" 
+      placeholder="🔍 Search articles..." 
+      class="blog-search"
+    />
+
     <!-- Category Filter -->
     <div class="blog-filters">
       {categories.map(cat => (
@@ -56,7 +64,7 @@ const categories = [
         const slug = post.id.replace(/\.md$/, '');
         const path = `/${post.collection}/${slug}/`;
         return (
-          <a href={path} class="blog-card" data-collection={post.collection}>
+          <a href={path} class="blog-card" data-collection={post.collection} data-title={post.data.title.toLowerCase()} data-desc={post.data.description.toLowerCase()}>
             <div class="blog-card-meta">
               <span class={`type-badge ${post.typeClass}`}>{post.type}</span>
               <time datetime={post.data.pubDate.toISOString()}>
@@ -183,26 +191,37 @@ const categories = [
   const filterBtns = document.querySelectorAll('.filter-btn');
   const blogGrid = document.getElementById('blog-grid');
   const noResults = document.getElementById('no-results');
+  const searchInput = document.getElementById('blog-search');
+  let activeFilter = '';
+
+  function filterBlog() {
+    const search = searchInput.value.toLowerCase();
+    const cards = blogGrid.querySelectorAll('.blog-card');
+    let visible = 0;
+
+    cards.forEach(card => {
+      const matchesFilter = !activeFilter || card.dataset.collection === activeFilter;
+      const matchesSearch = !search || card.dataset.title.includes(search) || card.dataset.desc.includes(search);
+      
+      if (matchesFilter && matchesSearch) {
+        card.classList.remove('hidden');
+        visible++;
+      } else {
+        card.classList.add('hidden');
+      }
+    });
+
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+  }
 
   filterBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       filterBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
-
-      const filter = btn.dataset.filter;
-      const cards = blogGrid.querySelectorAll('.blog-card');
-      let visible = 0;
-
-      cards.forEach(card => {
-        if (!filter || card.dataset.collection === filter) {
-          card.classList.remove('hidden');
-          visible++;
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-
-      noResults.style.display = visible === 0 ? 'block' : 'none';
+      activeFilter = btn.dataset.filter;
+      filterBlog();
     });
   });
+
+  searchInput.addEventListener('input', filterBlog);
 </script>

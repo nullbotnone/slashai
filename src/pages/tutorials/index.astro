@@ -15,9 +15,16 @@ const tutorials = (await getCollection('tutorials'))
   </section>
   
   <section class="container">
-    <div class="card-grid">
+    <input 
+      type="text" 
+      id="tutorial-search" 
+      placeholder="🔍 Search tutorials..." 
+      class="blog-search"
+    />
+
+    <div class="card-grid" id="tutorial-grid">
       {tutorials.map((post) => (
-        <a href={`/tutorials/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
+        <a href={`/tutorials/${post.id.replace(/\.md$/, '')}/`} class="card tutorial-card" data-title={post.data.title.toLowerCase()} data-desc={post.data.description.toLowerCase()} data-tool={post.data.toolName.toLowerCase()} style="text-decoration: none; color: inherit;">
           <h3>{post.data.title}</h3>
           <p>{post.data.description}</p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
@@ -28,5 +35,56 @@ const tutorials = (await getCollection('tutorials'))
         </a>
       ))}
     </div>
+
+    <p class="no-results" id="no-results" style="display: none; text-align: center; color: var(--color-text-secondary); padding: 3rem 0;">
+      No tutorials found matching your search.
+    </p>
   </section>
 </BaseLayout>
+
+<style>
+  .blog-search {
+    width: 100%;
+    padding: 0.85rem 1.25rem;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg-card);
+    color: var(--color-text);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    transition: border-color 0.2s;
+  }
+
+  .blog-search:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  }
+</style>
+
+<script is:inline>
+  const searchInput = document.getElementById('tutorial-search');
+  const grid = document.getElementById('tutorial-grid');
+  const noResults = document.getElementById('no-results');
+
+  searchInput.addEventListener('input', () => {
+    const search = searchInput.value.toLowerCase();
+    const cards = grid.querySelectorAll('.tutorial-card');
+    let visible = 0;
+
+    cards.forEach(card => {
+      const title = card.dataset.title;
+      const desc = card.dataset.desc;
+      const tool = card.dataset.tool;
+      
+      if (!search || title.includes(search) || desc.includes(search) || tool.includes(search)) {
+        card.style.display = '';
+        visible++;
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+  });
+</script>
