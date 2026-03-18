@@ -2,7 +2,6 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import tools from '../../data/tools.json';
 
-// Define role-to-category mappings
 const roleCategories = {
   writer: { categories: ['Writing', 'Assistant', 'Research'], label: 'Writer / Content Creator' },
   designer: { categories: ['Design', 'Video', 'Assistant'], label: 'Designer / Creative' },
@@ -14,7 +13,6 @@ const roleCategories = {
   ecommerce: { categories: ['Writing', 'Video', 'Design', 'SEO', 'AI Agents', 'Finance'], label: 'E-commerce / Online Business' },
 };
 
-// Budget ranges
 const budgets = [
   { id: 'free', label: 'Free only', max: 0 },
   { id: 'budget', label: 'Under $25/mo', max: 25 },
@@ -23,7 +21,6 @@ const budgets = [
   { id: 'unlimited', label: 'No limit', max: Infinity },
 ];
 
-// Serialize tools for client-side use
 const toolsJson = JSON.stringify(tools);
 const rolesJson = JSON.stringify(roleCategories);
 const budgetsJson = JSON.stringify(budgets);
@@ -75,7 +72,7 @@ const budgetsJson = JSON.stringify(budgets);
           <button class="restart-btn" id="restart-btn">↻ Start over</button>
         </div>
         <div class="results-meta" id="results-meta"></div>
-        <div class="stack-grid" id="stack-grid"></div>
+        <div class="card-grid" id="stack-grid"></div>
         <div class="stack-total" id="stack-total"></div>
         <div class="stack-empty hidden" id="stack-empty">
           <p>No tools found for this combination. Try increasing your budget or choosing a different role.</p>
@@ -97,9 +94,7 @@ const budgetsJson = JSON.stringify(budgets);
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .builder-step.hidden {
-    display: none;
-  }
+  .builder-step.hidden { display: none; }
 
   .step-number {
     display: inline-flex;
@@ -121,7 +116,6 @@ const budgetsJson = JSON.stringify(budgets);
     margin-bottom: 1.25rem;
   }
 
-  /* Role Grid */
   .role-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -155,16 +149,9 @@ const budgetsJson = JSON.stringify(budgets);
     box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
   }
 
-  .role-icon {
-    font-size: 1.5rem;
-  }
+  .role-icon { font-size: 1.5rem; }
+  .role-label { font-size: 0.9rem; font-weight: 600; }
 
-  .role-label {
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-
-  /* Budget Grid */
   .budget-grid {
     display: flex;
     gap: 0.75rem;
@@ -184,10 +171,7 @@ const budgetsJson = JSON.stringify(budgets);
     font-family: var(--font-sans);
   }
 
-  .budget-btn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-  }
+  .budget-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
   .budget-btn.selected {
     background: var(--color-accent);
@@ -195,10 +179,7 @@ const budgetsJson = JSON.stringify(budgets);
     color: white;
   }
 
-  /* Results */
-  .builder-results.hidden {
-    display: none;
-  }
+  .builder-results.hidden { display: none; }
 
   .results-header {
     display: flex;
@@ -207,10 +188,7 @@ const budgetsJson = JSON.stringify(budgets);
     margin-bottom: 1rem;
   }
 
-  .results-header h2 {
-    font-size: 1.3rem;
-    font-weight: 700;
-  }
+  .results-header h2 { font-size: 1.3rem; font-weight: 700; }
 
   .restart-btn {
     background: var(--color-bg-secondary);
@@ -225,10 +203,7 @@ const budgetsJson = JSON.stringify(budgets);
     font-family: var(--font-sans);
   }
 
-  .restart-btn:hover {
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-  }
+  .restart-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
   .results-meta {
     color: var(--color-text-secondary);
@@ -240,102 +215,8 @@ const budgetsJson = JSON.stringify(budgets);
     border-left: 3px solid var(--color-accent);
   }
 
-  /* Stack Cards — matches site-wide .card style */
-  .stack-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.25rem;
-  }
-
-  .stack-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 1.5rem;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    overflow: hidden;
-    opacity: 0;
-    transform: translateY(12px);
-    animation: stackCardIn 0.45s ease forwards;
-  }
-
-  .stack-card:nth-child(1) { animation-delay: 0.05s; }
-  .stack-card:nth-child(2) { animation-delay: 0.1s; }
-  .stack-card:nth-child(3) { animation-delay: 0.15s; }
-  .stack-card:nth-child(4) { animation-delay: 0.2s; }
-  .stack-card:nth-child(5) { animation-delay: 0.25s; }
-  .stack-card:nth-child(6) { animation-delay: 0.3s; }
-
-  @keyframes stackCardIn {
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .stack-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--color-accent), #ec4899);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-
-  .stack-card:hover {
-    border-color: var(--color-accent);
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-lg);
-  }
-
-  .stack-card:hover::before {
-    transform: scaleX(1);
-  }
-
-  .stack-card h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
-    line-height: 1.4;
-  }
-
-  .stack-card h3 a {
-    color: var(--color-text);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
-  .stack-card h3 a:hover {
-    color: var(--color-accent);
-  }
-
-  .stack-card-desc {
-    color: var(--color-text-secondary);
-    font-size: 0.9rem;
-    line-height: 1.6;
-    margin-bottom: 0.75rem;
-  }
-
-  .stack-card-tags {
-    display: flex;
-    gap: 0.5rem;
-    flex-wrap: wrap;
-    margin-bottom: 0.75rem;
-  }
-
-  .stack-card-tags .tag {
-    display: inline-block;
-    background: var(--color-accent-light);
-    color: var(--color-accent);
-    padding: 0.2rem 0.6rem;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 600;
-  }
-
-  .stack-card-why {
+  /* Card extras for stack results */
+  .stack-why {
     font-size: 0.8rem;
     color: var(--color-accent);
     font-weight: 600;
@@ -343,30 +224,27 @@ const budgetsJson = JSON.stringify(budgets);
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
     line-height: 1.4;
-    margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
-  .stack-card-links {
+  .stack-links {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 0.75rem;
     padding-top: 0.75rem;
     border-top: 1px solid var(--color-border);
   }
 
-  .stack-card-links a {
+  .stack-links a {
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-accent);
     text-decoration: none;
-    transition: color 0.2s;
   }
 
-  .stack-card-links a:hover {
-    color: var(--color-accent-hover);
-  }
-
-  .stack-card-links .visit-btn {
+  .stack-links .visit-btn {
     font-size: 0.8rem;
     font-weight: 600;
     color: var(--color-text-secondary);
@@ -376,12 +254,8 @@ const budgetsJson = JSON.stringify(budgets);
     transition: all 0.2s;
   }
 
-  .stack-card-links .visit-btn:hover {
-    background: var(--color-accent);
-    color: white;
-  }
+  .stack-links .visit-btn:hover { background: var(--color-accent); color: white; }
 
-  /* Total */
   .stack-total {
     margin-top: 1.5rem;
     padding: 1.25rem 1.5rem;
@@ -391,10 +265,7 @@ const budgetsJson = JSON.stringify(budgets);
     text-align: center;
   }
 
-  .stack-total strong {
-    font-size: 1.4rem;
-    color: var(--color-accent);
-  }
+  .stack-total strong { font-size: 1.4rem; color: var(--color-accent); }
 
   .stack-total p {
     color: var(--color-text-secondary);
@@ -407,7 +278,6 @@ const budgetsJson = JSON.stringify(budgets);
 
   @media (max-width: 768px) {
     .role-grid { grid-template-columns: 1fr 1fr; }
-    .stack-grid { grid-template-columns: 1fr; }
     .results-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
   }
 </style>
@@ -420,7 +290,6 @@ const budgetsJson = JSON.stringify(budgets);
   let selectedRole = null;
   let selectedBudget = null;
 
-  // Role selection
   document.querySelectorAll('.role-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('selected'));
@@ -431,7 +300,6 @@ const budgetsJson = JSON.stringify(budgets);
     });
   });
 
-  // Budget selection
   document.querySelectorAll('.budget-btn').forEach(btn => {
     btn.addEventListener('click', () => {
       document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('selected'));
@@ -441,7 +309,6 @@ const budgetsJson = JSON.stringify(budgets);
     });
   });
 
-  // Restart
   document.getElementById('restart-btn').addEventListener('click', () => {
     selectedRole = null;
     selectedBudget = null;
@@ -460,111 +327,49 @@ const budgetsJson = JSON.stringify(budgets);
 
   function getWhyText(tool, role) {
     const reasons = {
-      writer: {
-        'Writing': 'Essential for your writing workflow',
-        'Assistant': 'Your AI research and brainstorming partner',
-        'Research': 'Deep research support for in-depth content',
-      },
-      designer: {
-        'Design': 'Core design tool — create faster',
-        'Video': 'Video content for your creative portfolio',
-        'Assistant': 'AI brainstorming and copy support',
-      },
-      developer: {
-        'Coding': 'Code faster with AI pair programming',
-        'Developer': 'Development workflow automation',
-        'Assistant': 'Technical documentation and research',
-        'Automation': 'Automate repetitive dev tasks',
-      },
-      marketer: {
-        'Writing': 'Content marketing at scale',
-        'SEO': 'Dominate search rankings',
-        'Video': 'Video marketing content',
-        'AI Agents': 'Automated lead gen and outreach',
-        'Assistant': 'Campaign strategy and copywriting',
-      },
-      consultant: {
-        'Productivity': 'Manage client work efficiently',
-        'AI Agents': 'Automate client communication',
-        'Assistant': 'Analysis and report writing',
-        'Research': 'Deep research for client deliverables',
-        'Automation': 'Streamline your workflows',
-      },
-      creator: {
-        'Video': 'Video creation and editing',
-        'Audio': 'Podcast and audio production',
-        'Writing': 'Script and caption writing',
-        'Design': 'Thumbnails and visual content',
-        'Assistant': 'Content ideation and planning',
-      },
-      freelancer: {
-        'Productivity': 'Stay organized across clients',
-        'Assistant': 'All-purpose AI helper',
-        'Writing': 'Proposals, emails, deliverables',
-        'Automation': 'Automate admin busywork',
-        'AI Agents': 'Virtual assistant that works 24/7',
-      },
-      ecommerce: {
-        'Writing': 'Product descriptions and emails',
-        'Video': 'Product videos and ads',
-        'Design': 'Product images and branding',
-        'SEO': 'Get found in search',
-        'AI Agents': 'Automate customer support',
-        'Finance': 'Track your business finances',
-      },
+      writer: { 'Writing': 'Essential for your writing workflow', 'Assistant': 'Your AI research and brainstorming partner', 'Research': 'Deep research support for in-depth content' },
+      designer: { 'Design': 'Core design tool — create faster', 'Video': 'Video content for your creative portfolio', 'Assistant': 'AI brainstorming and copy support' },
+      developer: { 'Coding': 'Code faster with AI pair programming', 'Developer': 'Development workflow automation', 'Assistant': 'Technical documentation and research', 'Automation': 'Automate repetitive dev tasks' },
+      marketer: { 'Writing': 'Content marketing at scale', 'SEO': 'Dominate search rankings', 'Video': 'Video marketing content', 'AI Agents': 'Automated lead gen and outreach', 'Assistant': 'Campaign strategy and copywriting' },
+      consultant: { 'Productivity': 'Manage client work efficiently', 'AI Agents': 'Automate client communication', 'Assistant': 'Analysis and report writing', 'Research': 'Deep research for client deliverables', 'Automation': 'Streamline your workflows' },
+      creator: { 'Video': 'Video creation and editing', 'Audio': 'Podcast and audio production', 'Writing': 'Script and caption writing', 'Design': 'Thumbnails and visual content', 'Assistant': 'Content ideation and planning' },
+      freelancer: { 'Productivity': 'Stay organized across clients', 'Assistant': 'All-purpose AI helper', 'Writing': 'Proposals, emails, deliverables', 'Automation': 'Automate admin busywork', 'AI Agents': 'Virtual assistant that works 24/7' },
+      ecommerce: { 'Writing': 'Product descriptions and emails', 'Video': 'Product videos and ads', 'Design': 'Product images and branding', 'SEO': 'Get found in search', 'AI Agents': 'Automate customer support', 'Finance': 'Track your business finances' },
     };
-    return reasons[role]?.[tool.category] || `Useful ${tool.category.toLowerCase()} tool`;
+    return reasons[role]?.[tool.category] || 'Useful ' + tool.category.toLowerCase() + ' tool';
   }
 
   function generateStack() {
     const roleData = roles[selectedRole];
     const maxBudget = selectedBudget.max;
 
-    // Filter tools by role categories
     let candidates = allTools.filter(t => roleData.categories.includes(t.category));
-
-    // Sort: Free first, then by price ascending
     candidates.sort((a, b) => {
-      const priceA = parsePrice(a);
-      const priceB = parsePrice(b);
       if (a.pricing === 'Free' && b.pricing !== 'Free') return -1;
       if (b.pricing === 'Free' && a.pricing !== 'Free') return 1;
-      return priceA - priceB;
+      return parsePrice(a) - parsePrice(b);
     });
 
-    // Pick best tool per category, respecting budget
     const stack = [];
     const usedCategories = new Set();
     let totalCost = 0;
 
-    // Priority order for categories
-    const priorityOrder = roleData.categories;
-
-    for (const cat of priorityOrder) {
+    for (const cat of roleData.categories) {
       if (usedCategories.has(cat)) continue;
-
       const tool = candidates.find(t => {
         if (t.category !== cat) return false;
         if (usedCategories.has(t.name)) return false;
-        const price = parsePrice(t);
-        return (totalCost + price) <= maxBudget;
+        return (totalCost + parsePrice(t)) <= maxBudget;
       });
-
       if (tool) {
-        stack.push({
-          ...tool,
-          why: getWhyText(tool, selectedRole),
-          monthlyCost: parsePrice(tool),
-        });
+        stack.push({ ...tool, why: getWhyText(tool, selectedRole), monthlyCost: parsePrice(tool) });
         usedCategories.add(cat);
         usedCategories.add(tool.name);
         totalCost += parsePrice(tool);
       }
-
       if (stack.length >= 6) break;
     }
 
-    // Render results
     const resultsEl = document.getElementById('results');
     const gridEl = document.getElementById('stack-grid');
     const totalEl = document.getElementById('stack-total');
@@ -572,8 +377,7 @@ const budgetsJson = JSON.stringify(budgets);
     const emptyEl = document.getElementById('stack-empty');
 
     resultsEl.classList.remove('hidden');
-
-    metaEl.innerHTML = `<strong>${roleData.label}</strong> · Budget: <strong>${selectedBudget.label}</strong> · ${stack.length} tools recommended`;
+    metaEl.innerHTML = '<strong>' + roleData.label + '</strong> · Budget: <strong>' + selectedBudget.label + '</strong> · ' + stack.length + ' tools recommended';
 
     if (stack.length === 0) {
       gridEl.innerHTML = '';
@@ -585,27 +389,24 @@ const budgetsJson = JSON.stringify(budgets);
 
     emptyEl.classList.add('hidden');
 
-    gridEl.innerHTML = stack.map(tool => `
-      <div class="stack-card">
-        <h3><a href="/tools/${tool.slug}/">${tool.name}</a></h3>
-        <p class="stack-card-desc">${tool.description}</p>
-        <div class="stack-card-tags">
-          <span class="tag">${tool.category}</span>
-          <span class="tag">${tool.monthlyCost === 0 ? 'Free' : '$' + tool.monthlyCost + '/mo'}</span>
-          <span class="tag">${tool.pricing}</span>
-        </div>
-        <div class="stack-card-why">💡 ${tool.why}</div>
-        <div class="stack-card-links">
-          <a href="/tools/${tool.slug}/">Details →</a>
-          <a href="${tool.affiliateUrl || tool.url}" target="_blank" rel="noopener" class="visit-btn">Visit ↗</a>
-        </div>
-      </div>
-    `).join('');
+    // Use the exact same markup as site-wide .card elements
+    gridEl.innerHTML = stack.map(function(tool, i) {
+      var delay = (i * 0.03).toFixed(2);
+      return '<a href="/tools/' + tool.slug + '/" class="card" style="text-decoration: none; color: inherit; animation-delay: ' + delay + 's;">' +
+        '<h3>' + tool.name + '</h3>' +
+        '<p>' + tool.description + '</p>' +
+        '<span class="tag">' + tool.category + '</span>' +
+        '<span class="tag">' + (tool.monthlyCost === 0 ? 'Free' : '$' + tool.monthlyCost + '/mo') + '</span>' +
+        '<div class="stack-why">💡 ' + tool.why + '</div>' +
+        '<div class="stack-links">' +
+          '<a href="/tools/' + tool.slug + '/">Details →</a>' +
+          '<a href="' + (tool.affiliateUrl || tool.url) + '" target="_blank" rel="noopener" class="visit-btn">Visit ↗</a>' +
+        '</div>' +
+      '</a>';
+    }).join('');
 
-    totalEl.innerHTML = `
-      <strong>${totalCost === 0 ? 'Free' : '$' + totalCost + '/mo'}</strong>
-      <p>Total estimated monthly cost for your ${roleData.label.toLowerCase()} AI stack</p>
-    `;
+    totalEl.innerHTML = '<strong>' + (totalCost === 0 ? 'Free' : '$' + totalCost + '/mo') + '</strong>' +
+      '<p>Total estimated monthly cost for your ' + roleData.label.toLowerCase() + ' AI stack</p>';
 
     resultsEl.scrollIntoView({ behavior: 'smooth' });
   }
