@@ -987,6 +987,77 @@
     "featured": false
   },
   {
+    "name": "GitHub Copilot",
+    "slug": "github-copilot",
+    "description": "AI pair programmer that suggests code, completes functions, and handles GitHub issues with agent mode.",
+    "longDescription": "GitHub Copilot is the industry-standard AI coding assistant. It integrates with VS Code, JetBrains, Neovim, and more, providing fast inline code suggestions, chat-based assistance, and an agent mode that can handle GitHub issues end-to-end. Powered by multiple models (GPT-5, Claude, Gemini), it excels at generating boilerplate, completing functions, suggesting tests, and reducing repetitive coding. At $10/mo for unlimited use, it offers the best price-to-value ratio of any AI coding tool.",
+    "url": "https://github.com/features/copilot",
+    "affiliateUrl": null,
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "$10/mo Pro",
+    "released": "June 2022",
+    "added": "2026-03-18",
+    "pros": [
+      "Best price-to-value at $10/mo",
+      "Works in VS Code, JetBrains, Neovim, and more",
+      "Agent mode handles GitHub issues",
+      "Multi-model support (GPT-5, Claude, Gemini)",
+      "Free tier for students and open source"
+    ],
+    "cons": [
+      "Less codebase awareness than Cursor",
+      "Agent mode requires GitHub integration",
+      "Can suggest subtly wrong code"
+    ],
+    "bestFor": "Developers who want reliable AI coding assistance in their existing editor without switching tools.",
+    "affiliateCommission": null,
+    "tags": [
+      "coding",
+      "development",
+      "autocomplete",
+      "ai assistant",
+      "github"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Windsurf",
+    "slug": "windsurf",
+    "description": "Agentic AI IDE with Cascade for autonomous multi-file coding, built on VS Code foundations.",
+    "longDescription": "Windsurf (formerly Codeium) is an agentic IDE focused on autonomous coding workflows. Its Cascade feature understands project structure, makes changes across multiple files, and executes terminal commands independently. Built on VS Code foundations, it offers a familiar interface with unlimited autocomplete on the free plan. Acquired by Cognition (makers of Devin) in late 2025, Windsurf is positioned for fully autonomous development workflows.",
+    "url": "https://windsurf.com",
+    "affiliateUrl": null,
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "$15/mo Pro",
+    "released": "2024 (as Windsurf)",
+    "added": "2026-03-18",
+    "pros": [
+      "Generous free tier with unlimited autocomplete",
+      "Cascade agentic coding similar to Cursor Composer",
+      "Fast inline completions (SWE-1.5 model)",
+      "Terminal integration for running commands",
+      "Acquired by Cognition — strong roadmap"
+    ],
+    "cons": [
+      "Occasional stability issues during complex operations",
+      "Credit system can limit heavy users",
+      "Smaller community than Cursor",
+      "Large-scale refactors can struggle (50+ files)"
+    ],
+    "bestFor": "Developers wanting Cursor-like agentic features with a generous free tier.",
+    "affiliateCommission": null,
+    "tags": [
+      "coding",
+      "development",
+      "ide",
+      "ai agent",
+      "autocomplete"
+    ],
+    "featured": false
+  },
+  {
     "name": "Claude Code",
     "slug": "claude-code",
     "description": "AI coding agent that writes code, runs terminal commands, and manages files directly.",

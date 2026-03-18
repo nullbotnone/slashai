@@ -1,0 +1,584 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import tools from '../../data/tools.json';
+
+// Define role-to-category mappings
+const roleCategories = {
+  writer: { categories: ['Writing', 'Assistant', 'Research'], label: 'Writer / Content Creator' },
+  designer: { categories: ['Design', 'Video', 'Assistant'], label: 'Designer / Creative' },
+  developer: { categories: ['Coding', 'Developer', 'Assistant', 'Automation'], label: 'Developer / Engineer' },
+  marketer: { categories: ['Writing', 'SEO', 'Video', 'AI Agents', 'Assistant'], label: 'Marketer / Growth' },
+  consultant: { categories: ['Productivity', 'AI Agents', 'Assistant', 'Research', 'Automation'], label: 'Consultant / Advisor' },
+  creator: { categories: ['Video', 'Audio', 'Writing', 'Design', 'Assistant'], label: 'Content Creator / Influencer' },
+  freelancer: { categories: ['Productivity', 'Assistant', 'Writing', 'Automation', 'AI Agents'], label: 'Freelancer (General)' },
+  ecommerce: { categories: ['Writing', 'Video', 'Design', 'SEO', 'AI Agents', 'Finance'], label: 'E-commerce / Online Business' },
+};
+
+// Budget ranges
+const budgets = [
+  { id: 'free', label: 'Free only', max: 0 },
+  { id: 'budget', label: 'Under $25/mo', max: 25 },
+  { id: 'mid', label: 'Under $50/mo', max: 50 },
+  { id: 'pro', label: 'Under $100/mo', max: 100 },
+  { id: 'unlimited', label: 'No limit', max: Infinity },
+];
+
+// Serialize tools for client-side use
+const toolsJson = JSON.stringify(tools);
+const rolesJson = JSON.stringify(roleCategories);
+const budgetsJson = JSON.stringify(budgets);
+---
+
+<BaseLayout title="Build Your AI Stack" description="Pick your role and budget — get a personalized AI tool stack curated for solopreneurs and freelancers.">
+  <section class="hero">
+    <div class="container">
+      <h1>Build Your <span class="gradient-text">AI Stack</span></h1>
+      <p>Pick your role and budget. Get a personalized AI toolkit in seconds.</p>
+    </div>
+  </section>
+
+  <section class="section-glow">
+    <div class="container">
+      <!-- Step 1: Role -->
+      <div class="builder-step" id="step-1">
+        <div class="step-number">1</div>
+        <h2>What do you do?</h2>
+        <div class="role-grid">
+          {Object.entries(roleCategories).map(([id, role]) => (
+            <button class="role-btn" data-role={id}>
+              <span class="role-icon">
+                {id === 'writer' ? '✍️' : id === 'designer' ? '🎨' : id === 'developer' ? '💻' : id === 'marketer' ? '📣' : id === 'consultant' ? '💼' : id === 'creator' ? '🎬' : id === 'freelancer' ? '⚡' : '🛒'}
+              </span>
+              <span class="role-label">{role.label}</span>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Step 2: Budget -->
+      <div class="builder-step hidden" id="step-2">
+        <div class="step-number">2</div>
+        <h2>Monthly AI budget?</h2>
+        <div class="budget-grid">
+          {budgets.map((b) => (
+            <button class="budget-btn" data-budget={b.id} data-max={b.max}>
+              {b.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- Results -->
+      <div class="builder-results hidden" id="results">
+        <div class="results-header">
+          <h2>Your <span class="gradient-text">Recommended Stack</span></h2>
+          <button class="restart-btn" id="restart-btn">↻ Start over</button>
+        </div>
+        <div class="results-meta" id="results-meta"></div>
+        <div class="stack-grid" id="stack-grid"></div>
+        <div class="stack-total" id="stack-total"></div>
+        <div class="stack-empty hidden" id="stack-empty">
+          <p>No tools found for this combination. Try increasing your budget or choosing a different role.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .builder-step {
+    margin-bottom: 3rem;
+    opacity: 0;
+    transform: translateY(16px);
+    animation: stepIn 0.4s ease forwards;
+  }
+
+  @keyframes stepIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .builder-step.hidden {
+    display: none;
+  }
+
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), #ec4899);
+    color: white;
+    font-weight: 800;
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .builder-step h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+  }
+
+  /* Role Grid */
+  .role-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .role-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: left;
+    color: var(--color-text);
+    font-family: var(--font-sans);
+  }
+
+  .role-btn:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.15);
+    transform: translateY(-2px);
+  }
+
+  .role-btn.selected {
+    border-color: var(--color-accent);
+    background: var(--color-accent-light);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+  }
+
+  .role-icon {
+    font-size: 1.5rem;
+  }
+
+  .role-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  /* Budget Grid */
+  .budget-grid {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .budget-btn {
+    padding: 0.75rem 1.5rem;
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-border);
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--color-text);
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: var(--font-sans);
+  }
+
+  .budget-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .budget-btn.selected {
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+    color: white;
+  }
+
+  /* Results */
+  .builder-results.hidden {
+    display: none;
+  }
+
+  .results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  .results-header h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .restart-btn {
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    transition: all 0.2s;
+    font-family: var(--font-sans);
+  }
+
+  .restart-btn:hover {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .results-meta {
+    color: var(--color-text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+    padding: 0.75rem 1rem;
+    background: var(--color-bg-secondary);
+    border-radius: 8px;
+    border-left: 3px solid var(--color-accent);
+  }
+
+  /* Stack Grid */
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1rem;
+  }
+
+  .stack-card {
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: stackCardIn 0.4s ease forwards;
+  }
+
+  .stack-card:nth-child(1) { animation-delay: 0.05s; }
+  .stack-card:nth-child(2) { animation-delay: 0.1s; }
+  .stack-card:nth-child(3) { animation-delay: 0.15s; }
+  .stack-card:nth-child(4) { animation-delay: 0.2s; }
+  .stack-card:nth-child(5) { animation-delay: 0.25s; }
+  .stack-card:nth-child(6) { animation-delay: 0.3s; }
+
+  @keyframes stackCardIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .stack-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), #ec4899);
+  }
+
+  .stack-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+  }
+
+  .stack-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
+  }
+
+  .stack-card-header h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+
+  .stack-card-header a {
+    color: var(--color-text);
+    text-decoration: none;
+  }
+
+  .stack-card-header a:hover {
+    color: var(--color-accent);
+  }
+
+  .stack-price {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.2rem 0.5rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+
+  .stack-price.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+  .stack-price.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+
+  .stack-card-desc {
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .stack-card-why {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    background: var(--color-accent-light);
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    line-height: 1.4;
+  }
+
+  .stack-card-links {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .stack-card-links a {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .stack-card-links a.secondary {
+    color: var(--color-text-secondary);
+  }
+
+  /* Total */
+  .stack-total {
+    margin-top: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: var(--color-bg-card);
+    border: 2px solid var(--color-accent);
+    border-radius: var(--radius);
+    text-align: center;
+  }
+
+  .stack-total strong {
+    font-size: 1.4rem;
+    color: var(--color-accent);
+  }
+
+  .stack-total p {
+    color: var(--color-text-secondary);
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+  }
+
+  .stack-empty.hidden { display: none; }
+  .stack-empty { text-align: center; padding: 3rem; color: var(--color-text-secondary); }
+
+  @media (max-width: 768px) {
+    .role-grid { grid-template-columns: 1fr 1fr; }
+    .stack-grid { grid-template-columns: 1fr; }
+    .results-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+  }
+</style>
+
+<script define:vars={{ toolsJson, rolesJson, budgetsJson }}>
+  const allTools = JSON.parse(toolsJson);
+  const roles = JSON.parse(rolesJson);
+  const budgets = JSON.parse(budgetsJson);
+
+  let selectedRole = null;
+  let selectedBudget = null;
+
+  // Role selection
+  document.querySelectorAll('.role-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedRole = btn.dataset.role;
+      document.getElementById('step-2').classList.remove('hidden');
+      document.getElementById('step-2').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    });
+  });
+
+  // Budget selection
+  document.querySelectorAll('.budget-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      selectedBudget = budgets.find(b => b.id === btn.dataset.budget);
+      generateStack();
+    });
+  });
+
+  // Restart
+  document.getElementById('restart-btn').addEventListener('click', () => {
+    selectedRole = null;
+    selectedBudget = null;
+    document.querySelectorAll('.role-btn').forEach(b => b.classList.remove('selected'));
+    document.querySelectorAll('.budget-btn').forEach(b => b.classList.remove('selected'));
+    document.getElementById('step-2').classList.add('hidden');
+    document.getElementById('results').classList.add('hidden');
+    document.getElementById('step-1').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  function parsePrice(tool) {
+    if (tool.pricing === 'Free') return 0;
+    const match = tool.price?.match(/\$(\d+(?:\.\d+)?)/);
+    return match ? parseFloat(match[1]) : 0;
+  }
+
+  function getWhyText(tool, role) {
+    const reasons = {
+      writer: {
+        'Writing': 'Essential for your writing workflow',
+        'Assistant': 'Your AI research and brainstorming partner',
+        'Research': 'Deep research support for in-depth content',
+      },
+      designer: {
+        'Design': 'Core design tool — create faster',
+        'Video': 'Video content for your creative portfolio',
+        'Assistant': 'AI brainstorming and copy support',
+      },
+      developer: {
+        'Coding': 'Code faster with AI pair programming',
+        'Developer': 'Development workflow automation',
+        'Assistant': 'Technical documentation and research',
+        'Automation': 'Automate repetitive dev tasks',
+      },
+      marketer: {
+        'Writing': 'Content marketing at scale',
+        'SEO': 'Dominate search rankings',
+        'Video': 'Video marketing content',
+        'AI Agents': 'Automated lead gen and outreach',
+        'Assistant': 'Campaign strategy and copywriting',
+      },
+      consultant: {
+        'Productivity': 'Manage client work efficiently',
+        'AI Agents': 'Automate client communication',
+        'Assistant': 'Analysis and report writing',
+        'Research': 'Deep research for client deliverables',
+        'Automation': 'Streamline your workflows',
+      },
+      creator: {
+        'Video': 'Video creation and editing',
+        'Audio': 'Podcast and audio production',
+        'Writing': 'Script and caption writing',
+        'Design': 'Thumbnails and visual content',
+        'Assistant': 'Content ideation and planning',
+      },
+      freelancer: {
+        'Productivity': 'Stay organized across clients',
+        'Assistant': 'All-purpose AI helper',
+        'Writing': 'Proposals, emails, deliverables',
+        'Automation': 'Automate admin busywork',
+        'AI Agents': 'Virtual assistant that works 24/7',
+      },
+      ecommerce: {
+        'Writing': 'Product descriptions and emails',
+        'Video': 'Product videos and ads',
+        'Design': 'Product images and branding',
+        'SEO': 'Get found in search',
+        'AI Agents': 'Automate customer support',
+        'Finance': 'Track your business finances',
+      },
+    };
+    return reasons[role]?.[tool.category] || `Useful ${tool.category.toLowerCase()} tool`;
+  }
+
+  function generateStack() {
+    const roleData = roles[selectedRole];
+    const maxBudget = selectedBudget.max;
+
+    // Filter tools by role categories
+    let candidates = allTools.filter(t => roleData.categories.includes(t.category));
+
+    // Sort: Free first, then by price ascending
+    candidates.sort((a, b) => {
+      const priceA = parsePrice(a);
+      const priceB = parsePrice(b);
+      if (a.pricing === 'Free' && b.pricing !== 'Free') return -1;
+      if (b.pricing === 'Free' && a.pricing !== 'Free') return 1;
+      return priceA - priceB;
+    });
+
+    // Pick best tool per category, respecting budget
+    const stack = [];
+    const usedCategories = new Set();
+    let totalCost = 0;
+
+    // Priority order for categories
+    const priorityOrder = roleData.categories;
+
+    for (const cat of priorityOrder) {
+      if (usedCategories.has(cat)) continue;
+
+      const tool = candidates.find(t => {
+        if (t.category !== cat) return false;
+        if (usedCategories.has(t.name)) return false;
+        const price = parsePrice(t);
+        return (totalCost + price) <= maxBudget;
+      });
+
+      if (tool) {
+        stack.push({
+          ...tool,
+          why: getWhyText(tool, selectedRole),
+          monthlyCost: parsePrice(tool),
+        });
+        usedCategories.add(cat);
+        usedCategories.add(tool.name);
+        totalCost += parsePrice(tool);
+      }
+
+      if (stack.length >= 6) break;
+    }
+
+    // Render results
+    const resultsEl = document.getElementById('results');
+    const gridEl = document.getElementById('stack-grid');
+    const totalEl = document.getElementById('stack-total');
+    const metaEl = document.getElementById('results-meta');
+    const emptyEl = document.getElementById('stack-empty');
+
+    resultsEl.classList.remove('hidden');
+
+    metaEl.innerHTML = `<strong>${roleData.label}</strong> · Budget: <strong>${selectedBudget.label}</strong> · ${stack.length} tools recommended`;
+
+    if (stack.length === 0) {
+      gridEl.innerHTML = '';
+      totalEl.innerHTML = '';
+      emptyEl.classList.remove('hidden');
+      resultsEl.scrollIntoView({ behavior: 'smooth' });
+      return;
+    }
+
+    emptyEl.classList.add('hidden');
+
+    gridEl.innerHTML = stack.map(tool => `
+      <div class="stack-card">
+        <div class="stack-card-header">
+          <h3><a href="/tools/${tool.slug}/">${tool.name}</a></h3>
+          <span class="stack-price ${tool.monthlyCost === 0 ? 'free' : 'paid'}">${tool.monthlyCost === 0 ? 'Free' : '$' + tool.monthlyCost + '/mo'}</span>
+        </div>
+        <p class="stack-card-desc">${tool.description}</p>
+        <div class="stack-card-why">💡 ${tool.why}</div>
+        <div class="stack-card-links">
+          <a href="${tool.affiliateUrl || tool.url}" target="_blank" rel="noopener">Visit ${tool.name} ↗</a>
+          <a href="/tools/${tool.slug}/" class="secondary">Read review →</a>
+        </div>
+      </div>
+    `).join('');
+
+    totalEl.innerHTML = `
+      <strong>${totalCost === 0 ? 'Free' : '$' + totalCost + '/mo'}</strong>
+      <p>Total estimated monthly cost for your ${roleData.label.toLowerCase()} AI stack</p>
+    `;
+
+    resultsEl.scrollIntoView({ behavior: 'smooth' });
+  }
+</script>
