@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const allReviews = await getCollection('reviews');
+const allRoundups = await getCollection('roundups');
+const allComparisons = await getCollection('comparisons');
+
+const recentPosts = [...allReviews, ...allRoundups, ...allComparisons]
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 6);
+---
+
+<BaseLayout title="AI Tools for Solopreneurs & Freelancers">
+  <section class="hero">
+    <div class="container">
+      <h1>AI tools that actually work<br>for one-person businesses</h1>
+      <p>Honest reviews, practical guides, and real workflows. We test every tool so you don't have to waste time on ones that don't deliver.</p>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2 style="margin-bottom: 1rem; font-size: 1.3rem;">Latest Articles</h2>
+    <div class="card-grid">
+      {recentPosts.map((post) => {
+        const path = post.collection === 'reviews' ? `/reviews/${post.slug}/` :
+                     post.collection === 'roundups' ? `/roundups/${post.slug}/` :
+                     `/comparisons/${post.slug}/`;
+        const tag = post.collection === 'reviews' ? 'Review' :
+                    post.collection === 'roundups' ? 'Roundup' : 'Comparison';
+        return (
+          <a href={path} class="card" style="text-decoration: none; color: inherit;">
+            <h3>{post.data.title}</h3>
+            <p>{post.data.description}</p>
+            <span class="tag">{tag}</span>
+          </a>
+        );
+      })}
+    </div>
+  </section>
+
+  <section class="container" style="margin-top: 3rem;">
+    <h2 style="margin-bottom: 1rem; font-size: 1.3rem;">Browse by Category</h2>
+    <div class="card-grid">
+      <a href="/roundups/" class="card" style="text-decoration: none; color: inherit;">
+        <h3>📊 Best-Of Roundups</h3>
+        <p>Curated lists of the best AI tools for every freelancer need — writing, design, productivity, and more.</p>
+      </a>
+      <a href="/reviews/" class="card" style="text-decoration: none; color: inherit;">
+        <h3>🔍 In-Depth Reviews</h3>
+        <p>Honest, hands-on reviews of AI tools tested on real freelance work. No sponsored placements.</p>
+      </a>
+      <a href="/comparisons/" class="card" style="text-decoration: none; color: inherit;">
+        <h3>⚖️ Head-to-Head Comparisons</h3>
+        <p>Can't decide between two tools? Our comparison articles break down exactly which one fits your needs.</p>
+      </a>
+      <a href="/guides/" class="card" style="text-decoration: none; color: inherit;">
+        <h3>🛠️ Workflow Guides</h3>
+        <p>Step-by-step tutorials on setting up AI-powered workflows that save hours every week.</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

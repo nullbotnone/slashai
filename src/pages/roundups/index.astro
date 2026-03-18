@@ -1,0 +1,28 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const roundups = (await getCollection('roundups'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Best-Of Roundups" description="Curated lists of the best AI tools for every freelancer need.">
+  <section class="hero">
+    <div class="container">
+      <h1>Best-Of Roundups</h1>
+      <p>Curated lists of the best AI tools, tested and ranked for solopreneurs and freelancers.</p>
+    </div>
+  </section>
+  
+  <section class="container">
+    <div class="card-grid">
+      {roundups.map((post) => (
+        <a href={`/roundups/${post.slug}/`} class="card" style="text-decoration: none; color: inherit;">
+          <h3>{post.data.title}</h3>
+          <p>{post.data.description}</p>
+          <span class="tag">{post.data.itemCount} tools</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

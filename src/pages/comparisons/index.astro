@@ -1,0 +1,29 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const comparisons = (await getCollection('comparisons'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Tool Comparisons" description="Head-to-head comparisons of AI tools for freelancers.">
+  <section class="hero">
+    <div class="container">
+      <h1>Head-to-Head Comparisons</h1>
+      <p>Can't decide between two tools? We break down exactly which one fits your needs.</p>
+    </div>
+  </section>
+  
+  <section class="container">
+    <div class="card-grid">
+      {comparisons.map((post) => (
+        <a href={`/comparisons/${post.slug}/`} class="card" style="text-decoration: none; color: inherit;">
+          <h3>{post.data.title}</h3>
+          <p>{post.data.description}</p>
+          <span class="tag">{post.data.productA}</span>
+          <span class="tag">vs {post.data.productB}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
