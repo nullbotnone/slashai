@@ -134,6 +134,26 @@ const categories = [
     gap: 0.75rem;
     position: relative;
     overflow: hidden;
+    opacity: 0;
+    transform: translateY(12px);
+    animation: blogCardFadeIn 0.45s ease forwards;
+  }
+
+  .blog-card:nth-child(1) { animation-delay: 0.03s; }
+  .blog-card:nth-child(2) { animation-delay: 0.06s; }
+  .blog-card:nth-child(3) { animation-delay: 0.09s; }
+  .blog-card:nth-child(4) { animation-delay: 0.12s; }
+  .blog-card:nth-child(5) { animation-delay: 0.15s; }
+  .blog-card:nth-child(6) { animation-delay: 0.18s; }
+  .blog-card:nth-child(7) { animation-delay: 0.21s; }
+  .blog-card:nth-child(8) { animation-delay: 0.24s; }
+  .blog-card:nth-child(9) { animation-delay: 0.27s; }
+  .blog-card:nth-child(10) { animation-delay: 0.3s; }
+  .blog-card:nth-child(11) { animation-delay: 0.33s; }
+  .blog-card:nth-child(12) { animation-delay: 0.36s; }
+
+  @keyframes blogCardFadeIn {
+    to { opacity: 1; transform: translateY(0); }
   }
 
   .blog-card:hover {
