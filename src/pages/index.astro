@@ -98,16 +98,18 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
 </BaseLayout>
 
 <script is:inline>
+  const cards = document.querySelectorAll('.trending-card');
+  
   const observer = new IntersectionObserver((entries) => {
-    const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
-    visible.forEach((entry, i) => {
-      entry.target.style.animationDelay = `${i * 100}ms`;
-      entry.target.classList.add('animate-in');
+    entries.filter(e => e.isIntersecting).forEach((entry, i) => {
+      setTimeout(() => {
+        entry.target.classList.add('visible');
+      }, i * 120);
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
 
-  document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+  cards.forEach(card => observer.observe(card));
 </script>
 
 <style>
@@ -145,20 +147,17 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
     padding: 1.25rem;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, opacity 0.5s;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     opacity: 0;
-    transform: translateY(30px) scale(0.97);
+    transform: translateY(20px);
   }
 
-  .trending-card.scroll-animate.animate-in {
-    animation: cardIn 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-  }
-
-  @keyframes cardIn {
-    to { opacity: 1; transform: translateY(0) scale(1); }
+  .trending-card.visible {
+    opacity: 1;
+    transform: translateY(0);
   }
 
   .trending-card:hover {
