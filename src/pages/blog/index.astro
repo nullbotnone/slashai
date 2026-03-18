@@ -132,18 +132,8 @@ const categories = [
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-    opacity: 0;
-    transform: translateY(30px) scale(0.97);
     position: relative;
     overflow: hidden;
-  }
-
-  .blog-card.animate-in {
-    animation: blogCardIn 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
-  }
-
-  @keyframes blogCardIn {
-    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
   .blog-card:hover {
