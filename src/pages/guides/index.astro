@@ -14,14 +14,16 @@ const guides = (await getCollection('guides'))
     </div>
   </section>
   
-  <section class="container">
-    <div class="card-grid">
-      {guides.map((post) => (
+  <section class="section-glow">
+    <div class="container">
+      <div class="card-grid">
+        {guides.map((post) => (
         <a href={`/guides/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
           <h3>{post.data.title}</h3>
           <p>{post.data.description}</p>
         </a>
       ))}
+      </div>
     </div>
   </section>
 </BaseLayout>
