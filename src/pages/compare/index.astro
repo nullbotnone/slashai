@@ -146,6 +146,7 @@ const toolsJson = JSON.stringify(tools);
       backBtn.addEventListener('click', function() {
         resultsEl.classList.add('hidden');
         pickerEl.classList.remove('hidden');
+        picked = [];
         filterEl.value = '';
         render();
         pickerEl.scrollIntoView({ behavior: 'smooth' });
