@@ -419,10 +419,29 @@ img {
 
 .article-content code {
   font-family: var(--font-mono);
-  background: var(--color-bg-secondary);
+  background: #1e1e2e;
+  color: #cdd6f4;
   padding: 0.2rem 0.4rem;
   border-radius: 4px;
   font-size: 0.85em;
+}
+
+.article-content pre {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1.25rem 1.5rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  border: 1px solid var(--color-border);
+}
+
+.article-content pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: inherit;
 }
 
 .article-content hr {
