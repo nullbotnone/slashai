@@ -1593,5 +1593,172 @@
       "tickets"
     ],
     "featured": false
+  },
+  {
+    "name": "Gamma",
+    "slug": "gamma",
+    "description": "AI-powered presentation and document generator — describe what you need and get polished slides in seconds.",
+    "longDescription": "Gamma uses AI to generate complete presentations, documents, and web pages from a text prompt. Instead of wrestling with slide templates, describe your topic and Gamma creates a polished, branded deck with images, charts, and proper formatting. Supports PDF/PPTX import/export, AI image generation, and custom branding on paid plans. The free tier (400 credits) lets you test the waters before committing.",
+    "url": "https://gamma.app",
+    "affiliateUrl": null,
+    "category": "Design",
+    "pricing": "Freemium",
+    "price": "$8/mo Plus (annual)",
+    "released": "2023",
+    "added": "2026-03-18",
+    "pros": [
+      "Generate full presentations from a prompt",
+      "Polished, professional output",
+      "Free tier with 400 credits",
+      "Export to PDF, PPTX, and Google Slides"
+    ],
+    "cons": [
+      "AI images can be inconsistent",
+      "Custom branding locked to Plus plan",
+      "Credit system limits heavy users"
+    ],
+    "bestFor": "Freelancers and consultants who create client presentations regularly.",
+    "affiliateCommission": null,
+    "tags": [
+      "presentations",
+      "design",
+      "documents",
+      "productivity"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Runway",
+    "slug": "runway",
+    "description": "AI video generation with text-to-video, image-to-video, and advanced editing powered by Gen-4 models.",
+    "longDescription": "Runway is the leading AI video generation platform. Gen-4 and Gen-4.5 models produce remarkably realistic short videos from text prompts or images. Features include video editing, background removal, motion tracking, and 4K upscaling. Credit-based pricing means you pay for what you generate. The Standard plan ($12/mo annual) gives 625 monthly credits — enough for regular social media content. Used by filmmakers, marketers, and content creators worldwide.",
+    "url": "https://runwayml.com",
+    "affiliateUrl": null,
+    "category": "Video",
+    "pricing": "Freemium",
+    "price": "$12/mo Standard (annual)",
+    "released": "2018",
+    "added": "2026-03-18",
+    "pros": [
+      "Best-in-class AI video quality",
+      "Text-to-video and image-to-video",
+      "Advanced editing tools built-in",
+      "4K export on Pro plan"
+    ],
+    "cons": [
+      "Credit-based pricing burns fast with video",
+      "Free tier very limited (125 one-time credits)",
+      "Pro plan ($28/mo) needed for serious use"
+    ],
+    "bestFor": "Content creators and marketers who need AI-generated video for social media and ads.",
+    "affiliateCommission": null,
+    "tags": [
+      "video",
+      "ai generation",
+      "content creation",
+      "creative"
+    ],
+    "featured": false
+  },
+  {
+    "name": "TaskMagic",
+    "slug": "taskmagic",
+    "description": "No-code browser automation — record your clicks and typing, then let AI turn them into repeatable workflows.",
+    "longDescription": "TaskMagic automates web-based tasks by recording your browser actions (clicks, typing, navigation) and converting them into repeatable workflows. Unlike Zapier which requires API integrations, TaskMagic automates any website UI directly — perfect for tools without APIs. The free plan includes unlimited automations, workflows, and steps. AI-powered workflow recommendations help you discover automation opportunities you didn't know existed.",
+    "url": "https://taskmagic.com",
+    "affiliateUrl": null,
+    "category": "Automation",
+    "pricing": "Freemium",
+    "price": "Free · $29/mo Apps",
+    "released": "2022",
+    "added": "2026-03-18",
+    "pros": [
+      "Free plan is genuinely unlimited",
+      "Automate any website (no API needed)",
+      "Record-and-playback simplicity",
+      "AI workflow recommendations"
+    ],
+    "cons": [
+      "Cloud runtime limited on free plan (15 hrs/mo)",
+      "Less stable than Zapier for complex flows",
+      "Smaller community and ecosystem"
+    ],
+    "bestFor": "Solopreneurs who automate repetitive tasks on websites that don't offer APIs.",
+    "affiliateCommission": null,
+    "tags": [
+      "automation",
+      "no-code",
+      "browser",
+      "workflow",
+      "productivity"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Framer",
+    "slug": "framer",
+    "description": "AI website builder that turns text prompts into production-ready, responsive websites with hosting included.",
+    "longDescription": "Framer combines a powerful visual website builder with AI that generates complete site layouts from text descriptions. Describe your business and Framer creates a responsive, professional website — no coding or design skills needed. Features include CMS, custom domains, animations, and built-in SEO tools. The Basic plan ($10/mo annual) includes a custom domain and is perfect for freelancers building their own site or client projects.",
+    "url": "https://framer.com",
+    "affiliateUrl": null,
+    "category": "Design",
+    "pricing": "Freemium",
+    "price": "$10/mo Basic (annual)",
+    "released": "2013",
+    "added": "2026-03-18",
+    "pros": [
+      "AI generates full site layouts from prompts",
+      "Beautiful, modern templates",
+      "Built-in CMS and hosting",
+      "No-code visual editor"
+    ],
+    "cons": [
+      "Learning curve for advanced customization",
+      "Basic plan limited to 30 pages",
+      "Not ideal for complex web apps"
+    ],
+    "bestFor": "Freelancers who build websites for clients or need a professional portfolio site.",
+    "affiliateCommission": null,
+    "tags": [
+      "website",
+      "design",
+      "no-code",
+      "hosting",
+      "portfolio"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Timely",
+    "slug": "timely",
+    "description": "AI-powered automatic time tracking that records your work passively and generates timesheets.",
+    "longDescription": "Timely runs in the background and automatically tracks time spent across apps, websites, emails, and meetings — no manual timers needed. AI drafts your timesheets based on recorded activity, which you review and approve. Perfect for freelancers who bill by the hour and hate tracking time manually. Integrates with Google Calendar, Asana, Trello, and Zoom. Set project budgets and track spending in real-time.",
+    "url": "https://timely.com",
+    "affiliateUrl": null,
+    "category": "Productivity",
+    "pricing": "Paid",
+    "price": "$9/mo Starter (annual)",
+    "released": "2014",
+    "added": "2026-03-18",
+    "pros": [
+      "Truly automatic time tracking",
+      "AI-generated timesheets",
+      "No manual timers to start/stop",
+      "Great calendar and PM integrations"
+    ],
+    "cons": [
+      "AI sometimes misclassifies tasks",
+      "No free tier",
+      "Starter plan limited to 5 users"
+    ],
+    "bestFor": "Freelancers and consultants who bill by the hour and forget to track time.",
+    "affiliateCommission": null,
+    "tags": [
+      "time tracking",
+      "productivity",
+      "invoicing",
+      "freelancer"
+    ],
+    "featured": false
   }
 ]
