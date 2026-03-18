@@ -2,15 +2,20 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import tools from '../data/tools.json';
 
+const TOOLS_PER_PAGE = 12;
+const totalPages = Math.ceil(tools.length / TOOLS_PER_PAGE);
+const currentPage = 1;
+const paginatedTools = tools.slice(0, TOOLS_PER_PAGE);
+
 const categories = [...new Set(tools.map(t => t.category))].sort();
 const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
 ---
 
-<BaseLayout title="AI Tools Directory" description="Browse 30+ curated AI tools for solopreneurs and freelancers. Filter by category, pricing, and find the perfect tool for your workflow.">
+<BaseLayout title="AI Tools Directory" description={`Browse ${tools.length}+ curated AI tools for solopreneurs and freelancers. Filter by category, pricing, and find the perfect tool.`}>
   <section class="hero">
     <div class="container">
       <h1>AI Tools <span class="gradient-text">Directory</span></h1>
-      <p>{tools.length} curated AI tools and agents for solopreneurs. Filter by category, pricing, or search by name.</p>
+      <p>{tools.length} curated AI tools and agents for solopreneurs. {totalPages} pages.</p>
     </div>
   </section>
 
@@ -37,10 +42,10 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
           ))}
         </select>
         <select id="sort" class="filter-select">
-          <option value="name">Sort: A-Z</option>
-          <option value="name-desc">Sort: Z-A</option>
-          <option value="newest">Sort: Newest</option>
-          <option value="oldest">Sort: Oldest</option>
+          <option value="name">A-Z</option>
+          <option value="name-desc">Z-A</option>
+          <option value="newest">Newest</option>
+          <option value="oldest">Oldest</option>
         </select>
       </div>
     </div>
@@ -65,18 +70,25 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
           </div>
           <div class="tool-card-actions">
             <a href={`/tools/${tool.slug}/`} class="tool-link-details">Details →</a>
-            <a href={tool.affiliateUrl || tool.url} target="_blank" rel="noopener" class="tool-link-visit">Visit Site ↗</a>
+            <a href={tool.affiliateUrl || tool.url} target="_blank" rel="noopener" class="tool-link-visit">Visit ↗</a>
           </div>
         </div>
       ))}
     </div>
 
     <p class="no-results" id="no-results" style="display: none; text-align: center; color: var(--color-text-secondary); padding: 3rem 0;">
-      No tools found matching your filters. Try a different search.
+      No tools found matching your filters.
     </p>
 
-    <p class="tool-count" id="tool-count" style="text-align: center; color: var(--color-text-secondary); margin-top: 2rem;">
-      Showing {tools.length} tools
+    <!-- Pagination -->
+    <div class="pagination" id="pagination">
+      <button id="prev-btn" class="page-btn" disabled>← Prev</button>
+      <div class="page-numbers" id="page-numbers"></div>
+      <button id="next-btn" class="page-btn">Next →</button>
+    </div>
+
+    <p class="tool-count" id="tool-count" style="text-align: center; color: var(--color-text-secondary); margin-top: 1rem;">
+      Page <span id="current-page">1</span> of <span id="total-pages">{totalPages}</span> · {tools.length} tools
     </p>
   </section>
 </BaseLayout>
@@ -119,7 +131,6 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     color: var(--color-text);
     font-size: 0.9rem;
     cursor: pointer;
-    transition: border-color 0.2s;
   }
 
   .filter-select:focus {
@@ -161,19 +172,9 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     gap: 0.5rem;
   }
 
-  .tool-card-header h3 {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
-
-  .tool-card-header a {
-    color: var(--color-text);
-    transition: color 0.2s;
-  }
-
-  .tool-card-header a:hover {
-    color: var(--color-accent);
-  }
+  .tool-card-header h3 { font-size: 1.1rem; font-weight: 700; }
+  .tool-card-header a { color: var(--color-text); transition: color 0.2s; }
+  .tool-card-header a:hover { color: var(--color-accent); }
 
   .pricing-badge {
     font-size: 0.7rem;
@@ -200,16 +201,9 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     color: var(--color-text-secondary);
   }
 
-  .tool-category {
-    font-weight: 600;
-    color: var(--color-accent);
-  }
+  .tool-category { font-weight: 600; color: var(--color-accent); }
 
-  .tool-tags {
-    display: flex;
-    gap: 0.4rem;
-    flex-wrap: wrap;
-  }
+  .tool-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
 
   .tool-tag {
     background: var(--color-bg-secondary);
@@ -232,11 +226,6 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-accent);
-    transition: all 0.2s;
-  }
-
-  .tool-link-details:hover {
-    transform: translateX(4px);
   }
 
   .tool-link-visit {
@@ -249,10 +238,62 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     transition: all 0.2s;
   }
 
-  .tool-link-visit:hover {
-    background: var(--color-accent);
-    color: white;
+  .tool-link-visit:hover { background: var(--color-accent); color: white; }
+
+  /* Pagination */
+  .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
   }
+
+  .page-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg-card);
+    color: var(--color-text);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+
+  .page-btn:hover:not(:disabled) {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .page-btn:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  .page-numbers {
+    display: flex;
+    gap: 0.25rem;
+  }
+
+  .page-num {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-bg-card);
+    color: var(--color-text);
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .page-num:hover { border-color: var(--color-accent); color: var(--color-accent); }
+  .page-num.active { background: var(--color-accent); color: white; border-color: var(--color-accent); }
 
   @media (max-width: 768px) {
     .directory-filters { flex-direction: column; }
@@ -262,44 +303,44 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
 </style>
 
 <script is:inline>
+  const TOOLS_PER_PAGE = 12;
   const searchInput = document.getElementById('search');
   const categoryFilter = document.getElementById('category-filter');
   const pricingFilter = document.getElementById('pricing-filter');
   const sortSelect = document.getElementById('sort');
   const toolsGrid = document.getElementById('tools-grid');
   const noResults = document.getElementById('no-results');
-  const toolCount = document.getElementById('tool-count');
+  const paginationEl = document.getElementById('pagination');
+  const pageNumbersEl = document.getElementById('page-numbers');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const currentPageEl = document.getElementById('current-page');
+  const totalPagesEl = document.getElementById('total-pages');
 
-  function filterAndSort() {
+  let currentPage = 1;
+  let visibleCards = [];
+
+  function getFilteredCards() {
     const search = searchInput.value.toLowerCase();
     const category = categoryFilter.value;
     const pricing = pricingFilter.value;
-    const sort = sortSelect.value;
     const cards = Array.from(toolsGrid.querySelectorAll('.tool-card'));
-    let visible = 0;
-
-    // Filter
-    cards.forEach(card => {
+    
+    return cards.filter(card => {
       const name = card.dataset.name;
       const tags = card.dataset.tags;
       const cardCategory = card.dataset.category;
       const cardPricing = card.dataset.pricing;
-
       const matchesSearch = !search || name.includes(search) || tags.includes(search);
       const matchesCategory = !category || cardCategory === category;
       const matchesPricing = !pricing || cardPricing === pricing;
-
-      if (matchesSearch && matchesCategory && matchesPricing) {
-        card.classList.remove('hidden');
-        visible++;
-      } else {
-        card.classList.add('hidden');
-      }
+      return matchesSearch && matchesCategory && matchesPricing;
     });
+  }
 
-    // Sort
-    const visibleCards = cards.filter(c => !c.classList.contains('hidden'));
-    visibleCards.sort((a, b) => {
+  function sortCards(cards) {
+    const sort = sortSelect.value;
+    return [...cards].sort((a, b) => {
       switch(sort) {
         case 'name': return a.dataset.name.localeCompare(b.dataset.name);
         case 'name-desc': return b.dataset.name.localeCompare(a.dataset.name);
@@ -308,14 +349,77 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
         default: return 0;
       }
     });
-    visibleCards.forEach(card => toolsGrid.appendChild(card));
-
-    noResults.style.display = visible === 0 ? 'block' : 'none';
-    toolCount.textContent = `Showing ${visible} tool${visible !== 1 ? 's' : ''}`;
   }
 
-  searchInput.addEventListener('input', filterAndSort);
-  categoryFilter.addEventListener('change', filterAndSort);
-  pricingFilter.addEventListener('change', filterAndSort);
-  sortSelect.addEventListener('change', filterAndSort);
+  function renderPage() {
+    const allCards = Array.from(toolsGrid.querySelectorAll('.tool-card'));
+    allCards.forEach(c => c.classList.add('hidden'));
+
+    visibleCards = sortCards(getFilteredCards());
+    const totalPages = Math.max(1, Math.ceil(visibleCards.length / TOOLS_PER_PAGE));
+    
+    if (currentPage > totalPages) currentPage = totalPages;
+    
+    const start = (currentPage - 1) * TOOLS_PER_PAGE;
+    const end = start + TOOLS_PER_PAGE;
+    const pageCards = visibleCards.slice(start, end);
+
+    pageCards.forEach((card, i) => {
+      card.classList.remove('hidden');
+      card.style.animation = `cardFadeIn 0.3s ease ${i * 0.03}s forwards`;
+      toolsGrid.appendChild(card);
+    });
+
+    // Update pagination
+    totalPagesEl.textContent = totalPages;
+    currentPageEl.textContent = currentPage;
+    prevBtn.disabled = currentPage <= 1;
+    nextBtn.disabled = currentPage >= totalPages;
+
+    // Page numbers
+    pageNumbersEl.innerHTML = '';
+    for (let i = 1; i <= totalPages; i++) {
+      if (totalPages > 7) {
+        if (i === 1 || i === totalPages || (i >= currentPage - 1 && i <= currentPage + 1)) {
+          const btn = document.createElement('span');
+          btn.className = 'page-num' + (i === currentPage ? ' active' : '');
+          btn.textContent = i;
+          btn.onclick = () => goToPage(i);
+          pageNumbersEl.appendChild(btn);
+        } else if (i === currentPage - 2 || i === currentPage + 2) {
+          const dots = document.createElement('span');
+          dots.textContent = '...';
+          dots.style.padding = '0 0.25rem';
+          dots.style.color = 'var(--color-text-secondary)';
+          pageNumbersEl.appendChild(dots);
+        }
+      } else {
+        const btn = document.createElement('span');
+        btn.className = 'page-num' + (i === currentPage ? ' active' : '');
+        btn.textContent = i;
+        btn.onclick = () => goToPage(i);
+        pageNumbersEl.appendChild(btn);
+      }
+    }
+
+    noResults.style.display = visibleCards.length === 0 ? 'block' : 'none';
+    paginationEl.style.display = visibleCards.length > TOOLS_PER_PAGE ? 'flex' : 'none';
+  }
+
+  function goToPage(page) {
+    currentPage = page;
+    renderPage();
+    window.scrollTo({ top: 200, behavior: 'smooth' });
+  }
+
+  prevBtn.onclick = () => goToPage(currentPage - 1);
+  nextBtn.onclick = () => goToPage(currentPage + 1);
+
+  searchInput.addEventListener('input', () => { currentPage = 1; renderPage(); });
+  categoryFilter.addEventListener('change', () => { currentPage = 1; renderPage(); });
+  pricingFilter.addEventListener('change', () => { currentPage = 1; renderPage(); });
+  sortSelect.addEventListener('change', () => renderPage());
+
+  // Initial render
+  renderPage();
 </script>
