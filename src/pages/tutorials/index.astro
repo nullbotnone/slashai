@@ -1,0 +1,32 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const tutorials = (await getCollection('tutorials'))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<BaseLayout title="Tutorials" description="Step-by-step tutorials for AI tools, agents, and automation workflows.">
+  <section class="hero">
+    <div class="container">
+      <h1><span class="gradient-text">Tutorials</span></h1>
+      <p>Step-by-step guides to set up and use AI tools. Practical, tested, beginner-friendly.</p>
+    </div>
+  </section>
+  
+  <section class="container">
+    <div class="card-grid">
+      {tutorials.map((post) => (
+        <a href={`/tutorials/${post.id.replace(/\.md$/, '')}/`} class="card" style="text-decoration: none; color: inherit;">
+          <h3>{post.data.title}</h3>
+          <p>{post.data.description}</p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+            <span class="tag">{post.data.toolName}</span>
+            <span class="tag">{post.data.difficulty}</span>
+            {post.data.timeToComplete && <span class="tag">⏱️ {post.data.timeToComplete}</span>}
+          </div>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,75 @@
+---
+import { getCollection, render } from 'astro:content';
+import ArticleLayout from '../../layouts/ArticleLayout.astro';
+
+export async function getStaticPaths() {
+  const tutorials = await getCollection('tutorials');
+  return tutorials.map((post) => ({
+    params: { slug: post.id.replace(/\.md$/, '') },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<ArticleLayout
+  title={post.data.title}
+  description={post.data.description}
+  pubDate={post.data.pubDate}
+  updatedDate={post.data.updatedDate}
+  tags={post.data.tags}
+>
+  <div class="tutorial-meta-box">
+    <div class="tutorial-meta-item">
+      <span class="meta-label">Tool</span>
+      <span class="meta-value">{post.data.toolName}</span>
+    </div>
+    <div class="tutorial-meta-item">
+      <span class="meta-label">Difficulty</span>
+      <span class="meta-value">{post.data.difficulty}</span>
+    </div>
+    {post.data.timeToComplete && (
+      <div class="tutorial-meta-item">
+        <span class="meta-label">Time</span>
+        <span class="meta-value">⏱️ {post.data.timeToComplete}</span>
+      </div>
+    )}
+  </div>
+  
+  <Content />
+</ArticleLayout>
+
+<style>
+  .tutorial-meta-box {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--color-bg-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1rem 1.5rem;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .tutorial-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .meta-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-secondary);
+  }
+
+  .meta-value {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+</style>

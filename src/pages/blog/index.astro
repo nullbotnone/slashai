@@ -7,6 +7,7 @@ const roundups = await getCollection('roundups');
 const comparisons = await getCollection('comparisons');
 const agents = await getCollection('agents');
 const guides = await getCollection('guides');
+const tutorials = await getCollection('tutorials');
 
 const allPosts = [
   ...reviews.map(p => ({ ...p, type: 'Review', typeClass: 'review' })),
@@ -14,6 +15,7 @@ const allPosts = [
   ...comparisons.map(p => ({ ...p, type: 'Comparison', typeClass: 'comparison' })),
   ...agents.map(p => ({ ...p, type: 'AI Agents', typeClass: 'agents' })),
   ...guides.map(p => ({ ...p, type: 'Guide', typeClass: 'guide' })),
+  ...tutorials.map(p => ({ ...p, type: 'Tutorial', typeClass: 'tutorial' })),
 ].sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 
 const categories = [
@@ -22,6 +24,7 @@ const categories = [
   { name: 'Roundups', value: 'roundups' },
   { name: 'Comparisons', value: 'comparisons' },
   { name: 'AI Agents', value: 'agents' },
+  { name: 'Tutorials', value: 'tutorials' },
   { name: 'Guides', value: 'guides' },
 ];
 ---
@@ -155,6 +158,7 @@ const categories = [
   .type-badge.comparison { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
   .type-badge.agents { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
   .type-badge.guide { background: rgba(236, 72, 153, 0.15); color: #ec4899; }
+  .type-badge.tutorial { background: rgba(14, 165, 233, 0.15); color: #0ea5e9; }
 
   .blog-card h3 {
     font-size: 1.1rem;
