@@ -46,6 +46,10 @@
   background: rgba(15, 15, 15, 0.8);
 }
 
+[data-theme="dark"] #main-nav {
+  background: rgba(15, 15, 15, 0.85);
+}
+
 html {
   font-size: 16px;
   scroll-behavior: smooth;
@@ -609,8 +613,9 @@ img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: var(--color-bg);
-    backdrop-filter: none;
+    background: rgba(250, 250, 250, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     z-index: 100;
     padding: 5rem 2rem 2rem;
     -webkit-overflow-scrolling: touch;
