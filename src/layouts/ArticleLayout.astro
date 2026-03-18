@@ -49,12 +49,15 @@ const formattedUpdated = updatedDate?.toLocaleDateString('en-US', {
         <strong>Affiliate Disclosure:</strong> Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/">Affiliate Disclosure</a>.
       </div>
 
-      <NewsletterCTA variant="compact" title="Like this article?" description="Get more like it every week." />
 
       {collection && slug && (
         <RelatedArticles currentSlug={slug} currentCollection={collection} tags={tags} />
       )}
       </div>
+    </section>
+  </article>
+</BaseLayout>
+/div>
     </section>
   </article>
 </BaseLayout>
