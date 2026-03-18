@@ -32,7 +32,7 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
     </div>
     <div class="trending-grid">
       {trendingTools.map((tool) => (
-        <a href={`/tools/${tool.slug}/`} class="trending-card scroll-animate">
+        <a href={`/tools/${tool.slug}/`} class="trending-card">
           <div class="trending-card-top">
             <h3>{tool.name}</h3>
             <span class={`pricing-badge ${tool.pricing.toLowerCase()}`}>{tool.pricing}</span>
@@ -97,21 +97,6 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
   </section>
 </BaseLayout>
 
-<script is:inline>
-  const cards = document.querySelectorAll('.trending-card');
-  
-  const observer = new IntersectionObserver((entries) => {
-    entries.filter(e => e.isIntersecting).forEach((entry, i) => {
-      setTimeout(() => {
-        entry.target.classList.add('visible');
-      }, i * 120);
-      observer.unobserve(entry.target);
-    });
-  }, { threshold: 0.05, rootMargin: '0px 0px -20px 0px' });
-
-  cards.forEach(card => observer.observe(card));
-</script>
-
 <style>
   a[href*="best-ai-tools-freelancers"]:hover {
     transform: translateY(-2px);
@@ -147,22 +132,14 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
     padding: 1.25rem;
     text-decoration: none;
     color: inherit;
-    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s, opacity 0.5s;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  .trending-card.visible {
-    opacity: 1;
-    transform: translateY(0);
   }
 
   .trending-card:hover {
     border-color: var(--color-accent);
-    transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
   }
 
