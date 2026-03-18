@@ -97,7 +97,6 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
   </section>
 </BaseLayout>
 
-<style>
 <script is:inline>
   const observer = new IntersectionObserver((entries) => {
     const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
