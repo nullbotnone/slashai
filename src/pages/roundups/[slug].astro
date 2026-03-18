@@ -12,6 +12,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const slug = post.id.replace(/\.md$/, '');
 ---
 
 <ArticleLayout
@@ -20,6 +21,8 @@ const { Content } = await render(post);
   pubDate={post.data.pubDate}
   updatedDate={post.data.updatedDate}
   tags={post.data.tags}
+  collection="roundups"
+  slug={slug}
 >
   <Content />
 </ArticleLayout>

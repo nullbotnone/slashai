@@ -1,0 +1,79 @@
+---
+// RelatedArticles.astro — finds related posts by shared tags
+interface Props {
+  currentSlug: string;
+  currentCollection: string;
+  tags?: string[];
+  limit?: number;
+}
+
+const { currentSlug, currentCollection, tags = [], limit = 3 } = Astro.props;
+
+// Import all collections
+import { getCollection } from 'astro:content';
+
+const reviews = await getCollection('reviews');
+const roundups = await getCollection('roundups');
+const comparisons = await getCollection('comparisons');
+const agents = await getCollection('agents');
+const guides = await getCollection('guides');
+const tutorials = await getCollection('tutorials');
+
+const allPosts = [
+  ...reviews.map(p => ({ ...p, collection: 'reviews', type: 'Review' })),
+  ...roundups.map(p => ({ ...p, collection: 'roundups', type: 'Roundup' })),
+  ...comparisons.map(p => ({ ...p, collection: 'comparisons', type: 'Comparison' })),
+  ...agents.map(p => ({ ...p, collection: 'agents', type: 'AI Agents' })),
+  ...guides.map(p => ({ ...p, collection: 'guides', type: 'Guide' })),
+  ...tutorials.map(p => ({ ...p, collection: 'tutorials', type: 'Tutorial' })),
+];
+
+const currentId = `${currentCollection}/${currentSlug}`;
+
+// Score posts by shared tags
+const scored = allPosts
+  .filter(p => {
+    const postId = `${p.collection}/${p.id.replace(/\.md$/, '')}`;
+    return postId !== currentId;
+  })
+  .map(p => {
+    const postTags = p.data.tags || [];
+    const sharedCount = tags.filter(t => postTags.includes(t)).length;
+    return { ...p, score: sharedCount };
+  })
+  .sort((a, b) => b.score - a.score || b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, limit);
+
+if (scored.length === 0) return;
+---
+
+<section class="related-articles">
+  <h2>Related Articles</h2>
+  <div class="card-grid">
+    {scored.map((post) => {
+      const slug = post.id.replace(/\.md$/, '');
+      const path = `/${post.collection}/${slug}/`;
+      return (
+        <a href={path} class="card" style="text-decoration: none; color: inherit;">
+          <h3>{post.data.title}</h3>
+          <p>{post.data.description}</p>
+          <span class="tag">{post.type}</span>
+        </a>
+      );
+    })}
+  </div>
+</section>
+
+<style>
+  .related-articles {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .related-articles h2 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+</style>

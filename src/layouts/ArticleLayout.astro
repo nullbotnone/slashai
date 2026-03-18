@@ -1,5 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
+import RelatedArticles from '../components/RelatedArticles.astro';
+import NewsletterCTA from '../components/NewsletterCTA.astro';
 
 interface Props {
   title: string;
@@ -7,9 +9,11 @@ interface Props {
   pubDate: Date;
   updatedDate?: Date;
   tags?: string[];
+  collection?: string;
+  slug?: string;
 }
 
-const { title, description, pubDate, updatedDate, tags = [] } = Astro.props;
+const { title, description, pubDate, updatedDate, tags = [], collection = '', slug = '' } = Astro.props;
 
 const formattedDate = pubDate.toLocaleDateString('en-US', {
   year: 'numeric',
@@ -43,6 +47,12 @@ const formattedUpdated = updatedDate?.toLocaleDateString('en-US', {
       <div class="disclosure">
         <strong>Affiliate Disclosure:</strong> Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/">Affiliate Disclosure</a>.
       </div>
+
+      <NewsletterCTA variant="compact" title="Like this article?" description="Get more like it every week." />
+
+      {collection && slug && (
+        <RelatedArticles currentSlug={slug} currentCollection={collection} tags={tags} />
+      )}
     </div>
   </article>
 </BaseLayout>

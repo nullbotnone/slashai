@@ -148,7 +148,6 @@ const categories = [
 
   .blog-card:hover {
     border-color: var(--color-accent);
-    transform: translateY(-4px);
     box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
   }
 
@@ -236,33 +235,4 @@ const categories = [
   });
 
   searchInput.addEventListener('input', filterBlog);
-
-  // Scroll animation observer
-  const scrollObserver = new IntersectionObserver((entries) => {
-    const visible = entries.filter(e => e.isIntersecting).sort((a, b) => {
-      return a.boundingClientRect.top - b.boundingClientRect.top;
-    });
-    visible.forEach((entry, i) => {
-      const card = entry.target;
-      card.style.animationDelay = `${i * 100}ms`;
-      card.classList.add('animate-in');
-      scrollObserver.unobserve(card);
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-  function observeBlogCards() {
-    document.querySelectorAll('.blog-card:not(.animate-in)').forEach(card => {
-      scrollObserver.observe(card);
-    });
-  }
-
-  // Re-observe after filter
-  const origFilterBlog = filterBlog;
-  filterBlog = function() {
-    origFilterBlog();
-    setTimeout(observeBlogCards, 50);
-  };
-
-  // Initial observe
-  setTimeout(observeBlogCards, 100);
 </script>

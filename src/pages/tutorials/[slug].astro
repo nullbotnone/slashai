@@ -13,6 +13,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const slug = post.id.replace(/\.md$/, '');
 
 // Find the tool in our database
 const tool = tools.find(t => t.name.toLowerCase() === post.data.toolName.toLowerCase() || t.slug === post.data.toolName.toLowerCase().replace(/\s+/g, '-'));
@@ -24,6 +25,8 @@ const tool = tools.find(t => t.name.toLowerCase() === post.data.toolName.toLower
   pubDate={post.data.pubDate}
   updatedDate={post.data.updatedDate}
   tags={post.data.tags}
+  collection="tutorials"
+  slug={slug}
 >
   <div class="tutorial-meta-box">
     <div class="tutorial-meta-item">
