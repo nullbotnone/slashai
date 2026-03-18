@@ -11,11 +11,27 @@
     "price": "$20/mo Plus",
     "released": "November 2022",
     "added": "2026-03-18",
-    "pros": ["Most versatile AI available", "Web browsing and file uploads", "Custom GPTs for specialized tasks", "Massive plugin ecosystem"],
-    "cons": ["No persistent memory yet", "Plus plan required for GPT-4", "Can hallucinate facts"],
+    "pros": [
+      "Most versatile AI available",
+      "Web browsing and file uploads",
+      "Custom GPTs for specialized tasks",
+      "Massive plugin ecosystem"
+    ],
+    "cons": [
+      "No persistent memory yet",
+      "Plus plan required for GPT-4",
+      "Can hallucinate facts"
+    ],
     "bestFor": "Anyone who needs a general-purpose AI assistant for daily tasks.",
     "affiliateCommission": null,
-    "tags": ["writing", "research", "coding", "chat", "analysis"]
+    "tags": [
+      "writing",
+      "research",
+      "coding",
+      "chat",
+      "analysis"
+    ],
+    "featured": true
   },
   {
     "name": "Claude",
@@ -29,11 +45,27 @@
     "price": "$20/mo Pro",
     "released": "March 2023",
     "added": "2026-03-18",
-    "pros": ["Handles very long documents", "Thoughtful, nuanced responses", "Strong at coding and analysis", "More natural writing style"],
-    "cons": ["Smaller ecosystem than ChatGPT", "No image generation", "No plugins"],
+    "pros": [
+      "Handles very long documents",
+      "Thoughtful, nuanced responses",
+      "Strong at coding and analysis",
+      "More natural writing style"
+    ],
+    "cons": [
+      "Smaller ecosystem than ChatGPT",
+      "No image generation",
+      "No plugins"
+    ],
     "bestFor": "Users who work with long documents and need nuanced, careful analysis.",
     "affiliateCommission": null,
-    "tags": ["writing", "research", "coding", "documents", "analysis"]
+    "tags": [
+      "writing",
+      "research",
+      "coding",
+      "documents",
+      "analysis"
+    ],
+    "featured": true
   },
   {
     "name": "Jasper AI",
@@ -47,11 +79,27 @@
     "price": "$49/mo",
     "released": "February 2021",
     "added": "2026-03-18",
-    "pros": ["Best-in-class Brand Voice", "Surfer SEO integration", "Chrome extension works everywhere", "50+ content templates"],
-    "cons": ["Expensive at $49/mo", "Output can be verbose", "Requires fact-checking"],
+    "pros": [
+      "Best-in-class Brand Voice",
+      "Surfer SEO integration",
+      "Chrome extension works everywhere",
+      "50+ content templates"
+    ],
+    "cons": [
+      "Expensive at $49/mo",
+      "Output can be verbose",
+      "Requires fact-checking"
+    ],
     "bestFor": "Content writers and marketers who need consistent brand voice at scale.",
     "affiliateCommission": "30% recurring (12 months)",
-    "tags": ["writing", "marketing", "seo", "brand", "content"]
+    "tags": [
+      "writing",
+      "marketing",
+      "seo",
+      "brand",
+      "content"
+    ],
+    "featured": true
   },
   {
     "name": "Writesonic",
@@ -65,17 +113,32 @@
     "price": "$19/mo Pro",
     "released": "October 2021",
     "added": "2026-03-18",
-    "pros": ["Excellent free tier", "30% lifetime recurring affiliate", "ChatSonic with web access", "Bulk generation"],
-    "cons": ["Output quality below Jasper", "UI can feel cluttered", "Inconsistent on long-form"],
+    "pros": [
+      "Excellent free tier",
+      "30% lifetime recurring affiliate",
+      "ChatSonic with web access",
+      "Bulk generation"
+    ],
+    "cons": [
+      "Output quality below Jasper",
+      "UI can feel cluttered",
+      "Inconsistent on long-form"
+    ],
     "bestFor": "Freelancers who want solid AI writing on a budget.",
     "affiliateCommission": "30% lifetime recurring",
-    "tags": ["writing", "blogging", "social media", "budget"]
+    "tags": [
+      "writing",
+      "blogging",
+      "social media",
+      "budget"
+    ],
+    "featured": true
   },
   {
     "name": "Copy.ai",
     "slug": "copy-ai",
     "description": "AI copywriter with 90+ templates and workflow automation for marketing teams.",
-    "longDescription": "Copy.ai combines AI writing with powerful workflow automation. The free tier offers 2,000 words/month with 90+ templates. Workflows let you chain multiple AI steps together — research, outline, draft, refine — automating entire content pipelines. Particularly strong for short-form marketing copy, social media, and email campaigns.",
+    "longDescription": "Copy.ai combines AI writing with powerful workflow automation. The free tier offers 2,000 words/month with 90+ templates. Workflows let you chain multiple AI steps together \u2014 research, outline, draft, refine \u2014 automating entire content pipelines. Particularly strong for short-form marketing copy, social media, and email campaigns.",
     "url": "https://copy.ai",
     "affiliateUrl": "https://copy.ai?via=slashai",
     "category": "Writing",
@@ -83,11 +146,27 @@
     "price": "$49/mo Pro",
     "released": "October 2020",
     "added": "2026-03-18",
-    "pros": ["Generous free tier", "90+ templates", "Workflow automation", "45% affiliate commission"],
-    "cons": ["Long-form weaker than Jasper", "Pro plan expensive vs competitors", "No brand voice"],
+    "pros": [
+      "Generous free tier",
+      "90+ templates",
+      "Workflow automation",
+      "45% affiliate commission"
+    ],
+    "cons": [
+      "Long-form weaker than Jasper",
+      "Pro plan expensive vs competitors",
+      "No brand voice"
+    ],
     "bestFor": "Marketers focused on short-form copy and marketing automation.",
     "affiliateCommission": "45% first payment",
-    "tags": ["writing", "marketing", "copywriting", "templates", "automation"]
+    "tags": [
+      "writing",
+      "marketing",
+      "copywriting",
+      "templates",
+      "automation"
+    ],
+    "featured": false
   },
   {
     "name": "Grammarly",
@@ -101,11 +180,25 @@
     "price": "$12/mo Premium",
     "released": "July 2009",
     "added": "2026-03-18",
-    "pros": ["Free tier covers basics", "Works everywhere", "Tone detection", "Full-sentence rewrites"],
-    "cons": ["Premium suggestions can be repetitive", "Sometimes flags correct sentences"],
+    "pros": [
+      "Free tier covers basics",
+      "Works everywhere",
+      "Tone detection",
+      "Full-sentence rewrites"
+    ],
+    "cons": [
+      "Premium suggestions can be repetitive",
+      "Sometimes flags correct sentences"
+    ],
     "bestFor": "Everyone who writes. Essential companion to AI writing tools.",
     "affiliateCommission": "$20 per upgrade",
-    "tags": ["editing", "grammar", "productivity", "writing"]
+    "tags": [
+      "editing",
+      "grammar",
+      "productivity",
+      "writing"
+    ],
+    "featured": true
   },
   {
     "name": "Notion AI",
@@ -119,11 +212,27 @@
     "price": "$10/mo AI add-on",
     "released": "June 2022 (AI)",
     "added": "2026-03-18",
-    "pros": ["Replace multiple tools", "AI summaries excellent", "Generous free plan", "Extremely flexible databases"],
-    "cons": ["Steep learning curve", "AI add-on costs extra", "Mobile app slow", "Can feel overwhelming"],
+    "pros": [
+      "Replace multiple tools",
+      "AI summaries excellent",
+      "Generous free plan",
+      "Extremely flexible databases"
+    ],
+    "cons": [
+      "Steep learning curve",
+      "AI add-on costs extra",
+      "Mobile app slow",
+      "Can feel overwhelming"
+    ],
     "bestFor": "Solopreneurs who want one workspace for everything.",
     "affiliateCommission": "Varies",
-    "tags": ["productivity", "notes", "project management", "workspace"]
+    "tags": [
+      "productivity",
+      "notes",
+      "project management",
+      "workspace"
+    ],
+    "featured": true
   },
   {
     "name": "Midjourney",
@@ -137,11 +246,27 @@
     "price": "$10/mo Basic",
     "released": "July 2022",
     "added": "2026-03-18",
-    "pros": ["Best image quality available", "Artistic and photorealistic styles", "Active community", "V6 is a major leap"],
-    "cons": ["Discord-only interface", "Prompt learning curve", "No affiliate program"],
+    "pros": [
+      "Best image quality available",
+      "Artistic and photorealistic styles",
+      "Active community",
+      "V6 is a major leap"
+    ],
+    "cons": [
+      "Discord-only interface",
+      "Prompt learning curve",
+      "No affiliate program"
+    ],
     "bestFor": "Creators who need high-quality unique images regularly.",
     "affiliateCommission": null,
-    "tags": ["images", "design", "art", "visuals", "creative"]
+    "tags": [
+      "images",
+      "design",
+      "art",
+      "visuals",
+      "creative"
+    ],
+    "featured": true
   },
   {
     "name": "Canva AI",
@@ -155,11 +280,26 @@
     "price": "$13/mo Pro",
     "released": "September 2023 (AI)",
     "added": "2026-03-18",
-    "pros": ["AI image generator included", "Magic Resize for all platforms", "Brand Kit for consistency", "Thousands of templates"],
-    "cons": ["AI image quality varies", "Pro features locked behind paywall", "Can be slow"],
+    "pros": [
+      "AI image generator included",
+      "Magic Resize for all platforms",
+      "Brand Kit for consistency",
+      "Thousands of templates"
+    ],
+    "cons": [
+      "AI image quality varies",
+      "Pro features locked behind paywall",
+      "Can be slow"
+    ],
     "bestFor": "Freelancers who need quick, professional designs without learning complex tools.",
     "affiliateCommission": "Varies",
-    "tags": ["design", "images", "social media", "presentations"]
+    "tags": [
+      "design",
+      "images",
+      "social media",
+      "presentations"
+    ],
+    "featured": false
   },
   {
     "name": "Surfer SEO",
@@ -173,17 +313,32 @@
     "price": "$89/mo Essential",
     "released": "2018",
     "added": "2026-03-18",
-    "pros": ["GPS for SEO content", "SERP analyzer shows why competitors rank", "Jasper integration", "Audit tool for existing content"],
-    "cons": ["$89/mo isn't cheap", "Can lead to keyword stuffing if followed blindly", "Subscription required for full value"],
+    "pros": [
+      "GPS for SEO content",
+      "SERP analyzer shows why competitors rank",
+      "Jasper integration",
+      "Audit tool for existing content"
+    ],
+    "cons": [
+      "$89/mo isn't cheap",
+      "Can lead to keyword stuffing if followed blindly",
+      "Subscription required for full value"
+    ],
     "bestFor": "Content marketers who want to rank on Google consistently.",
     "affiliateCommission": "Up to 25% recurring",
-    "tags": ["seo", "content", "optimization", "blogging"]
+    "tags": [
+      "seo",
+      "content",
+      "optimization",
+      "blogging"
+    ],
+    "featured": true
   },
   {
     "name": "Semrush",
     "slug": "semrush",
     "description": "All-in-one SEO toolkit for keyword research, competitor analysis, and site audits.",
-    "longDescription": "Semrush is the most comprehensive SEO platform available. Keyword research, competitor analysis, backlink auditing, site health checks, position tracking, content optimization — it does everything. Over 10 million marketers use it. The $200+ affiliate payout is among the highest in SaaS.",
+    "longDescription": "Semrush is the most comprehensive SEO platform available. Keyword research, competitor analysis, backlink auditing, site health checks, position tracking, content optimization \u2014 it does everything. Over 10 million marketers use it. The $200+ affiliate payout is among the highest in SaaS.",
     "url": "https://semrush.com",
     "affiliateUrl": "https://semrush.com/referred?ref=slashai",
     "category": "SEO",
@@ -191,17 +346,32 @@
     "price": "$130/mo Pro",
     "released": "August 2008",
     "added": "2026-03-18",
-    "pros": ["Most comprehensive SEO tool", "$200+ affiliate payout", "Excellent competitor analysis", "10M+ user community"],
-    "cons": ["Expensive for solopreneurs", "Steep learning curve", "Overwhelming interface"],
+    "pros": [
+      "Most comprehensive SEO tool",
+      "$200+ affiliate payout",
+      "Excellent competitor analysis",
+      "10M+ user community"
+    ],
+    "cons": [
+      "Expensive for solopreneurs",
+      "Steep learning curve",
+      "Overwhelming interface"
+    ],
     "bestFor": "Serious SEO practitioners and content marketers.",
     "affiliateCommission": "$200+ per sale",
-    "tags": ["seo", "keywords", "competitor analysis", "marketing"]
+    "tags": [
+      "seo",
+      "keywords",
+      "competitor analysis",
+      "marketing"
+    ],
+    "featured": false
   },
   {
     "name": "HubSpot",
     "slug": "hubspot",
     "description": "Free CRM with email tracking, deal pipeline, and marketing automation.",
-    "longDescription": "HubSpot's free CRM includes contact management, deal tracking, email templates, meeting scheduler, and live chat. Email tracking shows when clients open your messages. The deal pipeline is visual and intuitive. Grows with you — paid tiers add advanced automation and reporting.",
+    "longDescription": "HubSpot's free CRM includes contact management, deal tracking, email templates, meeting scheduler, and live chat. Email tracking shows when clients open your messages. The deal pipeline is visual and intuitive. Grows with you \u2014 paid tiers add advanced automation and reporting.",
     "url": "https://hubspot.com",
     "affiliateUrl": "https://hubspot.com/?ref=slashai",
     "category": "Productivity",
@@ -209,17 +379,32 @@
     "price": "$20/mo Starter",
     "released": "June 2006",
     "added": "2026-03-18",
-    "pros": ["Free tier is genuinely powerful", "Email open tracking", "Visual deal pipeline", "30% recurring affiliate"],
-    "cons": ["Paid tiers get expensive fast", "Feature overload for simple needs", "Mobile app could be better"],
+    "pros": [
+      "Free tier is genuinely powerful",
+      "Email open tracking",
+      "Visual deal pipeline",
+      "30% recurring affiliate"
+    ],
+    "cons": [
+      "Paid tiers get expensive fast",
+      "Feature overload for simple needs",
+      "Mobile app could be better"
+    ],
     "bestFor": "Freelancers who need to track clients and deals without paying for a CRM.",
     "affiliateCommission": "30% recurring (12 months)",
-    "tags": ["crm", "sales", "email", "marketing"]
+    "tags": [
+      "crm",
+      "sales",
+      "email",
+      "marketing"
+    ],
+    "featured": true
   },
   {
     "name": "Motion",
     "slug": "motion",
     "description": "AI calendar that auto-schedules tasks and reschedules when plans change.",
-    "longDescription": "Motion uses AI to automatically schedule your tasks around your existing calendar. Add tasks with deadlines and durations — Motion finds the optimal time slot. When meetings change, everything reshuffles automatically. Replaces both your calendar and task manager.",
+    "longDescription": "Motion uses AI to automatically schedule your tasks around your existing calendar. Add tasks with deadlines and durations \u2014 Motion finds the optimal time slot. When meetings change, everything reshuffles automatically. Replaces both your calendar and task manager.",
     "url": "https://usemotion.com",
     "affiliateUrl": null,
     "category": "Productivity",
@@ -227,17 +412,32 @@
     "price": "$19/mo Individual",
     "released": "2019",
     "added": "2026-03-18",
-    "pros": ["Reduces decision fatigue", "Auto-rescheduling when plans change", "Replaces calendar + task manager", "Deadline tracking"],
-    "cons": ["$19/mo for a calendar app", "1-2 weeks to learn your patterns", "Mobile app needs work"],
+    "pros": [
+      "Reduces decision fatigue",
+      "Auto-rescheduling when plans change",
+      "Replaces calendar + task manager",
+      "Deadline tracking"
+    ],
+    "cons": [
+      "$19/mo for a calendar app",
+      "1-2 weeks to learn your patterns",
+      "Mobile app needs work"
+    ],
     "bestFor": "Freelancers who struggle with time management and overcommitting.",
     "affiliateCommission": null,
-    "tags": ["calendar", "scheduling", "productivity", "time management"]
+    "tags": [
+      "calendar",
+      "scheduling",
+      "productivity",
+      "time management"
+    ],
+    "featured": false
   },
   {
     "name": "Zapier",
     "slug": "zapier",
     "description": "Connect 6,000+ apps with automated workflows and AI-powered suggestions.",
-    "longDescription": "Zapier is the automation backbone for freelancers. Connect 6,000+ apps and automate repetitive tasks: new payment → create project → send welcome email. AI suggests automations based on your apps. Free tier includes 100 tasks/month — enough for basic workflows.",
+    "longDescription": "Zapier is the automation backbone for freelancers. Connect 6,000+ apps and automate repetitive tasks: new payment \u2192 create project \u2192 send welcome email. AI suggests automations based on your apps. Free tier includes 100 tasks/month \u2014 enough for basic workflows.",
     "url": "https://zapier.com",
     "affiliateUrl": "https://zapier.com?ref=slashai",
     "category": "Automation",
@@ -245,17 +445,32 @@
     "price": "$20/mo Starter",
     "released": "October 2011",
     "added": "2026-03-18",
-    "pros": ["6,000+ integrations", "AI-powered suggestions", "Free tier is useful", "Saves hours weekly"],
-    "cons": ["Gets expensive with volume", "Complex Zaps can break silently", "Debugging failed Zaps is frustrating"],
+    "pros": [
+      "6,000+ integrations",
+      "AI-powered suggestions",
+      "Free tier is useful",
+      "Saves hours weekly"
+    ],
+    "cons": [
+      "Gets expensive with volume",
+      "Complex Zaps can break silently",
+      "Debugging failed Zaps is frustrating"
+    ],
     "bestFor": "Anyone who repeats the same workflow more than twice.",
     "affiliateCommission": "30% recurring (first year)",
-    "tags": ["automation", "integrations", "workflow", "productivity"]
+    "tags": [
+      "automation",
+      "integrations",
+      "workflow",
+      "productivity"
+    ],
+    "featured": true
   },
   {
     "name": "Make.com",
     "slug": "make-com",
     "description": "Visual automation platform with complex logic, branching, and 1,500+ integrations.",
-    "longDescription": "Make.com (formerly Integromat) offers the most powerful visual automation builder. Create complex workflows with branching logic, error handling, and AI modules — all without code. 1,500+ app integrations with a generous free tier (1,000 operations/month).",
+    "longDescription": "Make.com (formerly Integromat) offers the most powerful visual automation builder. Create complex workflows with branching logic, error handling, and AI modules \u2014 all without code. 1,500+ app integrations with a generous free tier (1,000 operations/month).",
     "url": "https://make.com",
     "affiliateUrl": "https://make.com?via=slashai",
     "category": "Automation",
@@ -263,17 +478,31 @@
     "price": "$10.59/mo Core",
     "released": "2019 (as Integromat)",
     "added": "2026-03-18",
-    "pros": ["Most flexible automation platform", "Visual workflow builder", "1,500+ integrations", "AI modules built-in"],
-    "cons": ["Complex workflows have learning curve", "Can get expensive at scale"],
+    "pros": [
+      "Most flexible automation platform",
+      "Visual workflow builder",
+      "1,500+ integrations",
+      "AI modules built-in"
+    ],
+    "cons": [
+      "Complex workflows have learning curve",
+      "Can get expensive at scale"
+    ],
     "bestFor": "Power users who need complex multi-step automations.",
     "affiliateCommission": "Varies",
-    "tags": ["automation", "integrations", "workflow", "no-code"]
+    "tags": [
+      "automation",
+      "integrations",
+      "workflow",
+      "no-code"
+    ],
+    "featured": false
   },
   {
     "name": "Descript",
     "slug": "descript",
     "description": "Edit video and audio by editing text. AI removes filler words and generates clips.",
-    "longDescription": "Descript revolutionizes video and audio editing — edit by editing text. Delete a word from the transcript and it's gone from the recording. AI automatically removes filler words, cleans up audio, and generates shareable clips. Perfect for podcasts, YouTube, and social content.",
+    "longDescription": "Descript revolutionizes video and audio editing \u2014 edit by editing text. Delete a word from the transcript and it's gone from the recording. AI automatically removes filler words, cleans up audio, and generates shareable clips. Perfect for podcasts, YouTube, and social content.",
     "url": "https://descript.com",
     "affiliateUrl": "https://descript.com?ref=slashai",
     "category": "Video",
@@ -281,11 +510,25 @@
     "price": "$24/mo Pro",
     "released": "2017",
     "added": "2026-03-18",
-    "pros": ["Edit video/audio by editing text", "AI removes filler words", "Accurate transcription", "Screen recording built-in"],
-    "cons": ["Pro features needed for serious use", "Rendering can be slow"],
+    "pros": [
+      "Edit video/audio by editing text",
+      "AI removes filler words",
+      "Accurate transcription",
+      "Screen recording built-in"
+    ],
+    "cons": [
+      "Pro features needed for serious use",
+      "Rendering can be slow"
+    ],
     "bestFor": "Podcasters and video creators who want fast, intuitive editing.",
     "affiliateCommission": "Varies",
-    "tags": ["video", "audio", "podcasting", "editing"]
+    "tags": [
+      "video",
+      "audio",
+      "podcasting",
+      "editing"
+    ],
+    "featured": false
   },
   {
     "name": "Pictory",
@@ -299,11 +542,24 @@
     "price": "$19/mo Starter",
     "released": "2020",
     "added": "2026-03-18",
-    "pros": ["Blog-to-video conversion", "Accurate auto-captioning", "Good stock footage library", "20-50% affiliate commission"],
-    "cons": ["Video quality doesn't replace pro editing", "Stock footage can look generic"],
+    "pros": [
+      "Blog-to-video conversion",
+      "Accurate auto-captioning",
+      "Good stock footage library",
+      "20-50% affiliate commission"
+    ],
+    "cons": [
+      "Video quality doesn't replace pro editing",
+      "Stock footage can look generic"
+    ],
     "bestFor": "Content creators who want to repurpose blog posts into videos.",
     "affiliateCommission": "20-50% per plan",
-    "tags": ["video", "content repurposing", "social media"]
+    "tags": [
+      "video",
+      "content repurposing",
+      "social media"
+    ],
+    "featured": false
   },
   {
     "name": "Murf AI",
@@ -317,11 +573,26 @@
     "price": "$23/mo Creator",
     "released": "October 2020",
     "added": "2026-03-18",
-    "pros": ["Voices sound genuinely human", "120+ voices and styles", "20% recurring affiliate (24 months)", "Voice cloning available"],
-    "cons": ["Free trial very limited", "Some voices still artificial", "Technical term pronunciation issues"],
+    "pros": [
+      "Voices sound genuinely human",
+      "120+ voices and styles",
+      "20% recurring affiliate (24 months)",
+      "Voice cloning available"
+    ],
+    "cons": [
+      "Free trial very limited",
+      "Some voices still artificial",
+      "Technical term pronunciation issues"
+    ],
     "bestFor": "Creators who need voiceovers but hate recording themselves.",
     "affiliateCommission": "20% recurring (24 months)",
-    "tags": ["audio", "voiceover", "podcasting", "video"]
+    "tags": [
+      "audio",
+      "voiceover",
+      "podcasting",
+      "video"
+    ],
+    "featured": false
   },
   {
     "name": "ElevenLabs",
@@ -335,11 +606,26 @@
     "price": "$5/mo Starter",
     "released": "January 2023",
     "added": "2026-03-18",
-    "pros": ["Most realistic AI voices", "Voice cloning from short sample", "30+ languages", "Affordable entry price"],
-    "cons": ["Free tier very limited", "Cloning requires clear audio samples", "Ethical concerns around voice cloning"],
+    "pros": [
+      "Most realistic AI voices",
+      "Voice cloning from short sample",
+      "30+ languages",
+      "Affordable entry price"
+    ],
+    "cons": [
+      "Free tier very limited",
+      "Cloning requires clear audio samples",
+      "Ethical concerns around voice cloning"
+    ],
     "bestFor": "Creators who need the highest quality AI voices available.",
     "affiliateCommission": "Varies",
-    "tags": ["audio", "voiceover", "voice cloning", "tts"]
+    "tags": [
+      "audio",
+      "voiceover",
+      "voice cloning",
+      "tts"
+    ],
+    "featured": false
   },
   {
     "name": "Perplexity",
@@ -353,17 +639,31 @@
     "price": "$20/mo Pro",
     "released": "August 2022",
     "added": "2026-03-18",
-    "pros": ["Real-time web search", "Cited sources", "Pro Search for multi-step reasoning", "Collections for ongoing research"],
-    "cons": ["Needs human verification for decisions", "Can miss niche sources"],
+    "pros": [
+      "Real-time web search",
+      "Cited sources",
+      "Pro Search for multi-step reasoning",
+      "Collections for ongoing research"
+    ],
+    "cons": [
+      "Needs human verification for decisions",
+      "Can miss niche sources"
+    ],
     "bestFor": "Anyone who does regular research for work or content.",
     "affiliateCommission": null,
-    "tags": ["research", "search", "analysis", "citations"]
+    "tags": [
+      "research",
+      "search",
+      "analysis",
+      "citations"
+    ],
+    "featured": true
   },
   {
     "name": "Lindy AI",
     "slug": "lindy-ai",
     "description": "Autonomous AI agent that handles email, scheduling, CRM updates, and lead qualification.",
-    "longDescription": "Lindy is the most autonomous AI agent for solopreneurs. It connects to your email, calendar, and CRM, then handles repetitive work: triaging emails, drafting replies, scheduling meetings, updating CRM, qualifying leads. Set-and-forget operation — it learns your patterns and acts independently.",
+    "longDescription": "Lindy is the most autonomous AI agent for solopreneurs. It connects to your email, calendar, and CRM, then handles repetitive work: triaging emails, drafting replies, scheduling meetings, updating CRM, qualifying leads. Set-and-forget operation \u2014 it learns your patterns and acts independently.",
     "url": "https://lindy.ai",
     "affiliateUrl": "https://lindy.ai?via=slashai",
     "category": "AI Agents",
@@ -371,11 +671,28 @@
     "price": "$49/mo Pro",
     "released": "2023",
     "added": "2026-03-18",
-    "pros": ["Most autonomous agent available", "3,000+ integrations", "Excellent email triage", "Set-and-forget operation"],
-    "cons": ["$49/mo is steep", "Credit system confusing", "Occasional over-automation", "Setup takes 2-3 hours"],
+    "pros": [
+      "Most autonomous agent available",
+      "3,000+ integrations",
+      "Excellent email triage",
+      "Set-and-forget operation"
+    ],
+    "cons": [
+      "$49/mo is steep",
+      "Credit system confusing",
+      "Occasional over-automation",
+      "Setup takes 2-3 hours"
+    ],
     "bestFor": "Solopreneurs who spend 2+ hours/day on email and admin.",
     "affiliateCommission": "Varies",
-    "tags": ["ai agents", "email", "automation", "crm", "scheduling"]
+    "tags": [
+      "ai agents",
+      "email",
+      "automation",
+      "crm",
+      "scheduling"
+    ],
+    "featured": true
   },
   {
     "name": "Relevance AI",
@@ -389,17 +706,31 @@
     "price": "$19/mo Team",
     "released": "2023",
     "added": "2026-03-18",
-    "pros": ["No-code agent builder", "2,000+ integrations", "Free tier usable", "Templates for common tasks"],
-    "cons": ["Learning curve for complex workflows", "Advanced features need paid plan"],
+    "pros": [
+      "No-code agent builder",
+      "2,000+ integrations",
+      "Free tier usable",
+      "Templates for common tasks"
+    ],
+    "cons": [
+      "Learning curve for complex workflows",
+      "Advanced features need paid plan"
+    ],
     "bestFor": "Solopreneurs who want custom agents without coding.",
     "affiliateCommission": "Varies",
-    "tags": ["ai agents", "no-code", "automation", "workflow"]
+    "tags": [
+      "ai agents",
+      "no-code",
+      "automation",
+      "workflow"
+    ],
+    "featured": false
   },
   {
     "name": "Tidio",
     "slug": "tidio",
     "description": "AI customer support agent that handles website chat 24/7.",
-    "longDescription": "Tidio's AI agent (Lyro) handles customer questions on your website autonomously. It learns from your help docs and FAQs, answers 70%+ of tickets independently, and escalates only when needed. Setup takes 15 minutes — paste one code snippet.",
+    "longDescription": "Tidio's AI agent (Lyro) handles customer questions on your website autonomously. It learns from your help docs and FAQs, answers 70%+ of tickets independently, and escalates only when needed. Setup takes 15 minutes \u2014 paste one code snippet.",
     "url": "https://tidio.com",
     "affiliateUrl": "https://tidio.com?via=slashai",
     "category": "AI Agents",
@@ -407,17 +738,31 @@
     "price": "$29/mo AI-powered",
     "released": "2013",
     "added": "2026-03-18",
-    "pros": ["15-minute setup", "Learns from help docs", "Seamless human handoff", "Free tier (50 convos/mo)"],
-    "cons": ["AI misses nuance sometimes", "Need $29/mo for serious usage"],
+    "pros": [
+      "15-minute setup",
+      "Learns from help docs",
+      "Seamless human handoff",
+      "Free tier (50 convos/mo)"
+    ],
+    "cons": [
+      "AI misses nuance sometimes",
+      "Need $29/mo for serious usage"
+    ],
     "bestFor": "Anyone selling products or services online.",
     "affiliateCommission": "Varies",
-    "tags": ["ai agents", "customer support", "chat", "automation"]
+    "tags": [
+      "ai agents",
+      "customer support",
+      "chat",
+      "automation"
+    ],
+    "featured": false
   },
   {
     "name": "Bland AI",
     "slug": "bland-ai",
     "description": "AI phone agent for inbound calls, outbound dials, and appointment scheduling.",
-    "longDescription": "Bland AI builds phone agents that talk to people naturally — answering calls, qualifying leads, booking appointments, making outbound calls. Voice quality is so natural most callers don't realize it's AI. Usage-based pricing (~$0.09/min) means you only pay for actual calls.",
+    "longDescription": "Bland AI builds phone agents that talk to people naturally \u2014 answering calls, qualifying leads, booking appointments, making outbound calls. Voice quality is so natural most callers don't realize it's AI. Usage-based pricing (~$0.09/min) means you only pay for actual calls.",
     "url": "https://bland.ai",
     "affiliateUrl": null,
     "category": "AI Agents",
@@ -425,11 +770,26 @@
     "price": "$0.09/min",
     "released": "2023",
     "added": "2026-03-18",
-    "pros": ["Incredibly natural voice", "Customizable scripts", "Calendar/CRM integration", "Usage-based pricing"],
-    "cons": ["Requires careful script tuning", "Not for complex/emotional calls", "Can feel artificial on long calls"],
+    "pros": [
+      "Incredibly natural voice",
+      "Customizable scripts",
+      "Calendar/CRM integration",
+      "Usage-based pricing"
+    ],
+    "cons": [
+      "Requires careful script tuning",
+      "Not for complex/emotional calls",
+      "Can feel artificial on long calls"
+    ],
     "bestFor": "Service businesses that take client calls (real estate, consulting, medical).",
     "affiliateCommission": null,
-    "tags": ["ai agents", "phone", "scheduling", "automation"]
+    "tags": [
+      "ai agents",
+      "phone",
+      "scheduling",
+      "automation"
+    ],
+    "featured": false
   },
   {
     "name": "Frase",
@@ -443,11 +803,26 @@
     "price": "$15/mo Solo",
     "released": "2018",
     "added": "2026-03-18",
-    "pros": ["SEO + writing in one tool", "Content briefs save hours", "Lower price than Surfer", "SERP analysis included"],
-    "cons": ["AI writing quality average", "Dated interface", "Limited templates"],
+    "pros": [
+      "SEO + writing in one tool",
+      "Content briefs save hours",
+      "Lower price than Surfer",
+      "SERP analysis included"
+    ],
+    "cons": [
+      "AI writing quality average",
+      "Dated interface",
+      "Limited templates"
+    ],
     "bestFor": "Content creators who want SEO research and writing in one affordable tool.",
     "affiliateCommission": "Varies",
-    "tags": ["seo", "content", "briefs", "writing"]
+    "tags": [
+      "seo",
+      "content",
+      "briefs",
+      "writing"
+    ],
+    "featured": false
   },
   {
     "name": "Rytr",
@@ -461,11 +836,26 @@
     "price": "$9/mo Saver",
     "released": "April 2021",
     "added": "2026-03-18",
-    "pros": ["Cheapest quality option", "Free tier available", "40+ use cases", "30+ languages"],
-    "cons": ["Long-form content mediocre", "Outgrow it quickly", "Fewer features than competitors"],
+    "pros": [
+      "Cheapest quality option",
+      "Free tier available",
+      "40+ use cases",
+      "30+ languages"
+    ],
+    "cons": [
+      "Long-form content mediocre",
+      "Outgrow it quickly",
+      "Fewer features than competitors"
+    ],
     "bestFor": "Freelancers on a tight budget who need basic AI writing.",
     "affiliateCommission": "Varies",
-    "tags": ["writing", "budget", "content", "copywriting"]
+    "tags": [
+      "writing",
+      "budget",
+      "content",
+      "copywriting"
+    ],
+    "featured": false
   },
   {
     "name": "Superhuman",
@@ -479,11 +869,26 @@
     "price": "$30/mo",
     "released": "2017",
     "added": "2026-03-18",
-    "pros": ["Email 2-3x faster", "AI-suggested replies", "Follow-up reminders", "Read receipts"],
-    "cons": ["$30/mo for email client", "Gmail only", "Overkill for <30 emails/day"],
+    "pros": [
+      "Email 2-3x faster",
+      "AI-suggested replies",
+      "Follow-up reminders",
+      "Read receipts"
+    ],
+    "cons": [
+      "$30/mo for email client",
+      "Gmail only",
+      "Overkill for <30 emails/day"
+    ],
     "bestFor": "Email-heavy freelancers who spend 1+ hours/day in their inbox.",
     "affiliateCommission": "Varies",
-    "tags": ["email", "productivity", "inbox", "scheduling"]
+    "tags": [
+      "email",
+      "productivity",
+      "inbox",
+      "scheduling"
+    ],
+    "featured": false
   },
   {
     "name": "Reclaim.ai",
@@ -497,17 +902,31 @@
     "price": "$10/mo Starter",
     "released": "2021",
     "added": "2026-03-18",
-    "pros": ["Defends focus time automatically", "Smart habits feature", "Free tier usable", "Slack integration"],
-    "cons": ["Google Calendar only", "Can be too aggressive with blocking"],
+    "pros": [
+      "Defends focus time automatically",
+      "Smart habits feature",
+      "Free tier usable",
+      "Slack integration"
+    ],
+    "cons": [
+      "Google Calendar only",
+      "Can be too aggressive with blocking"
+    ],
     "bestFor": "Freelancers who can't find time for deep work.",
     "affiliateCommission": "Varies",
-    "tags": ["calendar", "scheduling", "focus", "habits"]
+    "tags": [
+      "calendar",
+      "scheduling",
+      "focus",
+      "habits"
+    ],
+    "featured": false
   },
   {
     "name": "Krisp",
     "slug": "krisp",
     "description": "AI noise cancellation and meeting transcription for crystal-clear calls.",
-    "longDescription": "Krisp removes background noise from calls and provides AI-powered meeting transcription, summaries, and action items. Works with any video conferencing app. Noise cancellation is genuinely magical — works in coffee shops, with pets, construction, anywhere.",
+    "longDescription": "Krisp removes background noise from calls and provides AI-powered meeting transcription, summaries, and action items. Works with any video conferencing app. Noise cancellation is genuinely magical \u2014 works in coffee shops, with pets, construction, anywhere.",
     "url": "https://krisp.ai",
     "affiliateUrl": "https://krisp.ai?ref=slashai",
     "category": "Productivity",
@@ -515,11 +934,25 @@
     "price": "$12/mo Pro",
     "released": "2018",
     "added": "2026-03-18",
-    "pros": ["Magical noise cancellation", "Accurate transcription", "AI meeting summaries", "Works with any app"],
-    "cons": ["Free tier limited (60 min/day)", "Uses CPU resources"],
+    "pros": [
+      "Magical noise cancellation",
+      "Accurate transcription",
+      "AI meeting summaries",
+      "Works with any app"
+    ],
+    "cons": [
+      "Free tier limited (60 min/day)",
+      "Uses CPU resources"
+    ],
     "bestFor": "Anyone who takes client calls from imperfect environments.",
     "affiliateCommission": "Varies",
-    "tags": ["meetings", "audio", "noise cancellation", "transcription"]
+    "tags": [
+      "meetings",
+      "audio",
+      "noise cancellation",
+      "transcription"
+    ],
+    "featured": false
   },
   {
     "name": "FreshBooks",
@@ -533,11 +966,25 @@
     "price": "$19/mo Lite",
     "released": "2003",
     "added": "2026-03-18",
-    "pros": ["Automatic expense categorization", "Time tracking to invoices", "Professional templates", "Online payments"],
-    "cons": ["$19/mo limited to 5 clients", "Need $33/mo for unlimited"],
+    "pros": [
+      "Automatic expense categorization",
+      "Time tracking to invoices",
+      "Professional templates",
+      "Online payments"
+    ],
+    "cons": [
+      "$19/mo limited to 5 clients",
+      "Need $33/mo for unlimited"
+    ],
     "bestFor": "Freelancers still using spreadsheets for invoicing.",
     "affiliateCommission": "Varies",
-    "tags": ["invoicing", "accounting", "finance", "freelancer"]
+    "tags": [
+      "invoicing",
+      "accounting",
+      "finance",
+      "freelancer"
+    ],
+    "featured": false
   },
   {
     "name": "Claude Code",
@@ -551,17 +998,32 @@
     "price": "Included with Pro",
     "released": "2025",
     "added": "2026-03-18",
-    "pros": ["Full terminal access", "Multi-file editing", "Context-aware coding", "Executes and tests code"],
-    "cons": ["Requires Claude Pro subscription", "Terminal-based (not for beginners)", "Can make mistakes"],
+    "pros": [
+      "Full terminal access",
+      "Multi-file editing",
+      "Context-aware coding",
+      "Executes and tests code"
+    ],
+    "cons": [
+      "Requires Claude Pro subscription",
+      "Terminal-based (not for beginners)",
+      "Can make mistakes"
+    ],
     "bestFor": "Developers who want an AI pair programmer with full system access.",
     "affiliateCommission": null,
-    "tags": ["coding", "development", "terminal", "automation"]
+    "tags": [
+      "coding",
+      "development",
+      "terminal",
+      "automation"
+    ],
+    "featured": false
   },
   {
     "name": "NotebookLM",
     "slug": "notebooklm",
     "description": "Google's AI research tool that answers questions based on your uploaded documents.",
-    "longDescription": "NotebookLM by Google is an AI research assistant that grounds its answers in documents you upload. Upload PDFs, Google Docs, or text files and ask questions — the AI only uses your sources. Generates summaries, study guides, FAQs, and even AI-generated podcast-style audio discussions of your content.",
+    "longDescription": "NotebookLM by Google is an AI research assistant that grounds its answers in documents you upload. Upload PDFs, Google Docs, or text files and ask questions \u2014 the AI only uses your sources. Generates summaries, study guides, FAQs, and even AI-generated podcast-style audio discussions of your content.",
     "url": "https://notebooklm.google.com",
     "affiliateUrl": null,
     "category": "Research",
@@ -569,11 +1031,27 @@
     "price": "Free",
     "released": "December 2023",
     "added": "2026-03-18",
-    "pros": ["Grounded in your documents", "Free to use", "Audio overview feature", "No hallucination from external sources"],
-    "cons": ["Limited to uploaded sources", "Google account required", "Can't browse the web"],
+    "pros": [
+      "Grounded in your documents",
+      "Free to use",
+      "Audio overview feature",
+      "No hallucination from external sources"
+    ],
+    "cons": [
+      "Limited to uploaded sources",
+      "Google account required",
+      "Can't browse the web"
+    ],
     "bestFor": "Researchers and students who need to analyze specific documents.",
     "affiliateCommission": null,
-    "tags": ["research", "documents", "notes", "google", "analysis"]
+    "tags": [
+      "research",
+      "documents",
+      "notes",
+      "google",
+      "analysis"
+    ],
+    "featured": false
   },
   {
     "name": "Fireflies",
@@ -587,11 +1065,26 @@
     "price": "$18/mo Pro",
     "released": "2019",
     "added": "2026-03-18",
-    "pros": ["Automatic meeting transcription", "Action item extraction", "Searchable meeting library", "Works with all major platforms"],
-    "cons": ["Accuracy varies with audio quality", "Free tier limited to 800 min storage", "Can feel intrusive in meetings"],
+    "pros": [
+      "Automatic meeting transcription",
+      "Action item extraction",
+      "Searchable meeting library",
+      "Works with all major platforms"
+    ],
+    "cons": [
+      "Accuracy varies with audio quality",
+      "Free tier limited to 800 min storage",
+      "Can feel intrusive in meetings"
+    ],
     "bestFor": "Anyone who takes multiple meetings per week and loses track of action items.",
     "affiliateCommission": "Varies",
-    "tags": ["meetings", "transcription", "productivity", "notes"]
+    "tags": [
+      "meetings",
+      "transcription",
+      "productivity",
+      "notes"
+    ],
+    "featured": false
   },
   {
     "name": "Fathom",
@@ -605,35 +1098,66 @@
     "price": "Free (Team plans from $32/mo)",
     "released": "2020",
     "added": "2026-03-18",
-    "pros": ["Completely free for individuals", "Real-time transcription", "CRM integrations", "One-click highlights"],
-    "cons": ["Team features require paid plan", "Desktop app required", "Zoom/Meet/Teams only"],
+    "pros": [
+      "Completely free for individuals",
+      "Real-time transcription",
+      "CRM integrations",
+      "One-click highlights"
+    ],
+    "cons": [
+      "Team features require paid plan",
+      "Desktop app required",
+      "Zoom/Meet/Teams only"
+    ],
     "bestFor": "Individual freelancers who need free, reliable meeting transcription.",
     "affiliateCommission": null,
-    "tags": ["meetings", "transcription", "productivity", "free"]
+    "tags": [
+      "meetings",
+      "transcription",
+      "productivity",
+      "free"
+    ],
+    "featured": false
   },
   {
     "name": "n8n",
     "slug": "n8n",
     "description": "Open-source workflow automation with native AI agent capabilities.",
-    "longDescription": "n8n is an open-source automation platform (like Zapier) with built-in AI agent support. Build visual workflows that include AI steps — classification, generation, decision-making. Self-host for free or use their cloud. More flexible than Zapier for complex workflows with branching and loops.",
+    "longDescription": "n8n is an open-source automation platform (like Zapier) with built-in AI agent support. Build visual workflows that include AI steps \u2014 classification, generation, decision-making. Self-host for free or use their cloud. More flexible than Zapier for complex workflows with branching and loops.",
     "url": "https://n8n.io",
     "affiliateUrl": null,
     "category": "Automation",
     "pricing": "Freemium",
-    "price": "Free (self-hosted) · €24/mo Cloud",
+    "price": "Free (self-hosted) \u00b7 \u20ac24/mo Cloud",
     "released": "2019",
     "added": "2026-03-18",
-    "pros": ["Open-source and self-hostable", "Native AI agent nodes", "More flexible than Zapier", "Free self-hosted option"],
-    "cons": ["Requires technical setup for self-hosting", "Smaller integration library than Zapier", "Learning curve"],
+    "pros": [
+      "Open-source and self-hostable",
+      "Native AI agent nodes",
+      "More flexible than Zapier",
+      "Free self-hosted option"
+    ],
+    "cons": [
+      "Requires technical setup for self-hosting",
+      "Smaller integration library than Zapier",
+      "Learning curve"
+    ],
     "bestFor": "Technical freelancers who want full control over their automations.",
     "affiliateCommission": null,
-    "tags": ["automation", "workflow", "open-source", "ai agents", "no-code"]
+    "tags": [
+      "automation",
+      "workflow",
+      "open-source",
+      "ai agents",
+      "no-code"
+    ],
+    "featured": false
   },
   {
     "name": "OpenRouter",
     "slug": "openrouter",
     "description": "Access 600+ AI models (GPT-4, Claude, Gemini, Llama) through a single API.",
-    "longDescription": "OpenRouter provides unified access to 600+ AI models from OpenAI, Anthropic, Google, Meta, and more — through one API. Compare models side-by-side, switch instantly, and pay only for what you use. Essential for developers and power users who want model flexibility without managing multiple API keys.",
+    "longDescription": "OpenRouter provides unified access to 600+ AI models from OpenAI, Anthropic, Google, Meta, and more \u2014 through one API. Compare models side-by-side, switch instantly, and pay only for what you use. Essential for developers and power users who want model flexibility without managing multiple API keys.",
     "url": "https://openrouter.ai",
     "affiliateUrl": "https://openrouter.ai?via=slashai",
     "category": "Developer",
@@ -641,11 +1165,26 @@
     "price": "Varies by model",
     "released": "2023",
     "added": "2026-03-18",
-    "pros": ["600+ models in one API", "Compare models easily", "No subscription required", "Developer-friendly"],
-    "cons": ["Markups on some models", "Requires API knowledge", "Not for casual users"],
+    "pros": [
+      "600+ models in one API",
+      "Compare models easily",
+      "No subscription required",
+      "Developer-friendly"
+    ],
+    "cons": [
+      "Markups on some models",
+      "Requires API knowledge",
+      "Not for casual users"
+    ],
     "bestFor": "Developers and AI power users who want access to all models through one API.",
     "affiliateCommission": "Varies",
-    "tags": ["api", "developer", "models", "ai tools"]
+    "tags": [
+      "api",
+      "developer",
+      "models",
+      "ai tools"
+    ],
+    "featured": false
   },
   {
     "name": "Synthesia",
@@ -659,17 +1198,32 @@
     "price": "$29/mo Starter",
     "released": "2017",
     "added": "2026-03-18",
-    "pros": ["Realistic AI avatars", "120+ languages", "No filming required", "Professional output quality"],
-    "cons": ["Avatar uncanny valley effect", "Limited customization on cheap plans", "Not for creative/artistic videos"],
+    "pros": [
+      "Realistic AI avatars",
+      "120+ languages",
+      "No filming required",
+      "Professional output quality"
+    ],
+    "cons": [
+      "Avatar uncanny valley effect",
+      "Limited customization on cheap plans",
+      "Not for creative/artistic videos"
+    ],
     "bestFor": "Businesses creating training, explainer, or product demo videos at scale.",
     "affiliateCommission": "25% recurring",
-    "tags": ["video", "avatars", "multilingual", "presentations"]
+    "tags": [
+      "video",
+      "avatars",
+      "multilingual",
+      "presentations"
+    ],
+    "featured": false
   },
   {
     "name": "Whisper Flow",
     "slug": "whisper-flow",
     "description": "AI speech-to-text dictation with high accuracy and natural flow.",
-    "longDescription": "Whisper Flow is a speech-to-text tool optimized for natural, flowing dictation. Built on OpenAI's Whisper model with enhanced accuracy and speed. Works system-wide on your computer — dictate emails, documents, messages anywhere you type.",
+    "longDescription": "Whisper Flow is a speech-to-text tool optimized for natural, flowing dictation. Built on OpenAI's Whisper model with enhanced accuracy and speed. Works system-wide on your computer \u2014 dictate emails, documents, messages anywhere you type.",
     "url": "https://whisperflow.app",
     "affiliateUrl": null,
     "category": "Productivity",
@@ -677,11 +1231,26 @@
     "price": "$15/mo Pro",
     "released": "2024",
     "added": "2026-03-18",
-    "pros": ["System-wide dictation", "High accuracy", "Natural speech handling", "Works in any app"],
-    "cons": ["Requires internet connection", "Free tier limited", "Mac only (currently)"],
+    "pros": [
+      "System-wide dictation",
+      "High accuracy",
+      "Natural speech handling",
+      "Works in any app"
+    ],
+    "cons": [
+      "Requires internet connection",
+      "Free tier limited",
+      "Mac only (currently)"
+    ],
     "bestFor": "Writers and professionals who think better speaking than typing.",
     "affiliateCommission": null,
-    "tags": ["dictation", "speech-to-text", "productivity", "writing"]
+    "tags": [
+      "dictation",
+      "speech-to-text",
+      "productivity",
+      "writing"
+    ],
+    "featured": false
   },
   {
     "name": "Otter",
@@ -695,11 +1264,26 @@
     "price": "$17/mo Pro",
     "released": "2016",
     "added": "2026-03-18",
-    "pros": ["Live transcription", "Speaker identification", "Mobile app", "300 minutes free/month"],
-    "cons": ["Accuracy varies with accents", "No offline mode", "Can struggle with technical terms"],
+    "pros": [
+      "Live transcription",
+      "Speaker identification",
+      "Mobile app",
+      "300 minutes free/month"
+    ],
+    "cons": [
+      "Accuracy varies with accents",
+      "No offline mode",
+      "Can struggle with technical terms"
+    ],
     "bestFor": "Meeting-heavy freelancers who need searchable transcripts.",
     "affiliateCommission": "Varies",
-    "tags": ["meetings", "transcription", "notes", "productivity"]
+    "tags": [
+      "meetings",
+      "transcription",
+      "notes",
+      "productivity"
+    ],
+    "featured": false
   },
   {
     "name": "TL;DV",
@@ -713,17 +1297,32 @@
     "price": "$25/mo Pro",
     "released": "2020",
     "added": "2026-03-18",
-    "pros": ["Timestamped highlights", "CRM auto-sync", "AI summaries", "Generous free tier"],
-    "cons": ["UI can feel cluttered", "Transcription accuracy varies", "Chrome extension required"],
+    "pros": [
+      "Timestamped highlights",
+      "CRM auto-sync",
+      "AI summaries",
+      "Generous free tier"
+    ],
+    "cons": [
+      "UI can feel cluttered",
+      "Transcription accuracy varies",
+      "Chrome extension required"
+    ],
     "bestFor": "Sales freelancers who need meeting notes synced to their CRM.",
     "affiliateCommission": "Varies",
-    "tags": ["meetings", "transcription", "crm", "sales"]
+    "tags": [
+      "meetings",
+      "transcription",
+      "crm",
+      "sales"
+    ],
+    "featured": false
   },
   {
     "name": "Gumloop",
     "slug": "gumloop",
     "description": "No-code AI agent builder for automating complex business workflows.",
-    "longDescription": "Gumloop lets you build AI agents visually — chain together AI models, web scraping, API calls, and data processing in a drag-and-drop interface. Agents run autonomously on schedules or triggers. Connects to 500+ apps. Popular for lead generation, content workflows, and data enrichment.",
+    "longDescription": "Gumloop lets you build AI agents visually \u2014 chain together AI models, web scraping, API calls, and data processing in a drag-and-drop interface. Agents run autonomously on schedules or triggers. Connects to 500+ apps. Popular for lead generation, content workflows, and data enrichment.",
     "url": "https://gumloop.com",
     "affiliateUrl": "https://gumloop.com?via=slashai",
     "category": "AI Agents",
@@ -731,17 +1330,32 @@
     "price": "$49/mo Pro",
     "released": "2024",
     "added": "2026-03-18",
-    "pros": ["Visual agent builder", "500+ integrations", "Scheduled agent runs", "Web scraping built-in"],
-    "cons": ["Newer platform (less stable)", "Pro plan expensive", "Learning curve for complex workflows"],
+    "pros": [
+      "Visual agent builder",
+      "500+ integrations",
+      "Scheduled agent runs",
+      "Web scraping built-in"
+    ],
+    "cons": [
+      "Newer platform (less stable)",
+      "Pro plan expensive",
+      "Learning curve for complex workflows"
+    ],
     "bestFor": "Solopreneurs who want to build custom AI agents without code.",
     "affiliateCommission": "Varies",
-    "tags": ["ai agents", "automation", "no-code", "workflow"]
+    "tags": [
+      "ai agents",
+      "automation",
+      "no-code",
+      "workflow"
+    ],
+    "featured": false
   },
   {
     "name": "Granola",
     "slug": "granola",
     "description": "AI meeting notes that combine your notes with AI transcription for complete context.",
-    "longDescription": "Granola takes a unique approach — it combines the notes you type during a meeting with AI transcription to create complete, context-rich meeting notes. Your manual highlights and the AI's transcription merge into one clean document. Simple, fast, and surprisingly effective.",
+    "longDescription": "Granola takes a unique approach \u2014 it combines the notes you type during a meeting with AI transcription to create complete, context-rich meeting notes. Your manual highlights and the AI's transcription merge into one clean document. Simple, fast, and surprisingly effective.",
     "url": "https://granola.ai",
     "affiliateUrl": null,
     "category": "Productivity",
@@ -749,10 +1363,25 @@
     "price": "Free",
     "released": "2024",
     "added": "2026-03-18",
-    "pros": ["Unique hybrid approach", "Completely free", "Clean, minimal interface", "No bot joins your call"],
-    "cons": ["Mac only", "Fewer features than competitors", "No CRM integrations"],
+    "pros": [
+      "Unique hybrid approach",
+      "Completely free",
+      "Clean, minimal interface",
+      "No bot joins your call"
+    ],
+    "cons": [
+      "Mac only",
+      "Fewer features than competitors",
+      "No CRM integrations"
+    ],
     "bestFor": "Freelancers who take notes during meetings and want AI to fill the gaps.",
     "affiliateCommission": null,
-    "tags": ["meetings", "notes", "transcription", "free"]
+    "tags": [
+      "meetings",
+      "notes",
+      "transcription",
+      "free"
+    ],
+    "featured": false
   }
 ]
