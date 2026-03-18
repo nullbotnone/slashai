@@ -1,0 +1,302 @@
+[
+  {
+    "name": "ChatGPT",
+    "description": "The most versatile AI assistant for writing, research, coding, and analysis.",
+    "url": "https://chat.openai.com",
+    "category": "Assistant",
+    "pricing": "Freemium",
+    "price": "$20/mo Plus",
+    "released": "November 2022",
+    "tags": ["writing", "research", "coding", "chat"]
+  },
+  {
+    "name": "Claude",
+    "description": "AI assistant excelling at long documents, nuanced reasoning, and coding tasks.",
+    "url": "https://claude.ai",
+    "category": "Assistant",
+    "pricing": "Freemium",
+    "price": "$20/mo Pro",
+    "released": "March 2023",
+    "tags": ["writing", "research", "coding", "documents"]
+  },
+  {
+    "name": "Jasper AI",
+    "description": "Premium AI writer with brand voice training and SEO integration.",
+    "url": "https://jasper.ai",
+    "category": "Writing",
+    "pricing": "Paid",
+    "price": "$49/mo",
+    "released": "February 2021",
+    "tags": ["writing", "marketing", "seo", "brand"]
+  },
+  {
+    "name": "Writesonic",
+    "description": "Budget-friendly AI writer with ChatSonic chat and bulk content generation.",
+    "url": "https://writesonic.com",
+    "category": "Writing",
+    "pricing": "Freemium",
+    "price": "$19/mo Pro",
+    "released": "October 2021",
+    "tags": ["writing", "blogging", "social media"]
+  },
+  {
+    "name": "Copy.ai",
+    "description": "AI copywriter with 90+ templates and workflow automation for marketing teams.",
+    "url": "https://copy.ai",
+    "category": "Writing",
+    "pricing": "Freemium",
+    "price": "$49/mo Pro",
+    "released": "October 2020",
+    "tags": ["writing", "marketing", "copywriting", "templates"]
+  },
+  {
+    "name": "Grammarly",
+    "description": "AI-powered writing assistant for grammar, tone, clarity, and style.",
+    "url": "https://grammarly.com",
+    "category": "Writing",
+    "pricing": "Freemium",
+    "price": "$12/mo Premium",
+    "released": "July 2009",
+    "tags": ["editing", "grammar", "productivity"]
+  },
+  {
+    "name": "Notion AI",
+    "description": "All-in-one workspace with AI for notes, docs, databases, and project management.",
+    "url": "https://notion.so",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "price": "$10/mo AI add-on",
+    "released": "June 2022 (AI)",
+    "tags": ["productivity", "notes", "project management", "workspace"]
+  },
+  {
+    "name": "Midjourney",
+    "description": "AI image generator producing stunning, artistic visuals from text prompts.",
+    "url": "https://midjourney.com",
+    "category": "Design",
+    "pricing": "Paid",
+    "price": "$10/mo Basic",
+    "released": "July 2022",
+    "tags": ["images", "design", "art", "visuals"]
+  },
+  {
+    "name": "Canva AI",
+    "description": "Design platform with AI image generation, magic resize, and brand kit.",
+    "url": "https://canva.com",
+    "category": "Design",
+    "pricing": "Freemium",
+    "price": "$13/mo Pro",
+    "released": "September 2023 (AI)",
+    "tags": ["design", "images", "social media", "presentations"]
+  },
+  {
+    "name": "Surfer SEO",
+    "description": "Content optimization tool that analyzes top-ranking pages and guides your writing.",
+    "url": "https://surferseo.com",
+    "category": "SEO",
+    "pricing": "Paid",
+    "price": "$89/mo Essential",
+    "released": "2018",
+    "tags": ["seo", "content", "optimization", "blogging"]
+  },
+  {
+    "name": "Semrush",
+    "description": "All-in-one SEO toolkit for keyword research, competitor analysis, and site audits.",
+    "url": "https://semrush.com",
+    "category": "SEO",
+    "pricing": "Paid",
+    "price": "$130/mo Pro",
+    "released": "August 2008",
+    "tags": ["seo", "keywords", "competitor analysis", "marketing"]
+  },
+  {
+    "name": "HubSpot",
+    "description": "Free CRM with email tracking, deal pipeline, and marketing automation.",
+    "url": "https://hubspot.com",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "price": "$20/mo Starter",
+    "released": "June 2006",
+    "tags": ["crm", "sales", "email", "marketing"]
+  },
+  {
+    "name": "Motion",
+    "description": "AI calendar that auto-schedules tasks and reschedules when plans change.",
+    "url": "https://usemotion.com",
+    "category": "Productivity",
+    "pricing": "Paid",
+    "price": "$19/mo Individual",
+    "released": "2019",
+    "tags": ["calendar", "scheduling", "productivity", "time management"]
+  },
+  {
+    "name": "Zapier",
+    "description": "Connect 6,000+ apps with automated workflows and AI-powered suggestions.",
+    "url": "https://zapier.com",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "price": "$20/mo Starter",
+    "released": "October 2011",
+    "tags": ["automation", "integrations", "workflow", "productivity"]
+  },
+  {
+    "name": "Make.com",
+    "description": "Visual automation platform with complex logic, branching, and 1,500+ integrations.",
+    "url": "https://make.com",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "price": "$10.59/mo Core",
+    "released": "2019 (as Integromat)",
+    "tags": ["automation", "integrations", "workflow", "no-code"]
+  },
+  {
+    "name": "Descript",
+    "description": "Edit video and audio by editing text. AI removes filler words and generates clips.",
+    "url": "https://descript.com",
+    "category": "Video",
+    "pricing": "Freemium",
+    "price": "$24/mo Pro",
+    "released": "2017",
+    "tags": ["video", "audio", "podcasting", "editing"]
+  },
+  {
+    "name": "Pictory",
+    "description": "Turn blog posts and scripts into videos with AI narration and stock footage.",
+    "url": "https://pictory.ai",
+    "category": "Video",
+    "pricing": "Paid",
+    "price": "$19/mo Starter",
+    "released": "2020",
+    "tags": ["video", "content repurposing", "social media"]
+  },
+  {
+    "name": "Murf AI",
+    "description": "AI voiceover generator with 120+ realistic voices across 20+ languages.",
+    "url": "https://murf.ai",
+    "category": "Audio",
+    "pricing": "Paid",
+    "price": "$23/mo Creator",
+    "released": "October 2020",
+    "tags": ["audio", "voiceover", "podcasting", "video"]
+  },
+  {
+    "name": "ElevenLabs",
+    "description": "Most realistic AI voice generator with voice cloning and multilingual support.",
+    "url": "https://elevenlabs.io",
+    "category": "Audio",
+    "pricing": "Freemium",
+    "price": "$5/mo Starter",
+    "released": "January 2023",
+    "tags": ["audio", "voiceover", "voice cloning", "tts"]
+  },
+  {
+    "name": "Perplexity",
+    "description": "AI research assistant with real-time web search and cited answers.",
+    "url": "https://perplexity.ai",
+    "category": "Research",
+    "pricing": "Freemium",
+    "price": "$20/mo Pro",
+    "released": "August 2022",
+    "tags": ["research", "search", "analysis", "citations"]
+  },
+  {
+    "name": "Frase",
+    "description": "AI content tool combining SEO research, content briefs, and writing in one platform.",
+    "url": "https://frase.io",
+    "category": "SEO",
+    "pricing": "Paid",
+    "price": "$15/mo Solo",
+    "released": "2018",
+    "tags": ["seo", "content", "briefs", "writing"]
+  },
+  {
+    "name": "Rytr",
+    "description": "Budget AI writing tool with 40+ use cases starting at $9/month.",
+    "url": "https://rytr.me",
+    "category": "Writing",
+    "pricing": "Freemium",
+    "price": "$9/mo Saver",
+    "released": "April 2021",
+    "tags": ["writing", "budget", "content", "copywriting"]
+  },
+  {
+    "name": "Superhuman",
+    "description": "Premium email client with AI-powered triage, scheduling, and follow-up reminders.",
+    "url": "https://superhuman.com",
+    "category": "Productivity",
+    "pricing": "Paid",
+    "price": "$30/mo",
+    "released": "2017",
+    "tags": ["email", "productivity", "inbox", "scheduling"]
+  },
+  {
+    "name": "Reclaim.ai",
+    "description": "AI calendar assistant that protects focus time and auto-schedules habits.",
+    "url": "https://reclaim.ai",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "price": "$10/mo Starter",
+    "released": "2021",
+    "tags": ["calendar", "scheduling", "focus", "habits"]
+  },
+  {
+    "name": "Krisp",
+    "description": "AI noise cancellation and meeting transcription for crystal-clear calls.",
+    "url": "https://krisp.ai",
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "price": "$12/mo Pro",
+    "released": "2018",
+    "tags": ["meetings", "audio", "noise cancellation", "transcription"]
+  },
+  {
+    "name": "FreshBooks",
+    "description": "AI-powered invoicing and accounting for freelancers and small businesses.",
+    "url": "https://freshbooks.com",
+    "category": "Finance",
+    "pricing": "Paid",
+    "price": "$19/mo Lite",
+    "released": "2003",
+    "tags": ["invoicing", "accounting", "finance", "freelancer"]
+  },
+  {
+    "name": "Sudowrite",
+    "description": "AI writing assistant built specifically for fiction and creative writing.",
+    "url": "https://sudowrite.com",
+    "category": "Writing",
+    "pricing": "Paid",
+    "price": "$19/mo Hobbyist",
+    "released": "2021",
+    "tags": ["fiction", "creative writing", "storytelling"]
+  },
+  {
+    "name": "Wordtune",
+    "description": "AI rewriting tool that adjusts tone, length, and style of your sentences.",
+    "url": "https://wordtune.com",
+    "category": "Writing",
+    "pricing": "Freemium",
+    "price": "$10/mo Plus",
+    "released": "October 2020",
+    "tags": ["rewriting", "editing", "tone", "style"]
+  },
+  {
+    "name": "AdCreative.ai",
+    "description": "AI-generated ad creatives and banners optimized for conversion.",
+    "url": "https://adcreative.ai",
+    "category": "Marketing",
+    "pricing": "Paid",
+    "price": "$29/mo Starter",
+    "released": "2021",
+    "tags": ["ads", "marketing", "design", "conversion"]
+  },
+  {
+    "name": "Wordware",
+    "description": "Build custom AI agents and workflows with natural language programming.",
+    "url": "https://wordware.ai",
+    "category": "AI Agents",
+    "pricing": "Freemium",
+    "price": "Usage-based",
+    "released": "2023",
+    "tags": ["ai agents", "workflow", "no-code", "automation"]
+  }
+]
