@@ -54,12 +54,19 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <header class="site-header">
     <div class="container-wide header-inner">
       <a href="/" class="site-logo">Slash<span>AI</span></a>
-      <nav>
+      
+      <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" id="menu-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <nav id="main-nav">
         <ul class="nav-links">
-          <li><a href="/ai-tools/">AI Tools</a></li>
-          <li><a href="/blog/">Blog</a></li>
-          <li><a href="/tutorials/">Tutorials</a></li>
-          <li><a href="/about/">About</a></li>
+          <li><a href="/ai-tools/" onclick="closeMenu()">AI Tools</a></li>
+          <li><a href="/blog/" onclick="closeMenu()">Blog</a></li>
+          <li><a href="/tutorials/" onclick="closeMenu()">Tutorials</a></li>
+          <li><a href="/about/" onclick="closeMenu()">About</a></li>
           <li>
             <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle light/dark mode">
               <span id="theme-icon">☀️</span>
@@ -77,9 +84,11 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
   <footer class="site-footer">
     <div class="container">
       <ul class="footer-links">
+        <li><a href="/ai-tools/">AI Tools</a></li>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/tutorials/">Tutorials</a></li>
         <li><a href="/about/">About</a></li>
-        <li><a href="/affiliate-disclosure/">Affiliate Disclosure</a></li>
-        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="/affiliate-disclosure/">Disclosure</a></li>
         <li><a href="/rss.xml">RSS</a></li>
       </ul>
       <p>© {new Date().getFullYear()} SlashAI. Built for solopreneurs, by solopreneurs.</p>
@@ -99,6 +108,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
     function updateIcon(theme) {
       const icon = document.getElementById('theme-icon');
       if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById('main-nav');
+      const btn = document.getElementById('menu-btn');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('main-nav');
+      const btn = document.getElementById('menu-btn');
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      document.body.style.overflow = '';
     }
 
     // Set initial icon
