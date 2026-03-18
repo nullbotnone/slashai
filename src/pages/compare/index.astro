@@ -15,7 +15,6 @@ const toolsJson = JSON.stringify(tools);
 
   <section class="section-glow">
     <div class="container">
-      <!-- Picker -->
       <div id="picker">
         <input type="text" id="filter" placeholder="Search tools..." class="search-bar" autocomplete="off" />
         <div class="tool-scroll" id="tool-scroll">
@@ -26,16 +25,11 @@ const toolsJson = JSON.stringify(tools);
         </div>
       </div>
 
-      <!-- Results -->
       <div class="results hidden" id="results">
         <div class="results-top">
           <button class="back-btn" id="back-btn">← Pick different tools</button>
         </div>
-
-        <!-- Cards -->
         <div class="card-grid" id="result-cards"></div>
-
-        <!-- Detail table -->
         <div class="detail-wrap">
           <table class="detail-table" id="detail-table"></table>
         </div>
@@ -64,7 +58,6 @@ const toolsJson = JSON.stringify(tools);
     box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.08);
   }
 
-  /* Scrollable list */
   .tool-scroll {
     max-height: 560px;
     overflow-y: auto;
@@ -77,11 +70,8 @@ const toolsJson = JSON.stringify(tools);
   .tool-scroll::-webkit-scrollbar-track { background: transparent; }
   .tool-scroll::-webkit-scrollbar-thumb { background: var(--color-border); border-radius: 3px; }
 
-  .tool-list {
-    padding: 0.25rem;
-  }
+  .tool-list { padding: 0.25rem; }
 
-  /* Each row */
   .tool-row {
     display: flex;
     align-items: center;
@@ -98,16 +88,9 @@ const toolsJson = JSON.stringify(tools);
     transform: translateX(3px);
   }
 
-  .tool-row.selected {
-    background: var(--color-accent-light);
-  }
+  .tool-row.selected { background: var(--color-accent-light); }
+  .tool-row.disabled { opacity: 0.3; pointer-events: none; }
 
-  .tool-row.disabled {
-    opacity: 0.3;
-    pointer-events: none;
-  }
-
-  /* Checkbox circle */
   .tool-check {
     width: 20px;
     height: 20px;
@@ -128,7 +111,6 @@ const toolsJson = JSON.stringify(tools);
     color: white;
   }
 
-  /* Name — single line, never wraps */
   .tool-name {
     font-weight: 600;
     font-size: 0.9rem;
@@ -160,7 +142,6 @@ const toolsJson = JSON.stringify(tools);
   .tool-badge.paid { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
   .tool-badge.pay-per-use { background: rgba(168, 85, 247, 0.12); color: #a855f7; }
 
-  /* Action */
   .picker-action { text-align: center; margin-top: 1.5rem; }
   .picker-action.hidden { display: none; }
 
@@ -178,19 +159,11 @@ const toolsJson = JSON.stringify(tools);
     font-family: var(--font-sans);
   }
 
-  .go-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
-  }
+  .go-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35); }
 
-  /* Results */
   .results.hidden { display: none; }
 
-  .results-top {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 1rem;
-  }
+  .results-top { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
 
   .back-btn {
     background: none;
@@ -206,7 +179,6 @@ const toolsJson = JSON.stringify(tools);
 
   .back-btn:hover { opacity: 0.7; }
 
-  /* Detail table — Apple-inspired clean layout */
   .detail-wrap {
     margin-top: 2rem;
     border: 1px solid var(--color-border);
@@ -215,10 +187,7 @@ const toolsJson = JSON.stringify(tools);
     background: var(--color-bg-card);
   }
 
-  .detail-table {
-    width: 100%;
-    border-collapse: collapse;
-  }
+  .detail-table { width: 100%; border-collapse: collapse; }
 
   .detail-table th,
   .detail-table td {
@@ -229,12 +198,8 @@ const toolsJson = JSON.stringify(tools);
     line-height: 1.5;
   }
 
-  /* Every row separated by a thin line */
-  .detail-table tbody tr {
-    border-top: 1px solid var(--color-border);
-  }
+  .detail-table tbody tr { border-top: 1px solid var(--color-border); }
 
-  /* Label column */
   .detail-table tbody th {
     font-weight: 600;
     font-size: 0.8rem;
@@ -245,7 +210,6 @@ const toolsJson = JSON.stringify(tools);
     padding-left: 1.5rem;
   }
 
-  /* Header */
   .detail-table thead th {
     background: var(--color-bg);
     font-weight: 700;
@@ -254,12 +218,7 @@ const toolsJson = JSON.stringify(tools);
     border-bottom: 1px solid var(--color-border);
   }
 
-  .detail-table thead a {
-    color: var(--color-text);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-
+  .detail-table thead a { color: var(--color-text); text-decoration: none; transition: color 0.2s; }
   .detail-table thead a:hover { color: var(--color-accent); }
 
   .header-sub {
@@ -277,18 +236,8 @@ const toolsJson = JSON.stringify(tools);
   .header-sub.paid { background: rgba(245, 158, 11, 0.12); color: #f59e0b; }
   .header-sub.pay-per-use { background: rgba(168, 85, 247, 0.12); color: #a855f7; }
 
-  /* Cell content */
-  .detail-table td ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-
-  .detail-table td li {
-    padding: 0.2rem 0;
-    line-height: 1.5;
-  }
-
+  .detail-table td ul { list-style: none; padding: 0; margin: 0; }
+  .detail-table td li { padding: 0.2rem 0; line-height: 1.5; }
   .pro::before { content: '✓ '; color: #22c55e; font-weight: 700; }
   .con::before { content: '✗ '; color: #ef4444; font-weight: 700; }
   .val-accent { color: var(--color-accent); font-weight: 600; }
@@ -316,10 +265,7 @@ const toolsJson = JSON.stringify(tools);
     box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
   }
 
-  .visit-link:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35);
-  }
+  .visit-link:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35); }
 
   .rev-link {
     display: block;
@@ -376,95 +322,9 @@ const toolsJson = JSON.stringify(tools);
     }).join('');
 
     actionEl.classList.toggle('hidden', picked.length < 2);
-
-    listEl.querySelectorAll('.tool-row').forEach(function(el) {
-      el.addEventListener('click', function() {
-        var slug = el.dataset.slug;
-        var idx = picked.indexOf(slug);
-        if (idx > -1) {
-          picked.splice(idx, 1);
-        } else if (picked.length < MAX) {
-          picked.push(slug);
-        }
-        render();
-      });
-    });
   }
 
-  filterEl.addEventListener('input', render);
-
-  goBtn.addEventListener('click', function() {
-    if (picked.length < 2) return;
-    pickerEl.classList.add('hidden');
-    resultsEl.classList.remove('hidden');
-    buildCards();
-    buildTable();
-    resultsEl.scrollIntoView({ behavior: 'smooth' });
-  });
-
-  backBtn.addEventListener('click', function() {
-    resultsEl.classList.add('hidden');
-    pickerEl.classList.remove('hidden');
-    render();
-  });
-
-  function buildCards() {
-    var ts = picked.map(function(s) { return tools.find(function(t) { return t.slug === s; }); });
-    cardsEl.innerHTML = ts.map(function(t, i) {
-      return '<a href="/tools/' + t.slug + '/" class="card" style="text-decoration: none; color: inherit; animation: cardFadeIn 0.45s ease ' + (i * 0.08) + 's forwards;">' +
-        '<h3>' + t.name + '</h3>' +
-        '<p>' + t.description + '</p>' +
-        '<span class="tag">' + t.category + '</span>' +
-        '<span class="tag">' + t.pricing + '</span>' +
-        '<span class="tag">' + t.price + '</span>' +
-      '</a>';
-    }).join('');
-  }
-
-  function buildTable() {
-    var ts = picked.map(function(s) { return tools.find(function(t) { return t.slug === s; }); });
-
-    // Header
-    var h = '<thead><tr><th></th>';
-    ts.forEach(function(t) {
-      var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
-      h += '<th><a href="/tools/' + t.slug + '/">' + t.name + '</a>' +
-        '<span class="header-sub ' + cls + '">' + t.pricing + '</span></th>';
-    });
-    h += '</tr></thead><tbody>';
-
-    var rows = [
-      { label: 'Price', fn: function(t) { return t.price || t.pricing; } },
-      { label: 'Category', fn: function(t) { return t.category; } },
-      { label: 'Released', fn: function(t) { return t.released || '—'; } },
-      { label: 'Best For', fn: function(t) { return '<span class="val-accent">' + (t.bestFor || '—') + '</span>'; }, raw: true },
-      { label: 'Pros', fn: function(t) {
-        return '<ul>' + (t.pros || []).map(function(p) { return '<li class="pro">' + p + '</li>'; }).join('') + '</ul>';
-      }, raw: true },
-      { label: 'Cons', fn: function(t) {
-        return '<ul>' + (t.cons || []).map(function(c) { return '<li class="con">' + c + '</li>'; }).join('') + '</ul>';
-      }, raw: true },
-      { label: 'Tags', fn: function(t) {
-        return '<span class="cell-tags">' + (t.tags || []).map(function(tag) { return '<span>' + tag + '</span>'; }).join('') + '</span>';
-      }, raw: true },
-      { label: '', fn: function(t) {
-        return '<a class="visit-link" href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener">Visit ' + t.name + ' ↗</a>' +
-          '<a class="rev-link" href="/tools/' + t.slug + '/">Read full review →</a>';
-      }, raw: true },
-    ];
-
-    rows.forEach(function(row) {
-      h += '<tr><th>' + row.label + '</th>';
-      ts.forEach(function(t) { h += '<td>' + row.fn(t) + '</td>'; });
-      h += '</tr>';
-    });
-
-    h += '</tbody>';
-    tableEl.innerHTML = h;
-  }
-
-  filterEl.addEventListener('input', render);
-
+  // Delegated click handler — single listener, never duplicates
   listEl.addEventListener('click', function(e) {
     var row = e.target.closest('.tool-row');
     if (!row) return;
@@ -478,12 +338,63 @@ const toolsJson = JSON.stringify(tools);
     render();
   });
 
+  filterEl.addEventListener('input', render);
+
   goBtn.addEventListener('click', function() {
     if (picked.length < 2) return;
     pickerEl.classList.add('hidden');
     resultsEl.classList.remove('hidden');
-    buildCards();
-    buildTable();
+    var ts = picked.map(function(s) { return tools.find(function(t) { return t.slug === s; }); });
+
+    // Cards
+    cardsEl.innerHTML = ts.map(function(t, i) {
+      return '<a href="/tools/' + t.slug + '/" class="card" style="text-decoration: none; color: inherit; animation: cardFadeIn 0.45s ease ' + (i * 0.08) + 's forwards;">' +
+        '<h3>' + t.name + '</h3>' +
+        '<p>' + t.description + '</p>' +
+        '<span class="tag">' + t.category + '</span>' +
+        '<span class="tag">' + t.pricing + '</span>' +
+        '<span class="tag">' + t.price + '</span>' +
+      '</a>';
+    }).join('');
+
+    // Table
+    var h = '<thead><tr><th></th>';
+    ts.forEach(function(t) {
+      var cls = (t.pricing || '').toLowerCase().replace(/\s+/g, '-');
+      h += '<th><a href="/tools/' + t.slug + '/">' + t.name + '</a>' +
+        '<span class="header-sub ' + cls + '">' + t.pricing + '</span></th>';
+    });
+    h += '</tr></thead><tbody>';
+
+    var rows = [
+      { label: 'Price', fn: function(t) { return t.price || t.pricing; } },
+      { label: 'Category', fn: function(t) { return t.category; } },
+      { label: 'Released', fn: function(t) { return t.released || '—'; } },
+      { label: 'Best For', fn: function(t) { return '<span class="val-accent">' + (t.bestFor || '—') + '</span>'; } },
+      { label: 'Pros', fn: function(t) {
+        return '<ul>' + (t.pros || []).map(function(p) { return '<li class="pro">' + p + '</li>'; }).join('') + '</ul>';
+      }},
+      { label: 'Cons', fn: function(t) {
+        return '<ul>' + (t.cons || []).map(function(c) { return '<li class="con">' + c + '</li>'; }).join('') + '</ul>';
+      }},
+      { label: 'Tags', fn: function(t) {
+        return '<span class="cell-tags">' + (t.tags || []).map(function(tag) { return '<span>' + tag + '</span>'; }).join('') + '</span>';
+      }},
+      { label: '', fn: function(t) {
+        return '<a class="visit-link" href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener">Visit ' + t.name + ' ↗</a>' +
+          '<a class="rev-link" href="/tools/' + t.slug + '/">Read full review →</a>';
+      }},
+    ];
+
+    rows.forEach(function(row) {
+      h += '<tr><th>' + row.label + '</th>';
+      ts.forEach(function(t) { h += '<td>' + row.fn(t) + '</td>'; });
+      h += '</tr>';
+    });
+
+    h += '</tbody>';
+    tableEl.innerHTML = h;
+
     resultsEl.scrollIntoView({ behavior: 'smooth' });
   });
 
