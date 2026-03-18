@@ -179,16 +179,57 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     padding: 1.25rem;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    opacity: 0;
+    transform: translateY(15px);
+    animation: toolCardIn 0.4s ease forwards;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .tool-card:nth-child(1) { animation-delay: 0.03s; }
+  .tool-card:nth-child(2) { animation-delay: 0.06s; }
+  .tool-card:nth-child(3) { animation-delay: 0.09s; }
+  .tool-card:nth-child(4) { animation-delay: 0.12s; }
+  .tool-card:nth-child(5) { animation-delay: 0.15s; }
+  .tool-card:nth-child(6) { animation-delay: 0.18s; }
+  .tool-card:nth-child(n+7) { animation-delay: 0.2s; }
+
+  .tool-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), #ec4899, #f59e0b);
+    background-size: 200% 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
 
   .tool-card:hover {
     border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
+  }
+
+  .tool-card:hover::after {
+    transform: scaleX(1);
+    animation: gradientSlide 2s ease infinite;
+  }
+
+  @keyframes toolCardIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes gradientSlide {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
   }
 
   .tool-card.featured {
@@ -198,7 +239,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
 
   .tool-card.featured:hover {
     border-color: var(--color-accent);
-    box-shadow: 0 4px 20px rgba(124, 58, 237, 0.2);
+    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.2);
   }
 
   .featured-section {
