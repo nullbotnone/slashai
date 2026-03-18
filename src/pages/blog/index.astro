@@ -128,16 +128,28 @@ const categories = [
     padding: 1.5rem;
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .blog-card.animate-in {
+    animation: blogCardIn 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+
+  @keyframes blogCardIn {
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
   .blog-card:hover {
     border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
   }
 
   .blog-card.hidden {
@@ -224,4 +236,33 @@ const categories = [
   });
 
   searchInput.addEventListener('input', filterBlog);
+
+  // Scroll animation observer
+  const scrollObserver = new IntersectionObserver((entries) => {
+    const visible = entries.filter(e => e.isIntersecting).sort((a, b) => {
+      return a.boundingClientRect.top - b.boundingClientRect.top;
+    });
+    visible.forEach((entry, i) => {
+      const card = entry.target;
+      card.style.animationDelay = `${i * 100}ms`;
+      card.classList.add('animate-in');
+      scrollObserver.unobserve(card);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  function observeBlogCards() {
+    document.querySelectorAll('.blog-card:not(.animate-in)').forEach(card => {
+      scrollObserver.observe(card);
+    });
+  }
+
+  // Re-observe after filter
+  const origFilterBlog = filterBlog;
+  filterBlog = function() {
+    origFilterBlog();
+    setTimeout(observeBlogCards, 50);
+  };
+
+  // Initial observe
+  setTimeout(observeBlogCards, 100);
 </script>
