@@ -215,47 +215,6 @@ const budgetsJson = JSON.stringify(budgets);
     border-left: 3px solid var(--color-accent);
   }
 
-  /* Card extras for stack results */
-  .stack-why {
-    font-size: 0.8rem;
-    color: var(--color-accent);
-    font-weight: 600;
-    background: var(--color-accent-light);
-    padding: 0.5rem 0.75rem;
-    border-radius: 8px;
-    line-height: 1.4;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .stack-links {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid var(--color-border);
-  }
-
-  .stack-links a {
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--color-accent);
-    text-decoration: none;
-  }
-
-  .stack-links .visit-btn {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: var(--color-text-secondary);
-    background: var(--color-bg-secondary);
-    padding: 0.3rem 0.75rem;
-    border-radius: 6px;
-    transition: all 0.2s;
-  }
-
-  .stack-links .visit-btn:hover { background: var(--color-accent); color: white; }
-
   .stack-total {
     margin-top: 1.5rem;
     padding: 1.25rem 1.5rem;
@@ -389,7 +348,7 @@ const budgetsJson = JSON.stringify(budgets);
 
     emptyEl.classList.add('hidden');
 
-    // Use the exact same markup as site-wide .card elements
+    // Use exact same markup as site-wide cards
     gridEl.innerHTML = stack.map(function(tool, i) {
       var delay = (i * 0.03).toFixed(2);
       return '<a href="/tools/' + tool.slug + '/" class="card" style="text-decoration: none; color: inherit; animation-delay: ' + delay + 's;">' +
@@ -397,11 +356,7 @@ const budgetsJson = JSON.stringify(budgets);
         '<p>' + tool.description + '</p>' +
         '<span class="tag">' + tool.category + '</span>' +
         '<span class="tag">' + (tool.monthlyCost === 0 ? 'Free' : '$' + tool.monthlyCost + '/mo') + '</span>' +
-        '<div class="stack-why">💡 ' + tool.why + '</div>' +
-        '<div class="stack-links">' +
-          '<a href="/tools/' + tool.slug + '/">Details →</a>' +
-          '<a href="' + (tool.affiliateUrl || tool.url) + '" target="_blank" rel="noopener" class="visit-btn">Visit ↗</a>' +
-        '</div>' +
+        '<span class="tag">' + tool.why + '</span>' +
       '</a>';
     }).join('');
 
