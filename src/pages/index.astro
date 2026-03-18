@@ -32,7 +32,7 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
     </div>
     <div class="trending-grid">
       {trendingTools.map((tool) => (
-        <a href={`/tools/${tool.slug}/`} class="trending-card">
+        <a href={`/tools/${tool.slug}/`} class="trending-card scroll-animate">
           <div class="trending-card-top">
             <h3>{tool.name}</h3>
             <span class={`pricing-badge ${tool.pricing.toLowerCase()}`}>{tool.pricing}</span>
@@ -98,6 +98,20 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
 </BaseLayout>
 
 <style>
+<script is:inline>
+  const observer = new IntersectionObserver((entries) => {
+    const visible = entries.filter(e => e.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    visible.forEach((entry, i) => {
+      entry.target.style.animationDelay = `${i * 100}ms`;
+      entry.target.classList.add('animate-in');
+      observer.unobserve(entry.target);
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.scroll-animate').forEach(el => observer.observe(el));
+</script>
+
+<style>
   a[href*="best-ai-tools-freelancers"]:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4) !important;
@@ -132,16 +146,26 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
     padding: 1.25rem;
     text-decoration: none;
     color: inherit;
-    transition: all 0.3s ease;
+    transition: border-color 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    opacity: 0;
+    transform: translateY(30px) scale(0.97);
+  }
+
+  .trending-card.scroll-animate.animate-in {
+    animation: cardIn 0.7s cubic-bezier(0.22, 0.61, 0.36, 1) forwards;
+  }
+
+  @keyframes cardIn {
+    to { opacity: 1; transform: translateY(0) scale(1); }
   }
 
   .trending-card:hover {
     border-color: var(--color-accent);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
   }
 
   .trending-card-top {
