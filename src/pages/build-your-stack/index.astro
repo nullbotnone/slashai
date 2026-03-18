@@ -240,24 +240,25 @@ const budgetsJson = JSON.stringify(budgets);
     border-left: 3px solid var(--color-accent);
   }
 
-  /* Stack Grid */
+  /* Stack Cards — matches site-wide .card style */
   .stack-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1rem;
+    gap: 1.25rem;
   }
 
   .stack-card {
     background: var(--color-bg-card);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
-    padding: 1.25rem;
-    transition: all 0.3s;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
     position: relative;
     overflow: hidden;
     opacity: 0;
     transform: translateY(12px);
-    animation: stackCardIn 0.4s ease forwards;
+    animation: stackCardIn 0.45s ease forwards;
   }
 
   .stack-card:nth-child(1) { animation-delay: 0.05s; }
@@ -279,51 +280,59 @@ const budgetsJson = JSON.stringify(budgets);
     right: 0;
     height: 3px;
     background: linear-gradient(90deg, var(--color-accent), #ec4899);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
 
   .stack-card:hover {
     border-color: var(--color-accent);
+    transform: translateY(-4px);
     box-shadow: var(--shadow-lg);
-    transform: translateY(-2px);
   }
 
-  .stack-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 0.5rem;
+  .stack-card:hover::before {
+    transform: scaleX(1);
   }
 
-  .stack-card-header h3 {
+  .stack-card h3 {
     font-size: 1.1rem;
-    font-weight: 700;
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
   }
 
-  .stack-card-header a {
+  .stack-card h3 a {
     color: var(--color-text);
     text-decoration: none;
+    transition: color 0.2s;
   }
 
-  .stack-card-header a:hover {
+  .stack-card h3 a:hover {
     color: var(--color-accent);
   }
 
-  .stack-price {
-    font-size: 0.75rem;
-    font-weight: 700;
-    padding: 0.2rem 0.5rem;
-    border-radius: 20px;
-    white-space: nowrap;
-  }
-
-  .stack-price.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-  .stack-price.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
-
   .stack-card-desc {
     color: var(--color-text-secondary);
-    font-size: 0.85rem;
-    line-height: 1.5;
+    font-size: 0.9rem;
+    line-height: 1.6;
     margin-bottom: 0.75rem;
+  }
+
+  .stack-card-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.75rem;
+  }
+
+  .stack-card-tags .tag {
+    display: inline-block;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
   }
 
   .stack-card-why {
@@ -334,25 +343,42 @@ const budgetsJson = JSON.stringify(budgets);
     padding: 0.5rem 0.75rem;
     border-radius: 8px;
     line-height: 1.4;
+    margin-bottom: 0.75rem;
   }
 
   .stack-card-links {
     display: flex;
-    gap: 0.75rem;
-    margin-top: 0.75rem;
+    justify-content: space-between;
+    align-items: center;
     padding-top: 0.75rem;
     border-top: 1px solid var(--color-border);
   }
 
   .stack-card-links a {
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     color: var(--color-accent);
     text-decoration: none;
+    transition: color 0.2s;
   }
 
-  .stack-card-links a.secondary {
+  .stack-card-links a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .stack-card-links .visit-btn {
+    font-size: 0.8rem;
+    font-weight: 600;
     color: var(--color-text-secondary);
+    background: var(--color-bg-secondary);
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .stack-card-links .visit-btn:hover {
+    background: var(--color-accent);
+    color: white;
   }
 
   /* Total */
@@ -561,15 +587,17 @@ const budgetsJson = JSON.stringify(budgets);
 
     gridEl.innerHTML = stack.map(tool => `
       <div class="stack-card">
-        <div class="stack-card-header">
-          <h3><a href="/tools/${tool.slug}/">${tool.name}</a></h3>
-          <span class="stack-price ${tool.monthlyCost === 0 ? 'free' : 'paid'}">${tool.monthlyCost === 0 ? 'Free' : '$' + tool.monthlyCost + '/mo'}</span>
-        </div>
+        <h3><a href="/tools/${tool.slug}/">${tool.name}</a></h3>
         <p class="stack-card-desc">${tool.description}</p>
+        <div class="stack-card-tags">
+          <span class="tag">${tool.category}</span>
+          <span class="tag">${tool.monthlyCost === 0 ? 'Free' : '$' + tool.monthlyCost + '/mo'}</span>
+          <span class="tag">${tool.pricing}</span>
+        </div>
         <div class="stack-card-why">💡 ${tool.why}</div>
         <div class="stack-card-links">
-          <a href="${tool.affiliateUrl || tool.url}" target="_blank" rel="noopener">Visit ${tool.name} ↗</a>
-          <a href="/tools/${tool.slug}/" class="secondary">Read review →</a>
+          <a href="/tools/${tool.slug}/">Details →</a>
+          <a href="${tool.affiliateUrl || tool.url}" target="_blank" rel="noopener" class="visit-btn">Visit ↗</a>
         </div>
       </div>
     `).join('');
