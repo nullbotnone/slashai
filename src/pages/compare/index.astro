@@ -1,0 +1,461 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import tools from '../../data/tools.json';
+
+const toolsJson = JSON.stringify(tools);
+---
+
+<BaseLayout title="Compare AI Tools" description="Select AI tools to compare side-by-side. Pricing, features, pros, cons — all in one view.">
+  <section class="hero">
+    <div class="container">
+      <h1>Compare <span class="gradient-text">AI Tools</span></h1>
+      <p>Select up to 4 tools to compare side-by-side. Pricing, features, pros, cons — all in one view.</p>
+    </div>
+  </section>
+
+  <section class="section-glow">
+    <div class="container">
+      <!-- Tool Selector -->
+      <div class="compare-selector">
+        <input type="text" id="tool-search" placeholder="🔍 Search and add tools to compare..." class="tool-search" autocomplete="off" />
+        <div class="dropdown hidden" id="dropdown"></div>
+        <div class="selected-tools" id="selected-tools"></div>
+        <p class="selector-hint" id="selector-hint">Select 2-4 tools to compare</p>
+      </div>
+
+      <!-- Comparison Table -->
+      <div class="compare-wrapper hidden" id="compare-wrapper">
+        <div class="compare-actions">
+          <button class="compare-clear" id="clear-btn">✕ Clear all</button>
+        </div>
+        <div class="compare-table-wrap">
+          <table class="compare-table" id="compare-table"></table>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .compare-selector {
+    position: relative;
+    margin-bottom: 2rem;
+  }
+
+  .tool-search {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-bg-card);
+    color: var(--color-text);
+    font-size: 1rem;
+    font-family: var(--font-sans);
+    transition: border-color 0.2s;
+  }
+
+  .tool-search:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-bg-card);
+    border: 1px solid var(--color-border);
+    border-radius: 0 0 var(--radius) var(--radius);
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 50;
+    box-shadow: var(--shadow-lg);
+  }
+
+  .dropdown.hidden { display: none; }
+
+  .dropdown-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    transition: background 0.15s;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .dropdown-item:last-child { border-bottom: none; }
+  .dropdown-item:hover { background: var(--color-accent-light); }
+
+  .dropdown-item-name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .dropdown-item-cat {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+
+  .dropdown-item.selected {
+    opacity: 0.4;
+    pointer-events: none;
+  }
+
+  /* Selected chips */
+  .selected-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+  }
+
+  .selected-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.4rem 0.75rem;
+    background: var(--color-accent-light);
+    color: var(--color-accent);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    animation: chipIn 0.2s ease;
+  }
+
+  @keyframes chipIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .chip-remove {
+    cursor: pointer;
+    font-size: 1rem;
+    line-height: 1;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    background: none;
+    border: none;
+    color: var(--color-accent);
+    padding: 0;
+  }
+
+  .chip-remove:hover { opacity: 1; }
+
+  .selector-hint {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+  }
+
+  /* Comparison Table */
+  .compare-wrapper.hidden { display: none; }
+
+  .compare-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+  }
+
+  .compare-clear {
+    background: none;
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .compare-clear:hover { border-color: #ef4444; color: #ef4444; }
+
+  .compare-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    min-width: 500px;
+  }
+
+  .compare-table th,
+  .compare-table td {
+    padding: 0.85rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+    vertical-align: top;
+  }
+
+  .compare-table th {
+    font-weight: 600;
+    color: var(--color-text-secondary);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    width: 130px;
+    white-space: nowrap;
+    background: var(--color-bg-secondary);
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
+  .compare-table thead th {
+    font-size: 1rem;
+    text-transform: none;
+    letter-spacing: normal;
+    color: var(--color-text);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: var(--color-bg-secondary);
+    border-bottom: 2px solid var(--color-border);
+  }
+
+  .compare-table thead th a {
+    color: var(--color-text);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+
+  .compare-table thead th a:hover { color: var(--color-accent); }
+
+  .compare-table .tool-header {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .compare-table .tool-header .price-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.15rem 0.5rem;
+    border-radius: 20px;
+    display: inline-block;
+    width: fit-content;
+  }
+
+  .compare-table .price-badge.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
+  .compare-table .price-badge.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
+  .compare-table .price-badge.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .compare-table .price-badge.pay-per-use { background: rgba(168, 85, 247, 0.15); color: #a855f7; }
+
+  .compare-table td ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .compare-table td li {
+    padding: 0.2rem 0;
+    line-height: 1.4;
+  }
+
+  .compare-table td li::before {
+    content: '✓ ';
+    color: #22c55e;
+    font-weight: 700;
+  }
+
+  .compare-table td .con-item::before {
+    content: '✗ ';
+    color: #ef4444;
+  }
+
+  .compare-table td.best-cell {
+    font-weight: 600;
+    color: var(--color-accent);
+    font-style: italic;
+  }
+
+  .compare-table td a.visit-link {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--color-accent), #ec4899);
+    color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: all 0.3s;
+    box-shadow: 0 2px 10px rgba(124, 58, 237, 0.3);
+    margin-top: 0.25rem;
+  }
+
+  .compare-table td a.visit-link:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.4);
+  }
+
+  .compare-table td a.detail-link {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    margin-top: 0.5rem;
+  }
+
+  .compare-table td a.detail-link:hover { color: var(--color-accent); }
+
+  @media (max-width: 768px) {
+    .compare-table th { width: 100px; font-size: 0.7rem; }
+    .compare-table th, .compare-table td { padding: 0.6rem 0.75rem; font-size: 0.8rem; }
+  }
+</style>
+
+<script define:vars={{ toolsJson }}>
+  var allTools = JSON.parse(toolsJson);
+  var selected = [];
+  var MAX = 4;
+
+  var searchInput = document.getElementById('tool-search');
+  var dropdown = document.getElementById('dropdown');
+  var selectedEl = document.getElementById('selected-tools');
+  var wrapper = document.getElementById('compare-wrapper');
+  var tableEl = document.getElementById('compare-table');
+  var hint = document.getElementById('selector-hint');
+  var clearBtn = document.getElementById('clear-btn');
+
+  // Search / dropdown
+  searchInput.addEventListener('focus', function() { showDropdown(searchInput.value); });
+  searchInput.addEventListener('input', function() { showDropdown(this.value); });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.compare-selector')) dropdown.classList.add('hidden');
+  });
+
+  function showDropdown(query) {
+    var q = (query || '').toLowerCase();
+    var filtered = allTools.filter(function(t) {
+      return selected.indexOf(t.slug) === -1 &&
+        (!q || t.name.toLowerCase().indexOf(q) !== -1 || t.category.toLowerCase().indexOf(q) !== -1 || (t.tags || []).join(' ').indexOf(q) !== -1);
+    }).slice(0, 12);
+
+    if (filtered.length === 0) {
+      dropdown.classList.add('hidden');
+      return;
+    }
+
+    dropdown.innerHTML = filtered.map(function(t) {
+      return '<div class="dropdown-item" data-slug="' + t.slug + '">' +
+        '<span class="dropdown-item-name">' + t.name + '</span>' +
+        '<span class="dropdown-item-cat">' + t.category + ' · ' + t.pricing + '</span>' +
+      '</div>';
+    }).join('');
+    dropdown.classList.remove('hidden');
+
+    dropdown.querySelectorAll('.dropdown-item').forEach(function(item) {
+      item.addEventListener('click', function() {
+        addTool(item.dataset.slug);
+      });
+    });
+  }
+
+  function addTool(slug) {
+    if (selected.length >= MAX || selected.indexOf(slug) !== -1) return;
+    selected.push(slug);
+    searchInput.value = '';
+    dropdown.classList.add('hidden');
+    renderChips();
+    renderTable();
+  }
+
+  function removeTool(slug) {
+    selected = selected.filter(function(s) { return s !== slug; });
+    renderChips();
+    renderTable();
+  }
+
+  function renderChips() {
+    selectedEl.innerHTML = selected.map(function(slug) {
+      var tool = allTools.find(function(t) { return t.slug === slug; });
+      return '<span class="selected-chip">' +
+        tool.name +
+        '<button class="chip-remove" data-slug="' + slug + '">×</button>' +
+      '</span>';
+    }).join('');
+
+    selectedEl.querySelectorAll('.chip-remove').forEach(function(btn) {
+      btn.addEventListener('click', function() { removeTool(btn.dataset.slug); });
+    });
+
+    hint.textContent = selected.length < 2
+      ? 'Select ' + (2 - selected.length) + ' more tool' + (selected.length === 0 ? 's' : '') + ' to compare'
+      : selected.length + ' tools selected';
+  }
+
+  clearBtn.addEventListener('click', function() {
+    selected = [];
+    renderChips();
+    renderTable();
+  });
+
+  function renderTable() {
+    if (selected.length < 2) {
+      wrapper.classList.add('hidden');
+      return;
+    }
+    wrapper.classList.remove('hidden');
+
+    var tools = selected.map(function(slug) {
+      return allTools.find(function(t) { return t.slug === slug; });
+    });
+
+    var rows = [
+      { label: 'Price', render: function(t) { return t.price || t.pricing; } },
+      { label: 'Category', render: function(t) { return t.category; } },
+      { label: 'Released', render: function(t) { return t.released; } },
+      { label: 'Best For', render: function(t) { return '<span class="best-cell">' + (t.bestFor || '—') + '</span>'; }, raw: true },
+      { label: 'Pros', render: function(t) {
+        return '<ul>' + (t.pros || []).map(function(p) { return '<li>' + p + '</li>'; }).join('') + '</ul>';
+      }, raw: true },
+      { label: 'Cons', render: function(t) {
+        return '<ul>' + (t.cons || []).map(function(c) { return '<li class="con-item">' + c + '</li>'; }).join('') + '</ul>';
+      }, raw: true },
+      { label: 'Tags', render: function(t) {
+        return (t.tags || []).map(function(tag) { return '<span class="tag">' + tag + '</span> '; }).join('');
+      }, raw: true },
+    ];
+
+    // Header row
+    var html = '<thead><tr><th></th>';
+    tools.forEach(function(t) {
+      var cls = (t.pricing || '').toLowerCase().replace(/[- ]/g, '');
+      html += '<th><div class="tool-header">' +
+        '<a href="/tools/' + t.slug + '/">' + t.name + '</a>' +
+        '<span class="price-badge ' + cls + '">' + t.pricing + '</span>' +
+      '</div></th>';
+    });
+    html += '</tr></thead><tbody>';
+
+    // Data rows
+    rows.forEach(function(row) {
+      html += '<tr><th>' + row.label + '</th>';
+      tools.forEach(function(t) {
+        var val = row.render(t);
+        html += row.raw ? '<td>' + val + '</td>' : '<td>' + val + '</td>';
+      });
+      html += '</tr>';
+    });
+
+    // Visit links row
+    html += '<tr><th>Links</th>';
+    tools.forEach(function(t) {
+      html += '<td>' +
+        '<a href="' + (t.affiliateUrl || t.url) + '" target="_blank" rel="noopener" class="visit-link">Visit ' + t.name + ' ↗</a>' +
+        '<a href="/tools/' + t.slug + '/" class="detail-link">Read full review →</a>' +
+      '</td>';
+    });
+    html += '</tr></tbody>';
+
+    tableEl.innerHTML = html;
+  }
+</script>
