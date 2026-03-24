@@ -1953,4 +1953,42 @@
     ],
     "featured": false
   }
+,
+{
+  "name": "MWM AI",
+  "slug": "mwm-ai",
+  "description": "Turn app ideas into production-ready iOS apps with built-in monetization and distribution.",
+  "longDescription": "MWM AI is a platform that uses AI to transform simple text prompts into native iOS applications. Unlike no-code tools that generate hybrid or web-wrapped apps, MWM AI produces real Swift code that compiles to native Apple platforms: iPhone, iPad, Mac, Apple Watch, and Apple Vision Pro. The platform goes beyond code generation—it includes the full business infrastructure needed to launch and scale an app: App Store distribution workflows, monetization (subscriptions, in-app purchases, paywalls, ads), analytics, A/B testing, and integration with Apple technologies like Widgets, Dynamic Island, HealthKit, ARKit, App Clips, Siri, and NFC. In short, MWM AI aims to be a one-stop shop for turning an app idea into a revenue-generating business, handling everything from creation to publishing to growth.",
+  "url": "https://mwm.ai/mwm-ai",
+  "affiliateUrl": null,
+  "category": "AI Agents",
+  "pricing": "Freemium",
+  "price": "Free tier / $19/mo Starter",
+  "released": "March 2026",
+  "added": "2026-03-24",
+  "pros": [
+    "Speed and Efficiency: Go from idea to TestFlight build in minutes, not weeks.",
+    "Accessibility: Enables non-developers to create native iOS apps without learning Swift or wrestling with Xcode.",
+    "Comprehensive Business Tools: Beyond code generation, MWM AI provides distribution, monetization, analytics, and growth features—everything needed to run an app business.",
+    "High-Quality Output: Generates real Swift that follows Apple guidelines, aiming to compete with hand-built apps in performance and App Store compliance.",
+    "Expertise-Backed: Built on MWM’s 14 years of experience publishing apps with over 1 billion downloads, providing a solid foundation of best practices.",
+    "Affiliate Opportunity: 25% recurring commission on every referred subscription for 12 months, with no earnings cap."
+  ],
+  "cons": [
+    "Newness of Platform: Launched in beta in March 2026, so long-term user feedback and stability data are limited. Expect occasional rough edges.",
+    "Initial iOS Focus: Currently emphasizes native Swift for Apple platforms. Android support (via Kotlin) is “coming soon,” so if you need cross-platform apps today, you’ll need to wait or look elsewhere.",
+    "Credit System: While flexible, the credit-based pricing can make cost prediction tricky for complex apps. Heavy users may need to monitor usage closely.",
+    "Learning Curve for Advanced Features: While basic prompting is simple, leveraging the full suite of monetization and analytics tools requires some exploration."
+  ],
+  "bestFor": "Solopreneurs and freelancers who want to create and sell native iOS apps without coding.",
+  "affiliateCommission": "25% recurring (12 months)",
+  "tags": [
+    "app builder",
+    "ios",
+    "no-code",
+    "freelancer",
+    "ai agents"
+  ],
+  "featured": false
+}
 ]
