@@ -70,8 +70,8 @@
   {
     "name": "Jasper AI",
     "slug": "jasper-ai",
-    "description": "Premium AI writer with brand voice training, SEO integration, and new browser extension.",
-    "longDescription": "Jasper AI is the leading AI writing tool for marketers and content creators. Its Brand Voice feature learns your writing style from samples, ensuring consistent tone across all content. Jasper integrates with Surfer SEO for optimized content, offers 50+ templates, and includes a Chrome extension that works in Gmail, Google Docs, LinkedIn, and WordPress. Recent updates include 25M Series A funding (valuing company at .5B), new browser extension, and the \"State of AI in Marketing 2026\" report showing 91% of marketing teams now use AI (up from 63% last year).",
+    "description": "Premium AI writer with brand voice training, SEO integration, and new browser extension - now featuring Jasper Grid for orchestrated workflows.",
+    "longDescription": "Jasper AI is the leading AI writing tool for marketers and content creators. Its Brand Voice feature learns your writing style from samples, ensuring consistent tone across all content. Jasper integrates with Surfer SEO for optimized content, offers 50+ templates, and includes a Chrome extension that works in Gmail, Google Docs, LinkedIn, and WordPress. Recent updates include $125M Series A funding (valuing company at $1.5B), new browser extension, and the \"State of AI in Marketing 2026\" report showing 91% of marketing teams now use AI (up from 63% last year). Latest product updates include Jasper Grid orchestration layer, Content Engineering Certification, Company Knowledge Hub, enhanced control features, Marketing AI Agents, advanced model options in Studio, and Studio Agent Sharing for standardized content generation.",
     "url": "https://jasper.ai",
     "affiliateUrl": "https://jasper.ai?via=slashai",
     "category": "Writing",
@@ -84,8 +84,15 @@
       "Surfer SEO integration",
       "Chrome extension works everywhere",
       "50+ content templates",
-      "25M Series A funding at .5B valuation",
-      "New browser extension launched"
+      "$125M Series A funding at $1.5B valuation",
+      "New browser extension launched",
+      "Jasper Grid orchestration layer",
+      "Content Engineering Certification",
+      "Company Knowledge Hub",
+      "Enhanced control & execution features",
+      "Marketing AI Agents",
+      "Advanced model options in Studio",
+      "Studio Agent Sharing"
     ],
     "cons": [
       "Expensive at $49/mo",

@@ -158,3 +158,74 @@ April 2026 brings continued AI integration across major platforms, with a focus 
 - surferseo.com updates
 - murf.ai blog
 - writesonic.com
+# AI Tool Updates — March 24, 2026
+
+## Summary
+
+Daily check reveals significant Jasper AI product updates focused on structured, scalable content generation for marketing teams.
+
+## Tool-by-Tool Updates
+
+### 🚀 Jasper AI
+- **Jasper Grid**: New orchestration layer transforming strategic plans into structured, repeatable workflows for scaled marketing work
+- **Content Engineering Certification**: Program teaching marketers to design, govern, and scale agent-driven content production
+- **Company Knowledge Hub**: Secure hub for housing content/institutional knowledge to reduce AI hallucinations and improve strategic alignment
+- **Enhanced Control & Execution**: Ability to apply Style Guides to existing Canvas assets, new view-only/comment permissions for collaboration
+- **Marketing AI Agents**: Task-focused assistants that run workflows independently to improve efficiency and optimize performance
+- **Advanced Model Options in Studio**: New model choices for higher-quality results without altering workflow
+- **Studio Agent Sharing**: Share approved Studio Agents across workspace to standardize content generation
+
+## Notes
+
+These updates reflect Jasper's focus on helping marketing teams move beyond AI experimentation toward structured, scalable, and agentic execution with brand consistency and strategic alignment.
+
+The existing tools.json shows Jasper AI pricing at 9/mo with features including Brand Voice, Surfer SEO integration, and Chrome extension.
+
+## Sources
+
+Web search for Jasper AI updates March 2026
+
+
+# AI Tool Updates — March 24, 2026 (Continued)
+
+## Summary
+
+Daily check reveals updates across multiple SlashAI ecosystem tools.
+
+## Tool-by-Tool Updates
+
+### 🚀 Jasper AI
+- **Jasper Grid**: New orchestration layer transforming strategic plans into structured, repeatable workflows for scaled marketing work
+- **Content Engineering Certification**: Program teaching marketers to design, govern, and scale agent-driven content production
+- **Company Knowledge Hub**: Secure hub for housing content/institutional knowledge to reduce AI hallucinations and improve strategic alignment
+- **Enhanced Control & Execution**: Ability to apply Style Guides to existing Canvas assets, new view-only/comment permissions for collaboration
+- **Marketing AI Agents**: Task-focused assistants that run workflows independently to improve efficiency and optimize performance
+- **Advanced Model Options in Studio**: New model choices for higher-quality results without altering workflow
+- **Studio Agent Sharing**: Share approved Studio Agents across workspace to standardize content generation
+
+### 🚀 Writesonic
+- **GEO Focus**: Continued emphasis on Generative Engine Optimization (GEO) tracking brand visibility in AI search results (ChatGPT, Perplexity, Gemini, etc.)
+- **Bulk Upload Prompts**: New feature for managing AI search visibility tracking
+- **AI Bot Analytics**: Insights into how AI platforms discover, index, and cite content
+- **AI Article Writer 6.0 + Multimedia**: Four-step flow with Photosonic and Audiosonic for images/voiceovers
+- **Integrations**: WordPress, Zapier, Google Docs-like Sonic Editor
+- **Pricing**: Credit-based system with free tier and paid plans (Lite, Advanced, Enterprise)
+
+### 🚀 HubSpot
+- **Canva Integration**: Access to Canva's AI design tools directly within HubSpot editors
+- **ChatGPT-powered CRM Actions**: Deepened integration for sophisticated CRM queries
+- **Expanded "Breeze" AI Suite**: Enhanced assistance with support tickets, lead qualification, data enrichment, workflow automation
+- **AI-powered Content Personalization**: Dynamic website tailoring based on real-time visitor behavior
+- **"Make My Persona AI"**: AI-powered buyer persona generation from simple description
+- **AI for Website Operations & Content Creation**: Faster launches, content consistency, CMS assistance (meta descriptions, rewriting, brand voice adherence)
+- **Enhanced Customer Agent**: Safer rollout, better control, clearer visibility for autonomous customer service
+- **AEO Grader**: Analytics on visibility/competitive positioning across AI platforms (GPT, Perplexity, Gemini)
+
+## Notes
+
+These updates reflect ongoing evolution toward AI visibility, agentic workflows, and enterprise integration across the ecosystem.
+
+## Sources
+
+Web search for Jasper AI, Writesonic, HubSpot updates March 24 2026
+
