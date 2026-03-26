@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en" data-theme="dark"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>About SlashAI | SlashAI</title><meta name="description" content="AI tools that actually work for one-person businesses. Tested reviews, honest comparisons, and practical guides for solopreneurs and freelancers."><link rel="canonical" href="https://slashai.app/about/"><!-- Open Graph --><meta property="og:title" content="About SlashAI"><meta property="og:description" content="AI tools that actually work for one-person businesses. Tested reviews, honest comparisons, and practical guides for solopreneurs and freelancers."><meta property="og:type" content="website"><meta property="og:url" content="https://slashai.app/about/"><!-- Fonts --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><!-- Google Search Console --><meta name="google-site-verification" content="o3cNryCX62Dn1YyVgeVKvf9PjiFUDFKBQoK75-lfg4U"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="SlashAI RSS" href="/rss.xml"><!-- Theme initialization (prevent flash) --><script>
+    const saved = localStorage.getItem('theme');
+    if (saved) {
+      document.documentElement.setAttribute('data-theme', saved);
+    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+  </script><link rel="stylesheet" href="/_astro/BaseLayout.Dv3KjcT7.css"></head> <body> <header class="site-header"> <div class="container-wide header-inner"> <a href="/" class="site-logo">Slash<span>AI</span></a> <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" id="menu-btn"> <span></span> <span></span> <span></span> </button> <nav id="main-nav"> <ul class="nav-links"> <li><a href="/ai-tools/" onclick="closeMenu()">AI Tools</a></li> <li><a href="/build-your-stack/" onclick="closeMenu()">Build Stack</a></li> <li><a href="/compare/" onclick="closeMenu()">Compare</a></li> <li><a href="/blog/" onclick="closeMenu()">Blog</a></li> <li><a href="/about/" onclick="closeMenu()">About</a></li> <li> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle light/dark mode"> <span id="theme-icon">☀️</span> </button> </li> </ul> </nav> </div> </header> <main>  <section class="hero"> <div class="container"> <h1>About <span class="gradient-text">SlashAI</span></h1> <p>Honest AI tool reviews for solopreneurs and freelancers. No sponsored placements, no hype.</p> </div> </section> <section class="section-glow"> <div class="article-content"> <p><strong>SlashAI helps solopreneurs and freelancers find AI tools that actually work.</strong></p> <p>Running a one-person business means you're the writer, marketer, accountant, project manager, and customer support — all before lunch. AI tools can cut your busywork in half, but finding the right ones takes time you don't have.</p> <p>That's where we come in.</p> <h2>What We Do</h2> <p>We test AI tools on real freelance work — not demo prompts or sponsored placements. Every review, comparison, and guide on this site is based on hands-on testing with actual client projects.</p> <ul> <li><strong>Reviews</strong> — Honest, detailed breakdowns of AI tools with pros, cons, and real usage data</li> <li><strong>Roundups</strong> — Curated lists of the best tools for specific freelancer needs</li> <li><strong>Comparisons</strong> — Head-to-head tests so you can pick the right tool</li> <li><strong>Guides</strong> — Step-by-step tutorials for setting up AI workflows</li> </ul> <h2>Our Promise</h2> <blockquote>
+We only recommend tools we've personally tested. No pay-to-play placements. No recycled press releases. Just honest opinions from someone who uses these tools daily.
+</blockquote> <h2>How We Make Money</h2> <p>Some links on SlashAI are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. This never influences our reviews — we'd rather lose a commission than recommend a bad tool.</p> <p>See our full <a href="/affiliate-disclosure/">Affiliate Disclosure</a> for details.</p> <h2>The "Slash" Story</h2> <p>You're not just a writer. You're a writer/designer/marketer/accountant. You wear five hats before lunch. The "/" in your title is the most important punctuation mark in the gig economy.</p> <p>SlashAI exists to make that slash less overwhelming. We find the AI tools that cut through the noise — so you spend less time on busywork and more time on what you actually do.</p> <h2>Get in Touch</h2> <p>Questions, suggestions, or a tool you want us to review? Reach out at <a href="mailto:hello@slashai.app">hello@slashai.app</a>.</p> </div> </section>  </main> <footer class="site-footer"> <div class="container"> <ul class="footer-links"> <li><a href="/ai-tools/">AI Tools</a></li> <li><a href="/build-your-stack/">Build Stack</a></li> <li><a href="/compare/">Compare</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/tutorials/">Tutorials</a></li> <li><a href="/guides/">Guides</a></li> <li><a href="/about/">About</a></li> <li><a href="/affiliate-disclosure/">Disclosure</a></li> <li><a href="/rss.xml">RSS</a></li> </ul> <p>© 2026 SlashAI. Built for solopreneurs, by solopreneurs.</p> </div> </footer> <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      const current = html.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      html.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+      updateIcon(next);
+    }
+
+    function updateIcon(theme) {
+      const icon = document.getElementById('theme-icon');
+      if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    }
+
+    function toggleMenu() {
+      const nav = document.getElementById('main-nav');
+      const btn = document.getElementById('menu-btn');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      const nav = document.getElementById('main-nav');
+      const btn = document.getElementById('menu-btn');
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Set initial icon
+    document.addEventListener('DOMContentLoaded', () => {
+      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
+      updateIcon(theme);
+    });
+
+    // Intersection Observer for scroll animations
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    });
+  </script> </body> </html>
