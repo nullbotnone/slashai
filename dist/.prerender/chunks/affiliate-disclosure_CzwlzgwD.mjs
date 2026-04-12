@@ -1,0 +1,22 @@
+import { c as createComponent } from './astro-component_CM5sHQaA.mjs';
+import 'piccolore';
+import { r as renderComponent, a as renderTemplate, m as maybeRenderHead } from './prerender_DGualgz_.mjs';
+import { $ as $$BaseLayout } from './BaseLayout_rjQaa7Nu.mjs';
+
+const $$AffiliateDisclosure = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "Affiliate Disclosure" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="hero"> <div class="container"> <h1>Affiliate <span class="gradient-text">Disclosure</span></h1> <p>How we make money — and why it never affects our recommendations.</p> </div> </section> <section class="section-glow"> <div class="article-content"> <p><em>Last updated: March 2026</em></p> <p>SlashAI participates in affiliate marketing programs. This means when you click certain links on our site and make a purchase, we may earn a commission — at no additional cost to you.</p> <p>Some companies we have affiliate relationships with include:</p> <ul> <li>Jasper AI</li> <li>Writesonic</li> <li>Copy.ai</li> <li>HubSpot</li> <li>Surfer SEO</li> <li>Notion</li> <li>Grammarly</li> <li>Murf AI</li> <li>And other AI tool providers</li> </ul> <h2>Our Editorial Independence</h2> <p>Affiliate relationships <strong>never influence our reviews or recommendations</strong>. Here's our policy:</p> <ul> <li>We test every tool before recommending it</li> <li>We include honest pros AND cons in every review</li> <li>We recommend free/cheaper alternatives when they're better</li> <li>We remove recommendations for tools that decline in quality</li> <li>No company can pay for placement in our roundups or comparisons</li> </ul> <h2>Why We Use Affiliate Links</h2> <p>Running a quality content site costs money (hosting, tools, time). Affiliate commissions help us keep SlashAI free for readers while maintaining our independence. It's a model that aligns our incentives with yours — we only earn when you find our recommendations genuinely useful.</p> <h2>Your Cost</h2> <p>You never pay more by using our affiliate links. In many cases, our links include exclusive discounts or extended trials that you wouldn't get going directly to the provider.</p> <h2>Questions?</h2> <p>If you have any questions about our affiliate relationships, email us at <a href="mailto:hello@slashai.app">hello@slashai.app</a>.</p> </div> </section> ` })}`;
+}, "/home/rpi/.openclaw/workspace/projects/slashai/slashai/src/pages/affiliate-disclosure.astro", void 0);
+
+const $$file = "/home/rpi/.openclaw/workspace/projects/slashai/slashai/src/pages/affiliate-disclosure.astro";
+const $$url = "/affiliate-disclosure";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$AffiliateDisclosure,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };

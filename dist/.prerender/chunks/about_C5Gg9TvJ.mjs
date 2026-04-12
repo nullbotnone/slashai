@@ -1,0 +1,24 @@
+import { c as createComponent } from './astro-component_CM5sHQaA.mjs';
+import 'piccolore';
+import { r as renderComponent, a as renderTemplate, m as maybeRenderHead } from './prerender_DGualgz_.mjs';
+import { $ as $$BaseLayout } from './BaseLayout_rjQaa7Nu.mjs';
+
+const $$About = createComponent(($$result, $$props, $$slots) => {
+  return renderTemplate`${renderComponent($$result, "BaseLayout", $$BaseLayout, { "title": "About SlashAI" }, { "default": ($$result2) => renderTemplate` ${maybeRenderHead()}<section class="hero"> <div class="container"> <h1>About <span class="gradient-text">SlashAI</span></h1> <p>Honest AI tool reviews for solopreneurs and freelancers. No sponsored placements, no hype.</p> </div> </section> <section class="section-glow"> <div class="article-content"> <p><strong>SlashAI helps solopreneurs and freelancers find AI tools that actually work.</strong></p> <p>Running a one-person business means you're the writer, marketer, accountant, project manager, and customer support — all before lunch. AI tools can cut your busywork in half, but finding the right ones takes time you don't have.</p> <p>That's where we come in.</p> <h2>What We Do</h2> <p>We test AI tools on real freelance work — not demo prompts or sponsored placements. Every review, comparison, and guide on this site is based on hands-on testing with actual client projects.</p> <ul> <li><strong>Reviews</strong> — Honest, detailed breakdowns of AI tools with pros, cons, and real usage data</li> <li><strong>Roundups</strong> — Curated lists of the best tools for specific freelancer needs</li> <li><strong>Comparisons</strong> — Head-to-head tests so you can pick the right tool</li> <li><strong>Guides</strong> — Step-by-step tutorials for setting up AI workflows</li> </ul> <h2>Our Promise</h2> <blockquote>
+We only recommend tools we've personally tested. No pay-to-play placements. No recycled press releases. Just honest opinions from someone who uses these tools daily.
+</blockquote> <h2>How We Make Money</h2> <p>Some links on SlashAI are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. This never influences our reviews — we'd rather lose a commission than recommend a bad tool.</p> <p>See our full <a href="/affiliate-disclosure/">Affiliate Disclosure</a> for details.</p> <h2>The "Slash" Story</h2> <p>You're not just a writer. You're a writer/designer/marketer/accountant. You wear five hats before lunch. The "/" in your title is the most important punctuation mark in the gig economy.</p> <p>SlashAI exists to make that slash less overwhelming. We find the AI tools that cut through the noise — so you spend less time on busywork and more time on what you actually do.</p> <h2>Get in Touch</h2> <p>Questions, suggestions, or a tool you want us to review? Reach out at <a href="mailto:hello@slashai.app">hello@slashai.app</a>.</p> </div> </section> ` })}`;
+}, "/home/rpi/.openclaw/workspace/projects/slashai/slashai/src/pages/about.astro", void 0);
+
+const $$file = "/home/rpi/.openclaw/workspace/projects/slashai/slashai/src/pages/about.astro";
+const $$url = "/about";
+
+const _page = /*#__PURE__*/Object.freeze(/*#__PURE__*/Object.defineProperty({
+  __proto__: null,
+  default: $$About,
+  file: $$file,
+  url: $$url
+}, Symbol.toStringTag, { value: 'Module' }));
+
+const page = () => _page;
+
+export { page };
