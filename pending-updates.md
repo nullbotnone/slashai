@@ -1,174 +1,72 @@
-# AI Tool Updates — April 11, 2026
+# AI Tool Updates — April 19, 2026
 
 ## Summary
 
-Daily check reveals significant updates across the SlashAI ecosystem with focus on AI orchestration, outcome-based pricing, and enterprise acquisitions. Jasper AI repositions as AI Orchestration Platform, HubSpot deepens outcome-based AI agent pricing, Semrush acquires Third Door Media and faces Adobe acquisition, Surfer SEO enhances Content Editor and launches Sites hub, Writesonic expands GEO capabilities and tiered pricing, Murf AI advances Speech Gen 2 model.
+Daily check reveals major updates across Writesonic, HubSpot, Semrush, and Surfer SEO focused on AI visibility tracking, agentic capabilities, and platform enhancements. Jasper AI shows continued evolution of existing features while Murf AI advances speech technology.
 
 ---
 
 ## Tool-by-Tool Updates
 
-### 🚀 Jasper AI
-- **AI Orchestration Platform**: Now dynamically selects best foundational models (GPT-5, Claude 3.5 Opus, Google Gemini Ultra, proprietary models) for specific tasks
-- **Pricing Restructured**: Three main plans - Creator ($49/mo annual), Teams ($125/mo annual), Business (custom pricing)
-- **Enhanced Brand Voice & Knowledge Base**: Uses vector embeddings to ensure brand consistency across teams
-- **Multimodal Content Creation**: Jasper Vision for high-fidelity marketing images and short-form video from text briefs
-- **Campaign Assistant**: Generates comprehensive omnichannel campaigns from single brief
-- **SEO Mode**: Deep Surfer SEO integration for high search engine rankings
-- **Jasper Everywhere Extension**: Browser plugin extending capabilities to CMS, Gmail, Google Docs, social media
-- **Jasper Dev Platform & API Access**: Programmatic access for developers to build internal applications
-- **Jasper Grid**: Orchestration layer transforming strategies into structured, repeatable workflows
-- **AI Agents and Automations**: Purpose-built marketing agents, custom Studio agents, automated content pipelines
-- **Personal Instructions**: Persistent user-level guidance for preferred tone, format, assumptions
-- **Improved Consistency and Output Quality**: System-wide "IQ improvements" reducing off-brand content
-- **Updated Reporting**: Clearer visibility into usage and impact with accurate metrics
-- **Content Engineering Certification**: New certification for structured, scalable agentic execution
-- **Google Search Grounding**: Platform supports verifying facts through Google search
-
 ### 🚀 Writesonic
-- **Generative Engine Optimization (GEO)**: Tracks brand appearance in AI-generated answers across ChatGPT, Gemini, Perplexity
-- **AI Article Writer Updates**: Versions 6.0 and 7.0 with improved brand voice consistency and SEO capabilities
-- **Chatsonic**: Conversational AI with real-time web search, file uploads (PDFs, images, audio), multiple AI models
-- **SEO Optimization Tools**: Full-stack SEO platform for keyword research, content optimization, site audits
-- **Photosonic and Audiosonic**: Expansion to AI-powered image and audio generation
-- **Enhanced Templates and Workflows**: Over 100 AI content creation templates streamlining idea to publication
-- **Pricing Structure**: Credit-based system with multiple tiers:
-  - Free Plan: ~10,000 words/month, basic templates, GPT-3.5 only
-  - Chatsonic Individual: $12/month for 100 chat queries
-  - Small Team: $13/month for 30,000 words/1 user or $33/month for 225,000 words/3 users
-  - Freelancer: $16/month for 75,000 words, 1 user, priority support
-  - Unlimited: ~$20-25/month annual for "unlimited" words (fair usage ~500,000 words/month)
-  - Basic: $15/month expanding word limits and features
-  - Business: $49-99/month depending on users/add-ons, higher credit limits, API access, priority support
-  - Professional: ~$249/month ($199 annual) unlocking GEO tracking (100 AI prompts/month, sentiment analysis, AI platform visibility)
-  - Advanced: Built for AI search visibility teams (300 prompts daily tracking, unlimited SEO AI Agent generations, 100 articles/month)
-  - Enterprise: Custom pricing for larger organizations (unlimited words, custom features, multi-region coverage, dedicated strategists, SSO)
+- **Generative Engine Optimization (GEO) Expansion**: Launched Brand Explorer for understanding brand presence, GEO: Content Score for optimizing content in AI search results, AI Shopping Tracker for monitoring product visibility in AI-powered shopping recommendations, and Portfolios for organizing and showcasing work
+- **AI Article Writer 6.0/7.0**: Continued improvements to long-form content generation with enhanced brand voice consistency and SEO capabilities
+- **Chatsonic Enhancements**: Real-time web search, file upload capabilities (PDFs, images, audio), and access to multiple AI models
+- **SEO Suite**: Comprehensive toolkit including keyword research, content gap analysis, and optimization scoring using data from Ahrefs and Google Keyword Planner
+- **Botsonic**: No-code AI chatbot builder for websites
+- **Automatic Image Generation**: Visual content creation to enrich articles and marketing materials
+- **Pricing Tier Updates**: Refined credit-based system with clearer distinctions between Free, Chatsonic Individual, Small Team, Freelancer, Unlimited, Basic, Business, Professional, Advanced, and Enterprise plans
 
 ### 🚀 HubSpot
-- **Outcome-Based AI Agent Pricing** (effective April 14, 2026):
-  - AI Customer Agent: $0.50 per *resolved conversation* (down from $1.00 per conversation)
-  - AI Prospecting Agent: $1.00 per *qualified lead recommended for outreach* (shifted from recurring monthly charge)
-- **AI Enhancements**:
-  - Integrated AI in website operations: AI website generator, one-page builder, CMS content assistance
-  - Breeze Assistant updated for deeper expertise and accuracy
-  - AI-powered Customer and Prospecting Agents for 24/7 query resolution and high-value lead engagement
-  - AI-powered CPQ solution to expedite deal closures
-- **New Marketplace Apps & Integrations**:
-  - Cocorev: Identifies tech partners/service providers connected to prospects
-  - Docusign IAM: Read/update CRM records within agreement workflows
-  - Google Drive: Link drives/folders/files to CRM records, automate file management via workflows, AI-powered document summaries
-  - Sidekick: Automatically logs Slack conversations to CRM as timeline events
-  - Showpad: Connects content engagement data to HubSpot for free
-  - SimpleCommerce Sync: Automatically syncs HubSpot Commerce Hub data to QuickBooks
-  - Vira: WhatsApp Integration with Meta's WhatsApp Coexistence feature
-- **Strategic Direction**:
-  - Rebranding "Inbound" conference to "Unbound" reflecting expanded focus on entire customer journey
-  - Investor webinar April 15, 2026 covering 2026 strategy and product updates from Spring Spotlight April 14
-  - Expanded TikTok partnership by natively embedding TikTok into Marketing Hub
+- **HubSpot AEO (Answer Engine Optimization)**: New tool tracking brand visibility in AI-generated answers from ChatGPT, Gemini, and Perplexity; provides visibility percentage, share of voice, citation influence rate, and AI-generated content recommendations to address gaps
+- **Smart Deal Progression**: Post-call agent analyzing full deal history to draft follow-up communications and suggest CRM updates using defined pipeline definitions
+- **Expanded AI Agent Capabilities**:
+  - *Prospecting Agent*: Enhanced detection of buying signals, buying committee mapping, and outreach message drafting; now integrates with Apollo and ZoomInfo for enriched contact data
+  - *Customer Agent*: Extended from live chat to 24/7 email handling for routine inquiries; new configuration options for tone, style, channel-specific settings, multi-brand support, and workflow-based deployment
+- **Upgraded Breeze Assistant**: Now trained on Loop Marketing data for role-aware guidance in defining ICPs, brand messaging, and campaign briefs
+- **Developer Platform v2026.03**: Date-based versioned APIs, expanded serverless functions for Projects, Webhooks Journal API updates, and general availability of HubSpot MCP Server (remote)
+- **Additional Releases**: Support Macros (snippets + multi-step workflow actions) and Customer Success Rooms (shared onboarding spaces)
 
 ### 🚀 Semrush
-- **AI Overview Tracking in Organic Research**: Monitors AI Overviews (AIOs) beyond standard Position Tracking, provides comprehensive insights into AIO rankings, extends data access to AIO rankings for untracked queries
-- **SERP Feature Filtering** added to Organic Research Report
-- **Semrush One**: New offering integrating traditional SEO tools with AI-powered brand visibility functionalities
-  - AI visibility toolkit helps understand brand appearance in AI-driven environments (Google AI Overviews, AI Mode, ChatGPT, Perplexity, Gemini)
-  - Daily tracking of brand mentions across over 100 million AI-generated prompts
-- **New Brand Identity**: Rolled out March 2026 aligned with evolving AI Search Era
-- **Major Acquisitions**:
-  - **Acquired Third Door Media** (includes Search Engine Land, SMX, MarTech, Digital Marketing Depot) to enhance resources, content, industry insights for marketers
-  - **Adobe in process of acquiring Semrush** for $1.9 billion (expected to close early 2026) to bolster Adobe's Digital Experience portfolio by integrating Semrush's generative engine optimization capabilities
-- **Additional Updates**:
-  - Crawler Profiles for AI Agents and Search Bots added to Enterprise Site Intelligence (March 2026)
-  - Enterprise AIO's AI Shopping Report expanded to cover both ChatGPT and Google AI Mode
-- **Pricing for 2026** (consistent monthly/annual billing):
-  - Pro Plan: $139.95/month or $117.33/month annual
-  - Guru Plan: $249.95/month or $208.33/month annual
-  - Business Plan: $499.95/month or $416.66/month annual
-  - Semrush One tiers:
-    - Starter: $199/month or $165.17/month annual
-    - Pro+: $299/month
-    - Advanced: $549/month
-  - Additional Costs:
-    - Extra User Seats: Pro - $45/month/user, Guru - $80/month/user, Business - $100/month/user
-    - Add-ons: Local SEO ($30/month), Social Media Toolkit ($20/month), Content Toolkit ($60/month), Advertising Toolkit ($99/month), AI Visibility ($99/month), Traffic & Market Trends ($289/month)
-    - AI Visibility add-on incurs additional $99 per user for team members needing access
+- **Semrush One Advancements**: Further development of the platform unifying traditional SEO with AI visibility tracking; enhanced AI visibility toolkit for monitoring brand mentions across AI platforms (ChatGPT, Google AI Overviews, Perplexity, Gemini)
+- **Enterprise AI Optimization**: New forecasting features for modeling potential growth in traffic, reach, and mentions; persona-based prompt generation at scale for AI visibility analysis
+- **Enterprise Site Intelligence**: Added Crawler Profiles for AI Agents and Search Bots enabling teams to analyze website interactions from AI/search engine perspectives without manual configuration
+- **Regional Expansion**: Extended keyword database for Israel available through premium partner Adactive
+- **Brand Identity Rollout**: Continued implementation of March 2026 rebranding to command the AI search era with modernized visual identity and streamlined UI
+- **Spotlight 2026 Conference**: Ongoing emphasis on strategies for digital brand visibility amidst SEO and AI Search convergence
 
 ### 🚀 Surfer SEO
-- **Sites Hub**: All-in-one hub for SEO strategy management with real-time insights from Google Search Console
-  - Assists in auditing underperforming pages, exploring ideas driven by Topical Map feature
-- **Enhanced Content Editor**: Now featuring "smarter outlines"
-  - Leverages comprehensive brand, AI, SEO context for shorter, more natural, citation-ready content briefs
-  - Structured similarly to top-ranking articles
-- **Improved Dashboard Filters**: Enhanced filtering capabilities
-- **Enhanced WordPress Plugin**: Updated version released
-- **Other Recent 2026 Features** (leading up to April):
-  - Workspaces for managing multiple domains (siloed environments to prevent brand/context overlap)
-  - AI Search Guidelines in Content Editor (precise instructions on facts AI models require to trust/cite content)
-  - Gemini integration in AI Tracker (monitor brand visibility, citations, sources in Google's AI-generated answers)
-  - Mention Gap and Sentiment Analysis tools (identify where competitors outperform in AI search, analyze how AI frames brand)
-  - Topical Map feature (builds content clusters, strategizes topics for topical authority)
-  - Auto-Optimize function (refreshes/optimizes articles in single click with smart entities/facts, enhanced flow, preserved brand voice)
-  - Surfer AI (rapid generation of AI SEO-ready content using custom templates/voices for scaled output/programmatic SEO)
-  - API & Looker Studio Integration (export AI Tracker data to blend AI visibility with business results)
-  - AI Humanizer tool (detects and humanizes AI-generated content to sound more natural)
-- **Pricing Structure for 2026** (20% discount for annual subscriptions):
-  - Monthly Plans:
-    - Hobby: $29/month
-    - Basic: $59/month
-    - Essential: $99/month
-    - Pro: $99/month
-    - Business: $199/month
-    - Business+: $650/month
-    - Enterprise: Custom (starting from $999/month)
-  - Annual Plans (with 20% discount):
-    - Hobby: $24.2/month
-    - Basic: $49.2/month
-    - Essential: $79/month
-    - Pro: $82.5/month
-    - Scale: $175/month
-    - Business: $165.6/month
-    - Business+: $541.7/month
-    - Enterprise: Custom (starting from $999/month, billed annually)
-  - Add-ons:
-    - AI Tracker: $95/month for 25 prompts (some higher-tier plans include AI Tracker and Gemini coverage)
-    - SERP Analyzer: $29/month
-    - Rank Tracker: $8.50 for every 100 keywords, or $17/month for 200 keywords
-    - Extra Content Editor Articles and Additional AI Credits available for purchase as needed
-  - 30-day money-back guarantee provided
-  - Surfer AI writing features available as separate paid add-ons (not part of base subscription)
+- **Platform Navigation Refresh**: Personalized dashboard showing clicks, AI Visibility Score, and competitor benchmarks; sectioned navigation (Content, AI Visibility, More Tools); persistent search bar (⌘K); collapsible Sidebar in Content Editor
+- **AI Visibility Dashboard Enhancements**: Redesigned AI Tracker Overview for immediate actionability; competitor visibility bar chart; topic-level insights replacing individual prompt lists
+- **Direct Optimization from AI Tracker**: New "Optimize" button for cited pages not ranking #1 in AI answers; jumps to Content Editor with Auto-Optimize, internal linking, and republishing capabilities
+- **Content Editor Wizard Upgrade**: AI-powered wizard incorporating full brand, AI, and SEO context pre-generation; automatic Brand Knowledge pull-in; template suggestions based on live SERPs; prominent custom instructions
+- **Workspace Permissions**: New feature for securing client data and managing team access with specific user permissions
+- **Surfer x Looker Studio Integration**: Direct integration of AI Tracker data (visibility score, mention rate, average position, source data) for reporting alongside revenue and GA4 metrics
+- **"Sites" Feature**: All-in-one SEO strategy hub with real-time Google Search Console insights; supports auditing underperforming pages and exploring Topical Map-driven ideas
+- **Smarter Outlines**: Content Editor outlines now shorter, more natural, citation-ready, and structured like top-ranking articles for improved effectiveness as content briefs
+
+### 🚀 Jasper AI
+- **Continued Platform Evolution**: Ongoing refinement of AI Orchestration Platform capabilities; Brand Voice customization remains key differentiator; Campaigns Workflow for structured content initiatives
+- **Integration Expansion**: Continued Surfer SEO integration for SEO Mode; Grammarly, Copyscape, Google Docs (via extension), and Zapier API access
+- **Market Position**: Maintains strength in structured marketing content production amid evolving AI writing tool landscape
 
 ### 🚀 Murf AI
-- **Murf Speech Gen 2 Model**: Focus on enhanced realism, customization, and emotional range in AI voices
-- **Next-Generation Realism**: Highly realistic and authentic voiceovers, understanding/reproducing nuances of speech
-- **Advanced Customization**: Granular control over pronunciation, emphasis, pauses, voice styles (including "Say It My Way" for specific pronunciation control)
-- **Expanded Voice Library**: Over 120 AI voices across more than 20 languages (some sources: over 200 voices in 35+ languages for paid plans)
-- **AI Dubbing Tool (Murf Dub)**: Streamlines creation of multilingual audio content
-- **Ethically Sourced Voices**: Models trained on real voice actors who have consented and receive royalties
-- **Integrations**: With Canva, Google Slides, PowerPoint, Articulate 360, streamlining workflows for various content creators
-- **Pricing Structure** (updated April 5-6, 2026, no structural changes beyond early 2026 establishment):
-  - Free Plan: Limited voice generation (typically 10 minutes total), smaller voice selection, no downloads/commercial rights (primarily for testing)
-  - Basic / Creator Plan: Starts at ~$19/month annual or $29/month monthly
-    - Provides 24 hours voice generation per year, access to larger voice library (e.g., 60 basic voices or 200+ voices)
-    - Includes commercial rights and downloads
-  - Pro / Business Plan: Priced around $26/month annual or $39/month monthly
-    - For Business plan: annual billing ~$66/month or $99/month monthly
-    - Offers significantly more voice generation hours (e.g., 96 hours per year), access to all 120+ or 200+ voices
-    - Includes collaboration features for multiple users
-  - Enterprise Plan: Custom pricing for large organizations requiring dedicated account management, SSO, API access, custom voice cloning, advanced security features
-  - **API Pricing** for developers:
-    - Pay-as-you-go: ~$0.03 per 1,000 characters for Studio-quality TTS
-    - Falcon model for conversational AI: ~$0.01/1000 characters
+- **Speech Gen 2 Model Advancements**: Second-generation speech model producing human-indistinguishable voices; trained on 70,000+ hours of ethically sourced speech data; 44.1kHz sampling rate; enhanced fidelity, precision, and customization (prosody, accent retention, emotional nuances)
+- **Murf Dub Launch**: Limited release feature simplifying multilingual content creation while preserving original intent, tone, and emotion
+- **API Updates**: March 5, 2026 deprecation of `multiNativeLocale` field in favor of new `locale` field for streamlined language/locale handling
+- **Voice Library Expansion**: Over 120+ studio-quality voices across 20+ languages; granular control over pronunciation, emphasis, pitch, speed, and pauses
+- **Enhanced Data Privacy**: Zero data retention option providing synthesized audio as Base64 encoded string directly in API response
+- **Integration Ecosystem**: Continued compatibility with Canva, Google Slides, PowerPoint, Articulate 360, and various video editors
 
----
+## Action Items
 
-## Notes
-
-- **tools.json** exists at `/home/rpi/.openclaw/workspace/projects/slashai/slashai/src/data/tools.json` and contains current tool data
-- Several entries need updating to reflect latest features (particularly Jasper AI pricing/plans, HubSpot outcome-based pricing, Semrush acquisitions, Surfer SEO Sites hub, Writesonic GEO/tiered pricing, Murf AI Speech Gen 2)
-- Focus across ecosystem continues to be on AI visibility, agentic workflows, enterprise integration, and now AI orchestration
-- Significant strategic shifts: Jasper's move to AI Orchestration Platform, HubSpot's outcome-based pricing, Semrush's Third Door Media acquisition and potential Adobe acquisition
+- Update tools.json to reflect latest features and pricing for Writesonic (GEO components), HubSpot (AEO, Smart Deal Progression), Semrush (Enterprise AI Crawler Profiles), and Surfer SEO (Navigation, AI Tracker enhancements, Sites feature)
+- Consider creating dedicated review articles for HubSpot AEO and Surfer SEO Sites feature given their strategic importance
+- Monitor Writesonic GEO adoption and effectiveness as AI search visibility becomes increasingly critical
+- Review Semrush Enterprise AI Optimization forecasting tools for potential integration with SlashAI analytics capabilities
 
 ## Sources
 
-- Web search for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI updates April 2026
-- Official company blogs, press releases, and product documentation
-- Industry news sites (martech.org, nojitter.com, siliconangle.com, semrush.com, surferseo.com, murf.ai)
+- Web search for Writesonic, HubSpot, Semrush, Surfer SEO, Jasper AI, and Murf AI updates April 2026
+- Official company blogs, press releases, and product documentation (writesonic.com, hubspot.com, semrush.com, surferseo.com, jasper.ai, murf.ai)
+- Industry news sites and changelogs

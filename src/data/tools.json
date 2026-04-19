@@ -522,29 +522,6 @@
     "featured": false
   },
   {
-    "name": "Descript",
-    "slug": "descript",
-    "description": "Edit video and audio by editing text. AI removes filler words and generates clips.",
-    "longDescription": "Descript revolutionizes video and audio editing \u2014 edit by editing text. Delete a word from the transcript and it's gone from the recording. AI automatically removes filler words, cleans up audio, and generates shareable clips. Perfect for podcasts, YouTube, and social content.",
-    "url": "https://descript.com",
-    "affiliateUrl": "https://descript.com?ref=slashai",
-    "category": "Video",
-    "pricing": "Freemium",
-    "price": "$24/mo Pro",
-    "released": "2017",
-
-
-
-
-
-
-
-
-
-
-
-
-
     "name": "DeepSeek V4",
     "slug": "deepseek-v4",
     "description": "1 trillion parameter Mixture-of-Experts model with 1M token context window, exceptional coding performance, and industry-leading cost efficiency.",
@@ -2055,7 +2032,52 @@
       "May occasionally over-prioritize or misjudge urgency",
       "Limited integrations beyond Gmail/Outlook"
     ],
-    "tags": ["ai agents", "email", "calendar", "task management", "productivity"]
+    "tags": [
+      "ai agents",
+      "email",
+      "calendar",
+      "task management",
+      "productivity"
+    ]
+  },
+  {
+    "name": "Nano Banana Pro",
+    "slug": "nano-banana-pro",
+    "description": "Google's advanced image generation and editing model with superior text rendering and creative controls.",
+    "longDescription": "Nano Banana Pro is Google DeepMind's state-of-the-art image generation and editing model built on Gemini 3 Pro. It excels at creating accurate visuals with legible text in multiple languages, offering studio-quality creative controls, and generating high-fidelity visuals up to 4K resolution. The model is particularly strong at text-to-image generation, image editing, and creating detailed infographics, diagrams, and storyboards with precise control over layout, lighting, and composition.",
+    "url": "https://deepmind.google/models/gemini-image/pro/",
+    "affiliateUrl": null,
+    "category": "Design",
+    "pricing": "Freemium",
+    "price": "Included with Google AI subscriptions (Plus, Pro, Ultra tiers)",
+    "released": "November 2025",
+    "added": "2026-04-19",
+    "pros": [
+      "Best-in-class text rendering in images",
+      "Studio-quality creative controls (lighting, focus, color grading)",
+      "High-fidelity visuals up to 4K resolution",
+      "Strong multilingual text generation capabilities",
+      "Consistent branding across complex compositions",
+      "Real-world knowledge integration via Google Search grounding",
+      "Available in Gemini app, Google Ads, Workspace, and API",
+      "SynthID watermarking for AI transparency"
+    ],
+    "cons": [
+      "Requires Google AI subscription for full access",
+      "Free tier has limited quotas",
+      "May have learning curve for advanced features",
+      "Currently rolling out gradually (US-first availability)"
+    ],
+    "bestFor": "Designers, marketers, and content creators who need professional-quality images with accurate text and precise creative control.",
+    "affiliateCommission": null,
+    "tags": [
+      "image-generation",
+      "design",
+      "ai-art",
+      "text-to-image",
+      "creative",
+      "google"
+    ],
+    "featured": false
   }
-
 ]
