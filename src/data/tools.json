@@ -2054,6 +2054,8 @@
       "Primarily valuable for email/calendar heavy users",
       "May occasionally over-prioritize or misjudge urgency",
       "Limited integrations beyond Gmail/Outlook"
-    ]
+    ],
+    "tags": ["ai agents", "email", "calendar", "task management", "productivity"]
   }
+
 ]
