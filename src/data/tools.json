@@ -532,26 +532,56 @@
     "pricing": "Freemium",
     "price": "$24/mo Pro",
     "released": "2017",
-    "added": "2026-03-18",
+
+
+
+
+
+
+
+
+
+
+
+
+
+    "name": "DeepSeek V4",
+    "slug": "deepseek-v4",
+    "description": "1 trillion parameter Mixture-of-Experts model with 1M token context window, exceptional coding performance, and industry-leading cost efficiency.",
+    "longDescription": "DeepSeek V4 is a groundbreaking open-weight AI model launched in March 2026 featuring approximately 1 trillion total parameters with only 32-37 billion activated per token. It excels at coding tasks, long-context document analysis, and multimodal processing while being 18-36x more cost-effective than competing frontier models via API. Solopreneurs can use it for code review, contract analysis, repository-level bug fixing, and building AI-powered services at accessible price points. The model supports self-hosting for data sovereignty and zero ongoing costs.",
+    "url": "https://deepseek.com",
+    "affiliateUrl": null,
+    "category": "Language Model",
+    "pricing": "Freemium",
+    "price": "$0.14 input / $0.28 output per 1M tokens (API)",
+    "released": "March 2026",
+    "added": "2026-03-25",
     "pros": [
-      "Edit video/audio by editing text",
-      "AI removes filler words",
-      "Accurate transcription",
-      "Screen recording built-in"
+      "1M token context window for large codebase/document analysis",
+      "Exceptional coding performance (competitive with top models)",
+      "Industry-leading cost efficiency (18-36x cheaper than GPT-4o)",
+      "Native multimodal capabilities (text, image, video)",
+      "Open weights - can self-host for privacy and zero API costs",
+      "Strong reasoning and long-context processing abilities"
     ],
     "cons": [
-      "Pro features needed for serious use",
-      "Rendering can be slow"
+      "API rate limits during peak hours",
+      "Requires technical knowledge for optimal prompting/use",
+      "No official chat interface (requires API or third-party apps)",
+      "Self-hosting setup has initial complexity",
+      "Geopolitical considerations for some Western clients"
     ],
-    "bestFor": "Podcasters and video creators who want fast, intuitive editing.",
-    "affiliateCommission": "Varies",
+    "bestFor": "Solopreneur freelancers offering coding services, document analysis, or AI-powered technical work who want premium capabilities at accessible prices.",
+    "affiliateCommission": null,
     "tags": [
-      "video",
-      "audio",
-      "podcasting",
-      "editing"
+      "AI",
+      "coding",
+      "document-analysis",
+      "freelance",
+      "cost-saving",
+      "long-context"
     ],
-    "featured": false
+    "featured": true
   },
   {
     "name": "Pictory",
@@ -588,7 +618,7 @@
     "name": "Murf AI",
     "slug": "murf-ai",
     "description": "AI voiceover generator with 120+ realistic voices across 20+ languages.",
-    "longDescription": "Murf generates realistic AI voiceovers for videos, podcasts, and presentations. 120+ voices across accents and styles with 24-month recurring affiliate commissions. Voice cloning creates a consistent brand voice. No microphone or recording equipment needed. No significant news found for March 2026.",
+    "longDescription": "Murf generates realistic AI voiceovers for videos, podcasts, and presentations. 120+ voices across accents and styles with 24-month recurring affiliate commissions. Voice cloning creates a consistent brand voice. No microphone or recording equipment needed. Recent updates include Speech Gen 3 Engine for more human-like pauses, tone shifts, and pacing; improved Indian and regional accents across 20+ languages; voice cloning features in beta; enhanced integrations with Canva, Google Slides, PowerPoint, Articulate 360, and various video editors; Agora's integration of Murf AI's text-to-speech technology into Conversational AI Engine; successful Series A funding raising $10 million; Falcon TTS Streaming Model for low-latency voice generation; Voice Changer feature to enhance raw audio quality; and ethical sourcing with models trained on real voice actors who consent and receive royalties.",
     "url": "https://murf.ai",
     "affiliateUrl": "https://murf.ai/?via=slashai",
     "category": "Audio",
@@ -2024,15 +2054,6 @@
       "Primarily valuable for email/calendar heavy users",
       "May occasionally over-prioritize or misjudge urgency",
       "Limited integrations beyond Gmail/Outlook"
-    ],
-    "bestFor": "Solopreneurs and executives who spend 2+ hours daily on email, scheduling, and administrative tasks.",
-    "affiliateCommission": "Varies",
-    "tags": [
-      "ai agents",
-      "automation",
-      "productivity",
-      "executive assistant"
-    ],
-    "featured": false
+    ]
   }
 ]
