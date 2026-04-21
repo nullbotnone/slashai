@@ -28,6 +28,8 @@ Daily check reveals major updates across Writesonic, HubSpot, Semrush, and Surfe
 - **Additional Releases**: Support Macros (snippets + multi-step workflow actions) and Customer Success Rooms (shared onboarding spaces)
 
 ### 🚀 Semrush
+- **Brand Visibility Framework Launch**: Unveiled at Adobe Summit on April 20, 2026; strategic operating model for "Brand Visibility" to coordinate brand discovery across traditional search engines, AI-generated answers, and autonomous AI agents
+- **Agentic Search Optimisation (ASO)**: Core component of the new framework focused on ensuring brands are selected and represented by autonomous AI agents
 - **Semrush One Advancements**: Further development of the platform unifying traditional SEO with AI visibility tracking; enhanced AI visibility toolkit for monitoring brand mentions across AI platforms (ChatGPT, Google AI Overviews, Perplexity, Gemini)
 - **Enterprise AI Optimization**: New forecasting features for modeling potential growth in traffic, reach, and mentions; persona-based prompt generation at scale for AI visibility analysis
 - **Enterprise Site Intelligence**: Added Crawler Profiles for AI Agents and Search Bots enabling teams to analyze website interactions from AI/search engine perspectives without manual configuration
