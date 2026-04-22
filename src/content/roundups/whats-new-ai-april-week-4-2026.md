@@ -1,7 +1,7 @@
 ---
 title: "What's New in AI for Solopreneurs: Week of April 20-26, 2026"
 description: "Agentic AI systems take center stage, hybrid expert model emerges, and key AI tools like GPT-5.4, Claude Mythos 5, and Gemini 3.1 Pro reshape the freelance landscape."
-pubDate: 2026-04-26
+pubDate: 2026-04-19
 itemCount: 4
 tags: ["ai news", "weekly roundup", "new tools"]
 ---
