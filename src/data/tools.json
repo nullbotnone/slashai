@@ -337,8 +337,8 @@
   {
     "name": "Surfer SEO",
     "slug": "surfer-seo",
-    "description": "Content optimization tool with Workspaces, AI Search Guidelines, Gemini integration, and Mention Gap + Sentiment Analysis.",
-    "longDescription": "Surfer SEO analyzes the top 10 Google results for your target keyword and provides a content score with specific recommendations: word count, headings, keyword density, images, and more. Integrates with Jasper, Google Docs, and WordPress. Recent updates include Workspaces (prevents brand/domain context overlap), AI Search Guidelines (recommendations for content to rank in AI answers), Gemini integration in AI Tracker for monitoring brand mentions in Google's AI ecosystem, and Mention Gap + Sentiment Analysis (identifies where brands miss from AI answers). Claim: Surfer users grew Google/AI visibility by 423% in 2025. In April 2026, Surfer SEO rolled out Optimizing from AI Tracker, Workspace Permissions, Refreshed Navigation, New Content Editor Wizard, AI Search Guidelines, Looker Studio Integration for AI Visibility, and Gemini in AI Tracker.",
+    "description": "Content optimization tool with Workspaces, AI Search Guidelines, Gemini integration, Mention Gap + Sentiment Analysis, and Sites feature.",
+    "longDescription": "Surfer SEO analyzes the top 10 Google results for your target keyword and provides a content score with specific recommendations: word count, headings, keyword density, images, and more. Integrates with Jasper, Google Docs, and WordPress. Recent updates include Workspaces (prevents brand/domain context overlap), AI Search Guidelines (recommendations for content to rank in AI answers), Gemini integration in AI Tracker for monitoring brand mentions in Google's AI ecosystem, and Mention Gap + Sentiment Analysis (identifies where brands miss from AI answers). Claim: Surfer users grew Google/AI visibility by 423% in 2025. In April 2026, Surfer SEO rolled out Optimizing from AI Tracker, Workspace Permissions, Refreshed Navigation, New Content Editor Wizard, AI Search Guidelines, Looker Studio Integration for AI Visibility, Gemini in AI Tracker, and the Sites feature.",
     "url": "https://surferseo.com",
     "affiliateUrl": "https://surferseo.com/?via=slashai",
     "category": "SEO",
@@ -362,7 +362,8 @@
       "New Content Editor Wizard: AI-powered wizard with full brand/AI/SEO context pre-generation (April 2026)",
       "AI Search Guidelines: real-time suggestions for citation-optimized writing (April 2026)",
       "Looker Studio Integration for AI Visibility: blend AI visibility scores with GA4/G Ads metrics (April 2026)",
-      "Gemini in AI Tracker: monitor brand visibility in Google's AI-generated answers (April 2026)"
+      "Gemini in AI Tracker: monitor brand visibility in Google's AI-generated answers (April 2026)",
+      "Sites Feature: all-in-one SEO strategy hub with real-time Google Search Console insights for auditing underperforming pages and exploring Topical Map-driven ideas (April 2026)"
     ],
     "cons": [
       "$89/mo isn't cheap",
