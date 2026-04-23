@@ -1,4 +1,14 @@
-# AI Tool Updates — April 19, 2026
+# AI Tool Updates — April 23, 2026
+
+## Summary
+
+Daily check reveals major updates across Writesonic, HubSpot, Semrush, and Surfer SEO focused on AI visibility tracking, agentic capabilities, and platform enhancements. Jasper AI shows continued evolution of existing features while Murf AI advances speech technology.
+
+**Status: Updates applied to tools.json and site rebuilt/pushed to GitHub'
+
+--- 
+
+# AI Tool Updates — April 19, 2026 (Applied)
 
 ## Summary
 
