@@ -2057,42 +2057,6 @@
     "featured": false
   },
   {
-    "name": "Alfred_",
-    "slug": "alfred",
-    "description": "AI Chief of Staff that automates email, calendar, and task management.",
-    "longDescription": "Alfred_ (get-alfred.ai) is an AI Chief of Staff or AI Executive Assistant designed to autonomously manage email, calendar, and tasks for founders, consultants, and executives. It operates 24/7 in the background, learning user preferences and communication patterns to provide a prioritized Daily Brief each morning.",
-    "url": "https://get-alfred.ai",
-    "affiliateUrl": "https://get-alfred.ai?via=slashai",
-    "category": "AI Agents",
-    "pricing": "Freemium",
-    "price": "$24.99/mo",
-    "released": "2024",
-    "added": "2026-03-24",
-    "pros": [
-      "Comprehensive coverage of chief of staff coordination tasks",
-      "Saves 5-8 hours per week on administrative work",
-      "24/7 autonomous operation",
-      "Learns user preferences and communication patterns",
-      "Secure OAuth 2.0 integration with Gmail and Outlook",
-      "30-day free trial without credit card",
-      "Affordable alternative to human Chief of Staff"
-    ],
-    "cons": [
-      "Not for strategic judgment or complex decisions",
-      "Requires initial setup and training period",
-      "Primarily valuable for email/calendar heavy users",
-      "May occasionally over-prioritize or misjudge urgency",
-      "Limited integrations beyond Gmail/Outlook"
-    ],
-    "tags": [
-      "ai agents",
-      "email",
-      "calendar",
-      "task management",
-      "productivity"
-    ]
-  },
-  {
     "name": "Nano Banana Pro",
     "slug": "nano-banana-pro",
     "description": "Google's advanced image generation and editing model with superior text rendering and creative controls.",
