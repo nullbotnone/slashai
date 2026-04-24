@@ -82,3 +82,6 @@ Daily check reveals major updates across Writesonic, HubSpot, Semrush, and Surfe
 - Web search for Writesonic, HubSpot, Semrush, Surfer SEO, Jasper AI, and Murf AI updates April 2026
 - Official company blogs, press releases, and product documentation (writesonic.com, hubspot.com, semrush.com, surferseo.com, jasper.ai, murf.ai)
 - Industry news sites and changelogs
+## Removals
+
+- **Alfred_**: Removed from AI Agents directory as requested
