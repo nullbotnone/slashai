@@ -11,78 +11,89 @@ const { title, description = 'AI tools that actually work for one-person busines
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 ---
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{title} | SlashAI</title>
   <meta name="description" content={description}>
   <link rel="canonical" href={canonicalURL}>
-  
+
   <!-- Open Graph -->
   <meta property="og:title" content={title}>
   <meta property="og:description" content={description}>
   <meta property="og:type" content="website">
   <meta property="og:url" content={canonicalURL}>
   {ogImage && <meta property="og:image" content={ogImage}>}
-  
+
+  <!-- Theme color (matches surfaces in light/dark) -->
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
+
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="apple-touch-icon" href="/favicon.svg">
-  
+
   <!-- Google Search Console -->
   <meta name="google-site-verification" content="o3cNryCX62Dn1YyVgeVKvf9PjiFUDFKBQoK75-lfg4U" />
-  
+
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="SlashAI RSS" href="/rss.xml">
 
-  <!-- Theme initialization (prevent flash) -->
+  <!-- Theme initialization (no FOUC). Defaults to system preference; user toggle wins. -->
   <script is:inline>
-    const saved = localStorage.getItem('theme');
-    if (saved) {
-      document.documentElement.setAttribute('data-theme', saved);
-    } else if (window.matchMedia('(prefers-color-scheme: light)').matches) {
-      document.documentElement.setAttribute('data-theme', 'light');
-    }
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+        // else: no attribute set — CSS @media (prefers-color-scheme) takes over.
+      } catch (e) {}
+    })();
   </script>
 </head>
 <body>
   <header class="site-header">
     <div class="container-wide header-inner">
-      <a href="/" class="site-logo">Slash<span>AI</span></a>
-      
+      <a href="/" class="site-logo" aria-label="SlashAI home">
+        <span class="logo-mark">/</span>
+        SlashAI
+      </a>
+
       <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" id="menu-btn">
         <span></span>
         <span></span>
         <span></span>
       </button>
-      
-      <nav id="main-nav">
+
+      <nav id="main-nav" aria-label="Primary">
         <ul class="nav-links">
-          <li><a href="/ai-tools/" onclick="closeMenu()">AI Tools</a></li>
+          <li><a href="/ai-tools/" onclick="closeMenu()">Tools</a></li>
           <li><a href="/build-your-stack/" onclick="closeMenu()">Build Stack</a></li>
           <li><a href="/compare/" onclick="closeMenu()">Compare</a></li>
           <li><a href="/blog/" onclick="closeMenu()">Blog</a></li>
           <li><a href="/about/" onclick="closeMenu()">About</a></li>
           <li>
-            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme" title="Toggle light/dark mode">
-              <span id="theme-icon">☀️</span>
+            <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme" title="Toggle theme">
+              <svg id="theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+              <svg id="theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
             </button>
           </li>
         </ul>
       </nav>
     </div>
   </header>
-  
+
   <main>
     <slot />
   </main>
-  
+
   <footer class="site-footer">
     <div class="container">
       <ul class="footer-links">
@@ -96,58 +107,74 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
         <li><a href="/affiliate-disclosure/">Disclosure</a></li>
         <li><a href="/rss.xml">RSS</a></li>
       </ul>
-      <p>© {new Date().getFullYear()} SlashAI. Built for solopreneurs, by solopreneurs.</p>
+      <p>© {new Date().getFullYear()} SlashAI · Built for solopreneurs, by solopreneurs.</p>
     </div>
   </footer>
 
   <script is:inline>
-    function toggleTheme() {
-      const html = document.documentElement;
-      const current = html.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      html.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
-      updateIcon(next);
+    function effectiveTheme() {
+      var explicit = document.documentElement.getAttribute('data-theme');
+      if (explicit === 'light' || explicit === 'dark') return explicit;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
-    function updateIcon(theme) {
-      const icon = document.getElementById('theme-icon');
-      if (icon) icon.textContent = theme === 'dark' ? '☀️' : '🌙';
+    function updateThemeIcon() {
+      var theme = effectiveTheme();
+      var sun = document.getElementById('theme-icon-sun');
+      var moon = document.getElementById('theme-icon-moon');
+      if (!sun || !moon) return;
+      // In light mode show moon (click to go dark); in dark mode show sun (click to go light).
+      sun.style.display = theme === 'dark' ? '' : 'none';
+      moon.style.display = theme === 'dark' ? 'none' : '';
+    }
+
+    function toggleTheme() {
+      var current = effectiveTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      updateThemeIcon();
     }
 
     function toggleMenu() {
-      const nav = document.getElementById('main-nav');
-      const btn = document.getElementById('menu-btn');
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
       nav.classList.toggle('open');
       btn.classList.toggle('active');
       document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
     }
 
     function closeMenu() {
-      const nav = document.getElementById('main-nav');
-      const btn = document.getElementById('menu-btn');
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
       nav.classList.remove('open');
       btn.classList.remove('active');
       document.body.style.overflow = '';
     }
 
-    // Set initial icon
-    document.addEventListener('DOMContentLoaded', () => {
-      const theme = document.documentElement.getAttribute('data-theme') || 'dark';
-      updateIcon(theme);
-    });
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+
+    // React to OS-level theme changes when user hasn't set explicit preference
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var listener = function () {
+        var saved;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        if (saved !== 'light' && saved !== 'dark') updateThemeIcon();
+      };
+      if (mq.addEventListener) mq.addEventListener('change', listener);
+      else if (mq.addListener) mq.addListener(listener);
+    }
 
     // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-        }
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
       });
     }, { threshold: 0.1 });
 
-    document.addEventListener('DOMContentLoaded', () => {
-      document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
     });
   </script>
 </body>

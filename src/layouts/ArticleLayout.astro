@@ -1,7 +1,6 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import RelatedArticles from '../components/RelatedArticles.astro';
-import NewsletterCTA from '../components/NewsletterCTA.astro';
 
 interface Props {
   title: string;
@@ -30,7 +29,7 @@ const formattedUpdated = updatedDate?.toLocaleDateString('en-US', {
 
 <BaseLayout title={title} description={description}>
   <article>
-    <header class="article-header section-glow">
+    <header class="article-header">
       <div class="container">
         <h1 class="article-title">{title}</h1>
         <div class="article-meta">
@@ -40,24 +39,17 @@ const formattedUpdated = updatedDate?.toLocaleDateString('en-US', {
         </div>
       </div>
     </header>
-    
-    <section class="section-glow">
-      <div class="article-content">
-        <slot />
-      
-      <div class="disclosure">
-        <strong>Affiliate Disclosure:</strong> Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/">Affiliate Disclosure</a>.
-      </div>
 
+    <div class="article-content">
+      <slot />
+
+      <div class="disclosure">
+        <strong>Affiliate disclosure:</strong> Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/">Affiliate Disclosure</a>.
+      </div>
 
       {collection && slug && (
         <RelatedArticles currentSlug={slug} currentCollection={collection} tags={tags} />
       )}
-      </div>
-    </section>
-  </article>
-</BaseLayout>
-/div>
-    </section>
+    </div>
   </article>
 </BaseLayout>

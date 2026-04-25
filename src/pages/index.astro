@@ -2,7 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import toolsData from '../data/tools.json';
-import NewsletterCTA from '../components/NewsletterCTA.astro';
 
 const allReviews = await getCollection('reviews');
 const allRoundups = await getCollection('roundups');
@@ -14,54 +13,124 @@ const recentPosts = [...allReviews, ...allRoundups, ...allComparisons, ...allAge
   .slice(0, 6);
 
 // Featured/trending tools for homepage
-const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
+const trendingTools = toolsData.filter((t) => t.featured).slice(0, 6);
+
+const categories = [
+  {
+    href: '/ai-tools/',
+    title: 'AI Tools Database',
+    description: '45+ curated tools and agents with pricing, features, and direct links.',
+  },
+  {
+    href: '/blog/',
+    title: 'Blog',
+    description: 'Reviews, comparisons, roundups, and workflow guides — tested on real freelance work.',
+  },
+  {
+    href: '/agents/',
+    title: 'AI Agents',
+    description: 'Autonomous agents that handle email, research, and workflows while you sleep.',
+  },
+  {
+    href: '/roundups/',
+    title: 'Best-Of Roundups',
+    description: 'Curated lists for every freelancer need — writing, design, productivity, and more.',
+  },
+  {
+    href: '/build-your-stack/',
+    title: 'Build Your Stack',
+    description: 'Pick your role and budget. Get a personalized AI toolkit recommended for your business.',
+  },
+  {
+    href: '/compare/',
+    title: 'Compare Tools',
+    description: 'Side-by-side breakdowns — pricing, features, pros, and cons of any two AI tools.',
+  },
+  {
+    href: '/tutorials/',
+    title: 'Tutorials',
+    description: 'Step-by-step setup guides. Practical, tested, beginner-friendly.',
+  },
+  {
+    href: '/guides/',
+    title: 'Workflow Guides',
+    description: 'AI-powered workflows that save hours every week. Real setups you can copy.',
+  },
+];
 ---
 
 <BaseLayout title="AI Tools for Solopreneurs & Freelancers">
+  <!-- Hero -->
   <section class="hero">
     <div class="container">
-      <h1>AI tools that <span class="gradient-text">actually work</span><br>for one-person businesses</h1>
-      <p>Honest reviews, practical guides, and real workflows. We test every tool so you don't have to waste time on ones that don't deliver.</p>
+      <span class="eyebrow">Tested on real freelance work</span>
+      <h1>
+        AI tools that actually work<br />
+        <span class="accent">for one-person businesses.</span>
+      </h1>
+      <p>
+        Honest reviews, practical guides, and real workflows. We test every tool so you don't
+        waste time on the ones that don't deliver.
+      </p>
+      <div class="hero-actions">
+        <a href="/ai-tools/" class="btn btn-primary">Browse the database →</a>
+        <a href="/build-your-stack/" class="btn btn-secondary">Build your stack</a>
+      </div>
     </div>
   </section>
 
-  <!-- Trending AI Tools -->
-  <section class="section-glow">
+  <!-- Trending tools -->
+  <section class="section">
     <div class="container">
       <div class="section-header">
-        <h2>Trending <span class="gradient-text">AI Tools</span></h2>
-        <a href="/ai-tools/" class="see-all">See all {toolsData.length} tools →</a>
+        <div>
+          <span class="section-eyebrow">Featured</span>
+          <h2>Trending AI tools</h2>
+        </div>
+        <a href="/ai-tools/" class="see-all">All {toolsData.length} tools →</a>
       </div>
       <div class="trending-grid">
         {trendingTools.map((tool) => (
-          <a href={`/tools/${tool.slug}/`} class="trending-card">
-            <div class="trending-card-top">
+          <a href={`/tools/${tool.slug}/`} class="tool-card">
+            <div class="tool-card-head">
               <h3>{tool.name}</h3>
               <span class={`pricing-badge ${tool.pricing.toLowerCase()}`}>{tool.pricing}</span>
             </div>
             <p>{tool.description}</p>
-            <span class="trending-category">{tool.category}</span>
+            <span class="tool-card-foot">{tool.category}</span>
           </a>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- Latest Articles -->
-  <section class="section-glow">
+  <!-- Latest articles -->
+  <section class="section">
     <div class="container">
-      <h2 style="margin-bottom: 1rem; font-size: 1.3rem;">Latest Articles</h2>
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Recent</span>
+          <h2>Latest articles</h2>
+        </div>
+        <a href="/blog/" class="see-all">All articles →</a>
+      </div>
       <div class="card-grid">
         {recentPosts.map((post) => {
           const slug = post.id.replace(/\.md$/, '');
           const collection = post.collection;
           const path = `/${collection}/${slug}/`;
-          const tag = collection === 'reviews' ? 'Review' :
-                      collection === 'roundups' ? 'Roundup' :
-                      collection === 'comparisons' ? 'Comparison' :
-                      collection === 'agents' ? 'AI Agents' : 'Guide';
+          const tag =
+            collection === 'reviews'
+              ? 'Review'
+              : collection === 'roundups'
+              ? 'Roundup'
+              : collection === 'comparisons'
+              ? 'Comparison'
+              : collection === 'agents'
+              ? 'Agents'
+              : 'Guide';
           return (
-            <a href={path} class="card" style="text-decoration: none; color: inherit;">
+            <a href={path} class="card">
               <h3>{post.data.title}</h3>
               <p>{post.data.description}</p>
               <span class="tag">{tag}</span>
@@ -72,155 +141,240 @@ const trendingTools = toolsData.filter(t => t.featured).slice(0, 6);
     </div>
   </section>
 
-  <!-- Browse by Category -->
-  <section class="section-glow">
+  <!-- Browse -->
+  <section class="section">
     <div class="container">
-      <h2 style="margin-bottom: 1rem; font-size: 1.3rem;">Browse by Category</h2>
-      <div class="card-grid">
-        <a href="/ai-tools/" class="card" style="text-decoration: none; color: inherit;">
-          <h3>🛠️ AI Tools Database</h3>
-          <p>45+ curated tools & agents with pricing, features, and direct links. Filter by category and find your perfect stack.</p>
-        </a>
-        <a href="/blog/" class="card" style="text-decoration: none; color: inherit;">
-          <h3>📝 Blog</h3>
-          <p>Reviews, comparisons, roundups, and workflow guides. Honest takes tested on real freelance work.</p>
-        </a>
-        <a href="/agents/" class="card" style="text-decoration: none; color: inherit;">
-          <h3>🤖 AI Agents</h3>
-          <p>Autonomous agents that handle email, research, customer support, and workflows while you sleep.</p>
-        </a>
-        <a href="/roundups/" class="card" style="text-decoration: none; color: inherit;">
-          <h3>📊 Best-Of Roundups</h3>
-          <p>Curated lists of the best AI tools for every freelancer need — writing, design, productivity, and more.</p>
-        </a>
-        <a href="/build-your-stack/" class="card" style="text-decoration: none; color: inherit;">
-          <h3>🧩 Build Your Stack</h3>
-          <p>Pick your role and budget — get a personalized AI toolkit recommended for your business.</p>
-        </a>
-        <a href="/compare/" class="card" style="text-decoration: none; color: inherit;">
-          <h3>⚖️ Compare Tools</h3>
-          <p>Pick two AI tools and see how they stack up — pricing, features, pros, cons, side by side.</p>
-        </a>
-        <a href="/tutorials/" class="card" style="text-decoration: none; color: inherit;">
-          <h3>📚 Tutorials</h3>
-          <p>Step-by-step guides to set up and use AI tools. Practical, tested, beginner-friendly.</p>
-        </a>
-        <a href="/guides/" class="card" style="text-decoration: none; color: inherit;">
-          <h3>🗺️ Workflow Guides</h3>
-          <p>AI-powered workflows that save hours every week. Real setups you can copy today.</p>
-        </a>
+      <div class="section-header">
+        <div>
+          <span class="section-eyebrow">Browse</span>
+          <h2>Explore by category</h2>
+        </div>
+      </div>
+      <div class="category-grid">
+        {categories.map((c) => (
+          <a href={c.href} class="category-card">
+            <div class="category-card-body">
+              <h3>{c.title}</h3>
+              <p>{c.description}</p>
+            </div>
+            <span class="category-arrow" aria-hidden="true">→</span>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <section class="section-glow" style="margin-top: 1rem; text-align: center;">
-    <div class="container" style="padding: 2rem 1.5rem;">
-      <h2 style="font-size: 1.5rem; margin-bottom: 0.75rem;">The Slash<span style="background: linear-gradient(135deg, var(--color-accent), #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AI</span> Stack</h2>
-    <p style="color: var(--color-text-secondary); max-width: 500px; margin: 0 auto 1.5rem;">Start free. Upgrade when revenue justifies it. Every tool we recommend is tested on real freelance work.</p>
-    <a href="/roundups/best-ai-tools-freelancers/" style="display: inline-block; background: linear-gradient(135deg, var(--color-accent), #ec4899); color: white; padding: 0.75rem 2rem; border-radius: 50px; font-weight: 600; transition: all 0.3s; box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);">
-      See the Stack →
-    </a>
+  <!-- Final CTA -->
+  <section class="section">
+    <div class="container">
+      <div class="cta-panel">
+        <span class="section-eyebrow">The SlashAI stack</span>
+        <h2>Start free. Upgrade when revenue justifies it.</h2>
+        <p>
+          Every tool we recommend is tested on real freelance work — no sponsored fluff,
+          no untested hype.
+        </p>
+        <div class="cta-actions">
+          <a href="/roundups/best-ai-tools-freelancers/" class="btn btn-primary">See the stack →</a>
+          <a href="/about/" class="btn btn-ghost">How we test</a>
+        </div>
+      </div>
+    </div>
   </section>
 </BaseLayout>
 
 <style>
-  a[href*="best-ai-tools-freelancers"]:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4) !important;
-  }
-
-  .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1rem;
-  }
-
-  .section-header h2 {
-    font-size: 1.3rem;
-  }
-
-  .see-all {
-    font-size: 0.85rem;
-    font-weight: 600;
-  }
-
+  /* Trending tools */
   .trending-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1rem;
   }
 
-  .trending-card {
-    background: var(--color-bg-card);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    padding: 1.25rem;
-    text-decoration: none;
-    color: inherit;
-    transition: border-color 0.3s, box-shadow 0.3s;
+  .tool-card {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem 1.25rem;
+    color: inherit;
+    transition: border-color 0.2s var(--ease-out),
+                transform 0.25s var(--ease-out),
+                box-shadow 0.25s var(--ease-out);
     opacity: 0;
-    transform: translateY(12px);
-    animation: trendingFadeIn 0.45s ease forwards;
+    transform: translateY(8px);
+    animation: fadeUp 0.5s var(--ease-out) forwards;
   }
 
-  .trending-card:nth-child(1) { animation-delay: 0.03s; }
-  .trending-card:nth-child(2) { animation-delay: 0.06s; }
-  .trending-card:nth-child(3) { animation-delay: 0.09s; }
-  .trending-card:nth-child(4) { animation-delay: 0.12s; }
-  .trending-card:nth-child(5) { animation-delay: 0.15s; }
-  .trending-card:nth-child(6) { animation-delay: 0.18s; }
+  .tool-card:nth-child(1) { animation-delay: 0.02s; }
+  .tool-card:nth-child(2) { animation-delay: 0.05s; }
+  .tool-card:nth-child(3) { animation-delay: 0.08s; }
+  .tool-card:nth-child(4) { animation-delay: 0.11s; }
+  .tool-card:nth-child(5) { animation-delay: 0.14s; }
+  .tool-card:nth-child(6) { animation-delay: 0.17s; }
 
-  @keyframes trendingFadeIn {
-    to { opacity: 1; transform: translateY(0); }
+  .tool-card:hover {
+    border-color: var(--color-border-strong);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    color: inherit;
   }
 
-  .trending-card:hover {
-    border-color: var(--color-accent);
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
-  }
-
-  .trending-card-top {
+  .tool-card-head {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: center;
     gap: 0.5rem;
   }
 
-  .trending-card-top h3 {
-    font-size: 1rem;
-    font-weight: 700;
+  .tool-card-head h3 {
+    font-size: 0.975rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
 
-  .trending-card p {
+  .tool-card p {
+    color: var(--color-text-secondary);
+    font-size: 0.875rem;
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .tool-card-foot {
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-tertiary);
+    margin-top: 0.4rem;
+  }
+
+  .pricing-badge {
+    font-size: 0.65rem;
+    font-weight: 500;
+    padding: 0.18rem 0.5rem;
+    border-radius: var(--radius-pill);
+    border: 1px solid var(--color-border);
+    color: var(--color-text-secondary);
+    background: var(--color-bg-subtle);
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+  }
+
+  .pricing-badge.free {
+    color: var(--color-success);
+    border-color: color-mix(in srgb, var(--color-success) 22%, var(--color-border));
+    background: color-mix(in srgb, var(--color-success) 6%, var(--color-bg-subtle));
+  }
+
+  /* Category grid */
+  .category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+  }
+
+  .category-card {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 1.15rem 1.25rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    color: inherit;
+    transition: border-color 0.2s var(--ease-out),
+                transform 0.25s var(--ease-out),
+                background 0.2s var(--ease-out);
+  }
+
+  .category-card:hover {
+    border-color: var(--color-border-strong);
+    transform: translateY(-2px);
+    background: var(--color-surface-hover);
+    color: inherit;
+  }
+
+  .category-card-body h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.2rem;
+  }
+
+  .category-card-body p {
     color: var(--color-text-secondary);
     font-size: 0.85rem;
     line-height: 1.5;
   }
 
-  .trending-category {
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--color-accent);
+  .category-arrow {
+    flex-shrink: 0;
+    color: var(--color-text-tertiary);
+    font-size: 0.95rem;
+    margin-top: 0.1rem;
+    transition: transform 0.25s var(--ease-out), color 0.2s var(--ease-out);
   }
 
-  .pricing-badge {
-    font-size: 0.65rem;
-    font-weight: 600;
-    padding: 0.15rem 0.4rem;
-    border-radius: 20px;
-    white-space: nowrap;
+  .category-card:hover .category-arrow {
+    transform: translateX(3px);
+    color: var(--color-text);
   }
 
-  .pricing-badge.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-  .pricing-badge.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-  .pricing-badge.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  /* CTA panel */
+  .cta-panel {
+    background: var(--color-bg-subtle);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .cta-panel .section-eyebrow {
+    margin-bottom: 0.75rem;
+  }
+
+  .cta-panel h2 {
+    font-size: clamp(1.5rem, 2.5vw, 1.875rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+    margin-bottom: 0.75rem;
+    line-height: 1.25;
+  }
+
+  .cta-panel p {
+    color: var(--color-text-secondary);
+    font-size: 0.975rem;
+    max-width: 500px;
+    margin: 0 auto 1.75rem;
+    line-height: 1.6;
+  }
+
+  .cta-actions {
+    display: inline-flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 
   @media (max-width: 768px) {
-    .trending-grid { grid-template-columns: 1fr; }
-    .section-header { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+    .trending-grid,
+    .category-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .section-header {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .cta-panel {
+      padding: 2.25rem 1.25rem;
+    }
   }
 </style>
