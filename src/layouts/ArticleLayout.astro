@@ -25,17 +25,30 @@ const formattedUpdated = updatedDate?.toLocaleDateString('en-US', {
   month: 'long',
   day: 'numeric',
 });
+
+const collectionLabel =
+  collection === 'reviews' ? 'Review' :
+  collection === 'roundups' ? 'Roundup' :
+  collection === 'comparisons' ? 'Comparison' :
+  collection === 'agents' ? 'Field Notes' :
+  collection === 'guides' ? 'Workflow Guide' :
+  collection === 'tutorials' ? 'Tutorial' :
+  'Dispatch';
 ---
 
 <BaseLayout title={title} description={description}>
   <article>
     <header class="article-header">
       <div class="container">
+        <span class="kicker article-kicker">{collectionLabel}</span>
         <h1 class="article-title">{title}</h1>
+        {description && <p class="article-deck">{description}</p>}
         <div class="article-meta">
+          <span class="article-meta-by">By <span class="article-meta-byname">SlashAI Editorial</span></span>
+          <span aria-hidden="true">·</span>
           <time datetime={pubDate.toISOString()}>{formattedDate}</time>
-          {updatedDate && <span>· Updated {formattedUpdated}</span>}
-          {tags.length > 0 && <span>· {tags.join(', ')}</span>}
+          {updatedDate && (<><span aria-hidden="true">·</span><span>Updated {formattedUpdated}</span></>)}
+          {tags.length > 0 && (<><span aria-hidden="true">·</span><span>{tags.join(', ')}</span></>)}
         </div>
       </div>
     </header>
@@ -44,7 +57,8 @@ const formattedUpdated = updatedDate?.toLocaleDateString('en-US', {
       <slot />
 
       <div class="disclosure">
-        <strong>Affiliate disclosure:</strong> Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/">Affiliate Disclosure</a>.
+        <strong>A note on disclosure</strong>
+        Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/">Affiliate Disclosure</a>.
       </div>
 
       {collection && slug && (
@@ -53,3 +67,30 @@ const formattedUpdated = updatedDate?.toLocaleDateString('en-US', {
     </div>
   </article>
 </BaseLayout>
+
+<style>
+  .article-kicker {
+    margin-bottom: 1.25rem;
+  }
+
+  .article-deck {
+    font-family: var(--font-serif);
+    font-size: clamp(1.125rem, 1.6vw, 1.35rem);
+    font-weight: 400;
+    line-height: 1.45;
+    color: var(--color-ink-muted);
+    max-width: 56ch;
+    margin: 0.5rem 0 1.5rem;
+    font-variation-settings: "opsz" 24, "SOFT" 40;
+    letter-spacing: -0.005em;
+  }
+
+  .article-meta-by {
+    color: var(--color-ink-muted);
+  }
+
+  .article-meta-byname {
+    color: var(--color-ink);
+    font-weight: 600;
+  }
+</style>
