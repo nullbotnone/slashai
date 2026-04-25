@@ -1686,6 +1686,7 @@
   },
   {
     "name": "Lovable",
+    "slug": "lovable",
     "description": "AI app builder that turns natural language descriptions into full-stack web applications.",
     "longDescription": "Lovable is one of the most impressive AI app builders of 2026. Describe what you want in plain English \u2014 'a task management app with user auth and a Kanban board' \u2014 and Lovable generates a full-stack React app with database, authentication, and deployment. It uses Claude and GPT-4 under the hood, understands UI/UX patterns, and produces clean, production-ready code. The Pro plan ($25/mo) includes private projects, custom domains, and GitHub integration. It's not just for prototyping \u2014 people are shipping real products built with Lovable.",
     "url": "https://lovable.dev",
