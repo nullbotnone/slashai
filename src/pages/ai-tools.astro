@@ -418,16 +418,16 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   let visibleCards = [];
 
   function getFilteredCards() {
-    const search = searchInput.value.toLowerCase();
+    const search = searchInput.value.trim().toLowerCase();
     const category = categoryFilter.value;
     const pricing = pricingFilter.value;
     const cards = Array.from(toolsGrid.querySelectorAll('.tool-card'));
     
     return cards.filter(card => {
-      const name = card.dataset.name;
-      const tags = card.dataset.tags;
-      const cardCategory = card.dataset.category;
-      const cardPricing = card.dataset.pricing;
+            const name = card.dataset.name || "";
+            const tags = card.dataset.tags || "";
+            const cardCategory = card.dataset.category || "";
+            const cardPricing = card.dataset.pricing || "";
       const matchesSearch = !search || name.includes(search) || tags.includes(search);
       const matchesCategory = !category || cardCategory === category;
       const matchesPricing = !pricing || cardPricing === pricing;
