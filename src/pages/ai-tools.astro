@@ -119,7 +119,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     </div>
 
     <p class="tool-count" id="tool-count" style="text-align: center; color: var(--color-text-secondary); margin-top: 1rem;">
-      Page <span id="current-page">1</span> of <span id="total-pages">{totalPages}</span> · {tools.length} tools
+      Page <span id="current-page">1</span> of <span id="total-pages">{totalPages}</span> · <span id="result-count">{tools.length}</span> tools
     </p>
     </div>
   </section>
@@ -413,6 +413,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   const nextBtn = document.getElementById('next-btn');
   const currentPageEl = document.getElementById('current-page');
   const totalPagesEl = document.getElementById('total-pages');
+  const resultCountEl = document.getElementById('result-count');
 
   let currentPage = 1;
   let visibleCards = [];
@@ -424,10 +425,10 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     const cards = Array.from(toolsGrid.querySelectorAll('.tool-card'));
     
     return cards.filter(card => {
-            const name = card.dataset.name || "";
-            const tags = card.dataset.tags || "";
-            const cardCategory = card.dataset.category || "";
-            const cardPricing = card.dataset.pricing || "";
+      const name = card.dataset.name || "";
+      const tags = (card.dataset.tags || "").toLowerCase();
+      const cardCategory = card.dataset.category || "";
+      const cardPricing = card.dataset.pricing || "";
       const matchesSearch = !search || name.includes(search) || tags.includes(search);
       const matchesCategory = !category || cardCategory === category;
       const matchesPricing = !pricing || cardPricing === pricing;
@@ -488,13 +489,16 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
 
     pageCards.forEach((card, i) => {
       card.classList.remove('hidden');
-      card.style.animation = `cardFadeIn 0.3s ease ${i * 0.03}s forwards`;
+      card.style.opacity = '';
+      card.style.transform = '';
+      card.style.animation = `toolCardFadeIn 0.3s ease ${i * 0.03}s forwards`;
       toolsGrid.appendChild(card);
     });
 
     // Update pagination
     totalPagesEl.textContent = totalPages;
     currentPageEl.textContent = currentPage;
+    resultCountEl.textContent = visibleCards.length;
     prevBtn.disabled = currentPage <= 1;
     nextBtn.disabled = currentPage >= totalPages;
 
