@@ -1,0 +1,256 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Automate Your Workflow with Google Workspace Studio: A Step-by-Step Tutorial | SlashAI</title><meta name="description" content="Learn how to build AI-powered automations in Gmail, Sheets, and Forms using Google's free no-code automation platform"><link rel="canonical" href="https://slashai.app/tutorials/google-workspace-studio-automation/"><!-- Open Graph --><meta property="og:title" content="Automate Your Workflow with Google Workspace Studio: A Step-by-Step Tutorial"><meta property="og:description" content="Learn how to build AI-powered automations in Gmail, Sheets, and Forms using Google's free no-code automation platform"><meta property="og:type" content="website"><meta property="og:url" content="https://slashai.app/tutorials/google-workspace-studio-automation/"><!-- Theme color (matches paper surfaces) --><meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#16120e" media="(prefers-color-scheme: dark)"><!-- Fonts: Fraunces variable (opsz, SOFT, ital, wght) + Inter for UI --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><!-- Google Search Console --><meta name="google-site-verification" content="o3cNryCX62Dn1YyVgeVKvf9PjiFUDFKBQoK75-lfg4U"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="SlashAI RSS" href="/rss.xml"><!-- Theme initialization (no FOUC). Defaults to system preference; user toggle wins. --><script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script><link rel="stylesheet" href="/_astro/BaseLayout.C9RHw3wz.css">
+<style>.tutorial-meta-box[data-astro-cid-amgwr4wo]{display:flex;gap:1.5rem;background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem 1.5rem;margin-bottom:2rem;flex-wrap:wrap}.tutorial-meta-item[data-astro-cid-amgwr4wo]{display:flex;flex-direction:column;gap:.2rem}.meta-label[data-astro-cid-amgwr4wo]{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary)}.meta-value[data-astro-cid-amgwr4wo]{font-size:.95rem;font-weight:700;color:var(--color-accent)}.tool-links-box[data-astro-cid-amgwr4wo]{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:.85rem 1.25rem;margin-bottom:2rem;font-size:.9rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.tool-links-box[data-astro-cid-amgwr4wo] a[data-astro-cid-amgwr4wo]{font-weight:600}.link-sep[data-astro-cid-amgwr4wo]{color:var(--color-text-secondary)}
+.related-articles[data-astro-cid-2zkmu4eg]{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--color-border)}.related-articles[data-astro-cid-2zkmu4eg] h2[data-astro-cid-2zkmu4eg]{font-size:1.3rem;font-weight:700;margin-bottom:1rem}.article-kicker[data-astro-cid-zm77yjld]{margin-bottom:1.25rem}.article-deck[data-astro-cid-zm77yjld]{font-family:var(--font-serif);font-size:clamp(1.125rem,1.6vw,1.35rem);font-weight:400;line-height:1.45;color:var(--color-ink-muted);max-width:56ch;margin:.5rem 0 1.5rem;font-variation-settings:"opsz" 24,"SOFT" 40;letter-spacing:-.005em}.article-meta-by[data-astro-cid-zm77yjld]{color:var(--color-ink-muted)}.article-meta-byname[data-astro-cid-zm77yjld]{color:var(--color-ink);font-weight:600}
+</style></head> <body> <header class="site-header"> <div class="container-wide header-inner"> <a href="/" class="site-logo" aria-label="SlashAI home"> <span class="logo-mark">/</span><span>SlashAI</span> </a> <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" id="menu-btn"> <span></span> <span></span> <span></span> </button> <nav id="main-nav" aria-label="Primary"> <ul class="nav-links"> <li><a href="/ai-tools/" onclick="closeMenu()">Tools</a></li> <li><a href="/build-your-stack/" onclick="closeMenu()">Stack</a></li> <li><a href="/compare/" onclick="closeMenu()">Compare</a></li> <li><a href="/blog/" onclick="closeMenu()">Blog</a></li> <li><a href="/about/" onclick="closeMenu()">About</a></li> <li> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme" title="Toggle theme"> <svg id="theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg> <svg id="theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </li> </ul> </nav> </div> </header> <main>  <article data-astro-cid-zm77yjld> <header class="article-header" data-astro-cid-zm77yjld> <div class="container" data-astro-cid-zm77yjld> <span class="kicker article-kicker" data-astro-cid-zm77yjld>Tutorial</span> <h1 class="article-title" data-astro-cid-zm77yjld>Automate Your Workflow with Google Workspace Studio: A Step-by-Step Tutorial</h1> <p class="article-deck" data-astro-cid-zm77yjld>Learn how to build AI-powered automations in Gmail, Sheets, and Forms using Google&#39;s free no-code automation platform</p> <div class="article-meta" data-astro-cid-zm77yjld> <span class="article-meta-by" data-astro-cid-zm77yjld>By <span class="article-meta-byname" data-astro-cid-zm77yjld>SlashAI Editorial</span></span> <span aria-hidden="true" data-astro-cid-zm77yjld>·</span> <time datetime="2026-04-18T00:00:00.000Z" data-astro-cid-zm77yjld>April 17, 2026</time>  <span aria-hidden="true" data-astro-cid-zm77yjld>·</span><span data-astro-cid-zm77yjld>automation, google, gmail, sheets, forms, no-code, productivity</span> </div> </div> </header> <div class="article-content" data-astro-cid-zm77yjld>  <div class="tutorial-meta-box" data-astro-cid-amgwr4wo> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Tool</span> <span class="meta-value" data-astro-cid-amgwr4wo>Google Workspace Studio</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Difficulty</span> <span class="meta-value" data-astro-cid-amgwr4wo>Beginner</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Time</span> <span class="meta-value" data-astro-cid-amgwr4wo>⏱️ 25 minutes</span> </div> </div> <div class="tool-links-box" data-astro-cid-amgwr4wo> <strong data-astro-cid-amgwr4wo>📚 Google Workspace Studio Links:</strong> <a href="https://studio.workspace.google.com" target="_blank" rel="noopener" data-astro-cid-amgwr4wo>Website</a> <span class="link-sep" data-astro-cid-amgwr4wo>·</span> <a href="/tools/google-workspace-studio/" data-astro-cid-amgwr4wo>Our Review</a> <span class="link-sep" data-astro-cid-amgwr4wo>·</span><a href="https://studio.workspace.google.com/docs" target="_blank" rel="noopener" data-astro-cid-amgwr4wo>Docs</a> </div><h1 id="automate-your-workflow-with-google-workspace-studio-a-step-by-step-tutorial">Automate Your Workflow with Google Workspace Studio: A Step-by-Step Tutorial</h1>
+<p>Google Workspace Studio is Google’s free no-code automation platform that lets you build AI-powered workflows inside Gmail, Google Sheets, Forms, Docs, and Drive. If you’re a solopreneur or freelancer already using Google Workspace, this tool can save you hours every week by automating repetitive tasks without writing a single line of code.</p>
+<p>In this tutorial, you’ll learn how to create your first automation that triages client inquiry emails and logs them to a Google Sheet for follow-up.</p>
+<h2 id="what-youll-need">What You’ll Need</h2>
+<ul>
+<li>A Google Workspace account (Business Starter, Standard, Plus, or Enterprise)</li>
+<li>Access to Google Workspace Studio (available at <a href="https://studio.workspace.google.com">studio.workspace.google.com</a>)</li>
+<li>25 minutes of focused time</li>
+<li>A client inquiry scenario to automate (we’ll use a freelance web design business example)</li>
+</ul>
+<h2 id="step-1-access-google-workspace-studio">Step 1: Access Google Workspace Studio</h2>
+<ol>
+<li>Open your web browser and go to <a href="https://studio.workspace.google.com">studio.workspace.google.com</a></li>
+<li>Sign in with your Google Workspace account</li>
+<li>You should see the Workspace Studio dashboard with options to create new workflows</li>
+</ol>
+<h2 id="step-2-create-your-first-workflow">Step 2: Create Your First Workflow</h2>
+<ol>
+<li>Click the <strong>“Create workflow”</strong> button in the top-right corner</li>
+<li>You’ll be prompted to choose a trigger (the event that starts your automation)</li>
+<li>For this tutorial, we’ll use: <strong>“New email arrives in Gmail”</strong></li>
+</ol>
+<h2 id="step-3-configure-the-gmail-trigger">Step 3: Configure the Gmail Trigger</h2>
+<ol>
+<li>Select <strong>“New email arrives”</strong> as your starter</li>
+<li>Configure the trigger settings:
+<ul>
+<li><strong>Label</strong>: Inbox (or create a specific label like “Client-Inquiries” if you prefer)</li>
+<li><strong>From</strong>: Leave blank to catch all emails, or specify a domain if you want to filter</li>
+<li><strong>Subject contains</strong>: Type <code>inquiry</code> or <code>quote</code> or <code>project</code> to catch client inquiry emails</li>
+<li><strong>Has attachment</strong>: Leave unchecked unless you specifically want to trigger on emails with attachments</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-4-add-ai-processing-steps">Step 4: Add AI Processing Steps</h2>
+<p>Now we’ll add the AI-powered processing that makes Workspace Studio special:</p>
+<ol>
+<li>Click the <strong>+ Add step</strong> button after your trigger</li>
+<li>Choose <strong>“Ask Gemini”</strong> from the AI actions menu</li>
+<li>In the prompt field, enter:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Analyze this email and extract:</span></span>
+<span class="line"><span>- Client name (if mentioned)</span></span>
+<span class="line"><span>- Project type (web design, branding, consulting, etc.)</span></span>
+<span class="line"><span>- Budget range mentioned (if any)</span></span>
+<span class="line"><span>- Timeline/deadline mentioned (if any)</span></span>
+<span class="line"><span>- Key requirements or pain points</span></span>
+<span class="line"><span>- Urgency level (low/medium/high)</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Format your response as JSON with these fields.</span></span></code></pre>
+</li>
+<li>Click <strong>“Save step”</strong></li>
+</ol>
+<h2 id="step-5-add-google-sheets-action">Step 5: Add Google Sheets Action</h2>
+<p>Now we’ll save the extracted information to a Google Sheet:</p>
+<ol>
+<li>Click <strong>+ Add step</strong> again</li>
+<li>Choose <strong>“Add row to spreadsheet”</strong></li>
+<li>Select or create a Google Sheet called “Client Inquiry Tracker”</li>
+<li>Map the fields from your Gemini AI output to the sheet columns:
+<ul>
+<li>Timestamp: Use the automatic timestamp from the trigger</li>
+<li>Client Name: Map to the “client name” field from Gemini</li>
+<li>Project Type: Map to the “project type” field from Gemini</li>
+<li>Budget: Map to the “budget range” field from Gemini</li>
+<li>Timeline: Map to the “timeline/deadline” field from Gemini</li>
+<li>Requirements: Map to the “key requirements” field from Gemini</li>
+<li>Urgency: Map to the “urgency level” field from Gemini</li>
+<li>Email Subject: Use the subject from the trigger email</li>
+<li>Email Sender: Use the sender email from the trigger</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-6-add-conditional-logic-optional-but-powerful">Step 6: Add Conditional Logic (Optional but Powerful)</h2>
+<p>Let’s make our automation smarter by adding conditional logic:</p>
+<ol>
+<li>Click <strong>+ Add step</strong> after the Google Sheets action</li>
+<li>Choose <strong>“Condition”</strong> from the logic menu</li>
+<li>Set up a condition based on urgency:
+<ul>
+<li><strong>If</strong>: urgency level equals “high”</li>
+<li><strong>Then</strong>: Add another action to send yourself a Slack notification or high-priority email</li>
+<li><strong>Else</strong>: Continue with normal processing</li>
+</ul>
+</li>
+</ol>
+<h2 id="step-7-add-email-notification-action">Step 7: Add Email Notification Action</h2>
+<p>Let’s send ourselves a summary email when a new inquiry comes in:</p>
+<ol>
+<li>Click <strong>+ Add step</strong></li>
+<li>Choose <strong>“Send email”</strong> from Gmail actions</li>
+<li>Configure the email:
+<ul>
+<li><strong>To</strong>: Your own email address</li>
+<li><strong>Subject</strong>: <code>New Client Inquiry: {{project type}} for {{client name}}</code></li>
+<li><strong>Body</strong>:
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>New client inquiry received and logged!</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Client: {{client name}}</span></span>
+<span class="line"><span>Project: {{project type}}</span></span>
+<span class="line"><span>Budget: {{budget range}}</span></span>
+<span class="line"><span>Timeline: {{timeline/deadline}}</span></span>
+<span class="line"><span>Urgency: {{urgency level}}</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>View full details in the Client Inquiry Tracker sheet.</span></span></code></pre>
+</li>
+</ul>
+</li>
+<li>Use the insert variable menu (usually <code>{}</code> icon) to pull data from previous steps</li>
+</ol>
+<h2 id="step-8-test-your-workflow">Step 8: Test Your Workflow</h2>
+<p>Before activating, test your workflow:</p>
+<ol>
+<li>Click the <strong>“Test”</strong> button in the top-right</li>
+<li>Send yourself a test email that matches your trigger criteria (with “inquiry” in subject)</li>
+<li>Watch as the workflow processes:
+<ul>
+<li>Triggers on the email</li>
+<li>Uses Gemini to analyze and extract data</li>
+<li>Adds a row to your Google Sheet</li>
+<li>Sends you a notification email</li>
+</ul>
+</li>
+<li>Verify the data appears correctly in your sheet</li>
+</ol>
+<h2 id="step-9-activate-and-monitor">Step 9: Activate and Monitor</h2>
+<ol>
+<li>Click the <strong>“Activate”</strong> button to turn on your workflow</li>
+<li>You’ll see it listed as “Active” in your workflows dashboard</li>
+<li>Monitor its performance over the next few days</li>
+<li>Check the “Logs” tab to see execution history and any errors</li>
+</ol>
+<h2 id="pro-tips-for-freelancers">Pro Tips for Freelancers</h2>
+<h3 id="workflow-ideas-to-try-next">Workflow Ideas to Try Next:</h3>
+<ul>
+<li><strong>Invoice tracking</strong>: New email with “[Invoice]” in subject → extract amount/due date → log to finance sheet → set payment reminder</li>
+<li><strong>Content calendar</strong>: New form submission for blog ideas → AI categorizes topic → adds to appropriate content sheet</li>
+<li><strong>Meeting prep</strong>: Calendar event with “Client Meeting” → AI pulls recent emails/files → creates briefing doc</li>
+<li><strong>File organization</strong>: New file in specific Drive folder → AI analyzes content → moves to appropriate client folder</li>
+</ul>
+<h3 id="best-practices">Best Practices:</h3>
+<ol>
+<li><strong>Start simple</strong>: Begin with one workflow before building complex chains</li>
+<li><strong>Use clear triggers</strong>: Be specific with email subjects/labels to avoid false triggers</li>
+<li><strong>Test thoroughly</strong>: Always use test data before activating on live data</li>
+<li><strong>Monitor logs</strong>: Check for errors regularly, especially when first deploying</li>
+<li><strong>Document your workflows</strong>: Keep a simple doc explaining what each automation does</li>
+</ol>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<h3 id="workflow-didnt-trigger">”Workflow didn’t trigger”</h3>
+<ul>
+<li>Check that your test email matches the trigger criteria exactly</li>
+<li>Verify you’re looking in the correct label/folder</li>
+<li>Ensure the workflow is activated (not just saved)</li>
+</ul>
+<h3 id="data-not-appearing-in-sheet">“Data not appearing in Sheet”</h3>
+<ul>
+<li>Verify you have edit access to the target Google Sheet</li>
+<li>Check that column mappings are correct</li>
+<li>Look at the workflow logs to see if the Sheets step executed</li>
+</ul>
+<h3 id="ai-extraction-not-accurate">”AI extraction not accurate”</h3>
+<ul>
+<li>Refine your Gemini prompt with more specific examples</li>
+<li>Add constraints like “Only extract if explicitly mentioned”</li>
+<li>Consider adding multiple AI steps for different extraction tasks</li>
+</ul>
+<h2 id="what-youll-learn-next">What You’ll Learn Next</h2>
+<p>Once you’re comfortable with basic workflows, explore these advanced features:</p>
+<ul>
+<li><strong>Multi-step AI reasoning</strong>: Chain multiple Gemini actions for complex analysis</li>
+<li><strong>Schedule triggers</strong>: Run workflows on a timer (daily digest, weekly reports)</li>
+<li><strong>Webhook integrations</strong>: Connect to non-Google services using webhooks</li>
+<li><strong>Error handling</strong>: Set up automatic retries and notifications for failed steps</li>
+</ul>
+<h2 id="summary">Summary</h2>
+<p>Google Workspace Studio puts powerful AI automation capabilities directly in the tools you already use as a Google Workspace subscriber. By combining natural language triggers with Gemini AI processing and seamless integration across Gmail, Sheets, and Forms, you can build sophisticated automations that save you hours each week—all without writing code or managing complex integrations.</p>
+<p>Start with the client inquiry tracker we built in this tutorial, then expand to other repetitive tasks in your freelance business. The key is to identify those small, frequent tasks that drain your energy and let Studio handle them automatically.</p>
+<p><strong>Time saved</strong>: Approximately 3-5 hours per week once you have 3-4 workflows running smoothly
+<strong>Skill level</strong>: Beginner-friendly, no coding required
+<strong>Cost</strong>: Free with your existing Google Workspace subscription</p>  <div class="disclosure" data-astro-cid-zm77yjld> <strong data-astro-cid-zm77yjld>A note on disclosure</strong>
+Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/" data-astro-cid-zm77yjld>Affiliate Disclosure</a>.
+</div> <section class="related-articles" data-astro-cid-2zkmu4eg> <h2 data-astro-cid-2zkmu4eg>Related Articles</h2> <div class="card-grid" data-astro-cid-2zkmu4eg> <a href="/guides/complete-guide-ai-tools-solopreneurs/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>The Complete Guide to AI Tools for Solopreneurs in 2026</h3> <p data-astro-cid-2zkmu4eg>Everything a one-person business needs to know about AI tools — what to use, what to skip, and how to build a stack that saves 20+ hours per week.</p> <span class="tag" data-astro-cid-2zkmu4eg>Guide</span> </a><a href="/tutorials/lindy-email-automation/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Automate Your Email with Lindy AI in 15 Minutes</h3> <p data-astro-cid-2zkmu4eg>Set up Lindy AI to triage your inbox, draft replies, and schedule meetings automatically. A practical step-by-step tutorial.</p> <span class="tag" data-astro-cid-2zkmu4eg>Tutorial</span> </a><a href="/tutorials/n8n-first-workflow/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Build Your First AI Workflow with n8n (No Code)</h3> <p data-astro-cid-2zkmu4eg>n8n is the open-source Zapier alternative with native AI support. Here&#39;s how to build an automated lead processing workflow from scratch.</p> <span class="tag" data-astro-cid-2zkmu4eg>Tutorial</span> </a> </div> </section> </div> </article>  </main> <footer class="site-footer"> <div class="container"> <ul class="footer-links"> <li><a href="/ai-tools/">AI Tools</a></li> <li><a href="/build-your-stack/">Build Stack</a></li> <li><a href="/compare/">Compare</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/tutorials/">Tutorials</a></li> <li><a href="/guides/">Guides</a></li> <li><a href="/about/">About</a></li> <li><a href="/affiliate-disclosure/">Disclosure</a></li> <li><a href="/rss.xml">RSS</a></li> </ul> <p>© 2026 SlashAI · An independent dispatch for solopreneurs.</p> </div> </footer> <script>
+    function effectiveTheme() {
+      var explicit = document.documentElement.getAttribute('data-theme');
+      if (explicit === 'light' || explicit === 'dark') return explicit;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function updateThemeIcon() {
+      var theme = effectiveTheme();
+      var sun = document.getElementById('theme-icon-sun');
+      var moon = document.getElementById('theme-icon-moon');
+      if (!sun || !moon) return;
+      sun.style.display = theme === 'dark' ? '' : 'none';
+      moon.style.display = theme === 'dark' ? 'none' : '';
+    }
+
+    function toggleTheme() {
+      var current = effectiveTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      updateThemeIcon();
+    }
+
+    function toggleMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var listener = function () {
+        var saved;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        if (saved !== 'light' && saved !== 'dark') updateThemeIcon();
+      };
+      if (mq.addEventListener) mq.addEventListener('change', listener);
+      else if (mq.addListener) mq.addListener(listener);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+    });
+  </script> </body> </html>

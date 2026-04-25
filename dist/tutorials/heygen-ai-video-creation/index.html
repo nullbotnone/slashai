@@ -1,0 +1,258 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Create Professional AI Videos with HeyGen — No Camera Required | SlashAI</title><meta name="description" content="Learn how to use HeyGen to create talking-head videos with AI avatars, translate content into 175+ languages, and scale your video marketing without a studio."><link rel="canonical" href="https://slashai.app/tutorials/heygen-ai-video-creation/"><!-- Open Graph --><meta property="og:title" content="Create Professional AI Videos with HeyGen — No Camera Required"><meta property="og:description" content="Learn how to use HeyGen to create talking-head videos with AI avatars, translate content into 175+ languages, and scale your video marketing without a studio."><meta property="og:type" content="website"><meta property="og:url" content="https://slashai.app/tutorials/heygen-ai-video-creation/"><!-- Theme color (matches paper surfaces) --><meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#16120e" media="(prefers-color-scheme: dark)"><!-- Fonts: Fraunces variable (opsz, SOFT, ital, wght) + Inter for UI --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><!-- Google Search Console --><meta name="google-site-verification" content="o3cNryCX62Dn1YyVgeVKvf9PjiFUDFKBQoK75-lfg4U"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="SlashAI RSS" href="/rss.xml"><!-- Theme initialization (no FOUC). Defaults to system preference; user toggle wins. --><script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script><link rel="stylesheet" href="/_astro/BaseLayout.C9RHw3wz.css">
+<style>.tutorial-meta-box[data-astro-cid-amgwr4wo]{display:flex;gap:1.5rem;background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem 1.5rem;margin-bottom:2rem;flex-wrap:wrap}.tutorial-meta-item[data-astro-cid-amgwr4wo]{display:flex;flex-direction:column;gap:.2rem}.meta-label[data-astro-cid-amgwr4wo]{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary)}.meta-value[data-astro-cid-amgwr4wo]{font-size:.95rem;font-weight:700;color:var(--color-accent)}.tool-links-box[data-astro-cid-amgwr4wo]{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:.85rem 1.25rem;margin-bottom:2rem;font-size:.9rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.tool-links-box[data-astro-cid-amgwr4wo] a[data-astro-cid-amgwr4wo]{font-weight:600}.link-sep[data-astro-cid-amgwr4wo]{color:var(--color-text-secondary)}
+.related-articles[data-astro-cid-2zkmu4eg]{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--color-border)}.related-articles[data-astro-cid-2zkmu4eg] h2[data-astro-cid-2zkmu4eg]{font-size:1.3rem;font-weight:700;margin-bottom:1rem}.article-kicker[data-astro-cid-zm77yjld]{margin-bottom:1.25rem}.article-deck[data-astro-cid-zm77yjld]{font-family:var(--font-serif);font-size:clamp(1.125rem,1.6vw,1.35rem);font-weight:400;line-height:1.45;color:var(--color-ink-muted);max-width:56ch;margin:.5rem 0 1.5rem;font-variation-settings:"opsz" 24,"SOFT" 40;letter-spacing:-.005em}.article-meta-by[data-astro-cid-zm77yjld]{color:var(--color-ink-muted)}.article-meta-byname[data-astro-cid-zm77yjld]{color:var(--color-ink);font-weight:600}
+</style></head> <body> <header class="site-header"> <div class="container-wide header-inner"> <a href="/" class="site-logo" aria-label="SlashAI home"> <span class="logo-mark">/</span><span>SlashAI</span> </a> <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" id="menu-btn"> <span></span> <span></span> <span></span> </button> <nav id="main-nav" aria-label="Primary"> <ul class="nav-links"> <li><a href="/ai-tools/" onclick="closeMenu()">Tools</a></li> <li><a href="/build-your-stack/" onclick="closeMenu()">Stack</a></li> <li><a href="/compare/" onclick="closeMenu()">Compare</a></li> <li><a href="/blog/" onclick="closeMenu()">Blog</a></li> <li><a href="/about/" onclick="closeMenu()">About</a></li> <li> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme" title="Toggle theme"> <svg id="theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg> <svg id="theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </li> </ul> </nav> </div> </header> <main>  <article data-astro-cid-zm77yjld> <header class="article-header" data-astro-cid-zm77yjld> <div class="container" data-astro-cid-zm77yjld> <span class="kicker article-kicker" data-astro-cid-zm77yjld>Tutorial</span> <h1 class="article-title" data-astro-cid-zm77yjld>Create Professional AI Videos with HeyGen — No Camera Required</h1> <p class="article-deck" data-astro-cid-zm77yjld>Learn how to use HeyGen to create talking-head videos with AI avatars, translate content into 175+ languages, and scale your video marketing without a studio.</p> <div class="article-meta" data-astro-cid-zm77yjld> <span class="article-meta-by" data-astro-cid-zm77yjld>By <span class="article-meta-byname" data-astro-cid-zm77yjld>SlashAI Editorial</span></span> <span aria-hidden="true" data-astro-cid-zm77yjld>·</span> <time datetime="2026-03-18T00:00:00.000Z" data-astro-cid-zm77yjld>March 17, 2026</time>  <span aria-hidden="true" data-astro-cid-zm77yjld>·</span><span data-astro-cid-zm77yjld>heygen, video, ai avatars, content creation, marketing</span> </div> </div> </header> <div class="article-content" data-astro-cid-zm77yjld>  <div class="tutorial-meta-box" data-astro-cid-amgwr4wo> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Tool</span> <span class="meta-value" data-astro-cid-amgwr4wo>HeyGen</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Difficulty</span> <span class="meta-value" data-astro-cid-amgwr4wo>Beginner</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Time</span> <span class="meta-value" data-astro-cid-amgwr4wo>⏱️ 25 minutes</span> </div> </div> <div class="tool-links-box" data-astro-cid-amgwr4wo> <strong data-astro-cid-amgwr4wo>📚 HeyGen Links:</strong> <a href="https://heygen.com" target="_blank" rel="noopener" data-astro-cid-amgwr4wo>Website</a> <span class="link-sep" data-astro-cid-amgwr4wo>·</span> <a href="/tools/heygen/" data-astro-cid-amgwr4wo>Our Review</a> <span class="link-sep" data-astro-cid-amgwr4wo>·</span><a href="https://heygen.com/docs" target="_blank" rel="noopener" data-astro-cid-amgwr4wo>Docs</a> </div><p>You need video content — course lessons, social media clips, product demos — but you don’t have a studio, a camera, or the time to record yourself 47 times until it sounds right. HeyGen solves this. Write a script, pick an AI avatar, and get a polished talking-head video in minutes. You can even translate it into 175+ languages with your voice cloned and lips synced.</p>
+<p>This tutorial walks you through creating your first AI video from scratch.</p>
+<hr>
+<h2 id="what-youll-need">What You’ll Need</h2>
+<ul>
+<li>A HeyGen account (free tier available)</li>
+<li>A script or talking points (we’ll help you write one)</li>
+<li>25 minutes</li>
+<li>Optional: a product image or your own photo for a custom avatar</li>
+</ul>
+<hr>
+<h2 id="step-1-create-your-heygen-account">Step 1: Create Your HeyGen Account</h2>
+<ol>
+<li>Go to <a href="https://heygen.com">heygen.com</a></li>
+<li>Click <strong>Get Started For Free</strong></li>
+<li>Sign up with your Google account or email</li>
+<li>You’ll land in the HeyGen dashboard with 1 free credit to start</li>
+</ol>
+<p>The free plan gives you enough to test the platform. You’ll need a Creator plan ($29/mo) for regular content production — but get comfortable on the free tier first.</p>
+<hr>
+<h2 id="step-2-choose-your-video-type">Step 2: Choose Your Video Type</h2>
+<p>From the dashboard, you’ll see several creation options:</p>
+<ul>
+<li><strong>Text to Video</strong> — Write a script, get a full video with an AI avatar</li>
+<li><strong>Photo to Video</strong> — Upload a photo, animate it with your script</li>
+<li><strong>Video Translator</strong> — Upload an existing video, translate it to other languages</li>
+<li><strong>UGC Ads</strong> — Create product review–style social content</li>
+</ul>
+<p>For this tutorial, we’ll use <strong>Text to Video</strong> — the most versatile option for solopreneurs.</p>
+<p>Click <strong>Create Video</strong> → <strong>Text to Video</strong> to open the editor.</p>
+<hr>
+<h2 id="step-3-write-your-script">Step 3: Write Your Script</h2>
+<p>The script editor is a simple text box. Type or paste your script — HeyGen will have your avatar speak every word.</p>
+<p><strong>Tips for good AI video scripts:</strong></p>
+<ul>
+<li><strong>Write conversationally.</strong> Read it out loud. If it sounds stiff, rewrite it.</li>
+<li><strong>Keep paragraphs short.</strong> One to two sentences per paragraph works best.</li>
+<li><strong>Use punctuation for pacing.</strong> Commas and periods control pauses naturally.</li>
+<li><strong>Aim for 150–200 words per minute</strong> of video.</li>
+</ul>
+<p><strong>Example script for a product intro:</strong></p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Hey there. If you're a freelancer drowning in admin work, this might be the tool you've been looking for.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>I've been using InvoiceFlow for three months, and here's what changed.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Instead of spending two hours every Friday on invoices, I now spend ten minutes. The AI categorizes expenses, generates professional invoices, and sends payment reminders automatically.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>My clients pay faster, I stress less, and I actually get to enjoy my Fridays again.</span></span>
+<span class="line"><span></span></span>
+<span class="line"><span>Check the link below to start your free trial.</span></span></code></pre>
+<p>Write your own script, or use this as a template and swap in your own product or service.</p>
+<hr>
+<h2 id="step-4-choose-your-avatar">Step 4: Choose Your Avatar</h2>
+<p>Click the avatar panel on the left side of the editor. You have three options:</p>
+<h3 id="public-avatars">Public Avatars</h3>
+<p>Browse the library of pre-made avatars. Filter by style (realistic, casual, professional), age, gender, and ethnicity. Click any avatar to preview how it looks.</p>
+<p><strong>Tip:</strong> Match the avatar to your brand tone. A casual tech product? Pick someone relaxed. B2B consulting? Go with a professional look.</p>
+<h3 id="photo-avatar">Photo Avatar</h3>
+<p>Upload a single portrait photo and HeyGen animates it — facial expressions, lip-sync, and gestures. Great for creating a branded character or using your own headshot without recording video.</p>
+<h3 id="digital-twin-creator-plan">Digital Twin (Creator plan)</h3>
+<p>Record a short video of yourself, and HeyGen creates a realistic digital clone. This is the most personal option — your exact look and voice, without ever hitting record again.</p>
+<p>For your first video, pick a <strong>Public Avatar</strong>. It’s fast, requires zero setup, and looks great.</p>
+<hr>
+<h2 id="step-5-select-a-voice">Step 5: Select a Voice</h2>
+<p>With your avatar selected, choose a voice from the voice panel. HeyGen offers:</p>
+<ul>
+<li>Multiple voice styles (conversational, energetic, calm, authoritative)</li>
+<li>175+ languages and accents</li>
+<li>Adjustable speed and pitch</li>
+</ul>
+<p>Preview voices by clicking the play button next to each one. Pick the voice that fits your content’s energy.</p>
+<p><strong>Pro tip:</strong> If you’re creating content in English, try the “Conversational” style voices — they sound the most natural and less like a robot reading a teleprompter.</p>
+<hr>
+<h2 id="step-6-customize-the-background-and-layout">Step 6: Customize the Background and Layout</h2>
+<p>HeyGen gives you several layout options:</p>
+<ul>
+<li><strong>Talking Head</strong> — Avatar centered, shoulders up. Best for direct-to-camera content.</li>
+<li><strong>With Media</strong> — Avatar in a corner, slides or images in the main area. Great for presentations and tutorials.</li>
+<li><strong>Full Screen</strong> — Avatar fills the entire frame. Maximum presence.</li>
+</ul>
+<p>You can also:</p>
+<ul>
+<li>Upload a custom background image</li>
+<li>Choose a solid color or gradient</li>
+<li>Add your logo as a watermark</li>
+</ul>
+<p>For a product intro, try the <strong>With Media</strong> layout and upload a screenshot or product image.</p>
+<hr>
+<h2 id="step-7-preview-and-generate">Step 7: Preview and Generate</h2>
+<p>Click <strong>Preview</strong> to see a short preview of your video. Check for:</p>
+<ul>
+<li><strong>Lip-sync accuracy</strong> — Does the mouth movement match the words?</li>
+<li><strong>Pacing</strong> — Any rushed or awkward pauses? Adjust your script punctuation.</li>
+<li><strong>Voice tone</strong> — Does it match your brand?</li>
+</ul>
+<p>When you’re happy, click <strong>Generate Video</strong>. Processing takes 2–5 minutes depending on length.</p>
+<p>Your video downloads as an MP4 in 1080p (free tier) or 4K (Creator plan).</p>
+<hr>
+<h2 id="step-8-translate-your-video-optional--killer-feature">Step 8: Translate Your Video (Optional — Killer Feature)</h2>
+<p>Here’s where HeyGen gets powerful for solopreneurs. After creating your English video, you can translate it into any of 175+ languages:</p>
+<ol>
+<li>Open your finished video</li>
+<li>Click <strong>Translate</strong></li>
+<li>Select target language(s)</li>
+<li>HeyGen clones your voice and re-syncs lip movements to match the new language</li>
+</ol>
+<p>You now have the same video in Spanish, French, German, Japanese — whatever markets you serve. This is genuinely game-changing for freelancers with international clients or course creators who want global reach.</p>
+<hr>
+<h2 id="step-9-download-and-publish">Step 9: Download and Publish</h2>
+<p>Download your video and publish it wherever you need:</p>
+<ul>
+<li><strong>YouTube / YouTube Shorts</strong> — Full videos or short clips</li>
+<li><strong>Instagram Reels / TikTok</strong> — Resize to 9:16 vertical</li>
+<li><strong>Website landing page</strong> — Embed as a product demo</li>
+<li><strong>Email campaigns</strong> — Link or embed in newsletters</li>
+<li><strong>Course platforms</strong> — Upload to Teachable, Kajabi, etc.</li>
+</ul>
+<hr>
+<h2 id="real-use-cases-for-solopreneurs">Real Use Cases for Solopreneurs</h2>
+<p>Here’s how freelancers and solopreneurs actually use HeyGen:</p>
+<ul>
+<li><strong>Course creators</strong> — Record lessons without being on camera for hours. Update sections by editing the script, not re-recording.</li>
+<li><strong>Product demos</strong> — Create walkthrough videos for SaaS tools or digital products. Update when features change.</li>
+<li><strong>Social media content</strong> — Batch-create a week of short-form videos in one sitting.</li>
+<li><strong>Client proposals</strong> — Send personalized video pitches instead of text emails. Stand out.</li>
+<li><strong>Multilingual marketing</strong> — Translate one video into 5 languages and reach 10x the audience.</li>
+</ul>
+<hr>
+<h2 id="pricing-overview">Pricing Overview</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>Plan</th><th>Price</th><th>Videos/mo</th><th>Resolution</th><th>Key Features</th></tr></thead><tbody><tr><td>Free</td><td>$0</td><td>1 video</td><td>1080p</td><td>Limited avatars, watermark</td></tr><tr><td>Creator</td><td>$29/mo</td><td>15 videos</td><td>4K</td><td>Custom avatars, no watermark, translation</td></tr><tr><td>Business</td><td>$99/mo</td><td>60 videos</td><td>4K</td><td>Team features, API access, priority rendering</td></tr></tbody></table>
+<p>The Creator plan at $29/mo is the sweet spot for most solopreneurs.</p>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>You now know how to:</p>
+<ol>
+<li>Create a HeyGen account and navigate the dashboard</li>
+<li>Write scripts that sound natural when spoken by AI avatars</li>
+<li>Choose and customize avatars, voices, and backgrounds</li>
+<li>Generate polished talking-head videos without a camera</li>
+<li>Translate videos into 175+ languages with voice cloning</li>
+<li>Publish across platforms</li>
+</ol>
+<p><strong>Next steps:</strong></p>
+<ul>
+<li>Create a Digital Twin by recording a short sample of yourself (Creator plan)</li>
+<li>Batch-produce 5 social media clips using different avatars and scripts</li>
+<li>Translate your best-performing video into your top 3 client languages</li>
+</ul>
+<p>The goal isn’t to replace genuine on-camera presence entirely — it’s to scale your video output without scaling your time investment. Use HeyGen for volume content, save your real face time for high-touch client interactions.</p>  <div class="disclosure" data-astro-cid-zm77yjld> <strong data-astro-cid-zm77yjld>A note on disclosure</strong>
+Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/" data-astro-cid-zm77yjld>Affiliate Disclosure</a>.
+</div> <section class="related-articles" data-astro-cid-2zkmu4eg> <h2 data-astro-cid-2zkmu4eg>Related Articles</h2> <div class="card-grid" data-astro-cid-2zkmu4eg> <a href="/reviews/jasper-ai-review/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Jasper AI Review 2026: Is It Worth $49/mo for Freelancers?</h3> <p data-astro-cid-2zkmu4eg>Three months of testing Jasper AI on real client work. Here&#39;s our honest verdict on whether it&#39;s worth the premium price.</p> <span class="tag" data-astro-cid-2zkmu4eg>Review</span> </a><a href="/roundups/best-ai-writing-tools/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>10 Best AI Writing Tools for Solopreneurs in 2026 (Honest Review)</h3> <p data-astro-cid-2zkmu4eg>We tested every major AI writing tool on real freelance work. Here&#39;s which ones actually save time and which ones waste it.</p> <span class="tag" data-astro-cid-2zkmu4eg>Roundup</span> </a><a href="/reviews/hubspot-aeo-review/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>HubSpot AEO (Answer Engine Optimization) Review 2026: Tracking Brand Visibility in AI Answers</h3> <p data-astro-cid-2zkmu4eg>In-depth review of HubSpot&#39;s new AEO tool launched in April 2026, designed to monitor and optimize brand presence in AI-generated answers from ChatGPT, Gemini, and Perplexity.</p> <span class="tag" data-astro-cid-2zkmu4eg>Review</span> </a> </div> </section> </div> </article>  </main> <footer class="site-footer"> <div class="container"> <ul class="footer-links"> <li><a href="/ai-tools/">AI Tools</a></li> <li><a href="/build-your-stack/">Build Stack</a></li> <li><a href="/compare/">Compare</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/tutorials/">Tutorials</a></li> <li><a href="/guides/">Guides</a></li> <li><a href="/about/">About</a></li> <li><a href="/affiliate-disclosure/">Disclosure</a></li> <li><a href="/rss.xml">RSS</a></li> </ul> <p>© 2026 SlashAI · An independent dispatch for solopreneurs.</p> </div> </footer> <script>
+    function effectiveTheme() {
+      var explicit = document.documentElement.getAttribute('data-theme');
+      if (explicit === 'light' || explicit === 'dark') return explicit;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function updateThemeIcon() {
+      var theme = effectiveTheme();
+      var sun = document.getElementById('theme-icon-sun');
+      var moon = document.getElementById('theme-icon-moon');
+      if (!sun || !moon) return;
+      sun.style.display = theme === 'dark' ? '' : 'none';
+      moon.style.display = theme === 'dark' ? 'none' : '';
+    }
+
+    function toggleTheme() {
+      var current = effectiveTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      updateThemeIcon();
+    }
+
+    function toggleMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var listener = function () {
+        var saved;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        if (saved !== 'light' && saved !== 'dark') updateThemeIcon();
+      };
+      if (mq.addEventListener) mq.addEventListener('change', listener);
+      else if (mq.addListener) mq.addListener(listener);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+    });
+  </script> </body> </html>

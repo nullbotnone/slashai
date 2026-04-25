@@ -1,10 +1,55 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!--
+    SlashAI favicon — editorial mark.
+    Crimson masthead square with a serif-flared slash in cream.
+    Tuned for legibility from 16×16 up to apple-touch sizes.
+  -->
   <defs>
-    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#7c3aed"/>
-      <stop offset="100%" stop-color="#ec4899"/>
-    </linearGradient>
+    <style>
+      .bg     { fill: #b83a25; }
+      .paper  { fill: #f6f1e7; }
+      .rule   { fill: #f6f1e7; opacity: 0.55; }
+      @media (prefers-color-scheme: dark) {
+        .bg    { fill: #e26749; }
+        .paper { fill: #1a140f; }
+        .rule  { fill: #1a140f; opacity: 0.55; }
+      }
+    </style>
   </defs>
-  <rect width="512" height="512" rx="96" fill="#0f0f0f"/>
-  <text x="256" y="360" font-family="Inter, Arial, sans-serif" font-size="340" font-weight="800" fill="url(#g)" text-anchor="middle">S/</text>
+
+  <!-- Masthead block -->
+  <rect class="bg" width="512" height="512" rx="104" ry="104"/>
+
+  <!-- Top & bottom hairline rules (magazine masthead cue) -->
+  <rect class="rule" x="72"  y="96"  width="368" height="8"/>
+  <rect class="rule" x="72"  y="408" width="368" height="8"/>
+
+  <!-- Editorial slash: bold parallelogram stroke with serif flares.
+       Italic slope ≈ 14°. -->
+  <g class="paper">
+    <!-- Main stroke -->
+    <path d="
+      M 300 132
+      L 388 132
+      L 212 380
+      L 124 380
+      Z
+    "/>
+    <!-- Top serif flare -->
+    <path d="
+      M 282 132
+      L 404 132
+      L 404 152
+      L 296 152
+      Z
+    "/>
+    <!-- Bottom serif flare -->
+    <path d="
+      M 108 360
+      L 216 360
+      L 216 380
+      L 108 380
+      Z
+    "/>
+  </g>
 </svg>

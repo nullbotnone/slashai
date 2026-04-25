@@ -1,0 +1,305 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Automate Your Schedule and Tasks with Carly AI | SlashAI</title><meta name="description" content="Learn how to use Carly AI to automate scheduling, task management, and CRM workflows via email and SMS - no app needed"><link rel="canonical" href="https://slashai.app/tutorials/carly-ai-scheduling-task-management/"><!-- Open Graph --><meta property="og:title" content="Automate Your Schedule and Tasks with Carly AI"><meta property="og:description" content="Learn how to use Carly AI to automate scheduling, task management, and CRM workflows via email and SMS - no app needed"><meta property="og:type" content="website"><meta property="og:url" content="https://slashai.app/tutorials/carly-ai-scheduling-task-management/"><!-- Theme color (matches paper surfaces) --><meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#16120e" media="(prefers-color-scheme: dark)"><!-- Fonts: Fraunces variable (opsz, SOFT, ital, wght) + Inter for UI --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><!-- Google Search Console --><meta name="google-site-verification" content="o3cNryCX62Dn1YyVgeVKvf9PjiFUDFKBQoK75-lfg4U"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="SlashAI RSS" href="/rss.xml"><!-- Theme initialization (no FOUC). Defaults to system preference; user toggle wins. --><script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script><link rel="stylesheet" href="/_astro/BaseLayout.C9RHw3wz.css">
+<style>.tutorial-meta-box[data-astro-cid-amgwr4wo]{display:flex;gap:1.5rem;background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem 1.5rem;margin-bottom:2rem;flex-wrap:wrap}.tutorial-meta-item[data-astro-cid-amgwr4wo]{display:flex;flex-direction:column;gap:.2rem}.meta-label[data-astro-cid-amgwr4wo]{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary)}.meta-value[data-astro-cid-amgwr4wo]{font-size:.95rem;font-weight:700;color:var(--color-accent)}.tool-links-box[data-astro-cid-amgwr4wo]{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:.85rem 1.25rem;margin-bottom:2rem;font-size:.9rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.tool-links-box[data-astro-cid-amgwr4wo] a[data-astro-cid-amgwr4wo]{font-weight:600}.link-sep[data-astro-cid-amgwr4wo]{color:var(--color-text-secondary)}
+.related-articles[data-astro-cid-2zkmu4eg]{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--color-border)}.related-articles[data-astro-cid-2zkmu4eg] h2[data-astro-cid-2zkmu4eg]{font-size:1.3rem;font-weight:700;margin-bottom:1rem}.article-kicker[data-astro-cid-zm77yjld]{margin-bottom:1.25rem}.article-deck[data-astro-cid-zm77yjld]{font-family:var(--font-serif);font-size:clamp(1.125rem,1.6vw,1.35rem);font-weight:400;line-height:1.45;color:var(--color-ink-muted);max-width:56ch;margin:.5rem 0 1.5rem;font-variation-settings:"opsz" 24,"SOFT" 40;letter-spacing:-.005em}.article-meta-by[data-astro-cid-zm77yjld]{color:var(--color-ink-muted)}.article-meta-byname[data-astro-cid-zm77yjld]{color:var(--color-ink);font-weight:600}
+</style></head> <body> <header class="site-header"> <div class="container-wide header-inner"> <a href="/" class="site-logo" aria-label="SlashAI home"> <span class="logo-mark">/</span><span>SlashAI</span> </a> <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" id="menu-btn"> <span></span> <span></span> <span></span> </button> <nav id="main-nav" aria-label="Primary"> <ul class="nav-links"> <li><a href="/ai-tools/" onclick="closeMenu()">Tools</a></li> <li><a href="/build-your-stack/" onclick="closeMenu()">Stack</a></li> <li><a href="/compare/" onclick="closeMenu()">Compare</a></li> <li><a href="/blog/" onclick="closeMenu()">Blog</a></li> <li><a href="/about/" onclick="closeMenu()">About</a></li> <li> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme" title="Toggle theme"> <svg id="theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg> <svg id="theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </li> </ul> </nav> </div> </header> <main>  <article data-astro-cid-zm77yjld> <header class="article-header" data-astro-cid-zm77yjld> <div class="container" data-astro-cid-zm77yjld> <span class="kicker article-kicker" data-astro-cid-zm77yjld>Tutorial</span> <h1 class="article-title" data-astro-cid-zm77yjld>Automate Your Schedule and Tasks with Carly AI</h1> <p class="article-deck" data-astro-cid-zm77yjld>Learn how to use Carly AI to automate scheduling, task management, and CRM workflows via email and SMS - no app needed</p> <div class="article-meta" data-astro-cid-zm77yjld> <span class="article-meta-by" data-astro-cid-zm77yjld>By <span class="article-meta-byname" data-astro-cid-zm77yjld>SlashAI Editorial</span></span> <span aria-hidden="true" data-astro-cid-zm77yjld>·</span> <time datetime="2026-04-01T00:00:00.000Z" data-astro-cid-zm77yjld>March 31, 2026</time>  <span aria-hidden="true" data-astro-cid-zm77yjld>·</span><span data-astro-cid-zm77yjld>ai agents, scheduling, task management, productivity</span> </div> </div> </header> <div class="article-content" data-astro-cid-zm77yjld>  <div class="tutorial-meta-box" data-astro-cid-amgwr4wo> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Tool</span> <span class="meta-value" data-astro-cid-amgwr4wo>Carly AI</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Difficulty</span> <span class="meta-value" data-astro-cid-amgwr4wo>Beginner</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Time</span> <span class="meta-value" data-astro-cid-amgwr4wo>⏱️ 15 minutes</span> </div> </div> <h1 id="automate-your-schedule-and-tasks-with-carly-ai">Automate Your Schedule and Tasks with Carly AI</h1>
+<p>Tired of the back-and-forth of scheduling meetings, managing to-do lists, and keeping your CRM up to date? Carly AI acts as your AI executive assistant accessible directly through email and SMS, eliminating the need for yet another app to manage. This tutorial will show you how to set up and use Carly AI to automate your administrative workflows as a solopreneur or freelancer.</p>
+<h2 id="what-youll-learn">What You’ll Learn</h2>
+<ul>
+<li>How to set up Carly AI with your email and phone number</li>
+<li>Using Carly for scheduling meetings and managing your calendar</li>
+<li>Automating task management with synced to-dos and daily briefings</li>
+<li>Setting up CRM automation for lead enrichment and updates</li>
+<li>Leveraging Carly’s 120+ integrations for seamless workflows</li>
+<li>Best practices for getting the most out of your AI executive assistant</li>
+</ul>
+<h2 id="what-youll-need">What You’ll Need</h2>
+<ul>
+<li>An active email account (Gmail or Outlook recommended)</li>
+<li>A mobile phone capable of receiving SMS messages</li>
+<li>10-15 minutes for initial setup</li>
+<li>Accounts with any tools you want to integrate (Google Calendar, HubSpot, etc.)</li>
+<li>Optional: Access to video conferencing tools (Zoom, Teams, Google Meet)</li>
+</ul>
+<h2 id="step-by-step-setup">Step-by-Step Setup</h2>
+<h3 id="step-1-sign-up-for-carly-ai">Step 1: Sign Up for Carly AI</h3>
+<ol>
+<li>Visit <a href="https://usecarly.com">usecarly.com</a> and click “Get Started”</li>
+<li>Enter your email address and phone number for verification</li>
+<li>Check your email for a verification link and click it</li>
+<li>Verify your phone number when prompted via SMS</li>
+<li>Complete your profile with your name, timezone, and preferred working hours</li>
+</ol>
+<h3 id="step-2-connect-your-calendars">Step 2: Connect Your Calendars</h3>
+<p>Carly works best when it can see and manage your calendar:</p>
+<ol>
+<li>In the Carly dashboard, go to “Integrations” → “Calendars”</li>
+<li>Connect your Google Calendar and/or Outlook/Office 365 calendar</li>
+<li>Grant Carly permission to read and write events</li>
+<li>Set your default meeting duration and buffer times</li>
+<li>Choose which calendars Carly should check for availability</li>
+</ol>
+<h3 id="step-3-set-up-video-conferencing-optional">Step 3: Set Up Video Conferencing (Optional)</h3>
+<p>To enable Carly to add meeting links automatically:</p>
+<ol>
+<li>Go to “Integrations” → “Video Conferencing”</li>
+<li>Connect your preferred platform (Zoom, Microsoft Teams, or Google Meet)</li>
+<li>Authorize Carly to create meetings on your behalf</li>
+<li>Set default meeting settings (whether to require passwords, waiting rooms, etc.)</li>
+</ol>
+<h3 id="step-4-configure-task-management">Step 4: Configure Task Management</h3>
+<p>Carly can help you manage tasks and to-do lists:</p>
+<ol>
+<li>Navigate to “Integrations” → “Task Management”</li>
+<li>Connect your preferred task tool (Todoist, Microsoft To Do, etc.) or use Carly’s built-in task manager</li>
+<li>Set up how you want to receive task reminders (email, SMS, or both)</li>
+<li>Configure your daily briefing timing (when you want to see your day’s overview)</li>
+</ol>
+<h3 id="step-5-set-up-crm-automation-for-sales-focused-freelancers">Step 5: Set Up CRM Automation (For Sales-Focused Freelancers)</h3>
+<p>If you use a CRM like HubSpot or Salesforce:</p>
+<ol>
+<li>Go to “Integrations” → “CRM”</li>
+<li>Connect your CRM account (HubSpot, Salesforce, etc.)</li>
+<li>Map which fields Carly should update when it captures new leads</li>
+<li>Set up automation rules (e.g., “When I forward a lead email to Carly, create a new contact”)</li>
+<li>Test the integration by sending a sample lead to Carly</li>
+</ol>
+<h3 id="step-6-customize-your-communication-preferences">Step 6: Customize Your Communication Preferences</h3>
+<p>Tell Carly how you prefer to communicate:</p>
+<ol>
+<li>In “Settings” → “Communication”, choose your primary channel (email or SMS)</li>
+<li>Set up your signature and preferences for how Carly signs messages</li>
+<li>Configure working hours so Carly knows when not to schedule meetings</li>
+<li>Set up VIP contacts that Carly should prioritize or handle differently</li>
+</ol>
+<h2 id="using-carly-ai-in-your-daily-workflow">Using Carly AI in Your Daily Workflow</h2>
+<h3 id="scheduling-meetings">Scheduling Meetings</h3>
+<p>The most powerful feature of Carly is its scheduling ability:</p>
+<ol>
+<li>When someone emails you asking to meet, simply CC Carly (<code>carly@usecarly.com</code>) or forward the email to Carly</li>
+<li>Carly will read the email, check your calendar, and suggest available times</li>
+<li>Carly will respond to the proposer with options and handle all the back-and-forth</li>
+<li>Once a time is agreed upon, Carly creates the calendar event and sends invites</li>
+<li>If you connected video conferencing, Carly will automatically add meeting links</li>
+</ol>
+<p><strong>Example workflow:</strong></p>
+<ul>
+<li>Client emails: “Can we meet next week to discuss the project?”</li>
+<li>You forward to Carly (or CC: <a href="mailto:carly@usecarly.com">carly@usecarly.com</a>)</li>
+<li>Carly responds: “I checked your calendar. How about Tuesday at 2 PM or Thursday at 10 AM?”</li>
+<li>Client replies: “Tuesday at 2 PM works”</li>
+<li>Carly confirms, creates calendar event, adds video call link if configured, and notifies both parties</li>
+</ul>
+<h3 id="managing-tasks-and-to-dos">Managing Tasks and To-Dos</h3>
+<p>Carly helps you stay on top of your tasks:</p>
+<ol>
+<li>Email or text Carly: “Remind me to follow up with the Smith client tomorrow at 3 PM”</li>
+<li>Carly creates a timed reminder and will notify you via your preferred channel</li>
+<li>For recurring tasks: “Every Monday at 9 AM, send invoices to weekly clients”</li>
+<li>Ask for your daily briefing: Text “brief” to Carly to get your day’s overview</li>
+<li>Mark tasks as complete: Reply “done” to a task reminder or tell Carly what you completed</li>
+</ol>
+<h3 id="crm-automation-for-lead-management">CRM Automation for Lead Management</h3>
+<p>If you’re in sales or client services:</p>
+<ol>
+<li>When you receive a lead inquiry, forward it to Carly</li>
+<li>Carly extracts contact information and creates/updates the lead in your CRM</li>
+<li>Carly can add notes from the conversation and set follow-up reminders</li>
+<li>For email sequences: Tell Carly to “add this lead to my nurture sequence”</li>
+<li>Carly can schedule follow-up calls or emails based on your CRM workflows</li>
+</ol>
+<h3 id="google-drive-integration">Google Drive Integration</h3>
+<p>Carly can help you manage files without leaving your inbox:</p>
+<ol>
+<li>Ask Carly: “Find the proposal draft for the Johnson project”</li>
+<li>Carly searches your Google Drive and shares the file link</li>
+<li>To share a file: “Share the latest logo concepts with the design team at their email”</li>
+<li>Carly can create folders: “Make a new folder for Q2 marketing assets”</li>
+<li>Carly manages permissions: “Give view access to the budget spreadsheet to my accountant”</li>
+</ol>
+<h2 id="advanced-features-and-tips">Advanced Features and Tips</h2>
+<h3 id="creating-custom-ai-agents">Creating Custom AI Agents</h3>
+<p>For repetitive specific tasks:</p>
+<ol>
+<li>In Carly’s dashboard, go to “AI Agents” → “Create Custom Agent”</li>
+<li>Define the agent’s purpose (e.g., “Recruiting Assistant” or “Invoice Follow-up Bot”)</li>
+<li>Set up triggers (specific email subjects, keywords in messages, etc.)</li>
+<li>Define actions (send specific replies, update databases, schedule tasks, etc.)</li>
+<li>Test with sample messages before activating</li>
+</ol>
+<h3 id="using-carly-via-sms">Using Carly via SMS</h3>
+<p>When you’re away from email:</p>
+<ol>
+<li>Save Carly’s phone number in your contacts (provided during setup)</li>
+<li>Text your requests just like you would email</li>
+<li>Carly understands natural language: “Move my 3 PM meeting to tomorrow morning”</li>
+<li>You’ll receive responses via SMS for quick interactions on the go</li>
+</ol>
+<h3 id="handling-group-scheduling">Handling Group Scheduling</h3>
+<p>For meetings with multiple participants:</p>
+<ol>
+<li>When scheduling a group meeting, include all participants in the email thread</li>
+<li>CC Carly and ask: “Find a time that works for everyone next week”</li>
+<li>Carly will check all attendees’ calendars (if they’re Carly users or have shared availability)</li>
+<li>Carly proposes optimal times and handles all coordination</li>
+<li>Once agreed, Carly sends calendar invites to all parties</li>
+</ol>
+<h3 id="setting-up-daily-and-weekly-routines">Setting Up Daily and Weekly Routines</h3>
+<p>Make Carly part of your regular workflow:</p>
+<ol>
+<li><strong>Morning</strong>: Text “brief” to Carly for your day’s overview</li>
+<li><strong>Throughout the day</strong>: Forward meeting requests to Carly as they come in</li>
+<li><strong>End of day</strong>: Ask Carly: “What did I accomplish today?” for a quick review</li>
+<li><strong>Friday afternoon</strong>: Request a weekly summary and preview of next week</li>
+<li><strong>Monthly</strong>: Use Carly to review recurring tasks and automate anything repetitive</li>
+</ol>
+<h2 id="best-practices-for-freelancers-and-solopreneurs">Best Practices for Freelancers and Solopreneurs</h2>
+<h3 id="optimize-your-prompts">Optimize Your Prompts</h3>
+<p>Carly works best with clear, specific instructions:</p>
+<ul>
+<li>❌ “Set up a meeting sometime”</li>
+<li>✅ “Schedule a 30-minute follow-up with <a href="mailto:acme@client.com">acme@client.com</a> next Tuesday or Wednesday afternoon”</li>
+<li>❌ “Remind me about work”</li>
+<li>✅ “Remind me to send the project proposal to <a href="mailto:client@email.com">client@email.com</a> by 5 PM today”</li>
+</ul>
+<h3 id="integrate-with-your-existing-tools">Integrate with Your Existing Tools</h3>
+<p>Identify your most-used tools and connect them:</p>
+<ul>
+<li><strong>Calendar</strong>: Google Calendar or Outlook (essential for scheduling)</li>
+<li><strong>CRM</strong>: HubSpot, Salesforce, or Zoho (for lead management)</li>
+<li><strong>Task Management</strong>: Todoist, Asana, or Trello (if you don’t use Carly’s built-in)</li>
+<li><strong>File Storage</strong>: Google Drive or Dropbox (for document sharing)</li>
+<li><strong>Communication</strong>: Slack or Teams (for team notifications if applicable)</li>
+</ul>
+<h3 id="protect-your-privacy">Protect Your Privacy</h3>
+<p>While Carly needs access to be useful, maintain boundaries:</p>
+<ol>
+<li>Review Carly’s permissions quarterly and revoke unnecessary access</li>
+<li>Use separate email aliases for different types of communications if concerned</li>
+<li>Remember that Carly reads message content to understand context - avoid sharing highly sensitive information via channels Carly monitors</li>
+<li>Take advantage of Carly’s 30-day free trial to evaluate before committing</li>
+</ol>
+<h3 id="measure-your-time-savings">Measure Your Time Savings</h3>
+<p>Track how Carly impacts your productivity:</p>
+<ol>
+<li>Note how much time you typically spend on scheduling and admin tasks weekly</li>
+<li>After two weeks of using Carly, measure again</li>
+<li>Most freelancers report saving 5-8 hours per week on administrative work</li>
+<li>Use reclaimed time for billable work, skill development, or personal time</li>
+</ol>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<h3 id="carly-doesnt-understand-my-request">Carly Doesn’t Understand My Request</h3>
+<ul>
+<li>Try rephrasing with more specific details</li>
+<li>Break complex requests into smaller steps</li>
+<li>Check if you’re asking for something outside Carly’s current capabilities</li>
+<li>Use Carly’s help feature: Type “help” for examples of what Carly can do</li>
+</ul>
+<h3 id="calendar-conflicts-or-double-bookings">Calendar Conflicts or Double Bookings</h3>
+<ul>
+<li>Ensure all your calendars are properly connected and syncing</li>
+<li>Check that Carly has permission to write to your primary calendar</li>
+<li>Review your availability settings in Carly’s dashboard</li>
+<li>Consider setting up “focus time” blocks that Carly respects</li>
+</ul>
+<h3 id="integration-not-working">Integration Not Working</h3>
+<ul>
+<li>Verify your connected account still has valid permissions</li>
+<li>Reconnect the integration if credentials have changed</li>
+<li>Check Carly’s status page for any known service issues</li>
+<li>Ensure you’re using the correct syntax for triggering integrations</li>
+</ul>
+<h3 id="missing-sms-or-email-notifications">Missing SMS or Email Notifications</h3>
+<ul>
+<li>Check your spam/junk folders for Carly messages</li>
+<li>Verify your phone number and email are correctly configured</li>
+<li>Ensure you haven’t accidentally blocked Carly’s number or email domain</li>
+<li>Check if you’ve set quiet hours that might be suppressing notifications</li>
+</ul>
+<h2 id="next-steps-after-setup">Next Steps After Setup</h2>
+<p>Once you have Carly running smoothly:</p>
+<ol>
+<li><strong>Explore Advanced Integrations</strong>: Connect additional tools like QuickBooks for invoicing or LinkedIn for networking</li>
+<li><strong>Create Custom Workflows</strong>: Build AI agents for your most repetitive specific tasks</li>
+<li><strong>Share with Team Members</strong>: If you work with subcontractors or assistants, set up Carly to coordinate with them</li>
+<li><strong>Review Analytics</strong>: Use Carly’s insights to see how you’re spending time and where you can optimize further</li>
+<li><strong>Provide Feedback</strong>: Help improve Carly by reporting edge cases or suggesting new features</li>
+</ol>
+<h2 id="summary">Summary</h2>
+<p>Carly AI provides a powerful yet accessible way for freelancers and solopreneurs to automate scheduling, task management, and CRM workflows without learning complex new systems. By leveraging email and SMS - tools you already use daily - Carly eliminates app fatigue while providing sophisticated AI-powered assistance.</p>
+<p>With proper setup, Carly can save you 5-8 hours weekly on administrative tasks, allowing you to focus on billable work, skill development, or growing your business. The key is starting with the basics (calendar and task management) then gradually adding integrations and custom workflows as you become comfortable with the platform.</p>
+<p>Remember that Carly learns from your patterns over time, becoming more accurate and helpful the more you use it. Invest the initial setup time, and you’ll gain a tireless executive assistant that works 24/7 to keep your professional life organized and moving forward.</p>
+<hr>
+<p><em>Tip: Start with just calendar and email management for your first week, then gradually add task management and CRM integrations as you get comfortable with Carly’s workflow.</em></p>  <div class="disclosure" data-astro-cid-zm77yjld> <strong data-astro-cid-zm77yjld>A note on disclosure</strong>
+Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/" data-astro-cid-zm77yjld>Affiliate Disclosure</a>.
+</div> <section class="related-articles" data-astro-cid-2zkmu4eg> <h2 data-astro-cid-2zkmu4eg>Related Articles</h2> <div class="card-grid" data-astro-cid-2zkmu4eg> <a href="/reviews/carly-ai-review/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Carly AI Review 2026: Is It Worth $19/mo for Solopreneur Scheduling?</h3> <p data-astro-cid-2zkmu4eg>An in-depth look at Carly AI&#39;s scheduling assistant, testing its email/SMS automation, learning capabilities, and value for freelancers drowning in meeting coordination.</p> <span class="tag" data-astro-cid-2zkmu4eg>Review</span> </a><a href="/tutorials/lindy-email-automation/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Automate Your Email with Lindy AI in 15 Minutes</h3> <p data-astro-cid-2zkmu4eg>Set up Lindy AI to triage your inbox, draft replies, and schedule meetings automatically. A practical step-by-step tutorial.</p> <span class="tag" data-astro-cid-2zkmu4eg>Tutorial</span> </a><a href="/tutorials/google-workspace-studio-automation/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Automate Your Workflow with Google Workspace Studio: A Step-by-Step Tutorial</h3> <p data-astro-cid-2zkmu4eg>Learn how to build AI-powered automations in Gmail, Sheets, and Forms using Google&#39;s free no-code automation platform</p> <span class="tag" data-astro-cid-2zkmu4eg>Tutorial</span> </a> </div> </section> </div> </article>  </main> <footer class="site-footer"> <div class="container"> <ul class="footer-links"> <li><a href="/ai-tools/">AI Tools</a></li> <li><a href="/build-your-stack/">Build Stack</a></li> <li><a href="/compare/">Compare</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/tutorials/">Tutorials</a></li> <li><a href="/guides/">Guides</a></li> <li><a href="/about/">About</a></li> <li><a href="/affiliate-disclosure/">Disclosure</a></li> <li><a href="/rss.xml">RSS</a></li> </ul> <p>© 2026 SlashAI · An independent dispatch for solopreneurs.</p> </div> </footer> <script>
+    function effectiveTheme() {
+      var explicit = document.documentElement.getAttribute('data-theme');
+      if (explicit === 'light' || explicit === 'dark') return explicit;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function updateThemeIcon() {
+      var theme = effectiveTheme();
+      var sun = document.getElementById('theme-icon-sun');
+      var moon = document.getElementById('theme-icon-moon');
+      if (!sun || !moon) return;
+      sun.style.display = theme === 'dark' ? '' : 'none';
+      moon.style.display = theme === 'dark' ? 'none' : '';
+    }
+
+    function toggleTheme() {
+      var current = effectiveTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      updateThemeIcon();
+    }
+
+    function toggleMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var listener = function () {
+        var saved;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        if (saved !== 'light' && saved !== 'dark') updateThemeIcon();
+      };
+      if (mq.addEventListener) mq.addEventListener('change', listener);
+      else if (mq.addListener) mq.addListener(listener);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+    });
+  </script> </body> </html>
