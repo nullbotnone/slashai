@@ -1,0 +1,42 @@
+{
+  "timestamp": "2026-04-27T23:08:49.568184+00:00",
+  "current_time_ms": 1777331329568,
+  "total_jobs": 6,
+  "jobs": [
+    {
+      "id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
+      "name": "SlashAI Weekly Article",
+      "enabled": true,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_ms": 3842637,
+      "last_run_at_ms": 1777302600082,
+      "next_run_at_ms": 1777906800000,
+      "time_since_last_run_ms": 28729486,
+      "expected_interval_ms": 604199918,
+      "issues": [
+        "Extremely long run time (3842637ms > 3600000ms)"
+      ]
+    }
+  ],
+  "summary": {
+    "enabled_count": 6,
+    "disabled_count": 0,
+    "ok_status_count": 5,
+    "error_status_count": 1,
+    "jobs_with_consecutive_errors_gt_2": 0,
+    "jobs_not_run_in_2x_interval": 0,
+    "jobs_with_long_runtime_gt_1h": 1,
+    "overall_health": "fair"
+  },
+  "issues": [
+    {
+      "job_id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
+      "job_name": "SlashAI Weekly Article",
+      "issue": "Extremely long run time (3842637ms > 3600000ms)"
+    }
+  ],
+  "recommended_actions": [
+    "Review and optimize job 'SlashAI Weekly Article' (ID: c80f4c43-11b2-4ad7-a3c4-f71ff534ca85) to reduce runtime"
+  ]
+}
