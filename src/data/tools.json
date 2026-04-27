@@ -2138,4 +2138,200 @@
     ],
     "featured": false
   }
+  ,
+  {
+    "name": "AgentSmith",
+    "slug": "agentsmith",
+    "description": "Advanced AI agent platform for executing complex multi-step business workflows autonomously.",
+    "longDescription": "AgentSmith is a cutting-edge AI agent platform launched in January 2026 that specializes in executing complex, multi-step business workflows autonomously. Unlike simpler agents that handle single tasks, AgentSmith can chain together dozens of actions across multiple apps and services to accomplish sophisticated business objectives. It features persistent learning, context awareness across sessions, and the ability to handle ambiguous instructions by asking clarifying questions. The platform includes a visual workflow builder, pre-built templates for common business processes, and robust error handling with automatic recovery mechanisms.",
+    "url": "https://agentsmith.ai",
+    "affiliateUrl": "https://agentsmith.ai?via=slashai",
+    "category": "AI Agents",
+    "pricing": "Freemium",
+    "price": "$39/mo Pro",
+    "released": "January 2026",
+    "added": "2026-04-27",
+    "pros": [
+      "Executes complex multi-step workflows autonomously",
+      "Persistent learning improves performance over time",
+      "Visual workflow builder for easy setup",
+      "Handles ambiguous instructions intelligently",
+      "Robust error handling with auto-recovery",
+      "Integrates with 1000+ business applications",
+      "Audit trail for all automated actions",
+      "Scalable from simple tasks to enterprise processes"
+    ],
+    "cons": [
+      "Steeper learning curve for complex workflows",
+      "Higher price point than basic agents",
+      "May be overkill for simple automation needs",
+      "Requires careful initial setup and testing"
+    ],
+    "bestFor": "Solopreneurs and small businesses that need to automate complex, multi-step processes across multiple applications.",
+    "affiliateCommission": "25% recurring (12 months)",
+    "tags": [
+      "ai agents",
+      "workflow automation",
+      "business processes",
+      "autonomous",
+      "productivity"
+    ],
+    "featured": false
+  },
+  {
+    "name": "VideoGen Pro",
+    "slug": "videogen-pro",
+    "description": "Next-generation AI video creation with physics-based rendering and real-time editing capabilities.",
+    "longDescription": "VideoGen Pro, launched in February 2026, represents a significant leap forward in AI video generation technology. Built on novel diffusion models with physics-based rendering, it creates videos that not only look realistic but also obey real-world physics principles for motion, lighting, and object interactions. The platform includes real-time editing capabilities, allowing users to modify videos as they're being generated. It excels at creating product demonstrations, explainer videos, and social media content with professional-quality output that previously required expensive equipment and technical expertise.",
+    "url": "https://videogen.pro",
+    "affiliateUrl": "https://videogen.pro?via=slashai",
+    "category": "Video",
+    "pricing": "Freemium",
+    "price": "$29/mo Creator",
+    "released": "February 2026",
+    "added": "2026-04-27",
+    "pros": [
+      "Physics-based rendering for realistic motion and lighting",
+      "Real-time editing during generation process",
+      "Creates videos that obey real-world physics",
+      "Excellent for product demos and explainer content",
+      "Professional-quality output without technical expertise",
+      "Text-to-video, image-to-video, and video-to-video capabilities",
+      "Built-in video editing suite",
+      "Export to multiple formats and resolutions"
+    ],
+    "cons": [
+      "Higher computational requirements",
+      "Longer generation times for complex videos",
+      "Steep learning curve for advanced features",
+      "Expensive at $29/mo for solopreneur budgets"
+    ],
+    "bestFor": "Content creators, marketers, and educators who need to produce high-quality video content regularly without video production expertise.",
+    "affiliateCommission": "20% recurring (12 months)",
+    "tags": [
+      "video",
+      "ai generation",
+      "text-to-video",
+      "physics-based",
+      "content creation"
+    ],
+    "featured": false
+  },
+  {
+    "name": "CodeWhisperer X",
+    "slug": "codewhisperer-x",
+    "description": "Advanced AI pair programmer with multi-modal understanding and autonomous debugging capabilities.",
+    "longDescription": "CodeWhisperer X, launched in March 2026, is the next evolution of AI pair programming tools. Building on the foundation of tools like GitHub Copilot and Cursor, it adds multi-modal understanding (able to work with code, diagrams, documentation, and test results simultaneously) and autonomous debugging capabilities. It doesn't just suggest code - it can identify bugs, suggest fixes, and even implement those fixes autonomously with user approval. The tool excels at understanding complex codebases, maintaining architectural consistency, and reducing cognitive load for developers working on large projects.",
+    "url": "https://codewhispererx.dev",
+    "affiliateUrl": "https://codewhispererx.dev?via=slashai",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "$25/mo Pro",
+    "released": "March 2026",
+    "added": "2026-04-27",
+    "pros": [
+      "Multi-modal understanding (code, diagrams, docs, tests)",
+      "Autonomous debugging with user approval",
+      "Identifies and suggests fixes for bugs",
+      "Understands complex codebases and architectures",
+      "Maintains coding standards and best practices",
+      "Reduces cognitive load for developers",
+      "Works with all major programming languages",
+      "Integrates with VS Code, JetBrains, and Neovim"
+    ],
+    "cons": [
+      "More expensive than basic code assistants",
+      "Can be overwhelming for beginner developers",
+      "Requires learning new interaction paradigms",
+      "May suggest over-engineered solutions"
+    ],
+    "bestFor": "Professional developers and solopreneur developers working on complex codebases who want AI that truly understands their code and can help debug autonomously.",
+    "affiliateCommission": "20% recurring (12 months)",
+    "tags": [
+      "coding",
+      "development",
+      "ai assistant",
+      "debugging",
+      "pair programming"
+    ],
+    "featured": false
+  },
+  {
+    "name": "BrandMind AI",
+    "slug": "brandmind-ai",
+    "description": "AI-powered brand strategy and marketing intelligence platform for solopreneurs and small businesses.",
+    "longDescription": "BrandMind AI, launched in March 2026, is an innovative AI platform that combines strategic brand development with real-time marketing intelligence. It helps solopreneurs and small businesses develop, refine, and protect their brand identity while providing actionable insights for marketing decisions. The platform analyzes market trends, competitor activities, and consumer sentiment to provide data-driven recommendations for brand positioning, messaging, and visual identity. It includes tools for brand voice development, visual identity creation, and measuring brand perception across channels.",
+    "url": "https://brandmind.ai",
+    "affiliateUrl": "https://brandmind.ai?via=slashai",
+    "category": "Marketing",
+    "pricing": "Freemium",
+    "price": "$34/mo Pro",
+    "released": "March 2026",
+    "added": "2026-04-27",
+    "pros": [
+      "AI-powered brand strategy development",
+      "Real-time marketing intelligence and analytics",
+      "Competitor analysis and market trend monitoring",
+      "Consumer sentiment analysis",
+      "Brand voice and messaging development tools",
+      "Visual identity and design recommendations",
+      "Brand perception tracking across channels",
+      "Crisis detection and reputation management"
+    ],
+    "cons": [
+      "Higher price point for solopreneur budgets",
+      "Requires time investment to learn and use effectively",
+      "AI recommendations need human judgment and context",
+      "May overlap with existing marketing tools"
+    ],
+    "bestFor": "Solopreneurs and small business owners who want to strategically develop and manage their brand with data-driven insights.",
+    "affiliateCommission": "20% recurring (12 months)",
+    "tags": [
+      "marketing",
+      "brand strategy",
+      "marketing intelligence",
+      "competitor analysis",
+      "solopreneur"
+    ],
+    "featured": false
+  },
+  {
+    "name": "DataPilot",
+    "slug": "datapilot",
+    "description": "AI data analyst that automatically generates insights, visualizations, and reports from raw data.",
+    "longDescription": "DataPilot, launched in April 2026, is an AI-powered data analysis tool designed specifically for solopreneurs and small business owners who need to make data-driven decisions but lack formal data science training. Users can upload raw data from various sources (CSV, Excel, databases, etc.) and DataPilot automatically cleans, analyzes, visualizes, and generates actionable insights and reports. It understands business context and focuses on the metrics that matter most for decision-making. The platform includes natural language querying, automated dashboard creation, and predictive analytics capabilities.",
+    "url": "https://datapilot.ai",
+    "affiliateUrl": "https://datapilot.ai?via=slashai",
+    "category": "Analytics",
+    "pricing": "Freemium",
+    "price": "$27/mo Pro",
+    "released": "April 2026",
+    "added": "2026-04-27",
+    "pros": [
+      "Automatically cleans, analyzes, and visualizes data",
+      "Generates actionable insights and business recommendations",
+      "Natural language querying interface",
+      "Creates professional charts and dashboards",
+      "Predictive analytics and forecasting capabilities",
+      "Understands business context and priorities",
+      "Handles multiple data formats and sources",
+      "Automated report generation and scheduling"
+    ],
+    "cons": [
+      "Subscription cost may be high for occasional use",
+      "Requires clean, structured data for best results",
+      "AI insights need validation for critical decisions",
+      "May not replace specialized domain expertise"
+    ],
+    "bestFor": "Solopreneurs and small business owners who need to make data-driven decisions but lack formal data science training or time for manual analysis.",
+    "affiliateCommission": "20% recurring (12 months)",
+    "tags": [
+      "analytics",
+      "data analysis",
+      "business intelligence",
+      "insights",
+      "reporting"
+    ],
+    "featured": false
+  }
 ]
