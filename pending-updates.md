@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 # AI Tool Updates — April 26, 2026
 
 ## Summary
@@ -102,9 +103,87 @@ Daily check reveals major updates across Writesonic, HubSpot, Semrush, and Surfe
 ## Removals
 
 - **Alfred_**: Removed from AI Agents directory as requested
+=======
+>>>>>>> Stashed changes
 # AI Tool Updates — April 25, 2026
 
 ## Summary
 
 Daily check confirms that the tools.json file is up to date with the latest April 2026 updates for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, and Murf AI. No additional changes were required.
 
+## Key Findings from Today's Check
+
+### Jasper AI
+- Advanced Brand Memory and Alignment (April 2026) - Already documented
+- Enhanced SEO Optimization with Optimization Agent (April 2026) - Already documented
+- Autonomous AI Agents and Workflows (including Product Update Email AI Agent) (April 2026) - Already documented
+- Content Automation Platform (April 2026) - Already documented
+- Upgraded Image Generation with Nano Banana (April 2026) - Already documented
+- Enhanced Prompt Skill (April 2026) - Already documented
+- Improved Integrations and Knowledge Layer (April 2026) - Already documented
+- Continued focus on Enterprise Marketing (April 2026) - Already documented
+
+### Writesonic
+- Generative Engine Optimization (GEO) Suite expansion with Brand Explorer, GEO: Content Score, AI Shopping Tracker, and Portfolios (April 2026) - Already documented
+- Enhanced AI Article Writer (6.0/7.0) with improved brand voice consistency and SEO (April 2026) - Already documented
+- Chatsonic enhancements with real-time web search, file uploads, and multiple AI models (April 2026) - Already documented
+- Comprehensive SEO suite (April 2026) - Already documented
+- Botsonic no-code AI chatbot builder (April 2026) - Already documented
+- Automatic image generation (April 2026) - Already documented
+- Refined pricing tiers (April 2026) - Already documented
+- Multimodal-to-text workflows (processing Zoom whiteboard recordings, voice-memo transcripts, PDFs) (April 2026) - Already documented
+- Deep research capabilities for content drafting (April 2026) - Already documented
+
+### HubSpot
+- HubSpot AEO (Answer Engine Optimization) - tracks brand visibility in AI-generated answers (April 2026) - Already documented
+- Smart Deal Progression - post-call agent for follow-up communications and CRM updates (April 2026) - Already documented
+- Expanded AI Agent Capabilities: Prospecting Agent (enhanced buying signals, buying committee mapping, outreach with Apollo/ZoomInfo) (April 2026) - Already documented
+- Expanded AI Agent Capabilities: Customer Agent (24/7 email handling, tone/style configuration, multi-brand support) (April 2026) - Already documented
+- Upgraded Breeze Assistant (trained on Loop Marketing data for role-aware guidance) (April 2026) - Already documented
+- Developer Platform v2026.03 (date-based versioned APIs, expanded serverless functions, Webhooks Journal API, HubSpot MCP Server) (April 2026) - Already documented
+- Support Macros (snippets + multi-step workflow actions) (April 2026) - Already documented
+- Customer Success Rooms (shared onboarding spaces) (April 2026) - Already documented
+
+### Semrush
+- Brand Visibility Framework and Operating Model unveiled at Adobe Summit (April 2026) - Already documented
+- Agentic Search Optimization (ASO) to ensure brands are selected, interpreted, and surfaced by autonomous AI agents (April 2026) - Already documented
+- Semrush One combines traditional SEO with AI visibility tracking, site audits now include checks for AI crawlability and AI readiness (April 2026) - Already documented
+- Enterprise AI Optimization: new forecasting features for traffic/reach/mentions growth, persona-based prompt generation at scale (April 2026) - Already documented
+- Enterprise Site Intelligence: Crawler Profiles for AI Agents and Search Bots to analyze website interactions from AI/search engine perspectives (April 2026) - Already documented
+- Regional Expansion: Extended keyword database for Israel through premium partner Adactive (April 2026) - Already documented
+- Brand Identity Rollout: continued implementation of modernized visual identity and streamlined UI (April 2026) - Already documented
+- Spotlight 2026 Conference: ongoing emphasis on strategies for digital brand visibility amidst SEO and AI Search convergence (April 2026) - Already documented
+
+### Surfer SEO
+- Optimize from AI Tracker: direct jump to Content Editor for underperforming AI-cited pages (April 2026) - Already documented
+- Workspace Permissions: granular control over workspace access for multiple domains (April 2026) - Already documented
+- New Content Editor Wizard: AI-powered wizard with full brand/AI/SEO context pre-generation (April 2026) - Already documented
+- Refreshed Surfer Navigation: personalized dashboard, breadcrumb navigation, sectioned navigation (Content, AI Visibility, More Tools) (April 2026) - Already documented
+- Surfer x Looker Studio Integration for AI Visibility: blend AI visibility scores with GA4/G Ads metrics (April 2026) - Already documented
+- AI Search Guidelines: real-time suggestions for citation-optimized writing (April 2026) - Already documented
+- Gemini in AI Tracker: monitor brand visibility in Google's AI-generated answers (April 2026) - Already documented
+- Mention Gap + Sentiment Analysis: identifies where brands miss from AI answers and understands AI perception of brand (April 2026) - Already documented
+- Sites Feature: all-in-one SEO strategy hub with real-time Google Search Console insights for auditing underperforming pages and exploring Topical Map-driven ideas (April 2026) - Already documented
+
+### Murf AI
+- Murf Speech Gen 2: most advanced speech model (44.1 kHz, >98.8% word-level accuracy) (April 2026) - Already documented
+- Murf Dub (Limited Launch): streamlines multilingual content creation while preserving original intent (April 2026) - Already documented
+- Expanded Voice Library and Customization: over 200+ voices in 20+ languages, granular control over pronunciation, emphasis, pauses, pitch, speed, volume (April 2026) - Already documented
+- AI Voice Changer: converts recorded voiceovers into professional studio-quality AI voice (April 2026) - Already documented
+- API Updates: deprecated `multiNativeLocale` field, added `model` parameter, Falcon streaming model (sub-130ms latency) (April 2026) - Already documented
+- AI Dubbing & Translation: automatic video dubbing with voice characteristics retention and lip sync (April 2026) - Already documented
+- Enhanced Collaboration and Integrations: team compatibility, integrations with Canva, Google Slides, WordPress, Notion, Webflow, Articulate 360 (April 2026) - Already documented
+- AI Voice Cloning 2.0: high-fidelity clones from as little as 10 seconds of reference audio (April 2026) - Already documented
+- "Melody Mode": experimental feature for AI singing (April 2026) - Already documented
+
+## Action Items Completed
+- [x] Verified tools.json contains latest updates for all six tools
+- [x] Built site with npm run build
+- [x] Prepared git commit for dist/ changes
+- [x] Created and published weekly article: whats-new-ai-april-week-5-2026.md
+- [x] No new review articles needed as existing reviews cover the strategic features
+
+## Sources
+- Official company blogs and documentation for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI
+- Web search for April-May 2026 updates
+- Existing tools.json file verification
