@@ -8,8 +8,6 @@ timeToComplete: "25 minutes"
 tags: ["automation", "google", "gmail", "sheets", "forms", "no-code", "productivity"]
 ---
 
-# Automate Your Workflow with Google Workspace Studio: A Step-by-Step Tutorial
-
 Google Workspace Studio is Google's free no-code automation platform that lets you build AI-powered workflows inside Gmail, Google Sheets, Forms, Docs, and Drive. If you're a solopreneur or freelancer already using Google Workspace, this tool can save you hours every week by automating repetitive tasks without writing a single line of code.
 
 In this tutorial, you'll learn how to create your first automation that triages client inquiry emails and logs them to a Google Sheet for follow-up.

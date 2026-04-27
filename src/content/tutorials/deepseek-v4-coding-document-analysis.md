@@ -8,8 +8,6 @@ timeToComplete: "15 minutes"
 tags: ["AI", "coding", "document analysis", "freelance", "cost-saving"]
 ---
 
-# How to Use DeepSeek V4 for Coding and Document Analysis: A Solopreneur's Guide
-
 ## What you'll learn
 - How to access DeepSeek V4 via API or self-hosting
 - Using its 1M token context window for large codebase analysis
@@ -221,4 +219,3 @@ The key is focusing on solopreneur-friendly use cases where DeepSeek V4's streng
 - [DeepSeek GitHub](https://github.com/deepseek-ai)
 - [vLLM for efficient serving](https://github.com/vllm-project/vllm)
 - [Hugging Face DeepSeek models](https://huggingface.co/deepseek-ai)
-

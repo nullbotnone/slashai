@@ -1,6 +1,9 @@
-const fs = require('fs');
-const path = require('path');
-const { JSDOM } = require('jsdom');
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { JSDOM } from 'jsdom';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 // Read all HTML files in the dist directory
 const distDir = path.join(__dirname, 'dist');
@@ -68,7 +71,7 @@ internalLinks.forEach(link => {
   let filePath = link.substring(1);
   if (filePath === '') {
     filePath = 'index.html';
-  } else if (!filePath.endsWith('.html')) {
+  } else if (!path.extname(filePath)) {
     // Try as directory index
     filePath = path.join(filePath, 'index.html');
   }

@@ -8,8 +8,6 @@ timeToComplete: "15 minutes"
 tags: ["ai agents", "scheduling", "task management", "productivity"]
 ---
 
-# Automate Your Schedule and Tasks with Carly AI
-
 Tired of the back-and-forth of scheduling meetings, managing to-do lists, and keeping your CRM up to date? Carly AI acts as your AI executive assistant accessible directly through email and SMS, eliminating the need for yet another app to manage. This tutorial will show you how to set up and use Carly AI to automate your administrative workflows as a solopreneur or freelancer.
 
 ## What You'll Learn

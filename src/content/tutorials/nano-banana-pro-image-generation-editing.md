@@ -8,8 +8,6 @@ timeToComplete: "20 minutes"
 tags: ["nano-banana-pro", "image-generation", "ai-art", "text-to-image", "creative", "google"]
 ---
 
-# Create Professional Images with Nano Banana Pro: Text-to-Image Generation and Editing
-
 Need stunning visuals with accurate text, professional quality, and precise creative control? Nano Banana Pro is Google DeepMind's state-of-the-art image generation and editing model built on Gemini 3 Pro. It excels at creating legible text in multiple languages, offers studio-quality creative controls, and generates high-fidelity visuals up to 4K resolution. This tutorial shows you how to use Nano Banana Pro for text-to-image generation and image editing through conversational prompts.
 
 ## What You'll Learn

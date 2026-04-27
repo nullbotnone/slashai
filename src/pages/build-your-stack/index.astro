@@ -18,7 +18,7 @@ const budgets = [
   { id: 'budget', label: 'Under $25/mo', max: 25 },
   { id: 'mid', label: 'Under $50/mo', max: 50 },
   { id: 'pro', label: 'Under $100/mo', max: 100 },
-  { id: 'unlimited', label: 'No limit', max: Infinity },
+  { id: 'unlimited', label: 'No limit', max: null },
 ];
 
 const toolsJson = JSON.stringify(tools);
@@ -313,7 +313,7 @@ const budgetsJson = JSON.stringify(budgets);
 
   function generateStack() {
     const roleData = roles[selectedRole];
-    const maxBudget = selectedBudget.max;
+    const maxBudget = selectedBudget.max === null ? Number.POSITIVE_INFINITY : selectedBudget.max;
 
     let candidates = allTools.filter(t => roleData.categories.includes(t.category));
     candidates.sort((a, b) => {

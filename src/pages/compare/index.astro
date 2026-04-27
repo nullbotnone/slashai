@@ -96,7 +96,7 @@ const toolsJson = JSON.stringify(tools);
         var ts = picked.map(function(s) { return tools.find(function(t) { return t.slug === s; }); });
 
         cardsEl.innerHTML = ts.map(function(t, i) {
-          return '<a href="/tools/' + t.slug + '/" class="card" style="text-decoration: none; color: inherit; animation: cardFadeIn 0.45s ease ' + (i * 0.08) + 's forwards;">' +
+          return '<a href="/tools/' + t.slug + '/" class="card" style="text-decoration: none; color: inherit; animation: fadeUp 0.45s ease ' + (i * 0.08) + 's forwards;">' +
             '<h3>' + t.name + '</h3>' +
             '<p>' + t.description + '</p>' +
             '<span class="tag">' + t.category + '</span>' +
