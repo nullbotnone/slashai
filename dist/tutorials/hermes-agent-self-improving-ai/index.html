@@ -1,0 +1,252 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>How to Use Hermes Agent: Self-Improving AI Agent Framework | SlashAI</title><meta name="description" content="Learn how to set up and use Hermes Agent, the open-source AI agent that learns and improves over time with persistent memory and automated skill creation."><link rel="canonical" href="https://slashai.app/tutorials/hermes-agent-self-improving-ai/"><!-- Open Graph --><meta property="og:title" content="How to Use Hermes Agent: Self-Improving AI Agent Framework"><meta property="og:description" content="Learn how to set up and use Hermes Agent, the open-source AI agent that learns and improves over time with persistent memory and automated skill creation."><meta property="og:type" content="website"><meta property="og:url" content="https://slashai.app/tutorials/hermes-agent-self-improving-ai/"><!-- Theme color (matches paper surfaces) --><meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#16120e" media="(prefers-color-scheme: dark)"><!-- Fonts: Fraunces variable (opsz, SOFT, ital, wght) + Inter for UI --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><!-- Google Search Console --><meta name="google-site-verification" content="o3cNryCX62Dn1YyVgeVKvf9PjiFUDFKBQoK75-lfg4U"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="SlashAI RSS" href="/rss.xml"><!-- Theme initialization (no FOUC). Defaults to system preference; user toggle wins. --><script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script><link rel="stylesheet" href="/_astro/BaseLayout.C9RHw3wz.css">
+<style>.tutorial-meta-box[data-astro-cid-amgwr4wo]{display:flex;gap:1.5rem;background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem 1.5rem;margin-bottom:2rem;flex-wrap:wrap}.tutorial-meta-item[data-astro-cid-amgwr4wo]{display:flex;flex-direction:column;gap:.2rem}.meta-label[data-astro-cid-amgwr4wo]{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary)}.meta-value[data-astro-cid-amgwr4wo]{font-size:.95rem;font-weight:700;color:var(--color-accent)}.tool-links-box[data-astro-cid-amgwr4wo]{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:.85rem 1.25rem;margin-bottom:2rem;font-size:.9rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.tool-links-box[data-astro-cid-amgwr4wo] a[data-astro-cid-amgwr4wo]{font-weight:600}.link-sep[data-astro-cid-amgwr4wo]{color:var(--color-text-secondary)}
+.related-articles[data-astro-cid-2zkmu4eg]{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--color-border)}.related-articles[data-astro-cid-2zkmu4eg] h2[data-astro-cid-2zkmu4eg]{font-size:1.3rem;font-weight:700;margin-bottom:1rem}.article-kicker[data-astro-cid-zm77yjld]{margin-bottom:1.25rem}.article-deck[data-astro-cid-zm77yjld]{font-family:var(--font-serif);font-size:clamp(1.125rem,1.6vw,1.35rem);font-weight:400;line-height:1.45;color:var(--color-ink-muted);max-width:56ch;margin:.5rem 0 1.5rem;font-variation-settings:"opsz" 24,"SOFT" 40;letter-spacing:-.005em}.article-meta-by[data-astro-cid-zm77yjld]{color:var(--color-ink-muted)}.article-meta-byname[data-astro-cid-zm77yjld]{color:var(--color-ink);font-weight:600}
+</style></head> <body> <header class="site-header"> <div class="container-wide header-inner"> <a href="/" class="site-logo" aria-label="SlashAI home"> <span class="logo-mark">/</span><span>SlashAI</span> </a> <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" id="menu-btn"> <span></span> <span></span> <span></span> </button> <nav id="main-nav" aria-label="Primary"> <ul class="nav-links"> <li><a href="/ai-tools/" onclick="closeMenu()">Tools</a></li> <li><a href="/build-your-stack/" onclick="closeMenu()">Stack</a></li> <li><a href="/compare/" onclick="closeMenu()">Compare</a></li> <li><a href="/blog/" onclick="closeMenu()">Blog</a></li> <li><a href="/about/" onclick="closeMenu()">About</a></li> <li> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme" title="Toggle theme"> <svg id="theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg> <svg id="theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </li> </ul> </nav> </div> </header> <main>  <article data-astro-cid-zm77yjld> <header class="article-header" data-astro-cid-zm77yjld> <div class="container" data-astro-cid-zm77yjld> <span class="kicker article-kicker" data-astro-cid-zm77yjld>Tutorial</span> <h1 class="article-title" data-astro-cid-zm77yjld>How to Use Hermes Agent: Self-Improving AI Agent Framework</h1> <p class="article-deck" data-astro-cid-zm77yjld>Learn how to set up and use Hermes Agent, the open-source AI agent that learns and improves over time with persistent memory and automated skill creation.</p> <div class="article-meta" data-astro-cid-zm77yjld> <span class="article-meta-by" data-astro-cid-zm77yjld>By <span class="article-meta-byname" data-astro-cid-zm77yjld>SlashAI Editorial</span></span> <span aria-hidden="true" data-astro-cid-zm77yjld>·</span> <time datetime="2026-04-25T00:00:00.000Z" data-astro-cid-zm77yjld>April 24, 2026</time>  <span aria-hidden="true" data-astro-cid-zm77yjld>·</span><span data-astro-cid-zm77yjld>hermes, ai agent, self-improving, open-source, automation, persistent memory</span> </div> </div> </header> <div class="article-content" data-astro-cid-zm77yjld>  <div class="tutorial-meta-box" data-astro-cid-amgwr4wo> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Tool</span> <span class="meta-value" data-astro-cid-amgwr4wo>Hermes Agent</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Difficulty</span> <span class="meta-value" data-astro-cid-amgwr4wo>Intermediate</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Time</span> <span class="meta-value" data-astro-cid-amgwr4wo>⏱️ 45 minutes</span> </div> </div> <div class="tool-links-box" data-astro-cid-amgwr4wo> <strong data-astro-cid-amgwr4wo>📚 Hermes Agent Links:</strong> <a href="https://openrouter.ai/apps/hermes-agent" target="_blank" rel="noopener" data-astro-cid-amgwr4wo>Website</a> <span class="link-sep" data-astro-cid-amgwr4wo>·</span> <a href="/tools/hermes-agent/" data-astro-cid-amgwr4wo>Our Review</a> <span class="link-sep" data-astro-cid-amgwr4wo>·</span><a href="https://hermes-agent.org//docs" target="_blank" rel="noopener" data-astro-cid-amgwr4wo>Docs</a> </div><p>Hermes Agent is an open-source, self-improving artificial intelligence (AI) agent framework developed by Nous Research that continuously learns and improves through a “closed learning loop.” Unlike traditional AI agents that reset after each session, Hermes Agent learns from successfully completed tasks, extracts reusable patterns as skills, and maintains persistent memory across interactions.</p>
+<p>This tutorial walks you through setting up Hermes Agent for the first time and demonstrates its self-improving capabilities.</p>
+<hr>
+<h2 id="what-youll-need">What You’ll Need</h2>
+<ul>
+<li>A computer (Linux, macOS, or WSL2 on Windows)</li>
+<li>Docker installed (for easiest setup) OR</li>
+<li>Node.js 18+ and Python 3.8+ for manual installation</li>
+<li>An API key from one of the supported AI model providers (Anthropic, OpenAI, DeepSeek, or OpenRouter)</li>
+<li>45 minutes</li>
+</ul>
+<hr>
+<h2 id="why-choose-hermes-agent">Why Choose Hermes Agent?</h2>
+<p>Hermes Agent stands out from other AI agent frameworks because of its unique learning capabilities:</p>
+<p>🔄 <strong>Self-Improving</strong>: Learns from completed tasks and builds reusable skills
+🧠 <strong>Persistent Memory</strong>: Remembers user preferences and context across sessions<br>
+🔓 <strong>Open Source</strong>: MIT Licensed, self-hostable for maximum privacy
+🛠️ <strong>Extensive Tooling</strong>: 40+ built-in tools and broad integrations
+🔗 <strong>Model Agnostic</strong>: Works with multiple AI providers</p>
+<hr>
+<h2 id="step-1-install-hermes-agent">Step 1: Install Hermes Agent</h2>
+<h3 id="option-a-docker-installation-recommended">Option A: Docker Installation (Recommended)</h3>
+<p>The easiest way to get started with Hermes Agent is using Docker:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Pull the Hermes Agent Docker image</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> hermesagent/hermes-agent:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Create a directory for your Hermes Agent data</span></span>
+<span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> ~/.hermes-agent</span></span>
+<span class="line"><span style="color:#B392F0">chmod</span><span style="color:#79B8FF"> 700</span><span style="color:#9ECBFF"> ~/.hermes-agent</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Run Hermes Agent with your API key</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -d</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --name</span><span style="color:#9ECBFF"> hermes-agent</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -v</span><span style="color:#9ECBFF"> ~/.hermes-agent:/app/data</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> API_KEY="your_api_key_here"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> PROVIDER="anthropic"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -p</span><span style="color:#9ECBFF"> 8080:8080</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  hermesagent/hermes-agent:latest</span></span></code></pre>
+<h3 id="option-b-manual-installation">Option B: Manual Installation</h3>
+<p>For more control over your installation:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Clone the Hermes Agent repository</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> clone</span><span style="color:#9ECBFF"> https://github.com/nousresearch/hermes-agent.git</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> hermes-agent</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install dependencies</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -r</span><span style="color:#9ECBFF"> requirements.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Copy the example config and fill in your details</span></span>
+<span class="line"><span style="color:#B392F0">cp</span><span style="color:#9ECBFF"> .env.example</span><span style="color:#9ECBFF"> .env</span></span>
+<span class="line"><span style="color:#6A737D"># Edit .env to add your API key and provider preferences</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Start the agent</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> start</span></span></code></pre>
+<hr>
+<h2 id="step-2-configure-your-ai-provider">Step 2: Configure Your AI Provider</h2>
+<p>Hermes Agent supports multiple AI model providers. Get an API key from one of these:</p>
+<ul>
+<li><strong>Anthropic</strong> (Claude models): <a href="https://console.anthropic.com/">https://console.anthropic.com/</a></li>
+<li><strong>OpenAI</strong> (GPT models): <a href="https://platform.openai.com/api-keys">https://platform.openai.com/api-keys</a></li>
+<li><strong>DeepSeek</strong>: <a href="https://platform.deepseek.com/">https://platform.deepseek.com/</a></li>
+<li><strong>OpenRouter</strong> (access to many models): <a href="https://openrouter.ai/keys">https://openrouter.ai/keys</a></li>
+</ul>
+<p>Set your preferred provider in the <code>.env</code> file or Docker environment variables:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>PROVIDER=anthropic</span></span>
+<span class="line"><span>API_KEY=your_actual_api_key_here</span></span></code></pre>
+<hr>
+<h2 id="step-3-first-interaction-and-skill-creation">Step 3: First Interaction and Skill Creation</h2>
+<p>Once Hermes Agent is running, you can interact with it via its API or web interface (if enabled). Let’s walk through a simple task to see how it creates skills:</p>
+<h3 id="example-task-research-and-summarize">Example Task: Research and Summarize</h3>
+<p>Ask Hermes Agent to:</p>
+<blockquote>
+<p>“Research the latest developments in renewable energy storage technologies and provide a summary suitable for a blog post.”</p>
+</blockquote>
+<p>Hermes Agent will:</p>
+<ol>
+<li>Use its web search tool to gather current information</li>
+<li>Analyze and synthesize the findings</li>
+<li>Generate a well-structured summary</li>
+<li><strong>Automatically create a skill</strong> documenting the research process</li>
+<li>Store the skill for future reuse</li>
+</ol>
+<h3 id="viewing-created-skills">Viewing Created Skills</h3>
+<p>Skills are automatically stored in the <code>~/.hermes-agent/skills/</code> directory (or equivalent based on your setup). Each skill is a markdown file following the agentskills.io standard:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>~/.hermes-agent/skills/</span></span>
+<span class="line"><span>├── renewable-energy-research-2026-04-25.md</span></span>
+<span class="line"><span>├── customer-support-workflow-2026-04-20.md</span></span>
+<span class="line"><span>└── data-analysis-template-2026-04-15.md</span></span></code></pre>
+<hr>
+<h2 id="step-4-leveraging-learned-skills">Step 4: Leveraging Learned Skills</h2>
+<p>The true power of Hermes Agent emerges when you reuse previously learned skills. For example, if you ask it to perform a similar research task later:</p>
+<blockquote>
+<p>“Research breakthroughs in quantum computing applications for drug discovery”</p>
+</blockquote>
+<p>Hermes Agent will:</p>
+<ol>
+<li>Check its skill library for relevant research methodologies</li>
+<li>Apply the “renewable-energy-research” skill as a template</li>
+<li>Adapt the approach to the new domain (quantum computing)</li>
+<li>Potentially create an improved version of the research skill</li>
+<li>Deliver results faster and with higher quality than the first attempt</li>
+</ol>
+<hr>
+<h2 id="step-5-advanced-features-to-explore">Step 5: Advanced Features to Explore</h2>
+<h3 id="tool-chaining">Tool Chaining</h3>
+<p>Hermes Agent excels at combining multiple tools for complex workflows:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>Web Search → File Analysis → Image Generation → Email Summary</span></span></code></pre>
+<h3 id="multi-platform-integration">Multi-Platform Integration</h3>
+<p>Connect Hermes Agent to your communication tools:</p>
+<ul>
+<li>Get Slack notifications when tasks complete</li>
+<li>Auto-send Discord updates on progress</li>
+<li>Integrate with Telegram for mobile access</li>
+<li>Sync with WhatsApp for quick queries</li>
+</ul>
+<h3 id="custom-tool-development">Custom Tool Development</h3>
+<p>While Hermes Agent comes with 40+ built-in tools, you can create custom tools for specialized needs:</p>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Example custom tool structure</span></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  name: </span><span style="color:#9ECBFF">"custom-data-analyzer"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  description: </span><span style="color:#9ECBFF">"Analyzes CSV files and generates insights"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  parameters: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    type: </span><span style="color:#9ECBFF">"object"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    properties: {</span></span>
+<span class="line"><span style="color:#E1E4E8">      filePath: { type: </span><span style="color:#9ECBFF">"string"</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">      analysisType: { type: </span><span style="color:#9ECBFF">"string"</span><span style="color:#E1E4E8">, enum: [</span><span style="color:#9ECBFF">"statistical"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"trend"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"correlation"</span><span style="color:#E1E4E8">] }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  execute</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">args</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">    // Your custom logic here</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
+<hr>
+<h2 id="best-practices-for-getting-the-most-out-of-hermes-agent">Best Practices for Getting the Most Out of Hermes Agent</h2>
+<h3 id="1-start-with-clear-well-defined-tasks">1. Start with Clear, Well-Defined Tasks</h3>
+<p>Hermes Agent learns best from specific, measurable outcomes rather than vague requests.</p>
+<h3 id="2-provide-feedback-on-results">2. Provide Feedback on Results</h3>
+<p>When possible, indicate which results were most useful - this helps refine future skill creation.</p>
+<h3 id="3-regularly-review-your-skill-library">3. Regularly Review Your Skill Library</h3>
+<p>Periodically check <code>~/.hermes-agent/skills/</code> to see what knowledge your agent has accumulated.</p>
+<h3 id="4-combine-with-other-ai-tools">4. Combine with Other AI Tools</h3>
+<p>Use Hermes Agent alongside other AI tools in your workflow for maximum effectiveness.</p>
+<h3 id="5-keep-your-system-updated">5. Keep Your System Updated</h3>
+<p>Regularly pull updates to benefit from community improvements and new built-in tools.</p>
+<hr>
+<h2 id="troubleshooting-common-issues">Troubleshooting Common Issues</h2>
+<h3 id="agent-seems-to-forget-between-sessions">”Agent Seems to Forget Between Sessions”</h3>
+<p>Ensure your data directory (<code>~/.hermes-agent</code> by default) is properly mounted and persistent.</p>
+<h3 id="skill-creation-not-triggering">”Skill Creation Not Triggering”</h3>
+<p>Verify that tasks are completing successfully - skills are only generated from successful task completions.</p>
+<h3 id="api-rate-limit-errors">”API Rate Limit Errors”</h3>
+<p>Check your AI provider’s usage and consider adding delays between requests or upgrading your plan.</p>
+<h3 id="docker-container-keeps-restarting">”Docker Container Keeps Restarting”</h3>
+<p>Check the logs with <code>docker logs hermes-agent</code> to see startup errors.</p>
+<hr>
+<h2 id="where-to-go-from-here">Where to Go From Here</h2>
+<h3 id="community-resources">Community Resources</h3>
+<ul>
+<li>Official Documentation: <a href="https://docs.hermes-agent.org">https://docs.hermes-agent.org</a></li>
+<li>GitHub Repository: <a href="https://github.com/nousresearch/hermes-agent">https://github.com/nousresearch/hermes-agent</a></li>
+<li>Discord Community: <a href="https://discord.gg/hermes-agent">https://discord.gg/hermes-agent</a></li>
+<li>Skill Sharing Hub: <a href="https://skills.hermes-agent.org">https://skills.hermes-agent.org</a></li>
+</ul>
+<h3 id="advanced-use-cases">Advanced Use Cases</h3>
+<p>Once comfortable with the basics, try:</p>
+<ul>
+<li>Building multi-agent systems with specialized Hermes Agents</li>
+<li>Creating automated data pipelines that improve over time</li>
+<li>Developing personal knowledge management systems</li>
+<li>Setting up automated testing and QA workflows</li>
+</ul>
+<hr>
+<h2 id="summary">Summary</h2>
+<p>Hermes Agent represents a significant advancement in AI agent technology by focusing on continuous learning and improvement rather than just task completion. Its combination of persistent memory, automated skill creation, and open-source flexibility makes it particularly valuable for users who want an AI system that becomes more valuable over time.</p>
+<p>By following this tutorial, you now have a working Hermes Agent installation that will learn from every interaction, gradually building a personalized knowledge base that makes it increasingly effective at helping you accomplish your goals.</p>
+<p>Remember: The true value of Hermes Agent isn’t just in what it can do today, but in how much more capable it will become tomorrow through your continued use and its self-improving capabilities.</p>  <div class="disclosure" data-astro-cid-zm77yjld> <strong data-astro-cid-zm77yjld>A note on disclosure</strong>
+Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/" data-astro-cid-zm77yjld>Affiliate Disclosure</a>.
+</div> <section class="related-articles" data-astro-cid-2zkmu4eg> <h2 data-astro-cid-2zkmu4eg>Related Articles</h2> <div class="card-grid" data-astro-cid-2zkmu4eg> <a href="/tutorials/google-workspace-studio-automation/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Automate Your Workflow with Google Workspace Studio: A Step-by-Step Tutorial</h3> <p data-astro-cid-2zkmu4eg>Learn how to build AI-powered automations in Gmail, Sheets, and Forms using Google&#39;s free no-code automation platform</p> <span class="tag" data-astro-cid-2zkmu4eg>Tutorial</span> </a><a href="/agents/best-ai-agents-solopreneurs/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>7 Best AI Agents for Solopreneurs in 2026 (Tested)</h3> <p data-astro-cid-2zkmu4eg>AI agents that actually run parts of your business autonomously. We tested the top agents for email, research, customer support, and workflow automation.</p> <span class="tag" data-astro-cid-2zkmu4eg>AI Agents</span> </a><a href="/agents/lindy-ai-review/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Lindy AI Review 2026: The AI Agent That Runs Your Business?</h3> <p data-astro-cid-2zkmu4eg>We tested Lindy AI for 30 days handling email, scheduling, and CRM updates. Here&#39;s whether it actually saves time for solopreneurs.</p> <span class="tag" data-astro-cid-2zkmu4eg>AI Agents</span> </a> </div> </section> </div> </article>  </main> <footer class="site-footer"> <div class="container"> <ul class="footer-links"> <li><a href="/ai-tools/">AI Tools</a></li> <li><a href="/build-your-stack/">Build Stack</a></li> <li><a href="/compare/">Compare</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/tutorials/">Tutorials</a></li> <li><a href="/guides/">Guides</a></li> <li><a href="/about/">About</a></li> <li><a href="/affiliate-disclosure/">Disclosure</a></li> <li><a href="/rss.xml">RSS</a></li> </ul> <p>© 2026 SlashAI · An independent dispatch for solopreneurs.</p> </div> </footer> <script>
+    function effectiveTheme() {
+      var explicit = document.documentElement.getAttribute('data-theme');
+      if (explicit === 'light' || explicit === 'dark') return explicit;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function updateThemeIcon() {
+      var theme = effectiveTheme();
+      var sun = document.getElementById('theme-icon-sun');
+      var moon = document.getElementById('theme-icon-moon');
+      if (!sun || !moon) return;
+      sun.style.display = theme === 'dark' ? '' : 'none';
+      moon.style.display = theme === 'dark' ? 'none' : '';
+    }
+
+    function toggleTheme() {
+      var current = effectiveTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      updateThemeIcon();
+    }
+
+    function toggleMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var listener = function () {
+        var saved;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        if (saved !== 'light' && saved !== 'dark') updateThemeIcon();
+      };
+      if (mq.addEventListener) mq.addEventListener('change', listener);
+      else if (mq.addListener) mq.addListener(listener);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+    });
+  </script> </body> </html>
