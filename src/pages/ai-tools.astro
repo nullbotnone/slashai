@@ -374,23 +374,27 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   }
 
   .page-num {
-    width: 36px;
-    height: 36px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    padding: 0.5rem 1rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
     background: var(--color-bg-card);
     color: var(--color-text);
     cursor: pointer;
+    font-weight: 600;
     font-size: 0.85rem;
-    font-weight: 500;
     transition: all 0.2s;
   }
 
-  .page-num:hover { border-color: var(--color-accent); color: var(--color-accent); }
-  .page-num.active { background: var(--color-accent); color: white; border-color: var(--color-accent); }
+  .page-num:hover:not(.active) {
+    border-color: var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .page-num.active {
+    background: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+  }
 
   @media (max-width: 768px) {
     .directory-filters { flex-direction: column; }
