@@ -1,8 +1,38 @@
 {
-  "timestamp": "2026-04-27T23:08:49.568184+00:00",
-  "current_time_ms": 1777331329568,
+  "timestamp": "2026-04-29T11:08:22.411124+00:00",
+  "current_time_ms": 1777460902411,
   "total_jobs": 6,
   "jobs": [
+    {
+      "id": "ed00fb94-c5de-40ee-ae13-fbca13331cd2",
+      "name": "SlashAI Cron Health Monitor",
+      "enabled": true,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_ms": 433299,
+      "last_run_at_ms": 1777330939479,
+      "next_run_at_ms": 1777352539442,
+      "time_since_last_run_ms": 129962932,
+      "expected_interval_ms": 21599963,
+      "issues": [
+        "Haven't run in over 2x interval (129962932ms > 43199926ms)"
+      ]
+    },
+    {
+      "id": "2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670",
+      "name": "SlashAI: Add new AI tools to directory",
+      "enabled": true,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_ms": 42,
+      "last_run_at_ms": 1777334831643,
+      "next_run_at_ms": 1777388400000,
+      "time_since_last_run_ms": 126070768,
+      "expected_interval_ms": 53568357,
+      "issues": [
+        "Haven't run in over 2x interval (126070768ms > 107136714ms)"
+      ]
+    },
     {
       "id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
       "name": "SlashAI Weekly Article",
@@ -12,7 +42,7 @@
       "last_duration_ms": 3842637,
       "last_run_at_ms": 1777302600082,
       "next_run_at_ms": 1777906800000,
-      "time_since_last_run_ms": 28729486,
+      "time_since_last_run_ms": 158302329,
       "expected_interval_ms": 604199918,
       "issues": [
         "Extremely long run time (3842637ms > 3600000ms)"
@@ -22,14 +52,24 @@
   "summary": {
     "enabled_count": 6,
     "disabled_count": 0,
-    "ok_status_count": 5,
-    "error_status_count": 1,
+    "ok_status_count": 6,
+    "error_status_count": 0,
     "jobs_with_consecutive_errors_gt_2": 0,
-    "jobs_not_run_in_2x_interval": 0,
+    "jobs_not_run_in_2x_interval": 2,
     "jobs_with_long_runtime_gt_1h": 1,
-    "overall_health": "fair"
+    "overall_health": "poor"
   },
   "issues": [
+    {
+      "job_id": "ed00fb94-c5de-40ee-ae13-fbca13331cd2",
+      "job_name": "SlashAI Cron Health Monitor",
+      "issue": "Haven't run in over 2x interval (129962932ms > 43199926ms)"
+    },
+    {
+      "job_id": "2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670",
+      "job_name": "SlashAI: Add new AI tools to directory",
+      "issue": "Haven't run in over 2x interval (126070768ms > 107136714ms)"
+    },
     {
       "job_id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
       "job_name": "SlashAI Weekly Article",
@@ -37,6 +77,8 @@
     }
   ],
   "recommended_actions": [
+    "Check scheduler and system time for job 'SlashAI Cron Health Monitor' (ID: ed00fb94-c5de-40ee-ae13-fbca13331cd2)",
+    "Check scheduler and system time for job 'SlashAI: Add new AI tools to directory' (ID: 2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670)",
     "Review and optimize job 'SlashAI Weekly Article' (ID: c80f4c43-11b2-4ad7-a3c4-f71ff534ca85) to reduce runtime"
   ]
 }

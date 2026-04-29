@@ -373,7 +373,6 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     gap: 0.25rem;
   }
 
-  .page-num {
     padding: 0.5rem 1rem;
     border: 1px solid var(--color-border);
     border-radius: 8px;
@@ -383,7 +382,18 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     font-weight: 600;
     font-size: 0.85rem;
     transition: all 0.2s;
-  }
+
+    &:hover:not(.active) {
+        border-color: var(--color-accent);
+        color: var(--color-accent);
+    }
+
+    &.active {
+        background: var(--color-accent);
+        color: white;
+        border-color: var(--color-accent);
+    }
+}
 
   .page-num:hover:not(.active) {
     border-color: var(--color-accent);
