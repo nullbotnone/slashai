@@ -2137,8 +2137,7 @@
       "google"
     ],
     "featured": false
-  }
-  ,
+  },
   {
     "name": "AgentSmith",
     "slug": "agentsmith",
@@ -2331,6 +2330,42 @@
       "business intelligence",
       "insights",
       "reporting"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Hostinger Horizons",
+    "slug": "hostinger-horizons",
+    "description": "AI-powered website and app builder that creates full-stack web applications through natural language prompts.",
+    "longDescription": "Hostinger Horizons is an AI-powered platform that allows users to create websites and web applications without writing code. By describing your ideas in natural language, the AI generates a functional web app that you can then customize and publish. It includes features like AI-generated content, images, and logos, as well as the ability to add e-commerce, booking systems, and custom domains. The platform offers real-time previews and a drag-and-drop editor for fine-tuning.",
+    "url": "https://www.hostinger.com/horizons",
+    "affiliateUrl": null,
+    "category": "Design",
+    "pricing": "Freemium",
+    "price": "$6.99/mo Explorer (annual)",
+    "released": "April 2026",
+    "added": "2026-04-29",
+    "pros": [
+      "No coding required - build with natural language prompts",
+      "Real-time preview and drag-and-drop editor",
+      "AI-powered content, image, and logo generation",
+      "E-commerce and booking system capabilities",
+      "Custom domain connectivity"
+    ],
+    "cons": [
+      "AI credits limit monthly usage (varies by plan)",
+      "Advanced features require higher-tier plans",
+      "Learning curve for effective prompting",
+      "Dependent on Hostinger's platform and templates"
+    ],
+    "bestFor": "Solopreneurs and freelancers who want to quickly launch professional websites or web applications without coding skills.",
+    "affiliateCommission": null,
+    "tags": [
+      "website builder",
+      "ai-powered",
+      "no-code",
+      "web development",
+      "entrepreneur"
     ],
     "featured": false
   }
