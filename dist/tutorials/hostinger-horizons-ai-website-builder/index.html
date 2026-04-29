@@ -1,0 +1,212 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Build Websites Without Code Using Hostinger Horizons AI | SlashAI</title><meta name="description" content="Learn how to use Hostinger Horizons AI to create full-stack web applications and websites through natural language prompts - no coding required"><link rel="canonical" href="https://slashai.app/tutorials/hostinger-horizons-ai-website-builder/"><!-- Open Graph --><meta property="og:title" content="Build Websites Without Code Using Hostinger Horizons AI"><meta property="og:description" content="Learn how to use Hostinger Horizons AI to create full-stack web applications and websites through natural language prompts - no coding required"><meta property="og:type" content="website"><meta property="og:url" content="https://slashai.app/tutorials/hostinger-horizons-ai-website-builder/"><!-- Theme color (matches paper surfaces) --><meta name="theme-color" content="#f6f1e7" media="(prefers-color-scheme: light)"><meta name="theme-color" content="#16120e" media="(prefers-color-scheme: dark)"><!-- Fonts: Fraunces variable (opsz, SOFT, ital, wght) + Inter for UI --><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..900,0..100;1,9..144,300..900,0..100&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"><!-- Favicon --><link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="apple-touch-icon" href="/favicon.svg"><!-- Google Search Console --><meta name="google-site-verification" content="o3cNryCX62Dn1YyVgeVKvf9PjiFUDFKBQoK75-lfg4U"><!-- RSS --><link rel="alternate" type="application/rss+xml" title="SlashAI RSS" href="/rss.xml"><!-- Theme initialization (no FOUC). Defaults to system preference; user toggle wins. --><script>
+    (function () {
+      try {
+        var saved = localStorage.getItem('theme');
+        if (saved === 'light' || saved === 'dark') {
+          document.documentElement.setAttribute('data-theme', saved);
+        }
+      } catch (e) {}
+    })();
+  </script><link rel="stylesheet" href="/_astro/BaseLayout.C9RHw3wz.css">
+<style>.tutorial-meta-box[data-astro-cid-amgwr4wo]{display:flex;gap:1.5rem;background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:1rem 1.5rem;margin-bottom:2rem;flex-wrap:wrap}.tutorial-meta-item[data-astro-cid-amgwr4wo]{display:flex;flex-direction:column;gap:.2rem}.meta-label[data-astro-cid-amgwr4wo]{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:var(--color-text-secondary)}.meta-value[data-astro-cid-amgwr4wo]{font-size:.95rem;font-weight:700;color:var(--color-accent)}.tool-links-box[data-astro-cid-amgwr4wo]{background:var(--color-bg-secondary);border:1px solid var(--color-border);border-radius:var(--radius);padding:.85rem 1.25rem;margin-bottom:2rem;font-size:.9rem;display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}.tool-links-box[data-astro-cid-amgwr4wo] a[data-astro-cid-amgwr4wo]{font-weight:600}.link-sep[data-astro-cid-amgwr4wo]{color:var(--color-text-secondary)}
+.related-articles[data-astro-cid-2zkmu4eg]{margin-top:3rem;padding-top:2rem;border-top:1px solid var(--color-border)}.related-articles[data-astro-cid-2zkmu4eg] h2[data-astro-cid-2zkmu4eg]{font-size:1.3rem;font-weight:700;margin-bottom:1rem}.article-kicker[data-astro-cid-zm77yjld]{margin-bottom:1.25rem}.article-deck[data-astro-cid-zm77yjld]{font-family:var(--font-serif);font-size:clamp(1.125rem,1.6vw,1.35rem);font-weight:400;line-height:1.45;color:var(--color-ink-muted);max-width:56ch;margin:.5rem 0 1.5rem;font-variation-settings:"opsz" 24,"SOFT" 40;letter-spacing:-.005em}.article-meta-by[data-astro-cid-zm77yjld]{color:var(--color-ink-muted)}.article-meta-byname[data-astro-cid-zm77yjld]{color:var(--color-ink);font-weight:600}
+</style></head> <body> <header class="site-header"> <div class="container-wide header-inner"> <a href="/" class="site-logo" aria-label="SlashAI home"> <span class="logo-mark">/</span><span>SlashAI</span> </a> <button class="mobile-menu-btn" onclick="toggleMenu()" aria-label="Menu" id="menu-btn"> <span></span> <span></span> <span></span> </button> <nav id="main-nav" aria-label="Primary"> <ul class="nav-links"> <li><a href="/ai-tools/" onclick="closeMenu()">Tools</a></li> <li><a href="/build-your-stack/" onclick="closeMenu()">Stack</a></li> <li><a href="/compare/" onclick="closeMenu()">Compare</a></li> <li><a href="/blog/" onclick="closeMenu()">Blog</a></li> <li><a href="/about/" onclick="closeMenu()">About</a></li> <li> <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle color theme" title="Toggle theme"> <svg id="theme-icon-sun" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg> <svg id="theme-icon-moon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg> </button> </li> </ul> </nav> </div> </header> <main>  <article data-astro-cid-zm77yjld> <header class="article-header" data-astro-cid-zm77yjld> <div class="container" data-astro-cid-zm77yjld> <span class="kicker article-kicker" data-astro-cid-zm77yjld>Tutorial</span> <h1 class="article-title" data-astro-cid-zm77yjld>Build Websites Without Code Using Hostinger Horizons AI</h1> <p class="article-deck" data-astro-cid-zm77yjld>Learn how to use Hostinger Horizons AI to create full-stack web applications and websites through natural language prompts - no coding required</p> <div class="article-meta" data-astro-cid-zm77yjld> <span class="article-meta-by" data-astro-cid-zm77yjld>By <span class="article-meta-byname" data-astro-cid-zm77yjld>SlashAI Editorial</span></span> <span aria-hidden="true" data-astro-cid-zm77yjld>·</span> <time datetime="2026-04-29T00:00:00.000Z" data-astro-cid-zm77yjld>April 28, 2026</time>  <span aria-hidden="true" data-astro-cid-zm77yjld>·</span><span data-astro-cid-zm77yjld>hostinger-horizons, ai website builder, no-code, web development, entrepreneur</span> </div> </div> </header> <div class="article-content" data-astro-cid-zm77yjld>  <div class="tutorial-meta-box" data-astro-cid-amgwr4wo> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Tool</span> <span class="meta-value" data-astro-cid-amgwr4wo>Hostinger Horizons</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Difficulty</span> <span class="meta-value" data-astro-cid-amgwr4wo>Beginner</span> </div> <div class="tutorial-meta-item" data-astro-cid-amgwr4wo> <span class="meta-label" data-astro-cid-amgwr4wo>Time</span> <span class="meta-value" data-astro-cid-amgwr4wo>⏱️ 30 minutes</span> </div> </div> <div class="tool-links-box" data-astro-cid-amgwr4wo> <strong data-astro-cid-amgwr4wo>📚 Hostinger Horizons Links:</strong> <a href="https://www.hostinger.com/horizons" target="_blank" rel="noopener" data-astro-cid-amgwr4wo>Website</a> <span class="link-sep" data-astro-cid-amgwr4wo>·</span> <a href="/tools/hostinger-horizons/" data-astro-cid-amgwr4wo>Our Review</a> <span class="link-sep" data-astro-cid-amgwr4wo>·</span><a href="https://www.hostinger.com/horizons/docs" target="_blank" rel="noopener" data-astro-cid-amgwr4wo>Docs</a> </div><p>Want to launch a professional website or web application without writing a single line of code? Hostinger Horizons is an AI-powered platform that turns your ideas into functional web apps through conversational prompts. This tutorial shows solopreneurs and freelancers how to create, customize, and publish websites using Hostinger Horizons’ AI builder.</p>
+<h2 id="what-youll-learn">What You’ll Learn</h2>
+<ul>
+<li>How to sign up and start a new project with Hostinger Horizons</li>
+<li>Crafting effective prompts to generate your initial website</li>
+<li>Refining and customizing your website through conversational AI</li>
+<li>Adding advanced features like e-commerce, databases, and custom domains</li>
+<li>Optimizing for SEO and publishing your live website</li>
+</ul>
+<h2 id="what-youll-need">What You’ll Need</h2>
+<ul>
+<li>A Hostinger account (you can sign up at <a href="https://www.hostinger.com">hostinger.com</a>)</li>
+<li>A clear idea of the website or web application you want to build</li>
+<li>25-30 minutes for initial setup and creation</li>
+<li>Optional: Custom domain name (if you want to use your own branding)</li>
+<li>Optional: Stripe account (for e-commerce functionality)</li>
+</ul>
+<h2 id="step-by-step-guide">Step-by-Step Guide</h2>
+<h3 id="1-sign-up-and-access-hostinger-horizons">1. Sign Up and Access Hostinger Horizons</h3>
+<ol>
+<li>Visit <a href="https://www.hostinger.com/horizons">Hostinger Horizons</a> and choose a plan that fits your needs.</li>
+<li>Complete the signup process and log in to your hPanel dashboard.</li>
+<li>Navigate to <strong>“Websites” → “Websites list”</strong> in the left sidebar.</li>
+<li>Click <strong>“Add Website”</strong> and select <strong>“Hostinger Horizons”</strong> from the options.</li>
+</ol>
+<h3 id="2-understand-the-interface">2. Understand the Interface</h3>
+<p>When you start a new project, you’ll see a split-screen interface:</p>
+<ul>
+<li><strong>Left pane</strong>: Where you enter prompts to refine your web application and see your remaining AI credits.</li>
+<li><strong>Right pane</strong>: Real-time preview of your app that updates as you make changes. You can toggle between mobile and desktop views.</li>
+</ul>
+<h3 id="3-craft-your-initial-prompt">3. Craft Your Initial Prompt</h3>
+<p>The quality of your initial prompt determines how well the AI understands your vision. Be specific and include:</p>
+<ul>
+<li><strong>Type of website</strong>: (e.g., portfolio, blog, online store, booking system, business site)</li>
+<li><strong>Primary purpose</strong>: What visitors should be able to do on your site</li>
+<li><strong>Design preferences</strong>: Color scheme, layout style, fonts, and overall aesthetic</li>
+<li><strong>Key features</strong>: Contact forms, galleries, product listings, user accounts, etc.</li>
+<li><strong>Content examples</strong>: Sample text or descriptions you want included</li>
+</ul>
+<p><strong>Example prompt for a freelance web designer:</strong></p>
+<blockquote>
+<p>“Create a modern portfolio website for a freelance web designer. Use a dark blue and white color scheme with a clean, minimalist layout. Include a hero section with a tagline, an about me section, a portfolio grid to showcase projects, a services section, and a contact form. Make sure the site is fully responsive and includes smooth scrolling navigation.”</p>
+</blockquote>
+<h3 id="4-generate-and-refine-your-website">4. Generate and Refine Your Website</h3>
+<ol>
+<li>Enter your prompt in the left pane and press Enter.</li>
+<li>Hostinger Horizons will process your request and generate a draft website (usually within 2-5 minutes).</li>
+<li>Review the generated site in the right pane preview.</li>
+<li>To refine, enter additional prompts in the left pane such as:
+<ul>
+<li>“Change the hero section background to a gradient from dark blue to light blue”</li>
+<li>“Add a testimonials section below the portfolio with space for 3 client quotes”</li>
+<li>“Make the portfolio grid show 4 columns on desktop and 2 columns on mobile”</li>
+<li>“Change the font to ‘Inter’ for all headings”</li>
+</ul>
+</li>
+<li>The AI will implement your changes and update the preview in real-time.</li>
+</ol>
+<h3 id="5-customize-with-the-drag-and-drop-editor">5. Customize with the Drag-and-Drop Editor</h3>
+<p>Hostinger Horizons includes a visual editor for fine-tuning:</p>
+<ol>
+<li>Click on any element in the preview to select it.</li>
+<li>Use the toolbar that appears to adjust:
+<ul>
+<li>Text content, font, size, color</li>
+<li>Image replacement or cropping</li>
+<li>Layout spacing and alignment</li>
+<li>Button styles and link destinations</li>
+</ul>
+</li>
+<li>You can also add new sections by clicking the ”+” button between existing sections.</li>
+</ol>
+<h3 id="6-add-advanced-features-optional">6. Add Advanced Features (Optional)</h3>
+<p>Enhance your website with these AI-assisted features:</p>
+<ul>
+<li><strong>E-commerce</strong>: Prompt “Add an online store section with product cards for my design templates” then configure products, prices, and checkout.</li>
+<li><strong>Booking System</strong>: Prompt “Add a calendar booking system where clients can schedule consultations” and specify your availability.</li>
+<li><strong>AI Content Tools</strong>: Use the built-in AI text generator for copywriting, AI image generator for custom visuals, and AI logo maker for branding.</li>
+<li><strong>Integrations</strong>: Connect external services like Google Analytics, Mailchimp, or Zapier through the settings panel.</li>
+</ul>
+<h3 id="7-optimize-for-seo">7. Optimize for SEO</h3>
+<ol>
+<li>Click the “SEO” icon in the left pane to access SEO settings.</li>
+<li>Set your website title, meta description, and keywords.</li>
+<li>Use the AI SEO assistant to generate optimized content for your pages.</li>
+<li>Ensure all images have alt text describing their content.</li>
+<li>Check that your URL structure is clean and descriptive.</li>
+</ol>
+<h3 id="8-publish-your-website">8. Publish Your Website</h3>
+<ol>
+<li>When satisfied with your design, click the <strong>“Publish”</strong> button in the top right.</li>
+<li>Choose a subdomain on <code>ahostingerapp.com</code> or connect your custom domain.</li>
+<li>Hostinger Horizons will generate the necessary files and deploy your site (usually takes 1-2 minutes).</li>
+<li>Once published, you’ll receive a live link to share with clients and visitors.</li>
+<li>SSL security is automatically enabled for your site.</li>
+</ol>
+<h2 id="best-practices-for-hostinger-horizons">Best Practices for Hostinger Horizons</h2>
+<ul>
+<li><strong>Start Simple</strong>: Begin with a core set of features and add complexity through iterative prompts.</li>
+<li><strong>Be Specific</strong>: Vague prompts yield generic results. Describe exactly what you want.</li>
+<li><strong>Use Visual References</strong>: Upload screenshots or sketches to guide the AI’s design decisions.</li>
+<li><strong>Test Responsiveness</strong>: Frequently switch between mobile and desktop previews during development.</li>
+<li><strong>Track Credits</strong>: Monitor your AI credit usage in the left pane - complex refinements consume more credits.</li>
+<li><strong>Save Versions</strong>: Use the version history feature to revert to previous states if needed.</li>
+<li><strong>Leverage Templates</strong>: Once you create a design you like, save it as a template for future projects (available on Hobbyist plan and above).</li>
+</ul>
+<h2 id="common-use-cases-for-solopreneurs--freelancers">Common Use Cases for Solopreneurs &#x26; Freelancers</h2>
+<ul>
+<li><strong>Portfolio Websites</strong>: Showcase your work and attract clients</li>
+<li><strong>Service Business Sites</strong>: Promote consulting, coaching, or freelance services</li>
+<li><strong>Online Stores</strong>: Sell digital products, templates, or physical goods</li>
+<li><strong>Booking Platforms</strong>: Enable clients to schedule appointments or consultations</li>
+<li><strong>Landing Pages</strong>: Create targeted pages for marketing campaigns or lead generation</li>
+<li><strong>Client Portals</strong>: Build secure areas for clients to access files, invoices, or project updates</li>
+</ul>
+<h2 id="troubleshooting-tips">Troubleshooting Tips</h2>
+<ul>
+<li><strong>If the AI doesn’t understand</strong>: Rephrase your prompt with more specific terminology or break complex requests into smaller steps.</li>
+<li><strong>For design issues</strong>: Use the visual editor to manually adjust elements that the AI didn’t get right.</li>
+<li><strong>To add functionality not covered by prompts</strong>: Check if there’s a specific integration or widget available in the editor’s add-ons panel.</li>
+<li><strong>Performance concerns</strong>: Optimize images and limit complex animations for faster loading times.</li>
+<li><strong>Domain connection issues</strong>: Double-check DNS settings and allow up to 24 hours for propagation.</li>
+</ul>
+<h2 id="next-steps">Next Steps</h2>
+<p>After publishing your first website with Hostinger Horizons:</p>
+<ol>
+<li>Share your live link on social media and professional networks</li>
+<li>Set up Google Analytics to track visitor behavior</li>
+<li>Create a content plan for regular updates to your site</li>
+<li>Explore advanced features like member areas or multilingual support</li>
+<li>Consider upgrading your plan as your needs grow (more websites, credits, and features)</li>
+</ol>
+<p>Hostinger Horizons empowers solopreneurs and freelancers to establish a professional online presence quickly and affordably. By leveraging AI for web development, you can focus on your core business while maintaining an impressive digital showcase for your work.</p>
+<hr>
+<p><em>Last updated: April 2026</em></p>  <div class="disclosure" data-astro-cid-zm77yjld> <strong data-astro-cid-zm77yjld>A note on disclosure</strong>
+Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/" data-astro-cid-zm77yjld>Affiliate Disclosure</a>.
+</div> <section class="related-articles" data-astro-cid-2zkmu4eg> <h2 data-astro-cid-2zkmu4eg>Related Articles</h2> <div class="card-grid" data-astro-cid-2zkmu4eg> <a href="/tutorials/google-workspace-studio-automation/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Automate Your Workflow with Google Workspace Studio: A Step-by-Step Tutorial</h3> <p data-astro-cid-2zkmu4eg>Learn how to build AI-powered automations in Gmail, Sheets, and Forms using Google&#39;s free no-code automation platform</p> <span class="tag" data-astro-cid-2zkmu4eg>Tutorial</span> </a><a href="/reviews/mwm-ai-review/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>MWM AI Review 2026: Turn App Ideas into iOS Businesses in Minutes</h3> <p data-astro-cid-2zkmu4eg>Hands-on review of MWM AI, the platform that transforms simple prompts into native iOS app businesses with built-in monetization and distribution.</p> <span class="tag" data-astro-cid-2zkmu4eg>Review</span> </a><a href="/tutorials/n8n-first-workflow/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Build Your First AI Workflow with n8n (No Code)</h3> <p data-astro-cid-2zkmu4eg>n8n is the open-source Zapier alternative with native AI support. Here&#39;s how to build an automated lead processing workflow from scratch.</p> <span class="tag" data-astro-cid-2zkmu4eg>Tutorial</span> </a> </div> </section> </div> </article>  </main> <footer class="site-footer"> <div class="container"> <ul class="footer-links"> <li><a href="/ai-tools/">AI Tools</a></li> <li><a href="/build-your-stack/">Build Stack</a></li> <li><a href="/compare/">Compare</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/tutorials/">Tutorials</a></li> <li><a href="/guides/">Guides</a></li> <li><a href="/about/">About</a></li> <li><a href="/affiliate-disclosure/">Disclosure</a></li> <li><a href="/rss.xml">RSS</a></li> </ul> <p>© 2026 SlashAI · An independent dispatch for solopreneurs.</p> </div> </footer> <script>
+    function effectiveTheme() {
+      var explicit = document.documentElement.getAttribute('data-theme');
+      if (explicit === 'light' || explicit === 'dark') return explicit;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+
+    function updateThemeIcon() {
+      var theme = effectiveTheme();
+      var sun = document.getElementById('theme-icon-sun');
+      var moon = document.getElementById('theme-icon-moon');
+      if (!sun || !moon) return;
+      sun.style.display = theme === 'dark' ? '' : 'none';
+      moon.style.display = theme === 'dark' ? 'none' : '';
+    }
+
+    function toggleTheme() {
+      var current = effectiveTheme();
+      var next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      try { localStorage.setItem('theme', next); } catch (e) {}
+      updateThemeIcon();
+    }
+
+    function toggleMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.toggle('open');
+      btn.classList.toggle('active');
+      document.body.style.overflow = nav.classList.contains('open') ? 'hidden' : '';
+    }
+
+    function closeMenu() {
+      var nav = document.getElementById('main-nav');
+      var btn = document.getElementById('menu-btn');
+      nav.classList.remove('open');
+      btn.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('DOMContentLoaded', updateThemeIcon);
+
+    if (window.matchMedia) {
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      var listener = function () {
+        var saved;
+        try { saved = localStorage.getItem('theme'); } catch (e) {}
+        if (saved !== 'light' && saved !== 'dark') updateThemeIcon();
+      };
+      if (mq.addEventListener) mq.addEventListener('change', listener);
+      else if (mq.addListener) mq.addListener(listener);
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.fade-in').forEach(function (el) { observer.observe(el); });
+    });
+  </script> </body> </html>
