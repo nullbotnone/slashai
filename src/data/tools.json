@@ -2137,8 +2137,7 @@
       "google"
     ],
     "featured": false
-  }
-  ,
+  },
   {
     "name": "AgentSmith",
     "slug": "agentsmith",
@@ -2333,201 +2332,200 @@
       "reporting"
     ],
     "featured": false
+  },
+  {
+    "name": "Cursor 3",
+    "slug": "cursor-3",
+    "description": "AI coding agent with parallel agent execution and unified workspace for end-to-end software development.",
+    "longDescription": "Cursor 3, released April 2, 2026, represents the evolution of AI coding agents from autocomplete to autonomous software engineers. It features a unified Agents Window for managing multiple AI agents simultaneously, parallel agent execution in isolated workspaces, and Plan Mode for complex tasks requiring research and detailed planning before execution. The editor indexes entire codebases for better context understanding and includes a CLI for automation. Cursor 3 shifts the paradigm to \"you are the architect, agents are the builders\".",
+    "url": "https://cursor.com",
+    "affiliateUrl": null,
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "0/mo Pro",
+    "released": "April 2, 2026",
+    "added": "2026-04-29",
+    "pros": [
+      "Unified Workspace for managing multiple AI agents",
+      "Parallel agent execution prevents file conflicts",
+      "Plan Mode for research-backed complex task execution",
+      "Full codebase indexing for better context understanding",
+      "Terminal and CLI support for automation scripts",
+      "Agent Tabs and /best-of-n command for model comparison",
+      "Design Mode for annotating UI elements",
+      "Composer coding model for faster multi-step software tasks"
+    ],
+    "cons": [
+      "Higher learning curve for agent-based workflows",
+      "Premium features require Pro+ or Ultra tiers",
+      "Resource intensive on older machines",
+      "Cloud dependency for full agent functionality"
+    ],
+    "bestFor": "Developers who want to leverage AI agents for end-to-end software development while maintaining architectural control.",
+    "affiliateCommission": null,
+    "tags": [
+      "coding",
+      "development",
+      "ide",
+      "ai assistant",
+      "code review"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Claude Code",
+    "slug": "claude-code",
+    "description": "Terminal-based autonomous coding agent that understands entire codebases and executes multi-step tasks independently.",
+    "longDescription": "Claude Code, evolved from its February 2025 launch, is now a production-ready autonomous coding agent as of April 2026. It runs on Claude Opus 4.6 and Sonnet 4.6 models with 1M token context windows, offering agent teams collaboration, Auto mode for safer autonomous execution, and automatic project memory across sessions. Claude Code integrates with VS Code, JetBrains, and features a native terminal interface. Industry reports describe it as the \"daily operating system\" for top developers, excelling at complex problems, multi-file bugs, and architectural reasoning while using significantly fewer tokens than competitors.",
+    "url": "https://claude.ai/code",
+    "affiliateUrl": null,
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "Starts at 0/mo, 50-200/mo heavy usage",
+    "released": "February 2025 (production-ready April 2026)",
+    "added": "2026-04-29",
+    "pros": [
+      "Understands entire codebases for context-aware development",
+      "Agent teams collaboration for complex task division",
+      "Auto mode for safer autonomous execution in sandboxes",
+      "Automatic project memory across sessions",
+      "Real browser and OS navigation capabilities",
+      "5.5x fewer tokens than competitors for similar tasks",
+      "VS Code and JetBrains IDE integration",
+      "Terminal-first interface for workflow efficiency"
+    ],
+    "cons": [
+      "Heavy Opus usage can cost 50-200 monthly",
+      "Terminal-first interface may not suit all developers",
+      "Requires learning agent-based workflow concepts",
+      "Limited GUI compared to traditional IDEs"
+    ],
+    "bestFor": "Developers who prefer terminal-based workflows and want autonomous AI coding agents for complex software tasks.",
+    "affiliateCommission": null,
+    "tags": [
+      "coding",
+      "development",
+      "terminal",
+      "ai agent",
+      "autonomous"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Gumloop AI",
+    "slug": "gumloop-ai",
+    "description": "No-code AI-native automation platform for building complex workflows and intelligent agents through visual drag-and-drop interface.",
+    "longDescription": "Gumloop AI, as of April 2026, empowers businesses to create sophisticated AI workflows without code. It features a visual drag-and-drop interface where every node can contain AI logic for analysis, decision-making, and data transformation. The platform includes \"Gummie,\" a meta-agent that builds workflows from natural language descriptions. Users can connect to various AI models (GPT-5.4, Claude 4.6 Sonnet, Gemini 3.1 Pro), utilize dedicated web scrapers for real-time data extraction, and access over 110 app integrations including Slack, GitHub, Gmail, Stripe, and Salesforce. Dedicated Data Analysis Agents can execute SQL queries on platforms like BigQuery and answer questions directly from data warehouses.",
+    "url": "https://gumloop.com",
+    "affiliateUrl": "https://gumloop.com/?via=slashai",
+    "category": "Automation",
+    "pricing": "Freemium",
+    "price": "5/mo Starter",
+    "released": "2023 (AI-enhanced April 2026)",
+    "added": "2026-04-29",
+    "pros": [
+      "Visual drag-and-drop workflow builder",
+      "Every node contains AI logic for intelligent decision-making",
+      "Gummie meta-agent builds workflows from natural language descriptions",
+      "Centralized access to GPT-5.4, Claude 4.6, Gemini 3.1 Pro models",
+      "Dedicated web scraper for real-time data extraction",
+      "110+ app integrations including Slack, GitHub, Salesforce",
+      "Data Analysis Agents for SQL queries and data warehouse questions",
+      "No-code approach accessible to non-technical users"
+    ],
+    "cons": [
+      "Complex workflows may have learning curve",
+      "Advanced features require paid tiers",
+      "Reliance on third-party model APIs",
+      "Visual interface limitations for extremely complex logic"
+    ],
+    "bestFor": "Business users who want to create intelligent AI-powered workflows without writing code.",
+    "affiliateCommission": "Varies",
+    "tags": [
+      "automation",
+      "workflow",
+      "no-code",
+      "ai agent",
+      "web scraping"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Perplexity Computer",
+    "slug": "perplexity-computer",
+    "description": "AI-powered digital worker that orchestrates multiple frontier models for end-to-end project execution.",
+    "longDescription": "Perplexity Computer, introduced in February 2026 and enhanced in April 2026, operates as a general-purpose digital worker that unifies various AI capabilities into a single system. It can orchestrate up to 19 different AI models (including GPT-5.1, Claude Opus 4.5, and o3-pro) to reason, delegate, search, build, code, and deliver on projects end-to-end. Key features include the Comet Browser for agentic web tasks, custom skills for automating recurring tasks, Model Council for synthesizing results from three frontier models, Voice Mode for natural conversation control, and specialized versions like Finance Computer for SEC filings and earnings transcripts. Perplexity Computer operates in isolated compute environments with access to real filesystem and browser, making it capable of true autonomous project execution from objective to completion.",
+    "url": "https://perplexity.ai/computer",
+    "affiliateUrl": null,
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "price": "5/mo Pro",
+    "released": "February 2026 (enhanced April 2026)",
+    "added": "2026-04-29",
+    "pros": [
+      "Orchestrates up to 19 different AI models for complex tasks",
+      "Comet Browser for AI-first web navigation and task execution",
+      "Custom skills for automating recurring workflows",
+      "Model Council synthesizes GPT-5.4, Claude Opus 4.6, Gemini 3.1 Pro",
+      "Voice Mode for natural conversation control",
+      "Finance Computer for SEC filings and earnings analysis",
+      "Personal Computer on Mac for local file editing and voice orchestration",
+      "Agent API for building managed agentic workflows"
+    ],
+    "cons": [
+      "Higher price point reflects advanced capabilities",
+      "May be overkill for simple research tasks",
+      "Requires learning agentic workflow concepts",
+      "Resource intensive for full model orchestration"
+    ],
+    "bestFor": "Professionals who need autonomous AI assistance for complex, multi-step projects from research to execution.",
+    "affiliateCommission": null,
+    "tags": [
+      "productivity",
+      "research",
+      "automation",
+      "ai agent",
+      "digital worker"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Lovable",
+    "slug": "lovable",
+    "description": "AI-powered full-stack application generator that creates production-ready apps from natural language descriptions.",
+    "longDescription": "Lovable, gaining significant traction in April 2026, enables users to create full-stack web applications through natural language descriptions. Users describe what they want to build, and Lovable generates production-ready code including frontend, backend, database schema, authentication, and deployment configurations. The platform leverages AI to understand intent, apply best practices, and generate maintainable code. It features real-time preview, instant deployment options, and iterative refinement capabilities. Lovable is particularly popular for rapid prototyping, MVPs, and internal tools where speed-to-market is critical. The generated code follows modern frameworks and includes proper error handling, testing considerations, and scalability foundations.",
+    "url": "https://lovable.dev",
+    "affiliateUrl": "https://lovable.dev?via=slashai",
+    "category": "Coding",
+    "pricing": "Freemium",
+    "price": "0/mo Starter",
+    "released": "2024 (significant AI enhancements April 2026)",
+    "added": "2026-04-29",
+    "pros": [
+      "Natural language to full-stack application generation",
+      "Production-ready code including frontend, backend, database",
+      "Real-time preview and instant deployment options",
+      "Iterative refinement based on user feedback",
+      "Popular for rapid prototyping and MVPs",
+      "Follows modern frameworks with proper error handling",
+      "Creates maintainable code with scalability foundations",
+      "Reduces time from concept to working application"
+    ],
+    "cons": [
+      "May not handle extremely specialized or legacy system requirements",
+      "Generated code might require optimization for specific use cases",
+      "Dependency on AI interpretation accuracy",
+      "Less control over low-level implementation details"
+    ],
+    "bestFor": "Entrepreneurs and developers who want to rapidly prototype and deploy full-stack applications without deep diving into boilerplate code.",
+    "affiliateCommission": "Varies",
+    "tags": [
+      "coding",
+      "development",
+      "full-stack",
+      "ai agent",
+      "app generator"
+    ],
+    "featured": false
   }
-    ,
-    {
-      "name": "Cursor 3",
-      "slug": "cursor-3",
-      "description": "AI coding agent with parallel agent execution and unified workspace for end-to-end software development.",
-      "longDescription": "Cursor 3, released April 2, 2026, represents the evolution of AI coding agents from autocomplete to autonomous software engineers. It features a unified Agents Window for managing multiple AI agents simultaneously, parallel agent execution in isolated workspaces, and Plan Mode for complex tasks requiring research and detailed planning before execution. The editor indexes entire codebases for better context understanding and includes a CLI for automation. Cursor 3 shifts the paradigm to \"you are the architect, agents are the builders\".",
-      "url": "https://cursor.com",
-      "affiliateUrl": null,
-      "category": "Coding",
-      "pricing": "Freemium",
-      "price": "$20/mo Pro",
-      "released": "April 2, 2026",
-      "added": "2026-04-29",
-      "pros": [
-        "Unified Workspace for managing multiple AI agents",
-        "Parallel agent execution prevents file conflicts",
-        "Plan Mode for research-backed complex task execution",
-        "Full codebase indexing for better context understanding",
-        "Terminal and CLI support for automation scripts",
-        "Agent Tabs and /best-of-n command for model comparison",
-        "Design Mode for annotating UI elements",
-        "Composer coding model for faster multi-step software tasks"
-      ],
-      "cons": [
-        "Higher learning curve for agent-based workflows",
-        "Premium features require Pro+ or Ultra tiers",
-        "Resource intensive on older machines",
-        "Cloud dependency for full agent functionality"
-      ],
-      "bestFor": "Developers who want to leverage AI agents for end-to-end software development while maintaining architectural control.",
-      "affiliateCommission": null,
-      "tags": [
-        "coding",
-        "development",
-        "ide",
-        "ai assistant",
-        "code review"
-      ],
-      "featured": true
-    },
-    {
-      "name": "Claude Code",
-      "slug": "claude-code",
-      "description": "Terminal-based autonomous coding agent that understands entire codebases and executes multi-step tasks independently.",
-      "longDescription": "Claude Code, evolved from its February 2025 launch, is now a production-ready autonomous coding agent as of April 2026. It runs on Claude Opus 4.6 and Sonnet 4.6 models with 1M token context windows, offering agent teams collaboration, Auto mode for safer autonomous execution, and automatic project memory across sessions. Claude Code integrates with VS Code, JetBrains, and features a native terminal interface. Industry reports describe it as the \"daily operating system\" for top developers, excelling at complex problems, multi-file bugs, and architectural reasoning while using significantly fewer tokens than competitors.",
-      "url": "https://claude.ai/code",
-      "affiliateUrl": null,
-      "category": "Coding",
-      "pricing": "Freemium",
-      "price": "Starts at $20/mo, $150-200/mo heavy usage",
-      "released": "February 2025 (production-ready April 2026)",
-      "added": "2026-04-29",
-      "pros": [
-        "Understands entire codebases for context-aware development",
-        "Agent teams collaboration for complex task division",
-        "Auto mode for safer autonomous execution in sandboxes",
-        "Automatic project memory across sessions",
-        "Real browser and OS navigation capabilities",
-        "5.5x fewer tokens than competitors for similar tasks",
-        "VS Code and JetBrains IDE integration",
-        "Terminal-first interface for workflow efficiency"
-      ],
-      "cons": [
-        "Heavy Opus usage can cost $150-200 monthly",
-        "Terminal-first interface may not suit all developers",
-        "Requires learning agent-based workflow concepts",
-        "Limited GUI compared to traditional IDEs"
-      ],
-      "bestFor": "Developers who prefer terminal-based workflows and want autonomous AI coding agents for complex software tasks.",
-      "affiliateCommission": null,
-      "tags": [
-        "coding",
-        "development",
-        "terminal",
-        "ai agent",
-        "autonomous"
-      ],
-      "featured": true
-    },
-    {
-      "name": "Gumloop AI",
-      "slug": "gumloop-ai",
-      "description": "No-code AI-native automation platform for building complex workflows and intelligent agents through visual drag-and-drop interface.",
-      "longDescription": "Gumloop AI, as of April 2026, empowers businesses to create sophisticated AI workflows without code. It features a visual drag-and-drop interface where every node can contain AI logic for analysis, decision-making, and data transformation. The platform includes \"Gummie,\" a meta-agent that builds workflows from natural language descriptions. Users can connect to various AI models (GPT-5.4, Claude 4.6 Sonnet, Gemini 3.1 Pro), utilize dedicated web scrapers for real-time data extraction, and access over 110 app integrations including Slack, GitHub, Gmail, Stripe, and Salesforce. Dedicated Data Analysis Agents can execute SQL queries on platforms like BigQuery and answer questions directly from data warehouses.",
-      "url": "https://gumloop.com",
-      "affiliateUrl": "https://gumloop.com/?via=slashai",
-      "category": "Automation",
-      "pricing": "Freemium",
-      "price": "$15/mo Starter",
-      "released": "2023 (AI-enhanced April 2026)",
-      "added": "2026-04-29",
-      "pros": [
-        "Visual drag-and-drop workflow builder",
-        "Every node contains AI logic for intelligent decision-making",
-        "Gummie meta-agent builds workflows from natural language descriptions",
-        "Centralized access to GPT-5.4, Claude 4.6, Gemini 3.1 Pro models",
-        "Dedicated web scraper for real-time data extraction",
-        "110+ app integrations including Slack, GitHub, Salesforce",
-        "Data Analysis Agents for SQL queries and data warehouse questions",
-        "No-code approach accessible to non-technical users"
-      ],
-      "cons": [
-        "Complex workflows may have learning curve",
-        "Advanced features require paid tiers",
-        "Reliance on third-party model APIs",
-        "Visual interface limitations for extremely complex logic"
-      ],
-      "bestFor": "Business users who want to create intelligent AI-powered workflows without writing code.",
-      "affiliateCommission": "Varies",
-      "tags": [
-        "automation",
-        "workflow",
-        "no-code",
-        "ai agent",
-        "web scraping"
-      ],
-      "featured": false
-    },
-    {
-      "name": "Perplexity Computer",
-      "slug": "perplexity-computer",
-      "description": "AI-powered digital worker that orchestrates multiple frontier models for end-to-end project execution.",
-      "longDescription": "Perplexity Computer, introduced in February 2026 and enhanced in April 2026, operates as a general-purpose digital worker that unifies various AI capabilities into a single system. It can orchestrate up to 19 different AI models (including GPT-5.1, Claude Opus 4.5, and o3-pro) to reason, delegate, search, build, code, and deliver on projects end-to-end. Key features include the Comet Browser for agentic web tasks, custom skills for automating recurring tasks, Model Council for synthesizing results from three frontier models, Voice Mode for natural conversation control, and specialized versions like Finance Computer for SEC filings and earnings transcripts. Perplexity Computer operates in isolated compute environments with access to real filesystem and browser, making it capable of true autonomous project execution from objective to completion.",
-      "url": "https://perplexity.ai/computer",
-      "affiliateUrl": null,
-      "category": "Productivity",
-      "pricing": "Freemium",
-      "price": "$25/mo Pro",
-      "released": "February 2026 (enhanced April 2026)",
-      "added": "2026-04-29",
-      "pros": [
-        "Orchestrates up to 19 different AI models for complex tasks",
-        "Comet Browser for AI-first web navigation and task execution",
-        "Custom skills for automating recurring workflows",
-        "Model Council synthesizes GPT-5.4, Claude Opus 4.6, Gemini 3.1 Pro",
-        "Voice Mode for natural conversation control",
-        "Finance Computer for SEC filings and earnings analysis",
-        "Personal Computer on Mac for local file editing and voice orchestration",
-        "Agent API for building managed agentic workflows"
-      ],
-      "cons": [
-        "Higher price point reflects advanced capabilities",
-        "May be overkill for simple research tasks",
-        "Requires learning agentic workflow concepts",
-        "Resource intensive for full model orchestration"
-      ],
-      "bestFor": "Professionals who need autonomous AI assistance for complex, multi-step projects from research to execution.",
-      "affiliateCommission": null,
-      "tags": [
-        "productivity",
-        "research",
-        "automation",
-        "ai agent",
-        "digital worker"
-      ],
-      "featured": true
-    },
-    {
-      "name": "Lovable",
-      "slug": "lovable",
-      "description": "AI-powered full-stack application generator that creates production-ready apps from natural language descriptions.",
-      "longDescription": "Lovable, gaining significant traction in April 2026, enables users to create full-stack web applications through natural language descriptions. Users describe what they want to build, and Lovable generates production-ready code including frontend, backend, database schema, authentication, and deployment configurations. The platform leverages AI to understand intent, apply best practices, and generate maintainable code. It features real-time preview, instant deployment options, and iterative refinement capabilities. Lovable is particularly popular for rapid prototyping, MVPs, and internal tools where speed-to-market is critical. The generated code follows modern frameworks and includes proper error handling, testing considerations, and scalability foundations.",
-      "url": "https://lovable.dev",
-      "affiliateUrl": "https://lovable.dev?via=slashai",
-      "category": "Coding",
-      "pricing": "Freemium",
-      "price": "$20/mo Starter",
-      "released": "2024 (significant AI enhancements April 2026)",
-      "added": "2026-04-29",
-      "pros": [
-        "Natural language to full-stack application generation",
-        "Production-ready code including frontend, backend, database",
-        "Real-time preview and instant deployment options",
-        "Iterative refinement based on user feedback",
-        "Popular for rapid prototyping and MVPs",
-        "Follows modern frameworks with proper error handling",
-        "Creates maintainable code with scalability foundations",
-        "Reduces time from concept to working application"
-      ],
-      "cons": [
-        "May not handle extremely specialized or legacy system requirements",
-        "Generated code might require optimization for specific use cases",
-        "Dependency on AI interpretation accuracy",
-        "Less control over low-level implementation details"
-      ],
-      "bestFor": "Entrepreneurs and developers who want to rapidly prototype and deploy full-stack applications without deep diving into boilerplate code.",
-      "affiliateCommission": "Varies",
-      "tags": [
-        "coding",
-        "development",
-        "full-stack",
-        "ai agent",
-        "app generator"
-      ],
-      "featured": false
-    }
-  ]
+]
