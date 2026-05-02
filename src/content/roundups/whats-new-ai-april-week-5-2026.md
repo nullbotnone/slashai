@@ -50,7 +50,7 @@ For solopreneurs who need occasional technical work but don't want to maintain f
 
 ## 3. AI-Powered Business Management Tools Specialize for Freelancers
 
-While general AI assistants remain valuable, April saw continued growth in tools specifically engineered for freelancer business operations, moving beyond generic productivity to address industry-specific pain points.
+While general AI assistants remain valuable, April saw continued growth in tools specifically engineered for freelencer business operations, moving beyond generic productivity to address industry-specific pain points.
 
 **HoneyBook AI** released its 2026 Q2 update on April 30, enhancing its automated business manager capabilities with:
 - Predictive pricing suggestions based on project scope, client history, and market rates
