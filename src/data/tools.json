@@ -2491,5 +2491,45 @@
       "technical users"
     ],
     "featured": false
+  },
+  {
+    "name": "Alfred_ AI Chief of Staff",
+    "slug": "alfred-ai-chief-of-staff",
+    "description": "AI-powered executive assistant that handles email triage, calendar management, task extraction, and follow-ups.",
+    "longDescription": "Alfred_ AI Chief of Staff is an AI-powered solution designed to manage and optimize executive-level operations by handling tasks traditionally performed by a human chief of staff or executive assistant. This includes autonomously managing inboxes, calendars, tasks, and follow-ups. It triages emails by urgency and importance, drafts replies in the user's voice, extracts action items, tracks follow-ups, provides daily briefings, and integrates with Gmail or Outlook via secure OAuth 2.0.",
+    "url": "https://get-alfred.ai",
+    "affiliateUrl": null,
+    "category": "AI Agents",
+    "pricing": "Freemium",
+    "price": "4.99/mo",
+    "released": "2024",
+    "added": "2026-05-01",
+    "pros": [
+      "Automated email triage by urgency and importance",
+      "Drafts replies in your voice",
+      "Extracts action items from emails",
+      "Calendar intelligence for scheduling and focus time",
+      "Daily briefings with prioritized tasks",
+      "Follow-up tracking for sent emails",
+      "Integrates with Gmail and Outlook via OAuth 2.0",
+      "Operates overnight and on weekends",
+      "Unified task management with Kanban boards and note-taking"
+    ],
+    "cons": [
+      "Requires learning to trust the AI's judgments",
+      "May occasionally misprioritize emails",
+      "Subscription cost may be a barrier for some solopreneurs",
+      "Limited to email and calendar (doesn't handle other apps directly without integrations)"
+    ],
+    "bestFor": "Solopreneurs and freelancers who spend significant time on email and calendar management.",
+    "affiliateCommission": null,
+    "tags": [
+      "ai-agent",
+      "email",
+      "calendar",
+      "task-management",
+      "productivity"
+    ],
+    "featured": false
   }
 ]

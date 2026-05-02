@@ -1,8 +1,14 @@
-# AI Tool Updates — May 1, 2026
+# AI Tool Updates — May 2, 2026
 
 ## Summary
 
-Daily check confirms that the tools.json file is up to date with the latest updates for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, and Murf AI. No additional changes were required to the tools data. The site has been rebuilt with the latest content.
+Daily check confirms that the six specific tools (Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI) have no new updates beyond the April 2026 updates already documented in tools.json.
+
+However, the tools.json file has been updated with new tools and modifications (as of May 1, 2026). Major changes include:
+
+- Replacement of Microsoft Agent 365 entry with Cursor 3 (AI coding agent with parallel agent execution)
+- Updates to many other tools (see git diff for full details)
+- The site has been rebuilt with the latest content.
 
 ## Key Findings from Today's Check
 
@@ -19,13 +25,15 @@ Daily check confirms that the tools.json file is up to date with the latest upda
 - **Murf AI**: No new May 2026 updates beyond the April 2026 updates already documented in tools.json.
 
 ## Action Items Completed
-- [x] Verified tools.json contains latest updates for all six tools (no changes needed)
+- [x] Verified tools.json contains latest updates for the six tools (no changes needed for these six)
+- [x] Noted that tools.json has been updated with new tools and modifications (see git diff)
 - [x] Researched AI agents trends for May 2026
 - [x] Built site with npm run build
 - [x] Prepared git commit for dist/ and pending-updates.md changes
-- [x] No new review articles needed as existing reviews cover the strategic features and no major tool updates
+- [x] No new review articles needed as existing reviews cover the strategic features and no major tool updates for the six tools
 
 ## Sources
 - Official company blogs and documentation for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI
 - Web search for May 2026 AI agents trends
 - Existing tools.json file verification
+- Git diff of tools.json changes
