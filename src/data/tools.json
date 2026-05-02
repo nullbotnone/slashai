@@ -2532,4 +2532,166 @@
     ],
     "featured": false
   }
-]
+    ,
+    {
+      "name": "Mistral AI Workflows",
+      "slug": "mistral-ai-workflows",
+      "description": "Enterprise AI orchestration engine for moving AI systems from experimentation to production business processes.",
+      "longDescription": "Mistral AI launched its Workflows orchestration engine with a public preview release around April 28, 2026. The platform is described as an orchestration layer for enterprise AI, aiming to move AI systems from experimental proofs-of-concept to reliable, production-grade business processes. It addresses the challenge of reliably deploying advanced AI models and agents by providing infrastructure for coordination, monitoring, and recovery. Key features include durability, observability, and fault tolerance for multi-step AI processes. Developers can define workflows using Python, integrating models, agents, and external connectors. The platform also supports human-in-the-loop steps for approval checkpoints in regulated environments. Built on Temporal's durable execution engine, Workflows extends its capabilities with AI-specific features like streaming, payload handling, multi-tenancy, and enhanced observability. This architecture separates the control plane (hosted by Mistral) from the data plane (within the customer's environment), allowing for data privacy and flexible deployment options including cloud, on-premise, or hybrid setups. Mistral AI emphasizes that Workflows helps organizations overcome operational bottlenecks in adopting AI at scale, enabling deployment in mission-critical processes across sectors like logistics, finance, and customer support.",
+      "url": "https://mistral.ai/news/workflows",
+      "affiliateUrl": "https://mistral.ai/news/workflows?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$25/mo Starter",
+      "released": "April 28, 2026 (public preview May 1, 2026)",
+      "added": "2026-05-02",
+      "pros": [
+        "Durability, observability, and fault tolerance for multi-step AI processes",
+        "Python-based workflow definition with model/agent/connector integration",
+        "Human-in-the-loop steps for approval checkpoints in regulated environments",
+        "Built on Temporal's durable execution engine with AI-specific enhancements",
+        "Separates control plane (Mistral-hosted) from data plane (customer environment)",
+        "Flexible deployment options: cloud, on-premise, or hybrid setups",
+        "Addresses operational bottlenecks in adopting AI at scale",
+        "Enables deployment in mission-critical processes across logistics, finance, customer support"
+      ],
+      "cons": [
+        "May require learning curve for teams unfamiliar with orchestration engines",
+        "Advanced features may require higher-tier plans",
+        "Dependent on underlying Temporal engine stability and updates",
+        "Multi-tenancy features may add complexity for simpler use cases"
+      ],
+      "bestFor": "Enterprise organizations looking to reliably deploy and manage AI systems in production business processes at scale.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "orchestration",
+        "workflow",
+        "ai agent",
+        "enterprise ai",
+        "temporal"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Travelers Claim Insights",
+      "slug": "travelers-claim-insights",
+      "description": "AI-powered capability within e-CARMA® risk management platform for optimizing claim analysis and prioritizing actions.",
+      "longDescription": "Travelers announced the launch of Claim Insights, a new AI-powered capability within its proprietary risk management information platform, e-CARMA®, on May 1, 2026. This new feature is designed to assist risk managers in quickly identifying, understanding, and acting on their most critical claims. Claim Insights aims to optimize claim analysis, prioritize actions, and provide key insights to risk managers, enabling them to respond more rapidly and maintain greater control over outcomes. Travelers' e-CARMA platform provides resources for evaluating information, analyzing trends, and understanding data to facilitate informed decision-making in risk management.",
+      "url": "https://www.travelers.com/business-insurance/services/risk-management-information-services/ecarma",
+      "affiliateUrl": "https://www.travelers.com/business-insurance/services/risk-management-information-services/ecarma?via=slashai",
+      "category": "Productivity",
+      "pricing": "Paid",
+      "price": "$99/mo (as part of e-CARMA platform)",
+      "released": "May 1, 2026",
+      "added": "2026-05-02",
+      "pros": [
+        "AI-powered assistance for identifying, understanding, and acting on critical claims",
+        "Optimizes claim analysis and prioritizes actions for risk managers",
+        "Provides key insights to enable rapid response and greater control",
+        "Integrated within Travelers' proprietary e-CARMA® risk management platform",
+        "Helps with evaluating information, analyzing trends, and understanding data",
+        "Facilitates informed decision-making in risk management",
+        "Designed specifically for risk management professionals",
+        "Launched May 1, 2026 as new AI-powered capability"
+      ],
+      "cons": [
+        "Only available as part of the full e-CARMA platform",
+        "May be overspecialized for users needing only specific claim analysis features",
+        "Proprietary platform may limit integration with other systems",
+        "Requires existing Travelers e-CARMA subscription or new platform purchase"
+      ],
+      "bestFor": "Risk managers and professionals who need AI-powered assistance to optimize claim analysis, prioritize actions, and respond rapidly to critical claims.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "risk management",
+        "ai",
+        "insurance",
+        "claims",
+        "decision making"
+      ],
+      "featured": false
+    },
+    {
+      "name": "BitsStrategy AI Trading Bot",
+      "slug": "bitsstrategy-ai-trading-bot",
+      "description": "Free AI Trading Bot offering automated market execution for smarter, faster, and easier trading.",
+      "longDescription": "BitsStrategy launched its free AI Trading Bot on May 1, 2026, offering automated market execution for users. The bot is designed to simplify trading by integrating AI-assisted market analysis, quantitative strategy models, and automated execution, making intelligent trading more accessible to a wider audience. Key features include free access to start, no coding required, automated execution based on selected strategy rules, AI-assisted market analysis, quantitative strategy support, reduced emotional pressure through rules-based execution, and a beginner-friendly three-step setup process (register account, select trading plan, activate automated execution). The platform emphasizes practical automation to address challenges such as time pressure, emotional execution, market complexity, and strategy consistency. BitsStrategy also offers a dedicated AI Crypto Trading Bot for 24/7 monitoring of continuously open digital asset markets.",
+      "url": "https://bitsstrategy.com",
+      "affiliateUrl": "https://bitsstrategy.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Free",
+      "price": "$0/mo",
+      "released": "May 1, 2026",
+      "added": "2026-05-02",
+      "pros": [
+        "Free access to start lowers entry barrier for AI trading automation",
+        "No coding required - suitable for beginners without technical expertise",
+        "Automated execution based on selected quantitative strategy rules",
+        "AI-assisted market analysis helps monitor changing market conditions",
+        "Quantitative strategy support enables structured trading plans",
+        "Rules-based execution reduces emotional pressure and impulsive decisions",
+        "Beginner-friendly three-step setup process (register, select plan, activate)",
+        "Addresses challenges of time pressure, emotional execution, market complexity, strategy consistency",
+        "Dedicated AI Crypto Trading Bot available for 24/7 digital asset market monitoring"
+      ],
+      "cons": [
+        "Free tier may have limitations on advanced features or usage volume",
+        "May not support extremely complex or customized trading strategies",
+        "Dependent on AI-assisted analysis accuracy and strategy effectiveness",
+        "Automated execution may lack nuance for specialized market conditions"
+      ],
+      "bestFor": "Users who want to participate in smarter, faster, and easier trading through AI-assisted automated market execution, particularly beginners seeking accessible entry points.",
+      "affiliateCommission": null,
+      "tags": [
+        "productivity",
+        "trading",
+        "ai",
+        "bot",
+        "automated execution",
+        "quantitative strategy"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Oracle Select AI 26ai",
+      "slug": "oracle-select-ai-26ai",
+      "description": "Enhanced Natural Language to SQL capabilities with feedback mechanism for improved accuracy and learning.",
+      "longDescription": "The Oracle Select AI 26ai release significantly enhances Natural Language to SQL (NL2SQL) capabilities by introducing a \"Feedback\" mechanism, among other improvements, to refine SQL query generation. Oracle 26ai represents a fundamental shift in database architecture, integrating artificial intelligence directly into the database kernel to allow for semantic interaction with data. Key aspects include: NL2SQL allows users to interact with data using natural language prompts to generate, execute, explain, or narrate SQL queries; Feedback for NL2SQL (new in 26ai) allows users to provide feedback on SQL accuracy/relevance to build a repository of prompts and corresponding feedback for prompt tuning; Vector index for learning is automatically created when feedback is first used to identify similar prompts and provide top matching examples as additional metadata; Types of Feedback include positive feedback to confirm accuracy and negative feedback to point out errors or offer guidance; Other enhancements include automatic object selection to send only relevant table metadata, enriched prompt metadata sources, data control for administrators to limit data sent to LLM, and reduced hallucinations to prevent LLM from generating incorrect table names. Oracle Select AI 26ai aims to make database interaction more intuitive and efficient, enabling broader range of users to leverage enterprise data through natural language.",
+      "url": "https://www.oracle.com/artificial-intelligence/speak-with-ai-about-data-using-real-time/",
+      "affiliateUrl": "https://www.oracle.com/artificial-intelligence/speak-with-ai-about-data-using-real-time/?via=slashai",
+      "category": "Productivity",
+      "pricing": "Paid",
+      "price": "Variable (Oracle Autonomous AI Database pricing)",
+      "released": "April 2026 (26ai release)",
+      "added": "2026-05-02",
+      "pros": [
+        "Significantly enhanced Natural Language to SQL (NL2SQL) capabilities",
+        "Feedback mechanism for NL2SQL allows learning from user interactions",
+        "Automatically creates vector index for prompt tuning and similarity search",
+        "Positive feedback confirms accuracy, negative feedback points out errors/guidance",
+        "Automatic object selection sends only relevant table metadata to LLM",
+        "Enriched prompt metadata sources include table comments, foreign keys, annotations",
+        "Data control allows administrators to limit data sent to LLM for security/compliance",
+        "Reduced hallucinations prevents LLM from generating incorrect table names"
+      ],
+      "cons": [
+        "Requires Oracle Autonomous AI Database or Oracle AI Database 26ai deployment",
+        "May be complex for users needing only basic NL2SQL without advanced features",
+        "Pricing variable based on Oracle cloud database services and usage",
+        "Learning curve for utilizing all advanced NL2SQL enhancements and feedback features"
+      ],
+      "bestFor": "Users who want to interact with enterprise data through natural language with improved accuracy and learning capabilities.",
+      "affiliateCommission": null,
+      "tags": [
+        "productivity",
+        "database",
+        "ai",
+        "natural language",
+        "sql",
+        "nl2sql"
+      ],
+      "featured": false
+    }
+  ]
