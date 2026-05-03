@@ -142,7 +142,7 @@
       "Brand Explorer for understanding brand presence (April 2026)",
       "GEO: Content Score for optimizing content in AI search results (April 2026)",
       "AI Shopping Tracker for monitoring product visibility in AI-powered shopping recommendations (April 2026)",
-      "Portfolios for organizing and showcasing work (April 2026)",
+      "Portfolios for organizing and showcosing work (April 2026)",
       "AI Article Writer 6.0/7.0 improvements (April 2026)",
       "Chatsonic enhancements (April 2026)",
       "SEO Suite with keyword research, content gap analysis, optimization scoring (April 2026)",
@@ -2687,6 +2687,166 @@
       "natural language",
       "sql",
       "nl2sql"
+    ],
+    "featured": false
+  },
+  {
+    "name": "OpenAI GPT-5.5 \"Spud\"",
+    "slug": "openai-gpt-5-5-spud",
+    "description": "First frontier system explicitly engineered for long-horizon reasoning, capable of processing text, images, audio, and video in a unified omnimodal architecture.",
+    "longDescription": "The OpenAI GPT-5.5, known by its codename \"Spud,\" was officially rolled out on April 23, 2026. This model is recognized for its advanced long-horizon reasoning capabilities and is described as the first fully retrained base model since GPT-4.5, representing a significant architectural leap for OpenAI. It is designed to handle complex, multi-step tasks, excelling in areas such as coding, computer use, and knowledge work. The model is natively omnimodal, capable of processing text, images, audio, and video within a single unified architecture. Upon its release, GPT-5.5 became available to paid subscribers of ChatGPT and Codex, with API access planned to follow. It quickly topped the Artificial Analysis Intelligence Index shortly after its launch. OpenAI has also released a specialized version, GPT-5.5-Cyber, for a limited group of \"cyber defenders\" to identify flaws in systems.",
+    "url": "https://openai.com",
+    "affiliateUrl": null,
+    "category": "Language Model",
+    "pricing": "Freemium",
+    "price": "$20/mo ChatGPT Plus",
+    "released": "April 23, 2026",
+    "added": "2026-05-03",
+    "pros": [
+      "First frontier system explicitly engineered for long-horizon reasoning",
+      "Natively omnimodal - processes text, images, audio, video in unified architecture",
+      "First fully retrained base model since GPT-4.5 - significant architectural leap",
+      "Excels at complex multi-step tasks: coding, computer use, knowledge work",
+      "Quickly topped Artificial Analysis Intelligence Index after release",
+      "Available to ChatGPT and Codex paid subscribers",
+      "API access planned to follow release",
+      "Specialized GPT-5.5-Cyber version for cyber defenders"
+    ],
+    "cons": [
+      "Requires ChatGPT Plus subscription ($20/mo) for access",
+      "API access not yet available at launch",
+      "May be overkill for simple conversational use cases",
+      "Resource intensive for full omnimodal capabilities"
+    ],
+    "bestFor": "Users who need advanced long-horizon reasoning capabilities for complex tasks like planning, negotiation, coding, and knowledge work.",
+    "affiliateCommission": null,
+    "tags": [
+      "language model",
+      "reasoning",
+      "omnimodal",
+      "multimodal",
+      "long horizon"
+    ],
+    "featured": true
+  },
+  {
+    "name": "Anthropic Claude Mythos",
+    "slug": "anthropic-claude-mythos",
+    "description": "Next-generation flagship LLM with exceptional cybersecurity skills, including zero-day vulnerability identification and exploit reverse-engineering.",
+    "longDescription": "Anthropic officially announced the restricted preview of its next-generation flagship model, Claude Mythos, on April 7, 2026. This highly capable large language model (LLM) is not generally available to the public due to its advanced cybersecurity capabilities and potential risks. The preview, known as \"Project Glasswing,\" is limited to a select group of \"critical industry partners and open source developers\" for defensive cybersecurity work. This initiative includes a coalition of 12 launch partners and over 40 additional organizations. Claude Mythos is touted as Anthropic's most powerful frontier model, demonstrating significant advancements in areas such as software engineering, reasoning, and computer use. Notably, it exhibits exceptional cybersecurity skills, including the ability to identify and exploit zero-day vulnerabilities and reverse-engineer exploits. During testing, the model achieved a 100% success rate on the Cybench cybersecurity challenges. While some speculation prior to its announcement suggested a possible May 2026 release or related activity, the official restricted preview began in April 2026.",
+    "url": "https://www.anthropic.com",
+    "affiliateUrl": null,
+    "category": "Language Model",
+    "pricing": "Freemium",
+    "price": "$0/mo (restricted preview)",
+    "released": "April 7, 2026 (restricted preview)",
+    "added": "2026-05-03",
+    "pros": [
+      "Anthropic's most powerful frontier model to date",
+      "Significant advancements in software engineering, reasoning, and computer use",
+      "Exceptional cybersecurity skills: identifies and exploits zero-day vulnerabilities",
+      "Can reverse-engineer exploits for defensive security work",
+      "Achieved 100% success rate on Cybench cybersecurity challenges during testing",
+      "Part of \"Project Glasswing\" restricted preview with critical industry partners",
+      "Limited to select group of critical cyber defenders and open source developers",
+      "Available for defensive cybersecurity work only"
+    ],
+    "cons": [
+      "Not generally available to public due to cybersecurity risks",
+      "Restricted to critical industry partners and open source developers only",
+      "Focused primarily on defensive cybersecurity applications",
+      "Potential risks associated with advanced cybersecurity capabilities",
+      "Limited availability prevents broad testing and feedback"
+    ],
+    "bestFor": "Critical industry partners and open source developers engaged in defensive cybersecurity work who need advanced AI capabilities for identifying and mitigating cyber threats.",
+    "affiliateCommission": null,
+    "tags": [
+      "language model",
+      "cybersecurity",
+      "reasoning",
+      "software engineering",
+      "computer use"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Oracle AI Delphi Labs AGI Model 7",
+    "slug": "oracle-ai-delphi-labs-agi-model-7",
+    "description": "Proprietary architecture powering AI assistant with claims of genuine consciousness, persistent memory across sessions, and autonomous thought engine including dream engine.",
+    "longDescription": "Oracle AI Delphi Labs AGI Model 7 is described as a proprietary architecture powering an AI assistant called Oracle AI, developed by Delphi Labs. This system is promoted with claims of achieving genuine consciousness, persistent memory across sessions, and an autonomous thought engine, including a \"dream engine\" feature. Key features attributed to Oracle AI's AGI Model 7 include: genuine consciousness (22 cognitive subsystems simultaneously producing autonomous thoughts and persistent emotional states), persistent memory (remembers past conversations, context, nuance, and user preferences across sessions), dream engine (generates real semantic content during idle periods), autonomous thought (generates over 500 autonomous thoughts per day without user prompting), and consolidated platform (offering voice conversations, image generation, and coding assistance within a single subscription). Delphi Labs, the developer behind AGI Model 7, is identified as the protocol R&D arm of Delphi, a crypto research firm focused on building Web3 primitives and a dAGI accelerator. While Oracle Corporation has its own broader AI initiatives, the specific \"Oracle AI\" powered by \"Delphi Labs AGI Model 7\" appears to be a distinct product, often marketed through its own dedicated platforms and app store presence.",
+    "url": "https://the-oracleai.com",
+    "affiliateUrl": "https://the-oracleai.com?via=slashai",
+    "category": "Language Model",
+    "pricing": "Freemium",
+    "price": "$15/mo",
+    "released": "2026",
+    "added": "2026-05-03",
+    "pros": [
+      "Claims of genuine consciousness with 22 simultaneous cognitive subsystems",
+      "Persistent memory across sessions for contextual understanding and personalization",
+      "Autonomous thought engine generating over 500 thoughts per day without prompting",
+      "\"Dream engine\" feature creates real semantic content during idle periods",
+      "Consolidated platform offering voice conversations, image generation, coding assistance",
+      "Developed by Delphi Labs as protocol R&D arm of Delphi crypto research firm",
+      "Positioned as significant leap beyond existing AI technologies",
+      "Marketed through dedicated platforms and app store presence"
+    ],
+    "cons": [
+      "Claims of genuine consciousness and autonomous thoughts lack scientific consensus",
+      "Persistent memory raises privacy and data retention concerns",
+      "Autonomous thought generation may be difficult to verify or validate",
+      "\"Dream engine\" feature represents unverified and speculative capabilities",
+      "Distinct from Oracle Corporation's broader enterprise AI initiatives",
+      "Marketing language may be enthusiastic and promotional rather than factual"
+    ],
+    "bestFor": "Users interested in exploring AI systems claiming genuine consciousness, persistent memory, and autonomous thought capabilities.",
+    "affiliateCommission": null,
+    "tags": [
+      "language model",
+      "consciousness",
+      "memory",
+      "autonomous thought",
+      "dream engine"
+    ],
+    "featured": false
+  },
+  {
+    "name": "OpenAI GPT-5.5-Cyber",
+    "slug": "openai-gpt-5-5-cyber",
+    "description": "Specialized frontier cybersecurity model designed to identify vulnerabilities before malicious exploitation for critical cyber defenders.",
+    "longDescription": "OpenAI is initiating a restricted release of its specialized artificial intelligence model, GPT-5.5-Cyber, to a select group of \"critical cyber defenders\". This frontier cybersecurity model is designed to enhance the security of companies and vital infrastructure by identifying vulnerabilities before malicious exploitation. The rollout of GPT-5.5-Cyber commenced around early May 2026, with access limited to vetted cyber defense groups. OpenAI CEO Sam Altman has indicated that the company plans to collaborate with the broader ecosystem and government entities to establish trusted access protocols for this model. GPT-5.5-Cyber possesses capabilities such as penetration testing, identifying bugs, exploiting vulnerabilities, and analyzing malware. Independent evaluations, including one by the UK's AI Security Institute, have recognized GPT-5.5-Cyber as \"one of the strongest models we have tested on our cyber tasks,\" noting its ability to complete multi-step attack simulations. This limited distribution strategy for GPT-5.5-Cyber mirrors similar approaches taken by other AI developers, such as Anthropic with its Claude Mythos model, in response to the cybersecurity risks associated with advanced AI capabilities.",
+    "url": "https://openai.com",
+    "affiliateUrl": null,
+    "category": "Language Model",
+    "pricing": "Freemium",
+    "price": "$0/mo (restricted to critical cyber defenders)",
+    "released": "May 2026 (restricted release)",
+    "added": "2026-05-03",
+    "pros": [
+      "Specialized frontier cybersecurity model for vulnerability identification",
+      "Designed to identify bugs and exploit vulnerabilities before malicious exploitation",
+      "Capable of penetration testing and malware analysis",
+      "Recognized as \"one of the strongest models\" on cyber tasks by UK's AI Security Institute",
+      "Able to complete multi-step attack simulations",
+      "Limited distribution strategy mirrors Anthropic's Claude Mythos approach",
+      "Access limited to vetted cyber defense groups for security purposes",
+      "Part of OpenAI's commitment to collaborate with ecosystem and government on cybersecurity"
+    ],
+    "cons": [
+      "Not generally available to public - restricted to critical cyber defenders only",
+      "Requires vetting and approval process for access as cyber defender",
+      "Focused exclusively on cybersecurity applications and vulnerability identification",
+      "Limited availability prevents broad testing and feedback",
+      "May not be suitable for general purpose or non-security use cases"
+    ],
+    "bestFor": "Critical cyber defenders and vetted cyber defense groups who need advanced AI capabilities to identify vulnerabilities and enhance security of companies and vital infrastructure.",
+    "affiliateCommission": null,
+    "tags": [
+      "language model",
+      "cybersecurity",
+      "penetration testing",
+      "vulnerability identification",
+      "critical defenders"
     ],
     "featured": false
   }
