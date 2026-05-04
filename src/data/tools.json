@@ -2849,5 +2849,340 @@
       "critical defenders"
     ],
     "featured": false
+  },
+  {
+    "name": "LexiFlow AI",
+    "slug": "lexiflow-ai",
+    "description": "AI-powered legal contract platform for freelancers, founders, and small businesses.",
+    "longDescription": "LexiFlow AI is an AI-powered legal contract platform designed to provide freelancers, founders, and small business owners with accessible and affordable legal protection through streamlined contract creation and management. It offers AI-powered contract drafting, plain-language explanations for each clause, built-in e-signature capabilities, multi-contract management, a template library, and jurisdiction-specific contracts to ensure legal relevance and enforceability.",
+    "url": "https://www.uselexflow.com/",
+    "affiliateUrl": null,
+    "category": "Legal",
+    "pricing": "Freemium",
+    "price": "0/mo Pro",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "AI-powered contract drafting",
+      "Plain-language explanations for each clause",
+      "Built-in e-signature capabilities",
+      "Multi-contract management",
+      "Template library for various contract types",
+      "Jurisdiction-specific contracts (US, UK, GDPR, CCPA)"
+    ],
+    "cons": [
+      "May require learning curve for legal terminology",
+      "Dependent on AI accuracy for legal soundness",
+      "Limited to certain jurisdictions in initial launch"
+    ],
+    "bestFor": "Freelancers, founders, and small business owners who need to create and manage legal contracts without expensive lawyers.",
+    "affiliateCommission": null,
+    "tags": [
+      "legal",
+      "contracts",
+      "freelance",
+      "ai-powered",
+      "e-signature"
+    ],
+    "featured": false
+  },
+  {
+    "name": "MediAssist AI",
+    "slug": "mediassist-ai",
+    "description": "HIPAA-compliant AI medical documentation and practice management tool for freelance healthcare professionals.",
+    "longDescription": "MediAssist AI launched its HIPAA-compliant video consultation feature on May 14, 2026, enabling secure video sessions with automatic transcription and summarization, real-time medical coding suggestions during consultations, integration with popular telehealth platforms (Doxy.me, SimplePractice), and automated patient intake forms that adapt to specialty and visit type. This transforms MediAssist from a documentation tool into a full practice management solution for freelance healthcare professionals who conduct virtual consultations.",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "Healthcare",
+    "pricing": "Subscription",
+    "price": "9-299/mo",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "HIPAA-compliant video consultations",
+      "Automatic transcription and summarization",
+      "Real-time medical coding suggestions",
+      "Integration with telehealth platforms",
+      "Automated patient intake forms"
+    ],
+    "cons": [
+      "May be overkill for non-medical freelancers",
+      "Requires reliable internet for video consultations",
+      "Learning curve for medical coding features"
+    ],
+    "bestFor": "Freelance healthcare professionals (doctors, therapists, counselors) who need HIPAA-compliant documentation and practice management tools.",
+    "affiliateCommission": null,
+    "tags": [
+      "medical",
+      "documentation",
+      "hipaa",
+      "telehealth",
+      "freelance"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Pi Assistant 2.0",
+    "slug": "pi-assistant-2-0",
+    "description": "AI assistant with custom workflow templates for freelancer use cases.",
+    "longDescription": "Pi Assistant 2.0 rolled out custom workflow templates on May 13, 2026 specifically for freelancer use cases: client onboarding workflow that gathers requirements, sends proposals, and schedules kickoff calls; content creation workflow that researches topics, outlines articles, and drafts social media promotion; financial workflow that tracks invoices, estimates taxes, and generates expense reports. Each template can be customized with user-specific tools and preferences.",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "Assistant",
+    "pricing": "Freemium",
+    "price": "Unknown",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "Custom workflow templates for freelancer use cases",
+      "Reduces setup time from hours to minutes",
+      "Includes client onboarding, content creation, and financial workflows",
+      "Each template customizable with user-specific tools and preferences"
+    ],
+    "cons": [
+      "May require initial setup to customize templates",
+      "Dependent on the quality of the templates",
+      "Limited to pre-defined workflow types"
+    ],
+    "bestFor": "Freelancers who want to automate common workflows like client onboarding, content creation, and financial tracking.",
+    "affiliateCommission": null,
+    "tags": [
+      "assistant",
+      "workflow",
+      "freelance",
+      "automation"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Workbeaver AI",
+    "slug": "workbeaver-ai",
+    "description": "Autonomous workflow platform for freelancers with multi-step automation.",
+    "longDescription": "Workbeaver AI launched its \"Autonomous Mode\" on May 15, 2026, allowing the platform to execute multi-step workflows without human confirmation for low-risk actions, learn from user corrections to improve future autonomous decisions, schedule workflows to run at specific times or trigger based on events (new email, file upload, etc.), and provide detailed audit logs of all autonomous actions for review and compliance.",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "Productivity",
+    "pricing": "Freemium",
+    "price": "Unknown",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "Executes multi-step workflows without human confirmation for low-risk actions",
+      "Learns from user corrections to improve future autonomous decisions",
+      "Schedules workflows to run at specific times or trigger based on events",
+      "Provides detailed audit logs of all autonomous actions"
+    ],
+    "cons": [
+      "Requires trust in autonomous decision-making",
+      "May need initial setup for complex workflows",
+      "Limited to predefined low-risk actions for full autonomy"
+    ],
+    "bestFor": "Freelancers who want to delegate repetitive tasks like monthly financial reporting, weekly client check-ins, and social media content scheduling.",
+    "affiliateCommission": null,
+    "tags": [
+      "autonomous",
+      "workflow",
+      "freelance",
+      "productivity"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Dusttt",
+    "slug": "dusttt",
+    "description": "Platform for creating teams of specialized AI agents that collaborate on complex projects.",
+    "longDescription": "Dusttt introduced \"Agent Teams\" on May 16, 2026, enabling solopreneurs to create teams of specialized AI agents that collaborate on complex projects, define agent roles (researcher, writer, editor, publisher) and handoff protocols, simulate workflows before execution to identify potential bottlenecks, and monitor team performance and reallocate resources based on task complexity.",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "AI Agents",
+    "pricing": "Freemium",
+    "price": "Unknown",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "Create teams of specialized AI agents for complex projects",
+      "Define agent roles and handoff protocols",
+      "Simulate workflows before execution",
+      "Monitor team performance and reallocate resources"
+    ],
+    "cons": [
+      "May require understanding of agent collaboration concepts",
+      "Dependent on the quality of the individual agents",
+      "Limited to predefined agent roles"
+    ],
+    "bestFor": "Freelancers tackling complex projects that would traditionally require hiring specialists or outsourcing to agencies.",
+    "affiliateCommission": null,
+    "tags": [
+      "ai agents",
+      "workflow",
+      "collaboration",
+      "freelance"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Soloa AI",
+    "slug": "soloa-ai",
+    "description": "AI-native creative platform for freelance creators.",
+    "longDescription": "Soloa AI exited beta on May 11, 2026 with its first stable release, offering a truly integrated creative platform that uses a unified AI model that understands relationships between image, video, audio, and text, maintains automatic style and branding consistency across all media types, learns from user edits to improve future generation and editing suggestions, and exports directly to platform-specific optimizations (YouTube, Instagram, TikTok, etc.).",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "Creative",
+    "pricing": "Freemium",
+    "price": "Unknown",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "Unified AI model for image, video, audio, and text",
+      "Automatic style and branding consistency",
+      "Learns from user edits",
+      "Exports to platform-specific optimizations"
+    ],
+    "cons": [
+      "May require learning curve for unified interface",
+      "Dependent on AI quality for creative output",
+      "Limited to predefined platform optimizations"
+    ],
+    "bestFor": "Freelance creators who work with multiple media types and want a single integrated platform.",
+    "affiliateCommission": null,
+    "tags": [
+      "creative",
+      "multimodal",
+      "freelance",
+      "ai-native"
+    ],
+    "featured": false
+  },
+  {
+    "name": "HoneyBook AI",
+    "slug": "honeybook-ai",
+    "description": "AI Business Manager standalone product for freelancers.",
+    "longDescription": "HoneyBook AI launched its \"AI Business Manager\" standalone product on May 12, 2026, extending its automated capabilities beyond the HoneyBook CRM: works with any CRM or client management system via API connections, handles end-to-end business operations from lead capture to final invoicing, learns from user decisions to improve automation accuracy over time, and includes a \"simulation mode\" to test workflow changes before deploying live.",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "Productivity",
+    "pricing": "Subscription",
+    "price": "Unknown",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "Works with any CRM via API",
+      "End-to-end business operations automation",
+      "Learns from user decisions",
+      "Simulation mode for testing workflows"
+    ],
+    "cons": [
+      "May require API setup for CRM integration",
+      "Dependent on data quality for learning",
+      "Simulation may not capture all real-world variables"
+    ],
+    "bestFor": "Freelancers who want to automate business operations without migrating their existing CRM.",
+    "affiliateCommission": null,
+    "tags": [
+      "automation",
+      "crm",
+      "freelance",
+      "business"
+    ],
+    "featured": false
+  },
+  {
+    "name": "InvoiceGenius AI",
+    "slug": "invoicegenius-ai",
+    "description": "Specialized invoicing tool with multi-currency escrow management.",
+    "longDescription": "InvoiceGenius AI added multi-currency escrow management on May 13, 2026 for freelancers working with international clients: holds funds in escrow until project milestones are confirmed, automatically converts currencies at favorable rates, provides transparent fee breakdowns for both freelancer and client, and integrates with popular escrow services (Escrow.com, Payoneer Escrow).",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "Finance",
+    "pricing": "Freemium",
+    "price": "Unknown",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "Multi-currency escrow management",
+      "Automatic currency conversion",
+      "Transparent fee breakdowns",
+      "Integration with popular escrow services"
+    ],
+    "cons": [
+      "May be overkill for domestic-only freelancers",
+      "Dependent on escrow service integrations",
+      "Requires milestone confirmation for release"
+    ],
+    "bestFor": "Freelancers working with international clients who need secure payment handling and currency conversion.",
+    "affiliateCommission": null,
+    "tags": [
+      "invoicing",
+      "escrow",
+      "international",
+      "freelance"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Pilot AI",
+    "slug": "pilot-ai",
+    "description": "AI-powered financial controller with scenario planning.",
+    "longDescription": "Pilot AI introduced \"Scenario Planning\" on May 15, 2026 that goes beyond basic forecasting: models the financial impact of major decisions (equipment purchases, hiring help, rate changes), simulates different market conditions and client acquisition scenarios, visualizes cash flow impacts over 12-24 month horizons, and suggests optimal timing for decisions based on predicted cash flow patterns.",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "Finance",
+    "pricing": "Freemium",
+    "price": "Unknown",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "Scenario planning for major financial decisions",
+      "Simulates market conditions and client acquisition",
+      "Visualizes cash flow impacts over 12-24 months",
+      "Suggests optimal timing based on cash flow patterns"
+    ],
+    "cons": [
+      "May require historical data for accurate forecasting",
+      "Complex scenarios may be overwhelming",
+      "Predictions are not guarantees"
+    ],
+    "bestFor": "Freelancers considering major business decisions who need financial forecasting and planning tools.",
+    "affiliateCommission": null,
+    "tags": [
+      "finance",
+      "forecasting",
+      "scenario",
+      "freelance"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Indy AI",
+    "slug": "indy-ai",
+    "description": "AI advisor with industry benchmarks for freelancers.",
+    "longDescription": "Indy AI launched its \"Industry Benchmarks\" feature on May 16, 2026, providing real-time financial benchmarks updated quarterly for 50+ freelancer industries, peer comparison tools that anonymize data while showing percentile rankings, trend analysis showing how benchmarks are shifting over time, and custom benchmark creation for freelancers with unique business models.",
+    "url": null,
+    "affiliateUrl": null,
+    "category": "Finance",
+    "pricing": "Freemium",
+    "price": "Unknown",
+    "released": "May 2026",
+    "added": "2026-05-04",
+    "pros": [
+      "Real-time financial benchmarks for 50+ industries",
+      "Peer comparison with percentile rankings",
+      "Trend analysis of shifting benchmarks",
+      "Custom benchmark creation"
+    ],
+    "cons": [
+      "May not cover niche industries",
+      "Dependent on data quality and quantity",
+      "Custom benchmarks require sufficient data"
+    ],
+    "bestFor": "Freelancers who want data-driven insights into their financial performance relative to peers.",
+    "affiliateCommission": null,
+    "tags": [
+      "finance",
+      "benchmarks",
+      "freelance",
+      "analytics"
+    ],
+    "featured": false
   }
 ]
