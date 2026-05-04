@@ -3185,4 +3185,169 @@
     ],
     "featured": false
   }
-]
+    ,
+    {
+      "name": "HUMAIN ONE",
+      "slug": "humain-one",
+      "description": "Enterprise-grade operating system for building, deploying, and governing autonomous AI agents at scale, powered by AWS.",
+      "longDescription": "HUMAIN ONE, powered by Amazon Web Services (AWS), was announced on May 4, 2026, as the industry's first enterprise-grade operating system designed for building, deploying, and governing autonomous AI agents at scale. This new initiative from HUMAIN, a PIF company focused on delivering full-stack artificial intelligence capabilities globally, aims to accelerate enterprise AI adoption worldwide. The collaboration with AWS will bring HUMAIN ONE to global markets, enabling generative AI-driven operating models for organizations. The generative AI operating system integrates development, data, orchestration, and governance into a single, cohesive system. Key aspects and components of HUMAIN ONE include enterprise-grade security and compliance at its core, HUMAIN Code for designing, building, and deploying generative AI products, HUMAIN Guardian for quality assurance, HUMAIN Eye for security, and the H2O Platform + SDK for developing and orchestrating intelligent agents. It also features HUMAIN Fabric for scalable data infrastructure. HUMAIN ONE will be available on AWS Marketplace globally, providing customers worldwide with seamless access. This announcement expands HUMAIN's strategic partnership with AWS, leveraging AWS's global cloud infrastructure and advanced generative AI capabilities to help enterprises and governments transition to unified, generative AI-driven, agentic operating models. The collaboration will also benefit from the upcoming launch of an AWS Region in the Kingdom of Saudi Arabia, which will support sovereign generative AI deployments for regulated industries.",
+      "url": "https://www.humain.com",
+      "affiliateUrl": "https://www.humain.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "Contact for pricing (enterprise-grade)",
+      "released": "May 4, 2026",
+      "added": "2026-05-04",
+      "pros": [
+        "Industry's first enterprise-grade operating system for autonomous AI agents",
+        "Powered by AWS for global reach and infrastructure",
+        "Integrates development, data, orchestration, and governance into single system",
+        "Enterprise-grade security, data sovereignty, and regulatory compliance at core",
+        "HUMAIN Code for designing, building, deploying generative AI products",
+        "HUMAIN Guardian for quality assurance, HUMAIN Eye for security",
+        "H2O Platform + SDK for developing and orchestrating intelligent agents",
+        "HUMAIN Fabric for scalable data infrastructure",
+        "Available on AWS Marketplace globally for seamless access",
+        "Strategic AWS partnership for global cloud infrastructure and advanced AI capabilities",
+        "Supports sovereign generative AI deployments for regulated industries via Saudi Arabia AWS Region"
+      ],
+      "cons": [
+        "Pricing not publicly available - requires enterprise consultation",
+        "May be overkill for small organizations or individual users",
+        "Dependent on AWS ecosystem and infrastructure",
+        "Learning curve for utilizing full enterprise operating system capabilities",
+        "New product may have limited track record and user feedback initially"
+      ],
+      "bestFor": "Enterprises and governments looking to build, deploy, and govern autonomous AI agents at scale with integrated security, compliance, and operational capabilities.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "operating system",
+        "ai agent",
+        "orchestration",
+        "governance",
+        "aws"
+      ],
+      "featured": true
+    },
+    {
+      "name": "Incredibuild Islo",
+      "slug": "incredibuild-islo",
+      "description": "Agent sandbox offering granular security isolation and robust control for AI-driven software development.",
+      "longDescription": "Incredibuild has launched Islo today, May 4, 2026, a new agent sandbox designed to provide granular security isolation and robust control for AI-driven software development. The platform aims to address the challenges of running AI coding agents safely and efficiently within enterprise environments. Islo provides isolated execution environments for AI coding agents, preventing unintended access to sensitive systems and offering granular policy controls over how agents interact with codebases, infrastructure, and external systems. This allows engineering teams to run AI coding agents 24/7 without the security and governance concerns associated with deploying them on developer machines or unmanaged infrastructure. Key features of Incredibuild Islo include: isolated execution environments for each AI coding agent, granular policy controls governing agent interactions, persistent execution contexts allowing continuous operation without repeated setup, reproducible environments ensuring consistent execution across runs, and integrated acceleration leveraging Incredibuild's existing acceleration technology to speed up compute-heavy workflows. Incredibuild, known for its SDLC execution acceleration platform, emphasizes that Islo provides a \"missing layer in the stack\" to safely and efficiently scale AI coding agents as part of real production workflows. The company is also partnering with the Harbor Framework community to support AI research workflows, particularly for large-scale evaluations and benchmarks. Islo is available with different tiers, including a free plan, a Team plan, and an Enterprise tier.",
+      "url": "https://www.incredibuild.com",
+      "affiliateUrl": "https://www.incredibuild.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $15/mo Team, Contact for Enterprise",
+      "released": "May 4, 2026",
+      "added": "2026-05-04",
+      "pros": [
+        "Isolated execution environments for each AI coding agent",
+        "Granular policy controls governing agent interactions with critical systems",
+        "Persistent execution contexts enabling continuous 24/7 agent operation",
+        "Reproducible environments ensuring consistent execution across runs",
+        "Integrated acceleration leveraging Incredibuild's existing acceleration technology to speed up compute-heavy workflows",
+        "Provides \"missing layer in the stack\" to safely scale AI coding agents in production workflows",
+        "Partnering with Harbor Framework community for AI research workflows and large-scale evaluations",
+        "Available with Free, Team, and Enterprise tiers for different organizational needs"
+      ],
+      "cons": [
+        "Free tier may have limitations on features, usage, or support levels",
+        "May require upgrading to Team or Enterprise for full production capabilities",
+        "Dependent on Incredibuild's underlying acceleration technology",
+        "Isolated environments may introduce complexity for simple agent testing"
+      ],
+      "bestFor": "Engineering teams and organizations that need to securely run AI coding agents 24/7 in enterprise environments with granular security controls and policy enforcement.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "sandbox",
+        "security",
+        "ai agent",
+        "software development"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Anthropic Enterprise AI Services Firm",
+      "slug": "anthropic-enterprise-ai-services",
+      "description": "AI-native enterprise services firm formed by Anthropic with Blackstone, Hellman & Friedman, and Goldman Sachs to integrate Claude into core business operations.",
+      "longDescription": "On May 4, 2026, Anthropic, an enterprise AI services firm, announced the formation of a new AI-native enterprise services firm in partnership with Blackstone, Hellman & Friedman, and Goldman Sachs. This new standalone entity aims to integrate Anthropic's Claude AI system into the core business operations of companies, specifically targeting mid-sized businesses and those within the private equity firms' portfolios. The new firm is backed by a consortium of leading alternative asset managers, including General Atlantic, Leonard Green, Apollo Global Management, GIC, and Sequoia Capital. The venture is expected to involve a total commitment of approximately $1.5 billion, with Anthropic, Blackstone, and Hellman & Friedman each anticipated to invest around $300 million, and Goldman Sachs contributing approximately $150 million. According to Krishna Rao, Chief Financial Officer of Anthropic, the demand for Claude in enterprise settings significantly surpasses any single delivery model, and this new firm will provide additional operational capabilities and capital to expand Claude's reach to large enterprises. Jon Gray, President and Chief Operating Officer of Blackstone, stated that the intention is to build a scaled, world-class company to deploy Anthropic's technology across a wide range of businesses, helping to overcome bottlenecks in enterprise AI adoption. Patrick Healy, CEO at Hellman & Friedman, highlighted the convergence of a massive market need, Anthropic's AI capabilities, and the consortium's reach to scale rapidly. The firm's engineers will work closely with Anthropic's research and product teams to design, build, and maintain enterprise AI deployments, ensuring that implementations can evolve as Claude's capabilities improve. This initiative is expected to accelerate AI adoption in various industries, including healthcare, manufacturing, financial services, retail, real estate, and infrastructure.",
+      "url": "https://www.anthropic.com",
+      "affiliateUrl": null,
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "Variable (enterprise services firm)",
+      "released": "May 4, 2026",
+      "added": "2026-05-04",
+      "pros": [
+        "AI-native enterprise services firm backed by Wall Street giants",
+        "Formed by Anthropic with Blackstone, Hellman & Friedman, and Goldman Sachs",
+        "Total commitment of approximately $1.5 billion from leading alternative asset managers",
+        "Anthropic, Blackstone, Hellman & Friedman each investing ~$300 million",
+        "Goldman Sachs contributing approximately $150 million",
+        "Aims to integrate Claude AI into core business operations of companies",
+        "Targets mid-sized businesses and private equity portfolio companies initially",
+        "Engineers work closely with Anthropic research/product teams for evolving implementations",
+        "Expected to accelerate AI adoption in healthcare, manufacturing, financial services, retail, real estate, infrastructure"
+      ],
+      "cons": [
+        "Not a direct product or tool - represents enterprise services and consulting",
+        "May be overspecialized for users seeking specific AI tools or models",
+        "Dependent on successful execution of the enterprise services joint venture",
+        "Focus on large enterprises may limit accessibility for small/medium businesses initially"
+      ],
+      "bestFor": "Large enterprises seeking to integrate Claude AI into core business operations with operational capabilities and capital to scale AI adoption across industries.",
+      "affiliateCommission": null,
+      "tags": [
+        "productivity",
+        "enterprise services",
+        "ai agent",
+        "consulting",
+        "anthropic"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Cloudflare-Stripe Protocol for AI Agents",
+      "slug": "cloudflare-stripe-protocol",
+      "description": "Joint protocol enabling AI agents to autonomously create accounts, purchase domains, and deploy applications without human intervention.",
+      "longDescription": "As of May 2026, Cloudflare and Stripe have jointly launched a new protocol that enables AI agents to autonomously create accounts, purchase domains, and deploy applications without requiring direct human intervention for each step. This functionality represents a significant advancement in AI automation, allowing AI agents to handle entire deployment workflows from conception to a live production environment. Key aspects include: Cloudflare announced on April 30, 2026, that AI agents can now open Cloudflare accounts, acquire domain names, initiate paid subscriptions, and deploy applications to production. The system leverages a new protocol co-designed with Stripe, which acts as the identity provider. When an agent attempts to provision Cloudflare resources, Cloudflare checks for an existing account linked to the user's Stripe email. If no account exists, Cloudflare automatically provisions one and securely provides credentials to the Stripe Projects CLI for the agent's use. For existing accounts, a standard OAuth flow is used to grant access. Developers who are logged into Stripe can use a single command, `stripe projects init`, through the Stripe CLI. This command instructs an AI agent to build and deploy a new application, including the registration of a domain, without the developer needing to access the Cloudflare dashboard or input payment details directly. Stripe has expanded its \"Agentic Commerce Suite\" and introduced the \"Machine Payments Protocol (MPP)\" to facilitate programmatic transactions by AI agents. Stripe's Link wallet has also been adapted to allow agents to make payments on behalf of users, with built-in controls for spending approvals and full purchase visibility. Cloudflare has simultaneously been enhancing its \"Agent Cloud\" with various features, including a Registrar API that enables AI agents to register domains programmatically, and a suite of tools designed for building, deploying, and scaling AI agents on its global network.",
+      "url": "https://www.cloudflare.com",
+      "affiliateUrl": "https://www.cloudflare.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo (protocol/service)",
+      "released": "May 2026 (announced April 30, 2026)",
+      "added": "2026-05-04",
+      "pros": [
+        "Enables AI agents to autonomously create Cloudflare accounts",
+        "Allows AI agents to purchase domain names programmatically",
+        "Permits AI agents to initiate paid subscriptions and deploy applications to production",
+        "Leverages new protocol co-designed with Stripe as identity provider",
+        "Streamlined deployment workflow: single `stripe projects init` command for agents",
+        "Stripe's Agentic Commerce Suite and Machine Payments Protocol (MPP) for programmatic transactions",
+        "Stripe's Link wallet adapted for agent payments with spending approvals and full purchase visibility",
+        "Cloudflare's Agent Cloud enhanced with Registrar API and scaling tools",
+        "Represents move towards AI agents as first-class clients of infrastructure services"
+      ],
+      "cons": [
+        "Requires both Cloudflare and Stripe accounts for full functionality",
+        "May be technical for users unfamiliar with API/cloud service concepts",
+        "Dependent on both Cloudflare and Stripe platform stability and updates",
+        "Protocol may evolve as both companies enhance their respective offerings"
+      ],
+      "bestFor": "Developers and organizations looking to enable AI agents to autonomously handle complete deployment workflows from account creation to live application deployment.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "protocol",
+        "ai agent",
+        "automation",
+        "cloudflare",
+        "stripe"
+      ],
+      "featured": false
+    }
+  ]
