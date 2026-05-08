@@ -3412,4 +3412,133 @@
     ],
     "featured": false
   }
-]
+    ,
+    {
+      "name": "ServiceNow Otto",
+      "slug": "servicenow-otto",
+      "description": "Enterprise AI experience that unifies conversational AI, autonomous workflows, and enterprise search to complete multi-step tasks across systems.",
+      "longDescription": "ServiceNow introduced \"Otto,\" a new enterprise AI experience, at its Knowledge 2026 conference, which took place from May 5-7, 2026, in Las Vegas, Nevada. ServiceNow Otto is designed to unify conversational AI, autonomous workflows, and enterprise search into a single experience, aiming to complete work across various systems and departments. ServiceNow highlights that many existing AI solutions excel at providing answers but often fall short in completing multi-step tasks that span different applications and teams. Otto addresses this \"completion problem\" by integrating intelligence from Now Assist, Moveworks, and the broader ServiceNow AI Experience. The platform is intended to act as an \"AI agent of agents,\" allowing employees, partners, and customers to submit requests in natural language through various channels like chat, voice, mobile, or web. Otto then understands the intent, routes the work to the appropriate system or agent, and executes the task to completion, adapting to the user's role and location. Actions taken by Otto are governed by the AI Control Tower, which provides oversight, enforces policies, and offers explainability for decisions. ServiceNow's Knowledge 2026 conference had a central theme of \"Put AI to Work: The Agentic Era,\" emphasizing the shift from assistive to agentic AI. Key platform highlights at the event included AI Agents, the AI Control Tower for governance, and RaptorDB for high-performance, enterprise-scale AI. The introduction of ServiceNow Otto underscores the company's strategy to embed AI deeply into workflows and provide a unified \"front door\" for AI-driven execution across the enterprise.",
+      "url": "https://www.servicenow.com",
+      "affiliateUrl": "https://www.servicenow.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "Contact for pricing (enterprise AI platform)",
+      "released": "May 5-7, 2026 (Knowledge 2026 conference)",
+      "added": "2026-05-07",
+      "pros": [
+        "Unifies conversational AI, autonomous workflows, and enterprise search into single experience",
+        "Addresses the \"completion problem\" by executing multi-step tasks across systems and teams",
+        "Acts as an \"AI agent of agents\" integrating intelligence from Now Assist, Moveworks, and ServiceNow AI Experience",
+        "Processes natural language requests through chat, voice, mobile, or web channels",
+        "Adapts task execution to user's role and location for personalized results",
+        "Governed by AI Control Tower for oversight, policy enforcement, and explainability",
+        "Aligns with \"Put AI to Work: The Agentic Era\" theme from Knowledge 2026 conference",
+        "Part of enterprise AI strategy including AI Agents, AI Control Tower, and RaptorDB for high-performance, enterprise-scale AI",
+        "Provides unified \"front door\" for AI-driven execution across the enterprise",
+        "Aims to embed AI deeply into workflows for seamless task completion"
+      ],
+      "cons": [
+        "Pricing not publicly available - requires enterprise consultation",
+        "May be overkill for small organizations or individual users seeking simple AI tools",
+        "ServiceNow ecosystem dependency may limit flexibility for non-ServiceNow users",
+        "Complex enterprise platform may have learning curve for administration and configuration",
+        "New platform (launched May 2026) may have limited track record and user feedback initially"
+      ],
+      "bestFor": "Enterprises seeking to embed AI deeply into workflows and provide a unified front door for AI-driven execution across systems, departments, and geographies.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "enterprise ai",
+        "agentic ai",
+        "workflow automation",
+        "servicenow"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Luma Dream Machine",
+      "slug": "luma-dream-machine",
+      "description": "Generative AI platform that creates hyper-realistic videos with natural physics and motion from text or images.",
+      "longDescription": "Luma Dream Machine, a generative AI platform from Luma AI, is recognized in May 2026 for its ability to create hyper-realistic videos with natural physics and motion. The platform was initially launched in June 2024 and has since continued to evolve, with ongoing developments and updates that reinforce its capabilities. Key aspects include: hyper-realistic video production from text prompts or still images; natural physics motion through advanced spatiotemporal modeling and understanding of 3D space and physics (utilizing \"Ray2\" and \"Ray3\" models); ongoing relevance and prominence in 2025-2026 with continued advancements; and positioning as a tool that simplifies video creation, allowing users to generate professional-grade visuals without extensive technical skills. A recent update, Ray3.14, further enhances stability, prompt adherence, offers native 1080p generation, and provides faster performance.",
+      "url": "https://lumadreammachine.com/",
+      "affiliateUrl": "https://lumadreammachine.com/?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $29/mo Pro, $99/mo Enterprise",
+      "released": "June 2024 (ongoing updates through May 2026)",
+      "added": "2026-05-07",
+      "pros": [
+        "Creates hyper-realistic, cinematic video content from text prompts or still images",
+        "Natural physics motion through advanced spatiotemporal modeling and 3D space understanding",
+        "Utilizes \"Ray2\" and \"Ray3\" models for realistic movement and physics-based realism",
+        "Recent Ray3.14 update enhances stability, prompt adherence, and performance",
+        "Offers native 1080p generation for high-quality video output",
+        "Simplifies video creation - no extensive technical skills required",
+        "Produces smooth, believable, and naturally flowing video content",
+        "Continued prominence and advancements through 2025-2026",
+        "Positioned as top choice for physics-based realism and 3D scene integration",
+        "Enables professional-grade visuals without technical expertise"
+      ],
+      "cons": [
+        "Free tier may have limitations on video length, resolution, or monthly generations",
+        "Requires subscription for full access to Pro and Enterprise features",
+        "Video generation may consume significant computational resources",
+        "Results may vary based on prompt quality and complexity",
+        "May not match specialized professional video production tools for certain use cases"
+      ],
+      "bestFor": "Creators, marketers, educators, and businesses looking to generate professional-grade, hyper-realistic videos with natural physics from simple text or image inputs.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "video generation",
+        "ai video",
+        "text to video",
+        "generative ai"
+      ],
+      "featured": false
+    },
+    {
+      "name": "MOTHER.tech's Degen",
+      "slug": "mother-tech-degen",
+      "description": "AI-powered app for creating images, videos, memes, carousels, and text content with a single tap using modular \"gens\".",
+      "longDescription": "MOTHER.tech has launched Degen, an AI-powered app designed for creating diverse content such as images, videos, memes, carousels, and text with a single tap. The app became available on iOS and Android via an invite-code system on May 5, 2026, with wider access expected in the subsequent weeks. Degen simplifies content creation by replacing traditional prompt engineering with \"gens\"—modular creative tools crafted by artists, photographers, and designers. Users can select a \"gen,\" personalize it with their own photos or text, and instantly generate professional-grade content. The app operates multiple AI models in the background, eliminating the need for complex prompt writing or advanced editing expertise. The Brooklyn-based company, MOTHER.tech, has secured $15 million in seed funding from investors including Google Ventures, Lerer Hippeau Ventures, Box Group, and Shine Capital. Degen also features a unique creator economy model, allowing artists to earn revenue based on the usage of their generators, prioritizing creative quality over follower counts. Emphasizing privacy and creative exploration, content generated within Degen is private by default and organized into channels rather than public algorithmic feeds, fostering experimentation rather than content optimized for social media performance. Users can access \"gens\" through tokens, which can be purchased or earned via referrals. Subscription options are also under development.",
+      "url": "https://mother.tech",
+      "affiliateUrl": "https://mother.tech?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $9.99/mo Pro, Contact for Enterprise",
+      "released": "May 5, 2026 (invite-only), wider access expected subsequent weeks",
+      "added": "2026-05-07",
+      "pros": [
+        "Creates diverse content (images, videos, memes, carousels, text) with single tap",
+        "Replaces complex prompt engineering with modular \"gens\" created by artists/designers",
+        "Users select a \"gen,\" personalize with own photos/text, and instantly generate professional-grade content",
+        "Operates multiple AI models in background - no prompt writing or editing expertise needed",
+        "Brooklyn-based MOTHER.tech secured $15M seed funding from Google Ventures, Lerer Hippeau, Box Group, and Shine Capital",
+        "Unique creator economy model - artists earn revenue based on generator usage",
+        "Prioritizes creative quality over follower counts in creator economy",
+        "Content private by default, organized into channels rather than public feeds",
+        "Fosters experimentation rather than social media performance optimization",
+        "Access to \"gens\" via tokens, which can be purchased or earned via referrals",
+        "Subscription options are also under development"
+      ],
+      "cons": [
+        "Initially launched with invite-code system on iOS and Android (May 5, 2026)",
+        "Wider access expected in subsequent weeks - may delay availability for some users",
+        "Free tier may have limitations on number of generations or \"gen\" access",
+        "Subscription model still under development - pricing and features may change",
+        "Dependent on quality and variety of available \"gens\" from creator community",
+        "May not suit users requiring highly technical or specialized content creation"
+      ],
+      "bestFor": "Creators, designers, marketers, and everyday users looking to quickly generate professional-grade visual and text content without prompt engineering expertise.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "content creation",
+        "ai app",
+        "creative tools",
+        "generative ai"
+      ],
+      "featured": false
+    }
+  ]
