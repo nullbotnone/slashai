@@ -3526,4 +3526,130 @@
       ],
       "featured": false
     }
+    ,
+    {
+      "name": "OpenAI GPT-Rosalind",
+      "slug": "openai-gpt-rosalind",
+      "description": "OpenAI's most capable AI model specifically designed for life sciences research, accelerating drug discovery and biological research.",
+      "longDescription": "OpenAI introduced GPT-Rosalind in April 2026 as its most capable AI model specifically designed for life sciences research. This specialized reasoning model aims to accelerate early-stage drug discovery, biological research, and translational medicine. GPT-Rosalind is engineered for deep scientific reasoning, enhanced use of scientific tools and databases, and safe access to multi-step workflows. Its capabilities span areas such as protein understanding, genomics analysis, biochemistry reasoning, target discovery and validation, pathway analysis, literature synthesis, and hypothesis generation. The model is particularly useful for synthesizing evidence, exploring new possibilities, identifying overlooked connections, and generating better hypotheses sooner in complex research workflows. Named after the British chemist Rosalind Franklin, whose work was crucial in revealing the structure of DNA, GPT-Rosalind is an enterprise offering available as a research preview through ChatGPT, Codex, and the API for qualified customers. OpenAI is collaborating with biopharma and research organizations like Amgen, Moderna, Thermo Fisher Scientific, and the Allen Institute to apply GPT-Rosalind across their discovery processes. This model is the first in OpenAI's life sciences series, signaling a long-term commitment to developing AI that can significantly accelerate scientific discovery in critical areas like human health. While it can streamline tasks and assist with data interpretation and experiment planning, OpenAI emphasizes that GPT-Rosalind is a reasoning tool to work alongside domain experts, not to replace them, with expert oversight being essential for validating outputs and making final research decisions.",
+      "url": "https://help.openai.com/en/articles/20001193-introducing-gpt-rosalind-for-life-sciences-research",
+      "affiliateUrl": null,
+      "category": "Research",
+      "pricing": "Freemium",
+      "price": "Research preview (qualified customers only)",
+      "released": "April 2026 (research preview)",
+      "added": "2026-05-08",
+      "pros": [
+        "Specifically designed for life sciences research and drug discovery",
+        "Accelerates early-stage drug discovery, biological research, and translational medicine",
+        "Engineered for deep scientific reasoning and enhanced use of scientific tools",
+        "Capabilities span protein understanding, genomics analysis, biochemistry reasoning",
+        "Useful for synthesizing evidence, exploring new possibilities, identifying overlooked connections",
+        "Generates better hypotheses sooner in complex research workflows",
+        "Named after Rosalind Franklin (DNA structure pioneer)",
+        "Available as research preview through ChatGPT, Codex, and API",
+        "Collaborating with biopharma leaders: Amgen, Moderna, Thermo Fisher, Allen Institute",
+        "First in OpenAI's life sciences series - long-term commitment to scientific AI"
+      ],
+      "cons": [
+        "Limited to research preview - not generally available",
+        "Only accessible to qualified customers through special programs",
+        "Specialized focus may limit usefulness for non-life sciences applications",
+        "Requires expert oversight for validating outputs and research decisions",
+        "May not be suitable for general-purpose AI tasks or casual use"
+      ],
+      "bestFor": "Life sciences researchers, biopharma companies, and academic institutions seeking to accelerate drug discovery and biological research through AI-assisted scientific reasoning.",
+      "affiliateCommission": null,
+      "tags": [
+        "research",
+        "life sciences",
+        "drug discovery",
+        "ai model",
+        "openai"
+      ],
+      "featured": false
+    },
+    {
+      "name": "OpenAI GPT-5.5 Instant",
+      "slug": "openai-gpt-5-5-instant",
+      "description": "OpenAI's new default model for ChatGPT launched May 5, 2026, designed to provide clearer answers and significantly reduce hallucinations.",
+      "longDescription": "OpenAI launched GPT-5.5 Instant on May 5, 2026, as the new default model for ChatGPT, aiming to provide smarter, clearer, and more personalized responses while significantly reducing hallucinations. This update replaces the previous GPT-5.3 Instant model. Key improvements and features of GPT-5.5 Instant include: 52.5% reduction in hallucinated claims compared to GPT-5.3 Instant on high-stakes prompts in fields like medicine, law, and finance; decreased inaccurate claims by 37.3% in challenging conversations previously flagged for factual errors; designed to provide tighter, more direct, and concise answers without losing substance; improved personalization with better use of context from past chats, uploaded files, and connected services; enhanced capabilities in analyzing photo and image uploads, answering STEM-related questions, and deciding when to use web search for more useful answers; demonstrated gains in visual reasoning, math (AIME 2025 accuracy jumped from 65.4% to 81.2%), and science; and aims for a more natural conversational tone. For more complex tasks, ChatGPT may automatically switch to the GPT-5.5 Thinking model, which uses deeper reasoning. GPT-5.5 Instant is rolling out to all ChatGPT users, including the free tier.",
+      "url": "https://openai.com/index/gpt-5-5-instant/",
+      "affiliateUrl": null,
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $20/mo Plus, $200/mo Pro",
+      "released": "May 5, 2026",
+      "added": "2026-05-08",
+      "pros": [
+        "52.5% reduction in hallucinated claims on high-stakes prompts (medicine, law, finance)",
+        "37.3% decrease in inaccurate claims in challenging conversations",
+        "Provides tighter, more direct, and concise answers without losing substance",
+        "Improved personalization with better use of context from past chats and files",
+        "Enhanced capabilities in analyzing photo and image uploads",
+        "Improved STEM question answering and web search utilization",
+        "Significant gains in math (AIME 2025: 65.4% → 81.2%) and science",
+        "More natural conversational tone in interactions",
+        "Automatic switching to GPT-5.5 Thinking model for complex tasks",
+        "Rolling out to all ChatGPT users including free tier"
+      ],
+      "cons": [
+        "May still produce occasional hallucinations despite significant reduction",
+        "Advanced features like GPT-5.5 Thinking may not be available in free tier",
+        "Personalization features require chat history and connected services",
+        "May not match specialized models for specific niche tasks",
+        "Rapid iteration may cause confusion about version differences and capabilities"
+      ],
+      "bestFor": "General users seeking improved ChatGPT experience with fewer hallucinations, clearer answers, and better personalization for everyday tasks, learning, and professional use.",
+      "affiliateCommission": null,
+      "tags": [
+        "productivity",
+        "language model",
+        "chatbot",
+        "openai"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Newforma Vojo",
+      "slug": "newforma-vojo",
+      "description": "AI assistant launched May 7, 2026, designed to enhance project information management, content analysis, and task completion for AEC firms.",
+      "longDescription": "Newforma Vojo, an AI assistant launched on May 7, 2026, at Newforma World 2026, is designed to enhance project information management, content analysis, and task completion for architecture, engineering, and construction (AEC) firms. Built on an agent-driven framework, Vojo aims to actively perform tasks on behalf of users, embedding intelligence directly into daily workflows. Key capabilities include: searching project information through natural language search across project data with cross-project query support; analyzing content through deep content analysis across Building Information Models (BIM) and other project documents; and completing tasks through features like AI-assisted submittal reviews to accelerate compliance checks and Smart Email Filing system that uses AI to automatically associate emails with projects and recommend filing locations for RFIs, submittals, and action items, thereby creating a more complete and defensible project record. These AI capabilities are supported by Newforma's strategic partnership with Amazon Web Services (AWS), providing a secure and scalable infrastructure for advanced AI innovation. Newforma's approach with Vojo focuses on integrating AI to surface insights, reduce manual effort, and enable more confident decision-making in the AEC industry.",
+      "url": "https://www.newforma.com",
+      "affiliateUrl": "https://www.newforma.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "Contact for pricing (AEC enterprise software)",
+      "released": "May 7, 2026 (Newforma World 2026)",
+      "added": "2026-05-08",
+      "pros": [
+        "Launched May 7, 2026 at Newforma World 2026",
+        "Enhances project information management for AEC firms",
+        "Built on agent-driven framework to actively perform tasks on behalf of users",
+        "Natural language search across project data with cross-project query support",
+        "Provides deep content analysis across BIM and project documents",
+        "Features AI-assisted submittal reviews to accelerate compliance checks",
+        "Smart Email Filing system uses AI to associate emails with projects",
+        "Reduces manual administrative work and improves documentation accuracy",
+        "Strategic partnership with AWS for secure and scalable infrastructure",
+        "Focuses on integrating AI to surface insights and enable confident decision-making"
+      ],
+      "cons": [
+        "Pricing not publicly available - requires enterprise consultation",
+        "May be overkill for small organizations or individual users outside AEC industry",
+        "AEC industry focus may limit usefulness for other sectors",
+        "Dependent on Newforma ecosystem and AWS infrastructure",
+        "New platform (launched May 2026) may have limited track record and user feedback initially"
+      ],
+      "bestFor": "Architecture, engineering, and construction (AEC) firms seeking to enhance project information management, content analysis, and task completion through AI-assisted workflows.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "aec",
+        "construction",
+        "ai assistant",
+        "aws"
+      ],
+      "featured": false
+    }
   ]
