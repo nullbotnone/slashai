@@ -364,7 +364,7 @@
     "name": "Surfer SEO",
     "slug": "surfer-seo",
     "description": "Content optimization tool with Workspaces, AI Search Guidelines, Gemini integration, Mention Gap + Sentiment Analysis, and Sites feature.",
-    "longDescription": "Surfer SEO analyzes the top 10 Google results for your target keyword and provides a content score with specific recommendations: word count, headings, keyword density, images, and more. Integrates with Jasper, Google Docs, and WordPress. Recent updates include Workspaces (prevents brand/domain context overlap), AI Search Guidelines (recommendations for content to rank in AI answers), Gemini integration in AI Tracker for monitoring brand mentions in Google's AI ecosystem, and Mention Gap + Sentiment Analysis (identifies where brands miss from AI answers). Claim: Surfer users grew Google/AI visibility by 423% in 2025. In April 2026, Surfer SEO rolled out Optimizing from AI Tracker, Workspace Permissions, Refreshed Navigation, New Content Editor Wizard, AI Search Guidelines, Looker Studio Integration for AI Visibility, and Gemini in AI Tracker.",
+    "longDescription": "Surfer SEO analyzes the top 10 Google results for your target keyword and provides a content score with specific recommendations: word count, headings, keyword density, images, and more. Integrates with Jasper, Google Docs, and WordPress. Recent updates include Workspaces (prevents brand/domain context overlap), AI Search Guidelines (recommendations for content to rank in AI answers), Gemini integration in AI Tracker for monitoring brand mentions in Google's AI ecosystem, and Mention Gap + Sentiment Analysis (identifies where brands miss from AI answers). Claim: Surfer users grew Google/AI visibility by 423% in 2025. In April 2026, Surfer SEO rolled out Optimizing from AI Tracker, Workspace Permissions, Refreshed Navigation, New Content Editor Wizard, AI Search Guidelines, Looker Studio Integration for AI Visibility, and Gemini in AI Tracker. In May 2026, Surfer SEO introduced significant enhancements to its \"Sites\" feature and a substantial upgrade to \"Surfy AI,\" alongside a broader focus on AI search visibility and content optimization for the evolving digital landscape. Key updates include: Surfer Sites Feature Enhancements: simplified filtering and analysis for crucial data; Surfy AI Upgrades: accelerated writing, editing, and research tasks with step-by-step workflows, custom outline templates, and one-click LinkedIn post ideas; AI Tracker: monitors brand visibility in AI platforms like Gemini, ChatGPT; AI Overviews Optimization: optimizes content for Google's AI Overviews; Custom Brand Knowledge for AI Writing: inject custom brand knowledge into AI writing tools; Workspaces: multi-domain management; AI Search Guidelines: one-click citation optimization; Reports and Rank Tracker: new features for performance tracking; AI Readability: improvements for AI search optimization and readability.",
     "url": "https://surferseo.com",
     "affiliateUrl": "https://surferseo.com/?via=slashai",
     "category": "SEO",
@@ -388,7 +388,16 @@
       "New Content Editor Wizard: AI-powered wizard with full brand/AI/SEO context pre-generation (April 2026)",
       "AI Search Guidelines: real-time suggestions for citation-optimized writing (April 2026)",
       "Looker Studio Integration for AI Visibility: blend AI visibility scores with GA4/G Ads metrics (April 2026)",
-      "Gemini in AI Tracker: monitor brand visibility in Google's AI-generated answers (April 2026)"
+      "Gemini in AI Tracker: monitor brand visibility in Google's AI-generated answers (April 2026)",
+      "Surfer Sites Feature Enhancements: simplified filtering and analysis for crucial data (May 2026)",
+      "Surfy AI Upgrades: accelerated writing, editing, and research tasks with step-by-step workflows, custom outline templates, and one-click LinkedIn post ideas (May 2026)",
+      "AI Tracker: monitors brand visibility in AI platforms like Gemini, ChatGPT (May 2026)",
+      "AI Overviews Optimization: optimizes content for Google's AI Overviews (May 2026)",
+      "Custom Brand Knowledge for AI Writing: inject custom brand knowledge into AI writing tools (May 2026)",
+      "Workspaces: multi-domain management (May 2026)",
+      "AI Search Guidelines: one-click citation optimization (May 2026)",
+      "Reports and Rank Tracker: new features for performance tracking (May 2026)",
+      "AI Readability: improvements for AI search optimization and readability (May 2026)"
     ],
     "cons": [
       "$89/mo isn't cheap",
@@ -683,7 +692,7 @@
     "name": "Murf AI",
     "slug": "murf-ai",
     "description": "AI voiceover generator with 120+ realistic voices across 20+ languages.",
-    "longDescription": "Murf generates realistic AI voiceovers for videos, podcasts, and presentations. 120+ voices across accents and styles with 24-month recurring affiliate commissions. Voice cloning creates a consistent brand voice. No microphone or recording equipment needed. Recent updates include Speech Gen 3 Engine for more human-like pauses, tone shifts, and pacing; improved Indian and regional accents across 20+ languages; voice cloning features in beta; enhanced integrations with Canva, Google Slides, PowerPoint, Articulate 360, and various video editors; Agora's integration of Murf AI's text-to-speech technology into Conversational AI Engine; successful Series A funding raising $10 million; Falcon TTS Streaming Model for low-latency voice generation; Voice Changer feature to enhance raw audio quality; and ethical sourcing with models trained on real voice actors who consent and receive royalties. In April 2026, Murf AI introduced Murf Speech Gen 2, Murf Dub, expanded voice library and customization, AI Voice Changer, API updates (Falcon model), AI Dubbing & Translation, enhanced collaboration and integrations, AI Voice Cloning 2.0, and Melody Mode.",
+    "longDescription": "Murf generates realistic AI voiceovers for videos, podcasts, and presentations. 120+ voices across accents and styles with 24-month recurring affiliate commissions. Voice cloning creates a consistent brand voice. No microphone or recording equipment needed. Recent updates include Speech Gen 3 Engine for more human-like pauses, tone shifts, and pacing; improved Indian and regional accents across 20+ languages; voice cloning features in beta; enhanced integrations with Canva, Google Slides, PowerPoint, Articulate 360, and various video editors; Agora's integration of Murf AI's text-to-speech technology into Conversational AI Engine; successful Series A funding raising $10 million; Falcon TTS Streaming Model for low-latency voice generation; Voice Changer feature to enhance raw audio quality; and ethical sourcing with models trained on real voice actors who consent and receive royalties. In April 2026, Murf AI introduced Murf Speech Gen 2, Murf Dub, expanded voice library and customization, AI Voice Changer, API updates (Falcon model), AI Dubbing & Translation, enhanced collaboration and integrations, AI Voice Cloning 2.0, and Melody Mode. In May 2026, Murf AI continues to evolve as a prominent text-to-speech platform, focusing on generating human-like AI voices. Key aspects include: Advanced Voice Technology: Speech Gen 3 engine for natural-sounding voices with high pronunciation accuracy; Comprehensive Feature Set: Text-to-Speech, Murf Studio, AI Dubbing, Voice Changer, Voice Cloning (Enterprise), and API Access (Murf Falcon) with low latency; Extensive Voice and Language Support: over 200 AI voices across 35+ languages and numerous accents; Recent Technical Enhancements: API updates (deprecation of multiNativeLocale, addition of model parameter, Falcon TTS Streaming Model); Pricing and Plans: Free plan and paid tiers (Creator, Business, Enterprise) with voice cloning in Enterprise; Industry Standing and Compliance: SOC 2 Type II, ISO 27001, ISO 42001, HIPAA, and GDPR certifications as of February 2026.",
     "url": "https://murf.ai",
     "affiliateUrl": "https://murf.ai/?via=slashai",
     "category": "Audio",
@@ -704,7 +713,13 @@
       "AI Dubbing & Translation: automatic video dubbing with voice characteristics retention and lip sync (April 2026)",
       "Enhanced Collaboration and Integrations: team compatibility, integrations with Canva, Google Slides, WordPress, Notion, Webflow, Articulate 360 (April 2026)",
       "AI Voice Cloning 2.0: high-fidelity clones from as little as 10 seconds of reference audio (April 2026)",
-      "\"Melody Mode\": experimental feature for AI singing (April 2026)"
+      "\"Melody Mode\": experimental feature for AI singing (April 2026)",
+      "Advanced Voice Technology: Speech Gen 3 engine for natural-sounding voices with high pronunciation accuracy (May 2026)",
+      "Comprehensive Feature Set: Text-to-Speech, Murf Studio, AI Dubbing, Voice Changer, Voice Cloning (Enterprise), and API Access (Murf Falcon) with low latency (May 2026)",
+      "Extensive Voice and Language Support: over 200 AI voices across 35+ languages and numerous accents (May 2026)",
+      "Recent Technical Enhancements: API updates (deprecation of multiNativeLocale, addition of model parameter, Falcon TTS Streaming Model) (May 2026)",
+      "Pricing and Plans: Free plan and paid tiers (Creator, Business, Enterprise) with voice cloning in Enterprise (May 2026)",
+      "Industry Standing and Compliance: SOC 2 Type II, ISO 27001, ISO 42001, HIPAA, and GDPR certifications as of February 2026 (May 2026)"
     ],
     "cons": [
       "Free trial very limited",
