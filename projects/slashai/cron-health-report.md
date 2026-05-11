@@ -1,5 +1,5 @@
 # SlashAI Cron Health Report
-Generated: 2026-05-04 11:09:02 UTC
+Generated: 2026-05-11 17:08:08 UTC
 
 ## Overall System Health
 - Total Jobs: 6
@@ -11,7 +11,7 @@ Generated: 2026-05-04 11:09:02 UTC
 - **Last Run Status**: ok
 - **Consecutive Errors**: 0
 - **Last Run Duration**: 0.05 hours
-- **Time Since Last Run**: 36.1 hours
+- **Time Since Last Run**: 210.1 hours
 - **Next Scheduled Run**: 2026-05-03 05:02:19 UTC
 
 ### SlashAI Daily Tool Check (ID: 7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d)
@@ -19,7 +19,7 @@ Generated: 2026-05-04 11:09:02 UTC
 - **Last Run Status**: ok
 - **Consecutive Errors**: 0
 - **Last Run Duration**: 0.20 hours
-- **Time Since Last Run**: 46.2 hours
+- **Time Since Last Run**: 220.1 hours
 - **Next Scheduled Run**: 2026-05-03 13:00:00 UTC
 
 ### SlashAI: Add new AI tools to directory (ID: 2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670)
@@ -27,7 +27,7 @@ Generated: 2026-05-04 11:09:02 UTC
 - **Last Run Status**: ok
 - **Consecutive Errors**: 0
 - **Last Run Duration**: 0.15 hours
-- **Time Since Last Run**: 44.2 hours
+- **Time Since Last Run**: 218.1 hours
 - **Next Scheduled Run**: 2026-05-03 15:00:00 UTC
 
 ### SlashAI Weekly Article (ID: c80f4c43-11b2-4ad7-a3c4-f71ff534ca85)
@@ -35,7 +35,7 @@ Generated: 2026-05-04 11:09:02 UTC
 - **Last Run Status**: ok
 - **Consecutive Errors**: 0
 - **Last Run Duration**: 1.07 hours
-- **Time Since Last Run**: 164.0 hours
+- **Time Since Last Run**: 338.0 hours
 - **Next Scheduled Run**: 2026-05-04 15:00:00 UTC
 
 ### SlashAI Biweekly Tutorial (ID: 233a2ab3-45ac-4cc0-ac40-8e998f9f4d90)
@@ -43,7 +43,7 @@ Generated: 2026-05-04 11:09:02 UTC
 - **Last Run Status**: ok
 - **Consecutive Errors**: 0
 - **Last Run Duration**: 0.35 hours
-- **Time Since Last Run**: 68.0 hours
+- **Time Since Last Run**: 242.0 hours
 - **Next Scheduled Run**: 2026-05-15 15:00:00 UTC
 
 ### SlashAI Monthly What's New Roundup (ID: 76dc4a93-9968-43b9-a383-cb00b7c0bf81)
@@ -51,13 +51,20 @@ Generated: 2026-05-04 11:09:02 UTC
 - **Last Run Status**: error
 - **Consecutive Errors**: 1
 - **Last Run Duration**: 0.13 hours
-- **Time Since Last Run**: 67.6 hours
+- **Time Since Last Run**: 241.6 hours
 - **Next Scheduled Run**: 2026-06-01 15:00:00 UTC
 
 ## Issues Identified
-Found 1 problematic jobs:
+Found 3 problematic jobs:
+
+### SlashAI Daily Tool Check
+- Not run in 220.1h (>48h expected)
+
+### SlashAI: Add new AI tools to directory
+- Not run in 218.1h (>48h expected)
 
 ### SlashAI Weekly Article
+- Not run in 338.0h (>336h expected)
 - Extremely long run time: 1.1h
 
 ## Recommended Actions
