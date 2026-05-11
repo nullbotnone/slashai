@@ -3667,4 +3667,42 @@
       ],
       "featured": false
     }
-  ]
+,
+  {
+    "name": "Google AI Health Coach",
+    "slug": "google-ai-health-coach",
+    "description": "AI-powered health and wellness coach providing personalized recommendations for stress management, exercise planning, and healthy habit formation.",
+    "longDescription": "Google's AI Health Coach officially launched on May 19, 2026 as a standalone service (previously a Fitbit beta feature) at $9.99/month. Leverages Gemini AI to provide personalized health recommendations based on activity, sleep, and nutrition data. Offers conversational coaching for stress management, exercise planning, and healthy habit formation. Integrates with Google Workspace to suggest break times and wellness activities during workdays. Provides solopreneurs with actionable insights to maintain energy and focus for client work.",
+    "url": "https://blog.google/products-and-platforms/products/google-health/google-health-coach/",
+    "affiliateUrl": "https://blog.google/products-and-platforms/products/google-health/google-health-coach/?via=slashai",
+    "category": "Healthcare",
+    "pricing": "Freemium",
+    "price": "$9.99/mo",
+    "released": "May 19, 2026",
+    "added": "2026-05-19",
+    "pros": [
+      "Personalized health recommendations using Gemini AI",
+      "Conversational coaching for stress management and wellness",
+      "Integration with Google Workspace for break time suggestions",
+      "Actionable insights to maintain energy and focus for client work",
+      "Available as part of Google Health Premium subscription"
+    ],
+    "cons": [
+      "Requires subscription to Google Health Premium ($9.99/month)",
+      "Currently limited to eligible Fitbit and Pixel Watch users (with broader device support planned)",
+      "Not a replacement for professional medical advice",
+      "Requires sharing personal health data with Google",
+      "May not integrate with all third-party health and fitness apps"
+    ],
+    "bestFor": "Solopreneurs seeking to maintain health and wellness while managing their businesses, particularly those interested in preventive care and stress management.",
+    "affiliateCommission": "Varies",
+    "tags": [
+      "healthcare",
+      "wellness",
+      "fitness",
+      "ai assistant",
+      "google"
+    ],
+    "featured": false
+  }
+]
