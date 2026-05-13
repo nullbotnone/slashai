@@ -1,4 +1,4 @@
-# AI Tool Updates — May 12, 2026
+# AI Tool Updates — May 13, 2026
 
 ## Summary
 
@@ -27,7 +27,7 @@ Performed daily tool check for Jasper AI, Writesonic, HubSpot, Semrush, Surfer S
 
 ## Actions Taken
 - [x] Verified tools.json is up to date for all checked tools
-- [x] Checked existing review articles in src/content/reviews (jasper-ai-review.md, writesonic-review.md, hubspot-aeo-review.md, semrush-review.md, surfer-seo-review.md, murf-ai-review.md) - none require immediate update as tools reflect current state
+- [x] Checked existing review articles in src/content/reviews (jasper-ai-review.md, hubspot-aeo-review.md, surfer-seo-sites-review.md) - none require immediate update as tools reflect current state
 - [x] Built site with npm run build to ensure static files are current
 - [x] No changes to tools.json required; pending-updates.md updated with today's findings
 - [x] Prepared to commit and push if build produces changes
