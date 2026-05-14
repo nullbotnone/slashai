@@ -29,6 +29,7 @@ Performed daily tool check for Jasper AI, Writesonic, HubSpot, Semrush, Surfer S
 - [x] Verified tools.json is up to date for all checked tools
 - [x] Checked existing review articles in src/content/reviews (jasper-ai-review.md, hubspot-aeo-review.md, surfer-seo-sites-review.md) - none require immediate update as tools reflect current state
 - [x] Built site with npm run build to ensure static files are current
+- [x] Fixed future-dated weekly article (changed from May 18-24, 2026 to May 4-10, 2026) to prevent publishing incorrect future information
 - [x] No changes to tools.json required; pending-updates.md updated with today's findings
 - [x] Prepared to commit and push if build produces changes
 
