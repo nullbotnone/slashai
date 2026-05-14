@@ -3797,4 +3797,136 @@
       ],
       "featured": false
     }
+    ,
+    {
+      "name": "Level AI Workers",
+      "slug": "level-ai-workers",
+      "description": "Specialized AI agents designed for customer-centric teams that automate research, analysis, and planning workflows.",
+      "longDescription": "Level AI has officially launched \"AI Workers,\" a new suite of specialized AI agents designed for customer-centric teams, on May 14, 2026. These AI Workers are purpose-built to automate research, analysis, and planning workflows, which typically consume a significant portion of time for roles such as coaches, analysts, QA leads, and CX executives in enterprise contact centers. The company, known for its customer intelligence platform for enterprise contact centers, aims to address the gap where previous AI investments in customer experience primarily focused on front-office interactions like voice bots and chat deflection, leaving back-office operations largely manual. Level AI's CEO and co-founder, Ashish Nagar, highlighted that existing AI tools often stop at summarization, requiring manual effort for the subsequent workflow from insight to coaching or quality improvement. Level AI's new AI Workers are designed to perform defined jobs and produce specific deliverables, leveraging the same customer intelligence data that organizations' QA and analytics teams already utilize. Examples of the AI Workers launched include: Coaching Plan Worker (analyzes agent interactions to generate structured coaching briefs with specific calls, moments, and talking points), Conversation Research Worker (conducts semantic searches across transcripts to produce thematic research reports using direct customer language), and Executive Research Worker (performs multi-step investigations across various data domains to synthesize cited long-form reports). Additional workers introduced at launch encompass Conversation Analytics, Team Performance, Product Feedback, Resolution Insights, Sentiment Insights, iCSAT Insights, and VoC. These AI Workers operate on a unified intelligence layer that connects conversations, transcripts, QA frameworks, CRM records, team hierarchies, and AI-enriched signals such as sentiment, effort, and resolution outcomes. Level AI's platform is already being used by nearly 100 enterprise contact centers, with over 25,000 Worker runs executed and positive user feedback. Companies like Smartsheet, VistaPrint, and Ollie Pets are reportedly using these AI Workers in their daily operations. The company emphasizes that these solutions help enhance CX and service quality through automated monitoring, provide deep insights into CX drivers, and improve operational efficiency by automating QA and call disposition.",
+      "url": "https://thelevel.ai/",
+      "affiliateUrl": "https://thelevel.ai/?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "Contact for pricing (enterprise AI workers platform)",
+      "released": "May 14, 2026",
+      "added": "2026-05-14",
+      "pros": [
+        "Purpose-built AI agents for customer-centric teams (coaches, analysts, QA leads, CX executives)",
+        "Automates research, analysis, and planning workflows that consume significant time",
+        "Addresses gap where AI investments focused on front-office, leaving back-office manual",
+        "Existing AI tools often stop at summarization, requiring manual effort for insight-to-action workflow",
+        "Designed to perform defined jobs and produce specific deliverables",
+        "Leverages same customer intelligence data used by QA and analytics teams",
+        "Examples include Coaching Plan Worker, Conversation Research Worker, Executive Research Worker",
+        "Additional workers: Conversation Analytics, Team Performance, Product Feedback, Resolution Insights",
+        "Sentiment Insights, iCSAT Insights, VoC (Voice of Customer)",
+        "Unified intelligence layer connects conversations, transcripts, QA frameworks, CRM records, team hierarchies, AI-enriched signals",
+        "Used by nearly 100 enterprise contact centers with over 25,000 Worker runs executed",
+        "Positive user feedback from companies like Smartsheet, VistaPrint, Ollie Pets",
+        "Enhances CX and service quality through automated monitoring",
+        "Provides deep insights into CX drivers and improves operational efficiency"
+      ],
+      "cons": [
+        "Pricing not publicly available - requires enterprise consultation",
+        "May be overkill for small organizations or individual users",
+        "New platform (launched May 14, 2026) may have limited track record and user feedback initially",
+        "May require integration with existing customer intelligence platforms and CRM systems",
+        "Specialized focus may limit usefulness for non-customer-centric teams or industries"
+      ],
+      "bestFor": "Enterprise contact centers and customer-centric teams seeking to automate research, analysis, and planning workflows through specialized AI agents that integrate with existing customer intelligence data and workflows.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "ai agents",
+        "customer experience",
+        "contact center",
+        "workflow automation"
+      ],
+      "featured": false
+    },
+    {
+      "name": "CoreWeave Sandboxes",
+      "slug": "coreweave-sandboxes",
+      "description": "Execution layer providing secure, isolated environments for AI researchers and platform teams to conduct reinforcement learning, agent tool use, and model evaluation.",
+      "longDescription": "On May 14, 2026, CoreWeave announced the launch of CoreWeave Sandboxes, an execution layer designed to provide secure, isolated environments for AI researchers and platform teams. These sandboxes are specifically tailored for running reinforcement learning (RL), agent tool use, and model evaluation workloads. CoreWeave Sandboxes addresses the need for secure and isolated environments in advanced AI workflows, which often require safe code execution, state persistence across multiple steps, and scalability for concurrent workloads. Many organizations currently rely on custom-built systems or loosely integrated tools, which can become challenging to manage, less reliable, and difficult to govern as complexity and scale increase. Key features and benefits of CoreWeave Sandboxes include: secure and isolated environments (each sandbox operates in its own isolated virtual environment with hardware-enforced isolation using NVIDIA BlueField-3 DPUs); unified execution layer (single, consistent layer for RL, agent tool use, and model evaluation); flexible access models (deployable on customer's CoreWeave infrastructure or as serverless runtime through Weights & Biases); scalability and concurrency (designed for scale, handles multiple concurrent jobs, used by IBM Research with thousands of parallel sandboxes per training step); ease of use (includes Python SDK for creating/managing isolated environments, built-in session management, storage integration, monitoring tools); and enhanced security posture (security emphasized at every layer from hardware to orchestration for data protection, network isolation, and granular identity controls).",
+      "url": "https://www.coreweave.com/",
+      "affiliateUrl": "https://www.coreweave.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "Contact for pricing (AI research execution layer)",
+      "released": "May 14, 2026",
+      "added": "2026-05-14",
+      "pros": [
+        "Secure and isolated environments for AI researchers and platform teams",
+        "Hardware-enforced isolation using NVIDIA BlueField-3 Data Processing Units (DPUs)",
+        "Each sandbox operates in its own isolated virtual environment",
+        "Unified execution layer for RL, agent tool use, and model evaluation workloads",
+        "Flexible access models: customer infrastructure or serverless runtime via Weights & Biases",
+        "Scalability and concurrency: handles multiple concurrent jobs alongside AI jobs",
+        "IBM Research utilizes thousands of parallel sandboxes per training step for RL workflows",
+        "Ease of use: Python SDK for creating/managing isolated environments",
+        "Built-in session management, storage integration, and monitoring tools reduce overhead",
+        "Enhanced security posture at every layer: hardware to orchestration",
+        "Data protection, network isolation, and granular identity controls for sensitive AI workloads"
+      ],
+      "cons": [
+        "Pricing not publicly available - requires enterprise consultation",
+        "May be overkill for individual researchers or small teams",
+        "New platform (launched May 14, 2026) may have limited track record and user feedback initially",
+        "May require familiarity with CoreWeave infrastructure or Kubernetes concepts",
+        "Specialized focus may limit usefulness for general-purpose AI development workflows"
+      ],
+      "bestFor": "AI researchers, platform teams, and organizations needing secure, isolated environments for reinforcement learning, agent tool use, and model evaluation workloads at scale.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "ai research",
+        "reinforcement learning",
+        "agent tool use",
+        "model evaluation"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Exadel Colleague",
+      "slug": "exadel-colleague",
+      "description": "Autonomous AI delivery peer built on patent-pending multi-agent technology that acts as a fully autonomous peer within engineering teams.",
+      "longDescription": "Exadel launched \"Exadel Colleague,\" an autonomous AI delivery peer built on patent-pending multi-agent technology, on May 14, 2026. This technology is designed to act as a fully autonomous peer within engineering teams. Exadel Colleague functions by directly accepting tickets, planning the necessary work, writing tests before generating production code, building the solution, and submitting a validated pull request for review and approval by human engineers. This process aims to streamline software delivery by handling tasks autonomously, allowing engineers to focus on critical decisions.",
+      "url": "https://www.exadel.com",
+      "affiliateUrl": "https://www.exadel.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "Contact for pricing (AI software development platform)",
+      "released": "May 14, 2026",
+      "added": "2026-05-14",
+      "pros": [
+        "Autonomous AI delivery peer for engineering teams",
+        "Built on patent-pending multi-agent technology",
+        "Functions as a fully autonomous peer within engineering teams",
+        "Directly accepts tickets and plans necessary work",
+        "Writes tests before generating production code (test-driven development)",
+        "Builds the solution and submits validated pull request for human review",
+        "Streamlines software delivery by handling tasks autonomously",
+        "Allows engineers to focus on critical decisions rather than routine tasks",
+        "Reduces backlogs and improves code quality through autonomous handling",
+        "Addresses challenges that AI coding tools leave behind in software development process"
+      ],
+      "cons": [
+        "Pricing not publicly available - requires enterprise consultation",
+        "May be overkill for individual developers or small teams",
+        "New platform (launched May 14, 2026) may have limited track record and user feedback initially",
+        "May require integration with existing engineering workflows and development tools",
+        "Specialized focus may limit usefulness for general-purpose software development outside engineering teams"
+      ],
+      "bestFor": "Engineering teams and software development organizations seeking to streamline software delivery through autonomous AI peers that handle tasks from ticket acceptance to validated pull request submission.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "ai software development",
+        "autonomous ai",
+        "multi-agent technology",
+        "engineering teams"
+      ],
+      "featured": false
+    }
   ]
