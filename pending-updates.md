@@ -1,34 +1,40 @@
-# AI Tool Updates — May 10, 2026
+# AI Tool Updates — May 14, 2026
 
 ## Summary
 
-Daily check reveals additional specific updates for May 10, 2026 for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, and Murf AI. Key findings include detailed feature specifications, performance metrics, and platform strategic directions.
+Performed daily tool check for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI and AI agents trends. Found that existing tools.json entries are already up to date with the latest information. No new tools or major updates requiring changes to tools.json were identified.
 
-## Key Findings from Today's Check
+## Key Findings
 
-### AI Agents Trends (Continued from May 9)
-- Autonomous workflows maturing with focus on deterministic guardrails and context engineering for reliability
-- Multi-agent systems emphasizing orchestration and inter-agent communication protocols (MCP, A2A)
-- Responsible AI developments include EU AI Act transparency obligations delayed to December 2026
-- AgentOps emerging with production engineering practices, evaluation frameworks, and security-by-design approaches
+### Tool Updates (May 2026)
+- **Jasper AI**: Positioned as comprehensive AI marketing operating system with over 100 specialized AI agents, Content Pipelines, Brand Voice & Jasper IQ, Jasper Chat + Canvas, Jasper Art & Multimodal Generation, enhanced SEO integrations, AI-Powered Content Workspaces, team collaboration tools, and brand knowledge bases. (Already reflected in tools.json)
+- **Writesonic**: AI Article Writer 6.0/7.0 with deep web research, Generative Engine Optimization (GEO) Platform for AI search visibility, Enhanced Chatsonic AI Agent with multi-model switching, Multi-Model Orchestration, Brand Voice Integration, improved SEO integrations. (Already reflected in tools.json)
+- **HubSpot**: Answer Engine Optimization (AEO) for brand visibility in AI responses, Duplicate Similarity Score, New Google Drive App Integration, Expanded Breeze Assistant (Projects, 1:1 Emails, Slack Integration), AI-powered Quote Generation, Commerce Hub Updates. (Already reflected in tools.json)
+- **Semrush**: AI Visibility Toolkit for tracking brand presence across AI platforms, Semrush One Unified Dashboard integrating traditional SEO with AI visibility, Official Semrush App within ChatGPT, AI-Enhanced SEO Writing Assistant, focus on AI Search Optimization. (Already reflected in tools.json via references to Semrush One and AI-Powered Tools)
+- **Surfer SEO**: Expanded AI Tracker Capabilities (Gemini integration, Mention Gap, Sentiment Analysis), AI Search Guidelines for Citation Optimization, Redesigned AI-Powered Content Editor Wizard, Improved AI Visibility Dashboard, Workspaces for Multi-Domain Management, AI Humanizer Tool, Enhanced Content Editor AI, focus on Retrieval-Augmented Generation (RAG). (Already reflected in tools.json)
+- **Murf AI**: V3 architecture and Gen-3 Neural Engine for human-parity speech, Custom Voice Morphing, ethical AI sourcing, API updates (Falcon TTS Streaming Model, multiNativeLocale deprecation, model parameter), LMS integration workflows, advanced audio editing UI, low-latency Falcon API, integrations with Canva, Google Slides, PowerPoint, Articulate 360. (Already reflected in tools.json)
 
-### Specific Tool Status (May 10, 2026):
-- **Jasper AI**: Positioned as comprehensive AI marketing platform for teams with over 50 content templates, 30+ language support, Brand Voice training, Jasper Art integration, Workflows for multi-step content pipelines, Copyscape plagiarism checking, SEO suggestions, collaboration tools, and leveraging multiple AI models (GPT-4, Anthropic, Google) with recent search data infusion.
-- **Writesonic**: AI Article Writer 6.0/7.0 capable of producing up to 2,000-word articles in under 20 seconds; Chatsonic AI Agent with switching between GPT-4o, Claude 3.7, and Gemini 1.5 Pro plus Brand Voice feature and Flux 1.1 image generation; Photosonic for visuals and AudioSonic for voice narration; AI Visibility Suite tracking over 15 AI platforms including Grok and Gemini; Generative Engine Optimization (GEO) capabilities managing brand visibility across traditional and AI-driven search engines.
-- **HubSpot**: Q1 2026 results showing growing customers and subscription revenue; new Duplicate Similarity Score in duplicate management for filtering records by similarity; new Google Drive App enhancing file access with Breeze AI capabilities for summarizing Docs/Slides/PDFs; ability to generate AI-drafted LinkedIn articles/posts directly from AEO (Answer Engine Optimization) recommendations; updated developer platform and REST APIs with stricter requirements for app listings/certification; legacy CRM cards being phased out by October 31, 2026.
-- **Semrush**: Officially an Adobe company since April 28, 2026; Enterprise AI Optimization featuring new source and sentiment analysis automations for deeper brand perception insights in AI search; YouTube Gap Analyzer and LLM Gap Analyzer available in App Center since April 2026; Voice Assist added to App Center; Spotlight 2026 AI-focused marketing conference launched; official Semrush app within ChatGPT enabling direct access to Semrush data and intelligence in conversational AI environment.
-- **Surfer SEO**: AI Tracker now supports Gemini for tracking brand visibility, citations, and sources in Google's AI-generated answers (Pro plans+); Content Editor includes AI readability analysis and AI search guidelines with Auto-Optimize to add missing entities/facts; Workspaces for multi-domain management and AI Search Guidelines for one-click citation optimization highlighted as key features; May 2026 study indicates AI overviews appear in 47% of queries, with 52% of cited sources also ranking in top 10 organic results, reinforcing traditional SEO importance.
-- **Murf AI**: Offers over 200 voices across 35+ languages as of May 2026; core features include text-to-speech, Murf Studio for syncing voice with video/slides, AI Dubbing for translating/dubbing videos into 44 languages, Voice Changer for converting recordings to AI voices; API updated in March 2026 to deprecate `multiNativeLocale` field replaced by `locale` field; Speech Gen 2 model capable of creating highly customizable, emotive audio indistinguishable from human speech across 20+ languages.
+### AI Agents Trends (May 2026)
+- Shift to autonomous operational software with multi-step reasoning and workflow orchestration
+- API-first and headless architectures for agent-software interaction
+- Context engineering as critical for reliable agent performance
+- Deterministic guardrails for enterprise readiness
+- AI models functioning as operating systems
+- Rise of personal agents and multi-agent systems
+- Increased focus on governance, reliability, and security
+- Integration with real-world systems (robotics, IoT)
+- Over 57% of enterprises have AI agents in production
 
-## Action Items
-- [ ] Build site with npm run build.
-- [ ] Commit changes to git and push to GitHub.
-- [ ] No new review articles needed as existing reviews cover strategic features.
-- [x] Updated pending-updates.md with May 10, 2026 findings.
-- [x] Verified tools.json is current with May 2026 information.
+## Actions Taken
+- [x] Verified tools.json is up to date for all checked tools
+- [x] Checked existing review articles in src/content/reviews (jasper-ai-review.md, hubspot-aeo-review.md, surfer-seo-sites-review.md) - none require immediate update as tools reflect current state
+- [x] Built site with npm run build to ensure static files are current
+- [x] Fixed future-dated weekly article (changed from May 18-24, 2026 to May 4-10, 2026) to prevent publishing incorrect future information
+- [x] No changes to tools.json required; pending-updates.md updated with today's findings
+- [x] Prepared to commit and push if build produces changes
 
 ## Sources
-- Official company blogs and documentation for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI.
-- Web search for May 10 2026 specific tool updates.
-- Web search for May 2026 AI agents trends continuation.
-- Existing tools.json file verification confirming currentness.
+- Official company blogs and documentation for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI
+- Web search for May 2026 tool updates and AI agents trends
+- Existing tools.json file verification
+- Existing review articles in src/content/reviews

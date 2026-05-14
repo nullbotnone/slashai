@@ -1,10 +1,34 @@
 {
-  "generated_at": 1777892942300,
-  "generated_at_iso": "2026-05-04T11:09:02.300622+00:00",
+  "generated_at": 1778756819188,
+  "generated_at_iso": "2026-05-14T11:06:59.188833+00:00",
   "total_jobs": 6,
   "enabled_jobs": 6,
   "disabled_jobs": 0,
   "problematic_jobs": [
+    {
+      "id": "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d",
+      "name": "SlashAI Daily Tool Check",
+      "enabled": true,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_hours": 0.19977277777777777,
+      "time_since_last_run_hours": 286.11643333333336,
+      "issues": [
+        "Not run in 286.1h (>48h expected)"
+      ]
+    },
+    {
+      "id": "2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670",
+      "name": "SlashAI: Add new AI tools to directory",
+      "enabled": true,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_hours": 0.14734222222222224,
+      "time_since_last_run_hours": 284.1164325,
+      "issues": [
+        "Not run in 284.1h (>48h expected)"
+      ]
+    },
     {
       "id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
       "name": "SlashAI Weekly Article",
@@ -12,8 +36,9 @@
       "last_run_status": "ok",
       "consecutive_errors": 0,
       "last_duration_hours": 1.0673991666666667,
-      "time_since_last_run_hours": 163.98394944444445,
+      "time_since_last_run_hours": 403.94975166666666,
       "issues": [
+        "Not run in 403.9h (>336h expected)",
         "Extremely long run time: 1.1h"
       ]
     }
