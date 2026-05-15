@@ -329,12 +329,13 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     margin-top: 2rem;
   }
 
-  .page-btn {
+  .page-btn,
+  .page-num {
     padding: 0.5rem 1rem;
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     background: var(--color-bg-card);
-    color: var(--color-ink);
+    color: var(--color-text);
     cursor: pointer;
     font-weight: 600;
     font-size: 0.85rem;
@@ -354,18 +355,6 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   .page-numbers {
     display: flex;
     gap: 0.25rem;
-  }
-
-  .page-num {
-    padding: 0.5rem 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    background: var(--color-bg-card);
-    color: var(--color-ink);
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 0.85rem;
-    transition: all 0.2s;
   }
 
   .page-num:hover:not(.active) {
