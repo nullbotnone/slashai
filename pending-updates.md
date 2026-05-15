@@ -2,39 +2,42 @@
 
 ## Summary
 
-Performed daily tool check for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI and AI agents trends. Found that existing tools.json entries are already up to date with the latest information. No new tools or major updates requiring changes to tools.json were identified.
+Full recovery and cron job restoration completed. All 6 SlashAI cron jobs were recreated after they were wiped. Site build confirmed working (157 pages). The missing Weekly Article for May 11-17, 2026 gap identified.
 
 ## Key Findings
 
-### Tool Updates (May 2026)
-- **Jasper AI**: Positioned as comprehensive AI marketing operating system with over 100 specialized AI agents, Content Pipelines, Brand Voice & Jasper IQ, Jasper Chat + Canvas, Jasper Art & Multimodal Generation, enhanced SEO integrations, AI-Powered Content Workspaces, team collaboration tools, and brand knowledge bases. (Already reflected in tools.json)
-- **Writesonic**: AI Article Writer 6.0/7.0 with deep web research, Generative Engine Optimization (GEO) Platform for AI search visibility, Enhanced Chatsonic AI Agent with multi-model switching, Multi-Model Orchestration, Brand Voice Integration, improved SEO integrations. (Already reflected in tools.json)
-- **HubSpot**: Answer Engine Optimization (AEO) for brand visibility in AI responses, Duplicate Similarity Score, New Google Drive App Integration, Expanded Breeze Assistant (Projects, 1:1 Emails, Slack Integration), AI-powered Quote Generation, Commerce Hub Updates. (Already reflected in tools.json)
-- **Semrush**: AI Visibility Toolkit for tracking brand presence across AI platforms, Semrush One Unified Dashboard integrating traditional SEO with AI visibility, Official Semrush App within ChatGPT, AI-Enhanced SEO Writing Assistant, focus on AI Search Optimization. (Already reflected in tools.json via references to Semrush One and AI-Powered Tools)
-- **Surfer SEO**: Expanded AI Tracker Capabilities (Gemini integration, Mention Gap, Sentiment Analysis), AI Search Guidelines for Citation Optimization, Redesigned AI-Powered Content Editor Wizard, Improved AI Visibility Dashboard, Workspaces for Multi-Domain Management, AI Humanizer Tool, Enhanced Content Editor AI, focus on Retrieval-Augmented Generation (RAG). (Already reflected in tools.json)
-- **Murf AI**: V3 architecture and Gen-3 Neural Engine for human-parity speech, Custom Voice Morphing, ethical AI sourcing, API updates (Falcon TTS Streaming Model, multiNativeLocale deprecation, model parameter), LMS integration workflows, advanced audio editing UI, low-latency Falcon API, integrations with Canva, Google Slides, PowerPoint, Articulate 360. (Already reflected in tools.json)
+### Cron Jobs Restored (May 14, 2026)
+All 6 previous cron jobs had been wiped. Recreated from the saved JSON configuration:
 
-### AI Agents Trends (May 2026)
-- Shift to autonomous operational software with multi-step reasoning and workflow orchestration
-- API-first and headless architectures for agent-software interaction
-- Context engineering as critical for reliable agent performance
-- Deterministic guardrails for enterprise readiness
-- AI models functioning as operating systems
-- Rise of personal agents and multi-agent systems
-- Increased focus on governance, reliability, and security
-- Integration with real-world systems (robotics, IoT)
-- Over 57% of enterprises have AI agents in production
+1. **SlashAI Cron Health Monitor** - Every 6h, monitors all jobs
+2. **SlashAI Daily Tool Check** - Daily at 8 AM CDT
+3. **SlashAI: Add new AI tools to directory** - Daily at 10 AM CDT
+4. **SlashAI Weekly Article** - Mondays at 10 AM CDT (with fix to cover previous week only, not upcoming)
+5. **SlashAI Biweekly Tutorial** - Every 14 days at 10 AM CDT
+6. **SlashAI Monthly What's New Roundup** - 1st of month at 10 AM CDT
+
+### Site Build Fix
+- Fixed corrupted `@shikijs/engine-javascript` npm package (scanner file had binary/text corruption)
+- Clean npm install resolved the issue
+- Build completed successfully: 157 pages built in 50s
+
+### Gap Identified
+- The Weekly Article cron missed the **May 11-17, 2026** week (should have run Monday May 11)
+- The May 4-10, 2026 article exists (whats-new-ai-may-week-3-2026.md)
+- Next Weekly Article will run Monday May 18 for the May 11-17 week
+- Biweekly Tutorial due tomorrow (May 15) and will run as scheduled
+
+### Monthly Roundup Note
+- The previous Monthly Roundup job had a consecutive error (failed on editing may-2026.md)
+- New job created clean — will run June 1
 
 ## Actions Taken
-- [x] Verified tools.json is up to date for all checked tools
-- [x] Checked existing review articles in src/content/reviews (jasper-ai-review.md, hubspot-aeo-review.md, surfer-seo-sites-review.md) - none require immediate update as tools reflect current state
-- [x] Built site with npm run build to ensure static files are current
-- [x] Fixed future-dated weekly article (changed from May 18-24, 2026 to May 4-10, 2026) to prevent publishing incorrect future information
-- [x] No changes to tools.json required; pending-updates.md updated with today's findings
-- [x] Prepared to commit and push if build produces changes
+- [x] Recreated all 6 cron jobs with exact schedule/prompt from saved config
+- [x] Fixed npm corruption (clean install)
+- [x] Verified site builds successfully (157 pages)
+- [x] Updated cron-health-log.txt with recovery note
 
 ## Sources
-- Official company blogs and documentation for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI
-- Web search for May 2026 tool updates and AI agents trends
-- Existing tools.json file verification
-- Existing review articles in src/content/reviews
+- cron_jobs_current.json (saved job configurations)
+- Cron health reports from May 14
+- npm build logs
