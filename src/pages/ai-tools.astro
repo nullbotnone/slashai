@@ -107,7 +107,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
       ))}
     </div>
 
-    <p class="no-results" id="no-results" style="display: none; text-align: center; color: var(--color-text-secondary); padding: 3rem 0;">
+    <p class="no-results" id="no-results" style="display: none; text-align: center; color: var(--color-ink-muted); padding: 3rem 0;">
       No tools found matching your filters.
     </p>
 
@@ -118,7 +118,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
       <button id="next-btn" class="page-btn">Next →</button>
     </div>
 
-    <p class="tool-count" id="tool-count" style="text-align: center; color: var(--color-text-secondary); margin-top: 1rem;">
+    <p class="tool-count" id="tool-count" style="text-align: center; color: var(--color-ink-muted); margin-top: 1rem;">
       Page <span id="current-page">1</span> of <span id="total-pages">{totalPages}</span> · <span id="result-count">{tools.length}</span> tools
     </p>
     </div>
@@ -140,7 +140,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     background: var(--color-bg-card);
-    color: var(--color-text);
+    color: var(--color-ink);
     font-size: 0.95rem;
     transition: border-color 0.2s;
   }
@@ -160,7 +160,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     background: var(--color-bg-card);
-    color: var(--color-text);
+    color: var(--color-ink);
     font-size: 0.9rem;
     cursor: pointer;
   }
@@ -222,8 +222,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     left: 0;
     right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--color-accent), #ec4899, #f59e0b);
-    background-size: 200% 100%;
+    background: var(--color-accent);
     transform: scaleX(0);
     transform-origin: left;
     transition: transform 0.3s ease;
@@ -231,27 +230,11 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
 
   .tool-card:hover {
     border-color: var(--color-accent);
-    box-shadow: 0 8px 25px rgba(124, 58, 237, 0.15);
+    box-shadow: var(--shadow-sm);
   }
 
   .tool-card:hover::after {
     transform: scaleX(1);
-    animation: gradientSlide 2s ease infinite;
-  }
-
-  @keyframes gradientSlide {
-    0%, 100% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-  }
-
-  .tool-card.featured {
-    border-color: rgba(124, 58, 237, 0.3);
-    background: linear-gradient(135deg, var(--color-bg-card), var(--color-accent-light));
-  }
-
-  .tool-card.featured:hover {
-    border-color: var(--color-accent);
-    box-shadow: 0 8px 30px rgba(124, 58, 237, 0.2);
   }
 
   .featured-section {
@@ -270,23 +253,23 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   }
 
   .tool-card-header h3 { font-size: 1.1rem; font-weight: 700; }
-  .tool-card-header a { color: var(--color-text); transition: color 0.2s; }
+  .tool-card-header a { color: var(--color-ink); transition: color 0.2s; }
   .tool-card-header a:hover { color: var(--color-accent); }
 
   .pricing-badge {
     font-size: 0.7rem;
     font-weight: 600;
     padding: 0.2rem 0.5rem;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
     white-space: nowrap;
   }
 
-  .pricing-badge.free { background: rgba(34, 197, 94, 0.15); color: #22c55e; }
-  .pricing-badge.freemium { background: rgba(59, 130, 246, 0.15); color: #3b82f6; }
-  .pricing-badge.paid { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+  .pricing-badge.free { background: var(--color-success); color: white; }
+  .pricing-badge.freemium { background: var(--color-bg-secondary); color: var(--color-ink-muted); }
+  .pricing-badge.paid { background: var(--color-ink); color: var(--color-bg); }
 
   .tool-description {
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     font-size: 0.9rem;
     line-height: 1.5;
   }
@@ -295,7 +278,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     display: flex;
     justify-content: space-between;
     font-size: 0.8rem;
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
   }
 
   .tool-category { font-weight: 600; color: var(--color-accent); }
@@ -304,9 +287,9 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
 
   .tool-tag {
     background: var(--color-bg-secondary);
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     padding: 0.15rem 0.4rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     font-size: 0.7rem;
   }
 
@@ -328,10 +311,10 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   .tool-link-visit {
     font-size: 0.8rem;
     font-weight: 600;
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     background: var(--color-bg-secondary);
     padding: 0.3rem 0.75rem;
-    border-radius: 6px;
+    border-radius: var(--radius);
     transition: all 0.2s;
   }
 
@@ -349,9 +332,9 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
   .page-btn {
     padding: 0.5rem 1rem;
     border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: var(--radius);
     background: var(--color-bg-card);
-    color: var(--color-text);
+    color: var(--color-ink);
     cursor: pointer;
     font-weight: 600;
     font-size: 0.85rem;
@@ -373,27 +356,17 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     gap: 0.25rem;
   }
 
+  .page-num {
     padding: 0.5rem 1rem;
     border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: var(--radius);
     background: var(--color-bg-card);
-    color: var(--color-text);
+    color: var(--color-ink);
     cursor: pointer;
     font-weight: 600;
     font-size: 0.85rem;
     transition: all 0.2s;
-
-    &:hover:not(.active) {
-        border-color: var(--color-accent);
-        color: var(--color-accent);
-    }
-
-    &.active {
-        background: var(--color-accent);
-        color: white;
-        border-color: var(--color-accent);
-    }
-}
+  }
 
   .page-num:hover:not(.active) {
     border-color: var(--color-accent);
@@ -530,7 +503,7 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
           const dots = document.createElement('span');
           dots.textContent = '...';
           dots.style.padding = '0 0.25rem';
-          dots.style.color = 'var(--color-text-secondary)';
+          dots.style.color = 'var(--color-ink-muted)';
           pageNumbersEl.appendChild(dots);
         }
       } else {

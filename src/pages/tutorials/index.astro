@@ -47,20 +47,22 @@ const tutorials = (await getCollection('tutorials'))
 <style>
   .blog-search {
     width: 100%;
-    padding: 0.85rem 1.25rem;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius);
-    background: var(--color-bg-card);
-    color: var(--color-text);
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
+    padding: 0.85rem 1rem;
+    border: none;
+    border-bottom: 1px solid var(--color-rule);
+    background: transparent;
+    color: var(--color-ink);
+    font-family: var(--font-serif);
+    font-style: italic;
+    font-size: 1.1rem;
+    font-variation-settings: "opsz" 24, "SOFT" 60;
+    margin-bottom: 1.75rem;
     transition: border-color 0.2s;
   }
 
   .blog-search:focus {
     outline: none;
-    border-color: var(--color-accent);
-    box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.1);
+    border-bottom-color: var(--color-accent);
   }
 </style>
 

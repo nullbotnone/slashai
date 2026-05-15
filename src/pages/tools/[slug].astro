@@ -134,7 +134,7 @@ const relatedTools = tools
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     margin-bottom: 0.25rem;
   }
 
@@ -146,19 +146,21 @@ const relatedTools = tools
 
   .tool-cta {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-accent), #ec4899);
+    background: var(--color-ink);
     color: white;
     padding: 0.85rem 2.5rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 1.05rem;
-    transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.3);
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    transition: all 0.18s var(--ease-out);
+    text-decoration: none;
   }
 
   .tool-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+    background: var(--color-accent);
     color: white;
   }
 
@@ -189,7 +191,7 @@ const relatedTools = tools
     background: var(--color-bg-secondary);
     color: var(--color-accent);
     padding: 0.25rem 0.6rem;
-    border-radius: 6px;
+    border-radius: var(--radius-sm);
     font-size: 0.8rem;
     font-weight: 500;
   }

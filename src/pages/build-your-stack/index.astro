@@ -103,7 +103,7 @@ const budgetsJson = JSON.stringify(budgets);
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-accent), #ec4899);
+    background: var(--color-accent);
     color: white;
     font-weight: 800;
     font-size: 0.9rem;
@@ -111,8 +111,9 @@ const budgetsJson = JSON.stringify(budgets);
   }
 
   .builder-step h2 {
+    font-family: var(--font-display);
     font-size: 1.3rem;
-    font-weight: 700;
+    font-weight: 500;
     margin-bottom: 1.25rem;
   }
 
@@ -133,20 +134,20 @@ const budgetsJson = JSON.stringify(budgets);
     cursor: pointer;
     transition: all 0.2s;
     text-align: left;
-    color: var(--color-text);
+    color: var(--color-ink);
     font-family: var(--font-sans);
   }
 
   .role-btn:hover {
     border-color: var(--color-accent);
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.15);
+    box-shadow: var(--shadow-sm);
     transform: translateY(-2px);
   }
 
   .role-btn.selected {
     border-color: var(--color-accent);
-    background: var(--color-accent-light);
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.2);
+    background: var(--color-accent-soft);
+    box-shadow: var(--shadow-sm);
   }
 
   .role-icon { font-size: 1.5rem; }
@@ -162,10 +163,10 @@ const budgetsJson = JSON.stringify(budgets);
     padding: 0.75rem 1.5rem;
     background: var(--color-bg-card);
     border: 2px solid var(--color-border);
-    border-radius: 50px;
+    border-radius: var(--radius);
     cursor: pointer;
     transition: all 0.2s;
-    color: var(--color-text);
+    color: var(--color-ink);
     font-weight: 600;
     font-size: 0.9rem;
     font-family: var(--font-sans);
@@ -188,17 +189,17 @@ const budgetsJson = JSON.stringify(budgets);
     margin-bottom: 1rem;
   }
 
-  .results-header h2 { font-size: 1.3rem; font-weight: 700; }
+  .results-header h2 { font-family: var(--font-display); font-size: 1.3rem; font-weight: 500; }
 
   .restart-btn {
     background: var(--color-bg-secondary);
     border: 1px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: var(--radius);
     padding: 0.5rem 1rem;
     cursor: pointer;
     font-size: 0.85rem;
     font-weight: 600;
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     transition: all 0.2s;
     font-family: var(--font-sans);
   }
@@ -206,12 +207,12 @@ const budgetsJson = JSON.stringify(budgets);
   .restart-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
 
   .results-meta {
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     font-size: 0.9rem;
     margin-bottom: 1.5rem;
     padding: 0.75rem 1rem;
     background: var(--color-bg-secondary);
-    border-radius: 8px;
+    border-radius: var(--radius);
     border-left: 3px solid var(--color-accent);
   }
 
@@ -240,13 +241,13 @@ const budgetsJson = JSON.stringify(budgets);
   .stack-total strong { font-size: 1.4rem; color: var(--color-accent); }
 
   .stack-total p {
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     font-size: 0.85rem;
     margin-top: 0.25rem;
   }
 
   .stack-empty.hidden { display: none; }
-  .stack-empty { text-align: center; padding: 3rem; color: var(--color-text-secondary); }
+  .stack-empty { text-align: center; padding: 3rem; color: var(--color-ink-muted); }
 
   @media (max-width: 768px) {
     .role-grid { grid-template-columns: 1fr 1fr; }

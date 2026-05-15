@@ -161,9 +161,9 @@ const toolsJson = JSON.stringify(tools);
     width: 100%;
     padding: 0.9rem 1.25rem;
     border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: var(--radius);
     background: var(--color-bg-card);
-    color: var(--color-text);
+    color: var(--color-ink);
     font-size: 1rem;
     font-family: var(--font-sans);
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -173,14 +173,14 @@ const toolsJson = JSON.stringify(tools);
   .search-bar:focus {
     outline: none;
     border-color: var(--color-accent);
-    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.08);
+    box-shadow: 0 0 0 4px var(--color-accent-soft);
   }
 
   .tool-scroll {
     max-height: 560px;
     overflow-y: auto;
     border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: var(--radius);
     background: var(--color-bg-card);
   }
 
@@ -192,7 +192,7 @@ const toolsJson = JSON.stringify(tools);
 
   .tool-row {
     padding: 0.75rem 1rem;
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     cursor: pointer;
     transition: background 0.15s, opacity 0.15s;
     user-select: none;
@@ -220,20 +220,21 @@ const toolsJson = JSON.stringify(tools);
   .picker-action.hidden { display: none; }
 
   .go-btn {
-    background: linear-gradient(135deg, var(--color-accent), #ec4899);
+    background: var(--color-ink);
     color: white;
     border: none;
-    border-radius: 50px;
+    border-radius: var(--radius-sm);
     padding: 0.8rem 2.5rem;
-    font-size: 1rem;
-    font-weight: 700;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: all 0.3s;
-    box-shadow: 0 4px 15px rgba(124, 58, 237, 0.25);
+    transition: all 0.18s var(--ease-out);
     font-family: var(--font-sans);
   }
 
-  .go-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35); }
+  .go-btn:hover { background: var(--color-accent); color: white; }
 
   .results.hidden { display: none; }
   .results-top { display: flex; justify-content: flex-end; margin-bottom: 1rem; }
@@ -255,7 +256,7 @@ const toolsJson = JSON.stringify(tools);
   .detail-wrap {
     margin-top: 2rem;
     border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: var(--radius);
     overflow: hidden;
     background: var(--color-bg-card);
   }
@@ -278,7 +279,7 @@ const toolsJson = JSON.stringify(tools);
   .detail-table tbody th {
     font-weight: 600;
     font-size: 0.8rem;
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     width: 120px;
     white-space: nowrap;
     background: var(--color-bg);
@@ -293,7 +294,7 @@ const toolsJson = JSON.stringify(tools);
     border-bottom: 1px solid var(--color-border);
   }
 
-  .detail-table thead a { color: var(--color-text); text-decoration: none; transition: color 0.2s; }
+  .detail-table thead a { color: var(--color-ink); text-decoration: none; transition: color 0.2s; }
   .detail-table thead a:hover { color: var(--color-accent); }
 
   .detail-table td ul { list-style: none; padding: 0; margin: 0; }
@@ -305,32 +306,33 @@ const toolsJson = JSON.stringify(tools);
   .cell-tags span {
     display: inline-block;
     background: var(--color-bg-secondary);
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     padding: 0.15rem 0.45rem;
-    border-radius: 4px;
+    border-radius: var(--radius-sm);
     font-size: 0.72rem;
     margin: 0.1rem;
   }
 
   .visit-link {
     display: inline-block;
-    background: linear-gradient(135deg, var(--color-accent), #ec4899);
+    background: var(--color-ink);
     color: white !important;
     padding: 0.5rem 1.2rem;
-    border-radius: 50px;
-    font-weight: 700;
-    font-size: 0.8rem;
+    border-radius: var(--radius-sm);
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
     text-decoration: none;
-    transition: all 0.3s;
-    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.25);
+    transition: all 0.18s var(--ease-out);
   }
 
-  .visit-link:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(124, 58, 237, 0.35); }
+  .visit-link:hover { background: var(--color-accent); color: white !important; }
 
   .rev-link {
     display: block;
     font-size: 0.78rem;
-    color: var(--color-text-secondary);
+    color: var(--color-ink-muted);
     text-decoration: none;
     margin-top: 0.5rem;
   }
