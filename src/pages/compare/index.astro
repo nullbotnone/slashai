@@ -156,7 +156,9 @@ const toolsJson = JSON.stringify(tools);
     })();
   </script>
 
-<style>
+<style is:global>
+  /* All styles on this page must be global — tool-row, go-btn, back-btn, visit-link,
+     rev-link, and detail-table elements are all created dynamically by JS */
   .search-bar {
     width: 100%;
     padding: 0.9rem 1.25rem;

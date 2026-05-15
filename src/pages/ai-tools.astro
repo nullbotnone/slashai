@@ -320,7 +320,15 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
 
   .tool-link-visit:hover { background: var(--color-accent); color: white; }
 
-  /* Pagination */
+  @media (max-width: 768px) {
+    .directory-filters { flex-direction: column; }
+    .filter-group { flex-direction: column; }
+    .tools-grid { grid-template-columns: 1fr; }
+  }
+</style>
+
+<style is:global>
+  /* Pagination — global because page-num buttons are created dynamically by JS */
   .pagination {
     display: flex;
     justify-content: center;
@@ -366,12 +374,6 @@ const pricingOptions = [...new Set(tools.map(t => t.pricing))].sort();
     background: var(--color-accent);
     color: white;
     border-color: var(--color-accent);
-  }
-
-  @media (max-width: 768px) {
-    .directory-filters { flex-direction: column; }
-    .filter-group { flex-direction: column; }
-    .tools-grid { grid-template-columns: 1fr; }
   }
 </style>
 
