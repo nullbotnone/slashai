@@ -3929,4 +3929,141 @@
       ],
       "featured": false
     }
+    ,
+    {
+      "name": "Google Antigravity",
+      "slug": "google-antigravity",
+      "description": "AI-powered integrated development environment (IDE) with agent-first architecture that enables developers to delegate complex coding tasks to autonomous AI agents.",
+      "longDescription": "Google Antigravity is an artificial intelligence (AI)-powered integrated development environment (IDE) that was announced on November 18, 2025, and released in public preview the same day. It operates on an \"agent-first\" architecture, enabling developers to delegate complex coding tasks to autonomous AI agents. Key aspects and functionalities include: Agentic Editor and Architecture - heavily modified fork of Visual Studio Code (VS Code) that shifts from traditional AI code assistance to a system where AI agents operate with greater autonomy; Planning Tasks - agents can generate \"Plan Artifacts\" for larger tasks, allowing developers to operate at a higher, task-oriented level; Writing Code - platform empowers autonomous agents to handle entire features, writing code for new features and autonomously modifying the codebase for UI iterations; Installing Packages and Testing Applications - agents can execute tasks across different surfaces including terminal and browser to launch applications and test components; Artifacts System - agents generate \"Artifacts\" such as task breakdowns, implementation plans, code diffs, test results, screenshots, and browser recordings to build trust and allow for verification; System Requirements - requires macOS Monterey (version 12) or later, 64-bit Windows 10 or later, or 64-bit Linux with glibc 2.28 or later and glibcxx 3.4.25 or later. By January 2026, Antigravity had reached an adoption rate of 6%. During this preview period, community feedback highlighted both its groundbreaking speed and significant stability and context memory issues. Google released performance improvements and security fixes in January 2026, including terminal sandboxing for macOS users and switching the default browser use model to Gemini 3 Flash. Users also noted the ability to spawn multiple agent threads for parallel tasks, such as refactoring a component and writing tests simultaneously.",
+      "url": "https://antigravity.google",
+      "affiliateUrl": "https://antigravity.google?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $20/mo Pro",
+      "released": "November 18, 2025 (public preview same day)",
+      "added": "2026-05-15",
+      "pros": [
+        "Announced November 18, 2025 with public preview same day",
+        "Agent-first architecture shifts from AI code assistance to autonomous AI agents",
+        "Enables developers to delegate complex coding tasks to autonomous AI agents",
+        "Heavily modified fork of VS Code with Editor View and Manager View",
+        "Agents can generate Plan Artifacts for larger tasks (higher task-oriented level)",
+        "Platform empowers autonomous agents to handle entire features and codebase modifications",
+        "Supports multiple AI models including Gemini 3.1 Pro, Gemini 3 Flash, Claude Sonnet/Opus",
+        "Agents can execute tasks across terminal and browser surfaces",
+        "Artifacts System generates task breakdowns, code diffs, test results, screenshots for verification",
+        "January 2026 preview showed 6% adoption rate with feedback-driven improvements",
+        "Performance improvements and security fixes released in January 2026",
+        "Ability to spawn multiple agent threads for parallel tasks (refactoring + testing)"
+      ],
+      "cons": [
+        "Still in preview mode as of May 2026 - may have stability and context memory issues",
+        "Requires specific system requirements (macOS Monterey+, Windows 10+, Linux with specific glibc versions)",
+        "May have a learning curve for developers transitioning from traditional IDEs",
+        "Advanced features may require paid Pro subscription",
+        "Dependent on Google's continued development and support for the platform"
+      ],
+      "bestFor": "Developers and software engineering teams seeking to increase productivity through autonomous AI agents that can handle complex coding tasks from planning to testing without synchronous human intervention.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "ai ide",
+        "agentic development",
+        "software engineering",
+        "google"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Seedance 2.0 (ByteDance)",
+      "slug": "seedance-2-0-bytedance",
+      "description": "Advanced AI video generation model that produces native 2K resolution video output with native audio and lip-synced dialogue in over eight languages.",
+      "longDescription": "ByteDance officially launched its advanced AI video generation model, Seedance 2.0, in February 2026, with reports of its release dating between February 8th and February 12th. A key feature of Seedance 2.0 is its ability to produce native 2K resolution video output, offering a higher standard compared to the 1080p resolution often seen in competing models at the time. The model also excels in generating native audio simultaneously with the video, rather than adding it in post-production. This includes ambient sounds, sound effects, and phoneme-perfect lip-synced dialogue in over eight languages, thanks to its proprietary Dual-Branch Diffusion Transformer architecture. Seedance 2.0 supports multiple input modalities, allowing users to combine text, images, video, and audio (up to 12 simultaneous references) to guide video generation. It can create multi-shot narratives with natural scene cuts and transitions, producing video clips ranging from 4 to 15 seconds in length. The model has been lauded for its significant improvements in physical accuracy, visual realism, and overall controllability, addressing challenges like subject identity drift and inconsistent lighting seen in earlier models. Initially available to users of ByteDance's Jimeng AI in mainland China, Seedance 2.0 has since seen broader access through platforms like Dreamina and third-party integrations such as Bubio and ChatCut. A global rollout to CapCut and BytePlus ModelArk occurred in March and April 2026, although its availability in the United States has been delayed due to copyright concerns raised by Hollywood studios. The model quickly gained attention for its realistic video generation capabilities, which also sparked discussions around intellectual property rights, prompting ByteDance to implement safeguards.",
+      "url": "https://www.bytedance.com",
+      "affiliateUrl": "https://www.bytedance.com?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $9.99/mo Pro, $29.99/mo Enterprise",
+      "released": "February 8-12, 2026",
+      "added": "2026-05-15",
+      "pros": [
+        "Officially launched February 8-12, 2026",
+        "Produces native 2K resolution video output (higher than competing 1080p models)",
+        "Generates native audio simultaneously with video (ambient sounds, sound effects, lip-synced dialogue)",
+        "Proprietary Dual-Branch Diffusion Transformer architecture for enhanced capabilities",
+        "Supports multiple input modalities: text, images, video, audio (up to 12 simultaneous references)",
+        "Creates multi-shot narratives with natural scene cuts and transitions",
+        "Produces video clips ranging from 4 to 15 seconds in length",
+        "Significant improvements in physical accuracy, visual realism, and overall controllability",
+        "Addresses challenges like subject identity drift and inconsistent lighting",
+        "Initially available via Jimeng AI in mainland China",
+        "Broadened access through Dreamina, Bubio, and ChatCut third-party integrations",
+        "Global rollout to CapCut and BytePlus ModelArk in March-April 2026",
+        "Realistic video generation capabilities sparked IP discussions leading to safeguards implementation"
+      ],
+      "cons": [
+        "Availability in United States delayed due to copyright concerns from Hollywood studios",
+        "Free tier may have limitations on video length, resolution, or monthly generations",
+        "Requires subscription for full access to Pro and Enterprise features",
+        "Video generation may consume significant computational resources",
+        "Results may vary based on prompt quality and complexity",
+        "May not match specialized professional video production tools for certain use cases",
+        "Intellectual property rights discussions may affect availability in certain regions"
+      ],
+      "bestFor": "Content creators, marketers, educators, and businesses looking to generate high-quality, realistic AI-powered videos with native 2K resolution, synchronized audio, and multi-input capabilities for professional video content creation.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "video generation",
+        "ai video",
+        "text to video",
+        "bytendance"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Google Pomelli Animate",
+      "slug": "google-pomelli-animate",
+      "description": "AI tool that transforms static content into short video animations powered by the Veo 3.1 video model.",
+      "longDescription": "Google Pomelli Animate, powered by the Veo 3.1 video model, is an AI tool designed to transform static content into short video animations. Launched in January 2026, this feature is part of the broader Google Pomelli platform, which aims to assist with marketing campaigns and content creation. Pomelli Animate leverages Google DeepMind's Veo 3.1, a high-end video generation model that understands motion physics, depth, light, and realism, resulting in smooth, cinematic, and professional animations. It enables users to turn static images into high-quality, motion-filled videos in seconds, suitable for platforms like Instagram Reels, TikTok, and YouTube Shorts. The tool allows users to upload an image or use a generated one, apply motion commands, and quickly generate an animated video. The Veo 3.1 model, initially released with updates in mid-2025, is Google's advanced video generation technology, capable of producing high-fidelity videos with features like first-and-last-frame control, image reference capabilities, and support for 1080p and even 4K resolution videos. As of May 2026, Google is also reportedly testing a new AI video model called \"Gemini Omni,\" which is expected to be unveiled at Google I/O 2026 (May 19-20). This potential new model may expand on or integrate the capabilities of Veo 3.1, offering even more comprehensive video generation and editing features within the Gemini ecosystem.",
+      "url": "https://pomelli.google",
+      "affiliateUrl": "https://pomelli.google?via=slashai",
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $4.99/mo Pro",
+      "released": "January 2026",
+      "added": "2026-05-15",
+      "pros": [
+        "Launched January 2026 as part of Google Pomelli platform",
+        "Powered by Veo 3.1 video model - understands motion physics, depth, light, and realism",
+        "Produces smooth, cinematic, and professional animations",
+        "Enables users to turn static images into high-quality, motion-filled videos in seconds",
+        "Suitable for platforms like Instagram Reels, TikTok, and YouTube Shorts",
+        "Allows users to upload an image or use a generated one, apply motion commands",
+        "Quickly generates animated videos from static content",
+        "Veo 3.1 supports first-and-last-frame control, image reference capabilities",
+        "Veo 3.1 supports 1080p and even 4K resolution videos",
+        "Google testing Gemini Omni AI video model for unveiling at Google I/O 2026 (May 19-20)",
+        "Gemini Omni may expand on or integrate Veo 3.1 capabilities within Gemini ecosystem"
+      ],
+      "cons": [
+        "Free tier may have limitations on video length, resolution, or monthly generations",
+        "Requires subscription for full access to Pro features",
+        "Video generation may consume significant computational resources",
+        "Results may vary based on prompt quality and complexity",
+        "May not match specialized professional video animation tools for certain use cases",
+        "Dependent on continued development and support of Veo 3.1 model",
+        "Potential Gemini Omni model may affect positioning and development roadmap"
+      ],
+      "bestFor": "Marketers, content creators, social media managers, and businesses looking to quickly transform static content into engaging short video animations for platforms like Instagram Reels, TikTok, and YouTube Shorts.",
+      "affiliateCommission": "Varies",
+      "tags": [
+        "productivity",
+        "video animation",
+        "ai video",
+        "text to video",
+        "google"
+      ],
+      "featured": false
+    }
   ]
