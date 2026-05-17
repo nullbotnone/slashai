@@ -1,0 +1,213 @@
+{
+  "jobs": [
+    {
+      "id": "ed00fb94-c5de-40ee-ae13-fbca13331cd2",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "SlashAI Cron Health Monitor",
+      "enabled": true,
+      "createdAtMs": 1776985719408,
+      "updatedAtMs": 1778606249304,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */6 * * *",
+        "tz": "America/Chicago",
+        "staggerMs": 300000
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Perform SlashAI Cron Health Check: \n\n1. List all SlashAI cron jobs using the cron tool\n2. For each job, check:\n   - Whether it's enabled\n   - Last run status (ok/error)\n   - Consecutive error count\n   - Last run duration\n   - Time since last run\n\n3. Identify any issues:\n   - Jobs disabled unexpectedly\n   - Jobs with consecutive errors > 2\n   - Jobs that haven't run in over 2x their scheduled interval\n   - Jobs with extremely long run times (> 1 hour)\n\n4. Create a health report summarizing:\n   - Overall system health\n   - Any problematic jobs needing attention\n   - Recommended actions\n\n5. If the SlashAI Daily Tool Check job (id: 7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d) shows consecutive errors, manually trigger it to test if the underlying issue is resolved\n\n6. Save the health report to /home/rpi/.openclaw/workspace/projects/slashai/cron-health-report.md\n\n7. Log completion status to system logs (channel-independent operation)"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "state": {
+        "nextRunAtMs": 1778626939442,
+        "lastRunAtMs": 1778605339470,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 909834,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false,
+        "runningAtMs": 1778626939474
+      }
+    },
+    {
+      "id": "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "SlashAI Daily Tool Check",
+      "enabled": true,
+      "createdAtMs": 1773852925425,
+      "updatedAtMs": 1778591575614,
+      "schedule": {
+        "expr": "0 8 * * *",
+        "kind": "cron",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Perform SlashAI Daily Tool Check: Search for recent AI tool updates (Jasper, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI) AND search for latest trends regarding AI agents, check existing tools.json, note significant updates, check existing articles in src/content/, create update note in pending-updates.md if major updates, build site with npm run build, commit changes to git, and push to GitHub to update the live site"
+      },
+      "state": {
+        "nextRunAtMs": 1778677200000,
+        "lastRunAtMs": 1778590800031,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 775583,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      },
+      "delivery": {
+        "mode": "none",
+        "channel": "last"
+      }
+    },
+    {
+      "id": "2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "SlashAI: Add new AI tools to directory",
+      "enabled": true,
+      "createdAtMs": 1773812129472,
+      "updatedAtMs": 1778598285917,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Reminder: Search the web for new trending AI tools and add them to SlashAI's directory at projects/slashai/slashai/src/data/tools.json. Add at least 3-5 new tools with full details (name, slug, description, longDescription, url, category, pricing, price, released, added, pros, cons, bestFor, tags). Then commit and push to deploy. Today's date for the 'added' field."
+      },
+      "state": {
+        "lastRunAtMs": 1778598000033,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 285884,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0,
+        "nextRunAtMs": 1778684400000
+      }
+    },
+    {
+      "id": "233a2ab3-45ac-4cc0-ac40-8e998f9f4d90",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "SlashAI Biweekly Tutorial",
+      "enabled": true,
+      "createdAtMs": 1773853058032,
+      "updatedAtMs": 1777649476972,
+      "schedule": {
+        "expr": "0 10 */14 * *",
+        "kind": "cron",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Perform SlashAI Biweekly Tutorial Writing: Search web for trending AI tools/workflows for solopreneurs/freelancers, read existing tutorials to avoid duplication, choose tutorial topic based on new popular AI tools or automation workflows, research thoroughly, write step-by-step tutorial with proper frontmatter, save to src/content/tutorials/, add new tools to tools.json if needed, build site with npm run build, commit changes to git, and push to GitHub to update the live site"
+      },
+      "state": {
+        "nextRunAtMs": 1778857200000,
+        "lastRunAtMs": 1777648200103,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 1276869,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": false
+      },
+      "delivery": {
+        "mode": "none"
+      }
+    },
+    {
+      "id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "SlashAI Weekly Article",
+      "enabled": true,
+      "createdAtMs": 1773852907183,
+      "updatedAtMs": 1778519098857,
+      "schedule": {
+        "expr": "0 10 * * 1",
+        "kind": "cron",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Perform SlashAI Weekly Article Writing: Search web for trending AI tools for solopreneurs/freelancers, read existing articles to avoid duplication, choose compelling article type, research tools thoroughly, write article in markdown with proper frontmatter, save to src/content/, add new tools to tools.json if needed, build site with npm run build, commit changes to git, and push to GitHub to update the live site",
+        "timeoutSeconds": 7200
+      },
+      "state": {
+        "lastRunAtMs": 1778511898828,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 7200029,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 1,
+        "nextRunAtMs": 1779116400000,
+        "lastError": "cron: job execution timed out",
+        "lastErrorReason": "timeout"
+      },
+      "delivery": {
+        "mode": "none"
+      },
+      "failureAlert": {
+        "after": 2
+      }
+    },
+    {
+      "id": "76dc4a93-9968-43b9-a383-cb00b7c0bf81",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "SlashAI Monthly What's New Roundup",
+      "enabled": true,
+      "createdAtMs": 1773854307038,
+      "updatedAtMs": 1777649956509,
+      "schedule": {
+        "expr": "0 10 1 * *",
+        "kind": "cron",
+        "tz": "America/Chicago"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "Perform SlashAI Monthly What's New in AI: Search for latest AI developments affecting solopreneurs, summarize key trends and new tools, create comprehensive monthly roundup article, save to src/content/roundups/, build site with npm run build, commit changes to git, and push to GitHub to update the live site"
+      },
+      "state": {
+        "nextRunAtMs": 1780326000000,
+        "lastRunAtMs": 1777649476972,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 479537,
+        "lastDeliveryStatus": "not-delivered",
+        "consecutiveErrors": 1,
+        "lastDelivered": false,
+        "lastError": "⚠️ 📝 Edit: `in src/content/roundups/whats-new-ai-may-2026.md` failed",
+        "lastDeliveryError": "⚠️ 📝 Edit: `in src/content/roundups/whats-new-ai-may-2026.md` failed"
+      },
+      "delivery": {
+        "mode": "none"
+      }
+    }
+  ],
+  "total": 6,
+  "offset": 0,
+  "limit": 6,
+  "hasMore": false,
+  "nextOffset": null
+}

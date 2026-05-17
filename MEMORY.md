@@ -1,0 +1,4 @@
+- Fixed SlashAI Weekly Article bug on 2026-05-02: The article for week of April 27-May 3, 2026 had been incorrectly changed to cover April 20-26, 2026. Restored correct content covering AI agents moving into production, specialized coding assistants, AI-powered business management tools, creative AI tools, and accessible research tools.
+- The bug was caused by an incorrect fix applied on April 27th that changed upcoming week content to past week content.
+- Site rebuilt and changes pushed to GitHub successfully.
+- Verified successful automated site rebuild on 2026-05-12: Daily cron job confirmed tools.json was up to date for all checked tools (Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI) and rebuilt site with current static files. Built pages include nano-banana-pro image generation editing guide, OpenClaw setup guide, tutorials index, and site homepage.
