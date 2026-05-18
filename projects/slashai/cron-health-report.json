@@ -1,6 +1,6 @@
 {
-  "generated_at": 1779015881861,
-  "generated_at_iso": "2026-05-17T11:04:41.861449+00:00",
+  "generated_at": 1779080639977,
+  "generated_at_iso": "2026-05-18T05:03:59.977199+00:00",
   "total_jobs": 6,
   "enabled_jobs": 6,
   "disabled_jobs": 0,
@@ -12,9 +12,9 @@
       "last_run_status": "ok",
       "consecutive_errors": 0,
       "last_duration_hours": 0.19977277777777777,
-      "time_since_last_run_hours": 358.07828694444447,
+      "time_since_last_run_hours": 376.0666525,
       "issues": [
-        "Not run in 358.1h (>48h expected)"
+        "Not run in 376.1h (>48h expected)"
       ]
     },
     {
@@ -24,9 +24,9 @@
       "last_run_status": "ok",
       "consecutive_errors": 0,
       "last_duration_hours": 0.14734222222222224,
-      "time_since_last_run_hours": 356.0782861111111,
+      "time_since_last_run_hours": 374.06665166666664,
       "issues": [
-        "Not run in 356.1h (>48h expected)"
+        "Not run in 374.1h (>48h expected)"
       ]
     },
     {
@@ -36,9 +36,9 @@
       "last_run_status": "ok",
       "consecutive_errors": 0,
       "last_duration_hours": 1.0673991666666667,
-      "time_since_last_run_hours": 475.91160527777777,
+      "time_since_last_run_hours": 493.8999708333333,
       "issues": [
-        "Not run in 475.9h (>336h expected)",
+        "Not run in 493.9h (>336h expected)",
         "Extremely long run time: 1.1h"
       ]
     }
