@@ -41,3 +41,46 @@ Based on the May 2026 monthly roundup (src/content/roundups/whats-new-ai-may-202
 - Monthly roundup: src/content/roundups/whats-new-ai-may-2026.md
 - Existing review articles: src/content/reviews/jasper-ai-review.md, src/content/reviews/hubspot-aeo-review.md
 - Build process completed successfully
+
+
+
+# AI Tool Updates — May 22, 2026
+
+## Summary
+Performed SlashAI Daily Tool Check: searched for recent AI tool updates (Jasper, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI) AND searched for latest trends regarding AI agents, checked existing tools.json, noted significant updates, checked existing articles in src/content/, created update note in pending-updates.md for major updates, built site with npm run build, committed changes to git, and pushed to GitHub to update the live site.
+
+## Key Findings
+
+### Major Tool Updates (May 22, 2026)
+- **HubSpot**: Major Spring 2026 Spotlight release with 99 updates (13 brand-new features and 86 enhancements) across every hub, all powered by CRM-grounded AI. Key AI features now utilizing CRM data for improved output: Answer Engine Optimization (AEO), Smart Deal Progression, and Customer Agent. HubSpot AEO allows measuring, tracking, and optimizing brand visibility in AI-generated answers from platforms like ChatGPT, Gemini, and Perplexity. Legacy Segment Intro features sunsetting on May 22, 2026.
+
+- **Semrush**: Expanded AI Visibility Database to 32 countries (including 17 new regional markets) with real AI search data and growing prompt database to over 261 million LLM prompts. Announced partnership with Lovable to integrate search intelligence into building experience. Added new source and sentiment analysis automations to Enterprise AI Optimization. Monitoring Google May 2026 core update (officially began rolling out May 21, 2026).
+
+- **Writesonic**: Launched Generative Engine Optimization (GEO) Platform providing real-time monitoring of brand visibility across AI platforms like ChatGPT, Gemini, Perplexity, and over 10 others. Tracks "share of voice" in AI answers and sentiment analysis. Integrated Multi-Model Orchestration (GPT-4o, Claude 3.7 Sonnet, Gemini). Chatsonic AI Agent allows switching between GPT-4o, Claude 3.7, and Gemini 1.5 Pro with Brand Voice feature and Flux 1.1 image generation. AI Article Writer 7.0 delivers up to 2,000-word articles in under 20 seconds with improved brand voice consistency and SEO.
+
+- **Surfer SEO**: Continued focus on AI Content Optimization with Surfer Sites making filtering and analysis easier. Surfy AI upgraded with accelerated writing, editing, and research tasks. AI Tracker monitors brand visibility in AI platforms like Gemini, ChatGPT. AI Overviews Optimization helps optimize content for Google's AI Overviews.
+
+- **Murf AI**: Speech Gen 3 Engine delivering near-human voice quality with improved pauses, tone shifts, and pacing. Extensive Voice Library: over 200 AI voices across 35 languages and 10+ accents. Voice Cloning available for Enterprise plans. Granular Speech Customization (speed, pitch, pauses, emphasis, speaking style). API and Developer Integration with REST API and Chrome extension. Studio Editor for non-technical users. Compliance: SOC 2 Type II, ISO 27001, ISO 42001, HIPAA, and GDPR certified as of February 2026.
+
+- **Jasper AI**: Evolved into comprehensive AI Agent Workspace for Modern Marketing Teams with 100+ Specialized AI Agents handling research, writing, optimization, personalization, localization, and campaign execution. Offers Content Pipelines for repeatable workflows from idea to published content. Brand Voice & Jasper IQ knowledge base ensures on-brand, safe, aligned output. Jasper Chat + Canvas provides intuitive chat interface and visual workspace. Jasper Art & Multimodal generates high-quality images and visuals alongside text. Deep Integrations & SEO with Surfer SEO, Salesforce, and 1000+ tools. Enterprise Focus for large-scale content production and multi-channel campaigns. Security-First Approach with OAuth API integrations and Zero-Data-Retention policies. No-Code Agent Builder for custom workflows. State of AI in Marketing 2026 Report shows 91% of marketing teams use AI (up from 63% in 2025).
+
+### AI Agents Trends (May 22, 2026)
+- Agentic AI and Autonomous Workflows: Production-ready AI agents now capable of handling complex, 8+ hour workstreams with minimal human intervention.
+- AI-Native No-Code Platforms: Democratizing automation through plain language workflow description.
+- Multimodal AI Pipelines: Seamless processing across text, images, audio, and video simultaneously.
+- Embedded AI Copilots: Deep integration in Google Workspace, Microsoft 365, Canva, and other daily-use platforms.
+- From Hustle to Systems Thinking: Shift from "working harder" to building AI-powered leverage systems.
+
+## Actions Taken
+- [x] Verified tools.json contains latest updates for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI
+- [x] Checked existing review articles in src/content/reviews - none require immediate update based on today's findings
+- [x] Built site with npm run build
+- [x] Verified site builds correctly
+- [x] Committed and pushed changes to GitHub to update the live site
+
+## Sources
+- Official company blogs and documentation for Jasper AI, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI
+- Web search for May 22, 2026 tool updates and AI agents trends
+- Existing tools.json file verification
+- Existing review articles: src/content/reviews/jasper-ai-review.md, src/content/reviews/hubspot-aeo-review.md
+- Build process completed successfully
