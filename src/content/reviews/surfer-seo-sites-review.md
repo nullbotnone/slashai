@@ -1,12 +1,12 @@
 ---
 title: "Surfer SEO Sites Review 2026: The All-in-One SEO Strategy Hub"
-description: "In-depth review of Surfer SEO's new 'Sites' feature launched in April 2026, designed to centralize SEO workflows with real-time Google Search Console insights."
-pubDate: 2026-04-20
+description: "In-depth review of Surfer SEO's Sites feature updated in May 2026 with enhanced AI-driven search capabilities and advanced content optimization tools."
+pubDate: 2026-05-23
 productName: "Surfer SEO Sites"
-rating: 8.5
+rating: 9.0
 price: "Included with Surfer SEO subscription (starting at $89/mo Essential)"
-verdict: "A powerful addition that transforms Surfer SEO from a content optimization tool into a comprehensive SEO strategy platform."
-tags: ["surfer seo", "sites", "seo", "google search console", "review"]
+verdict: "A powerful evolution that transforms Surfer SEO into an AI-powered SEO strategy platform with advanced content optimization and real-time competitive intelligence."
+tags: ["surfer seo", "sites", "seo", "google search console", "review", "ai-driven"]
 ---
 
 **Quick verdict:** Surfer SEO Sites is a significant evolution of the platform, offering a centralized dashboard for managing SEO workflows with real-time data from Google Search Console. While it doesn't replace dedicated rank tracking tools, it excels at bridging the gap between identifying SEO issues and implementing solutions.
@@ -23,15 +23,21 @@ Surfer SEO Sites is an all-in-one hub introduced in April 2026 that serves as a 
 - Ability to audit underperforming pages directly from the dashboard
 - Exploration of Topical Map-driven content ideas
 
-### AI Visibility Integration
+### AI Visibility Integration (Enhanced May 2026)
 - Direct link to Surfer's AI Tracker for monitoring brand presence in AI-generated answers
 - "Optimize" button for cited pages not ranking #1 in AI answers
 - Integration with Looker Studio for blending AI visibility scores with GA4/G Ads metrics
+- **NEW**: AI Search Guidelines within Content Editor for optimizing content for AI visibility
+- **NEW**: Gemini integration in AI Tracker for enhanced AI platform coverage
+- **NEW**: Mention Gap and Sentiment Analysis for competitive intelligence
 
-### Enhanced Content Editor
+### Enhanced Content Editor (May 2026 Updates)
 - New Content Editor Wizard with full brand, AI, and SEO context pre-generation
 - Automatic Brand Knowledge pull-in and template suggestions based on live SERPs
 - Smarter outlines that are shorter, more natural, and citation-ready
+- **NEW**: Upgraded "Surfy" brain for enhanced writing, editing, and research capabilities
+- **NEW**: Real-time competitive tracking in Content Editor for live SERP analysis
+- **NEW**: Advanced clustering for topic ideation and content planning
 
 ### Workspace and Team Features
 - Workspace Permissions for securing client data and managing team access

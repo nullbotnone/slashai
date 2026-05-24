@@ -26,9 +26,9 @@ Performed SlashAI Daily Tool Check: searched for recent AI tool updates (Jasper,
 - From Hustle to Systems Thinking: Shift from "working harder" to building AI-powered leverage systems.
 
 ## Actions Needed
-- [ ] Update Jasper AI review (src/content/reviews/jasper-ai-review.md) to reflect May 2026 updates
-- [ ] Update HubSpot AEO review (src/content/reviews/hubspot-aeo-review.md) to reflect May 2026 updates  
-- [ ] Update Surfer SEO sites review (src/content/reviews/surfer-seo-sites-review.md) to reflect May 2026 updates
+- [x] Update Jasper AI review (src/content/reviews/jasper-ai-review.md) to reflect May 2026 updates
+- [x] Update HubSpot AEO review (src/content/reviews/hubspot-aeo-review.md) to reflect May 2026 updates  
+- [x] Update Surfer SEO sites review (src/content/reviews/surfer-seo-sites-review.md) to reflect May 2026 updates
 - [x] Verify tools.json contains latest updates for all six tools
 - [x] Built site with npm run build
 - [x] Verified site builds correctly
