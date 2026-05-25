@@ -1,7 +1,7 @@
 ---
 title: "HubSpot AEO (Answer Engine Optimization) Review 2026: Tracking Brand Visibility in AI Answers"
 description: "In-depth review of HubSpot's AEO tool updated in May 2026 with enhanced AI capabilities under the Breeze AI umbrella."
-pubDate: 2026-05-23
+pubDate: 2026-05-25
 productName: "HubSpot AEO"
 rating: 9.5
 price: "$50/mo (standalone) or included with Marketing Hub Pro/Enterprise"
@@ -30,15 +30,19 @@ HubSpot AEO (Answer Engine Optimization) is a standalone tool or add-on to Marke
 - **NEW**: Generate LinkedIn articles and posts directly from AEO recommendations (May 2026)
 
 ### Enhanced AI Capabilities (Breeze AI)
-- **GPT Image 2.0**: Advanced AI image generation with improved output quality, accurate text rendering, and multilingual support
+- **GPT Image 2.0**: Advanced AI image generation with improved output quality, accurate text rendering, and multilingual support (May 2026)
 - Custom-coded modules for quotes and specialized content
 - Gmail extension with deal context for sales teams
 - AI email quality checks for improved communication effectiveness
+- Prospecting Agent: identifies buying signals, expands into buying groups, generates contextual outreach, and prioritizes timing over volume (May 2026)
+- Customer Agent: handles high-volume support interactions, pulls information from knowledge bases and CRM data, resolves conversations end-to-end, and escalates when necessary (May 2026)
+- Data Agent + Smart Properties: helps create new properties and enrich records using unstructured data and third-party web research (May 2026)
 
 ### Integration with HubSpot Ecosystem
 - Works seamlessly with HubSpot's CRM, Marketing Hub, and Content Hub
 - Data flows into HubSpot reports and dashboards
 - Can trigger workflows based on AEO insights
+- Unified under "Breeze AI" umbrella for all AI capabilities (May 2026)
 
 ## Pricing
 

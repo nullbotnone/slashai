@@ -1,7 +1,7 @@
 ---
 title: "Surfer SEO Sites Review 2026: The All-in-One SEO Strategy Hub"
 description: "In-depth review of Surfer SEO's Sites feature updated in May 2026 with enhanced AI-driven search capabilities and advanced content optimization tools."
-pubDate: 2026-05-23
+pubDate: 2026-05-25
 productName: "Surfer SEO Sites"
 rating: 9.0
 price: "Included with Surfer SEO subscription (starting at $89/mo Essential)"
@@ -27,9 +27,11 @@ Surfer SEO Sites is an all-in-one hub introduced in April 2026 that serves as a 
 - Direct link to Surfer's AI Tracker for monitoring brand presence in AI-generated answers
 - "Optimize" button for cited pages not ranking #1 in AI answers
 - Integration with Looker Studio for blending AI visibility scores with GA4/G Ads metrics
-- **NEW**: AI Search Guidelines within Content Editor for optimizing content for AI visibility
-- **NEW**: Gemini integration in AI Tracker for enhanced AI platform coverage
-- **NEW**: Mention Gap and Sentiment Analysis for competitive intelligence
+- **NEW**: AI Search Guidelines within Content Editor for optimizing content for AI visibility (May 2026)
+- **NEW**: Gemini integration in AI Tracker for enhanced AI platform coverage (May 2026)
+- **NEW**: Mention Gap and Sentiment Analysis for competitive intelligence (May 2026)
+- **NEW**: Real-time competitive tracking in Content Editor for live SERP analysis (May 2026)
+- **NEW**: Advanced clustering for topic ideation and content planning (May 2026)
 
 ### Enhanced Content Editor (May 2026 Updates)
 - New Content Editor Wizard with full brand, AI, and SEO context pre-generation
