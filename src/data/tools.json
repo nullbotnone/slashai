@@ -4103,4 +4103,40 @@
     ],
     "featured": false
   }
+,
+  {
+    "name": "Gemini 3.5 Flash",
+    "slug": "gemini-3-5-flash",
+    "description": "Google's faster and more efficient AI model for everyday tasks and complex reasoning.",
+    "longDescription": "Gemini 3.5 Flash, launched on May 19, 2026, is Google's latest AI model optimized for speed and efficiency while maintaining strong performance. As the new default model for the Gemini app and Google Search, it offers enhanced response times for quick tasks like drafting emails, generating social media content, and brainstorming ideas, while also improving handling of complex multi-step reasoning and longer contexts for document analysis and strategic planning. The model is designed to be more cost-effective for API usage while delivering strong performance across text, image, and multimodal tasks.",
+    "url": "https://gemini.google.com",
+    "affiliateUrl": null,
+    "category": "Assistant",
+    "pricing": "Freemium",
+    "price": "Free tier available; $19.99/mo for Gemini Advanced",
+    "released": "May 2026",
+    "added": "2026-05-25",
+    "pros": [
+      "Enhanced speed and efficiency for faster response times",
+      "Improved handling of complex tasks and longer contexts",
+      "Default model across Gemini apps and Google Search",
+      "Cost-effective pricing for API usage",
+      "Strong multimodal capabilities (text, image, etc.)"
+    ],
+    "cons": [
+      "Advanced features require Gemini Advanced subscription",
+      "May not have all specialized capabilities of larger Gemini models",
+      "Newer model with less extensive third-party integration compared to established models"
+    ],
+    "bestFor": "Solopreneurs and freelancers who need a fast, versatile AI assistant for daily tasks like content creation, research, communication, and quick analysis.",
+    "affiliateCommission": null,
+    "tags": [
+      "AI assistant",
+      "google",
+      "multimodal",
+      "fast-response",
+      "general-purpose"
+    ],
+    "featured": true
+  }
 ]
