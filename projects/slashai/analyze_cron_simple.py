@@ -3,31 +3,22 @@ import json
 import datetime
 import time
 
-# Current time from the prompt: Sunday, May 24th, 2026 - 12:02 (America/Chicago) / 2026-05-24 17:02 UTC
-# Let's use the Chicago time for consistency with cron jobs
-current_time_str = "2026-05-24 12:02:00"
-current_time = datetime.datetime.strptime(current_time_str, "%Y-%m-%d %H:%M:%S")
-# Assuming America/Chicago timezone (CDT in May, UTC-5)
-# But the timestamps in the JSON appear to be UTC milliseconds since epoch
-# Let's check: 1777762939475 ms since epoch
-test_timestamp = 1777762939475 / 1000.0
-test_dt = datetime.datetime.fromtimestamp(test_timestamp, tz=datetime.timezone.utc)
-print(f"Test timestamp conversion: {test_dt}")
+# Prompt time: Tuesday, May 26th, 2026 - 06:02 (America/Chicago)
+# Convert to UTC: 11:02 UTC on 2026-05-26
+prompt_time_str = "2026-05-26 11:02:00"
+prompt_time = datetime.datetime.strptime(prompt_time_str, "%Y-%m-%d %H:%M:%S").replace(tzinfo=datetime.timezone.utc)
+current_timestamp = int(prompt_time.timestamp() * 1000)  # milliseconds since epoch
 
-# Actually, let's just work with UTC for consistency
-current_timestamp = time.time() * 1000  # Convert to milliseconds
-print(f"Current timestamp (ms): {current_timestamp}")
+print(f"Using prompt time: {prompt_time.isoformat()}")
+print(f"Current timestamp (ms): {current_timestamp}\n")
 
 # Load the cron jobs data
-with open('/home/rpi/.openclaw/workspace/projects/slashai/slashai/projects/slashai/cron_jobs.json', 'r') as f:
+with open('/home/rpi/.openclaw/workspace/projects/slashai/cron_jobs.json', 'r') as f:
     data = json.load(f)
 
 jobs = data['jobs']
 
 print("=== SlashAI Cron Health Check ===\n")
-
-# Convert current time to milliseconds since epoch for comparison
-current_ms = int(time.time() * 1000)
 
 # Define scheduled intervals in milliseconds
 INTERVALS = {
@@ -61,7 +52,7 @@ for job in jobs:
     next_run_ms = state.get('nextRunAtMs', 0)
     
     # Calculate time since last run
-    time_since_last_run_ms = current_ms - last_run_ms if last_run_ms > 0 else float('inf')
+    time_since_last_run_ms = current_timestamp - last_run_ms if last_run_ms > 0 else float('inf')
     time_since_last_run_hours = time_since_last_run_ms / (1000 * 60 * 60) if last_run_ms > 0 else float('inf')
     
     # Get scheduled interval
@@ -150,6 +141,9 @@ if daily_tool_job:
     if consecutive_errors > 0:
         print(f"⚠️  SlashAI Daily Tool Check job has {consecutive_errors} consecutive error(s)")
         print("   Would manually trigger to test if issue is resolved (per step 5)")
+        # Note: We cannot actually trigger the job from here without invoking the agent turn.
+        # In a real scenario, we would send a message to the main session to trigger it.
+        # For now, we'll note it in the report.
     else:
         print("✅ SlashAI Daily Tool Check job has no consecutive errors - no manual trigger needed.")
 else:
@@ -158,7 +152,7 @@ else:
 # Generate report
 report_lines = []
 report_lines.append("# SlashAI Cron Health Report")
-report_lines.append(f"Generated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
+report_lines.append(f"Generated: {prompt_time.strftime('%Y-%m-%d %H:%M:%S UTC')}")
 report_lines.append("")
 report_lines.append("## Summary")
 report_lines.append(f"- Total jobs monitored: {len(jobs)}")
@@ -201,7 +195,7 @@ for job in jobs:
     duration_min = state.get('lastDurationMs', 0) / (60 * 1000) if state.get('lastDurationMs', 0) > 0 else 0
     last_run_ms = state.get('lastRunAtMs', 0)
     if last_run_ms > 0:
-        hours_ago = (current_ms - last_run_ms) / (1000 * 60 * 60)
+        hours_ago = (current_timestamp - last_run_ms) / (1000 * 60 * 60)
         hours_ago_str = f"{hours_ago:.1f}"
     else:
         hours_ago_str = "Never"

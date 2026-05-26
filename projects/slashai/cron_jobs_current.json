@@ -7,7 +7,7 @@
       "name": "SlashAI Cron Health Monitor",
       "enabled": true,
       "createdAtMs": 1776985719408,
-      "updatedAtMs": 1777763127216,
+      "updatedAtMs": 1779362032916,
       "schedule": {
         "kind": "cron",
         "expr": "0 */6 * * *",
@@ -24,15 +24,15 @@
         "mode": "none"
       },
       "state": {
-        "nextRunAtMs": 1777784539442,
-        "lastRunAtMs": 1777762939475,
+        "nextRunAtMs": 1779382939442,
+        "lastRunAtMs": 1779361339478,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 187741,
+        "lastDurationMs": 693438,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false,
-        "runningAtMs": 1777784539474
+        "runningAtMs": 1779382939480
       }
     },
     {
@@ -42,7 +42,7 @@
       "name": "SlashAI Daily Tool Check",
       "enabled": true,
       "createdAtMs": 1773852925425,
-      "updatedAtMs": 1777727519210,
+      "updatedAtMs": 1779369579277,
       "schedule": {
         "expr": "0 8 * * *",
         "kind": "cron",
@@ -55,11 +55,11 @@
         "message": "Perform SlashAI Daily Tool Check: Search for recent AI tool updates (Jasper, Writesonic, HubSpot, Semrush, Surfer SEO, Murf AI) AND search for latest trends regarding AI agents, check existing tools.json, note significant updates, check existing articles in src/content/, create update note in pending-updates.md if major updates, build site with npm run build, commit changes to git, and push to GitHub to update the live site"
       },
       "state": {
-        "nextRunAtMs": 1777813200000,
-        "lastRunAtMs": 1777726800028,
+        "nextRunAtMs": 1779454800000,
+        "lastRunAtMs": 1779368400029,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 719182,
+        "lastDurationMs": 1179248,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
@@ -76,7 +76,7 @@
       "name": "SlashAI: Add new AI tools to directory",
       "enabled": true,
       "createdAtMs": 1773812129472,
-      "updatedAtMs": 1777734530463,
+      "updatedAtMs": 1779376200108,
       "schedule": {
         "kind": "cron",
         "expr": "0 10 * * *",
@@ -89,13 +89,15 @@
         "text": "Reminder: Search the web for new trending AI tools and add them to SlashAI's directory at projects/slashai/slashai/src/data/tools.json. Add at least 3-5 new tools with full details (name, slug, description, longDescription, url, category, pricing, price, released, added, pros, cons, bestFor, tags). Then commit and push to deploy. Today's date for the 'added' field."
       },
       "state": {
-        "lastRunAtMs": 1777734000031,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 530432,
+        "lastRunAtMs": 1779375600030,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 600078,
         "lastDeliveryStatus": "not-requested",
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1777820400000
+        "consecutiveErrors": 2,
+        "nextRunAtMs": 1779462000000,
+        "lastErrorReason": "timeout",
+        "lastError": "cron: job execution timed out"
       }
     },
     {
@@ -105,7 +107,7 @@
       "name": "SlashAI Weekly Article",
       "enabled": true,
       "createdAtMs": 1773852907183,
-      "updatedAtMs": 1777306442719,
+      "updatedAtMs": 1779121130209,
       "schedule": {
         "expr": "0 10 * * 1",
         "kind": "cron",
@@ -119,14 +121,17 @@
         "timeoutSeconds": 7200
       },
       "state": {
-        "lastRunAtMs": 1777302600082,
-        "lastRunStatus": "ok",
-        "lastStatus": "ok",
-        "lastDurationMs": 3842637,
+        "lastRunAtMs": 1779116639106,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 4491103,
         "lastDeliveryStatus": "not-delivered",
-        "consecutiveErrors": 0,
-        "nextRunAtMs": 1777906800000,
-        "lastDelivered": false
+        "consecutiveErrors": 2,
+        "nextRunAtMs": 1779721200000,
+        "lastError": "⚠️ 📝 Edit: `in ./src/data/tools.json` failed",
+        "lastDelivered": false,
+        "lastDeliveryError": "⚠️ 📝 Edit: `in ./src/data/tools.json` failed",
+        "lastFailureAlertAtMs": 1779121130254
       },
       "delivery": {
         "mode": "none"
@@ -142,7 +147,7 @@
       "name": "SlashAI Biweekly Tutorial",
       "enabled": true,
       "createdAtMs": 1773853058032,
-      "updatedAtMs": 1777649476972,
+      "updatedAtMs": 1778858626026,
       "schedule": {
         "expr": "0 10 */14 * *",
         "kind": "cron",
@@ -155,11 +160,11 @@
         "message": "Perform SlashAI Biweekly Tutorial Writing: Search web for trending AI tools/workflows for solopreneurs/freelancers, read existing tutorials to avoid duplication, choose tutorial topic based on new popular AI tools or automation workflows, research thoroughly, write step-by-step tutorial with proper frontmatter, save to src/content/tutorials/, add new tools to tools.json if needed, build site with npm run build, commit changes to git, and push to GitHub to update the live site"
       },
       "state": {
-        "nextRunAtMs": 1778857200000,
-        "lastRunAtMs": 1777648200103,
+        "nextRunAtMs": 1780066800000,
+        "lastRunAtMs": 1778857800103,
         "lastRunStatus": "ok",
         "lastStatus": "ok",
-        "lastDurationMs": 1276869,
+        "lastDurationMs": 825923,
         "lastDeliveryStatus": "not-delivered",
         "consecutiveErrors": 0,
         "lastDelivered": false
