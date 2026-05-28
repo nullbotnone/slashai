@@ -71,12 +71,13 @@
     "name": "Jasper AI",
     "slug": "jasper-ai",
     "description": "Premium AI writer with brand voice training, SEO integration, and new browser extension - now featuring Jasper Grid for orchestrated workflows.",
-    "longDescription": "Jasper AI is the leading AI writing tool for marketers and content creators. Its Brand Voice feature learns your writing style from samples, ensuring consistent tone across all content. Jasper integrates with Surfer SEO for optimized content, offers 50+ templates, and includes a Chrome extension that works in Gmail, Google Docs, LinkedIn, and WordPress. Recent updates include 25M Series A funding (valuing company at .5B), new browser extension, and the \"State of AI in Marketing 2026\" report showing 91% of marketing teams now use AI (up from 63% last year). Latest product updates include Jasper Grid orchestration layer, Content Engineering Certification, Company Knowledge Hub, enhanced control features, Marketing AI Agents, advanced model options in Studio, and Studio Agent Sharing for standardized content generation. In April 2026, Jasper introduced Advanced Brand Memory and Alignment, Enhanced SEO Optimization with Optimization Agent, Autonomous AI Agents and Workflows (including Product Update Email AI Agent), Content Automation Platform, Upgraded Image Generation with Nano Banana, Enhanced Prompt Skill, Improved Integrations and Knowledge Layer, and continued focus on Enterprise Marketing. In May 2026, Jasper evolved into an \"AI Agent Workspace for Modern Marketing Teams\" with over 100 specialized AI agents, Content Pipelines for repeatable workflows, enhanced Brand Voice & Jasper IQ for brand governance, Jasper Chat + Canvas for collaboration and visual workspace, Jasper Art & Multimodal capabilities for image and visual generation, and AI Visibility Workflows in Grid for AI-native discovery and citation.",
+    "longDescription": "Jasper AI is the leading AI writing tool for marketers and content creators. Its Brand Voice feature learns your writing style from samples, ensuring consistent tone across all content. Jasper integrates with Surfer SEO for optimized content, offers 50+ templates, and includes a Chrome extension that works in Gmail, Google Docs, LinkedIn, and WordPress. Recent updates include 25M Series A funding (valuing company at .5B), new browser extension, and the \"State of AI in Marketing 2026\" report showing 91% of marketing teams now use AI (up from 63% last year). Latest product updates include Jasper Grid orchestration layer, Content Engineering Certification, Company Knowledge Hub, enhanced control features, Marketing AI Agents, advanced model options in Studio, and Studio Agent Sharing for standardized content generation. In April 2026, Jasper introduced Advanced Brand Memory and Alignment, Enhanced SEO Optimization with Optimization Agent, Autonomous AI Agents and Workflows (including Product Update Email AI Agent), Content Automation Platform, Upgraded Image Generation with Nano Banana, Enhanced Prompt Skill, Improved Integrations and Knowledge Layer, and continued focus on Enterprise Marketing. In May 2026, Jasper evolved into an \"AI Agent Workspace for Modern Marketing Teams\" with over 100 specialized AI agents, Content Pipelines for repeatable workflows, enhanced Brand Voice & Jasper IQ for brand governance, Jasper Chat + Canvas for collaboration and visual workspace, Jasper Art & Multimodal capabilities for image and visual generation, and AI Visibility Workflows in Grid for AI-native discovery and citation. Additional May 2026 updates include editor enhancements with improved speed and real-time Brand Voice application, an AI model upgrade for better long-form document context handling, expanded AI image suite capabilities, and improved integrations with Google Docs (two-way export) and HubSpot (direct blog post scheduling).",
+
     "url": "https://jasper.ai",
     "affiliateUrl": "https://jasper.ai?via=slashai",
     "category": "Writing",
     "pricing": "Paid",
-    "price": "$49/mo",
+    "price": "$59/mo",
     "released": "February 2021",
     "added": "2026-03-18",
     "pros": [
@@ -100,13 +101,19 @@
       "Upgraded Image Generation with Nano Banana (April 2026)",
       "Enhanced Prompt Skill (April 2026)",
       "Improved Integrations and Knowledge Layer (April 2026)",
-      "Focus on Enterprise Marketing (April 2026)"
+      "Focus on Enterprise Marketing (April 2026)",
+      "Editor enhancements with improved speed and real-time Brand Voice application (May 2026)",
+      "AI model upgrade for improved long-form document generation (May 2026)",
+      "Expanded AI image suite for on-brand image generation at scale (May 2026)",
+      "Improved Google Docs and HubSpot integrations (May 2026)"
     ],
+
     "cons": [
-      "Expensive at $49/mo",
+      "Expensive at $59/mo",
       "Output can be verbose",
       "Requires fact-checking"
     ],
+
     "bestFor": "Content writers and marketers who need consistent brand voice at scale.",
     "affiliateCommission": "30% recurring (12 months)",
     "tags": [
