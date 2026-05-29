@@ -46,34 +46,34 @@
 <ol>
 <li>Ensure you have compatible hardware (dual RTX 4090s or better recommended)</li>
 <li>Install required dependencies:
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Install CUDA drivers and toolkit</span></span>
-<span class="line"><span># Install Python and required packages</span></span>
-<span class="line"><span>pip install torch transformers accelerate</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install CUDA drivers and toolkit</span></span>
+<span class="line"><span style="color:#6A737D"># Install Python and required packages</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> torch</span><span style="color:#9ECBFF"> transformers</span><span style="color:#9ECBFF"> accelerate</span></span></code></pre>
 </li>
 <li>Download the model weights from Hugging Face or official DeepSeek repository</li>
 <li>Launch the model server:
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>python -m vllm serve deepseek-ai/DeepSeek-V4 --tensor-parallel-size 2</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">python</span><span style="color:#79B8FF"> -m</span><span style="color:#9ECBFF"> vllm</span><span style="color:#9ECBFF"> serve</span><span style="color:#9ECBFF"> deepseek-ai/DeepSeek-V4</span><span style="color:#79B8FF"> --tensor-parallel-size</span><span style="color:#79B8FF"> 2</span></span></code></pre>
 </li>
 </ol>
 <h2 id="step-2-coding-service-workflows">Step 2: Coding Service Workflows</h2>
 <p>DeepSeek V4 excels at coding-related freelance services. Here’s how to structure common offerings:</p>
 <h3 id="automated-code-review-service">Automated Code Review Service</h3>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># 1. Clone the repository to review</span></span>
-<span class="line"><span>git clone https://github.com/client/project.git</span></span>
-<span class="line"><span>cd project</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># 2. Analyze the entire codebase (DeepSeek V4 can handle large repos)</span></span>
-<span class="line"><span>curl -X POST "https://api.deepseek.com/v1/chat/completions" \</span></span>
-<span class="line"><span>  -H "Authorization: Bearer $DEEPSEEK_API_KEY" \</span></span>
-<span class="line"><span>  -H "Content-Type: application/json" \</span></span>
-<span class="line"><span>  -d '{</span></span>
-<span class="line"><span>    "model": "deepseek-chat",</span></span>
-<span class="line"><span>    "messages": [{</span></span>
-<span class="line"><span>      "role": "user",</span></span>
-<span class="line"><span>      "content": "Analyze this entire codebase for bugs, security issues, and improvement opportunities. Provide specific file and line references. Focus on maintainability and best practices."</span></span>
-<span class="line"><span>    }],</span></span>
-<span class="line"><span>    "max_tokens": 4000</span></span>
-<span class="line"><span>  }' --data-binary @-&#x3C; &#x3C;(find . -type f -name "*.py" -o -name "*.js" -o -name "*.ts" -o -name "*.java" | head -50 | xargs cat)</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># 1. Clone the repository to review</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> clone</span><span style="color:#9ECBFF"> https://github.com/client/project.git</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> project</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># 2. Analyze the entire codebase (DeepSeek V4 can handle large repos)</span></span>
+<span class="line"><span style="color:#B392F0">curl</span><span style="color:#79B8FF"> -X</span><span style="color:#9ECBFF"> POST</span><span style="color:#9ECBFF"> "https://api.deepseek.com/v1/chat/completions"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -H</span><span style="color:#9ECBFF"> "Authorization: Bearer </span><span style="color:#E1E4E8">$DEEPSEEK_API_KEY</span><span style="color:#9ECBFF">"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -H</span><span style="color:#9ECBFF"> "Content-Type: application/json"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -d</span><span style="color:#9ECBFF"> '{</span></span>
+<span class="line"><span style="color:#9ECBFF">    "model": "deepseek-chat",</span></span>
+<span class="line"><span style="color:#9ECBFF">    "messages": [{</span></span>
+<span class="line"><span style="color:#9ECBFF">      "role": "user",</span></span>
+<span class="line"><span style="color:#9ECBFF">      "content": "Analyze this entire codebase for bugs, security issues, and improvement opportunities. Provide specific file and line references. Focus on maintainability and best practices."</span></span>
+<span class="line"><span style="color:#9ECBFF">    }],</span></span>
+<span class="line"><span style="color:#9ECBFF">    "max_tokens": 4000</span></span>
+<span class="line"><span style="color:#9ECBFF">  }'</span><span style="color:#79B8FF"> --data-binary</span><span style="color:#9ECBFF"> @-</span><span style="color:#F97583">&#x3C;</span><span style="color:#9ECBFF"> &#x3C;(</span><span style="color:#B392F0">find</span><span style="color:#9ECBFF"> . </span><span style="color:#79B8FF">-type</span><span style="color:#9ECBFF"> f </span><span style="color:#79B8FF">-name</span><span style="color:#9ECBFF"> "*.py" </span><span style="color:#79B8FF">-o</span><span style="color:#79B8FF"> -name</span><span style="color:#9ECBFF"> "*.js" </span><span style="color:#79B8FF">-o</span><span style="color:#79B8FF"> -name</span><span style="color:#9ECBFF"> "*.ts" </span><span style="color:#79B8FF">-o</span><span style="color:#79B8FF"> -name</span><span style="color:#9ECBFF"> "*.java" </span><span style="color:#F97583">|</span><span style="color:#B392F0"> head</span><span style="color:#79B8FF"> -50</span><span style="color:#F97583"> |</span><span style="color:#B392F0"> xargs</span><span style="color:#9ECBFF"> cat)</span></span></code></pre>
 <h3 id="legacy-code-translation">Legacy Code Translation</h3>
 <p>For translating COBOL to Python or jQuery to modern React:</p>
 <ol>
@@ -228,7 +228,7 @@
 <li><a href="https://huggingface.co/deepseek-ai">Hugging Face DeepSeek models</a></li>
 </ul>  <div class="disclosure" data-astro-cid-zm77yjld> <strong data-astro-cid-zm77yjld>A note on disclosure</strong>
 Some links in this article are affiliate links. If you sign up through them, we may earn a commission at no extra cost to you. We only recommend tools we've personally tested. See our full <a href="/affiliate-disclosure/" data-astro-cid-zm77yjld>Affiliate Disclosure</a>.
-</div> <section class="related-articles" data-astro-cid-2zkmu4eg> <h2 data-astro-cid-2zkmu4eg>Related Articles</h2> <div class="card-grid" data-astro-cid-2zkmu4eg> <a href="/reviews/deepseek-v4-review/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>DeepSeek V4 Review: The 1 Trillion Parameter AI Model That&#39;s Reshaping Freelance Coding and Analysis</h3> <p data-astro-cid-2zkmu4eg>An in-depth review of DeepSeek V4&#39;s capabilities, pricing, and real-world use cases for solopreneur freelancers</p> <span class="tag" data-astro-cid-2zkmu4eg>Review</span> </a><a href="/comparisons/cursor-vs-github-copilot/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Cursor vs GitHub Copilot: Which AI Coding Tool Is Better for Solopreneurs in 2026?</h3> <p data-astro-cid-2zkmu4eg>We tested both tools for three months building real products. Here&#39;s which one wins for solo developers, freelancers who code, and non-technical founders.</p> <span class="tag" data-astro-cid-2zkmu4eg>Comparison</span> </a><a href="/reviews/hubspot-aeo-review/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>HubSpot AEO (Answer Engine Optimization) Review 2026: Tracking Brand Visibility in AI Answers</h3> <p data-astro-cid-2zkmu4eg>In-depth review of HubSpot&#39;s AEO tool updated in May 2026 with enhanced AI capabilities under the Breeze AI umbrella.</p> <span class="tag" data-astro-cid-2zkmu4eg>Review</span> </a> </div> </section> </div> </article>  </main> <footer class="site-footer"> <div class="container"> <ul class="footer-links"> <li><a href="/ai-tools/">AI Tools</a></li> <li><a href="/build-your-stack/">Build Stack</a></li> <li><a href="/compare/">Compare</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/tutorials/">Tutorials</a></li> <li><a href="/guides/">Guides</a></li> <li><a href="/about/">About</a></li> <li><a href="/affiliate-disclosure/">Disclosure</a></li> <li><a href="/rss.xml">RSS</a></li> </ul> <p>© 2026 SlashAI · An independent dispatch for solopreneurs.</p> </div> </footer> <script>
+</div> <section class="related-articles" data-astro-cid-2zkmu4eg> <h2 data-astro-cid-2zkmu4eg>Related Articles</h2> <div class="card-grid" data-astro-cid-2zkmu4eg> <a href="/reviews/deepseek-v4-review/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>DeepSeek V4 Review: The 1 Trillion Parameter AI Model That&#39;s Reshaping Freelance Coding and Analysis</h3> <p data-astro-cid-2zkmu4eg>An in-depth review of DeepSeek V4&#39;s capabilities, pricing, and real-world use cases for solopreneur freelancers</p> <span class="tag" data-astro-cid-2zkmu4eg>Review</span> </a><a href="/comparisons/cursor-vs-github-copilot/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Cursor vs GitHub Copilot: Which AI Coding Tool Is Better for Solopreneurs in 2026?</h3> <p data-astro-cid-2zkmu4eg>We tested both tools for three months building real products. Here&#39;s which one wins for solo developers, freelancers who code, and non-technical founders.</p> <span class="tag" data-astro-cid-2zkmu4eg>Comparison</span> </a><a href="/tutorials/perplexity-ai-research-guide/" class="card" style="text-decoration: none; color: inherit;" data-astro-cid-2zkmu4eg> <h3 data-astro-cid-2zkmu4eg>Accelerate Your Research and Content Creation with Perplexity AI: A Solopreneur&#39;s Guide</h3> <p data-astro-cid-2zkmu4eg>Learn how to use Perplexity AI to automate market research, competitor analysis, content creation, and strategic planning for your freelance business</p> <span class="tag" data-astro-cid-2zkmu4eg>Tutorial</span> </a> </div> </section> </div> </article>  </main> <footer class="site-footer"> <div class="container"> <ul class="footer-links"> <li><a href="/ai-tools/">AI Tools</a></li> <li><a href="/build-your-stack/">Build Stack</a></li> <li><a href="/compare/">Compare</a></li> <li><a href="/blog/">Blog</a></li> <li><a href="/tutorials/">Tutorials</a></li> <li><a href="/guides/">Guides</a></li> <li><a href="/about/">About</a></li> <li><a href="/affiliate-disclosure/">Disclosure</a></li> <li><a href="/rss.xml">RSS</a></li> </ul> <p>© 2026 SlashAI · An independent dispatch for solopreneurs.</p> </div> </footer> <script>
     function effectiveTheme() {
       var explicit = document.documentElement.getAttribute('data-theme');
       if (explicit === 'light' || explicit === 'dark') return explicit;

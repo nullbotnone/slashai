@@ -80,17 +80,17 @@
 </ol>
 <p><strong>Option B: Self-Hosted (Free)</strong>
 If you have a server or want to run locally:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Install globally</span></span>
-<span class="line"><span>npm install -g n8n</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># Start n8n</span></span>
-<span class="line"><span>n8n start</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Install globally</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -g</span><span style="color:#9ECBFF"> n8n</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Start n8n</span></span>
+<span class="line"><span style="color:#B392F0">n8n</span><span style="color:#9ECBFF"> start</span></span></code></pre>
 <p>Or with Docker:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>docker run -it --rm \</span></span>
-<span class="line"><span>  --name n8n \</span></span>
-<span class="line"><span>  -p 5678:5678 \</span></span>
-<span class="line"><span>  -v ~/.n8n:/home/node/.n8n \</span></span>
-<span class="line"><span>  n8nio/n8n</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -it</span><span style="color:#79B8FF"> --rm</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --name</span><span style="color:#9ECBFF"> n8n</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -p</span><span style="color:#9ECBFF"> 5678:5678</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -v</span><span style="color:#9ECBFF"> ~/.n8n:/home/node/.n8n</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  n8nio/n8n</span></span></code></pre>
 <p>Open <code>http://localhost:5678</code> in your browser. Create your admin account.</p>
 <hr>
 <h2 id="step-2-create-a-new-workflow">Step 2: Create a New Workflow</h2>

@@ -33,37 +33,37 @@
 <h2 id="step-1-install-hermes-agent">Step 1: Install Hermes Agent</h2>
 <h3 id="option-a-docker-installation-recommended">Option A: Docker Installation (Recommended)</h3>
 <p>The easiest way to get started with Hermes Agent is using Docker:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Pull the Hermes Agent Docker image</span></span>
-<span class="line"><span>docker pull hermesagent/hermes-agent:latest</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># Create a directory for your Hermes Agent data</span></span>
-<span class="line"><span>mkdir -p ~/.hermes-agent</span></span>
-<span class="line"><span>chmod 700 ~/.hermes-agent</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># Run Hermes Agent with your API key</span></span>
-<span class="line"><span>docker run -d \</span></span>
-<span class="line"><span>  --name hermes-agent \</span></span>
-<span class="line"><span>  -v ~/.hermes-agent:/app/data \</span></span>
-<span class="line"><span>  -e API_KEY="your_api_key_here" \</span></span>
-<span class="line"><span>  -e PROVIDER="anthropic" \</span></span>
-<span class="line"><span>  -p 8080:8080 \</span></span>
-<span class="line"><span>  hermesagent/hermes-agent:latest</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Pull the Hermes Agent Docker image</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> pull</span><span style="color:#9ECBFF"> hermesagent/hermes-agent:latest</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Create a directory for your Hermes Agent data</span></span>
+<span class="line"><span style="color:#B392F0">mkdir</span><span style="color:#79B8FF"> -p</span><span style="color:#9ECBFF"> ~/.hermes-agent</span></span>
+<span class="line"><span style="color:#B392F0">chmod</span><span style="color:#79B8FF"> 700</span><span style="color:#9ECBFF"> ~/.hermes-agent</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Run Hermes Agent with your API key</span></span>
+<span class="line"><span style="color:#B392F0">docker</span><span style="color:#9ECBFF"> run</span><span style="color:#79B8FF"> -d</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  --name</span><span style="color:#9ECBFF"> hermes-agent</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -v</span><span style="color:#9ECBFF"> ~/.hermes-agent:/app/data</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> API_KEY="your_api_key_here"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -e</span><span style="color:#9ECBFF"> PROVIDER="anthropic"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -p</span><span style="color:#9ECBFF"> 8080:8080</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#9ECBFF">  hermesagent/hermes-agent:latest</span></span></code></pre>
 <h3 id="option-b-manual-installation">Option B: Manual Installation</h3>
 <p>For more control over your installation:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Clone the Hermes Agent repository</span></span>
-<span class="line"><span>git clone https://github.com/nousresearch/hermes-agent.git</span></span>
-<span class="line"><span>cd hermes-agent</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># Install dependencies</span></span>
-<span class="line"><span>npm install</span></span>
-<span class="line"><span>pip install -r requirements.txt</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># Copy the example config and fill in your details</span></span>
-<span class="line"><span>cp .env.example .env</span></span>
-<span class="line"><span># Edit .env to add your API key and provider preferences</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># Start the agent</span></span>
-<span class="line"><span>npm start</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Clone the Hermes Agent repository</span></span>
+<span class="line"><span style="color:#B392F0">git</span><span style="color:#9ECBFF"> clone</span><span style="color:#9ECBFF"> https://github.com/nousresearch/hermes-agent.git</span></span>
+<span class="line"><span style="color:#79B8FF">cd</span><span style="color:#9ECBFF"> hermes-agent</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Install dependencies</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span></span>
+<span class="line"><span style="color:#B392F0">pip</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -r</span><span style="color:#9ECBFF"> requirements.txt</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Copy the example config and fill in your details</span></span>
+<span class="line"><span style="color:#B392F0">cp</span><span style="color:#9ECBFF"> .env.example</span><span style="color:#9ECBFF"> .env</span></span>
+<span class="line"><span style="color:#6A737D"># Edit .env to add your API key and provider preferences</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Start the agent</span></span>
+<span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> start</span></span></code></pre>
 <hr>
 <h2 id="step-2-configure-your-ai-provider">Step 2: Configure Your AI Provider</h2>
 <p>Hermes Agent supports multiple AI model providers. Get an API key from one of these:</p>
@@ -127,21 +127,21 @@
 </ul>
 <h3 id="custom-tool-development">Custom Tool Development</h3>
 <p>While Hermes Agent comes with 40+ built-in tools, you can create custom tools for specialized needs:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>// Example custom tool structure</span></span>
-<span class="line"><span>module.exports = {</span></span>
-<span class="line"><span>  name: "custom-data-analyzer",</span></span>
-<span class="line"><span>  description: "Analyzes CSV files and generates insights",</span></span>
-<span class="line"><span>  parameters: {</span></span>
-<span class="line"><span>    type: "object",</span></span>
-<span class="line"><span>    properties: {</span></span>
-<span class="line"><span>      filePath: { type: "string" },</span></span>
-<span class="line"><span>      analysisType: { type: "string", enum: ["statistical", "trend", "correlation"] }</span></span>
-<span class="line"><span>    }</span></span>
-<span class="line"><span>  },</span></span>
-<span class="line"><span>  execute: async (args) => {</span></span>
-<span class="line"><span>    // Your custom logic here</span></span>
-<span class="line"><span>  }</span></span>
-<span class="line"><span>};</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="javascript"><code><span class="line"><span style="color:#6A737D">// Example custom tool structure</span></span>
+<span class="line"><span style="color:#79B8FF">module</span><span style="color:#E1E4E8">.</span><span style="color:#79B8FF">exports</span><span style="color:#F97583"> =</span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#E1E4E8">  name: </span><span style="color:#9ECBFF">"custom-data-analyzer"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  description: </span><span style="color:#9ECBFF">"Analyzes CSV files and generates insights"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">  parameters: {</span></span>
+<span class="line"><span style="color:#E1E4E8">    type: </span><span style="color:#9ECBFF">"object"</span><span style="color:#E1E4E8">,</span></span>
+<span class="line"><span style="color:#E1E4E8">    properties: {</span></span>
+<span class="line"><span style="color:#E1E4E8">      filePath: { type: </span><span style="color:#9ECBFF">"string"</span><span style="color:#E1E4E8"> },</span></span>
+<span class="line"><span style="color:#E1E4E8">      analysisType: { type: </span><span style="color:#9ECBFF">"string"</span><span style="color:#E1E4E8">, enum: [</span><span style="color:#9ECBFF">"statistical"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"trend"</span><span style="color:#E1E4E8">, </span><span style="color:#9ECBFF">"correlation"</span><span style="color:#E1E4E8">] }</span></span>
+<span class="line"><span style="color:#E1E4E8">    }</span></span>
+<span class="line"><span style="color:#E1E4E8">  },</span></span>
+<span class="line"><span style="color:#B392F0">  execute</span><span style="color:#E1E4E8">: </span><span style="color:#F97583">async</span><span style="color:#E1E4E8"> (</span><span style="color:#FFAB70">args</span><span style="color:#E1E4E8">) </span><span style="color:#F97583">=></span><span style="color:#E1E4E8"> {</span></span>
+<span class="line"><span style="color:#6A737D">    // Your custom logic here</span></span>
+<span class="line"><span style="color:#E1E4E8">  }</span></span>
+<span class="line"><span style="color:#E1E4E8">};</span></span></code></pre>
 <hr>
 <h2 id="best-practices-for-getting-the-most-out-of-hermes-agent">Best Practices for Getting the Most Out of Hermes Agent</h2>
 <h3 id="1-start-with-clear-well-defined-tasks">1. Start with Clear, Well-Defined Tasks</h3>
