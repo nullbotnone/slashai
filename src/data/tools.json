@@ -72,7 +72,6 @@
     "slug": "jasper-ai",
     "description": "Premium AI writer with brand voice training, SEO integration, and new browser extension - now featuring Jasper Grid for orchestrated workflows.",
     "longDescription": "Jasper AI is the leading AI writing tool for marketers and content creators. Its Brand Voice feature learns your writing style from samples, ensuring consistent tone across all content. Jasper integrates with Surfer SEO for optimized content, offers 50+ templates, and includes a Chrome extension that works in Gmail, Google Docs, LinkedIn, and WordPress. Recent updates include 25M Series A funding (valuing company at .5B), new browser extension, and the \"State of AI in Marketing 2026\" report showing 91% of marketing teams now use AI (up from 63% last year). Latest product updates include Jasper Grid orchestration layer, Content Engineering Certification, Company Knowledge Hub, enhanced control features, Marketing AI Agents, advanced model options in Studio, and Studio Agent Sharing for standardized content generation. In April 2026, Jasper introduced Advanced Brand Memory and Alignment, Enhanced SEO Optimization with Optimization Agent, Autonomous AI Agents and Workflows (including Product Update Email AI Agent), Content Automation Platform, Upgraded Image Generation with Nano Banana, Enhanced Prompt Skill, Improved Integrations and Knowledge Layer, and continued focus on Enterprise Marketing. In May 2026, Jasper evolved into an \"AI Agent Workspace for Modern Marketing Teams\" with over 100 specialized AI agents, Content Pipelines for repeatable workflows, enhanced Brand Voice & Jasper IQ for brand governance, Jasper Chat + Canvas for collaboration and visual workspace, Jasper Art & Multimodal capabilities for image and visual generation, and AI Visibility Workflows in Grid for AI-native discovery and citation. Additional May 2026 updates include editor enhancements with improved speed and real-time Brand Voice application, an AI model upgrade for better long-form document context handling, expanded AI image suite capabilities, and improved integrations with Google Docs (two-way export) and HubSpot (direct blog post scheduling).",
-
     "url": "https://jasper.ai",
     "affiliateUrl": "https://jasper.ai?via=slashai",
     "category": "Writing",
@@ -107,13 +106,11 @@
       "Expanded AI image suite for on-brand image generation at scale (May 2026)",
       "Improved Google Docs and HubSpot integrations (May 2026)"
     ],
-
     "cons": [
       "Expensive at $59/mo",
       "Output can be verbose",
       "Requires fact-checking"
     ],
-
     "bestFor": "Content writers and marketers who need consistent brand voice at scale.",
     "affiliateCommission": "30% recurring (12 months)",
     "tags": [
@@ -4109,8 +4106,7 @@
       "Anthropic"
     ],
     "featured": false
-  }
-,
+  },
   {
     "name": "Gemini 3.5 Flash",
     "slug": "gemini-3-5-flash",
@@ -4145,5 +4141,47 @@
       "general-purpose"
     ],
     "featured": true
+  },
+  {
+    "name": "Chatbase",
+    "slug": "chatbase",
+    "description": "AI customer support platform for building custom chatbots trained on your data.",
+    "longDescription": "Chatbase enables solopreneurs and businesses to create AI-powered chatbots trained on their specific knowledge base\u2014website content, PDFs, FAQs, or raw text. The platform offers a no-code builder to design the chatbot's appearance, set up integrations (CRM, Zapier, webhooks), and deploy via a simple JavaScript snippet or platform-specific plugins. With features like message credits, AI actions, lead capture, and analytics, Chatbase helps automate customer support, reduce response times, and capture leads 24/7. It supports multiple AI models (GPT-4o Mini, GPT-4o, Claude 3) and is GDPR compliant with SOC 2 Type II certification.",
+    "url": "https://www.chatbase.co",
+    "affiliateUrl": null,
+    "category": "AI Agents",
+    "pricing": "Freemium",
+    "price": "$0/mo Free; Hobby from $32/mo",
+    "released": "2023",
+    "added": "2026-06-01",
+    "pros": [
+      "Free tier available for testing",
+      "No-code builder with website crawler",
+      "Trains on your specific data (website, PDFs, text)",
+      "Customizable widget to match brand",
+      "Integrations with CRM, Zapier, and webhooks",
+      "Lead capture and email notifications",
+      "AI actions for API calls on paid plans",
+      "Analytics and conversation history",
+      "GDPR compliant and SOC 2 Type II certified",
+      "Remove branding option available"
+    ],
+    "cons": [
+      "Free tier limited to 50 messages/month and 1 chatbot",
+      "Message credits vary by AI model (premium models consume more)",
+      "Advanced features (AI actions, branding removal) require paid plans",
+      "Limited multilingual support without multilingual training data",
+      "Widget may conflict with existing chat scripts if not positioned carefully"
+    ],
+    "bestFor": "Solopreneurs and small businesses wanting to add AI-powered customer support to their website without coding.",
+    "affiliateCommission": null,
+    "tags": [
+      "chatbase",
+      "ai-agent",
+      "customer-support",
+      "chatbot",
+      "automation"
+    ],
+    "featured": false
   }
 ]
