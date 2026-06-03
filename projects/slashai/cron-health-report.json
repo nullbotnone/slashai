@@ -1,47 +1,145 @@
 {
-  "generated_at": 1779707407158,
-  "generated_at_iso": "2026-05-25T11:10:07.158724+00:00",
-  "total_jobs": 6,
-  "enabled_jobs": 6,
-  "disabled_jobs": 0,
-  "problematic_jobs": [
+  "timestamp": "2026-06-02T00:23:30-05:00",
+  "timestamp_ms": 1780356210000,
+  "overall_health": "healthy",
+  "issues": [],
+  "recommendations": [
+    "No actions required - all cron jobs are operating healthily."
+  ],
+  "job_details": [
+    {
+      "id": "ed00fb94-c5de-40ee-ae13-fbca13331cd2",
+      "name": "SlashAI Cron Health Monitor",
+      "enabled": true,
+      "last_run_status": "ok",
+      "last_run_at_ms": 1780333548829,
+      "last_run_at_string": "2026-06-01T18:02:28-05:00",
+      "consecutive_errors": 0,
+      "last_run_duration_ms": 209335,
+      "last_run_duration_string": "3.49 minutes",
+      "time_since_last_run_hours": 6.0,
+      "time_since_last_run_string": "6 hours ago",
+      "next_run_at_ms": 1780354939442,
+      "next_run_at_string": "2026-06-02T00:02:19-05:00",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 */6 * * *",
+        "timezone": "America/Chicago"
+      },
+      "issues": []
+    },
     {
       "id": "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d",
       "name": "SlashAI Daily Tool Check",
       "enabled": true,
       "last_run_status": "ok",
+      "last_run_at_ms": 1780319874347,
+      "last_run_at_string": "2026-06-01T08:04:34-05:00",
       "consecutive_errors": 0,
-      "last_duration_hours": 0.19977277777777777,
-      "time_since_last_run_hours": 550.1686472222223,
-      "issues": [
-        "Not run in 550.2h (>48h expected)"
-      ]
+      "last_run_duration_ms": 1074291,
+      "last_run_duration_string": "17.90 minutes",
+      "time_since_last_run_hours": 16.0,
+      "time_since_last_run_string": "16 hours ago",
+      "next_run_at_ms": 1780352400000,
+      "next_run_at_string": "2026-06-02T08:00:00-05:00",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 8 * * *",
+        "timezone": "America/Chicago"
+      },
+      "issues": []
     },
     {
       "id": "2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670",
       "name": "SlashAI: Add new AI tools to directory",
       "enabled": true,
       "last_run_status": "ok",
+      "last_run_at_ms": 1780327928894,
+      "last_run_at_string": "2026-06-01T10:05:28-05:00",
       "consecutive_errors": 0,
-      "last_duration_hours": 0.14734222222222224,
-      "time_since_last_run_hours": 548.1686463888889,
-      "issues": [
-        "Not run in 548.2h (>48h expected)"
-      ]
+      "last_run_duration_ms": 259009,
+      "last_run_duration_string": "4.32 minutes",
+      "time_since_last_run_hours": 14.0,
+      "time_since_last_run_string": "14 hours ago",
+      "next_run_at_ms": 1780365600000,
+      "next_run_at_string": "2026-06-02T10:00:00-05:00",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * *",
+        "timezone": "America/Chicago"
+      },
+      "issues": []
     },
     {
       "id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
       "name": "SlashAI Weekly Article",
       "enabled": true,
       "last_run_status": "ok",
+      "last_run_at_ms": 1780327928899,
+      "last_run_at_string": "2026-06-01T10:05:28-05:00",
       "consecutive_errors": 0,
-      "last_duration_hours": 1.0673991666666667,
-      "time_since_last_run_hours": 668.0019655555556,
-      "issues": [
-        "Not run in 668.0h (>336h expected)",
-        "Extremely long run time: 1.1h"
-      ]
+      "last_run_duration_ms": 378959,
+      "last_run_duration_string": "6.32 minutes",
+      "time_since_last_run_hours": 14.0,
+      "time_since_last_run_string": "14 hours ago",
+      "next_run_at_ms": 1780930800000,
+      "next_run_at_string": "2026-06-08T10:00:00-05:00",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 * * 1",
+        "timezone": "America/Chicago"
+      },
+      "issues": []
+    },
+    {
+      "id": "233a2ab3-45ac-4cc0-ac40-8e998f9f4d90",
+      "name": "SlashAI Biweekly Tutorial",
+      "enabled": true,
+      "last_run_status": "ok",
+      "last_run_at_ms": 1780327928903,
+      "last_run_at_string": "2026-06-01T10:05:28-05:00",
+      "consecutive_errors": 0,
+      "last_run_duration_ms": 860390,
+      "last_run_duration_string": "14.34 minutes",
+      "time_since_last_run_hours": 14.0,
+      "time_since_last_run_string": "14 hours ago",
+      "next_run_at_ms": 1781535600000,
+      "next_run_at_string": "2026-06-15T10:00:00-05:00",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 */14 * *",
+        "timezone": "America/Chicago"
+      },
+      "issues": []
+    },
+    {
+      "id": "76dc4a93-9968-43b9-a383-cb00b7c0bf81",
+      "name": "SlashAI Monthly What's New Roundup",
+      "enabled": true,
+      "last_run_status": "ok",
+      "last_run_at_ms": 1780327928907,
+      "last_run_at_string": "2026-06-01T10:05:28-05:00",
+      "consecutive_errors": 0,
+      "last_run_duration_ms": 430486,
+      "last_run_duration_string": "7.17 minutes",
+      "time_since_last_run_hours": 14.0,
+      "time_since_last_run_string": "14 hours ago",
+      "next_run_at_ms": 1782918000000,
+      "next_run_at_string": "2026-07-01T10:00:00-05:00",
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 10 1 * *",
+        "timezone": "America/Chicago"
+      },
+      "issues": []
     }
   ],
-  "overall_health": "issues_found"
+  "summary": {
+    "total_jobs": 6,
+    "enabled_jobs": 6,
+    "healthy_jobs": 6,
+    "jobs_with_issues": 0,
+    "avg_last_run_duration_minutes": 8.92,
+    "max_consecutive_errors": 0
+  }
 }
