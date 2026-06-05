@@ -1,15 +1,22 @@
 #!/usr/bin/env python3
 import json
-import os
+import subprocess
 import sys
 from datetime import datetime, timezone
 
-# Load the current cron jobs state
-jobs_file = '/home/rpi/.openclaw/workspace/projects/slashai/cron_jobs_current.json'
-with open(jobs_file, 'r') as f:
-    data = json.load(f)
+# Load the live cron jobs state
+jobs_file = '/home/rpi/.openclaw/cron/jobs.json'
+try:
+    with open(jobs_file, 'r') as f:
+        data = json.load(f)
+except FileNotFoundError:
+    print(f"Error: {jobs_file} not found.", file=sys.stderr)
+    sys.exit(1)
 
-jobs = data['jobs']
+jobs = data.get('jobs', [])
+if not jobs:
+    print("No jobs found in the cron jobs file.", file=sys.stderr)
+    sys.exit(1)
 
 # Current time in milliseconds since epoch
 now_ms = int(datetime.now(timezone.utc).timestamp() * 1000)
@@ -195,7 +202,17 @@ if daily_tool_check_job:
         report_lines.append("## ⚠️ Manual Trigger Advised")
         report_lines.append(f"The SlashAI Daily Tool Check job (`{daily_tool_check_id}`) has {consecutive_errors} consecutive error(s).")
         report_lines.append("Consider manually triggering it to test if the underlying issue is resolved.")
-        # Note: We are not actually triggering it here, just advising in the report.
+        # Actually trigger the job
+        print(f"SlashAI Daily Tool Check job has {consecutive_errors} consecutive errors. Triggering manually...")
+        result = subprocess.run(["openclaw", "cron", "run", "--id", daily_tool_check_id], capture_output=True, text=True)
+        if result.returncode == 0:
+            print(f"Successfully triggered job {daily_tool_check_id}")
+            print(f"Output: {result.stdout}")
+            report_lines.append(f"✅ Successfully triggered job {daily_tool_check_id} at {datetime.now(timezone.utc).isoformat()}")
+        else:
+            print(f"Failed to trigger job {daily_tool_check_id}")
+            print(f"Error: {result.stderr}")
+            report_lines.append(f"❌ Failed to trigger job {daily_tool_check_id}: {result.stderr}")
     else:
         report_lines.append("")
         report_lines.append("## ℹ️ SlashAI Daily Tool Check")
@@ -213,6 +230,15 @@ print(f"Health report written to {report_path}")
 
 # Log completion status to system logs (append to existing log file)
 log_file = '/home/rpi/.openclaw/workspace/projects/slashai/cron-health-check.log'
-with open(log_file, 'a') as f:
-    f.write(f"[{datetime.now(timezone.utc).isoformat()}] Cron health check completed. Report saved to {report_path}\n")
-    f.write(f"Overall health: {overall_health}\n")
+try:
+    with open(log_file, 'a') as f:
+        f.write(f"[{datetime.now(timezone.utc).isoformat()}] Cron health check completed. Report saved to {report_path}\n")
+        f.write(f"Overall health: {overall_health}\n")
+except Exception as e:
+    print(f"Warning: Could not write to log file {log_file}: {e}", file=sys.stderr)
+
+# Also log to syslog using logger command
+try:
+    subprocess.run(["logger", "SlashAI Cron Health Check completed. Report saved to " + report_path], check=False)
+except Exception as e:
+    print(f"Warning: Could not log to syslog: {e}", file=sys.stderr)
