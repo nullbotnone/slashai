@@ -3,11 +3,8 @@ import json
 import subprocess
 import sys
 import re
-
 import time
-
-# Current time in milliseconds
-current_time_ms = int(time.time() * 1000)
+from datetime import datetime, timedelta
 
 def get_cron_jobs():
     """Run openclaw cron list --json and return parsed JSON."""
@@ -76,37 +73,53 @@ def cron_expr_to_interval_seconds(expr):
     # If we cannot determine, return 0
     return 0
 
+def format_duration_ms(ms):
+    """Format duration in milliseconds to human readable format."""
+    if ms < 1000:
+        return f"{ms}ms"
+    elif ms < 60000:
+        return f"{ms/1000:.1f}s"
+    elif ms < 3600000:
+        return f"{ms/60000:.1f}m"
+    else:
+        return f"{ms/3600000:.2f}h"
+
 def main():
     jobs_data = get_cron_jobs()
     jobs = jobs_data.get('jobs', [])
 
+    # Current time in milliseconds
+    current_time_ms = int(time.time() * 1000)
+
     # Prepare report lines
     report_lines = []
     report_lines.append("# SlashAI Cron Health Check Report")
-    report_lines.append(f"Generated at: {current_time_ms} ms since epoch (UTC)")
+    report_lines.append(f"Generated at: {datetime.fromtimestamp(current_time_ms/1000).strftime('%Y-%m-%d %H:%M:%S %Z')}")
     report_lines.append("")
 
     # Summary counters
     total_jobs = len(jobs)
-    enabled_count = 0
-    disabled_unexpected = []
-    excessive_errors = []
-    interval_issues = []
-    long_runtime = []
+    enabled_count = sum(1 for job in jobs if job.get('enabled', False))
+    disabled_count = total_jobs - enabled_count
 
+    # Issue trackers
+    disabled_unexpected = []
+    excessive_errors = []  # consecutive errors > 2
+    interval_issues = []   # haven't run in over 2x scheduled interval
+    long_runtime = []      # > 1 hour runtime
+
+    # Process each job
     for job in jobs:
         job_id = job.get('id')
-        name = job.get('name')
+        name = job.get('name', 'Unknown')
         enabled = job.get('enabled', False)
         state = job.get('state', {})
         schedule = job.get('schedule', {})
         expr = schedule.get('expr', '') if isinstance(schedule, dict) else ''
 
-        if enabled:
-            enabled_count += 1
-        else:
+        if not enabled:
             disabled_unexpected.append((job_id, name))
-            continue  # Skip further checks for disabled jobs? We still might want to check other things? Let's still check.
+            continue  # Skip further checks for disabled jobs
 
         last_run_status = state.get('lastRunStatus', 'unknown')
         consecutive_errors = state.get('consecutiveErrors', 0)
@@ -128,14 +141,12 @@ def main():
             threshold_ms = 2 * interval_seconds * 1000
             if time_since_ms > threshold_ms:
                 interval_issues.append((job_id, name, time_since_ms // 1000, interval_seconds, last_run_at_ms))
-        else:
-            # If we cannot determine interval, we skip this check
-            pass
+        # else: skip interval check if we can't determine interval
 
     # Build report
     report_lines.append(f"Total jobs: {total_jobs}")
     report_lines.append(f"Enabled jobs: {enabled_count}")
-    report_lines.append(f"Disabled jobs: {total_jobs - enabled_count}")
+    report_lines.append(f"Disabled jobs: {disabled_count}")
     report_lines.append("")
 
     if disabled_unexpected:
@@ -154,7 +165,7 @@ def main():
         report_lines.append("## Jobs with Extremely Long Run Time (> 1 hour)")
         for job_id, name, duration_ms in long_runtime:
             duration_hr = duration_ms / 3600000
-            report_lines.append(f"- {name} (ID: {job_id}): {duration_hr:.2f} hours")
+            report_lines.append(f"- {name} (ID: {job_id}): {format_duration_ms(duration_ms)}")
         report_lines.append("")
 
     if interval_issues:
@@ -162,12 +173,14 @@ def main():
         for job_id, name, time_since_sec, interval_sec, last_run_at_ms in interval_issues:
             time_since_hr = time_since_sec / 3600
             interval_hr = interval_sec / 3600
-            report_lines.append(f"- {name} (ID: {job_id}): last run {time_since_hr:.2f} hours ago, interval {interval_hr:.2f} hours")
+            last_run_str = datetime.fromtimestamp(last_run_at_ms/1000).strftime('%Y-%m-%d %H:%M:%S')
+            report_lines.append(f"- {name} (ID: {job_id}): last run {last_run_str} ({time_since_hr:.2f} hours ago), interval {interval_hr:.2f} hours")
         report_lines.append("")
 
     # Overall system health
     report_lines.append("## Overall System Health")
-    if not (disabled_unexpected or excessive_errors or long_runtime or interval_issues):
+    has_issues = bool(disabled_unexpected or excessive_errors or long_runtime or interval_issues)
+    if not has_issues:
         report_lines.append("**Status:** ✅ HEALTHY - No issues detected.")
     else:
         report_lines.append("**Status:** ⚠️ ISSUES DETECTED - See above for details.")
@@ -183,8 +196,29 @@ def main():
         report_lines.append("3. Optimize or investigate jobs with extremely long run times to reduce execution duration.")
     if interval_issues:
         report_lines.append("4. Check the cron scheduler and system time for jobs that are not running on schedule.")
-    if not (disabled_unexpected or excessive_errors or long_runtime or interval_issues):
+    if not has_issues:
         report_lines.append("No specific actions required. Continue monitoring.")
+
+    # Add detailed job status table
+    report_lines.append("")
+    report_lines.append("## Detailed Job Status")
+    report_lines.append("| Job Name | ID | Enabled | Last Run | Status | Duration | Consecutive Errors |")
+    report_lines.append("|----------|----|---------|----------|--------|----------|-------------------|")
+    
+    for job in jobs:
+        job_id = job.get('id', 'N/A')
+        name = job.get('name', 'Unknown')
+        enabled = "✅" if job.get('enabled', False) else "❌"
+        state = job.get('state', {})
+        last_run_at_ms = state.get('lastRunAtMs', 0)
+        last_run_str = datetime.fromtimestamp(last_run_at_ms/1000).strftime('%m-%d %H:%M') if last_run_at_ms > 0 else "Never"
+        last_run_status = state.get('lastRunStatus', 'unknown')
+        status_emoji = "✅" if last_run_status == "ok" else "❌" if last_run_status == "error" else "⚠️"
+        last_duration_ms = state.get('lastDurationMs', 0)
+        duration_str = format_duration_ms(last_duration_ms)
+        consecutive_errors = state.get('consecutiveErrors', 0)
+        
+        report_lines.append(f"| {name} | {job_id} | {enabled} | {last_run_str} | {status_emoji} {last_run_status} | {duration_str} | {consecutive_errors} |")
 
     # Write the report to the specified file
     report_path = "/home/rpi/.openclaw/workspace/projects/slashai/cron-health-report.md"
@@ -192,6 +226,9 @@ def main():
         f.write('\n'.join(report_lines))
 
     print(f"Health report written to {report_path}")
+    
+    # Log completion status (channel-independent operation)
+    print("Cron health check completed successfully")
 
 if __name__ == '__main__':
     main()

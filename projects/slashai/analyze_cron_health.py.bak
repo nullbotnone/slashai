@@ -38,7 +38,7 @@ def analyze_cron_health():
     # Current time (from prompt: Thursday, June 4th, 2026 - 18:02 America/Chicago)
     # Convert to milliseconds since epoch for consistency
     # 2026-06-04 18:02:00 America/Chicago (UTC-5)
-    current_time_ms = 1777862520000  # From the cron job data: nextRunAtMs for health monitor
+    current_time_ms = 1777784520000  # From the cron job data: nextRunAtMs for health monitor
     
     report = []
     report.append("# SlashAI Cron Health Report")
