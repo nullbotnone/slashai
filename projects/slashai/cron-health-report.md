@@ -1,22 +1,105 @@
-# SlashAI Cron Health Check Report
-Generated at: 2026-06-06 06:09:55 
+# SlashAI Cron Health Report
+**Generated at:** Sunday, June 7th, 2026 - 06:02 (America/Chicago) / 2026-06-07 11:02 UTC
 
-Total jobs: 6
-Enabled jobs: 6
-Disabled jobs: 0
+## Overview
+- Total jobs: 6
+- Enabled jobs: 6
+- Disabled jobs: 0
+- Jobs with errors: 2
+- Jobs with consecutive errors > 2: 0
+- Jobs with extremely long run times (> 1 hour): 1
+
+## Job Details
+
+### 1. SlashAI Cron Health Monitor (ed00fb94-c5de-40ee-ae13-fbca13331cd2)
+- **Enabled:** Yes
+- **Last run status:** ok
+- **Consecutive errors:** 0
+- **Last run duration:** 15 minutes 10 seconds (909834 ms)
+- **Time since last run:** ~6 hours
+- **Schedule:** Every 6 hours (0 */6 * * *)
+- **Issues:** None
+
+### 2. SlashAI Daily Tool Check (7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d)
+- **Enabled:** Yes
+- **Last run status:** ok
+- **Consecutive errors:** 0
+- **Last run duration:** 12 minutes 56 seconds (775583 ms)
+- **Time since last run:** ~22 hours
+- **Schedule:** Daily at 8:00 AM America/Chicago (0 8 * * *)
+- **Issues:** None
+
+### 3. SlashAI: Add new AI tools to directory (2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670)
+- **Enabled:** Yes
+- **Last run status:** ok
+- **Consecutive errors:** 0
+- **Last run duration:** 4 minutes 46 seconds (285884 ms)
+- **Time since last run:** ~20 hours
+- **Schedule:** Daily at 10:00 AM America/Chicago (0 10 * * *)
+- **Issues:** None
+
+### 4. SlashAI Biweekly Tutorial (233a2ab3-45ac-4cc0-ac40-8e998f9f4d90)
+- **Enabled:** Yes
+- **Last run status:** ok
+- **Consecutive errors:** 0
+- **Last run duration:** 21 minutes 17 seconds (1276869 ms)
+- **Time since last run:** ~5 days
+- **Schedule:** Biweekly at 10:00 AM America/Chicago (0 10 */14 * *)
+- **Issues:** None
+
+### 5. SlashAI Weekly Article (c80f4c43-11b2-4ad7-a3c4-f71ff534ca85)
+- **Enabled:** Yes
+- **Last run status:** error
+- **Consecutive errors:** 1
+- **Last run duration:** 2 hours (7200029 ms)
+- **Time since last run:** ~2 days
+- **Schedule:** Weekly at 10:00 AM America/Chicago (0 10 * * 1)
+- **Issues:**
+  - Extremely long run time (> 1 hour): 2 hours
+  - Last run status: error (timeout)
+  - Error message: "cron: job execution timed out"
+  - Failure alert configured after 2 consecutive errors
+
+### 6. SlashAI Monthly What's New Roundup (76dc4a93-9968-43b9-a383-cb00b7c0bf81)
+- **Enabled:** Yes
+- **Last run status:** error
+- **Consecutive errors:** 1
+- **Last run duration:** 8 minutes (479537 ms)
+- **Time since last run:** ~5 days
+- **Schedule:** Monthly at 10:00 AM America/Chicago (0 10 1 * *)
+- **Issues:**
+  - Last run status: error
+  - Error message: "⚠️ 📝 Edit: `in src/content/roundups/whats-new-ai-may-2026.md` failed"
+
+## Issues Found
+1. **SlashAI Weekly Article** (c80f4c43-11b2-4ad7-a3c4-f71ff534ca85):
+   - Job execution timed out after 2 hours (exceeds 1-hour threshold)
+   - Currently has 1 consecutive error (failure alert triggers after 2 errors)
+2. **SlashAI Monthly What's New Roundup** (76dc4a93-9968-43b9-a383-cb00b7c0bf81):
+   - Edit operation failed in src/content/roundups/whats-new-ai-may-2026.md
+   - Currently has 1 consecutive error
+
+## Recommendations
+1. **Investigate Weekly Article timeout:**
+   - Check if the job is getting stuck on a particular step (e.g., web search, article writing, or git operations)
+   - Consider increasing the timeout threshold or optimizing the underlying processes
+   - Monitor next run to see if issue persists
+
+2. **Investigate Monthly Roundup edit failure:**
+   - Check the specific error in the edit operation for the May 2026 roundup article
+   - Verify file permissions and existence of the target file
+   - Consider adding retry logic or better error handling
+
+3. **General monitoring:**
+   - No jobs are unexpectedly disabled
+   - No jobs have exceeded 2x their scheduled interval without running
+   - All other jobs are running successfully within expected timeframes
+
+4. **Note on SlashAI Daily Tool Check:**
+   - This job has 0 consecutive errors, so no manual trigger was performed as per instructions.
 
 ## Overall System Health
-**Status:** ✅ HEALTHY - No issues detected.
+**Status:** **FAIR** - Most jobs are functioning correctly, but two jobs have recurring errors that need attention. The Weekly Article job also exhibits excessively long run times that could indicate underlying performance issues.
 
-## Recommended Actions
-No specific actions required. Continue monitoring.
-
-## Detailed Job Status
-| Job Name | ID | Enabled | Last Run | Status | Duration | Consecutive Errors |
-|----------|----|---------|----------|--------|----------|-------------------|
-| SlashAI Cron Health Monitor | ed00fb94-c5de-40ee-ae13-fbca13331cd2 | ✅ | 06-06 00:02 | ✅ ok | 12.4m | 0 |
-| SlashAI Daily Tool Check | 7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d | ✅ | 06-05 08:00 | ✅ ok | 9.7m | 0 |
-| SlashAI: Add new AI tools to directory | 2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670 | ✅ | 06-05 10:00 | ❌ error | 10.0m | 1 |
-| SlashAI Weekly Article | c80f4c43-11b2-4ad7-a3c4-f71ff534ca85 | ✅ | 06-01 10:04 | ✅ ok | 6.3m | 0 |
-| SlashAI Biweekly Tutorial | 233a2ab3-45ac-4cc0-ac40-8e998f9f4d90 | ✅ | 06-01 10:10 | ✅ ok | 14.3m | 0 |
-| SlashAI Monthly What's New Roundup | 76dc4a93-9968-43b9-a383-cb00b7c0bf81 | ✅ | 06-01 10:24 | ✅ ok | 7.2m | 0 |
+---
+*Report generated by SlashAI Cron Health Monitor (ed00fb94-c5de-40ee-ae13-fbca13331cd2)*
