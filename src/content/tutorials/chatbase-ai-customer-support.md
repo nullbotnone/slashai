@@ -1,7 +1,7 @@
 ---
 title: "Add AI Customer Support to Your Website with Chatbase"
 description: "Learn how to create and deploy an AI-powered customer support agent using Chatbase to automate responses, capture leads, and improve customer satisfaction."
-pubDate: 2026-06-01
+pubDate: 2026-06-07
 toolName: "Chatbase"
 difficulty: "Beginner"
 timeToComplete: "30 minutes"
