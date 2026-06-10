@@ -4483,4 +4483,148 @@
     ],
     "featured": false
   }
-]
+    ,
+    {
+      "name": "MediScan AI",
+      "slug": "mediscan-ai",
+      "description": "AI-powered medical diagnostic assistant that analyzes medical imaging and patient data to provide preliminary assessments and treatment recommendations.",
+      "longDescription": "Launched on June 10, 2026, MediScan AI is an artificial intelligence system designed to assist healthcare professionals in analyzing medical imaging (X-rays, MRIs, CT scans) and patient data to provide preliminary diagnostic assessments and treatment recommendations. The system utilizes deep learning models trained on millions of anonymized medical cases to identify patterns and anomalies that may be missed by human observers. MediScan AI integrates with hospital information systems and electronic health records to provide contextual analysis and can flag urgent cases for immediate attention. The platform includes features for tracking patient progress over time, comparing against historical data, and generating reports for medical consultations. While not intended to replace professional medical judgment, MediScan AI serves as a valuable second-opinion tool that can help reduce diagnostic errors and improve early detection rates for serious conditions.",
+      "url": "https://www.mediscan.ai",
+      "affiliateUrl": null,
+      "category": "Healthcare",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $49/mo Pro (unlimited scans, priority support)",
+      "released": "June 10, 2026",
+      "added": "2026-06-10",
+      "pros": [
+        "Analyzes medical imaging for preliminary diagnostic assessments",
+        "Integrates with hospital EHR systems for contextual analysis",
+        "Flags urgent cases for immediate medical attention",
+        "Tracks patient progress and compares against historical data",
+        "Reduces diagnostic errors through AI-assisted analysis",
+        "Improves early detection rates for serious conditions",
+        "Provides reports for medical consultations and follow-ups",
+        "Trained on millions of anonymized medical cases",
+        "Serves as valuable second-opinion tool for healthcare professionals",
+        "Helps reduce workload on medical staff through automation"
+      ],
+      "cons": [
+        "Not intended to replace professional medical judgment",
+        "Requires integration with existing hospital information systems",
+        "May have limitations with rare or complex medical conditions",
+        "Dependent on quality and clarity of input medical imaging",
+        "Requires valid medical license for clinical use in many jurisdictions",
+        "May not cover all medical specialties or imaging types",
+        "Potential privacy concerns with patient health data processing",
+        "Subscription cost may be prohibitive for small clinics",
+        "Requires ongoing training and updates to maintain accuracy",
+        "May generate false positives requiring follow-up verification"
+      ],
+      "bestFor": "Hospitals, clinics, and healthcare professionals seeking AI-assisted diagnostic support for medical imaging analysis, particularly useful in high-volume settings where early detection and reduced diagnostic errors can significantly improve patient outcomes.",
+      "affiliateCommission": null,
+      "tags": [
+        "healthcare",
+        "medical",
+        "diagnostics",
+        "imaging",
+        "ai assistant",
+        "patient care"
+      ],
+      "featured": false
+    },
+    {
+      "name": "AgentFlow Studio",
+      "slug": "agentflow-studio",
+      "description": "Enterprise AI agent development platform that enables businesses to create, deploy, and manage custom AI agents for workflow automation and process optimization.",
+      "longDescription": "Released on June 10, 2026, AgentFlow Studio is a comprehensive enterprise platform designed to help organizations create, deploy, and manage custom AI agents for automating business workflows and optimizing processes. The platform provides a visual interface for designing agent workflows, natural language tools for defining agent behaviors, and robust deployment capabilities for scaling agents across enterprise environments. AgentFlow Studio includes pre-built templates for common business processes (customer service, HR onboarding, invoice processing, etc.), integration capabilities with major enterprise systems (Salesforce, SAP, Oracle, Microsoft Dynamics), and monitoring tools for tracking agent performance and effectiveness. The platform emphasizes security and compliance, featuring role-based access control, audit trails, and data encryption to ensure responsible AI agent deployment.",
+      "url": "https://www.agentflow.studio",
+      "affiliateUrl": null,
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $99/mo Team, $499/mo Enterprise",
+      "released": "June 10, 2026",
+      "added": "2026-06-10",
+      "pros": [
+        "Visual interface for designing custom AI agent workflows",
+        "Natural language tools for defining agent behaviors and decisions",
+        "Pre-built templates for common business processes",
+        "Integrations with major enterprise systems (Salesforce, SAP, etc.)",
+        "Scalable deployment across enterprise environments",
+        "Monitoring tools for tracking agent performance and effectiveness",
+        "Security features including role-based access and audit trails",
+        "Data encryption for protecting sensitive business information",
+        "Enables workflow automation and process optimization",
+        "Reduces manual workload through intelligent automation"
+      ],
+      "cons": [
+        "Enterprise pricing may be high for small businesses",
+        "Requires training to effectively utilize all platform features",
+        "Integration complexity with legacy enterprise systems",
+        "May have limitations with highly specialized industry processes",
+        "Dependent on clear definition of business processes and rules",
+        "Potential over-automation risks if not properly configured",
+        "Requires ongoing maintenance and updates for security patches",
+        "May need custom development for unique business requirements",
+        "Performance monitoring requires defining meaningful KPIs",
+        "Change management challenges when introducing AI agents to teams"
+      ],
+      "bestFor": "Enterprises and medium-to-large businesses seeking to implement AI-powered workflow automation and process optimization through custom AI agents, particularly organizations looking to scale intelligent automation across departments while maintaining security and compliance standards.",
+      "affiliateCommission": null,
+      "tags": [
+        "productivity",
+        "ai agents",
+        "workflow automation",
+        "enterprise software",
+        "business process automation"
+      ],
+      "featured": false
+    },
+    {
+      "name": "CreateAI Pro",
+      "slug": "createai-pro",
+      "description": "Advanced AI-powered content creation suite for generating professional-quality marketing materials, social media content, and multimedia presentations.",
+      "longDescription": "Launched on June 10, 2026, CreateAI Pro is an advanced artificial intelligence platform designed for content creators, marketers, and businesses seeking to generate professional-quality marketing materials, social media content, and multimedia presentations. The platform combines multiple AI models specialized for text generation, image creation, video editing, and audio production into a unified creative suite. CreateAI Pro features brand voice preservation, style consistency controls, and collaboration tools for team-based content creation. The platform includes templates for various content types (blog posts, social media ads, email newsletters, video scripts, etc.) and optimization features for different platforms and audiences. CreateAI Pro emphasizes ethical AI use, featuring content attribution tools, bias detection features, and compliance checking to ensure generated content meets professional standards and legal requirements.",
+      "url": "https://www.createai.pro",
+      "affiliateUrl": null,
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $29/mo Creator, $79/mo Pro",
+      "released": "June 10, 2026",
+      "added": "2026-06-10",
+      "pros": [
+        "Generates professional-quality marketing materials and content",
+        "Combines text, image, video, and audio AI models in unified suite",
+        "Features brand voice preservation and style consistency controls",
+        "Includes templates for various content types and platforms",
+        "Provides collaboration tools for team-based content creation",
+        "Features content attribution and bias detection for ethical AI use",
+        "Includes compliance checking for legal and regulatory requirements",
+        "Optimizes content for different platforms and audiences",
+        "Enables rapid content creation and iteration",
+        "Reduces reliance on expensive creative agencies and freelancers"
+      ],
+      "cons": [
+        "May not match specialized agency quality for high-end campaigns",
+        "Requires learning curve to effectively utilize all features",
+        "Generated content may require human review and editing",
+        "Dependent on quality of input parameters and brand guidelines",
+        "May have limitations with highly technical or specialized content",
+        "Potential for generic output if not properly customized",
+        "Requires internet connection for cloud-based AI processing",
+        "Subscription costs may add up for teams and agencies",
+        "Ethical AI features may not catch all nuanced issues",
+        "Content may lack the subtle touch of experienced human creators"
+      ],
+      "bestFor": "Content creators, marketers, and businesses seeking to generate professional-quality marketing materials, social media content, and multimedia presentations through AI-powered tools, particularly useful for teams needing to scale content production while maintaining brand consistency and quality standards.",
+      "affiliateCommission": null,
+      "tags": [
+        "productivity",
+        "content creation",
+        "marketing",
+        "social media",
+        "multimedia",
+        "ai creativity"
+      ],
+      "featured": false
+    }
+  ]
