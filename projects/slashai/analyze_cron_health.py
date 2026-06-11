@@ -1,205 +1,200 @@
 #!/usr/bin/env python3
 import json
 import datetime
-import os
+import time
 
-def parse_cron_expression(expr):
-    """Parse cron expression to get schedule interval in minutes"""
-    # Simple parser for common cron expressions
-    parts = expr.split()
-    if len(parts) != 5:
-        return None
-    
-    minute, hour, day, month, dow = parts
-    
-    # Handle common cases
-    if minute == "0" and hour == "*/6":  # Every 6 hours
-        return 6 * 60  # 360 minutes
-    elif minute == "0" and hour == "8" and day == "*" and month == "*" and dow == "*":  # Daily at 8 AM
-        return 24 * 60  # 1440 minutes
-    elif minute == "0" and hour == "10" and day == "*" and month == "*" and dow == "*":  # Daily at 10 AM
-        return 24 * 60  # 1440 minutes
-    elif minute == "0" and hour == "10" and day == "*" and month == "*" and dow == "1":  # Weekly on Monday at 10 AM
-        return 7 * 24 * 60  # 10080 minutes
-    elif minute == "0" and hour == "10" and day == "*/14" and month == "*" and dow == "*":  # Biweekly
-        return 14 * 24 * 60  # 20160 minutes
-    elif minute == "0" and hour == "10" and day == "1" and month == "*" and dow == "*":  # Monthly on 1st
-        return 30 * 24 * 60  # Approximate 43200 minutes
-    
-    return None
+# Current time from task: Wednesday, June 10th, 2026 - 18:02 (America/Chicago) / 2026-06-10 23:02 UTC
+# Convert to milliseconds since epoch
+current_time_ms = int(datetime.datetime(2026, 6, 10, 23, 2, 0, tzinfo=datetime.timezone.utc).timestamp() * 1000)
 
-def analyze_cron_health():
-    # Load cron jobs data
-    with open('/home/rpi/.openclaw/workspace/projects/slashai/cron_jobs.json', 'r') as f:
-        data = json.load(f)
+print(f"Current time: {datetime.datetime.fromtimestamp(current_time_ms/1000, tz=datetime.timezone.utc)}")
+print(f"Current time ms: {current_time_ms}\n")
+
+# Load the cron jobs data
+with open('/home/rpi/.openclaw/workspace/projects/slashai/slashai/tmp/cron.json', 'r') as f:
+    data = json.load(f)
+
+jobs = data['jobs']
+
+# Define approximate intervals in milliseconds for each cron expression
+def get_interval_ms(cron_expr):
+    # Simple mapping for common expressions
+    if cron_expr == "0 */6 * * *":
+        return 6 * 60 * 60 * 1000  # 6 hours
+    elif cron_expr == "0 8 * * *":
+        return 24 * 60 * 60 * 1000  # daily
+    elif cron_expr == "0 10 * * *":
+        return 24 * 60 * 60 * 1000  # daily
+    elif cron_expr == "0 10 */14 * *":
+        return 14 * 24 * 60 * 60 * 1000  # every 14 days
+    elif cron_expr == "0 10 * * 1":
+        return 7 * 24 * 60 * 60 * 1000  # weekly
+    elif cron_expr == "0 10 1 * *":
+        return 30 * 24 * 60 * 60 * 1000  # approximate monthly (30 days)
+    else:
+        # Default to 24 hours if unknown
+        return 24 * 60 * 60 * 1000
+
+issues = []
+healthy_jobs = []
+
+for job in jobs:
+    job_id = job['id']
+    name = job['name']
+    enabled = job['enabled']
+    cron_expr = job['schedule']['expr']
+    state = job['state']
     
-    jobs = data['jobs']
+    last_run_at_ms = state.get('lastRunAtMs', 0)
+    last_run_status = state.get('lastRunStatus', 'unknown')
+    consecutive_errors = state.get('consecutiveErrors', 0)
+    last_duration_ms = state.get('lastDurationMs', 0)
     
-    # Current time (from prompt: Thursday, June 4th, 2026 - 18:02 America/Chicago)
-    # Convert to milliseconds since epoch for consistency
-    # 2026-06-04 18:02:00 America/Chicago (UTC-5)
-    current_time_ms = 1777862520000  # From the cron job data: nextRunAtMs for health monitor
+    # Calculate time since last run
+    if last_run_at_ms > 0:
+        time_since_last_run_ms = current_time_ms - last_run_at_ms
+        time_since_last_run_hours = time_since_last_run_ms / (1000 * 60 * 60)
+    else:
+        time_since_last_run_ms = float('inf')
+        time_since_last_run_hours = float('inf')
     
-    report = []
-    report.append("# SlashAI Cron Health Report")
-    report.append(f"Generated: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S %Z')}")
-    report.append("")
+    # Get expected interval
+    interval_ms = get_interval_ms(cron_expr)
+    interval_hours = interval_ms / (1000 * 60 * 60)
     
-    issues = []
-    healthy_jobs = []
+    # Check for issues
+    job_issues = []
     
-    for job in jobs:
-        job_id = job['id']
-        name = job['name']
-        enabled = job['enabled']
-        state = job['state']
-        
-        last_run_at_ms = state.get('lastRunAtMs', 0)
-        last_run_status = state.get('lastRunStatus', 'unknown')
-        consecutive_errors = state.get('consecutiveErrors', 0)
-        last_duration_ms = state.get('lastDurationMs', 0)
-        next_run_at_ms = state.get('nextRunAtMs', 0)
-        
-        # Calculate time since last run
-        if last_run_at_ms > 0:
-            time_since_last_run_ms = current_time_ms - last_run_at_ms
-            time_since_last_run_hours = time_since_last_run_ms / (1000 * 60 * 60)
-        else:
-            time_since_last_run_ms = 0
-            time_since_last_run_hours = float('inf')
-        
-        # Get schedule interval
-        schedule_expr = job['schedule']['expr']
-        interval_minutes = parse_cron_expression(schedule_expr)
-        interval_hours = interval_minutes / 60 if interval_minutes else None
-        
-        # Check for issues
-        job_issues = []
-        
-        if not enabled:
-            job_issues.append("Job is disabled")
-        
-        if consecutive_errors > 2:
-            job_issues.append(f"High consecutive errors: {consecutive_errors}")
-        
-        if interval_hours and time_since_last_run_hours > (2 * interval_hours):
-            job_issues.append(f"Haven't run in over 2x interval ({time_since_last_run_hours:.1f}h > {2*interval_hours}h)")
-        
-        if last_duration_ms > (60 * 60 * 1000):  # > 1 hour
-            job_issues.append(f"Extremely long run time: {last_duration_ms/(1000*60):.1f} minutes")
-        
-        if last_run_status == "error":
-            job_issues.append(f"Last run failed: {state.get('lastError', 'Unknown error')}")
-        
-        # Job summary
-        job_summary = {
+    # 1. Jobs disabled unexpectedly
+    if not enabled:
+        job_issues.append("Job is disabled")
+    
+    # 2. Jobs with consecutive errors > 2
+    if consecutive_errors > 2:
+        job_issues.append(f"Consecutive errors: {consecutive_errors} (>2)")
+    
+    # 3. Jobs that haven't run in over 2x their scheduled interval
+    if time_since_last_run_ms > 2 * interval_ms:
+        job_issues.append(f"Not run in {time_since_last_run_hours:.1f}h (>{interval_hours*2:.1f}h expected max)")
+    
+    # 4. Jobs with extremely long run times (> 1 hour)
+    if last_duration_ms > 3600000:  # 1 hour in ms
+        job_issues.append(f"Last run duration: {last_duration_ms/(1000*60):.1f}m (>1h)")
+    
+    # Also consider if last run had error
+    if last_run_status == 'error':
+        job_issues.append(f"Last run status: error")
+    
+    if job_issues:
+        issues.append({
             'id': job_id,
             'name': name,
             'enabled': enabled,
+            'issues': job_issues,
+            'last_run_at_ms': last_run_at_ms,
             'last_run_status': last_run_status,
             'consecutive_errors': consecutive_errors,
-            'last_duration_minutes': last_duration_ms / (1000 * 60) if last_duration_ms > 0 else 0,
-            'time_since_last_run_hours': time_since_last_run_hours if last_run_at_ms > 0 else float('inf'),
-            'schedule_interval_hours': interval_hours,
-            'issues': job_issues
-        }
-        
-        if job_issues:
-            issues.append(job_summary)
-        else:
-            healthy_jobs.append(job_summary)
-    
-    # Generate report
-    report.append(f"## Summary")
-    report.append(f"- Total jobs: {len(jobs)}")
-    report.append(f"- Healthy jobs: {len(healthy_jobs)}")
-    report.append(f"- Jobs with issues: {len(issues)}")
-    report.append("")
-    
-    if issues:
-        report.append("## 🚨 Issues Found")
-        for job in issues:
-            report.append(f"### {job['name']} (ID: {job['id']})")
-            report.append(f"- Status: {'✅ Enabled' if job['enabled'] else '❌ Disabled'}")
-            report.append(f"- Last run: {job['last_run_status']}")
-            report.append(f"- Consecutive errors: {job['consecutive_errors']}")
-            report.append(f"- Last duration: {job['last_duration_minutes']:.1f} minutes")
-            if job['time_since_last_run_hours'] != float('inf'):
-                report.append(f"- Time since last run: {job['time_since_last_run_hours']:.1f} hours")
-            else:
-                report.append(f"- Time since last run: Never run")
-            if job['schedule_interval_hours']:
-                report.append(f"- Schedule interval: {job['schedule_interval_hours']:.1f} hours")
-            report.append(f"- Issues:")
-            for issue in job['issues']:
-                report.append(f"  - {issue}")
-            report.append("")
+            'last_duration_ms': last_duration_ms,
+            'time_since_last_run_hours': time_since_last_run_hours if last_run_at_ms > 0 else None
+        })
     else:
-        report.append("## ✅ All Jobs Healthy")
-        report.append("No issues found.")
-        report.append("")
-    
-    if healthy_jobs:
-        report.append("## Healthy Jobs")
-        for job in healthy_jobs:
-            report.append(f"- {job['name']}: {job['last_run_status']} (last run {job['time_since_last_run_hours']:.1f}h ago)")
-        report.append("")
-    
-    # Recommendations
-    report.append("## 🔧 Recommended Actions")
-    if issues:
-        for job in issues:
-            if not job['enabled']:
-                report.append(f"- **{job['name']}**: Enable the job (it's currently disabled)")
-            if job['consecutive_errors'] > 2:
-                report.append(f"- **{job['name']}**: Investigate recurring errors (current count: {job['consecutive_errors']})")
-            if job['time_since_last_run_hours'] != float('inf') and job['schedule_interval_hours'] and job['time_since_last_run_hours'] > (2 * job['schedule_interval_hours']):
-                report.append(f"- **{job['name']}**: Job hasn't run in over 2x its interval - check if stuck or failed silently")
-            if job['last_duration_minutes'] > 60:
-                report.append(f"- **{job['name']}**: Investigate long run time ({job['last_duration_minutes']:.1f} minutes)")
-            if job['last_run_status'] == 'error':
-                report.append(f"- **{job['name']}**: Fix underlying error: {state.get('lastError', 'Unknown error')}")
-    else:
-        report.append("- No actions needed - all cron jobs are healthy")
-    
-    # Special check for SlashAI Daily Tool Check job
-    daily_tool_check_id = "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d"
-    daily_job = next((job for job in jobs if job['id'] == daily_tool_check_id), None)
-    if daily_job and daily_job['state']['consecutiveErrors'] > 0:
-        report.append("")
-        report.append("## ⚠️ Special Check: SlashAI Daily Tool Check")
-        report.append(f"The SlashAI Daily Tool Check job (ID: {daily_tool_check_id}) has {daily_job['state']['consecutiveErrors']} consecutive errors.")
-        report.append("As per instructions, manually triggering this job to test if the underlying issue is resolved...")
-        # Note: Actual triggering would be done separately
-    
-    # Write report to file
-    report_path = '/home/rpi/.openclaw/workspace/projects/slashai/cron-health-report.md'
-    with open(report_path, 'w') as f:
-        f.write('\n'.join(report))
-    
-    print(f"Health report saved to {report_path}")
-    
-    # Also create a JSON version for programmatic use
-    json_report = {
-        'timestamp': datetime.datetime.now().isoformat(),
-        'total_jobs': len(jobs),
-        'healthy_jobs': len(healthy_jobs),
-        'issues_found': len(issues),
-        'jobs': [job for job in issues],  # Only include problematic jobs in JSON for brevity
-        'summary': {
-            'overall_health': 'good' if len(issues) == 0 else 'needs_attention',
-            'recommended_actions_count': len([issue for job in issues for issue in job['issues']])
-        }
-    }
-    
-    json_path = '/home/rpi/.openclaw/workspace/projects/slashai/cron-health-report.json'
-    with open(json_path, 'w') as f:
-        json.dump(json_report, f, indent=2)
-    
-    print(f"JSON report saved to {json_path}")
-    
-    return len(issues) == 0
+        healthy_jobs.append({
+            'id': job_id,
+            'name': name,
+            'enabled': enabled,
+            'last_run_at_ms': last_run_at_ms,
+            'last_run_status': last_run_status,
+            'consecutive_errors': consecutive_errors,
+            'last_duration_ms': last_duration_ms
+        })
 
-if __name__ == '__main__':
-    is_healthy = analyze_cron_health()
-    exit(0 if is_healthy else 1)
+# Print summary
+print("=" * 80)
+print("SLASHAI CRON HEALTH CHECK REPORT")
+print("=" * 80)
+print(f"Total jobs: {len(jobs)}")
+print(f"Healthy jobs: {len(healthy_jobs)}")
+print(f"Jobs with issues: {len(issues)}")
+print()
+
+if issues:
+    print("ISSUES FOUND:")
+    print("-" * 40)
+    for issue in issues:
+        print(f"Job: {issue['name']} ({issue['id']})")
+        print(f"  Enabled: {issue['enabled']}")
+        print(f"  Last run: {datetime.datetime.fromtimestamp(issue['last_run_at_ms']/1000, tz=datetime.timezone.utc) if issue['last_run_at_ms'] > 0 else 'Never'}")
+        print(f"  Last run status: {issue['last_run_status']}")
+        print(f"  Consecutive errors: {issue['consecutive_errors']}")
+        print(f"  Last run duration: {issue['last_duration_ms']/(1000*60):.1f} minutes")
+        if issue['time_since_last_run_hours'] is not None:
+            print(f"  Time since last run: {issue['time_since_last_run_hours']:.1f} hours")
+        print("  Issues:")
+        for msg in issue['issues']:
+            print(f"    - {msg}")
+        print()
+else:
+    print("NO ISSUES FOUND - ALL JOBS HEALTHY")
+    print()
+
+# Overall system health
+if len(issues) == 0:
+    overall_health = "EXCELLENT"
+elif len(issues) <= 2:
+    overall_health = "GOOD"
+elif len(issues) <= 4:
+    overall_health = "FAIR"
+else:
+    overall_health = "POOR"
+
+print(f"OVERALL SYSTEM HEALTH: {overall_health}")
+print()
+
+# Recommended actions
+print("RECOMMENDED ACTIONS:")
+print("-" * 40)
+if any(not job['enabled'] for job in [j for j in jobs if j['id'] in [i['id'] for i in issues]]):
+    print("1. Enable any disabled jobs that should be running.")
+if any(job['consecutive_errors'] > 2 for job in jobs):
+    print("2. Investigate jobs with consecutive errors > 2.")
+if any(job['lastRunStatus'] == 'error' for job in jobs):
+    print("3. Check logs for jobs that last ran with error status.")
+if any((current_time_ms - job['state'].get('lastRunAtMs', 0)) > 2 * get_interval_ms(job['schedule']['expr']) for job in jobs if job['state'].get('lastRunAtMs', 0) > 0):
+    print("4. Check why some jobs haven't run in over 2x their scheduled interval.")
+if any(job['state'].get('lastDurationMs', 0) > 3600000 for job in jobs):
+    print("5. Investigate jobs with excessively long run times (>1 hour).")
+
+# Special check for SlashAI Daily Tool Check job
+daily_tool_job = next((job for job in jobs if job['id'] == '7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d'), None)
+if daily_tool_job:
+    consecutive_errors = daily_tool_job['state'].get('consecutiveErrors', 0)
+    if consecutive_errors > 0:
+        print(f"\n6. SlashAI Daily Tool Check job has {consecutive_errors} consecutive errors.")
+        print("   As per instructions, manually triggering it to test if underlying issue is resolved...")
+        # In a real scenario, we would trigger the job here
+        print("   [Manual trigger would be executed here]")
+    else:
+        print(f"\n6. SlashAI Daily Tool Check job has {consecutive_errors} consecutive errors - no action needed.")
+
+print()
+print("=" * 80)
+print("Report generated at:", datetime.datetime.fromtimestamp(current_time_ms/1000, tz=datetime.timezone.utc))
+print("=" * 80)
+
+# Also output JSON for potential programmatic use
+result = {
+    "timestamp_ms": current_time_ms,
+    "timestamp_utc": datetime.datetime.fromtimestamp(current_time_ms/1000, tz=datetime.timezone.utc).isoformat(),
+    "overall_health": overall_health,
+    "total_jobs": len(jobs),
+    "healthy_jobs_count": len(healthy_jobs),
+    "issues_count": len(issues),
+    "issues": issues,
+    "healthy_jobs": healthy_jobs
+}
+
+# Save detailed JSON report
+with open('/home/rpi/.openclaw/workspace/projects/slashai/cron-health-report-detailed.json', 'w') as f:
+    json.dump(result, f, indent=2)
+
+print(f"Detailed JSON report saved to: /home/rpi/.openclaw/workspace/projects/slashai/cron-health-report-detailed.json")
