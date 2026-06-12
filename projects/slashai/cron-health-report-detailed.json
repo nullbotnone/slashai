@@ -1,0 +1,91 @@
+{
+  "timestamp_ms": 1781132520000,
+  "timestamp_utc": "2026-06-10T23:02:00+00:00",
+  "overall_health": "POOR",
+  "total_jobs": 6,
+  "healthy_jobs_count": 0,
+  "issues_count": 6,
+  "issues": [
+    {
+      "id": "ed00fb94-c5de-40ee-ae13-fbca13331cd2",
+      "name": "SlashAI Cron Health Monitor",
+      "enabled": true,
+      "issues": [
+        "Not run in 702.0h (>12.0h expected max)"
+      ],
+      "last_run_at_ms": 1778605339470,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_ms": 909834,
+      "time_since_last_run_hours": 701.9945916666667
+    },
+    {
+      "id": "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d",
+      "name": "SlashAI Daily Tool Check",
+      "enabled": true,
+      "issues": [
+        "Not run in 706.0h (>48.0h expected max)"
+      ],
+      "last_run_at_ms": 1778590800031,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_ms": 775583,
+      "time_since_last_run_hours": 706.0333247222222
+    },
+    {
+      "id": "2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670",
+      "name": "SlashAI: Add new AI tools to directory",
+      "enabled": true,
+      "issues": [
+        "Not run in 704.0h (>48.0h expected max)"
+      ],
+      "last_run_at_ms": 1778598000033,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_ms": 285884,
+      "time_since_last_run_hours": 704.0333241666667
+    },
+    {
+      "id": "233a2ab3-45ac-4cc0-ac40-8e998f9f4d90",
+      "name": "SlashAI Biweekly Tutorial",
+      "enabled": true,
+      "issues": [
+        "Not run in 967.9h (>672.0h expected max)"
+      ],
+      "last_run_at_ms": 1777648200103,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_duration_ms": 1276869,
+      "time_since_last_run_hours": 967.8666380555555
+    },
+    {
+      "id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
+      "name": "SlashAI Weekly Article",
+      "enabled": true,
+      "issues": [
+        "Not run in 728.0h (>336.0h expected max)",
+        "Last run duration: 120.0m (>1h)",
+        "Last run status: error"
+      ],
+      "last_run_at_ms": 1778511898828,
+      "last_run_status": "error",
+      "consecutive_errors": 1,
+      "last_duration_ms": 7200029,
+      "time_since_last_run_hours": 727.9503255555555
+    },
+    {
+      "id": "76dc4a93-9968-43b9-a383-cb00b7c0bf81",
+      "name": "SlashAI Monthly What's New Roundup",
+      "enabled": true,
+      "issues": [
+        "Last run status: error"
+      ],
+      "last_run_at_ms": 1777649476972,
+      "last_run_status": "error",
+      "consecutive_errors": 1,
+      "last_duration_ms": 479537,
+      "time_since_last_run_hours": 967.5119522222222
+    }
+  ],
+  "healthy_jobs": []
+}
