@@ -1,7 +1,7 @@
 ---
 title: "Surfer SEO Sites Review 2026: The All-in-One SEO Strategy Hub"
 description: "In-depth review of Surfer SEO's Sites feature updated in June 2026 with enhanced AI-driven search capabilities, advanced content optimization tools, and the new AI Visibility Platform."
-pubDate: 2026-06-11
+pubDate: 2026-06-12
 productName: "Surfer SEO Sites"
 rating: 9.0
 price: "Included with Surfer SEO subscription (starting at $89/mo Essential)"
@@ -9,7 +9,7 @@ verdict: "A powerful evolution that transforms Surfer SEO into an AI-powered SEO
 tags: ["surfer seo", "sites", "seo", "google search console", "review", "ai-driven"]
 ---
 
-**Quick verdict:** Surfer SEO Sites is a significant evolution of the platform, offering a centralized dashboard for managing SEO workflows with real-time data from Google Search Console. While it doesn't replace dedicated rank tracking tools, it excels at bridging the gap between identifying SEO issues and implementing solutions.
+**Quick verdict:** Surfer SEO Sites is a significant evolution of the platform, offering a centralized dashboard for managing SEO workflows with real-time data from Google Search Console. While it doesn't replace dedicated rank tracking tools, it excels at bridging the gap between identifying SEO issues and implementing solutions. Updated June 12, 2026 to include the latest AI SEO Content Score, Intent Alignment guidelines, Auto-Optimize enhancements, Surfer API updates, and auto-linked sources features.
 
 ## What Is Surfer SEO Sites?
 
