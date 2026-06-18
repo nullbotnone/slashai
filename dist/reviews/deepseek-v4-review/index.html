@@ -190,10 +190,10 @@
 <li>Sign up at <a href="https://deepseek.com">deepseek.com</a></li>
 <li>Get API key from dashboard</li>
 <li>Test with free credits using curl or Postman:
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>curl https://api.deepseek.com/v1/chat/completions \</span></span>
-<span class="line"><span>  -H "Authorization: Bearer YOUR_KEY" \</span></span>
-<span class="line"><span>  -H "Content-Type: application/json" \</span></span>
-<span class="line"><span>  -d '{"model":"deepseek-chat","messages":[{"role":"user","content":"Hello!"}]}'</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">curl</span><span style="color:#9ECBFF"> https://api.deepseek.com/v1/chat/completions</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -H</span><span style="color:#9ECBFF"> "Authorization: Bearer YOUR_KEY"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -H</span><span style="color:#9ECBFF"> "Content-Type: application/json"</span><span style="color:#79B8FF"> \</span></span>
+<span class="line"><span style="color:#79B8FF">  -d</span><span style="color:#9ECBFF"> '{"model":"deepseek-chat","messages":[{"role":"user","content":"Hello!"}]}'</span></span></code></pre>
 </li>
 <li>Start with simple prompts, then scale to your use cases</li>
 </ol>
@@ -203,8 +203,8 @@
 <li>Install dependencies: <code>pip install torch transformers accelerate</code></li>
 <li>Use serving frameworks like vLLM or text-generation-inference</li>
 <li>Start with quantized version for lower VRAM requirements:
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Example with vLLM and 4-bit quantization</span></span>
-<span class="line"><span>python -m vllm serve deepseek-ai/DeepSeek-V4 --quantization awq</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Example with vLLM and 4-bit quantization</span></span>
+<span class="line"><span style="color:#B392F0">python</span><span style="color:#79B8FF"> -m</span><span style="color:#9ECBFF"> vllm</span><span style="color:#9ECBFF"> serve</span><span style="color:#9ECBFF"> deepseek-ai/DeepSeek-V4</span><span style="color:#79B8FF"> --quantization</span><span style="color:#9ECBFF"> awq</span></span></code></pre>
 </li>
 </ol>
 <h2 id="final-thoughts">Final Thoughts</h2>

@@ -34,6 +34,11 @@ Surfer SEO Sites is an all-in-one hub introduced in April 2026 that serves as a 
 - **NEW**: Advanced clustering for topic ideation and content planning (May 2026)
 - **NEW**: AI Visibility Platform (June 2026) for agentic workflows and Multi-Channel Personalization to help agents find, trust, and act on brand content.
 
+
+### June 2026 Updates: Unified AI SEO Content Score and API Enhancements
+
+In June 2026, Surfer SEO released the Unified AI SEO Content Score (combining traditional and AI Search optimization), introduced Upfront Intent Alignment guidelines for AI-optimized introductions, enhanced Smarter Auto-Optimize for targeted edits, rolled out the New Surfer API with more endpoints and AI SEO Content Score, implemented Auto-Linked Sources for automatic internal/external linking, extended Reporting History + Activity Log, added Gemini support in AI Tracker, and announced the Surfer Visibility Club event in Berlin on June 17th.
+
 ### Enhanced Content Editor (May 2026 Updates)
 - New Content Editor Wizard with full brand, AI, and SEO context pre-generation
 - Automatic Brand Knowledge pull-in and template suggestions based on live SERPs

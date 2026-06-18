@@ -26,6 +26,11 @@ Unlike generic AI chatbots, Jasper offers:
 - Deep integrations with Surfer SEO, Salesforce, and 1000+ tools
 - AI Orchestration Engine that dynamically selects the best foundational model for each task
 
+### June 2026 Updates: GEO Agent and AI Orchestration Enhancements
+
+In June 2026, Jasper launched the GEO Agent and GEO Hub, an end-to-end generative engine optimization tool that continuously analyzes brand presence across AI-powered search platforms like ChatGPT, Gemini, and Claude, identifies visibility gaps, and executes optimization workflows to enhance brand representation, citations, sentiment, and share of voice. Additional updates include the Jasper Slack Agent for AI-assisted content creation within Slack, Grid History feature for detailed run logs, AI model upgrades to Claude Opus 4.8 and Google Gemini 3.5 Flash, and the release of the MONET open text-image dataset and Nano T2I for image generation research. Jasper continues to focus on enterprise marketing and is participating in Cannes Lions 2026 to discuss the future of AI agents and brand governance.
+
+
 ---
 
 ## Pricing
