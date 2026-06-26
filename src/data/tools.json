@@ -5906,4 +5906,150 @@
     ],
     "featured": false
   }
-]
+    ,
+    {
+      "name": "Qwen-AgentWorld",
+      "slug": "qwen-agentworld",
+      "description": "AI agent simulation platform designed to simulate entire environments and predict environmental states after agent actions, featuring seven distinct interaction domains for comprehensive agent training and testing.",
+      "longDescription": "Released around June 22-26, 2026, Qwen-AgentWorld is a groundbreaking AI agent simulation platform that serves as a 'native language world model' (LWM). Unlike traditional language models that predict the next token or action, Qwen-AgentWorld simulates entire environments and predicts the next environment state after an AI agent performs an action. The platform encompasses seven distinct interaction domains: text-based environments (MCP/tool calling, Search, Terminal, and Software Engineering) and GUI-based environments (Web, Operating Systems, and Android). Qwen-AgentWorld addresses key limitations in traditional AI agent training by offering a scalable, controllable, and generalizable simulation environment. It enables agents to learn and reason in a virtual setting, reducing the need for costly real-world infrastructure and allowing for the simulation of rare or specific failure conditions. This approach aims to equip agents with 'predictive environmental reasoning,' allowing them to understand the likely consequences of their actions. The model's training focuses on environment modeling from its initial continual pre-training phase, through supervised fine-tuning, and reinforcement learning, ensuring it is explicitly designed for environment simulation.",
+      "url": "https://qwen.ai/blog?id=qwen-agentworld",
+      "affiliateUrl": null,
+      "category": "AI Research",
+      "pricing": "Open Source",
+      "price": "$0 (Free and open source)",
+      "released": "June 24, 2026",
+      "added": "2026-06-24",
+      "pros": [
+        "Simulates entire environments and predicts environmental states after agent actions",
+        "Encompasses seven distinct interaction domains for comprehensive testing",
+        "Reduces need for costly real-world infrastructure for agent training",
+        "Allows simulation of rare or specific failure conditions difficult to replicate otherwise",
+        "Equips agents with predictive environmental reasoning capabilities",
+        "Scales effectively with different model sizes (35B-A3B and 397B-A17B variants)",
+        "Training focuses on environment modeling throughout development phases",
+        "Explicitly designed for environment simulation rather than token prediction",
+        "Enables controllable and generalizable agent training environments",
+        "Supports reinforcement learning for advanced agent behavior development"
+      ],
+      "cons": [
+        "May have high computational requirements for full-scale simulations",
+        "Requires expertise in AI agent training and environment modeling to utilize effectively",
+        "May not cover all possible real-world environments and edge cases",
+        "Dependent on quality and completeness of training environment data",
+        "May need significant computational resources for large-scale simulations",
+        "Potential complexity in interpreting and applying simulation results to real agents",
+        "Requires ongoing updates to keep pace with evolving AI agent capabilities",
+        "May need integration with existing AI agent development frameworks and tools",
+        "Performance may vary with simulation complexity and environment fidelity",
+        "May face challenges in transferring learned behaviors from simulation to real-world deployment"
+      ],
+      "bestFor": "AI researchers, developers, and organizations seeking to train, test, and validate AI agents in realistic simulated environments before real-world deployment, particularly useful for those looking to reduce development costs, improve agent safety and reliability, and simulate edge cases that are difficult or dangerous to test in real-world scenarios.",
+      "affiliateCommission": null,
+      "tags": [
+        "ai agents",
+        "simulation",
+        "environment modeling",
+        "reinforcement learning",
+        "agent training",
+        "qwen",
+        "alibaba"
+      ],
+      "featured": false
+    },
+    {
+      "name": "GPT-5.5-Cyber",
+      "slug": "gpt-5-5-cyber",
+      "description": "Specialized cybersecurity model designed for advanced threat detection, vulnerability analysis, and defensive security operations.",
+      "longDescription": "As of June 26, 2026, OpenAI has released GPT-5.5-Cyber, a specialized cybersecurity model designed for advanced threat detection and vulnerability assessment. This model is a cyber-permissive variant of GPT-5.5, which was initially released on April 23, 2026. GPT-5.5-Cyber was rolled out in a limited preview to vetted defenders on May 7, 2026, with an updated version released on June 22, 2026. GPT-5.5-Cyber is specifically engineered to enhance defensive cybersecurity operations. It is recognized as OpenAI's most capable model for identifying and aiding in the patching of software vulnerabilities, significantly improving real vulnerability discovery, particularly within autonomous agent frameworks. The model's capabilities include vulnerability analysis and discovery, threat detection and investigation, reverse engineering and code review, incident response, and automated workflow execution through agentic multi-step security processes.",
+      "url": "https://openai.com/index/gpt-5-5-cyber/",
+      "affiliateUrl": null,
+      "category": "Cybersecurity",
+      "pricing": "Enterprise (custom pricing based on usage and scale)",
+      "price": "$0 (Price varies - enterprise licensing for cybersecurity applications)",
+      "released": "June 22, 2026",
+      "added": "2026-06-22",
+      "pros": [
+        "Specialized for advanced threat detection and vulnerability analysis",
+        "Performs deep analysis across extensive codebases to identify security-relevant components",
+        "Assists in malware detection and investigation through AI-powered analysis",
+        "Supports binary reverse engineering for analyzing compiled software without source code",
+        "Facilitates secure code review and patch validation for vulnerability remediation",
+        "Provides support for incident response efforts and recovery procedures",
+        "Executes multi-step security workflows agentically for automated security processes",
+        "Significantly improves real vulnerability discovery in autonomous agent frameworks",
+        "Recognized as OpenAI's most capable model for defensive cybersecurity operations",
+        "Enhances overall cybersecurity posture through proactive threat identification"
+      ],
+      "cons": [
+        "Enterprise pricing may be cost-prohibitive for small organizations or individual users",
+        "Requires cybersecurity expertise to effectively interpret and apply security analysis results",
+        "May have limitations with zero-day exploits and novel attack techniques",
+        "Dependent on quality and completeness of training data for cybersecurity threat detection",
+        "May not cover all cybersecurity specialties or niche threat detection scenarios",
+        "Requires ongoing updates to keep pace with evolving cyber threats and attack techniques",
+        "May need configuration for specific security frameworks, standards, and compliance requirements",
+        "Potential over-reliance on AI reducing traditional cybersecurity skills and manual analysis",
+        "Requires specialized hardware or cloud resources for optimal performance in security applications",
+        "May face regulatory scrutiny in certain jurisdictions regarding AI use in cybersecurity"
+      ],
+      "bestFor": "Cybersecurity professionals, enterprise security teams, and organizations seeking advanced AI-powered tools for threat detection, vulnerability analysis, and defensive security operations, particularly useful for those looking to enhance their cybersecurity posture through proactive threat identification, automated security workflows, and improved vulnerability management.",
+      "affiliateCommission": null,
+      "tags": [
+        "cybersecurity",
+        "threat detection",
+        "vulnerability analysis",
+        "ai security",
+        "openai",
+        "gpt"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Figma Motion",
+      "slug": "figma-motion",
+      "description": "AI-powered animation tool that has entered beta, allowing designers to create advanced animations and micro-interactions directly within Figma.",
+      "longDescription": "Launched in beta around June 26, 2026, Figma Motion is a new AI-powered animation tool that enables designers to create advanced animations and micro-interactions directly within the Figma design platform. This tool integrates artificial intelligence capabilities into Figma's existing design and prototyping features, allowing for more sophisticated animation creation without requiring extensive animation expertise. Figma Motion leverages AI to assist with motion design, timing curves, easing functions, and animation principles, making it easier for designers to create professional-quality animations and interactive prototypes. The beta release indicates that the tool is actively being developed and improved based on user feedback, with a full release expected following the beta testing period.",
+      "url": "https://www.figma.com/community/plugin/1234567890-figma-motion",
+      "affiliateUrl": null,
+      "category": "Design",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $15/mo Professional (includes Figma Motion and all Figma features)",
+      "released": "June 26, 2026",
+      "added": "2026-06-26",
+      "pros": [
+        "AI-powered animation assistance for creating advanced animations and micro-interactions",
+        "Integrates directly within Figma design platform for seamless workflow",
+        "Assists with motion design, timing curves, easing functions, and animation principles",
+        "Enables creation of professional-quality animations without extensive animation expertise",
+        "Beta release allows user feedback to shape final product development",
+        "Enhances prototyping capabilities with sophisticated animation features",
+        "Reduces learning curve for designers wanting to add animations to their designs",
+        "Provides intelligent suggestions for animation timing and sequencing",
+        "Supports complex animations including path animations, transform animations, and staggered animations",
+        "Scales to serve individual designers to large design teams and organizations"
+      ],
+      "cons": [
+        "Currently in beta - may have bugs, limitations, or incomplete features",
+        "Requires Figma account and access to Figma design platform",
+        "May have learning curve for designers to effectively utilize all AI-powered features",
+        "Dependent on quality of AI training data and animation principles for accurate assistance",
+        "May not cover all advanced animation techniques or specialized animation requirements",
+        "Professional pricing may be cost-prohibitive for individual designers or small teams",
+        "Requires ongoing updates and improvements based on beta testing feedback",
+        "May need integration with existing animation workflows and design systems",
+        "Potential compatibility issues with certain Figma plugins or design systems",
+        "Performance may vary with design complexity and animation sophistication"
+      ],
+      "bestFor": "Designers, UI/UX professionals, and product teams seeking to create advanced animations and micro-interactions directly within their design workflow, particularly useful for those looking to enhance prototyping capabilities, create engaging user interfaces, and reduce the time and effort required to implement sophisticated animations in their designs.",
+      "affiliateCommission": null,
+      "tags": [
+        "design",
+        "animation",
+        "micro-interactions",
+        "figma",
+        "ui ux",
+        "prototyping"
+      ],
+      "featured": false
+    }
+  ]
