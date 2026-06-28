@@ -87,6 +87,37 @@ Several new AI agents have been added to the SlashAI database since the original
 - Incorporated LLMs directly into studio to assist with scriptwriting
 - Achieved EU-U.S. Data Privacy Framework certification (June 2026) in addition to SOC 2 Type II, ISO/IEC 27001, and HIPAA compliance
 - Introduced experimental Melody Mode (not yet replacement for specialized singing AI tools)
+- Launched Falcon 2 Model (June 16, 2026) bringing notable improvements to voice quality, latency, and reliability via Streaming API and WebSocket API
+
+### HubSpot
+- Launched Revenue Hub (June 2026): centralized command center for quotes, billing, and payments featuring automated payment collection, flexible billing schedules, and a Revenue Agent (in private beta) to follow up on overdue invoices
+- Breeze Assistant Improvements: more intelligent across surfaces including mobile app and custom code workflows; can generate more accurate output, create richer deliverables like documents, email drafts, and custom HTML pages; manage CRM data directly within conversation; write, test, and iterate on custom code workflow actions
+- AI Connectors: new AI connectors for Claude, ChatGPT, and GPT Image 2.0
+- Meeting Prep on Mobile: Breeze automatically surfaces summaries of companies, contacts, and deals before meetings on HubSpot Mobile Home calendar widget with suggested talking points
+- Customer Agent Enhancements: supports multiple brands, allowing organizations to create distinct AI agents with unique identities, brand voices, knowledge bases, and routing logic per brand; supports PDF attachments in conversations; performance data shows 50% more tickets resolved and 29% faster resolution rates
+- Redesigned Marketing Studio Canvas: new modes, a dock, snap-to-grid, and auto-layout features
+- Multiple Blog Authors: users can now assign up to five authors to a single blog post
+- Mobile List Views Mirror Desktop: mobile list views display same properties configured in corresponding desktop table view, up to 20 columns, with reordering automatically updating across devices
+- Auto-Fill Company Details from Chrome Extension: when visiting a company website not in CRM, Chrome Extension surfaces enriched company data and auto-fills the creation form
+- Current Customer Property: new system-managed property identifies whether a company, contact, or custom object is a current customer, aiding Customer Success teams
+- Price Books: RevOps teams can now centralize the definition, management, and application of product pricing across deals and quotes
+- Redesigned Smart CRM Index: faster, more flexible index with collapsible filters, on-page report view, AI-powered column insights via Breeze, inline property management in public beta
+- Cleanup Automation for CRM Records: updates to automate cleanup of CRM records
+- Brand Settings Permissions: Super Admins have more precise control over who can manage brand assets without exposing unrelated account settings
+- Conditional Property Rules: dynamic properties can show different fields based on deal type or record context
+- TikTok Lead Syncing and Ad Conversion Events: automatically creates or updates contacts in CRM in real-time when someone fills out a TikTok Instant Form; conversion data flows back to TikTok for improved targeting
+- Marketing Event Participation Workflows: workflow actions can update a contact's participation state for manually created marketing events
+- Associate Assets to Multiple Campaigns: users can now associate assets with multiple campaigns
+- Prospecting Agent Updates: several updates made to the Prospecting Agent
+- Updates to Calling: improvements made to calling features within HubSpot
+- Help Desk: Smarter routing, Onboarding Plans, Customer Portal Experience Update, HubSpot API Versioning, Legacy Public App Creation Sunset, Legacy CRM Card Migration Tool, Multiple Stored Payment Methods: various updates enhancing platform functionality, compliance, and developer experience
+- AI capabilities unified under "Breeze AI" umbrella
+
+### Lindy AI
+- Migrated user-facing traffic from Anthropic models to DeepSeek v4 in June 2026, resulting in significant cost savings and performance improvements
+- Introduced new pricing plans: Plus ($49.99/month), Pro ($99.99/month), Max ($199.99/month), and custom Enterprise plans, structured around a credit economy
+- Retains Anthropic models for internal tasks and Claude Opus as fallback for complex tasks
+- Selected Atlas Cloud as server provider for DeepSeek v4 deployment
 
 ## Recommendations for Article Updates
 
