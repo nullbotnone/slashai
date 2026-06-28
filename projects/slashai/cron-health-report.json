@@ -1,33 +1,110 @@
 {
-  "timestamp": "2026-06-07T00:10:17.109160",
-  "total_jobs": 6,
-  "healthy_jobs": 3,
-  "issues_found": 3,
-  "jobs": [
+  "overall_health": "poor",
+  "issues": [
+    {
+      "job_id": "ed00fb94-c5de-40ee-ae13-fbca13331cd2",
+      "job_name": "SlashAI Cron Health Monitor",
+      "issue": "Has not run in over 2x scheduled interval (870.1 hours since last run)"
+    },
+    {
+      "job_id": "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d",
+      "job_name": "SlashAI Daily Tool Check",
+      "issue": "Has not run in over 2x scheduled interval (868.1 hours since last run)"
+    },
+    {
+      "job_id": "2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670",
+      "job_name": "SlashAI: Add new AI tools to directory",
+      "issue": "Has not run in over 2x scheduled interval (866.1 hours since last run)"
+    },
+    {
+      "job_id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
+      "job_name": "SlashAI Weekly Article",
+      "issue": "Has not run in over 2x scheduled interval (938.0 hours since last run)"
+    },
+    {
+      "job_id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
+      "job_name": "SlashAI Weekly Article",
+      "issue": "Extremely long run time (>1 hour): 1.25 hours"
+    },
+    {
+      "job_id": "233a2ab3-45ac-4cc0-ac40-8e998f9f4d90",
+      "job_name": "SlashAI Biweekly Tutorial",
+      "issue": "Has not run in over 2x scheduled interval (1009.9 hours since last run)"
+    }
+  ],
+  "recommendations": [
+    "Check job 'SlashAI Cron Health Monitor' (ID: ed00fb94-c5de-40ee-ae13-fbca13331cd2) - it hasn't run as expected",
+    "Check job 'SlashAI Daily Tool Check' (ID: 7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d) - it hasn't run as expected",
+    "Check job 'SlashAI: Add new AI tools to directory' (ID: 2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670) - it hasn't run as expected",
+    "Check job 'SlashAI Weekly Article' (ID: c80f4c43-11b2-4ad7-a3c4-f71ff534ca85) - it hasn't run as expected",
+    "Investigate performance issue for job 'SlashAI Weekly Article' (ID: c80f4c43-11b2-4ad7-a3c4-f71ff534ca85) - runs for 1.25 hours",
+    "Check job 'SlashAI Biweekly Tutorial' (ID: 233a2ab3-45ac-4cc0-ac40-8e998f9f4d90) - it hasn't run as expected"
+  ],
+  "job_details": [
     {
       "id": "ed00fb94-c5de-40ee-ae13-fbca13331cd2",
       "name": "SlashAI Cron Health Monitor",
       "enabled": true,
       "last_run_status": "ok",
       "consecutive_errors": 0,
-      "last_duration_minutes": 3.129016666666667,
-      "time_since_last_run_hours": 27.661256944444446,
-      "schedule_interval_hours": 6.0,
+      "last_run_duration_ms": 693438,
+      "last_duration_hours": 0.19262166666666666,
+      "time_since_last_run_hours": 870.0706136111111,
       "issues": [
-        "Haven't run in over 2x interval (27.7h > 12.0h)"
+        "Has not run in over 2x scheduled interval (870.1 hours since last run)"
+      ]
+    },
+    {
+      "id": "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d",
+      "name": "SlashAI Daily Tool Check",
+      "enabled": true,
+      "last_run_status": "ok",
+      "consecutive_errors": 0,
+      "last_run_duration_ms": 1179248,
+      "last_duration_hours": 0.3275688888888889,
+      "time_since_last_run_hours": 868.1093494444444,
+      "issues": [
+        "Has not run in over 2x scheduled interval (868.1 hours since last run)"
+      ]
+    },
+    {
+      "id": "2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670",
+      "name": "SlashAI: Add new AI tools to directory",
+      "enabled": true,
+      "last_run_status": "error",
+      "consecutive_errors": 2,
+      "last_run_duration_ms": 600078,
+      "last_duration_hours": 0.16668833333333333,
+      "time_since_last_run_hours": 866.1093491666667,
+      "issues": [
+        "Has not run in over 2x scheduled interval (866.1 hours since last run)"
       ]
     },
     {
       "id": "c80f4c43-11b2-4ad7-a3c4-f71ff534ca85",
       "name": "SlashAI Weekly Article",
       "enabled": true,
+      "last_run_status": "error",
+      "consecutive_errors": 2,
+      "last_run_duration_ms": 4491103,
+      "last_duration_hours": 1.247528611111111,
+      "time_since_last_run_hours": 938.0429391666667,
+      "issues": [
+        "Has not run in over 2x scheduled interval (938.0 hours since last run)",
+        "Extremely long run time (>1 hour): 1.25 hours"
+      ]
+    },
+    {
+      "id": "233a2ab3-45ac-4cc0-ac40-8e998f9f4d90",
+      "name": "SlashAI Biweekly Tutorial",
+      "enabled": true,
       "last_run_status": "ok",
       "consecutive_errors": 0,
-      "last_duration_minutes": 64.04395,
-      "time_since_last_run_hours": 155.53331055555554,
-      "schedule_interval_hours": 168.0,
+      "last_run_duration_ms": 825923,
+      "last_duration_hours": 0.22942305555555556,
+      "time_since_last_run_hours": 1009.9426622222222,
       "issues": [
-        "Extremely long run time: 64.0 minutes"
+        "Has not run in over 2x scheduled interval (1009.9 hours since last run)"
       ]
     },
     {
@@ -36,16 +113,10 @@
       "enabled": true,
       "last_run_status": "error",
       "consecutive_errors": 1,
-      "last_duration_minutes": 7.992283333333333,
-      "time_since_last_run_hours": 59.17861888888889,
-      "schedule_interval_hours": 720.0,
-      "issues": [
-        "Last run failed: \u26a0\ufe0f \ud83d\udcdd Edit: `in src/content/roundups/whats-new-ai-may-2026.md` failed"
-      ]
+      "last_run_duration_ms": 479537,
+      "last_duration_hours": 0.1332047222222222,
+      "time_since_last_run_hours": 1345.5879763888888,
+      "issues": []
     }
-  ],
-  "summary": {
-    "overall_health": "needs_attention",
-    "recommended_actions_count": 3
-  }
+  ]
 }

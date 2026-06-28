@@ -1,135 +1,255 @@
+#!/usr/bin/env python3
 import json
-import os
+import subprocess
+import sys
+import re
+import time
 from datetime import datetime, timezone
 
-# Load the cron jobs data
-with open('/home/rpi/.openclaw/workspace/projects/slashai/cron_jobs.json', 'r') as f:
-    data = json.load(f)
+# Current time in milliseconds
+current_time_ms = int(time.time() * 1000)
+current_time_str = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S UTC")
 
-jobs = data['jobs']
+def get_cron_jobs():
+    """Run openclaw cron list --json and return parsed JSON."""
+    try:
+        result = subprocess.run(['openclaw', 'cron', 'list', '--json'],
+                                capture_output=True, text=True, check=True)
+        return json.loads(result.stdout)
+    except subprocess.CalledProcessError as e:
+        print(f"Error running openclaw cron list: {e}")
+        print(f"stdout: {e.stdout}")
+        print(f"stderr: {e.stderr}")
+        sys.exit(1)
 
-# Use current time
-dt_utc = datetime.now(timezone.utc)
-current_time_ms = int(dt_utc.timestamp() * 1000)
+def cron_expr_to_interval_seconds(expr):
+    """
+    Convert a cron expression to an interval in seconds.
+    Supports common patterns used in SlashAI jobs.
+    Returns 0 if cannot determine.
+    """
+    # Split into 5 fields
+    parts = expr.strip().split()
+    if len(parts) != 5:
+        return 0
+    minute, hour, day_of_month, month, day_of_week = parts
 
-print(f"Current time (ms since epoch): {current_time_ms}")
-print(f"Current time (UTC): {dt_utc.isoformat()}")
+    # Helper to check if a field is a fixed number (single integer)
+    def is_fixed(field):
+        return re.match(r'^\d+$', field) is not None
 
-# Now analyze each job
-report_lines = []
-report_lines.append("# SlashAI Cron Health Report")
-report_lines.append(f"Generated at: {datetime.now().astimezone().strftime('%Y-%m-%d %H:%M %Z')}")
-report_lines.append("")
-report_lines.append("## Summary")
-report_lines.append("")
+    # Helper to check if a field is a step expression like */6
+    def is_step(field):
+        return re.match(r'^\*/\d+$', field) is not None
 
-issues = []
+    # Every 6 hours: minute=0, hour=*/6, day_of_month=*, month=*, day_of_week=*
+    if (minute == '0' and is_step(hour) and hour.startswith('*/6') and
+        day_of_month == '*' and month == '*' and day_of_week == '*'):
+        step = int(hour[2:])
+        return step * 3600  # hours to seconds
 
-for job in jobs:
-    job_id = job['id']
-    name = job['name']
-    enabled = job['enabled']
-    state = job['state']
-    
-    last_run_at_ms = state.get('lastRunAtMs', 0)
-    last_run_status = state.get('lastRunStatus', state.get('lastStatus', 'unknown'))
-    consecutive_errors = state.get('consecutiveErrors', 0)
-    last_duration_ms = state.get('lastDurationMs', 0)
-    next_run_at_ms = state.get('nextRunAtMs', 0)
-    
-    # Compute time since last run
-    time_since_last_run_ms = current_time_ms - last_run_at_ms if last_run_at_ms > 0 else float('inf')
-    
-    # Compute interval from last run to next run (if both are available)
-    interval_ms = 0
-    if last_run_at_ms > 0 and next_run_at_ms > 0:
-        interval_ms = next_run_at_ms - last_run_at_ms
-    else:
-        # If we don't have next run, we cannot compute interval; we'll skip the interval check
-        interval_ms = None
-    
-    # Determine issues
-    job_issues = []
-    
-    if not enabled:
-        job_issues.append("Job is disabled")
-    
-    if consecutive_errors > 2:
-        job_issues.append(f"Consecutive errors: {consecutive_errors}")
-    
-    if interval_ms is not None and time_since_last_run_ms > 2 * interval_ms:
-        job_issues.append(f"Has not run in over 2x scheduled interval (last run: {time_since_last_run_ms/1000:.0f}s ago, interval: {interval_ms/1000:.0f}s)")
-    
-    if last_duration_ms > 3600000:  # more than 1 hour
-        job_issues.append(f"Extremely long run time: {last_duration_ms/1000:.0f}s")
-    
-    if job_issues:
-        issues.append((job_id, name, job_issues))
-    
-    # Add to report lines for this job
-    report_lines.append(f"### {name} (ID: {job_id})")
-    report_lines.append(f"- Enabled: {enabled}")
-    report_lines.append(f"- Last run status: {last_run_status}")
-    report_lines.append(f"- Consecutive errors: {consecutive_errors}")
-    report_lines.append(f"- Last run duration: {last_duration_ms} ms ({last_duration_ms/1000:.2f} seconds)")
-    report_lines.append(f"- Time since last run: {time_since_last_run_ms} ms ({time_since_last_run_ms/1000:.2f} seconds)")
-    if interval_ms is not None:
-        report_lines.append(f"- Scheduled interval: {interval_ms} ms ({interval_ms/1000:.2f} seconds)")
-    else:
-        report_lines.append(f"- Scheduled interval: unknown")
+    # Daily: fixed minute and hour, day_of_month=*, month=*, day_of_week=*
+    if (re.match(r'^\d+$', minute) is not None and
+        re.match(r'^\d+$', hour) is not None and
+        day_of_month == '*' and month == '*' and day_of_week == '*'):
+        return 24 * 3600
+
+    # Weekly: fixed minute and hour, day_of_month=*, month=*, day_of_week fixed (0-6 or 1-7)
+    if (re.match(r'^\d+$', minute) is not None and
+        re.match(r'^\d+$', hour) is not None and
+        day_of_month == '*' and month == '*' and
+        re.match(r'^\d+$', day_of_week) is not None):
+        # Assuming day_of_week is a single number (0-6 or 0-7 where 0 and 7 are Sunday)
+        # We'll treat as weekly
+        return 7 * 24 * 3600
+
+    # Monthly: fixed minute and hour, day_of_month fixed (1-31), month=*, day_of_week=*
+    if (re.match(r'^\d+$', minute) is not None and
+        re.match(r'^\d+$', hour) is not None and
+        re.match(r'^\d+$', day_of_month) is not None and
+        1 <= int(day_of_month) <= 31 and
+        month == '*' and day_of_week == '*'):
+        # Approximate a month as 30 days
+        return 30 * 24 * 3600
+
+    # Every 14 days: minute fixed, hour fixed, day_of_month=*/14, month=*, day_of_week=*
+    if (re.match(r'^\d+$', minute) is not None and
+        re.match(r'^\d+$', hour) is not None and
+        is_step(day_of_month) and day_of_month.startswith('*/14') and
+        month == '*' and day_of_week == '*'):
+        step = int(day_of_month[2:])
+        return step * 24 * 3600
+
+    # If we cannot determine, return 0
+    return 0
+
+def trigger_cron_job(job_id):
+    """Manually trigger a cron job to run now."""
+    try:
+        result = subprocess.run(['openclaw', 'cron', 'run', job_id],
+                                capture_output=True, text=True, check=True)
+        return True, result.stdout.strip()
+    except subprocess.CalledProcessError as e:
+        return False, f"Error: {e.stderr.strip() if e.stderr else str(e)}"
+
+def main():
+    jobs_data = get_cron_jobs()
+    jobs = jobs_data.get('jobs', [])
+
+    # Prepare report lines
+    report_lines = []
+    report_lines.append("# SlashAI Cron Health Check Report")
+    report_lines.append(f"Generated at: {current_time_str}")
     report_lines.append("")
-    
-# Overall health
-if not issues:
-    report_lines.insert(3, "Overall system health: **Healthy** - No issues detected.")
-else:
-    report_lines.insert(3, f"Overall system health: **Issues detected** - Found {len(issues)} problematic job(s).")
-    report_lines.insert(4, "")
-    report_lines.append("## Issues Detected")
-    for job_id, name, job_issues in issues:
-        report_lines.append(f"### {name} (ID: {job_id})")
-        for issue in job_issues:
-            report_lines.append(f"- {issue}")
-        report_lines.append("")
-    
-    report_lines.append("## Recommended Actions")
-    report_lines.append("1. Review disabled jobs and enable if appropriate.")
-    report_lines.append("2. Investigate jobs with consecutive errors > 2.")
-    report_lines.append("3. Check jobs that haven't run in over 2x their interval for scheduling or execution problems.")
-    report_lines.append("4. Look into jobs with extremely long run times (> 1 hour) for potential inefficiencies.")
-    
-# Check the specific job for manual trigger
-daily_tool_check_id = "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d"
-daily_tool_check_job = None
-for job in jobs:
-    if job['id'] == daily_tool_check_id:
-        daily_tool_check_job = job
-        break
 
-if daily_tool_check_job:
-    consecutive_errors = daily_tool_check_job['state'].get('consecutiveErrors', 0)
-    if consecutive_errors > 2:
+    # Summary counters
+    total_jobs = len(jobs)
+    enabled_count = 0
+    disabled_unexpected = []
+    excessive_errors = []  # consecutive errors > 2
+    interval_issues = []   # hasn't run in over 2x scheduled interval
+    long_runtime = []      # extremely long run times (> 1 hour)
+    manual_trigger_result = None  # For the specific job
+
+    for job in jobs:
+        job_id = job.get('id')
+        name = job.get('name')
+        enabled = job.get('enabled', False)
+        state = job.get('state', {})
+        schedule = job.get('schedule', {})
+        expr = schedule.get('expr', '') if isinstance(schedule, dict) else ''
+
+        if enabled:
+            enabled_count += 1
+        else:
+            disabled_unexpected.append((job_id, name))
+            # Still check other things for disabled jobs? Usually we skip, but let's check errors and runtime too for completeness
+            # Actually, if disabled, it won't run, so last run stats might be stale. Let's still check but note.
+
+        last_run_status = state.get('lastRunStatus', 'unknown')
+        consecutive_errors = state.get('consecutiveErrors', 0)
+        last_duration_ms = state.get('lastDurationMs', 0)
+        last_run_at_ms = state.get('lastRunAtMs', 0)
+
+        # Check consecutive errors > 2 (for health report issues)
+        if consecutive_errors > 2:
+            excessive_errors.append((job_id, name, consecutive_errors, last_run_status))
+
+        # Check extremely long run time (> 1 hour)
+        if last_duration_ms > 3600000:  # 1 hour in ms
+            long_runtime.append((job_id, name, last_duration_ms))
+
+        # Check if hasn't run in over 2x scheduled interval
+        interval_seconds = cron_expr_to_interval_seconds(expr)
+        if interval_seconds > 0:
+            time_since_ms = current_time_ms - last_run_at_ms
+            threshold_ms = 2 * interval_seconds * 1000
+            if time_since_ms > threshold_ms:
+                interval_issues.append((job_id, name, time_since_ms // 1000, interval_seconds, last_run_at_ms))
+        else:
+            # If we cannot determine interval, we skip this check
+            pass
+
+        # Special check for SlashAI Daily Tool Check job for manual trigger
+        if job_id == "7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d":
+            if consecutive_errors > 0:  # Showing consecutive errors (any > 0)
+                success, message = trigger_cron_job(job_id)
+                manual_trigger_result = {
+                    'job_id': job_id,
+                    'name': name,
+                    'consecutive_errors_before': consecutive_errors,
+                    'success': success,
+                    'message': message
+                }
+
+    # Build report
+    report_lines.append(f"Total jobs: {total_jobs}")
+    report_lines.append(f"Enabled jobs: {enabled_count}")
+    report_lines.append(f"Disabled jobs: {total_jobs - enabled_count}")
+    report_lines.append("")
+
+    if disabled_unexpected:
+        report_lines.append("## Jobs Disabled Unexpectedly")
+        for job_id, name in disabled_unexpected:
+            report_lines.append(f"- {name} (ID: {job_id})")
         report_lines.append("")
-        report_lines.append("## Manual Trigger Required")
-        report_lines.append(f"The SlashAI Daily Tool Check job (ID: {daily_tool_check_id}) has consecutive errors ({consecutive_errors}).")
-        report_lines.append("As per instructions, we should manually trigger it to test if the underlying issue is resolved.")
-        report_lines.append("(Note: In a real system, we would trigger the job via the cron tool or by creating an agent turn.)")
+
+    if excessive_errors:
+        report_lines.append("## Jobs with Consecutive Errors > 2")
+        for job_id, name, count, status in excessive_errors:
+            report_lines.append(f"- {name} (ID: {job_id}): {count} consecutive errors, last status: {status}")
+        report_lines.append("")
+
+    if long_runtime:
+        report_lines.append("## Jobs with Extremely Long Run Time (> 1 hour)")
+        for job_id, name, duration_ms in long_runtime:
+            duration_hr = duration_ms / 3600000
+            report_lines.append(f"- {name} (ID: {job_id}): {duration_hr:.2f} hours")
+        report_lines.append("")
+
+    if interval_issues:
+        report_lines.append("## Jobs That Haven't Run in Over 2x Their Scheduled Interval")
+        for job_id, name, time_since_sec, interval_sec, last_run_at_ms in interval_issues:
+            time_since_hr = time_since_sec / 3600
+            interval_hr = interval_sec / 3600
+            report_lines.append(f"- {name} (ID: {job_id}): last run {time_since_hr:.2f} hours ago, interval {interval_hr:.2f} hours")
+        report_lines.append("")
+
+    # Overall system health
+    report_lines.append("## Overall System Health")
+    if not (disabled_unexpected or excessive_errors or long_runtime or interval_issues):
+        report_lines.append("**Status:** ✅ HEALTHY - No issues detected.")
     else:
+        report_lines.append("**Status:** ⚠️ ISSUES DETECTED - See above for details.")
+    report_lines.append("")
+
+    # Recommended actions
+    report_lines.append("## Recommended Actions")
+    if disabled_unexpected:
+        report_lines.append("1. Investigate why jobs were disabled and re-enable if appropriate.")
+    if excessive_errors:
+        report_lines.append("2. Investigate the root cause of repeated failures for jobs with consecutive errors > 2.")
+    if long_runtime:
+        report_lines.append("3. Optimize or investigate jobs with extremely long run times to reduce execution duration.")
+    if interval_issues:
+        report_lines.append("4. Check the cron scheduler and system time for jobs that are not running on schedule.")
+    if not (disabled_unexpected or excessive_errors or long_runtime or interval_issues):
+        report_lines.append("No specific actions required. Continue monitoring.")
+
+    # Manual trigger results
+    if manual_trigger_result:
         report_lines.append("")
-        report_lines.append(f"The SlashAI Daily Tool Check job (ID: {daily_tool_check_id}) has consecutive errors: {consecutive_errors} (no action required).")
+        report_lines.append("## SlashAI Daily Tool Check Manual Trigger")
+        job_id = manual_trigger_result['job_id']
+        name = manual_trigger_result['name']
+        errors_before = manual_trigger_result['consecutive_errors_before']
+        success = manual_trigger_result['success']
+        message = manual_trigger_result['message']
+        report_lines.append(f"The SlashAI Daily Tool Check job (ID: {job_id}) had {errors_before} consecutive error(s) before check.")
+        if success:
+            report_lines.append(f"✅ Manual trigger successful: {message}")
+        else:
+            report_lines.append(f"❌ Manual trigger failed: {message}")
 
-# Write the report
-report_path = '/home/rpi/.openclaw/workspace/projects/slashai/cron-health-report.md'
-with open(report_path, 'w') as f:
-    f.write('\n'.join(report_lines))
+    # Write the report to the specified file
+    report_path = "/home/rpi/.openclaw/workspace/projects/slashai/cron-health-report.md"
+    with open(report_path, 'w') as f:
+        f.write('\n'.join(report_lines))
 
-print(f"Report written to {report_path}")
+    print(f"Health report written to {report_path}")
+    
+    # Log completion status to system logs (channel-independent operation)
+    # Append to a log file
+    log_path = "/home/rpi/.openclaw/workspace/projects/slashai/logs/cron-health.log"
+    with open(log_path, 'a') as f:
+        f.write(f"[{current_time_str}] Cron health check completed. Report saved to {report_path}\n")
+        if manual_trigger_result:
+            if manual_trigger_result['success']:
+                f.write(f"[{current_time_str}] Manual trigger of job {manual_trigger_result['job_id']} succeeded.\n")
+            else:
+                f.write(f"[{current_time_str}] Manual trigger of job {manual_trigger_result['job_id']} failed: {manual_trigger_result['message']}\n")
+        else:
+            f.write(f"[{current_time_str}] No manual trigger needed (SlashAI Daily Tool Check job had 0 consecutive errors or not found).\n")
 
-# Log completion status to system logs
-log_path = '/home/rpi/.openclaw/workspace/projects/slashai/slashai/logs/cron-health.log'
-# Ensure the directory exists
-os.makedirs(os.path.dirname(log_path), exist_ok=True)
-with open(log_path, 'a') as f:
-    f.write(f"[{datetime.now().isoformat()}] Cron health check completed. Report saved to {report_path}. Issues found: {len(issues)}\\n")
-
-print(f"Logged completion to {log_path}")
+if __name__ == '__main__':
+    main()
