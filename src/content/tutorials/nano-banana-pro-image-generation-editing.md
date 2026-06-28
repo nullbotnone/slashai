@@ -1,7 +1,7 @@
 ---
 title: "Create Professional Images with Nano Banana Pro: Text-to-Image Generation and Editing"
 description: "Learn how to use Google's Nano Banana Pro AI model for generating and editing images with accurate text rendering and precise creative controls"
-pubDate: 2026-04-19
+pubDate: 2025-11-19
 toolName: "Nano Banana Pro"
 difficulty: "Beginner"
 timeToComplete: "20 minutes"

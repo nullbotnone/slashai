@@ -43,6 +43,36 @@ HubSpot AEO (Answer Engine Optimization) is a standalone tool or add-on to Marke
 
 In June 2026, HubSpot launched Revenue Hub, a centralized command center for quotes, billing, and payments, featuring automated payment collection, flexible billing schedules, and a Revenue Agent (in private beta) to follow up on overdue invoices. Additional AI enhancements include Customer Agent for Email, Prospecting Agent improvements, Breeze Assistant upgrades, AEO Sensor for tracking answer engine volatility, improved Salesforce integration (v2 sync engine), enhanced marketing events (redesigned CRM layout, wider object association), personalized navigation, sandbox improvements, and segmentation updates.
 
+### Detailed June 2026 Updates:
+- **Revenue Hub**: Centralized command center for quotes, billing, and payments featuring automated payment collection, flexible billing schedules, and a Revenue Agent (in private beta) to follow up on overdue invoices
+- **Breeze Assistant Improvements**: More intelligent across surfaces including mobile app and custom code workflows; can generate more accurate output, create richer deliverables like documents, email drafts, and custom HTML pages; manage CRM data directly within conversation; write, test, and iterate on custom code workflow actions
+- **AI Connectors**: New AI connectors for Claude, ChatGPT, and GPT Image 2.0
+- **Meeting Prep on Mobile**: Breeze automatically surfaces summaries of companies, contacts, and deals before meetings on HubSpot Mobile Home calendar widget with suggested talking points
+- **Customer Agent Enhancements**: Supports multiple brands, allowing organizations to create distinct AI agents with unique identities, brand voices, knowledge bases, and routing logic per brand; supports PDF attachments in conversations; performance data shows 50% more tickets resolved and 29% faster resolution rates
+- **Redesigned Marketing Studio Canvas**: New modes, a dock, snap-to-grid, and auto-layout features
+- **Multiple Blog Authors**: Users can now assign up to five authors to a single blog post
+- **Mobile List Views Mirror Desktop**: Mobile list views display same properties configured in corresponding desktop table view, up to 20 columns, with reordering automatically updating across devices
+- **Auto-Fill Company Details from Chrome Extension**: When visiting a company website not in CRM, Chrome Extension surfaces enriched company data and auto-fills the creation form
+- **Current Customer Property**: New system-managed property identifies whether a company, contact, or custom object is a current customer, aiding Customer Success teams
+- **Price Books**: RevOps teams can now centralize the definition, management, and application of product pricing across deals and quotes
+- **Redesigned Smart CRM Index**: Faster, more flexible index with collapsible filters, on-page report view, AI-powered column insights via Breeze, inline property management in public beta
+- **Cleanup Automation for CRM Records**: Updates to automate cleanup of CRM records
+- **Brand Settings Permissions**: Super Admins have more precise control over who can manage brand assets without exposing unrelated account settings
+- **Conditional Property Rules**: Dynamic properties can show different fields based on deal type or record context
+- **TikTok Lead Syncing and Ad Conversion Events**: Automatically creates or updates contacts in CRM in real-time when someone fills out a TikTok Instant Form; conversion data flows back to TikTok for improved targeting
+- **Marketing Event Participation Workflows**: Workflow actions can update a contact's participation state for manually created marketing events
+- **Associate Assets to Multiple Campaigns**: Users can now associate assets with multiple campaigns
+- **Prospecting Agent Updates**: Several updates made to the Prospecting Agent
+- **Updates to Calling**: Improvements made to calling features within HubSpot
+- **Help Desk**: Smarter routing, broader access, and AI-powered setup now available
+- **Onboarding Plans**: Customer success teams can plan, execute, and track onboarding projects with structured tasks, milestones, and reporting directly in HubSpot, new "Onboarding" pipeline created by default for new Service Hub customers
+- **Customer Portal Experience Update**: Refreshed portal design powered by HubSpot's CMS offers improved search, sorting, filtering, and full conversation visibility
+- **HubSpot API Versioning**: Transitioned from older v3 versioning to date-based API versions e.g., 2026-03, requiring proactive monitoring of deprecation timelines for integrations
+- **Legacy Public App Creation Sunset**: As of May 26, 2026, creation of new legacy public apps via Developer Platform UI permanently disabled, with new public app development shifting to the Projects-based platform
+- **Legacy CRM Card Migration Tool**: Tool to migrate Legacy CRM Cards to UI Extension App Cards, as Legacy CRM Cards are scheduled for deprecation on October 31, 2026
+- **Multiple Stored Payment Methods**: Sellers can now see and select all of a buyer's stored payment methods, allowing them to choose the correct one for each transaction
+- **AI capabilities unified under "Breeze AI" umbrella
+
 ### Integration with HubSpot Ecosystem
 - Works seamlessly with HubSpot's CRM, Marketing Hub, and Content Hub
 - Data flows into HubSpot reports and dashboards

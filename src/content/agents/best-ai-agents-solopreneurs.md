@@ -1,8 +1,8 @@
 ---
 title: "7 Best AI Agents for Solopreneurs in 2026 (Tested)"
 description: "AI agents that actually run parts of your business autonomously. We tested the top agents for email, research, customer support, and workflow automation."
-pubDate: 2026-03-18
-itemCount: 7
+pubDate: 2026-06-27
+itemCount: 12
 tags: ["ai agents", "automation", "solopreneurs", "autonomous ai"]
 ---
 
@@ -36,6 +36,11 @@ Think of it as a virtual employee that costs $20-50/mo instead of $2,000/mo.
 | Bland AI | Phone agent | Usage-based | ⭐⭐⭐⭐⭐ |
 | Perplexity Pro | Deep research | $20/mo | ⭐⭐⭐ |
 | Make.com | Visual automation | Free tier | ⭐⭐⭐⭐ |
+| Alfred AI Chief of Staff | Executive assistance | $4.99/mo | ⭐⭐⭐⭐⭐ |
+| Dusttt | AI agent teams | Unknown | ⭐⭐⭐⭐ |
+| Chatbase | AI customer support | Free tier; Hobby from $32/mo | ⭐⭐⭐⭐ |
+| Gemini Spark | Proactive personal AI | $9.99/mo | ⭐⭐⭐⭐⭐ |
+| Claudomat | Autonomous operations | Unknown | ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -227,6 +232,150 @@ Make.com (formerly Integromat) is the most powerful visual automation platform. 
 **Verdict:** The backbone of any serious automation setup. Connect Lindy, ChatGPT, and your tools together.
 
 ---
+
+## 8. Alfred AI Chief of Staff — Best Executive AI Assistant
+
+**Price:** $4.99/mo
+**Best for:** Email triage, calendar management, task extraction, and follow-ups
+**Autonomy:** ⭐⟩⟩⟩⟩ — Operates as an autonomous chief of staff
+
+Alfred AI positions itself as an AI chief of staff, handling email triage, calendar management, task extraction, and follow-up monitoring. By learning a user's priorities and communication patterns, it reduces the administrative overhead that often consumes significant portions of a solopreneur's day.
+
+**What it does autonomously:**
+- Autonomous inbox management and email triage
+- Calendar optimization and scheduling
+- Task extraction from emails and conversations
+- Follow-up tracking and reminders
+- Daily briefings and priority summarization
+
+**What I liked:**
+- Incredibly affordable at $4.99/mo
+- Truly autonomous operation after setup
+- Integrates with major email and calendar providers
+- Learns your work patterns and preferences
+- Proactive task management without constant prompting
+
+**What I didn't:**
+- Newer platform (launched May 2026), so long-term stability data is limited
+- Feature set may not be as comprehensive as higher-priced alternatives
+- Integrations still expanding
+
+**Verdict:** For solopreneurs who need executive-level assistance with inbox and calendar management at an accessible price point, Alfred AI Chief of Staff is an excellent choice.
+
+## 9. Dusttt — Best for AI Agent Teams
+
+**Price:** Unknown (Freemium)
+**Best for:** Creating teams of specialized AI agents that collaborate on complex projects
+**Autonomy:** ⭐⟩⟩⟩ — Specialized agents work together autonomously
+
+Dusttt is a platform for creating teams of specialized AI agents that collaborate on complex projects. Rather than relying on a single general-purpose agent, Dusttt lets you create agent teams with defined roles (researcher, writer, editor, publisher) that work together to accomplish complex workflows.
+
+**What it does autonomously:**
+- Agent Teams with role definition (researcher, writer, editor, publisher)
+- Workflow simulation and bottleneck identification
+- Performance monitoring and optimization
+- Collaborative task execution across specialized agents
+
+**What I liked:**
+- Innovative approach to AI agent collaboration
+- Enables specialization of agents for better performance
+- Workflow simulation helps identify inefficiencies
+- Performance metrics for continuous improvement
+
+**What I didn't:**
+- Pricing not yet publicly available
+- Learning curve for setting up effective agent teams
+- May be overkill for simple automation needs
+
+**Verdict:** For solopreneurs managing complex workflows requiring multiple specialized agents, Dusttt offers a unique team-based approach to AI automation.
+
+## 10. Chatbase — Best for Custom-Trained AI Chatbots
+
+**Price:** Free tier; Hobby from $32/mo
+**Best for:** Building custom chatbots trained on your data
+**Autonomy:** ⭐⟩⟩⟩ — Handles customer inquiries independently after training
+
+Chatbase is an AI customer support platform for building custom chatbots trained on your data. It allows solopreneurs to automate customer support with chatbots that truly understand their business and can handle inquiries independently.
+
+**What it does autonomously:**
+- No-code chatbot builder
+- GDPR compliant and SOC 2 Type II certified
+- Supports multiple AI models (GPT-4o Mini, GPT-4o, Claude 3)
+- Lead capture and analytics
+- Custom training on your business data
+
+**What I liked:**
+- Train chatbots on your specific business data
+- Multiple AI model options for flexibility
+- Strong privacy and compliance credentials
+- Lead capture capabilities
+- Analytics to improve performance over time
+
+**What I didn't:**
+- Higher price point than some competitors
+- May require significant training data for optimal performance
+- Custom training process can be time-consuming
+
+**Verdict:** For solopreneurs wanting to automate customer support with custom-trained chatbots that truly understand their business, Chatbase is a strong option.
+
+## 11. Gemini Spark — Best Proactive Personal AI Agent
+
+**Price:** $9.99/mo Ultra (entry tier)
+**Best for:** Proactive management of your digital life
+**Autonomy:** ⭐⟩⟩⟩⟩ — 24/7 autonomous operation
+
+Gemini Spark is Google's 24/7 personal AI agent designed to proactively manage and navigate your digital life autonomously. It works offline, integrates natively with Google apps, and uses advanced techniques like Agent2Agent protocol and Agentic RAG for proactive task completion.
+
+**What it does autonomously:**
+- 24/7 autonomous operation (works offline)
+- Native Google app integration (Gmail, Calendar, Docs, etc.)
+- Agent2Agent protocol for multi-agent collaboration
+- Agentic RAG for enhanced knowledge retrieval
+- Proactive task completion based on learned patterns
+- Multi-agent design for specialized assistance
+
+**What I liked:**
+- Truly proactive — anticipates needs before you ask
+- Works offline for privacy and reliability
+- Deep integration with Google Workspace
+- Advanced AI architectures for better performance
+- Proactive task reduction reduces cognitive load
+
+**What I didn't:**
+- Requires deep integration with Google ecosystem
+- Privacy concerns with extensive data access
+- Still relatively new (launched June 2026)
+
+**Verdict:** For solopreneurs deeply integrated into Google Workspace who want proactive AI assistance that anticipates their needs, Gemini Spark is a compelling option.
+
+## 12. Claudomat — Best Autonomous Operations Platform
+
+**Price:** Unknown (Freemium/Paid)
+**Best for:** Automating recurring operational tasks across core business functions
+**Autonomy:** ⭐⟩⟩⟩⟩ — Manages operations as a single operating layer
+
+Claudomat is an autonomous operations platform that manages Development, Marketing, Finance, and Sales for solo founders, providing the operational capacity of a full team without additional staff. It connects to existing tools across business functions and coordinates them as a single operating layer.
+
+**What it does autonomously:**
+- Connects to existing tools across Dev, Marketing, Finance, Sales
+- Coordinates them as a single operating layer
+- Handles recurring operational tasks in the background
+- Enables focus on strategic direction rather than operations
+- Provides operational capacity of a full team
+
+**What I liked:**
+- Comprehensive approach to business automation
+- Integrates with existing tools rather than replacing them
+- Focuses on recurring operational tasks
+- Frees up time for strategic work
+- Provides scale without hiring
+
+**What I didn't:**
+- Pricing not yet publicly available
+- Complex setup due to multiple integrations
+- May be overkill for simple solopreneur needs
+
+**Verdict:** For solo founders who want to automate recurring operational tasks across core business functions and operate with the capacity of a full team, Claudomat offers a comprehensive solution.
 
 ## My Recommended Agent Stack
 
