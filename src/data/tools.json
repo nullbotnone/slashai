@@ -6057,5 +6057,148 @@
         "prototyping"
       ],
       "featured": false
+    },
+    {
+      "name": "Sakurai AI",
+      "slug": "sakurai-ai",
+      "description": "AI-powered customer service automation platform that enables businesses to deploy custom AI agents for handling customer inquiries, support tickets, and service requests across multiple channels.",
+      "longDescription": "Launched as Product of the Day on Product Hunt on June 27, 2026, Sakurai AI is an AI-powered customer service automation platform designed to help businesses automate their customer service operations. The platform enables companies to create, deploy, and manage custom AI agents that can handle customer inquiries, support tickets, and service requests across multiple channels including email, chat, social media, and phone. Sakurai AI uses natural language processing and machine learning to understand customer intent, provide accurate responses, and escalate complex issues to human agents when needed. The platform includes features for conversation analytics, sentiment analysis, and performance tracking to help businesses continuously improve their customer service operations. Sakurai AI emphasizes scalability, customization, and integration with existing customer relationship management (CRM) systems and helpdesk software.",
+      "url": "https://www.sakurai.ai",
+      "affiliateUrl": null,
+      "category": "Customer Service",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $49/mo Professional, $199/mo Enterprise",
+      "released": "June 27, 2026",
+      "added": "2026-06-27",
+      "pros": [
+        "AI-powered automation of customer service operations",
+        "Enables creation and deployment of custom AI agents for customer support",
+        "Handles customer inquiries across multiple channels (email, chat, social, phone)",
+        "Uses natural language processing to understand customer intent",
+        "Provides accurate responses and escalates complex issues when needed",
+        "Includes conversation analytics and sentiment analysis for performance tracking",
+        "Integrates with existing CRM systems and helpdesk software",
+        "Scales to serve small businesses to large enterprises",
+        "Reduces response times and improves customer satisfaction",
+        "Lowers customer service operational costs through automation"
+      ],
+      "cons": [
+        "Requires integration with existing customer service systems and workflows",
+        "May have limitations with highly complex or specialized customer service scenarios",
+        "Dependent on quality and accuracy of training data for natural language understanding",
+        "Enterprise pricing may be cost-prohibitive for small businesses",
+        "Requires ongoing maintenance and updates to keep pace with customer service trends",
+        "May need configuration for specific business processes and service level agreements",
+        "Potential data privacy and security concerns with customer information handling",
+        "Requires training for customer service teams to effectively use and manage AI agents",
+        "Performance may vary with conversation volume and complexity",
+        "May face scrutiny regarding AI disclosure and transparency in customer interactions"
+      ],
+      "bestFor": "Businesses of all sizes seeking to automate their customer service operations and improve customer experience through AI-powered support agents, particularly useful for those looking to reduce response times, lower operational costs, and provide 24/7 customer support availability.",
+      "affiliateCommission": null,
+      "tags": [
+        "customer service",
+        "ai agent",
+        "automation",
+        "chatbot",
+        "support ticket",
+        "customer experience"
+      ],
+      "featured": false
+    },
+    {
+      "name": "GetCompress",
+      "slug": "getcompress",
+      "description": "Lightweight desktop application for lossless media compression featuring a 'no context switching' workflow for enhanced user convenience.",
+      "longDescription": "Launched as a top product on Product Hunt on June 28, 2026, GetCompress is a lightweight desktop application designed for lossless media compression. The 'no context switching' aspect refers to its user-friendly design that allows users to compress files without needing to frequently switch between applications or navigate through multiple clicks. The application offers up to a 90% reduction in file size while maintaining minimal quality loss, distinguishing it as a lossless compression tool. GetCompress supports over 100 formats and performs all compression locally on the user's device, ensuring data privacy and security.",
+      "url": "https://www.getcompress.com",
+      "affiliateUrl": null,
+      "category": "Utilities",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $9.99/mo Pro (unlimited conversions, batch processing)",
+      "released": "June 28, 2026",
+      "added": "2026-06-28",
+      "pros": [
+        "Lossless media compression with minimal quality loss",
+        "No context switching workflow - drag, compress, drag back without alt-tabbing",
+        "Supports over 100 media formats (video, image, GIF, PDF, etc.)",
+        "Performs all compression locally ensuring data privacy and security",
+        "Offline operation capability for use without internet connection",
+        "Batch processing for converting multiple files at once",
+        "Drag-and-drop support for easy file handling",
+        "Up to 90% reduction in file size while maintaining quality",
+        "Compatible with Mac, Windows, and Linux operating systems",
+        "Ideal for content creators, designers, videographers, photographers, and media professionals"
+      ],
+      "cons": [
+        "May have limitations with certain proprietary or specialized media formats",
+        "Requires initial download and installation of desktop application",
+        "Pro version pricing may be cost-prohibitive for casual users",
+        "May not achieve maximum compression ratios for already optimized files",
+        "Requires storage space for both original and compressed files during processing",
+        "May need periodic updates to support new media formats and codecs",
+        "Performance may vary with file size, complexity, and system specifications",
+        "Potential security considerations require regular updates and vigilance",
+        "May not integrate with all media management or content creation workflows",
+        "Requires user discipline to maintain organized file management practices"
+      ],
+      "bestFor": "Content creators, designers, videographers, photographers, and media professionals seeking efficient lossless media compression tools, particularly useful for those who want to reduce file sizes without quality loss while maintaining workflow efficiency and data privacy.",
+      "affiliateCommission": null,
+      "tags": [
+        "utilities",
+        "media compression",
+        "lossless compression",
+        "desktop application",
+        "productivity"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Dotient",
+      "slug": "dotient",
+      "description": "Local-first desktop application for organizing and searching personal files using AI-powered visual and semantic search capabilities.",
+      "longDescription": "On June 28, 2026, Dotient was recognized as a local-first desktop application designed for organizing and searching personal files using AI-powered visual and semantic search capabilities. It launched on Product Hunt on this date, positioning itself as a tool for users seeking to manage their digital archives privately and offline. Dotient's core functionality allows users to search for files based on their visual appearance or conceptual meaning, rather than relying solely on filenames. This is achieved through machine learning models that create embeddings of files, enabling a semantic understanding of the content. The application emphasizes data privacy by ensuring all processing and searching occur entirely on the user's machine, without uploading sensitive documents to the cloud.",
+      "url": "https://www.dotient.com",
+      "affiliateUrl": null,
+      "category": "Productivity",
+      "pricing": "Freemium",
+      "price": "$0/mo Free, $12.99/mo Pro (unlimited searches, advanced features)",
+      "released": "June 28, 2026",
+      "added": "2026-06-28",
+      "pros": [
+        "AI-powered visual and semantic search for personal file organization",
+        "Operates completely offline ensuring data privacy and security",
+        "Advanced PDF search capabilities for searching within document content",
+        "Live graph view for visualizing file relationships and similarities",
+        "Canvas workspaces (Cubbies) for mood board-like collections with freeform arrangement",
+        "Signal tuning feature for customizing and refining search results",
+        "Broad file compatibility with built-in OCR for processing scanned documents",
+        "Emphasizes user privacy by keeping all processing local on user's device",
+        "Reduces time spent searching for files through intelligent search capabilities",
+        "Scales to serve individual users to large organizations with extensive digital archives"
+      ],
+      "cons": [
+        "Requires initial download and installation of desktop application",
+        "May have limitations with highly specialized or proprietary file formats",
+        "Pro version pricing may be cost-prohibitive for casual users",
+        "May not replace all aspects of traditional file organization and search methods",
+        "Requires ongoing updates to keep pace with file format changes and new features",
+        "May need configuration for specific file organization workflows and systems",
+        "Potential performance considerations with extremely large file libraries",
+        "Requires storage space for maintaining file indexes and search databases",
+        "May need user training to effectively utilize all search and organization features",
+        "May face compatibility issues with certain legacy systems or software"
+      ],
+      "bestFor": "Individuals, professionals, and organizations seeking to organize and search their personal or professional files using AI-powered visual and semantic capabilities, particularly useful for those who prioritize data privacy, offline functionality, and intelligent file organization capabilities.",
+      "affiliateCommission": null,
+      "tags": [
+        "productivity",
+        "file organization",
+        "semantic search",
+        "visual search",
+        "local first",
+        "privacy focused"
+      ],
+      "featured": false
     }
   ]
