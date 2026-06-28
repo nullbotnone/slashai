@@ -1,5 +1,15 @@
 # AI Agents Update - June 2026
 
+## Corrections Made - June 28, 2026
+
+Fixed future-dated articles:
+- Updated `src/content/tutorials/nano-banana-pro-image-generation-editing.md` pubDate from 2026-04-19 to 2025-11-19 to match the actual November 2025 release date
+- Updated `src/content/roundups/whats-new-ai-june-week-4-2026.md` pubDate from 2026-06-30 to 2026-06-28 to reflect actual publication date
+
+---
+
+# AI Agents Update - June 2026
+
 ## New AI Agents Added to SlashAI Database (March-June 2026)
 
 Several new AI agents have been added to the SlashAI database since the original "Best AI Agents for Solopreneurs in 2026" article was published on March 18, 2026:

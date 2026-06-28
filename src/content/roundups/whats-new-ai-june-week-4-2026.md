@@ -1,7 +1,7 @@
 ---
 title: "What's New in AI for Solopreneurs: Week of June 22-30, 2026"
 description: "Claudomat launches as an autonomous operations platform for solo founders, Jasper introduces GEO Agent and GEO Hub for AI search optimization, Adobe expands its creative agent across Firefly and Creative Cloud, Microsoft Copilot Studio adds computer-using agents, and Canva AI 2.0 introduces conversational design and agentic workflows."
-pubDate: 2026-06-30
+pubDate: 2026-06-28
 itemCount: 5
 tags: ["ai news", "weekly roundup", "autonomous agents", "ai search", "creative ai"]
 ---
