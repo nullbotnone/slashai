@@ -1,7 +1,7 @@
 ---
 title: "What's New in AI for Solopreneurs: Week of June 29-July 5, 2026"
 description: "Persona.js enables WebMCP-native AI chat widgets, Dotient offers private local semantic search, discode.ai provides access to 100+ AI models through one interface, Lyto creates cross-browser AI agents, and GetCompress delivers lossless media compression."
-pubDate: 2026-07-05
+pubDate: 2026-06-29
 itemCount: 5
 tags: ["ai tools", "weekly roundup", "developer tools", "privacy", "productivity"]
 ---
