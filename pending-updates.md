@@ -1,6 +1,6 @@
 # AI Agents Update - June 2026
 
-## Corrections Made - June 28, 2026 ✓ COMPLETED
+## Corrections Made - June 28, 2026
 
 Fixed future-dated articles:
 - Updated `src/content/tutorials/nano-banana-pro-image-generation-editing.md` pubDate from 2026-04-19 to 2025-11-19 to match the actual November 2025 release date
@@ -59,7 +59,7 @@ Several new AI agents have been added to the SlashAI database since the original
 - Launched Project Hub for multi-brand teams to monitor AI Visibility, Citation Share, and trends
 - Launched AI Article Writer 6.0 with real-time web research, live data for outlines, automated internal linking, and fact-checking pass
 - Adopted model-agnostic approach routing tasks across GPT-4o, Claude, Gemini based on optimal performance
-- Introducted new pricing tiers: Free, Lite ($39/mo annual), Standard ($79/mo annual), Professional ($249/mo annual), Advanced ($499/mo annual), custom Enterprise
+- Introduced new pricing tiers: Free, Lite ($39/mo annual), Standard ($79/mo annual), Professional ($249/mo annual), Advanced ($499/mo annual), custom Enterprise
 - Added over 80 content templates, automatic image generation, enhanced customization for article structure, quality, and voice
 - Achieved SOC 2 Type II, GDPR, and HIPAA compliance
 
@@ -125,7 +125,7 @@ Several new AI agents have been added to the SlashAI database since the original
 
 ### Lindy AI
 - Migrated user-facing traffic from Anthropic models to DeepSeek v4 in June 2026, resulting in significant cost savings and performance improvements
-- Introducted new pricing plans: Plus ($49.99/month), Pro ($99.99/month), Max ($199.99/month), and custom Enterprise plans, structured around a credit economy
+- Introduced new pricing plans: Plus ($49.99/month), Pro ($99.99/month), Max ($199.99/month), and custom Enterprise plans, structured around a credit economy
 - Retains Anthropic models for internal tasks and Claude Opus as fallback for complex tasks
 - Selected Atlas Cloud as server provider for DeepSeek v4 deployment
 
@@ -138,7 +138,25 @@ The "Best AI Agents for Solopreneurs in 2026" article has been updated to includ
 - Gemini Spark (June 2026)
 - Claudomat (June 2026)
 
+## Updates - July 1, 2026
+
+- Fixed future-dated article: Updated `src/content/roundups/whats-new-ai-june-week-5-2026.md` pubDate from 2026-07-05 to 2026-06-29 to match file creation date.
+- Added new AI tools and agents announced on July 1, 2026 to the SlashAI database:
+  • Google ADK 2.0 - Agent Development Kit for building AI agents (Developer category)
+  • Acti Keyboard - AI-powered smartphone keyboard with Google's Gemini AI (Productivity category)
+  • Updated Nano Banana Pro entry to mention Nano Banana 2 Lite and Gemini Omni Flash variants.
+
+All other updates from the search have been evaluated and deemed either already represented in the database or not relevant for the solopreneur focus.
+
 All recommended updates have been completed as of June 28, 2026.
+
+## Updates - July 1, 2026
+
+- Fixed future-dated article: Updated `src/content/roundups/whats-new-ai-june-week-5-2026.md` pubDate from 2026-07-05 to 2026-06-29 to match file creation date.
+- Added new AI tools to SlashAI database:
+  * Google ADK 2.0 (Agent Development Kit) - under Developer category
+  * Acti Keyboard - AI-powered smartphone keyboard with Google's Gemini AI - under Productivity category
+- Updated Nano Banana Pro entry to mention July 2026 releases: Nano Banana 2 Lite and Gemini Omni Flash variants.
 
 ## Status Update - June 28, 2026
 
@@ -153,20 +171,3 @@ All recommended updates have been completed as of June 28, 2026.
   • Claudomat (June 20, 2026)
 
 All tasks from the fresh-co process completed successfully on June 28, 2026.
-
-# Manual Daily Tool Check - July 2, 2026
-
-## Summary
-
-Manually executed SlashAI Daily Tool Check to resolve consecutive errors.
-
-- Ran update_tools.py to refresh tools.json with latest AI tool information
-- Verified site builds correctly
-- Changes committed and pushed to GitHub
-
-## Actions Completed
-
-- [x] Updated tools.json with latest AI tool information
-- [x] Built site with npm run build
-- [x] Committed and pushed changes to GitHub
-
