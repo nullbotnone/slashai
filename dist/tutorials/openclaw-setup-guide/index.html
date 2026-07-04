@@ -23,14 +23,14 @@
 <hr>
 <h2 id="step-1-install-openclaw">Step 1: Install OpenClaw</h2>
 <p>Open your terminal and run:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>npm install -g openclaw</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">npm</span><span style="color:#9ECBFF"> install</span><span style="color:#79B8FF"> -g</span><span style="color:#9ECBFF"> openclaw</span></span></code></pre>
 <p>Verify installation:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw --version</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#79B8FF"> --version</span></span></code></pre>
 <p>You should see a version number. If not, check your Node.js installation with <code>node --version</code>.</p>
 <hr>
 <h2 id="step-2-initial-setup">Step 2: Initial Setup</h2>
 <p>Run the setup wizard:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw setup</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> setup</span></span></code></pre>
 <p>This will:</p>
 <ol>
 <li>Create a config directory at <code>~/.openclaw/</code></li>
@@ -47,48 +47,48 @@
 <hr>
 <h2 id="step-3-start-the-gateway">Step 3: Start the Gateway</h2>
 <p>The gateway is OpenClaw’s background service:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw gateway start</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> gateway</span><span style="color:#9ECBFF"> start</span></span></code></pre>
 <p>Check that it’s running:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw gateway status</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> gateway</span><span style="color:#9ECBFF"> status</span></span></code></pre>
 <p>You should see: <code>Gateway is running ✓</code></p>
 <hr>
 <h2 id="step-4-your-first-command">Step 4: Your First Command</h2>
 <p>Try a simple command to test everything works:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw ask "What files are in my Documents folder?"</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> ask</span><span style="color:#9ECBFF"> "What files are in my Documents folder?"</span></span></code></pre>
 <p>OpenClaw will use its file system skill to look at your Documents folder and answer.</p>
 <hr>
 <h2 id="step-5-connect-skills">Step 5: Connect Skills</h2>
 <p>OpenClaw’s power comes from skills — pre-built integrations. Install some useful ones:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span># Web search</span></span>
-<span class="line"><span>openclaw skills install web-search</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># Email (Gmail)</span></span>
-<span class="line"><span>openclaw skills install gmail</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># Calendar</span></span>
-<span class="line"><span>openclaw skills install google-calendar</span></span>
-<span class="line"><span></span></span>
-<span class="line"><span># File management</span></span>
-<span class="line"><span>openclaw skills install filesystem</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#6A737D"># Web search</span></span>
+<span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> skills</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> web-search</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Email (Gmail)</span></span>
+<span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> skills</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> gmail</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># Calendar</span></span>
+<span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> skills</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> google-calendar</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#6A737D"># File management</span></span>
+<span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> skills</span><span style="color:#9ECBFF"> install</span><span style="color:#9ECBFF"> filesystem</span></span></code></pre>
 <p>Each skill adds new capabilities. After installing, you can ask things like:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw ask "Search the web for the latest AI news and summarize it"</span></span>
-<span class="line"><span>openclaw ask "Do I have any meetings tomorrow?"</span></span>
-<span class="line"><span>openclaw ask "Draft an email to john@example.com about our project update"</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> ask</span><span style="color:#9ECBFF"> "Search the web for the latest AI news and summarize it"</span></span>
+<span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> ask</span><span style="color:#9ECBFF"> "Do I have any meetings tomorrow?"</span></span>
+<span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> ask</span><span style="color:#9ECBFF"> "Draft an email to john@example.com about our project update"</span></span></code></pre>
 <hr>
 <h2 id="step-6-automate-something-real">Step 6: Automate Something Real</h2>
 <p>Now let’s automate a real task. Create a simple workflow:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw workflow create morning-briefing</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> workflow</span><span style="color:#9ECBFF"> create</span><span style="color:#9ECBFF"> morning-briefing</span></span></code></pre>
 <p>Add steps to your workflow:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw workflow add morning-briefing "Check my calendar for today's meetings"</span></span>
-<span class="line"><span>openclaw workflow add morning-briefing "Search for news in my industry"</span></span>
-<span class="line"><span>openclaw workflow add morning-briefing "Compile a summary with meetings and news"</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> workflow</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> morning-briefing</span><span style="color:#9ECBFF"> "Check my calendar for today's meetings"</span></span>
+<span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> workflow</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> morning-briefing</span><span style="color:#9ECBFF"> "Search for news in my industry"</span></span>
+<span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> workflow</span><span style="color:#9ECBFF"> add</span><span style="color:#9ECBFF"> morning-briefing</span><span style="color:#9ECBFF"> "Compile a summary with meetings and news"</span></span></code></pre>
 <p>Run it:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw workflow run morning-briefing</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> workflow</span><span style="color:#9ECBFF"> run</span><span style="color:#9ECBFF"> morning-briefing</span></span></code></pre>
 <p>You’ll get a compiled morning briefing with your schedule and relevant news.</p>
 <hr>
 <h2 id="step-7-set-up-chat-interface-optional">Step 7: Set Up Chat Interface (Optional)</h2>
 <p>OpenClaw includes a web chat interface:</p>
-<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="plaintext"><code><span class="line"><span>openclaw ui start</span></span></code></pre>
+<pre class="astro-code github-dark" style="background-color:#24292e;color:#e1e4e8; overflow-x: auto;" tabindex="0" data-language="bash"><code><span class="line"><span style="color:#B392F0">openclaw</span><span style="color:#9ECBFF"> ui</span><span style="color:#9ECBFF"> start</span></span></code></pre>
 <p>Open your browser to <code>http://localhost:3000</code> and chat with your AI agent instead of using the terminal.</p>
 <hr>
 <h2 id="what-you-can-do-now">What You Can Do Now</h2>
