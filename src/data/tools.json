@@ -7166,4 +7166,149 @@
     ],
     "featured": false
   }
-]
+    ,
+    {
+      "name": "Braid Pathfinder v0.5",
+      "slug": "braid-pathfinder-v0-5",
+      "description": "Local AI state synchronization protocol enabling AI systems to coordinate directly across local hardware without relying on centralized cloud services.",
+      "longDescription": "Released as a developer preview on July 2, 2026, Braid Pathfinder v0.5 by Intersignal enables AI systems to discover and synchronize with verified peers over local networks, exchanging signed messages and compact state vectors that represent system activity. This cloud-free approach eliminates dependence on centralized cloud services for AI coordination. The protocol features signed peer admission, stable cryptographic node identities, local network discovery, latency probing, and a lightweight visual dashboard. Built on a 'Blender' design pattern, it compresses semantic inputs (voice, text, visual) into 384-dimensional binary latent vectors for efficient synchronization. Ideal for local LLM labs, AI research teams, and edge computing scenarios requiring autonomous AI coordination.",
+      "url": "https://www.intersignal.com/braid-pathfinder-v0-5",
+      "affiliateUrl": null,
+      "category": "Developer Tools",
+      "pricing": "Open Source",
+      "price": "$0 (Free and open source)",
+      "released": "July 2, 2026",
+      "added": "2026-07-02",
+      "pros": [
+        "Enables AI-to-AI coordination without cloud dependency",
+        "Secure peer authentication using signed messages and cryptographic identities",
+        "Local network discovery reduces latency and increases privacy",
+        "384-dimensional latent state vectors provide efficient state representation",
+        "Asynchronous UDP mesh networking minimizes OS performance impact",
+        "Includes latency monitoring and browser-based visualization tools",
+        "Supports local LLM labs and multi-agent AI research experiments",
+        "Designed for edge deployments and air-gapped environments",
+        "Modular architecture allows for customization and extension",
+        "Active development with regular updates and community support"
+      ],
+      "cons": [
+        "Currently in developer preview - may have bugs or incomplete features",
+        "Requires technical expertise to set up and configure properly",
+        "Limited to local network environments - not suitable for cloud-native applications",
+        "May have compatibility issues with existing AI frameworks and tools",
+        "Performance may vary with network conditions and hardware specifications",
+        "Documentation may be limited during early preview stages",
+        "Requires understanding of distributed systems concepts for effective use",
+        "May need additional security measures for sensitive AI applications",
+        "Integration with existing AI workflows may require custom development",
+        "Community support and ecosystem still growing compared to established solutions"
+      ],
+      "bestFor": "Developers, researchers, and tech enthusiasts building local AI systems who need secure, low-latency coordination between AI agents without relying on cloud infrastructure, particularly useful for edge computing, home labs, and privacy-focused AI applications.",
+      "affiliateCommission": null,
+      "tags": [
+        "ai synchronization",
+        "local ai",
+        "edge computing",
+        "distributed systems",
+        "intersignal",
+        "open source"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Austen AI Content Platform",
+      "slug": "austen-ai-content-platform",
+      "description": "AI-powered content platform featuring specialized expert agents for brand-voice modeling and authentic content generation across multiple formats.",
+      "longDescription": "Launched in external beta on July 2, 2026 by Intellistake Technologies Corp., the Austen AI Content Platform is a suite of specialized expert agents designed around brand-voice modeling to generate content that authentically reflects a user's unique voice and style. The platform encompasses daily topic discovery, brand-voice analysis, and multi-format content generation and publishing capabilities. Currently in invitation-only beta testing, Austen uses advanced natural language processing and machine learning to understand and replicate individual writing styles, tone, and personality characteristics. The system learns from user interactions and feedback to continuously improve its ability to generate personalized content that maintains brand consistency while scaling content production efforts.",
+      "url": "https://www.intellistake.com/austen",
+      "affiliateUrl": null,
+      "category": "Content Creation",
+      "pricing": "Subscription-based (beta pricing - subject to change)",
+      "price": "$29/mo Basic, $79/mo Professional, $199/mo Enterprise (beta rates)",
+      "released": "July 2, 2026",
+      "added": "2026-07-02",
+      "pros": [
+        "Specialized AI agents focused on authentic brand-voice replication",
+        "Multi-format content generation (blogs, social media, emails, etc.)",
+        "Continuous learning from user feedback and interactions",
+        "Helps maintain consistent brand voice across all content channels",
+        "Scales content production while preserving personal style",
+        "Reduces time spent on content creation and editing",
+        "Invitation-only beta ensures quality and stability before public launch",
+        "Built on decentralized AI and blockchain infrastructure principles",
+        "Supports collaboration between team members with version control",
+        "Provides analytics and insights on content performance and engagement"
+      ],
+      "cons": [
+        "Currently in limited beta - access restricted to invited users only",
+        "Features and pricing may change significantly before public release",
+        "May have limitations with highly technical or specialized content types",
+        "Requires sufficient training data to accurately model individual brand voices",
+        "Subscription model may be cost-prohibitive for individual creators",
+        "Dependent on quality and diversity of training data for accurate voice modeling",
+        "Potential privacy concerns regarding voice data storage and usage",
+        "May require adjustment period for users to trust AI-generated content",
+        "Integration with existing content management systems may need development",
+        "Competitive market with established players in AI content generation"
+      ],
+      "bestFor": "Content creators, marketers, brand managers, and businesses seeking to scale their content production while maintaining authentic, consistent brand voice across all channels, particularly useful for those who value personalization and want to reduce the time spent on content creation without sacrificing quality.",
+      "affiliateCommission": null,
+      "tags": [
+        "content creation",
+        "brand voice",
+        "ai writing",
+        "marketing automation",
+        "intellistake",
+        "beta"
+      ],
+      "featured": false
+    },
+    {
+      "name": "Roomvu Engage Pages",
+      "slug": "roomvu-engage-pages",
+      "description": "AI-powered landing page builder for real estate and mortgage professionals that converts social media engagement into booked appointments.",
+      "longDescription": "Launched on July 2, 2026, Roomvu Engage Pages is an AI-driven feature within the Roomvu Engage platform that automatically generates personalized, high-converting landing pages designed to capture leads from social media engagement and convert them into booked appointments. The system analyzes user engagement patterns, property preferences, and interaction history to create customized landing pages that speak directly to individual prospects' needs and interests. These AI-built pages integrate seamlessly with existing CRM systems and include features like automated follow-up sequences, appointment scheduling tools, and performance analytics to help real estate and mortgage professionals maximize their social media marketing ROI.",
+      "url": "https://www.roomvu.com/engage-pages",
+      "affiliateUrl": null,
+      "category": "Real Estate Tech",
+      "pricing": "Subscription-based",
+      "price": "$49/mo Basic, $149/mo Professional, $299/mo Agency",
+      "released": "July 2, 2026",
+      "added": "2026-07-02",
+      "pros": [
+        "AI-powered landing page generation from social media engagement",
+        "Automatically creates personalized pages for individual prospects",
+        "Integrates with social media platforms for seamless lead capture",
+        "Includes built-in appointment scheduling and calendar synchronization",
+        "Connects with popular CRM systems for lead management",
+        "Provides analytics and conversion tracking for campaign optimization",
+        "Mobile-responsive design ensures compatibility across devices",
+        "Reduces manual effort in creating and maintaining landing pages",
+        "Helps real estate professionals convert online engagement into real business",
+        "Continuously learns from performance data to improve conversion rates"
+      ],
+      "cons": [
+        "Requires subscription to Roomvu Engage platform for full functionality",
+        "May have limitations with highly specialized or niche real estate markets",
+        "Dependent on quality and quantity of social media engagement data",
+        "Subscription costs may be prohibitive for individual agents or small teams",
+        "Requires integration setup with existing marketing and CRM systems",
+        "May need time to gather sufficient data for effective personalization",
+        "Potential privacy considerations regarding user data collection and usage",
+        "Performance may vary based on individual market conditions and competition",
+        "Requires ongoing optimization and A/B testing for best results",
+        "May face platform restrictions or policy changes from social media networks"
+      ],
+      "bestFor": "Real estate agents, mortgage brokers, and property professionals seeking to leverage their social media presence to generate more qualified leads and booked appointments, particularly useful for those looking to automate their lead generation process and improve conversion rates from online marketing efforts.",
+      "affiliateCommission": null,
+      "tags": [
+        "real estate",
+        "mortgage",
+        "landing pages",
+        "lead generation",
+        "ai marketing",
+        "roomvu"
+      ],
+      "featured": false
+    }
+  ]
