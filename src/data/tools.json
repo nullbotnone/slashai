@@ -7426,5 +7426,130 @@
       "gpt-5.6"
     ],
     "featured": false
+  },
+  {
+    "name": "Grok 4.5",
+    "slug": "grok-4-5",
+    "description": "Advanced AI model from SpaceXAI designed for coding, business tasks, and general knowledge work with enhanced efficiency.",
+    "longDescription": "SpaceXAI launched its Grok 4.5 AI model on July 9, 2026, positioning it as its most robust model to date, designed for coding, business tasks, and general knowledge work. Key features include enhanced coding capabilities supporting languages like Rust and C/C++, office work integration for creating Excel spreadsheets, PowerPoint presentations, and Word documents, operating at 80 tokens per second with 4x efficiency over rivals, priced at  per million input tokens and  per million output tokens, trained using tens of thousands of NVIDIA GB300 GPUs with reinforcement learning for software engineering tasks, and available through Grok Build, Cursor, and SpaceXAI console with free usage offered for a limited time. The model excels at agentic tasks and also performs well in finance and legal tasks.",
+    "url": "https://www.spacexai.com/grok/4.5",
+    "affiliateUrl": null,
+    "category": "AI Models",
+    "pricing": "Usage-based",
+    "price": " per million input tokens,  per million output tokens",
+    "released": "July 2026",
+    "added": "2026-07-11",
+    "pros": [
+      "Enhanced coding capabilities for Rust, C/C++, and other languages",
+      "Can build complete applications from single prompts with tools like Three.js",
+      "Office work integration: creates Excel spreadsheets, PowerPoint slides, Word documents",
+      "Operates at 80 tokens/second - 4x more efficient than rivals on coding benchmarks",
+      "Cost-effective: /input M tokens, /output M tokens with lower token usage",
+      "Trained on tens of thousands of NVIDIA GB300 GPUs with RL for software engineering",
+      "Available via Grok Build, Cursor, and SpaceXAI console with limited free usage",
+      "Excels at agentic tasks and performs well in finance/legal domains"
+    ],
+    "cons": [
+      "Currently limited availability (EU access expected mid-July 2026)",
+      "May require learning curve for advanced agentic features",
+      "Dependency on SpaceXAI infrastructure and API availability"
+    ],
+    "bestFor": "Developers, business professionals, and knowledge workers seeking a high-performance, cost-effective AI model for coding, office automation, and complex reasoning tasks.",
+    "affiliateCommission": null,
+    "tags": [
+      "ai model",
+      "coding",
+      "business ai",
+      "spacexai",
+      "grok",
+      "large language model",
+      "agentic ai",
+      "nvidia gb300"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Claude Cowork",
+    "slug": "claude-cowork",
+    "description": "AI agent from Anthropic designed to handle long-running email, calendar, and file tasks autonomously.",
+    "longDescription": "Anthropic launched Claude Cowork on July 7, 2026, an AI agent specifically designed to handle long-running email, calendar, and file tasks. Built on the Claude 3.5 family, Claude Cowork specializes in autonomously managing repetitive workplace tasks that typically consume significant professional time. The agent can monitor and prioritize incoming emails, draft responses, schedule meetings, organize files, and follow up on action items across multiple platforms. It integrates with popular email clients (Gmail, Outlook), calendar systems (Google Calendar, Exchange), and file storage services (Google Drive, Dropbox, OneDrive). Claude Cowork maintains context across extended workflows, learns from user preferences and corrections, and provides audit trails for all actions taken. The agent operates within Anthropic's safety framework with built-in constraints to prevent autonomous actions without appropriate oversight.",
+    "url": "https://www.anthropic.com/product/claude-cowork",
+    "affiliateUrl": null,
+    "category": "AI Agents",
+    "pricing": "Subscription",
+    "price": "5/mo (includes Claude Pro access)",
+    "released": "July 2026",
+    "added": "2026-07-11",
+    "pros": [
+      "Autonomously handles email, calendar, and file management tasks",
+      "Integrates with Gmail, Outlook, Google Calendar, Exchange, Google Drive, Dropbox, OneDrive",
+      "Maintains context across extended multi-day workflows",
+      "Learns from user preferences and corrections to improve over time",
+      "Provides audit trails for all actions taken for transparency and accountability",
+      "Operates within Anthropic's safety framework with appropriate oversight boundaries",
+      "Includes Claude Pro access for 5/mo subscription",
+      "Reduces time spent on routine administrative tasks by up to 40%"
+    ],
+    "cons": [
+      "Requires subscription to Claude Cowork service",
+      "May need initial setup and configuration for optimal integration",
+      "Dependent on third-party service availability and API connections"
+    ],
+    "bestFor": "Professionals, executives, and knowledge workers who spend significant time on email, scheduling, and file management and want to automate these routine tasks.",
+    "affiliateCommission": null,
+    "tags": [
+      "ai agent",
+      "workflow automation",
+      "email management",
+      "calendar management",
+      "file organization",
+      "anthropic",
+      "claude",
+      "productivity ai"
+    ],
+    "featured": false
+  },
+  {
+    "name": "GPT-Live",
+    "slug": "gpt-live",
+    "description": "OpenAI's new generation of voice models for natural human-AI interaction, powering ChatGPT Voice.",
+    "longDescription": "OpenAI introduced GPT-Live on July 8, 2026, a new generation of voice models that enhance natural human-AI interaction and now power ChatGPT Voice. GPT-Live enables real-time, fluid conversations with AI that feel more like talking to a human person than interacting with a traditional voice assistant. The model supports full-duplex communication (speaking and listening simultaneously), understands context and emotion in speech, and can adapt its tone and pacing to match the conversation. GPT-Live processes audio input in real-time with minimal latency, generates natural-sounding speech output, and handles interruptions gracefully. It's designed to work across devices and platforms, providing consistent voice-enabled AI experiences whether accessed through mobile apps, web browsers, or dedicated hardware. The model represents a significant advancement in voice AI technology, moving beyond simple command-response interactions to true conversational AI.",
+    "url": "https://openai.com/index/introducing-gpt-live/",
+    "affiliateUrl": null,
+    "category": "Voice AI",
+    "pricing": "Included with subscription",
+    "price": "Included with ChatGPT Plus (0/mo) and Enterprise plans",
+    "released": "July 2026",
+    "added": "2026-07-11",
+    "pros": [
+      "Enables real-time, fluid conversations with minimal latency",
+      "Supports full-duplex communication (speak and listen simultaneously)",
+      "Understands context, emotion, and intent in spoken language",
+      "Adapts tone and pacing to match conversation flow naturally",
+      "Handles interruptions gracefully without losing conversation thread",
+      "Produces natural-sounding speech output indistinguishable from human",
+      "Works across mobile apps, web browsers, and dedicated hardware",
+      "Included with ChatGPT Plus (0/mo) and Enterprise subscriptions",
+      "Represents next-generation conversational AI beyond command-response models"
+    ],
+    "cons": [
+      "Requires ChatGPT Plus or Enterprise subscription for access",
+      "May have usage limits based on subscription tier",
+      "Dependent on internet connectivity for real-time processing",
+      "Audio quality varies with microphone and speaker hardware"
+    ],
+    "bestFor": "Users who want natural, conversational interactions with AI for productivity, learning, accessibility, or entertainment purposes through voice interfaces.",
+    "affiliateCommission": null,
+    "tags": [
+      "voice ai",
+      "conversational ai",
+      "openai",
+      "gpt",
+      "chatgpt voice",
+      "audio ai",
+      "speech recognition",
+      "text to speech"
+    ],
+    "featured": false
   }
 ]
