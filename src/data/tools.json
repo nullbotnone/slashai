@@ -7551,5 +7551,129 @@
       "text to speech"
     ],
     "featured": false
+  },
+  {
+    "name": "OpenAI Presence",
+    "slug": "openai-presence",
+    "description": "Enterprise AI agent tool for deploying and managing AI assistants across organizations with admin controls and usage analytics.",
+    "longDescription": "OpenAI launched OpenAI Presence in July 2026 as an enterprise-grade solution for deploying, managing, and monitoring AI assistants at scale. The platform provides centralized administration for AI agents across organizations, featuring role-based access controls, usage analytics and reporting, deployment management for custom GPTs and assistants, and integration capabilities with existing enterprise systems. It enables IT teams to govern AI usage while empowering employees with secure access to AI tools. The solution includes audit trails, compliance reporting, and tools for managing the lifecycle of AI assistants from development to production deployment.",
+    "url": "https://openai.com/presence/",
+    "affiliateUrl": null,
+    "category": "Enterprise AI",
+    "pricing": "Enterprise",
+    "price": "Custom pricing based on organization size and usage",
+    "released": "July 2026",
+    "added": "2026-07-23",
+    "pros": [
+      "Centralized management of enterprise AI assistants",
+      "Role-based access controls and permissions",
+      "Usage analytics and reporting dashboard",
+      "Deployment management for custom GPTs and assistants",
+      "Integration capabilities with enterprise systems",
+      "Audit trails and compliance tracking",
+      "Secure environment for AI deployment and monitoring",
+      "Scalable solution for organizations of all sizes"
+    ],
+    "cons": [
+      "Requires enterprise subscription agreement",
+      "May involve implementation and setup time",
+      "Dependent on OpenAI platform availability and performance"
+    ],
+    "bestFor": "Enterprise organizations seeking to deploy and manage AI assistants at scale with proper governance, security, and usage tracking capabilities.",
+    "affiliateCommission": null,
+    "tags": [
+      "enterprise ai",
+      "ai management",
+      "openai",
+      "ai governance",
+      "assistant management",
+      "corporate ai",
+      "ai operations"
+    ],
+    "featured": false
+  },
+  {
+    "name": "S&P Global Adaptive Retrieval",
+    "slug": "sp-global-adaptive-retrieval",
+    "description": "AI-enabled financial data access platform allowing natural language queries to S&P Global datasets for AI agents and LLMs.",
+    "longDescription": "S&P Global launched Adaptive Retrieval on July 21, 2026, a groundbreaking service that enables AI agents and large language models (LLMs) to access and assemble licensed S&P Global financial data through natural language queries. The service eliminates the need for manual query mapping and allows AI systems to pull information from multiple datasets simultaneously for complex, multi-step research tasks. Adaptive Retrieval works alongside the existing Deterministic Retrieval method, providing access to datasets including S&P Capital IQ Financials, Market Intelligence News, Company Intelligence, Compustat Financials, Business Relationships, Transactions, and Machine Readable Transcripts. The solution provides verifiable results with source citations and supports both exploratory and focused research workflows, making S&P Global's trusted data accessible across the full spectrum of AI and agentic applications from controlled pipelines to autonomous multi-agent systems.",
+    "url": "https://www.spglobal.com/spdji/en/indices/adaptive-retrieval/",
+    "affiliateUrl": null,
+    "category": "Financial Data",
+    "pricing": "Enterprise (contact for quote)",
+    "price": "Custom pricing (estimated 2-6% annual increase with multi-year contracts, typical 8% discount negotiable)",
+    "released": "July 2026",
+    "added": "2026-07-23",
+    "pros": [
+      "Natural language querying of S&P Global financial datasets",
+      "Simultaneous multi-dataset access for complex research",
+      "Eliminates manual query mapping and engineering overhead",
+      "Provides verifiable results with source citations",
+      "Works alongside existing Deterministic Retrieval method",
+      "Access to 10+ premium financial and market datasets",
+      "Supports both exploratory and focused research workflows",
+      "Enables AI agent access to trusted enterprise data",
+      "Facilitates auditable AI-driven financial analysis"
+    ],
+    "cons": [
+      "Requires S&P Global subscription and licensing agreement",
+      "Pricing not publicly transparent (contact for quote)",
+      "May require initial setup and configuration",
+      "Dependent on S&P Global platform availability and performance"
+    ],
+    "bestFor": "Financial analysts, researchers, and institutions seeking to leverage AI agents for advanced financial research, analysis, and reporting using S&P Global's trusted datasets.",
+    "affiliateCommission": null,
+    "tags": [
+      "financial data",
+      "ai research",
+      "sp global",
+      "kenso",
+      "market intelligence",
+      "financial research",
+      "enterprise data",
+      "natural language querying"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Zeplyn Advisor Coaching",
+    "slug": "zeplyn-advisor-coaching",
+    "description": "AI-powered wealth management advisor coaching system for enhancing advisor performance and client experience through automated meeting evaluation and feedback.",
+    "longDescription": "Zeplyn launched its Advisor Coaching feature on July 23, 2026, an AI-powered capability within its wealth management operating system designed to enhance advisor performance and client experience. The system automatically evaluates, scores, and provides feedback on client and prospect meetings, eliminating the need for manual call or transcript review by managers. Key features include automated meeting evaluation with customizable scoring rubrics, contextual coaching tips based on specific meeting moments, firm-wide performance reports via the 'Ask Zeplyn' feature, AI-generated client personality profiles from meeting notes and emails, role-playing and preparation tools for challenging conversations, and scalable oversight for ensuring consistent client experience across organizations. The platform integrates with leading custodians, CRMs, and financial planning tools, and is powered by Zeplyn Agent Nexus for unifying client intelligence across various systems.",
+    "url": "https://www.zeplyn.ai/advisor-coaching",
+    "affiliateUrl": null,
+    "category": "Wealth Management",
+    "pricing": "Subscription",
+    "price": "Included with Zeplyn Wealth Management OS (contact for pricing)",
+    "released": "July 2026",
+    "added": "2026-07-23",
+    "pros": [
+      "Automated meeting evaluation and feedback system",
+      "Customizable scoring rubrics aligned to firm standards",
+      "Contextual coaching tips based on specific meeting moments",
+      "Firm-wide performance reports via 'Ask Zeplyn' feature",
+      "AI-generated client personality profiles from communications",
+      "Role-playing and preparation tools for challenging conversations",
+      "Scalable oversight for consistent client experience across organizations",
+      "Integrates with major custodians, CRMs, and financial planning tools"
+    ],
+    "cons": [
+      "Requires subscription to Zeplyn Wealth Management OS",
+      "May involve learning curve for optimal feature utilization",
+      "Dependent on Zeplyn platform availability and performance"
+    ],
+    "bestFor": "Wealth management firms seeking to enhance advisor performance, standardize client interactions, and gain scalable oversight of advisor-client relationships through AI-powered coaching and analytics.",
+    "affiliateCommission": null,
+    "tags": [
+      "wealth management",
+      "ai coaching",
+      "financial advice",
+      "zeplyn",
+      "advisor performance",
+      "client experience",
+      "financial services ai",
+      "relationship management"
+    ],
+    "featured": false
   }
 ]
