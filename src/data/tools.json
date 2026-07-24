@@ -7212,7 +7212,7 @@
   },
   {
     "name": "Voiskey",
-    "slov": "voiskey",
+    "slug": "voiskey",
     "description": "AI-powered voice typing application featuring 'Expression Intelligence' that converts natural speech into context-aware, high-quality text by understanding user intent and communication context.",
     "longDescription": "Officially launched globally on July 8, 2026, Voiskey is an innovative AI voice typing application that goes beyond basic speech-to-text by incorporating 'Expression Intelligence' - the ability to understand the intent, emotion, and context behind spoken words to produce more accurate and meaningful transcriptions. Unlike traditional dictation software that simply converts speech to text, Voiskey analyzes vocal patterns, tone, pace, and linguistic cues to determine the user's intended meaning and appropriate written expression. This makes it particularly effective for creating professional documents, emails, messages, and content where the nuance of communication matters. The application is available on iOS, Android, and desktop platforms, offering seamless voice-to-text conversion across devices.",
     "url": "https://www.voiskey.ai/",
