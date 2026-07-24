@@ -1,0 +1,80 @@
+# SlashAI Cron Health Report
+Generated: 2026-07-06 18:05:48 CDT
+
+## Overall System Health: UNHEALTHY
+
+Total Jobs: 6
+Enabled Jobs: 6
+Disabled Jobs: 0
+Jobs Last Run OK: 5
+Jobs Last Run Error: 1
+
+## Problematic Jobs Requiring Attention
+### SlashAI Cron Health Monitor (ID: ed00fb94-c5de-40ee-ae13-fbca13331cd2)
+- Status: ENABLED
+- Last Run Status: ok
+- Consecutive Errors: 0
+- Last Run Duration: 187741 ms (187.74 seconds)
+- Time Since Last Run: 5616209071 ms (5616209.07 seconds)
+- Expected Interval: 21599967 ms (21599.97 seconds)
+- ISSUE: Has not run in over 2x its interval (5616209071 ms > 2 * 21599967 ms)
+
+### SlashAI Daily Tool Check (ID: 7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d)
+- Status: ENABLED
+- Last Run Status: ok
+- Consecutive Errors: 0
+- Last Run Duration: 719182 ms (719.18 seconds)
+- Time Since Last Run: 5652348518 ms (5652348.52 seconds)
+- Expected Interval: 86399972 ms (86399.97 seconds)
+- ISSUE: Has not run in over 2x its interval (5652348518 ms > 2 * 86399972 ms)
+
+### SlashAI: Add new AI tools to directory (ID: 2bf75b2b-2b7c-4ef9-a6fe-0c9680a15670)
+- Status: ENABLED
+- Last Run Status: ok
+- Consecutive Errors: 0
+- Last Run Duration: 530432 ms (530.43 seconds)
+- Time Since Last Run: 5645148515 ms (5645148.51 seconds)
+- Expected Interval: 86399969 ms (86399.97 seconds)
+- ISSUE: Has not run in over 2x its interval (5645148515 ms > 2 * 86399969 ms)
+
+### SlashAI Weekly Article (ID: c80f4c43-11b2-4ad7-a3c4-f71ff534ca85)
+- Status: ENABLED
+- Last Run Status: ok
+- Consecutive Errors: 0
+- Last Run Duration: 3842637 ms (3842.64 seconds)
+- Time Since Last Run: 6076548464 ms (6076548.46 seconds)
+- Expected Interval: 604199918 ms (604199.92 seconds)
+- ISSUE: Last run duration > 1 hour (3842637 ms)
+- ISSUE: Has not run in over 2x its interval (6076548464 ms > 2 * 604199918 ms)
+
+### SlashAI Biweekly Tutorial (ID: 233a2ab3-45ac-4cc0-ac40-8e998f9f4d90)
+- Status: ENABLED
+- Last Run Status: ok
+- Consecutive Errors: 0
+- Last Run Duration: 1276869 ms (1276.87 seconds)
+- Time Since Last Run: 5730948443 ms (5730948.44 seconds)
+- Expected Interval: 1208999897 ms (1208999.90 seconds)
+- ISSUE: Has not run in over 2x its interval (5730948443 ms > 2 * 1208999897 ms)
+
+### SlashAI Monthly What's New Roundup (ID: 76dc4a93-9968-43b9-a383-cb00b7c0bf81)
+- Status: ENABLED
+- Last Run Status: error
+- Consecutive Errors: 1
+- Last Run Duration: 479537 ms (479.54 seconds)
+- Time Since Last Run: 5729671574 ms (5729671.57 seconds)
+- Expected Interval: 2676523028 ms (2676523.03 seconds)
+- ISSUE: Has not run in over 2x its interval (5729671574 ms > 2 * 2676523028 ms)
+
+## SlashAI Daily Tool Check Job (ID: 7cfdddb8-eddd-4e8b-8ca3-a0eb6763ef7d)
+- Enabled: True
+- Last Run Status: ok
+- Consecutive Errors: 0
+- Last Run Duration: 719182 ms
+- Time Since Last Run: 5652348518 ms
+- Consecutive errors are within acceptable limits (<=2).
+
+## Recommended Actions
+- Address the problematic jobs listed above.
+- Consider enabling any disabled jobs that should be active.
+- Investigate jobs with high consecutive errors or long run times.
+- Check cron logs for any execution errors.
