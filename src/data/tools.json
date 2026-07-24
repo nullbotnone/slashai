@@ -7675,5 +7675,113 @@
       "relationship management"
     ],
     "featured": false
+  },
+  {
+    "name": "Perplexity Enterprise",
+    "slug": "perplexity-enterprise",
+    "description": "Enterprise-grade AI search platform with team collaboration, data integration, and admin controls.",
+    "longDescription": "Perplexity launched Perplexity Enterprise in July 2026 as a business-focused version of its AI-powered search and discovery platform. The offering includes team workspaces, administrative controls, SSO integration, customizable data sources, and advanced analytics. Organizations can connect internal knowledge bases, external data sources to search experience. The platform includes features like user permissions and customizable report downloading. The experience is designed for security and compliance, providing audit trails, data residency options, and role-based access control while maintaining Perplexity enables organizations to deploy AI-powered search at scale while maintaining governance over sensitive information and intellectual property.",
+    "url": "https://www.perplexity.ai/enterprise",
+    "affiliateUrl": null,
+    "category": "AI Search",
+    "pricing": "Subscription",
+    "price": "0 per user/month",
+    "released": "July 2026",
+    "added": "2026-07-23",
+    "pros": [
+      "Team-based collaboration for AI search collaboration",
+      "Admin controls and analytics",
+      "SSO integration",
+      "Custom data sources",
+      "Advanced analytics",
+      "Audit trails",
+      "Role-based access",
+      "Knowledge base integration"
+    ],
+    "cons": [
+      "Minimum team commitment",
+      "Setup time for integrations",
+      "Platform dependency"
+    ],
+    "bestFor": "Organizations seeking AI-powered search at scale with security and compliance",
+    "affiliateCommission": null,
+    "tags": [
+      "ai search",
+      "enterprise",
+      "perplexity"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Hugging Face HUBs",
+    "slug": "huggingface-hubs",
+    "description": "Collaborative AI model development platform for ML teams.",
+    "longDescription": "Hugging Face launched HUBs (Hosted Unified Builds) in July 2026 as a collaborative platform for ML teams to develop, test, and deploy AI models together. Features include shared model repos, version control, experiment tracking, A/B testing, and integration with PyTorch/TensorFlow. HUBs enables teams to work on full ML lifecycle while maintaining governance, reproducibility, and scalability.",
+    "url": "https://huggingface.co/hubs",
+    "affiliateUrl": null,
+    "category": "ML Platform",
+    "pricing": "Freemium",
+    "price": "Free tier; Team from 5/user/month",
+    "released": "July 2026",
+    "added": "2026-07-23",
+    "pros": [
+      "Collaborative ML development",
+      "Shared model repos with version control",
+      "Automated ML pipelines",
+      "Experiment tracking",
+      "A/B testing capabilities",
+      "Framework integration (PyTorch/TensorFlow)",
+      "Team access controls",
+      "Scalable deployment options"
+    ],
+    "cons": [
+      "ML knowledge required",
+      "Advanced features need subscription",
+      "Platform dependency"
+    ],
+    "bestFor": "ML teams seeking collaborative model development with version control and scalability",
+    "affiliateCommission": null,
+    "tags": [
+      "ml collaboration",
+      "huggingface",
+      "mlops"
+    ],
+    "featured": false
+  },
+  {
+    "name": "Amazon Q Business",
+    "slug": "amazon-q-business",
+    "description": "AI-powered BI platform for natural language data querying.",
+    "longDescription": "Amazon launched Q Business in July 2026 as an AI-powered BI service for natural language business data questioning. Connects to databases, SaaS, warehouses. Uses LLMs to understand queries, generate SQL/analytical queries, present results with context/viz. Features: automated data prep, semantic search, personalized insights, QuickSight integration. Enables business users to access/analyze data without SQL/data analysis expertise.",
+    "url": "https://aws.amazon.com/q/business/",
+    "affiliateUrl": null,
+    "category": "Business Intelligence",
+    "pricing": "Usage-based",
+    "price": "/bin/bash.03/query (text), /bin/bash.06/query (with viz)",
+    "released": "July 2026",
+    "added": "2026-07-23",
+    "pros": [
+      "Natural language data querying",
+      "Multi-source connectivity",
+      "Auto SQL/query generation",
+      "Contextualized results with viz",
+      "Automated data preparation",
+      "Semantic search capabilities",
+      "Personalized insights/recommendations",
+      "QuickSight integration for advanced viz"
+    ],
+    "cons": [
+      "Requires AWS account",
+      "Query costs with high volume",
+      "Initial setup time for connections"
+    ],
+    "bestFor": "Business users seeking data access/analysis via natural language without SQL/data analysis expertise",
+    "affiliateCommission": null,
+    "tags": [
+      "business intelligence",
+      "amazon",
+      "bi"
+    ],
+    "featured": false
   }
 ]
